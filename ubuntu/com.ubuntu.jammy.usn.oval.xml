@@ -10,7 +10,7 @@
         <oval:product_name>Canonical USN OVAL Generator</oval:product_name>
         <oval:product_version>1</oval:product_version>
         <oval:schema_version>5.11.1</oval:schema_version>
-        <oval:timestamp>2023-03-17T00:36:17</oval:timestamp>
+        <oval:timestamp>2023-03-18T06:36:45</oval:timestamp>
         <terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
     </generator>
 
@@ -8684,7 +8684,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:579210000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:579210000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:579210000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:579210000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:579210000020"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:579210000020"/>
         </unix:uname_test>
@@ -8892,7 +8892,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:544310000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:544310000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:544310000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:544310000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:544310000020"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:544310000020"/>
         </unix:uname_test>
@@ -8964,7 +8964,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:593810000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:593810000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:562410000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:562410000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:562410000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:562410000000"/>
         </unix:uname_test>
@@ -9016,7 +9016,7 @@
            <linux:object object_ref="oval:com.ubuntu.jammy:obj:542710000000"/>
            <linux:state state_ref="oval:com.ubuntu.jammy:ste:542710000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.jammy:tst:587910000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.jammy:tst:587910000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:587910000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:587910000000"/>
         </unix:uname_test>
@@ -9036,7 +9036,7 @@
            <linux:object object_ref="oval:com.ubuntu.jammy:obj:540010000000"/>
            <linux:state state_ref="oval:com.ubuntu.jammy:ste:540010000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:554410000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:554410000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:554410000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:554410000000"/>
         </unix:uname_test>
@@ -9060,7 +9060,7 @@
            <linux:object object_ref="oval:com.ubuntu.jammy:obj:560710000000"/>
            <linux:state state_ref="oval:com.ubuntu.jammy:ste:560710000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:548510000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:548510000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:548510000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:548510000000"/>
         </unix:uname_test>
@@ -9136,7 +9136,7 @@
            <linux:object object_ref="oval:com.ubuntu.jammy:obj:550210000000"/>
            <linux:state state_ref="oval:com.ubuntu.jammy:ste:550210000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:556510000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:556510000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:556510000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:556510000000"/>
         </unix:uname_test>
@@ -9144,7 +9144,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:556510000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:556510000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:585110000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:585110000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:585110000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:585110000000"/>
         </unix:uname_test>
@@ -9316,7 +9316,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:575510000030"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:575510000030"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:575510000040" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:575510000040" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:575510000040"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:575510000040"/>
         </unix:uname_test>
@@ -9444,7 +9444,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:539020000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:539020000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:539010000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:539010000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:539010000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:539010000000"/>
         </unix:uname_test>
@@ -9588,7 +9588,7 @@
            <linux:object object_ref="oval:com.ubuntu.jammy:obj:556810000000"/>
            <linux:state state_ref="oval:com.ubuntu.jammy:ste:556810000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:566710000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:566710000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:566710000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:566710000000"/>
         </unix:uname_test>
@@ -9692,7 +9692,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:591210000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:591210000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:591210000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:591210000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:591210000020"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:591210000020"/>
         </unix:uname_test>
@@ -9992,7 +9992,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:559410000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:559410000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.jammy:tst:559410000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.jammy:tst:559410000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:559410000020"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:559410000020"/>
         </unix:uname_test>
@@ -10096,7 +10096,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:569210000030"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:569210000030"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:569210000040" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:569210000040" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:569210000040"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:569210000040"/>
         </unix:uname_test>
@@ -10220,7 +10220,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:580310000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:580310000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.jammy:tst:580310000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.jammy:tst:580310000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:580310000020"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:580310000020"/>
         </unix:uname_test>
@@ -10344,7 +10344,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:572920000030"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:572920000030"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:572910000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:572910000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:572910000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:572910000000"/>
         </unix:uname_test>
@@ -10440,7 +10440,7 @@
            <linux:object object_ref="oval:com.ubuntu.jammy:obj:544010000000"/>
            <linux:state state_ref="oval:com.ubuntu.jammy:ste:544010000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:546910000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:546910000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:546910000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:546910000000"/>
         </unix:uname_test>
@@ -10556,7 +10556,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:544410000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:544410000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.jammy:tst:591110000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.jammy:tst:591110000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:591110000000"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:591110000000"/>
         </unix:uname_test>
@@ -10968,7 +10968,7 @@
            <ind:object object_ref="oval:com.ubuntu.jammy:obj:551810000010"/>
            <ind:state state_ref="oval:com.ubuntu.jammy:ste:551810000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:551810000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.jammy:tst:551810000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.jammy:obj:551810000020"/>
            <unix:state state_ref="oval:com.ubuntu.jammy:ste:551810000020"/>
         </unix:uname_test>
@@ -13058,7 +13058,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:579210000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:579210000020" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:579210000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:579210000020" var_check="at least one" />
@@ -13214,7 +13214,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:544310000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:544310000020" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:544310000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:544310000020" var_check="at least one" />
@@ -13268,7 +13268,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:593810000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:562410000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:562410000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:562410000000" var_check="at least one" />
@@ -13307,7 +13307,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:2.20.11-0ubuntu82.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:587910000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:587910000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:587910000000" var_check="at least one" />
@@ -13322,7 +13322,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:8.0.29-0ubuntu0.22.04.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:554410000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:554410000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:554410000000" var_check="at least one" />
@@ -13340,7 +13340,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:2.42.8+dfsg-1ubuntu0.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:548510000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:548510000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:548510000000" var_check="at least one" />
@@ -13397,13 +13397,13 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:3.0.2-0ubuntu1.6</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:556510000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:556510000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:556510000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:585110000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:585110000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:585110000000" var_check="at least one" />
@@ -13532,7 +13532,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:575510000020" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:575510000040" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:575510000050" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:575510000040" var_check="at least one" />
@@ -13628,7 +13628,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:539020000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:539010000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:539010000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:539010000000" var_check="at least one" />
@@ -13736,7 +13736,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:2.36.6-0ubuntu0.22.04.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:566710000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:566710000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:566710000000" var_check="at least one" />
@@ -13814,7 +13814,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:591210000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:591210000020" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:591210000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:591210000020" var_check="at least one" />
@@ -14039,7 +14039,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:559410000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:559410000020" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:559410000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:559410000020" var_check="at least one" />
@@ -14117,7 +14117,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:569210000020" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:569210000040" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:569210000050" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:569210000040" var_check="at least one" />
@@ -14210,7 +14210,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:580310000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:580310000020" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:580310000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:580310000020" var_check="at least one" />
@@ -14303,7 +14303,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:572920000020" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:572910000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:572910000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:572910000000" var_check="at least one" />
@@ -14375,7 +14375,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:14.3-0ubuntu0.22.04.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:546910000000" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:546910000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:546910000000" var_check="at least one" />
@@ -14462,7 +14462,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:544410000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:591110000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:591110000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:591110000000" var_check="at least one" />
@@ -14771,7 +14771,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:551810000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.jammy:ste:551810000020" version="1">
-           <unix:os_release operation="pattern match">5.15.0-\d+(-generic-64k|-lowlatency|-generic-lpae|-generic|-lowlatency-64k)</unix:os_release>
+           <unix:os_release operation="pattern match">5.15.0-\d+(-generic|-generic-64k|-generic-lpae|-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.jammy:ste:551810000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.jammy:var:551810000020" var_check="at least one" />

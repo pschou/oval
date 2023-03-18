@@ -10,7 +10,7 @@
         <oval:product_name>Canonical USN OVAL Generator</oval:product_name>
         <oval:product_version>1</oval:product_version>
         <oval:schema_version>5.11.1</oval:schema_version>
-        <oval:timestamp>2023-03-17T00:36:17</oval:timestamp>
+        <oval:timestamp>2023-03-18T06:36:45</oval:timestamp>
         <terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
     </generator>
 
@@ -3534,7 +3534,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:579310000030"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:579310000030"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.kinetic:tst:579310000040" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.kinetic:tst:579310000040" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:579310000040"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:579310000040"/>
         </unix:uname_test>
@@ -3594,7 +3594,7 @@
            <linux:object object_ref="oval:com.ubuntu.kinetic:obj:572510000000"/>
            <linux:state state_ref="oval:com.ubuntu.kinetic:ste:572510000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-ibm|-gcp) currently running?" id="oval:com.ubuntu.kinetic:tst:585010000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-gcp|-ibm) currently running?" id="oval:com.ubuntu.kinetic:tst:585010000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:585010000000"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:585010000000"/>
         </unix:uname_test>
@@ -3618,7 +3618,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:585010000050"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:585010000050"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.kinetic:tst:585010000060" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.kinetic:tst:585010000060" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:585010000060"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:585010000060"/>
         </unix:uname_test>
@@ -3734,7 +3734,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:575420000010"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:575420000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-lowlatency-64k|-lowlatency) currently running?" id="oval:com.ubuntu.kinetic:tst:575410000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.kinetic:tst:575410000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:575410000000"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:575410000000"/>
         </unix:uname_test>
@@ -3750,7 +3750,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:575410000030"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:575410000030"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.kinetic:tst:575410000040" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.kinetic:tst:575410000040" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:575410000040"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:575410000040"/>
         </unix:uname_test>
@@ -3758,7 +3758,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:575410000050"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:575410000050"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-gcp|-kvm|-ibm|-oracle) currently running?" id="oval:com.ubuntu.kinetic:tst:575410000060" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-gcp|-ibm|-kvm|-oracle) currently running?" id="oval:com.ubuntu.kinetic:tst:575410000060" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:575410000060"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:575410000060"/>
         </unix:uname_test>
@@ -3866,7 +3866,7 @@
            <linux:object object_ref="oval:com.ubuntu.kinetic:obj:589510000000"/>
            <linux:state state_ref="oval:com.ubuntu.kinetic:ste:589510000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-ibm|-gcp) currently running?" id="oval:com.ubuntu.kinetic:tst:580310000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-gcp|-ibm) currently running?" id="oval:com.ubuntu.kinetic:tst:580310000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:580310000000"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:580310000000"/>
         </unix:uname_test>
@@ -3874,7 +3874,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:580310000010"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:580310000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.kinetic:tst:580310000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.kinetic:tst:580310000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:580310000020"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:580310000020"/>
         </unix:uname_test>
@@ -3946,7 +3946,7 @@
            <linux:object object_ref="oval:com.ubuntu.kinetic:obj:593310000000"/>
            <linux:state state_ref="oval:com.ubuntu.kinetic:ste:593310000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.kinetic:tst:591110000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.kinetic:tst:591110000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:591110000000"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:591110000000"/>
         </unix:uname_test>
@@ -3986,7 +3986,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:591110000090"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:591110000090"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-ibm|-gcp) currently running?" id="oval:com.ubuntu.kinetic:tst:591110000100" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-gcp|-ibm) currently running?" id="oval:com.ubuntu.kinetic:tst:591110000100" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:591110000100"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:591110000100"/>
         </unix:uname_test>
@@ -3998,7 +3998,7 @@
            <linux:object object_ref="oval:com.ubuntu.kinetic:obj:576010000000"/>
            <linux:state state_ref="oval:com.ubuntu.kinetic:ste:576010000000"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-lowlatency-64k|-lowlatency) currently running?" id="oval:com.ubuntu.kinetic:tst:581410000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.kinetic:tst:581410000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:581410000000"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:581410000000"/>
         </unix:uname_test>
@@ -4110,7 +4110,7 @@
            <linux:object object_ref="oval:com.ubuntu.kinetic:obj:584610000010"/>
            <linux:state state_ref="oval:com.ubuntu.kinetic:ste:584610000010"/>
         </linux:dpkginfo_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-lowlatency-64k|-lowlatency) currently running?" id="oval:com.ubuntu.kinetic:tst:570010000000" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.kinetic:tst:570010000000" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:570010000000"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:570010000000"/>
         </unix:uname_test>
@@ -4118,7 +4118,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:570010000010"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:570010000010"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic-64k|-generic-lpae|-generic) currently running?" id="oval:com.ubuntu.kinetic:tst:570010000020" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-generic|-generic-64k|-generic-lpae) currently running?" id="oval:com.ubuntu.kinetic:tst:570010000020" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:570010000020"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:570010000020"/>
         </unix:uname_test>
@@ -4126,7 +4126,7 @@
            <ind:object object_ref="oval:com.ubuntu.kinetic:obj:570010000030"/>
            <ind:state state_ref="oval:com.ubuntu.kinetic:ste:570010000030"/>
         </ind:variable_test>
-        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-oracle|-ibm|-azure|-gcp|-kvm) currently running?" id="oval:com.ubuntu.kinetic:tst:570010000040" version="1">
+        <unix:uname_test check="at least one" comment="Is kernel 5.19.0-\d+(-azure|-gcp|-ibm|-kvm|-oracle) currently running?" id="oval:com.ubuntu.kinetic:tst:570010000040" version="1">
            <unix:object object_ref="oval:com.ubuntu.kinetic:obj:570010000040"/>
            <unix:state state_ref="oval:com.ubuntu.kinetic:ste:570010000040"/>
         </unix:uname_test>
@@ -4936,7 +4936,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:579310000020" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:579310000040" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:579310000050" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:579310000040" var_check="at least one" />
@@ -4981,7 +4981,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:1.13.8-1ubuntu2.22.10.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:585010000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-ibm|-gcp)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-gcp|-ibm)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:585010000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:585010000000" var_check="at least one" />
@@ -4999,7 +4999,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:585010000040" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:585010000060" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:585010000070" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:585010000060" var_check="at least one" />
@@ -5086,7 +5086,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:575420000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:575410000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-lowlatency-64k|-lowlatency)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:575410000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:575410000000" var_check="at least one" />
@@ -5098,13 +5098,13 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:575410000020" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:575410000040" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:575410000050" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:575410000040" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:575410000060" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-gcp|-kvm|-ibm|-oracle)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-gcp|-ibm|-kvm|-oracle)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:575410000070" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:575410000060" var_check="at least one" />
@@ -5185,13 +5185,13 @@
            <linux:evr datatype="debian_evr_string" operation="less than">2:1.4+ds1-3ubuntu1.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:580310000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-ibm|-gcp)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-gcp|-ibm)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:580310000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:580310000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:580310000020" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:580310000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:580310000020" var_check="at least one" />
@@ -5245,7 +5245,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:0.9.3-0ubuntu1.22.10.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:591110000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:591110000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:591110000000" var_check="at least one" />
@@ -5275,7 +5275,7 @@
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:591110000080" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:591110000100" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-ibm|-gcp)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-gcp|-ibm)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:591110000110" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:591110000100" var_check="at least one" />
@@ -5284,7 +5284,7 @@
            <linux:evr datatype="debian_evr_string" operation="less than">0:2.9.14+dfsg-1ubuntu0.1</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:581410000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-lowlatency-64k|-lowlatency)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:581410000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:581410000000" var_check="at least one" />
@@ -5368,19 +5368,19 @@
            <linux:evr datatype="debian_evr_string" operation="less than">2:22.1.3-2ubuntu0.3</linux:evr>
         </linux:dpkginfo_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:570010000000" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-lowlatency-64k|-lowlatency)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-lowlatency|-lowlatency-64k)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:570010000010" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:570010000000" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:570010000020" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-generic-64k|-generic-lpae|-generic)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-generic|-generic-64k|-generic-lpae)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:570010000030" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:570010000020" var_check="at least one" />
         </ind:variable_state>
         <unix:uname_state id="oval:com.ubuntu.kinetic:ste:570010000040" version="1">
-           <unix:os_release operation="pattern match">5.19.0-\d+(-oracle|-ibm|-azure|-gcp|-kvm)</unix:os_release>
+           <unix:os_release operation="pattern match">5.19.0-\d+(-azure|-gcp|-ibm|-kvm|-oracle)</unix:os_release>
         </unix:uname_state>
         <ind:variable_state id="oval:com.ubuntu.kinetic:ste:570010000050" version="1">
             <ind:value operation="greater than" datatype="debian_evr_string" var_ref="oval:com.ubuntu.kinetic:var:570010000040" var_check="at least one" />
