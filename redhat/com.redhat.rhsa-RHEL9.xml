@@ -4,8 +4,8 @@
 <oval:product_name>Red Hat OVAL Patch Definition Merger</oval:product_name>
 <oval:product_version>3</oval:product_version>
 <oval:schema_version>5.10</oval:schema_version>
-<oval:timestamp>2023-03-20T16:35:08</oval:timestamp>
-<oval:content_version>1679330108</oval:content_version>
+<oval:timestamp>2023-03-21T23:34:51</oval:timestamp>
+<oval:content_version>1679441691</oval:content_version>
 </generator>
 <definitions>
 <definition class="patch" id="oval:com.redhat.rhba:def:20225749" version="635">
@@ -16831,9 +16831,9 @@ For more details about the security issue(s), including the impact, a CVSS score
   </criteria>
  </criteria>
 </definition>
-<definition class="patch" id="oval:com.redhat.rhsa:def:20230946" version="635">
+<definition class="patch" id="oval:com.redhat.rhsa:def:20230946" version="639">
  <metadata>
-  <title>RHSA-2023:0946: openssl security and bug fix update (Moderate)</title>
+  <title>RHSA-2023:0946: openssl security and bug fix update (Important)</title>
   <affected family="unix">
    <platform>Red Hat Enterprise Linux 9</platform>
   </affected>
@@ -16850,6 +16850,8 @@ For more details about the security issue(s), including the impact, a CVSS score
 
 Security Fix(es):
 
+* openssl: X.400 address type confusion in X.509 GeneralName (CVE-2023-0286)
+
 * openssl: read buffer overflow in X.509 certificate verification (CVE-2022-4203)
 
 * openssl: timing attack in RSA Decryption implementation (CVE-2022-4304)
@@ -16861,8 +16863,6 @@ Security Fix(es):
 * openssl: invalid pointer dereference in d2i_PKCS7 functions (CVE-2023-0216)
 
 * openssl: NULL dereference validating DSA public key (CVE-2023-0217)
-
-* openssl: X.400 address type confusion in X.509 GeneralName (CVE-2023-0286)
 
 * openssl: NULL dereference during PKCS7 data verification (CVE-2023-0401)
 
@@ -16892,10 +16892,10 @@ Bug Fix(es):
 
 * OpenSSL FIPS checksum code needs update (BZ#2158412)</description>
   <advisory from="secalert@redhat.com">
-   <severity>Moderate</severity>
+   <severity>Important</severity>
    <rights>Copyright 2023 Red Hat, Inc.</rights>
    <issued date="2023-02-28"/>
-   <updated date="2023-02-28"/>
+   <updated date="2023-03-21"/>
    <cve cvss3="4.9/CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cwe="(CWE-119|CWE-125)" href="https://access.redhat.com/security/cve/CVE-2022-4203" impact="moderate" public="20230207">CVE-2022-4203</cve>
    <cve cvss3="5.9/CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" href="https://access.redhat.com/security/cve/CVE-2022-4304" impact="moderate" public="20230207">CVE-2022-4304</cve>
    <cve cvss3="7.5/CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cwe="CWE-415" href="https://access.redhat.com/security/cve/CVE-2022-4450" impact="moderate" public="20230207">CVE-2022-4450</cve>
@@ -28011,19 +28011,19 @@ For more details about the security issue(s), including the impact, a CVSS score
  <red-def:object object_ref="oval:com.redhat.rhsa:obj:20226634004"/>
  <red-def:state state_ref="oval:com.redhat.rhsa:ste:20230903001"/>
 </red-def:rpminfo_test>
-<red-def:rpminfo_test check="at least one" comment="openssl is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946001" version="635">
+<red-def:rpminfo_test check="at least one" comment="openssl is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946001" version="639">
  <red-def:object object_ref="oval:com.redhat.rhsa:obj:20226224001"/>
  <red-def:state state_ref="oval:com.redhat.rhsa:ste:20230946001"/>
 </red-def:rpminfo_test>
-<red-def:rpminfo_test check="at least one" comment="openssl-devel is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946003" version="635">
+<red-def:rpminfo_test check="at least one" comment="openssl-devel is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946003" version="639">
  <red-def:object object_ref="oval:com.redhat.rhsa:obj:20226224002"/>
  <red-def:state state_ref="oval:com.redhat.rhsa:ste:20230946003"/>
 </red-def:rpminfo_test>
-<red-def:rpminfo_test check="at least one" comment="openssl-libs is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946005" version="635">
+<red-def:rpminfo_test check="at least one" comment="openssl-libs is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946005" version="639">
  <red-def:object object_ref="oval:com.redhat.rhsa:obj:20226224003"/>
  <red-def:state state_ref="oval:com.redhat.rhsa:ste:20230946003"/>
 </red-def:rpminfo_test>
-<red-def:rpminfo_test check="at least one" comment="openssl-perl is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946007" version="635">
+<red-def:rpminfo_test check="at least one" comment="openssl-perl is earlier than 1:3.0.1-47.el9_1" id="oval:com.redhat.rhsa:tst:20230946007" version="639">
  <red-def:object object_ref="oval:com.redhat.rhsa:obj:20226224004"/>
  <red-def:state state_ref="oval:com.redhat.rhsa:ste:20230946001"/>
 </red-def:rpminfo_test>
@@ -32821,11 +32821,11 @@ For more details about the security issue(s), including the impact, a CVSS score
  <red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64</red-def:arch>
  <red-def:evr datatype="evr_string" operation="less than">0:2.36.7-1.el9_1.2</red-def:evr>
 </red-def:rpminfo_state>
-<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20230946001" version="635">
+<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20230946001" version="639">
  <red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
  <red-def:evr datatype="evr_string" operation="less than">1:3.0.1-47.el9_1</red-def:evr>
 </red-def:rpminfo_state>
-<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20230946003" version="635">
+<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20230946003" version="639">
  <red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64</red-def:arch>
  <red-def:evr datatype="evr_string" operation="less than">1:3.0.1-47.el9_1</red-def:evr>
 </red-def:rpminfo_state>
