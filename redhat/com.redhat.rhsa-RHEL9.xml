@@ -4,8 +4,8 @@
 <oval:product_name>Red Hat OVAL Patch Definition Merger</oval:product_name>
 <oval:product_version>3</oval:product_version>
 <oval:schema_version>5.10</oval:schema_version>
-<oval:timestamp>2023-03-21T23:34:51</oval:timestamp>
-<oval:content_version>1679441691</oval:content_version>
+<oval:timestamp>2023-03-23T16:35:07</oval:timestamp>
+<oval:content_version>1679589307</oval:content_version>
 </generator>
 <definitions>
 <definition class="patch" id="oval:com.redhat.rhba:def:20225749" version="635">
@@ -18230,6 +18230,156 @@ For more details about the security issue(s), including the impact, a CVSS score
   </criteria>
  </criteria>
 </definition>
+<definition class="patch" id="oval:com.redhat.rhsa:def:20231368" version="638">
+ <metadata>
+  <title>RHSA-2023:1368: nss security and bug fix update (Important)</title>
+  <affected family="unix">
+   <platform>Red Hat Enterprise Linux 9</platform>
+  </affected>
+  <reference ref_id="RHSA-2023:1368" ref_url="https://access.redhat.com/errata/RHSA-2023:1368" source="RHSA"/>
+  <reference ref_id="CVE-2023-0767" ref_url="https://access.redhat.com/security/cve/CVE-2023-0767" source="CVE"/>
+  <description>Network Security Services (NSS) is a set of libraries designed to support the cross-platform development of security-enabled client and server applications.
+
+Security Fix(es):
+
+* nss: Arbitrary memory write via PKCS 12 (CVE-2023-0767)
+
+Bug Fix(es):
+
+* In FIPS mode, nss should reject RSASSA-PSS salt lengths larger than the output size of the hash function used, or provide an indicator. (BZ#2177434)
+
+* Need to update FIPS review comments into NSS RHEL-9. (BZ#2177875)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.</description>
+  <advisory from="secalert@redhat.com">
+   <severity>Important</severity>
+   <rights>Copyright 2023 Red Hat, Inc.</rights>
+   <issued date="2023-03-21"/>
+   <updated date="2023-03-21"/>
+   <cve cvss3="7.5/CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H" cwe="CWE-119" href="https://access.redhat.com/security/cve/CVE-2023-0767" impact="important" public="20230214">CVE-2023-0767</cve>
+   <bugzilla href="https://bugzilla.redhat.com/2170377" id="2170377">CVE-2023-0767 nss: Arbitrary memory write via PKCS 12</bugzilla>
+   <affected_cpe_list>
+    <cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
+    <cpe>cpe:/a:redhat:enterprise_linux:9::appstream</cpe>
+   </affected_cpe_list>
+  </advisory>
+ </metadata>
+ <criteria operator="OR">
+  <criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20225749024"/>
+  <criteria operator="AND">
+   <criterion comment="Red Hat Enterprise Linux 9 is installed" test_ref="oval:com.redhat.rhba:tst:20225749023"/>
+   <criteria operator="OR">
+    <criteria operator="AND">
+     <criterion comment="nspr is earlier than 0:4.34.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368001"/>
+     <criterion comment="nspr is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368002"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nspr-devel is earlier than 0:4.34.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368003"/>
+     <criterion comment="nspr-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368004"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368005"/>
+     <criterion comment="nss is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368006"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-devel is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368007"/>
+     <criterion comment="nss-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368008"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-softokn is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368009"/>
+     <criterion comment="nss-softokn is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368010"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-softokn-devel is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368011"/>
+     <criterion comment="nss-softokn-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368012"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-softokn-freebl is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368013"/>
+     <criterion comment="nss-softokn-freebl is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368014"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-softokn-freebl-devel is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368015"/>
+     <criterion comment="nss-softokn-freebl-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368016"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-sysinit is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368017"/>
+     <criterion comment="nss-sysinit is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368018"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-tools is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368019"/>
+     <criterion comment="nss-tools is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368020"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-util is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368021"/>
+     <criterion comment="nss-util is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368022"/>
+    </criteria>
+    <criteria operator="AND">
+     <criterion comment="nss-util-devel is earlier than 0:3.79.0-17.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231368023"/>
+     <criterion comment="nss-util-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20231368024"/>
+    </criteria>
+   </criteria>
+  </criteria>
+ </criteria>
+</definition>
+<definition class="patch" id="oval:com.redhat.rhsa:def:20231407" version="635">
+ <metadata>
+  <title>RHSA-2023:1407: thunderbird security update (Important)</title>
+  <affected family="unix">
+   <platform>Red Hat Enterprise Linux 9</platform>
+  </affected>
+  <reference ref_id="RHSA-2023:1407" ref_url="https://access.redhat.com/errata/RHSA-2023:1407" source="RHSA"/>
+  <reference ref_id="CVE-2023-25751" ref_url="https://access.redhat.com/security/cve/CVE-2023-25751" source="CVE"/>
+  <reference ref_id="CVE-2023-25752" ref_url="https://access.redhat.com/security/cve/CVE-2023-25752" source="CVE"/>
+  <reference ref_id="CVE-2023-28162" ref_url="https://access.redhat.com/security/cve/CVE-2023-28162" source="CVE"/>
+  <reference ref_id="CVE-2023-28164" ref_url="https://access.redhat.com/security/cve/CVE-2023-28164" source="CVE"/>
+  <reference ref_id="CVE-2023-28176" ref_url="https://access.redhat.com/security/cve/CVE-2023-28176" source="CVE"/>
+  <description>Mozilla Thunderbird is a standalone mail and newsgroup client.
+
+This update upgrades Thunderbird to version 102.9.0.
+
+Security Fix(es):
+
+* Mozilla: Incorrect code generation during JIT compilation (CVE-2023-25751)
+
+* Mozilla: Memory safety bugs fixed in Firefox 111 and Firefox ESR 102.9 (CVE-2023-28176)
+
+* Mozilla: Potential out-of-bounds when accessing throttled streams (CVE-2023-25752)
+
+* Mozilla: Invalid downcast in Worklets (CVE-2023-28162)
+
+* Mozilla: URL being dragged from a removed cross-origin iframe into the same tab triggered navigation (CVE-2023-28164)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.</description>
+  <advisory from="secalert@redhat.com">
+   <severity>Important</severity>
+   <rights>Copyright 2023 Red Hat, Inc.</rights>
+   <issued date="2023-03-22"/>
+   <updated date="2023-03-22"/>
+   <cve cvss3="7.5/CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H" cwe="CWE-94" href="https://access.redhat.com/security/cve/CVE-2023-25751" impact="important" public="20230314">CVE-2023-25751</cve>
+   <cve cvss3="6.1/CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cwe="CWE-125" href="https://access.redhat.com/security/cve/CVE-2023-25752" impact="moderate" public="20230314">CVE-2023-25752</cve>
+   <cve cvss3="6.1/CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cwe="CWE-704" href="https://access.redhat.com/security/cve/CVE-2023-28162" impact="moderate" public="20230314">CVE-2023-28162</cve>
+   <cve cvss3="6.1/CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cwe="CWE-829" href="https://access.redhat.com/security/cve/CVE-2023-28164" impact="moderate" public="20230314">CVE-2023-28164</cve>
+   <cve cvss3="7.5/CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H" cwe="CWE-120" href="https://access.redhat.com/security/cve/CVE-2023-28176" impact="important" public="20230314">CVE-2023-28176</cve>
+   <bugzilla href="https://bugzilla.redhat.com/2178458" id="2178458">CVE-2023-25751 Mozilla: Incorrect code generation during JIT compilation</bugzilla>
+   <bugzilla href="https://bugzilla.redhat.com/2178460" id="2178460">CVE-2023-25752 Mozilla: Potential out-of-bounds when accessing throttled streams</bugzilla>
+   <bugzilla href="https://bugzilla.redhat.com/2178466" id="2178466">CVE-2023-28162 Mozilla: Invalid downcast in Worklets</bugzilla>
+   <bugzilla href="https://bugzilla.redhat.com/2178470" id="2178470">CVE-2023-28164 Mozilla: URL being dragged from a removed cross-origin iframe into the same tab triggered navigation</bugzilla>
+   <bugzilla href="https://bugzilla.redhat.com/2178472" id="2178472">CVE-2023-28176 Mozilla: Memory safety bugs fixed in Firefox 111 and Firefox ESR 102.9</bugzilla>
+   <affected_cpe_list>
+    <cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
+    <cpe>cpe:/a:redhat:enterprise_linux:9::appstream</cpe>
+   </affected_cpe_list>
+  </advisory>
+ </metadata>
+ <criteria operator="OR">
+  <criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20225749024"/>
+  <criteria operator="AND">
+   <criterion comment="Red Hat Enterprise Linux 9 is installed" test_ref="oval:com.redhat.rhba:tst:20225749023"/>
+   <criterion comment="thunderbird is earlier than 0:102.9.0-1.el9_1" test_ref="oval:com.redhat.rhsa:tst:20231407001"/>
+   <criterion comment="thunderbird is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:20224589002"/>
+  </criteria>
+ </criteria>
+</definition>
 </definitions>
 <tests>
 <red-def:rpminfo_test check="at least one" comment="aspnetcore-runtime-6.0 is earlier than 0:6.0.7-1.el9_0" id="oval:com.redhat.rhba:tst:20225749001" version="635">
@@ -28582,6 +28732,106 @@ For more details about the security issue(s), including the impact, a CVSS score
  <red-def:object object_ref="oval:com.redhat.rhsa:obj:20230810002"/>
  <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231337001"/>
 </red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nspr is earlier than 0:4.34.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368001" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368001"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368001"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nspr is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368002" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368001"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nspr-devel is earlier than 0:4.34.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368003" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368002"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368001"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nspr-devel is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368004" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368002"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368005" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368003"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368006" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368003"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-devel is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368007" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368004"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-devel is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368008" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368004"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368009" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368005"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368010" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368005"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn-devel is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368011" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368006"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn-devel is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368012" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368006"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn-freebl is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368013" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368007"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn-freebl is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368014" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368007"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn-freebl-devel is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368015" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368008"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-softokn-freebl-devel is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368016" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368008"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-sysinit is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368017" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368009"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368004"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-sysinit is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368018" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368009"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-tools is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368019" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368010"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368004"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-tools is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368020" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368010"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-util is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368021" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368011"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-util is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368022" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368011"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-util-devel is earlier than 0:3.79.0-17.el9_1" id="oval:com.redhat.rhsa:tst:20231368023" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368012"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231368003"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="nss-util-devel is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:20231368024" version="638">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20231368012"/>
+ <red-def:state state_ref="oval:com.redhat.rhba:ste:20225749002"/>
+</red-def:rpminfo_test>
+<red-def:rpminfo_test check="at least one" comment="thunderbird is earlier than 0:102.9.0-1.el9_1" id="oval:com.redhat.rhsa:tst:20231407001" version="635">
+ <red-def:object object_ref="oval:com.redhat.rhsa:obj:20224589001"/>
+ <red-def:state state_ref="oval:com.redhat.rhsa:ste:20231407001"/>
+</red-def:rpminfo_test>
 </tests>
 <objects>
 <red-def:rpminfo_object id="oval:com.redhat.rhba:obj:20225749001" version="635">
@@ -31339,6 +31589,42 @@ For more details about the security issue(s), including the impact, a CVSS score
 <red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231068005" version="636">
  <red-def:name>turbojpeg-devel</red-def:name>
 </red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368001" version="638">
+ <red-def:name>nspr</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368002" version="638">
+ <red-def:name>nspr-devel</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368003" version="638">
+ <red-def:name>nss</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368004" version="638">
+ <red-def:name>nss-devel</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368005" version="638">
+ <red-def:name>nss-softokn</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368006" version="638">
+ <red-def:name>nss-softokn-devel</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368007" version="638">
+ <red-def:name>nss-softokn-freebl</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368008" version="638">
+ <red-def:name>nss-softokn-freebl-devel</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368009" version="638">
+ <red-def:name>nss-sysinit</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368010" version="638">
+ <red-def:name>nss-tools</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368011" version="638">
+ <red-def:name>nss-util</red-def:name>
+</red-def:rpminfo_object>
+<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:20231368012" version="638">
+ <red-def:name>nss-util-devel</red-def:name>
+</red-def:rpminfo_object>
 </objects>
 <states>
 <red-def:rpminfo_state id="oval:com.redhat.rhba:ste:20225749001" version="635">
@@ -32946,6 +33232,22 @@ For more details about the security issue(s), including the impact, a CVSS score
 <red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20231337001" version="635">
  <red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
  <red-def:evr datatype="evr_string" operation="less than">0:102.9.0-3.el9_1</red-def:evr>
+</red-def:rpminfo_state>
+<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20231368001" version="638">
+ <red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64</red-def:arch>
+ <red-def:evr datatype="evr_string" operation="less than">0:4.34.0-17.el9_1</red-def:evr>
+</red-def:rpminfo_state>
+<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20231368003" version="638">
+ <red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64</red-def:arch>
+ <red-def:evr datatype="evr_string" operation="less than">0:3.79.0-17.el9_1</red-def:evr>
+</red-def:rpminfo_state>
+<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20231368004" version="638">
+ <red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
+ <red-def:evr datatype="evr_string" operation="less than">0:3.79.0-17.el9_1</red-def:evr>
+</red-def:rpminfo_state>
+<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:20231407001" version="635">
+ <red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
+ <red-def:evr datatype="evr_string" operation="less than">0:102.9.0-1.el9_1</red-def:evr>
 </red-def:rpminfo_state>
 </states>
 <variables>
