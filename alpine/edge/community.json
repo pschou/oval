@@ -834,7 +834,8 @@
 						"CVE-2021-38171",
 						"CVE-2021-38291"
 					],
-					"5.1-r1": ["ALPINE-14094"]
+					"5.1-r1": ["ALPINE-14094"],
+					"5.1.3-r0": ["CVE-2022-3964","CVE-2022-3965"]
 				}
 			}
 		},
@@ -1507,6 +1508,7 @@
 				}
 			}
 		},
+		{"pkg": {"name": "gitlab-runner","secfixes": {"15.10.0-r0": ["CVE-2022-1996"]}}},
 		{"pkg": {"name": "glib-networking","secfixes": {"2.64.3-r0": ["CVE-2020-13645"]}}},
 		{"pkg": {"name": "gnome-autoar","secfixes": {"0.3.1-r0": ["CVE-2021-28650","CVE-2020-36241"]}}},
 		{"pkg": {"name": "gnome-shell","secfixes": {"0": ["CVE-2019-3820"]}}},
