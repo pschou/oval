@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-04T04:36:06</oval:timestamp>
+		<oval:timestamp>2023-04-05T00:36:17</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3420,6 +3420,73 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:625596840917099705725083580570971197087" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:59951000000" version="1" class="patch">
+			<metadata>
+				<title>USN-5995-1 -- Vim vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-5995-1" ref_id="USN-5995-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-0413" ref_id="CVE-2022-0413" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1629" ref_id="CVE-2022-1629" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1674" ref_id="CVE-2022-1674" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1720" ref_id="CVE-2022-1720" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1733" ref_id="CVE-2022-1733" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1735" ref_id="CVE-2022-1735" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1785" ref_id="CVE-2022-1785" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1796" ref_id="CVE-2022-1796" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1851" ref_id="CVE-2022-1851" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1898" ref_id="CVE-2022-1898" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1927" ref_id="CVE-2022-1927" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1942" ref_id="CVE-2022-1942" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-1968" ref_id="CVE-2022-1968" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2124" ref_id="CVE-2022-2124" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2125" ref_id="CVE-2022-2125" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2126" ref_id="CVE-2022-2126" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2129" ref_id="CVE-2022-2129" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2175" ref_id="CVE-2022-2175" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2183" ref_id="CVE-2022-2183" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2206" ref_id="CVE-2022-2206" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2304" ref_id="CVE-2022-2304" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2344" ref_id="CVE-2022-2344" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2345" ref_id="CVE-2022-2345" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2571" ref_id="CVE-2022-2571" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2581" ref_id="CVE-2022-2581" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2845" ref_id="CVE-2022-2845" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2849" ref_id="CVE-2022-2849" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2923" ref_id="CVE-2022-2923" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2946" ref_id="CVE-2022-2946" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2980" ref_id="CVE-2022-2980" />
+				<description>It was discovered that Vim incorrectly handled memory when opening certain files. If an attacker could trick a user into opening a specially crafted file, it could cause Vim to crash, or possible execute arbitrary code. This issue only affected Ubuntu 14.04 ESM, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-0413, CVE-2022-1629, CVE-2022-1674, CVE-2022-1733, CVE-2022-1735, CVE-2022-1785, CVE-2022-1796, CVE-2022-1851, CVE-2022-1898, CVE-2022-1942, CVE-2022-1968, CVE-2022-2124, CVE-2022-2125, CVE-2022-2126, CVE-2022-2129, CVE-2022-2175, CVE-2022-2183, CVE-2022-2206, CVE-2022-2304, CVE-2022-2345, CVE-2022-2581)  It was discovered that Vim incorrectly handled memory when opening certain files. If an attacker could trick a user into opening a specially crafted file, it could cause Vim to crash, or possible execute arbitrary code. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-1720, CVE-2022-2571, CVE-2022-2845, CVE-2022-2849, CVE-2022-2923)  It was discovered that Vim incorrectly handled memory when opening certain files. If an attacker could trick a user into opening a specially crafted file, it could cause Vim to crash, or possible execute arbitrary code. This issue only affected Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2022-1927, CVE-2022-2344)  It was discovered that Vim incorrectly handled memory when opening certain files. If an attacker could trick a user into opening a specially crafted file, it could cause Vim to crash, or possible execute arbitrary code. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2022-2946)  It was discovered that Vim incorrectly handled memory when opening certain files. If an attacker could trick a user into opening a specially crafted file, it could cause Vim to crash, or possible execute arbitrary code. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2022-2980)  Update Instructions:  Run `sudo pro fix USN-5995-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  vim - 2:9.0.0242-1ubuntu1.3 vim-athena - 2:9.0.0242-1ubuntu1.3 vim-common - 2:9.0.0242-1ubuntu1.3 vim-doc - 2:9.0.0242-1ubuntu1.3 vim-gtk3 - 2:9.0.0242-1ubuntu1.3 vim-gui-common - 2:9.0.0242-1ubuntu1.3 vim-motif - 2:9.0.0242-1ubuntu1.3 vim-nox - 2:9.0.0242-1ubuntu1.3 vim-runtime - 2:9.0.0242-1ubuntu1.3 vim-tiny - 2:9.0.0242-1ubuntu1.3 xxd - 2:9.0.0242-1ubuntu1.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-04" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:571207872408173069797352554054969215294" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:59961000000" version="1" class="patch">
+			<metadata>
+				<title>USN-5996-1 -- Liblouis vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-5996-1" ref_id="USN-5996-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-26767" ref_id="CVE-2023-26767" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-26768" ref_id="CVE-2023-26768" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-26769" ref_id="CVE-2023-26769" />
+				<description>It was discovered that Liblouis incorrectly handled certain files. An attacker could possibly use this issue to cause a denial of service. (CVE-2023-26767, CVE-2023-26768, CVE-2023-26769)  Update Instructions:  Run `sudo pro fix USN-5996-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  liblouis20 - 3.22.0-2ubuntu0.1 liblouis-bin - 3.22.0-2ubuntu0.1 liblouis-data - 3.22.0-2ubuntu0.1 liblouis-dev - 3.22.0-2ubuntu0.1 python3-louis - 3.22.0-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-04" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:604626605910464385799856615683432680124" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3802,6 +3869,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:539019282656729681890002107787588261560" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:450333258038937536014997877899761634943" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:571207872408173069797352554054969215294" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:488426871450727028163627862004609451061" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:563507060792982388084438279094352765957" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:577690057776866873571193652483723940129" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:581075157853598596806597247266424538657" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:440510110398131717525240911607057082994" />
@@ -3861,6 +3932,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:601374345873810786418286570723649443392" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:506457565443366146711032874693599826217" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:483036675422228321710483912559740403719" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:604626605910464385799856615683432680124" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:424267758588978987419946776180368327166" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:512702728467705540153493394443278468605" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:607460625165591917167570794610545591725" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:485137222742689566080433019027176723440" />
@@ -4343,11 +4418,6 @@
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:503336970162040137695972990492217265219" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:529210388683556803469448498599932893015</ind:var_ref>
 		</ind:variable_object>
-		<ind:textfilecontent54_object id="oval:com.ubuntu.kinetic:obj:523128477417465112718916931145504218028" version="1">
-			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
-			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
-			<ind:instance datatype="int">1</ind:instance>
-		</ind:textfilecontent54_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:527617596178338357683702466655261828595" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:657039857821125192190415580985514101641</ind:var_ref>
 		</ind:variable_object>
@@ -4428,19 +4498,19 @@
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:657039857821125192190415580985514101641</ind:var_ref>
 		</ind:variable_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:341317334342184097917369363406614893986" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:455160655153423709495814215318404203083" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:625990332296635553621155749397718989483" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:342370123155386764904368771411299441376" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:655167790482794012757764397431005982943" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:345339145709607717985518343066433623376" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:452540953400124495632357038462975185550" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:395968264971203366944466576964145825102" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:347895906529787860107570844844502903761" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:383259416612246404463299349577074278260" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:571522798054080642892263367999020579287" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:348464676069425776177288249147412088723" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:660495170559206769559478866569619208926" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:510125373953636327909798049103931151525" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:351803335949821693886594749623956684252" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:616178400826080496692667376563065986524" var_check="at least one" />
@@ -4461,10 +4531,10 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:446499798091502723762031477449237858505" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:366320276192660685585437155941758216424" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:455160655153423709495814215318404203083" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:625990332296635553621155749397718989483" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:368638085820223652100097644204921478926" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:614586493068582992659178966724075839696" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:529873423621167296310134036801553358023" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:370842113223231316081048664527014718850" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:582256015126319973870238520492203861253" var_check="at least one" />
@@ -4473,19 +4543,19 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:428206834402037039320327407280929522901" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:374248330212056740098897487691206083084" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:393950842915393806055283533269507367178" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:545927264369204356419970115327575735844" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:380515944680029685120653393573841572560" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:406177085487087523872436324463002615327" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:382848211272494289061993483901668578750" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:567068244563923178978482415210504964792" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:574810743722484339355598458534067545440" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:388928923202499162623484360807799693058" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:391725835073011024450013981239418453136" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:592632782666698424374560817823579614643" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:350843336761204939649774173983159959840" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:396062079043425577070845946234851885159" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:455686724582172408663405517290268454416" var_check="at least one" />
@@ -4494,7 +4564,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:434990679508710384348146443265813542704" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:402752517529175642304862632802003805416" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:577252378403701731217386926890802399490" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:388259070898050661086004064752102476021" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:404601597704231915065901865487684106103" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:545723341570662066048649783062953188321" var_check="at least one" />
@@ -4503,10 +4573,10 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:343947270728770728679415346189201756670" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:407709525310882216211662933260322806037" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:554314617152962136342210593394648805072" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:350335239576287472211162310520456165244" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:408609505866381789803667745136553636173" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:393950842915393806055283533269507367178" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:545927264369204356419970115327575735844" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:409823745842138547142366757081012158894" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:345957100761732797820691521581362842201" var_check="at least one" />
@@ -4519,6 +4589,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:421192093713464112046979875879327690804" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:428206834402037039320327407280929522901" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:424267758588978987419946776180368327166" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:373675353819100572766015298195710497071" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:424985018805781383320829574810589204095" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:588198976221805641852886071504056864245" var_check="at least one" />
@@ -4536,7 +4609,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:513292418251734445415653157186482824698" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:436971896728712523883596308930774695144" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:340592192083860056728658898462359718868" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:669769648049874518430368087566546187447" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:437431322027086726535295249115576246398" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:428206834402037039320327407280929522901" var_check="at least one" />
@@ -4563,10 +4636,10 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:649329492167902938502768981582619573477" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:453973658794285997544309729255496954694" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:653436444896901875860628078944275160175" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:672914885543267805959146022178720342867" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:455014885380154101576221463265355821635" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:517646220527328291639466299878199907101" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:539998884741345770111219840159380251694" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:455578541967830952070349866756092078082" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:473789858031559994353317162244846485675" var_check="at least one" />
@@ -4593,16 +4666,19 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:671061096759560505175848184868484527894" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:485137222742689566080433019027176723440" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:386026994812792694885517827014182641088" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:635905396673886184835233154251314084440" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:487439402241418254663104361636139709130" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:619530183886911280040321514642868879475" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:488426871450727028163627862004609451061" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:347843584664133814825649129794385412748" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:493278276589053211583098703304949546425" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:657560612727507364727812869316006386527" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:497528212926504456260253792104178642418" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:393950842915393806055283533269507367178" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:545927264369204356419970115327575735844" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:498574117935917415898994601926990682832" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:617044738928336792866513563487327714732" var_check="at least one" />
@@ -4611,25 +4687,25 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:517770108031795277171336163346090309594" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:499760255147102733994785411065516920277" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:653436444896901875860628078944275160175" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:672914885543267805959146022178720342867" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:499808351222502118848011223248256352243" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:642260890746500258028936512332267822811" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:652033047038182247786945119277488109967" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:501857797998447472646734397548302563412" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:428206834402037039320327407280929522901" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:506252583113748576308790013455323403018" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:347843584664133814825649129794385412748" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:544403331693704723200249545743197426405" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:506457565443366146711032874693599826217" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:526521392556273181914052228717127032844" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:658031231403425476600704878853591693238" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:510506078404453177088476981191841350708" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:442101715844505094118557538310137312306" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:512875263432128638090108578403892825093" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:466633897684677989918152633910752956045" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:362170634862190199070091264445544863704" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:514462415736851529501797018184396635585" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:473789858031559994353317162244846485675" var_check="at least one" />
@@ -4641,7 +4717,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:482593255751296273100713960532940627866" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:518976861282945632835378082562494074210" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:542871523688890489218922266988369497038" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:508691209402511013854533571722966089570" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:526281954375268850801191431098074806339" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:642917223997026211090222810349093146056" var_check="at least one" />
@@ -4659,7 +4735,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:345957100761732797820691521581362842201" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:530413277543132270425266501587627038080" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:594824265726513428098977138834599321613" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:640119578192956240938298889350667837810" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:532778493178489219726293027172440619335" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:447217838297907369461437386939722162974" var_check="at least one" />
@@ -4674,7 +4750,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:497084630077392149000406361682680140300" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:548812793062443868481629691027174713604" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:375769206631370960398193064303152926220" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:401214810314567915402377753225195199561" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:549088750187718035404303206322335864159" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:532301569340229054607224567822257937101" var_check="at least one" />
@@ -4686,10 +4762,10 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:379836329996191268433484282582796619990" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:556793076543106287164070791972707074081" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:455160655153423709495814215318404203083" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:625990332296635553621155749397718989483" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:563265144638806191057241444501486349437" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:386026994812792694885517827014182641088" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:635905396673886184835233154251314084440" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:564146832588075813601844204074678398598" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:624827393537619041670211768643918935466" var_check="at least one" />
@@ -4704,10 +4780,10 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:482593255751296273100713960532940627866" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:573519683630631707353010340704674857194" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:511078760026582207789159223738087989727" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:577922607695697874343278029959749393499" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:573721528450456892399549821976956551731" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:454691955155154090236495492166477850849" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:516382367946144235652514703285645863617" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:574373725992890021504643041740577000528" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:591324819259215993580358351968941856223" var_check="at least one" />
@@ -4719,7 +4795,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:591324819259215993580358351968941856223" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:579658264285174132354000430876963356373" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:459205781425811673566591749557504379419" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:446881194310694271928581378122911465767" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:581075157853598596806597247266424538657" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:442665231607323125153492317704025508306" var_check="at least one" />
@@ -4731,13 +4807,13 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:443358201090126408015485674175823310460" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:589109460118477162832057207086926368443" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:393950842915393806055283533269507367178" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:545927264369204356419970115327575735844" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:589247296177951210272907169765460182421" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:640748783140167100123052950231353089670" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:590168250488591018658402311789590497165" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:653436444896901875860628078944275160175" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:672914885543267805959146022178720342867" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:590328535668121823293233536246969888729" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:422694163485641255173220110426161543066" var_check="at least one" />
@@ -4749,22 +4825,22 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:383119310060616143339171864854602567657" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:597592741821134249474915043720865027853" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:493338218842100976394712326389009022022" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:602064081349375589222517782714833928372" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:600089978188308965729815908520793360710" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:378129801396444177559005169623220502304" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:430584531377327392303810778691689056277" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:609765160532186761548486268279996393124" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:359713928754644920043242841874255005498" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:464116818713138076223928239728776267951" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:611130443070556995862873989719099066782" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:473803198293940621728463478570318117150" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:426462244794487185950041558698891948381" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:613445227988724998579382591692903323151" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:585108740237875601322606811445063137777" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:403012991079665365086897201667429554333" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:613949942436870592831701499421804041844" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:592632782666698424374560817823579614643" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:350843336761204939649774173983159959840" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:614598025128113493790167560528314194588" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:493338218842100976394712326389009022022" var_check="at least one" />
@@ -4773,13 +4849,13 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:545723341570662066048649783062953188321" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:616877634245524947905270543270246418999" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:552192896598082682812294648746243873494" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:405954095203786376128125781941971517371" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:616913667587514926025216496248965273425" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:395745467340773615785629213498215073869" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:616965162569073568035653730863423394929" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:510125373953636327909798049103931151525" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:660495170559206769559478866569619208926" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:620143173645282103447988946805105027145" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:629121345822772655362337005476590733119" var_check="at least one" />
@@ -4788,7 +4864,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:638694283058726874516743067990576610125" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:621090637878273094069238197672551544105" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:660495170559206769559478866569619208926" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:510125373953636327909798049103931151525" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:621719258745689412239324302336725902927" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:473789858031559994353317162244846485675" var_check="at least one" />
@@ -4797,28 +4873,28 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:406177085487087523872436324463002615327" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:622304080027585990277584979251105212189" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:456202396869119926601193757638572177434" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:502629585166697460840569382145698128594" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:623421600767806572002118891092778172441" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:648960540661227764469755724299606587338" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:580716019208604246326082752547901092955" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:628445657803366977340098191020540490983" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:534902390143471065102143358478654185114" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:399592449117462784204376069708461756567" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:632460233789454524583007370889499968612" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:610167835331407453956144989635031509211" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:633405382950523690570312889059933112474" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:375769206631370960398193064303152926220" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:401214810314567915402377753225195199561" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:635271966126695887179702880972112023640" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:669769648049874518430368087566546187447" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:340592192083860056728658898462359718868" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:638361974641248609345791471144460368784" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:533836709359477234888073126892633513074" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:638428867092386732603684847109216252586" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:375769206631370960398193064303152926220" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:401214810314567915402377753225195199561" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:647324618920078023749162189730878525830" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:369697572905337294106186969729055914222" var_check="at least one" />
@@ -4827,7 +4903,7 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:369990160133759991915916106953812022439" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:649360152224186758626186194170318960881" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:513388105910094529201667061514102402116" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:652727801355844446219943900014479595945" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:653517505787167225446209871800349867299" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:353604698838867621100546182582877180102" var_check="at least one" />
@@ -4836,16 +4912,16 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:509791402370841902279513060265055965868" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:655735071754070127683792302779296723067" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:454691955155154090236495492166477850849" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:516382367946144235652514703285645863617" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:656417060035850604095634747045622656028" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:629682023199519278221502729887857464075" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:642116739680086529009198627812898157841" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:659116844937877423639483627417062500193" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:624827393537619041670211768643918935466" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:661588746929174994531094234174002010195" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:454691955155154090236495492166477850849" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:516382367946144235652514703285645863617" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:662425729800103011055101146302189312694" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:659791125656350726284991968514462264078" var_check="at least one" />
@@ -4863,8 +4939,13 @@
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:341695557197855467418773240737081245503" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:680223231786208703691241344098139347665" version="1" comment="Interim Release">
-			<linux:name var_ref="oval:com.ubuntu.kinetic:var:401214810314567915402377753225195199561" var_check="at least one" />
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:375769206631370960398193064303152926220" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<ind:textfilecontent54_object id="oval:com.ubuntu.kinetic:obj:523128477417465112718916931145504218028" version="1">
+			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
+			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
 	</objects>
 	<states>
 		<unix:uname_state id="oval:com.ubuntu.kinetic:ste:346591533375972471703269387603637946040" version="1">
@@ -5149,6 +5230,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:512055001636906601365277728700025502094" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.6+10-0ubuntu1~22.10</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:512702728467705540153493394443278468605" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.22.0-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:518672466763727786517671121406892984760" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.32-0ubuntu0.22.10.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -5211,6 +5295,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:561895552699141326900272208886644310000" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.18.2-6ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:563507060792982388084438279094352765957" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.0242-1ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:566646032146011752606616797555101711611" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.29-1ubuntu0.22.10.1</linux:evr>
@@ -5352,104 +5439,273 @@
 		</ind:textfilecontent54_state>
 	</states>
 	<variables>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:340592192083860056728658898462359718868" version="1" datatype="string" comment="Interim Release">
-			<value>libmysqlclient21</value>
-			<value>libmysqlclient-dev</value>
-			<value>mysql-client</value>
-			<value>mysql-client-8.0</value>
-			<value>mysql-client-core-8.0</value>
-			<value>mysql-router</value>
-			<value>mysql-server</value>
-			<value>mysql-server-8.0</value>
-			<value>mysql-server-core-8.0</value>
-			<value>mysql-source-8.0</value>
-			<value>mysql-testsuite</value>
-			<value>mysql-testsuite-8.0</value>
+		<local_variable id="oval:com.ubuntu.kinetic:var:390385284507746660438517495235956958270" datatype="debian_evr_string" version="1" comment="kernel version in evr format">
+			<concat>
+				<literal_component>0:</literal_component>
+				<regex_capture pattern="^([\d|\.]+-\d+)[-|\w]+$">
+					<object_component object_ref="oval:com.ubuntu.kinetic:obj:539257525261347833398619290667170696549" item_field="os_release" />
+				</regex_capture>
+			</concat>
+		</local_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:539986564341759182963821236732537700812" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-23</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:341695557197855467418773240737081245503" version="1" datatype="string" comment="Interim Release">
-			<value>libsofia-sip-ua0</value>
-			<value>libsofia-sip-ua-dev</value>
-			<value>libsofia-sip-ua-glib3</value>
-			<value>libsofia-sip-ua-glib-dev</value>
-			<value>sofia-sip-bin</value>
-			<value>sofia-sip-doc</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:593137034869623951318896256352028800053" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-26</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:343947270728770728679415346189201756670" version="1" datatype="string" comment="Interim Release">
-			<value>expat</value>
-			<value>libexpat1</value>
-			<value>libexpat1-dev</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:632356669451100126386394463189902179022" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-28</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:345957100761732797820691521581362842201" version="1" datatype="string" comment="Interim Release">
-			<value>libksba8</value>
-			<value>libksba-dev</value>
-			<value>libksba-mingw-w64-dev</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:540431302184678085508224175649620226077" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-29</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:347843584664133814825649129794385412748" version="1" datatype="string" comment="Interim Release">
-			<value>vim</value>
-			<value>vim-athena</value>
-			<value>vim-common</value>
-			<value>vim-doc</value>
-			<value>vim-gtk3</value>
-			<value>vim-gui-common</value>
-			<value>vim-motif</value>
-			<value>vim-nox</value>
-			<value>vim-runtime</value>
-			<value>vim-tiny</value>
-			<value>xxd</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:584316296219237954025489867593204397157" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-31</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:352801790174052411626299755271157951056" version="1" datatype="string" comment="Interim Release">
-			<value>libyaml-snake-java</value>
-			<value>libyaml-snake-java-doc</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:544364064732792940022838387163186759770" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-35</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:353604698838867621100546182582877180102" version="1" datatype="string" comment="Interim Release">
-			<value>libsubid4</value>
-			<value>libsubid-dev</value>
-			<value>login</value>
-			<value>passwd</value>
-			<value>uidmap</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:494683887320226618267264777271327636829" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-38</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:359432254461643294086424537083203456219" version="1" datatype="string" comment="Interim Release">
-			<value>exuberant-ctags</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:464923950276016422808312467057545872242" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1006</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:359713928754644920043242841874255005498" version="1" datatype="string" comment="Interim Release">
+		<constant_variable id="oval:com.ubuntu.kinetic:var:516276169035398338594658930205337608515" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1009</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:565358470189432031386687060192621155081" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1010</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:518600525001795142806560325364429042878" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1011</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:602320225009669386119397288585406788825" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1012</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:423038422882454267077261994212225292794" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1013</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:657039857821125192190415580985514101641" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1014</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:509658038786099305735747632384985906164" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1015</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:529210388683556803469448498599932893015" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1016</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:542972900253170952465693910115177988874" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1017</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:531213376475786615051170359370599445726" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1018</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:612059322204479928295170551692073942049" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1019</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:499903678034013214122256009603615943132" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1020</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:527963333460976022114995103259347436954" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1021</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:502912966637286531316433520735928499983" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1022</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:588198976221805641852886071504056864245" version="1" datatype="string" comment="Interim Release">
+			<value>advancecomp</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:616178400826080496692667376563065986524" version="1" datatype="string" comment="Interim Release">
+			<value>amanda-client</value>
+			<value>amanda-common</value>
+			<value>amanda-server</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:442101715844505094118557538310137312306" version="1" datatype="string" comment="Interim Release">
+			<value>apache2</value>
+			<value>apache2-bin</value>
+			<value>apache2-data</value>
+			<value>apache2-dev</value>
+			<value>apache2-doc</value>
+			<value>apache2-ssl-dev</value>
+			<value>apache2-suexec-custom</value>
+			<value>apache2-suexec-pristine</value>
+			<value>apache2-utils</value>
+			<value>libapache2-mod-md</value>
+			<value>libapache2-mod-proxy-uwsgi</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:443358201090126408015485674175823310460" version="1" datatype="string" comment="Interim Release">
+			<value>libaprutil1</value>
+			<value>libaprutil1-dbd-mysql</value>
+			<value>libaprutil1-dbd-odbc</value>
+			<value>libaprutil1-dbd-pgsql</value>
+			<value>libaprutil1-dbd-sqlite3</value>
+			<value>libaprutil1-dev</value>
+			<value>libaprutil1-ldap</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:529873423621167296310134036801553358023" version="1" datatype="string" comment="Interim Release">
+			<value>aspnetcore-runtime-6.0</value>
+			<value>aspnetcore-targeting-pack-6.0</value>
+			<value>dotnet6</value>
+			<value>dotnet-apphost-pack-6.0</value>
+			<value>dotnet-host</value>
+			<value>dotnet-hostfxr-6.0</value>
+			<value>dotnet-runtime-6.0</value>
+			<value>dotnet-sdk-6.0</value>
+			<value>dotnet-sdk-6.0-source-built-artifacts</value>
+			<value>dotnet-targeting-pack-6.0</value>
+			<value>dotnet-templates-6.0</value>
+			<value>netstandard-targeting-pack-2.1</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:633892453309035195056869752622102278477" version="1" datatype="string" comment="Interim Release">
+			<value>awstats</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:659791125656350726284991968514462264078" version="1" datatype="string" comment="Interim Release">
+			<value>backport-iwlwifi-dkms</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:489086543750979055626949561922591700186" version="1" datatype="string" comment="Interim Release">
+			<value>bind9</value>
+			<value>bind9-dev</value>
+			<value>bind9-dnsutils</value>
+			<value>bind9-doc</value>
+			<value>bind9-host</value>
+			<value>bind9-libs</value>
+			<value>bind9-utils</value>
+			<value>bind9utils</value>
+			<value>dnsutils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:539998884741345770111219840159380251694" version="1" datatype="string" comment="Interim Release">
+			<value>binutils</value>
+			<value>binutils-aarch64-linux-gnu</value>
+			<value>binutils-alpha-linux-gnu</value>
+			<value>binutils-arm-linux-gnueabi</value>
+			<value>binutils-arm-linux-gnueabihf</value>
+			<value>binutils-common</value>
+			<value>binutils-dev</value>
+			<value>binutils-doc</value>
+			<value>binutils-for-build</value>
+			<value>binutils-for-host</value>
+			<value>binutils-hppa64-linux-gnu</value>
+			<value>binutils-hppa-linux-gnu</value>
+			<value>binutils-i686-gnu</value>
+			<value>binutils-i686-kfreebsd-gnu</value>
+			<value>binutils-i686-linux-gnu</value>
+			<value>binutils-ia64-linux-gnu</value>
+			<value>binutils-m68k-linux-gnu</value>
+			<value>binutils-multiarch</value>
+			<value>binutils-multiarch-dev</value>
+			<value>binutils-powerpc64-linux-gnu</value>
+			<value>binutils-powerpc64le-linux-gnu</value>
+			<value>binutils-powerpc-linux-gnu</value>
+			<value>binutils-riscv64-linux-gnu</value>
+			<value>binutils-s390x-linux-gnu</value>
+			<value>binutils-sh4-linux-gnu</value>
+			<value>binutils-source</value>
+			<value>binutils-sparc64-linux-gnu</value>
+			<value>binutils-x86-64-kfreebsd-gnu</value>
+			<value>binutils-x86-64-linux-gnu</value>
+			<value>binutils-x86-64-linux-gnux32</value>
+			<value>libbinutils</value>
+			<value>libctf0</value>
+			<value>libctf-nobfd0</value>
+			<value>libgprofng0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:396234418972084306138078714379709091094" version="1" datatype="string" comment="Interim Release">
+			<value>ca-certificates</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:577922607695697874343278029959749393499" version="1" datatype="string" comment="Interim Release">
+			<value>cinder-api</value>
+			<value>cinder-backup</value>
+			<value>cinder-common</value>
+			<value>cinder-scheduler</value>
+			<value>cinder-volume</value>
+			<value>python3-cinder</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:502629585166697460840569382145698128594" version="1" datatype="string" comment="Interim Release">
+			<value>clamav</value>
+			<value>clamav-base</value>
+			<value>clamav-daemon</value>
+			<value>clamav-docs</value>
+			<value>clamav-freshclam</value>
+			<value>clamav-milter</value>
+			<value>clamav-testfiles</value>
+			<value>clamdscan</value>
+			<value>libclamav9</value>
+			<value>libclamav-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:619530183886911280040321514642868879475" version="1" datatype="string" comment="Interim Release">
+			<value>containerd</value>
+			<value>golang-github-containerd-containerd-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:624827393537619041670211768643918935466" version="1" datatype="string" comment="Interim Release">
+			<value>ctdb</value>
+			<value>libnss-winbind</value>
+			<value>libpam-winbind</value>
+			<value>libsmbclient</value>
+			<value>libsmbclient-dev</value>
+			<value>libwbclient0</value>
+			<value>libwbclient-dev</value>
+			<value>python3-samba</value>
+			<value>registry-tools</value>
+			<value>samba</value>
+			<value>samba-common</value>
+			<value>samba-common-bin</value>
+			<value>samba-dev</value>
+			<value>samba-dsdb-modules</value>
+			<value>samba-libs</value>
+			<value>samba-testsuite</value>
+			<value>samba-vfs-modules</value>
+			<value>smbclient</value>
+			<value>winbind</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:406177085487087523872436324463002615327" version="1" datatype="string" comment="Interim Release">
+			<value>curl</value>
+			<value>libcurl3-gnutls</value>
+			<value>libcurl3-nss</value>
+			<value>libcurl4</value>
+			<value>libcurl4-doc</value>
+			<value>libcurl4-gnutls-dev</value>
+			<value>libcurl4-nss-dev</value>
+			<value>libcurl4-openssl-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:403012991079665365086897201667429554333" version="1" datatype="string" comment="Interim Release">
+			<value>dbus</value>
+			<value>dbus-1-doc</value>
+			<value>dbus-bin</value>
+			<value>dbus-daemon</value>
+			<value>dbus-session-bus-common</value>
+			<value>dbus-system-bus-common</value>
+			<value>dbus-tests</value>
+			<value>dbus-user-session</value>
+			<value>dbus-x11</value>
+			<value>libdbus-1-3</value>
+			<value>libdbus-1-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:497084630077392149000406361682680140300" version="1" datatype="string" comment="Interim Release">
+			<value>dcmtk</value>
+			<value>dcmtk-doc</value>
+			<value>libdcmtk17</value>
+			<value>libdcmtk-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:464116818713138076223928239728776267951" version="1" datatype="string" comment="Interim Release">
 			<value>editorconfig</value>
 			<value>editorconfig-doc</value>
 			<value>libeditorconfig0</value>
 			<value>libeditorconfig-dev</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:369697572905337294106186969729055914222" version="1" datatype="string" comment="Interim Release">
-			<value>golang-golang-x-text-dev</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:658031231403425476600704878853591693238" version="1" datatype="string" comment="Interim Release">
+			<value>elpa-protobuf-mode</value>
+			<value>libprotobuf23</value>
+			<value>libprotobuf-dev</value>
+			<value>libprotobuf-java</value>
+			<value>libprotobuf-lite23</value>
+			<value>libprotoc23</value>
+			<value>libprotoc-dev</value>
+			<value>protobuf-compiler</value>
+			<value>python3-protobuf</value>
+			<value>ruby-google-protobuf</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:369990160133759991915916106953812022439" version="1" datatype="string" comment="Interim Release">
-			<value>kpartx</value>
-			<value>kpartx-boot</value>
-			<value>multipath-tools</value>
-			<value>multipath-tools-boot</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:375769206631370960398193064303152926220" version="1" datatype="string" comment="Interim Release">
-			<value>gir1.2-javascriptcoregtk-4.0</value>
-			<value>gir1.2-javascriptcoregtk-4.1</value>
-			<value>gir1.2-javascriptcoregtk-5.0</value>
-			<value>gir1.2-webkit2-4.0</value>
-			<value>gir1.2-webkit2-4.1</value>
-			<value>gir1.2-webkit2-5.0</value>
-			<value>libjavascriptcoregtk-4.0-18</value>
-			<value>libjavascriptcoregtk-4.0-bin</value>
-			<value>libjavascriptcoregtk-4.0-dev</value>
-			<value>libjavascriptcoregtk-4.1-0</value>
-			<value>libjavascriptcoregtk-4.1-dev</value>
-			<value>libjavascriptcoregtk-5.0-0</value>
-			<value>libjavascriptcoregtk-5.0-dev</value>
-			<value>libwebkit2gtk-4.0-37</value>
-			<value>libwebkit2gtk-4.0-dev</value>
-			<value>libwebkit2gtk-4.0-doc</value>
-			<value>libwebkit2gtk-4.1-0</value>
-			<value>libwebkit2gtk-4.1-dev</value>
-			<value>libwebkit2gtk-5.0-0</value>
-			<value>libwebkit2gtk-5.0-dev</value>
-			<value>webkit2gtk-driver</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:378129801396444177559005169623220502304" version="1" datatype="string" comment="Interim Release">
+		<constant_variable id="oval:com.ubuntu.kinetic:var:430584531377327392303810778691689056277" version="1" datatype="string" comment="Interim Release">
 			<value>exim4</value>
 			<value>exim4-base</value>
 			<value>exim4-config</value>
@@ -5458,18 +5714,15 @@
 			<value>exim4-dev</value>
 			<value>eximon4</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:379836329996191268433484282582796619990" version="1" datatype="string" comment="Interim Release">
-			<value>pypy-pkg-resources</value>
-			<value>pypy-setuptools</value>
-			<value>python2-setuptools-whl</value>
-			<value>python-pkg-resources</value>
-			<value>python-setuptools</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:343947270728770728679415346189201756670" version="1" datatype="string" comment="Interim Release">
+			<value>expat</value>
+			<value>libexpat1</value>
+			<value>libexpat1-dev</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:383119310060616143339171864854602567657" version="1" datatype="string" comment="Interim Release">
-			<value>libbpf0</value>
-			<value>libbpf-dev</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:359432254461643294086424537083203456219" version="1" datatype="string" comment="Interim Release">
+			<value>exuberant-ctags</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:383259416612246404463299349577074278260" version="1" datatype="string" comment="Interim Release">
+		<constant_variable id="oval:com.ubuntu.kinetic:var:571522798054080642892263367999020579287" version="1" datatype="string" comment="Interim Release">
 			<value>ffmpeg</value>
 			<value>ffmpeg-doc</value>
 			<value>libavcodec59</value>
@@ -5495,10 +5748,441 @@
 			<value>libswscale6</value>
 			<value>libswscale-dev</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:385524573855510265400251241115437789364" version="1" datatype="string" comment="Interim Release">
-			<value>rsync</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:405954095203786376128125781941971517371" version="1" datatype="string" comment="Interim Release">
+			<value>freerdp2-dev</value>
+			<value>freerdp2-shadow-x11</value>
+			<value>freerdp2-wayland</value>
+			<value>freerdp2-x11</value>
+			<value>libfreerdp2-2</value>
+			<value>libfreerdp-client2-2</value>
+			<value>libfreerdp-server2-2</value>
+			<value>libfreerdp-shadow2-2</value>
+			<value>libfreerdp-shadow-subsystem2-2</value>
+			<value>libuwac0-0</value>
+			<value>libuwac0-dev</value>
+			<value>libwinpr2-2</value>
+			<value>libwinpr2-dev</value>
+			<value>libwinpr-tools2-2</value>
+			<value>winpr-utils</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:386026994812792694885517827014182641088" version="1" datatype="string" comment="Interim Release">
+		<constant_variable id="oval:com.ubuntu.kinetic:var:375769206631370960398193064303152926220" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-javascriptcoregtk-4.0</value>
+			<value>gir1.2-javascriptcoregtk-4.1</value>
+			<value>gir1.2-javascriptcoregtk-5.0</value>
+			<value>gir1.2-webkit2-4.0</value>
+			<value>gir1.2-webkit2-4.1</value>
+			<value>gir1.2-webkit2-5.0</value>
+			<value>libjavascriptcoregtk-4.0-18</value>
+			<value>libjavascriptcoregtk-4.0-bin</value>
+			<value>libjavascriptcoregtk-4.0-dev</value>
+			<value>libjavascriptcoregtk-4.1-0</value>
+			<value>libjavascriptcoregtk-4.1-dev</value>
+			<value>libjavascriptcoregtk-5.0-0</value>
+			<value>libjavascriptcoregtk-5.0-dev</value>
+			<value>libwebkit2gtk-4.0-37</value>
+			<value>libwebkit2gtk-4.0-dev</value>
+			<value>libwebkit2gtk-4.0-doc</value>
+			<value>libwebkit2gtk-4.1-0</value>
+			<value>libwebkit2gtk-4.1-dev</value>
+			<value>libwebkit2gtk-5.0-0</value>
+			<value>libwebkit2gtk-5.0-dev</value>
+			<value>webkit2gtk-driver</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:401214810314567915402377753225195199561" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-javascriptcoregtk-4.0</value>
+			<value>gir1.2-javascriptcoregtk-4.1</value>
+			<value>gir1.2-javascriptcoregtk-5.0</value>
+			<value>gir1.2-webkit2-4.0</value>
+			<value>gir1.2-webkit2-4.1</value>
+			<value>gir1.2-webkit2-5.0</value>
+			<value>libjavascriptcoregtk-4.0-18</value>
+			<value>libjavascriptcoregtk-4.0-bin</value>
+			<value>libjavascriptcoregtk-4.0-dev</value>
+			<value>libjavascriptcoregtk-4.1-0</value>
+			<value>libjavascriptcoregtk-4.1-dev</value>
+			<value>libjavascriptcoregtk-5.0-0</value>
+			<value>libjavascriptcoregtk-5.0-dev</value>
+			<value>libwebkit2gtk-4.0-37</value>
+			<value>libwebkit2gtk-4.0-dev</value>
+			<value>libwebkit2gtk-4.0-doc</value>
+			<value>libwebkit2gtk-4.1-0</value>
+			<value>libwebkit2gtk-4.1-dev</value>
+			<value>libwebkit2gtk-5.0-0</value>
+			<value>libwebkit2gtk-5.0-dev</value>
+			<value>webkit2gtk-driver</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:516382367946144235652514703285645863617" version="1" datatype="string" comment="Interim Release">
+			<value>git</value>
+			<value>git-all</value>
+			<value>git-cvs</value>
+			<value>git-daemon-run</value>
+			<value>git-daemon-sysvinit</value>
+			<value>git-doc</value>
+			<value>git-email</value>
+			<value>git-gui</value>
+			<value>git-man</value>
+			<value>git-mediawiki</value>
+			<value>git-svn</value>
+			<value>gitk</value>
+			<value>gitweb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:442665231607323125153492317704025508306" version="1" datatype="string" comment="Interim Release">
+			<value>glance</value>
+			<value>glance-api</value>
+			<value>glance-common</value>
+			<value>python3-glance</value>
+			<value>python-glance-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:388259070898050661086004064752102476021" version="1" datatype="string" comment="Interim Release">
+			<value>gnutls-bin</value>
+			<value>gnutls-doc</value>
+			<value>guile-gnutls</value>
+			<value>libgnutls28-dev</value>
+			<value>libgnutls30</value>
+			<value>libgnutls-dane0</value>
+			<value>libgnutls-openssl27</value>
+			<value>libgnutlsxx30</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:629121345822772655362337005476590733119" version="1" datatype="string" comment="Interim Release">
+			<value>golang-1.13</value>
+			<value>golang-1.13-doc</value>
+			<value>golang-1.13-go</value>
+			<value>golang-1.13-src</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:662211377037975816539192553356611374312" version="1" datatype="string" comment="Interim Release">
+			<value>golang-github-snapcore-snapd-dev</value>
+			<value>golang-github-ubuntu-core-snappy-dev</value>
+			<value>snap-confine</value>
+			<value>snapd</value>
+			<value>snapd-xdg-open</value>
+			<value>ubuntu-core-launcher</value>
+			<value>ubuntu-core-snapd-units</value>
+			<value>ubuntu-snappy</value>
+			<value>ubuntu-snappy-cli</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:369697572905337294106186969729055914222" version="1" datatype="string" comment="Interim Release">
+			<value>golang-golang-x-text-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:482593255751296273100713960532940627866" version="1" datatype="string" comment="Interim Release">
+			<value>haproxy</value>
+			<value>haproxy-doc</value>
+			<value>vim-haproxy</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:510125373953636327909798049103931151525" version="1" datatype="string" comment="Interim Release">
+			<value>imagemagick</value>
+			<value>imagemagick-6-common</value>
+			<value>imagemagick-6-doc</value>
+			<value>imagemagick-6.q16</value>
+			<value>imagemagick-6.q16hdri</value>
+			<value>imagemagick-common</value>
+			<value>imagemagick-doc</value>
+			<value>libimage-magick-perl</value>
+			<value>libimage-magick-q16-perl</value>
+			<value>libimage-magick-q16hdri-perl</value>
+			<value>libmagick++-6-headers</value>
+			<value>libmagick++-6.q16-8</value>
+			<value>libmagick++-6.q16-dev</value>
+			<value>libmagick++-6.q16hdri-8</value>
+			<value>libmagick++-6.q16hdri-dev</value>
+			<value>libmagick++-dev</value>
+			<value>libmagickcore-6-arch-config</value>
+			<value>libmagickcore-6-headers</value>
+			<value>libmagickcore-6.q16-6</value>
+			<value>libmagickcore-6.q16-6-extra</value>
+			<value>libmagickcore-6.q16-dev</value>
+			<value>libmagickcore-6.q16hdri-6</value>
+			<value>libmagickcore-6.q16hdri-6-extra</value>
+			<value>libmagickcore-6.q16hdri-dev</value>
+			<value>libmagickcore-dev</value>
+			<value>libmagickwand-6-headers</value>
+			<value>libmagickwand-6.q16-6</value>
+			<value>libmagickwand-6.q16-dev</value>
+			<value>libmagickwand-6.q16hdri-6</value>
+			<value>libmagickwand-6.q16hdri-dev</value>
+			<value>libmagickwand-dev</value>
+			<value>perlmagick</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:660495170559206769559478866569619208926" version="1" datatype="string" comment="Interim Release">
+			<value>imagemagick</value>
+			<value>imagemagick-6-common</value>
+			<value>imagemagick-6-doc</value>
+			<value>imagemagick-6.q16</value>
+			<value>imagemagick-6.q16hdri</value>
+			<value>imagemagick-common</value>
+			<value>imagemagick-doc</value>
+			<value>libimage-magick-perl</value>
+			<value>libimage-magick-q16-perl</value>
+			<value>libimage-magick-q16hdri-perl</value>
+			<value>libmagick++-6-headers</value>
+			<value>libmagick++-6.q16-8</value>
+			<value>libmagick++-6.q16-dev</value>
+			<value>libmagick++-6.q16hdri-8</value>
+			<value>libmagick++-6.q16hdri-dev</value>
+			<value>libmagick++-dev</value>
+			<value>libmagickcore-6-arch-config</value>
+			<value>libmagickcore-6-headers</value>
+			<value>libmagickcore-6.q16-6</value>
+			<value>libmagickcore-6.q16-6-extra</value>
+			<value>libmagickcore-6.q16-dev</value>
+			<value>libmagickcore-6.q16hdri-6</value>
+			<value>libmagickcore-6.q16hdri-6-extra</value>
+			<value>libmagickcore-6.q16hdri-dev</value>
+			<value>libmagickcore-dev</value>
+			<value>libmagickwand-6-headers</value>
+			<value>libmagickwand-6.q16-6</value>
+			<value>libmagickwand-6.q16-dev</value>
+			<value>libmagickwand-6.q16hdri-6</value>
+			<value>libmagickwand-6.q16hdri-dev</value>
+			<value>libmagickwand-dev</value>
+			<value>perlmagick</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
+			<value>intel-microcode</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:610167835331407453956144989635031509211" version="1" datatype="string" comment="Interim Release">
+			<value>isag</value>
+			<value>sysstat</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:649329492167902938502768981582619573477" version="1" datatype="string" comment="Interim Release">
+			<value>jbigkit-bin</value>
+			<value>libjbig0</value>
+			<value>libjbig-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:369990160133759991915916106953812022439" version="1" datatype="string" comment="Interim Release">
+			<value>kpartx</value>
+			<value>kpartx-boot</value>
+			<value>multipath-tools</value>
+			<value>multipath-tools-boot</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:426462244794487185950041558698891948381" version="1" datatype="string" comment="Interim Release">
+			<value>krb5-admin-server</value>
+			<value>krb5-doc</value>
+			<value>krb5-gss-samples</value>
+			<value>krb5-k5tls</value>
+			<value>krb5-kdc</value>
+			<value>krb5-kdc-ldap</value>
+			<value>krb5-kpropd</value>
+			<value>krb5-locales</value>
+			<value>krb5-multidev</value>
+			<value>krb5-otp</value>
+			<value>krb5-pkinit</value>
+			<value>krb5-user</value>
+			<value>libgssapi-krb5-2</value>
+			<value>libgssrpc4</value>
+			<value>libk5crypto3</value>
+			<value>libkadm5clnt-mit12</value>
+			<value>libkadm5srv-mit12</value>
+			<value>libkdb5-10</value>
+			<value>libkrad0</value>
+			<value>libkrad-dev</value>
+			<value>libkrb5-3</value>
+			<value>libkrb5-dev</value>
+			<value>libkrb5support0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:591324819259215993580358351968941856223" version="1" datatype="string" comment="Interim Release">
+			<value>ldb-tools</value>
+			<value>libldb2</value>
+			<value>libldb-dev</value>
+			<value>python3-ldb</value>
+			<value>python3-ldb-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:436108731818977030557090215136893651024" version="1" datatype="string" comment="Interim Release">
+			<value>less</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:672914885543267805959146022178720342867" version="1" datatype="string" comment="Interim Release">
+			<value>libapache2-mod-php7.4</value>
+			<value>libapache2-mod-php8.0</value>
+			<value>libapache2-mod-php8.1</value>
+			<value>libphp8.1-embed</value>
+			<value>php8.1</value>
+			<value>php8.1-bcmath</value>
+			<value>php8.1-bz2</value>
+			<value>php8.1-cgi</value>
+			<value>php8.1-cli</value>
+			<value>php8.1-common</value>
+			<value>php8.1-curl</value>
+			<value>php8.1-dba</value>
+			<value>php8.1-dev</value>
+			<value>php8.1-enchant</value>
+			<value>php8.1-fpm</value>
+			<value>php8.1-gd</value>
+			<value>php8.1-gmp</value>
+			<value>php8.1-imap</value>
+			<value>php8.1-interbase</value>
+			<value>php8.1-intl</value>
+			<value>php8.1-ldap</value>
+			<value>php8.1-mbstring</value>
+			<value>php8.1-mysql</value>
+			<value>php8.1-odbc</value>
+			<value>php8.1-opcache</value>
+			<value>php8.1-pgsql</value>
+			<value>php8.1-phpdbg</value>
+			<value>php8.1-pspell</value>
+			<value>php8.1-readline</value>
+			<value>php8.1-snmp</value>
+			<value>php8.1-soap</value>
+			<value>php8.1-sqlite3</value>
+			<value>php8.1-sybase</value>
+			<value>php8.1-tidy</value>
+			<value>php8.1-xml</value>
+			<value>php8.1-xsl</value>
+			<value>php8.1-zip</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:455686724582172408663405517290268454416" version="1" datatype="string" comment="Interim Release">
+			<value>libapr1</value>
+			<value>libapr1-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:383119310060616143339171864854602567657" version="1" datatype="string" comment="Interim Release">
+			<value>libbpf0</value>
+			<value>libbpf-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:428982606931675167232778569108517249056" version="1" datatype="string" comment="Interim Release">
+			<value>libc-ares2</value>
+			<value>libc-ares-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:345957100761732797820691521581362842201" version="1" datatype="string" comment="Interim Release">
+			<value>libksba8</value>
+			<value>libksba-dev</value>
+			<value>libksba-mingw-w64-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:373675353819100572766015298195710497071" version="1" datatype="string" comment="Interim Release">
+			<value>liblouis20</value>
+			<value>liblouis-bin</value>
+			<value>liblouis-data</value>
+			<value>liblouis-dev</value>
+			<value>python3-louis</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:350843336761204939649774173983159959840" version="1" datatype="string" comment="Interim Release">
+			<value>libmariadb3</value>
+			<value>libmariadb-dev</value>
+			<value>libmariadb-dev-compat</value>
+			<value>libmariadbd19</value>
+			<value>libmariadbd-dev</value>
+			<value>mariadb-backup</value>
+			<value>mariadb-client</value>
+			<value>mariadb-client-10.6</value>
+			<value>mariadb-client-core-10.6</value>
+			<value>mariadb-common</value>
+			<value>mariadb-plugin-connect</value>
+			<value>mariadb-plugin-cracklib-password-check</value>
+			<value>mariadb-plugin-gssapi-client</value>
+			<value>mariadb-plugin-gssapi-server</value>
+			<value>mariadb-plugin-mroonga</value>
+			<value>mariadb-plugin-oqgraph</value>
+			<value>mariadb-plugin-rocksdb</value>
+			<value>mariadb-plugin-s3</value>
+			<value>mariadb-plugin-spider</value>
+			<value>mariadb-server</value>
+			<value>mariadb-server-10.6</value>
+			<value>mariadb-server-core-10.6</value>
+			<value>mariadb-test</value>
+			<value>mariadb-test-data</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:513292418251734445415653157186482824698" version="1" datatype="string" comment="Interim Release">
+			<value>libmaven3-core-java</value>
+			<value>maven</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:340592192083860056728658898462359718868" version="1" datatype="string" comment="Interim Release">
+			<value>libmysqlclient21</value>
+			<value>libmysqlclient-dev</value>
+			<value>mysql-client</value>
+			<value>mysql-client-8.0</value>
+			<value>mysql-client-core-8.0</value>
+			<value>mysql-router</value>
+			<value>mysql-server</value>
+			<value>mysql-server-8.0</value>
+			<value>mysql-server-core-8.0</value>
+			<value>mysql-source-8.0</value>
+			<value>mysql-testsuite</value>
+			<value>mysql-testsuite-8.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:669769648049874518430368087566546187447" version="1" datatype="string" comment="Interim Release">
+			<value>libmysqlclient21</value>
+			<value>libmysqlclient-dev</value>
+			<value>mysql-client</value>
+			<value>mysql-client-8.0</value>
+			<value>mysql-client-core-8.0</value>
+			<value>mysql-router</value>
+			<value>mysql-server</value>
+			<value>mysql-server-8.0</value>
+			<value>mysql-server-core-8.0</value>
+			<value>mysql-source-8.0</value>
+			<value>mysql-testsuite</value>
+			<value>mysql-testsuite-8.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:453878036684842142850765791208660450133" version="1" datatype="string" comment="Interim Release">
+			<value>libnetsnmptrapd40</value>
+			<value>libsnmp40</value>
+			<value>libsnmp-base</value>
+			<value>libsnmp-dev</value>
+			<value>libsnmp-perl</value>
+			<value>snmp</value>
+			<value>snmpd</value>
+			<value>snmptrapd</value>
+			<value>tkmib</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:524491513552983949949324108257176425430" version="1" datatype="string" comment="Interim Release">
+			<value>libnss3</value>
+			<value>libnss3-dev</value>
+			<value>libnss3-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:611179202904196135444202632026097065931" version="1" datatype="string" comment="Interim Release">
+			<value>libnss-myhostname</value>
+			<value>libnss-mymachines</value>
+			<value>libnss-resolve</value>
+			<value>libnss-systemd</value>
+			<value>libpam-systemd</value>
+			<value>libsystemd0</value>
+			<value>libsystemd-dev</value>
+			<value>libsystemd-shared</value>
+			<value>libudev1</value>
+			<value>libudev-dev</value>
+			<value>systemd</value>
+			<value>systemd-boot</value>
+			<value>systemd-boot-efi</value>
+			<value>systemd-container</value>
+			<value>systemd-coredump</value>
+			<value>systemd-homed</value>
+			<value>systemd-journal-remote</value>
+			<value>systemd-oomd</value>
+			<value>systemd-resolved</value>
+			<value>systemd-standalone-sysusers</value>
+			<value>systemd-standalone-tmpfiles</value>
+			<value>systemd-sysv</value>
+			<value>systemd-tests</value>
+			<value>systemd-timesyncd</value>
+			<value>systemd-userdbd</value>
+			<value>udev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:566361056949720913818279175715865819730" version="1" datatype="string" comment="Interim Release">
+			<value>libntfs-3g89</value>
+			<value>ntfs-3g</value>
+			<value>ntfs-3g-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:617044738928336792866513563487327714732" version="1" datatype="string" comment="Interim Release">
+			<value>libpam0g</value>
+			<value>libpam0g-dev</value>
+			<value>libpam-doc</value>
+			<value>libpam-modules</value>
+			<value>libpam-modules-bin</value>
+			<value>libpam-runtime</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:517770108031795277171336163346090309594" version="1" datatype="string" comment="Interim Release">
+			<value>libperl5.34</value>
+			<value>libperl-dev</value>
+			<value>perl</value>
+			<value>perl-base</value>
+			<value>perl-debug</value>
+			<value>perl-doc</value>
+			<value>perl-modules-5.34</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:574810743722484339355598458534067545440" version="1" datatype="string" comment="Interim Release">
+			<value>libruby3.0</value>
+			<value>ruby3.0</value>
+			<value>ruby3.0-dev</value>
+			<value>ruby3.0-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:635905396673886184835233154251314084440" version="1" datatype="string" comment="Interim Release">
 			<value>libsox3</value>
 			<value>libsox-dev</value>
 			<value>libsox-fmt-all</value>
@@ -5510,7 +6194,372 @@
 			<value>libsox-fmt-pulse</value>
 			<value>sox</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:393950842915393806055283533269507367178" version="1" datatype="string" comment="Interim Release">
+		<constant_variable id="oval:com.ubuntu.kinetic:var:675099850172740277002376217378302404683" version="1" datatype="string" comment="Interim Release">
+			<value>libssl3</value>
+			<value>libssl-dev</value>
+			<value>libssl-doc</value>
+			<value>openssl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:353604698838867621100546182582877180102" version="1" datatype="string" comment="Interim Release">
+			<value>libsubid4</value>
+			<value>libsubid-dev</value>
+			<value>login</value>
+			<value>passwd</value>
+			<value>uidmap</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:625990332296635553621155749397718989483" version="1" datatype="string" comment="Interim Release">
+			<value>libtiff5</value>
+			<value>libtiff5-dev</value>
+			<value>libtiff-dev</value>
+			<value>libtiff-doc</value>
+			<value>libtiff-opengl</value>
+			<value>libtiff-tools</value>
+			<value>libtiffxx5</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:422694163485641255173220110426161543066" version="1" datatype="string" comment="Interim Release">
+			<value>libtpms0</value>
+			<value>libtpms-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:434990679508710384348146443265813542704" version="1" datatype="string" comment="Interim Release">
+			<value>libunbound8</value>
+			<value>libunbound-dev</value>
+			<value>python3-unbound</value>
+			<value>unbound</value>
+			<value>unbound-anchor</value>
+			<value>unbound-host</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:399592449117462784204376069708461756567" version="1" datatype="string" comment="Interim Release">
+			<value>libxml2</value>
+			<value>libxml2-dev</value>
+			<value>libxml2-doc</value>
+			<value>libxml2-utils</value>
+			<value>python3-libxml2</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:541317203112050088647790668288401074764" version="1" datatype="string" comment="Interim Release">
+			<value>libxpm4</value>
+			<value>libxpm-dev</value>
+			<value>xpmutils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:533836709359477234888073126892633513074" version="1" datatype="string" comment="Interim Release">
+			<value>libxstream-java</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:652033047038182247786945119277488109967" version="1" datatype="string" comment="Interim Release">
+			<value>lighttpd</value>
+			<value>lighttpd-doc</value>
+			<value>lighttpd-mod-authn-gssapi</value>
+			<value>lighttpd-mod-authn-pam</value>
+			<value>lighttpd-mod-authn-sasl</value>
+			<value>lighttpd-mod-deflate</value>
+			<value>lighttpd-mod-gnutls</value>
+			<value>lighttpd-mod-maxminddb</value>
+			<value>lighttpd-mod-mbedtls</value>
+			<value>lighttpd-mod-nss</value>
+			<value>lighttpd-mod-openssl</value>
+			<value>lighttpd-mod-vhostdb-pgsql</value>
+			<value>lighttpd-mod-webdav</value>
+			<value>lighttpd-mod-wolfssl</value>
+			<value>lighttpd-modules-dbi</value>
+			<value>lighttpd-modules-ldap</value>
+			<value>lighttpd-modules-lua</value>
+			<value>lighttpd-modules-mysql</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:674341325541302055486697690245920563356" version="1" datatype="string" comment="Interim Release">
+			<value>lrzip</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:508691209402511013854533571722966089570" version="1" datatype="string" comment="Interim Release">
+			<value>mencoder</value>
+			<value>mplayer</value>
+			<value>mplayer-doc</value>
+			<value>mplayer-gui</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:420868669944126021078415178320381716415" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-nautilus-4.0</value>
+			<value>libnautilus-extension4</value>
+			<value>libnautilus-extension-dev</value>
+			<value>nautilus</value>
+			<value>nautilus-data</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:362170634862190199070091264445544863704" version="1" datatype="string" comment="Interim Release">
+			<value>libnginx-mod-http-auth-pam</value>
+			<value>libnginx-mod-http-cache-purge</value>
+			<value>libnginx-mod-http-dav-ext</value>
+			<value>libnginx-mod-http-echo</value>
+			<value>libnginx-mod-http-fancyindex</value>
+			<value>libnginx-mod-http-geoip</value>
+			<value>libnginx-mod-http-geoip2</value>
+			<value>libnginx-mod-http-headers-more-filter</value>
+			<value>libnginx-mod-http-image-filter</value>
+			<value>libnginx-mod-http-ndk</value>
+			<value>libnginx-mod-http-perl</value>
+			<value>libnginx-mod-http-subs-filter</value>
+			<value>libnginx-mod-http-uploadprogress</value>
+			<value>libnginx-mod-http-upstream-fair</value>
+			<value>libnginx-mod-http-xslt-filter</value>
+			<value>libnginx-mod-mail</value>
+			<value>libnginx-mod-nchan</value>
+			<value>libnginx-mod-rtmp</value>
+			<value>libnginx-mod-stream</value>
+			<value>libnginx-mod-stream-geoip</value>
+			<value>libnginx-mod-stream-geoip2</value>
+			<value>nginx</value>
+			<value>nginx-common</value>
+			<value>nginx-core</value>
+			<value>nginx-dev</value>
+			<value>nginx-doc</value>
+			<value>nginx-extras</value>
+			<value>nginx-full</value>
+			<value>nginx-light</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:580716019208604246326082752547901092955" version="1" datatype="string" comment="Interim Release">
+			<value>nova-ajax-console-proxy</value>
+			<value>nova-api</value>
+			<value>nova-api-metadata</value>
+			<value>nova-api-os-compute</value>
+			<value>nova-api-os-volume</value>
+			<value>nova-cells</value>
+			<value>nova-common</value>
+			<value>nova-compute</value>
+			<value>nova-compute-ironic</value>
+			<value>nova-compute-kvm</value>
+			<value>nova-compute-libvirt</value>
+			<value>nova-compute-lxc</value>
+			<value>nova-compute-qemu</value>
+			<value>nova-compute-vmware</value>
+			<value>nova-compute-xen</value>
+			<value>nova-conductor</value>
+			<value>nova-doc</value>
+			<value>nova-novncproxy</value>
+			<value>nova-scheduler</value>
+			<value>nova-serialproxy</value>
+			<value>nova-spiceproxy</value>
+			<value>nova-volume</value>
+			<value>python3-nova</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:493338218842100976394712326389009022022" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-19-demo</value>
+			<value>openjdk-19-doc</value>
+			<value>openjdk-19-jdk</value>
+			<value>openjdk-19-jdk-headless</value>
+			<value>openjdk-19-jre</value>
+			<value>openjdk-19-jre-headless</value>
+			<value>openjdk-19-jre-zero</value>
+			<value>openjdk-19-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:532301569340229054607224567822257937101" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-11-demo</value>
+			<value>openjdk-11-doc</value>
+			<value>openjdk-11-jdk</value>
+			<value>openjdk-11-jdk-headless</value>
+			<value>openjdk-11-jre</value>
+			<value>openjdk-11-jre-headless</value>
+			<value>openjdk-11-jre-zero</value>
+			<value>openjdk-11-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:594824265726513428098977138834599321613" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-17-demo</value>
+			<value>openjdk-17-doc</value>
+			<value>openjdk-17-jdk</value>
+			<value>openjdk-17-jdk-headless</value>
+			<value>openjdk-17-jre</value>
+			<value>openjdk-17-jre-headless</value>
+			<value>openjdk-17-jre-zero</value>
+			<value>openjdk-17-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:602064081349375589222517782714833928372" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-19-demo</value>
+			<value>openjdk-19-doc</value>
+			<value>openjdk-19-jdk</value>
+			<value>openjdk-19-jdk-headless</value>
+			<value>openjdk-19-jre</value>
+			<value>openjdk-19-jre-headless</value>
+			<value>openjdk-19-jre-zero</value>
+			<value>openjdk-19-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:638694283058726874516743067990576610125" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-11-demo</value>
+			<value>openjdk-11-doc</value>
+			<value>openjdk-11-jdk</value>
+			<value>openjdk-11-jdk-headless</value>
+			<value>openjdk-11-jre</value>
+			<value>openjdk-11-jre-headless</value>
+			<value>openjdk-11-jre-zero</value>
+			<value>openjdk-11-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:640119578192956240938298889350667837810" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-17-demo</value>
+			<value>openjdk-17-doc</value>
+			<value>openjdk-17-jdk</value>
+			<value>openjdk-17-jdk-headless</value>
+			<value>openjdk-17-jre</value>
+			<value>openjdk-17-jre-headless</value>
+			<value>openjdk-17-jre-zero</value>
+			<value>openjdk-17-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:594196378278822827160866512648534048967" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-8-demo</value>
+			<value>openjdk-8-doc</value>
+			<value>openjdk-8-jdk</value>
+			<value>openjdk-8-jdk-headless</value>
+			<value>openjdk-8-jre</value>
+			<value>openjdk-8-jre-headless</value>
+			<value>openjdk-8-jre-zero</value>
+			<value>openjdk-8-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:640748783140167100123052950231353089670" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-8-demo</value>
+			<value>openjdk-8-doc</value>
+			<value>openjdk-8-jdk</value>
+			<value>openjdk-8-jdk-headless</value>
+			<value>openjdk-8-jre</value>
+			<value>openjdk-8-jre-headless</value>
+			<value>openjdk-8-jre-zero</value>
+			<value>openjdk-8-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:446881194310694271928581378122911465767" version="1" datatype="string" comment="Interim Release">
+			<value>openvswitch-common</value>
+			<value>openvswitch-doc</value>
+			<value>openvswitch-ipsec</value>
+			<value>openvswitch-pki</value>
+			<value>openvswitch-source</value>
+			<value>openvswitch-switch</value>
+			<value>openvswitch-switch-dpdk</value>
+			<value>openvswitch-test</value>
+			<value>openvswitch-testcontroller</value>
+			<value>openvswitch-vtep</value>
+			<value>python3-openvswitch</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:582256015126319973870238520492203861253" version="1" datatype="string" comment="Interim Release">
+			<value>libpixman-1-0</value>
+			<value>libpixman-1-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:395968264971203366944466576964145825102" version="1" datatype="string" comment="Interim Release">
+			<value>libecpg6</value>
+			<value>libecpg-compat3</value>
+			<value>libecpg-dev</value>
+			<value>libpgtypes3</value>
+			<value>libpq5</value>
+			<value>libpq-dev</value>
+			<value>postgresql-14</value>
+			<value>postgresql-client-14</value>
+			<value>postgresql-doc-14</value>
+			<value>postgresql-plperl-14</value>
+			<value>postgresql-plpython3-14</value>
+			<value>postgresql-pltcl-14</value>
+			<value>postgresql-server-dev-14</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:379836329996191268433484282582796619990" version="1" datatype="string" comment="Interim Release">
+			<value>pypy-pkg-resources</value>
+			<value>pypy-setuptools</value>
+			<value>python2-setuptools-whl</value>
+			<value>python-pkg-resources</value>
+			<value>python-setuptools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
+			<value>python3-django</value>
+			<value>python-django-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:631958552417998296346021899672447780793" version="1" datatype="string" comment="Interim Release">
+			<value>python3-future</value>
+			<value>python-future-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:655167790482794012757764397431005982943" version="1" datatype="string" comment="Interim Release">
+			<value>python3-git</value>
+			<value>python-git-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:464327032738469953808424844946467265076" version="1" datatype="string" comment="Interim Release">
+			<value>python3-mako</value>
+			<value>python-mako-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:446499798091502723762031477449237858505" version="1" datatype="string" comment="Interim Release">
+			<value>python3-numpy</value>
+			<value>python-numpy-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:513055736010290076318989135043497431636" version="1" datatype="string" comment="Interim Release">
+			<value>python3-pip</value>
+			<value>python3-pip-whl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:447217838297907369461437386939722162974" version="1" datatype="string" comment="Interim Release">
+			<value>python3-pkg-resources</value>
+			<value>python3-setuptools</value>
+			<value>python3-setuptools-whl</value>
+			<value>python-setuptools-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:512320622463972929656911128770389764099" version="1" datatype="string" comment="Interim Release">
+			<value>python3-swift</value>
+			<value>swift</value>
+			<value>swift-account</value>
+			<value>swift-container</value>
+			<value>swift-doc</value>
+			<value>swift-object</value>
+			<value>swift-object-expirer</value>
+			<value>swift-proxy</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:350335239576287472211162310520456165244" version="1" datatype="string" comment="Interim Release">
+			<value>python3-wheel</value>
+			<value>python3-wheel-whl</value>
+			<value>python-wheel-common</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:671061096759560505175848184868484527894" version="1" datatype="string" comment="Interim Release">
+			<value>python3-werkzeug</value>
+			<value>python-werkzeug-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:657560612727507364727812869316006386527" version="1" datatype="string" comment="Interim Release">
+			<value>idle-python3.10</value>
+			<value>libpython3.10</value>
+			<value>libpython3.10-dev</value>
+			<value>libpython3.10-minimal</value>
+			<value>libpython3.10-stdlib</value>
+			<value>libpython3.10-testsuite</value>
+			<value>python3.10</value>
+			<value>python3.10-dev</value>
+			<value>python3.10-doc</value>
+			<value>python3.10-examples</value>
+			<value>python3.10-full</value>
+			<value>python3.10-minimal</value>
+			<value>python3.10-nopie</value>
+			<value>python3.10-venv</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:642116739680086529009198627812898157841" version="1" datatype="string" comment="Interim Release">
+			<value>qemu-block-extra</value>
+			<value>qemu-guest-agent</value>
+			<value>qemu-system</value>
+			<value>qemu-system-arm</value>
+			<value>qemu-system-common</value>
+			<value>qemu-system-data</value>
+			<value>qemu-system-gui</value>
+			<value>qemu-system-mips</value>
+			<value>qemu-system-misc</value>
+			<value>qemu-system-ppc</value>
+			<value>qemu-system-s390x</value>
+			<value>qemu-system-sparc</value>
+			<value>qemu-system-x86</value>
+			<value>qemu-system-x86-xen</value>
+			<value>qemu-system-xen</value>
+			<value>qemu-user</value>
+			<value>qemu-user-binfmt</value>
+			<value>qemu-user-static</value>
+			<value>qemu-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:385524573855510265400251241115437789364" version="1" datatype="string" comment="Interim Release">
+			<value>rsync</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:341695557197855467418773240737081245503" version="1" datatype="string" comment="Interim Release">
+			<value>libsofia-sip-ua0</value>
+			<value>libsofia-sip-ua-dev</value>
+			<value>libsofia-sip-ua-glib3</value>
+			<value>libsofia-sip-ua-glib-dev</value>
+			<value>sofia-sip-bin</value>
+			<value>sofia-sip-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:545723341570662066048649783062953188321" version="1" datatype="string" comment="Interim Release">
+			<value>sudo</value>
+			<value>sudo-ldap</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:476097092368939566813276213829090054106" version="1" datatype="string" comment="Interim Release">
+			<value>tar</value>
+			<value>tar-scripts</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:545927264369204356419970115327575735844" version="1" datatype="string" comment="Interim Release">
 			<value>thunderbird</value>
 			<value>thunderbird-dev</value>
 			<value>thunderbird-gnome-support</value>
@@ -5601,367 +6650,10 @@
 			<value>xul-ext-gdata-provider</value>
 			<value>xul-ext-lightning</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:395745467340773615785629213498215073869" version="1" datatype="string" comment="Interim Release">
-			<value>w3m</value>
-			<value>w3m-img</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:396234418972084306138078714379709091094" version="1" datatype="string" comment="Interim Release">
-			<value>ca-certificates</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:401214810314567915402377753225195199561" version="1" datatype="string" comment="Interim Release">
-			<value>gir1.2-javascriptcoregtk-4.0</value>
-			<value>gir1.2-javascriptcoregtk-4.1</value>
-			<value>gir1.2-javascriptcoregtk-5.0</value>
-			<value>gir1.2-webkit2-4.0</value>
-			<value>gir1.2-webkit2-4.1</value>
-			<value>gir1.2-webkit2-5.0</value>
-			<value>libjavascriptcoregtk-4.0-18</value>
-			<value>libjavascriptcoregtk-4.0-bin</value>
-			<value>libjavascriptcoregtk-4.0-dev</value>
-			<value>libjavascriptcoregtk-4.1-0</value>
-			<value>libjavascriptcoregtk-4.1-dev</value>
-			<value>libjavascriptcoregtk-5.0-0</value>
-			<value>libjavascriptcoregtk-5.0-dev</value>
-			<value>libwebkit2gtk-4.0-37</value>
-			<value>libwebkit2gtk-4.0-dev</value>
-			<value>libwebkit2gtk-4.0-doc</value>
-			<value>libwebkit2gtk-4.1-0</value>
-			<value>libwebkit2gtk-4.1-dev</value>
-			<value>libwebkit2gtk-5.0-0</value>
-			<value>libwebkit2gtk-5.0-dev</value>
-			<value>webkit2gtk-driver</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:406177085487087523872436324463002615327" version="1" datatype="string" comment="Interim Release">
-			<value>curl</value>
-			<value>libcurl3-gnutls</value>
-			<value>libcurl3-nss</value>
-			<value>libcurl4</value>
-			<value>libcurl4-doc</value>
-			<value>libcurl4-gnutls-dev</value>
-			<value>libcurl4-nss-dev</value>
-			<value>libcurl4-openssl-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:420868669944126021078415178320381716415" version="1" datatype="string" comment="Interim Release">
-			<value>gir1.2-nautilus-4.0</value>
-			<value>libnautilus-extension4</value>
-			<value>libnautilus-extension-dev</value>
-			<value>nautilus</value>
-			<value>nautilus-data</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:422694163485641255173220110426161543066" version="1" datatype="string" comment="Interim Release">
-			<value>libtpms0</value>
-			<value>libtpms-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:428206834402037039320327407280929522901" version="1" datatype="string" comment="Interim Release">
-			<value>xnest</value>
-			<value>xorg-server-source</value>
-			<value>xserver-common</value>
-			<value>xserver-xephyr</value>
-			<value>xserver-xorg-core</value>
-			<value>xserver-xorg-dev</value>
-			<value>xserver-xorg-legacy</value>
-			<value>xvfb</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:428982606931675167232778569108517249056" version="1" datatype="string" comment="Interim Release">
-			<value>libc-ares2</value>
-			<value>libc-ares-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:434990679508710384348146443265813542704" version="1" datatype="string" comment="Interim Release">
-			<value>libunbound8</value>
-			<value>libunbound-dev</value>
-			<value>python3-unbound</value>
-			<value>unbound</value>
-			<value>unbound-anchor</value>
-			<value>unbound-host</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:436108731818977030557090215136893651024" version="1" datatype="string" comment="Interim Release">
-			<value>less</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:442101715844505094118557538310137312306" version="1" datatype="string" comment="Interim Release">
-			<value>apache2</value>
-			<value>apache2-bin</value>
-			<value>apache2-data</value>
-			<value>apache2-dev</value>
-			<value>apache2-doc</value>
-			<value>apache2-ssl-dev</value>
-			<value>apache2-suexec-custom</value>
-			<value>apache2-suexec-pristine</value>
-			<value>apache2-utils</value>
-			<value>libapache2-mod-md</value>
-			<value>libapache2-mod-proxy-uwsgi</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:442665231607323125153492317704025508306" version="1" datatype="string" comment="Interim Release">
-			<value>glance</value>
-			<value>glance-api</value>
-			<value>glance-common</value>
-			<value>python3-glance</value>
-			<value>python-glance-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:443358201090126408015485674175823310460" version="1" datatype="string" comment="Interim Release">
-			<value>libaprutil1</value>
-			<value>libaprutil1-dbd-mysql</value>
-			<value>libaprutil1-dbd-odbc</value>
-			<value>libaprutil1-dbd-pgsql</value>
-			<value>libaprutil1-dbd-sqlite3</value>
-			<value>libaprutil1-dev</value>
-			<value>libaprutil1-ldap</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:446499798091502723762031477449237858505" version="1" datatype="string" comment="Interim Release">
-			<value>python3-numpy</value>
-			<value>python-numpy-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:447217838297907369461437386939722162974" version="1" datatype="string" comment="Interim Release">
-			<value>python3-pkg-resources</value>
-			<value>python3-setuptools</value>
-			<value>python3-setuptools-whl</value>
-			<value>python-setuptools-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:452540953400124495632357038462975185550" version="1" datatype="string" comment="Interim Release">
-			<value>libecpg6</value>
-			<value>libecpg-compat3</value>
-			<value>libecpg-dev</value>
-			<value>libpgtypes3</value>
-			<value>libpq5</value>
-			<value>libpq-dev</value>
-			<value>postgresql-14</value>
-			<value>postgresql-client-14</value>
-			<value>postgresql-doc-14</value>
-			<value>postgresql-plperl-14</value>
-			<value>postgresql-plpython3-14</value>
-			<value>postgresql-pltcl-14</value>
-			<value>postgresql-server-dev-14</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:453878036684842142850765791208660450133" version="1" datatype="string" comment="Interim Release">
-			<value>libnetsnmptrapd40</value>
-			<value>libsnmp40</value>
-			<value>libsnmp-base</value>
-			<value>libsnmp-dev</value>
-			<value>libsnmp-perl</value>
-			<value>snmp</value>
-			<value>snmpd</value>
-			<value>snmptrapd</value>
-			<value>tkmib</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:454691955155154090236495492166477850849" version="1" datatype="string" comment="Interim Release">
-			<value>git</value>
-			<value>git-all</value>
-			<value>git-cvs</value>
-			<value>git-daemon-run</value>
-			<value>git-daemon-sysvinit</value>
-			<value>git-doc</value>
-			<value>git-email</value>
-			<value>git-gui</value>
-			<value>git-man</value>
-			<value>git-mediawiki</value>
-			<value>git-svn</value>
-			<value>gitk</value>
-			<value>gitweb</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:455160655153423709495814215318404203083" version="1" datatype="string" comment="Interim Release">
-			<value>libtiff5</value>
-			<value>libtiff5-dev</value>
-			<value>libtiff-dev</value>
-			<value>libtiff-doc</value>
-			<value>libtiff-opengl</value>
-			<value>libtiff-tools</value>
-			<value>libtiffxx5</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:455686724582172408663405517290268454416" version="1" datatype="string" comment="Interim Release">
-			<value>libapr1</value>
-			<value>libapr1-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:456202396869119926601193757638572177434" version="1" datatype="string" comment="Interim Release">
-			<value>clamav</value>
-			<value>clamav-base</value>
-			<value>clamav-daemon</value>
-			<value>clamav-docs</value>
-			<value>clamav-freshclam</value>
-			<value>clamav-milter</value>
-			<value>clamav-testfiles</value>
-			<value>clamdscan</value>
-			<value>libclamav9</value>
-			<value>libclamav-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:459205781425811673566591749557504379419" version="1" datatype="string" comment="Interim Release">
-			<value>openvswitch-common</value>
-			<value>openvswitch-doc</value>
-			<value>openvswitch-ipsec</value>
-			<value>openvswitch-pki</value>
-			<value>openvswitch-source</value>
-			<value>openvswitch-switch</value>
-			<value>openvswitch-switch-dpdk</value>
-			<value>openvswitch-test</value>
-			<value>openvswitch-testcontroller</value>
-			<value>openvswitch-vtep</value>
-			<value>python3-openvswitch</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:464327032738469953808424844946467265076" version="1" datatype="string" comment="Interim Release">
-			<value>python3-mako</value>
-			<value>python-mako-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:466633897684677989918152633910752956045" version="1" datatype="string" comment="Interim Release">
-			<value>libnginx-mod-http-auth-pam</value>
-			<value>libnginx-mod-http-cache-purge</value>
-			<value>libnginx-mod-http-dav-ext</value>
-			<value>libnginx-mod-http-echo</value>
-			<value>libnginx-mod-http-fancyindex</value>
-			<value>libnginx-mod-http-geoip</value>
-			<value>libnginx-mod-http-geoip2</value>
-			<value>libnginx-mod-http-headers-more-filter</value>
-			<value>libnginx-mod-http-image-filter</value>
-			<value>libnginx-mod-http-ndk</value>
-			<value>libnginx-mod-http-perl</value>
-			<value>libnginx-mod-http-subs-filter</value>
-			<value>libnginx-mod-http-uploadprogress</value>
-			<value>libnginx-mod-http-upstream-fair</value>
-			<value>libnginx-mod-http-xslt-filter</value>
-			<value>libnginx-mod-mail</value>
-			<value>libnginx-mod-nchan</value>
-			<value>libnginx-mod-rtmp</value>
-			<value>libnginx-mod-stream</value>
-			<value>libnginx-mod-stream-geoip</value>
-			<value>libnginx-mod-stream-geoip2</value>
-			<value>nginx</value>
-			<value>nginx-common</value>
-			<value>nginx-core</value>
-			<value>nginx-dev</value>
-			<value>nginx-doc</value>
-			<value>nginx-extras</value>
-			<value>nginx-full</value>
-			<value>nginx-light</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:473789858031559994353317162244846485675" version="1" datatype="string" comment="Interim Release">
-			<value>xwayland</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:473803198293940621728463478570318117150" version="1" datatype="string" comment="Interim Release">
-			<value>krb5-admin-server</value>
-			<value>krb5-doc</value>
-			<value>krb5-gss-samples</value>
-			<value>krb5-k5tls</value>
-			<value>krb5-kdc</value>
-			<value>krb5-kdc-ldap</value>
-			<value>krb5-kpropd</value>
-			<value>krb5-locales</value>
-			<value>krb5-multidev</value>
-			<value>krb5-otp</value>
-			<value>krb5-pkinit</value>
-			<value>krb5-user</value>
-			<value>libgssapi-krb5-2</value>
-			<value>libgssrpc4</value>
-			<value>libk5crypto3</value>
-			<value>libkadm5clnt-mit12</value>
-			<value>libkadm5srv-mit12</value>
-			<value>libkdb5-10</value>
-			<value>libkrad0</value>
-			<value>libkrad-dev</value>
-			<value>libkrb5-3</value>
-			<value>libkrb5-dev</value>
-			<value>libkrb5support0</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:476097092368939566813276213829090054106" version="1" datatype="string" comment="Interim Release">
-			<value>tar</value>
-			<value>tar-scripts</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:482593255751296273100713960532940627866" version="1" datatype="string" comment="Interim Release">
-			<value>haproxy</value>
-			<value>haproxy-doc</value>
-			<value>vim-haproxy</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:489086543750979055626949561922591700186" version="1" datatype="string" comment="Interim Release">
-			<value>bind9</value>
-			<value>bind9-dev</value>
-			<value>bind9-dnsutils</value>
-			<value>bind9-doc</value>
-			<value>bind9-host</value>
-			<value>bind9-libs</value>
-			<value>bind9-utils</value>
-			<value>bind9utils</value>
-			<value>dnsutils</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:493338218842100976394712326389009022022" version="1" datatype="string" comment="Interim Release">
-			<value>openjdk-19-demo</value>
-			<value>openjdk-19-doc</value>
-			<value>openjdk-19-jdk</value>
-			<value>openjdk-19-jdk-headless</value>
-			<value>openjdk-19-jre</value>
-			<value>openjdk-19-jre-headless</value>
-			<value>openjdk-19-jre-zero</value>
-			<value>openjdk-19-source</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:497084630077392149000406361682680140300" version="1" datatype="string" comment="Interim Release">
-			<value>dcmtk</value>
-			<value>dcmtk-doc</value>
-			<value>libdcmtk17</value>
-			<value>libdcmtk-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
-			<value>python3-django</value>
-			<value>python-django-doc</value>
-		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:509791402370841902279513060265055965868" version="1" datatype="string" comment="Interim Release">
 			<value>tmux</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:510125373953636327909798049103931151525" version="1" datatype="string" comment="Interim Release">
-			<value>imagemagick</value>
-			<value>imagemagick-6-common</value>
-			<value>imagemagick-6-doc</value>
-			<value>imagemagick-6.q16</value>
-			<value>imagemagick-6.q16hdri</value>
-			<value>imagemagick-common</value>
-			<value>imagemagick-doc</value>
-			<value>libimage-magick-perl</value>
-			<value>libimage-magick-q16-perl</value>
-			<value>libimage-magick-q16hdri-perl</value>
-			<value>libmagick++-6-headers</value>
-			<value>libmagick++-6.q16-8</value>
-			<value>libmagick++-6.q16-dev</value>
-			<value>libmagick++-6.q16hdri-8</value>
-			<value>libmagick++-6.q16hdri-dev</value>
-			<value>libmagick++-dev</value>
-			<value>libmagickcore-6-arch-config</value>
-			<value>libmagickcore-6-headers</value>
-			<value>libmagickcore-6.q16-6</value>
-			<value>libmagickcore-6.q16-6-extra</value>
-			<value>libmagickcore-6.q16-dev</value>
-			<value>libmagickcore-6.q16hdri-6</value>
-			<value>libmagickcore-6.q16hdri-6-extra</value>
-			<value>libmagickcore-6.q16hdri-dev</value>
-			<value>libmagickcore-dev</value>
-			<value>libmagickwand-6-headers</value>
-			<value>libmagickwand-6.q16-6</value>
-			<value>libmagickwand-6.q16-dev</value>
-			<value>libmagickwand-6.q16hdri-6</value>
-			<value>libmagickwand-6.q16hdri-dev</value>
-			<value>libmagickwand-dev</value>
-			<value>perlmagick</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:511078760026582207789159223738087989727" version="1" datatype="string" comment="Interim Release">
-			<value>cinder-api</value>
-			<value>cinder-backup</value>
-			<value>cinder-common</value>
-			<value>cinder-scheduler</value>
-			<value>cinder-volume</value>
-			<value>python3-cinder</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:512320622463972929656911128770389764099" version="1" datatype="string" comment="Interim Release">
-			<value>python3-swift</value>
-			<value>swift</value>
-			<value>swift-account</value>
-			<value>swift-container</value>
-			<value>swift-doc</value>
-			<value>swift-object</value>
-			<value>swift-object-expirer</value>
-			<value>swift-proxy</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:513055736010290076318989135043497431636" version="1" datatype="string" comment="Interim Release">
-			<value>python3-pip</value>
-			<value>python3-pip-whl</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:513292418251734445415653157186482824698" version="1" datatype="string" comment="Interim Release">
-			<value>libmaven3-core-java</value>
-			<value>maven</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:513388105910094529201667061514102402116" version="1" datatype="string" comment="Interim Release">
+		<constant_variable id="oval:com.ubuntu.kinetic:var:652727801355844446219943900014479595945" version="1" datatype="string" comment="Interim Release">
 			<value>u-boot</value>
 			<value>u-boot-amlogic</value>
 			<value>u-boot-exynos</value>
@@ -5979,617 +6671,52 @@
 			<value>u-boot-tegra</value>
 			<value>u-boot-tools</value>
 		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:517646220527328291639466299878199907101" version="1" datatype="string" comment="Interim Release">
-			<value>binutils</value>
-			<value>binutils-aarch64-linux-gnu</value>
-			<value>binutils-alpha-linux-gnu</value>
-			<value>binutils-arm-linux-gnueabi</value>
-			<value>binutils-arm-linux-gnueabihf</value>
-			<value>binutils-common</value>
-			<value>binutils-dev</value>
-			<value>binutils-doc</value>
-			<value>binutils-for-build</value>
-			<value>binutils-for-host</value>
-			<value>binutils-hppa64-linux-gnu</value>
-			<value>binutils-hppa-linux-gnu</value>
-			<value>binutils-i686-gnu</value>
-			<value>binutils-i686-kfreebsd-gnu</value>
-			<value>binutils-i686-linux-gnu</value>
-			<value>binutils-ia64-linux-gnu</value>
-			<value>binutils-m68k-linux-gnu</value>
-			<value>binutils-multiarch</value>
-			<value>binutils-multiarch-dev</value>
-			<value>binutils-powerpc64-linux-gnu</value>
-			<value>binutils-powerpc64le-linux-gnu</value>
-			<value>binutils-powerpc-linux-gnu</value>
-			<value>binutils-riscv64-linux-gnu</value>
-			<value>binutils-s390x-linux-gnu</value>
-			<value>binutils-sh4-linux-gnu</value>
-			<value>binutils-source</value>
-			<value>binutils-sparc64-linux-gnu</value>
-			<value>binutils-x86-64-kfreebsd-gnu</value>
-			<value>binutils-x86-64-linux-gnu</value>
-			<value>binutils-x86-64-linux-gnux32</value>
-			<value>libbinutils</value>
-			<value>libctf0</value>
-			<value>libctf-nobfd0</value>
-			<value>libgprofng0</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:517770108031795277171336163346090309594" version="1" datatype="string" comment="Interim Release">
-			<value>libperl5.34</value>
-			<value>libperl-dev</value>
-			<value>perl</value>
-			<value>perl-base</value>
-			<value>perl-debug</value>
-			<value>perl-doc</value>
-			<value>perl-modules-5.34</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:524491513552983949949324108257176425430" version="1" datatype="string" comment="Interim Release">
-			<value>libnss3</value>
-			<value>libnss3-dev</value>
-			<value>libnss3-tools</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:526521392556273181914052228717127032844" version="1" datatype="string" comment="Interim Release">
-			<value>elpa-protobuf-mode</value>
-			<value>libprotobuf23</value>
-			<value>libprotobuf-dev</value>
-			<value>libprotobuf-java</value>
-			<value>libprotobuf-lite23</value>
-			<value>libprotoc23</value>
-			<value>libprotoc-dev</value>
-			<value>protobuf-compiler</value>
-			<value>python3-protobuf</value>
-			<value>ruby-google-protobuf</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:532301569340229054607224567822257937101" version="1" datatype="string" comment="Interim Release">
-			<value>openjdk-11-demo</value>
-			<value>openjdk-11-doc</value>
-			<value>openjdk-11-jdk</value>
-			<value>openjdk-11-jdk-headless</value>
-			<value>openjdk-11-jre</value>
-			<value>openjdk-11-jre-headless</value>
-			<value>openjdk-11-jre-zero</value>
-			<value>openjdk-11-source</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:533836709359477234888073126892633513074" version="1" datatype="string" comment="Interim Release">
-			<value>libxstream-java</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:534902390143471065102143358478654185114" version="1" datatype="string" comment="Interim Release">
-			<value>libxml2</value>
-			<value>libxml2-dev</value>
-			<value>libxml2-doc</value>
-			<value>libxml2-utils</value>
-			<value>python3-libxml2</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:541317203112050088647790668288401074764" version="1" datatype="string" comment="Interim Release">
-			<value>libxpm4</value>
-			<value>libxpm-dev</value>
-			<value>xpmutils</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:542871523688890489218922266988369497038" version="1" datatype="string" comment="Interim Release">
-			<value>mencoder</value>
-			<value>mplayer</value>
-			<value>mplayer-doc</value>
-			<value>mplayer-gui</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:545723341570662066048649783062953188321" version="1" datatype="string" comment="Interim Release">
-			<value>sudo</value>
-			<value>sudo-ldap</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:552192896598082682812294648746243873494" version="1" datatype="string" comment="Interim Release">
-			<value>freerdp2-dev</value>
-			<value>freerdp2-shadow-x11</value>
-			<value>freerdp2-wayland</value>
-			<value>freerdp2-x11</value>
-			<value>libfreerdp2-2</value>
-			<value>libfreerdp-client2-2</value>
-			<value>libfreerdp-server2-2</value>
-			<value>libfreerdp-shadow2-2</value>
-			<value>libfreerdp-shadow-subsystem2-2</value>
-			<value>libuwac0-0</value>
-			<value>libuwac0-dev</value>
-			<value>libwinpr2-2</value>
-			<value>libwinpr2-dev</value>
-			<value>libwinpr-tools2-2</value>
-			<value>winpr-utils</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:554314617152962136342210593394648805072" version="1" datatype="string" comment="Interim Release">
-			<value>python3-wheel</value>
-			<value>python3-wheel-whl</value>
-			<value>python-wheel-common</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:566361056949720913818279175715865819730" version="1" datatype="string" comment="Interim Release">
-			<value>libntfs-3g89</value>
-			<value>ntfs-3g</value>
-			<value>ntfs-3g-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:567068244563923178978482415210504964792" version="1" datatype="string" comment="Interim Release">
-			<value>libruby3.0</value>
-			<value>ruby3.0</value>
-			<value>ruby3.0-dev</value>
-			<value>ruby3.0-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:577252378403701731217386926890802399490" version="1" datatype="string" comment="Interim Release">
-			<value>gnutls-bin</value>
-			<value>gnutls-doc</value>
-			<value>guile-gnutls</value>
-			<value>libgnutls28-dev</value>
-			<value>libgnutls30</value>
-			<value>libgnutls-dane0</value>
-			<value>libgnutls-openssl27</value>
-			<value>libgnutlsxx30</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:582256015126319973870238520492203861253" version="1" datatype="string" comment="Interim Release">
-			<value>libpixman-1-0</value>
-			<value>libpixman-1-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:585108740237875601322606811445063137777" version="1" datatype="string" comment="Interim Release">
-			<value>dbus</value>
-			<value>dbus-1-doc</value>
-			<value>dbus-bin</value>
-			<value>dbus-daemon</value>
-			<value>dbus-session-bus-common</value>
-			<value>dbus-system-bus-common</value>
-			<value>dbus-tests</value>
-			<value>dbus-user-session</value>
-			<value>dbus-x11</value>
-			<value>libdbus-1-3</value>
-			<value>libdbus-1-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:588198976221805641852886071504056864245" version="1" datatype="string" comment="Interim Release">
-			<value>advancecomp</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:591324819259215993580358351968941856223" version="1" datatype="string" comment="Interim Release">
-			<value>ldb-tools</value>
-			<value>libldb2</value>
-			<value>libldb-dev</value>
-			<value>python3-ldb</value>
-			<value>python3-ldb-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:592632782666698424374560817823579614643" version="1" datatype="string" comment="Interim Release">
-			<value>libmariadb3</value>
-			<value>libmariadb-dev</value>
-			<value>libmariadb-dev-compat</value>
-			<value>libmariadbd19</value>
-			<value>libmariadbd-dev</value>
-			<value>mariadb-backup</value>
-			<value>mariadb-client</value>
-			<value>mariadb-client-10.6</value>
-			<value>mariadb-client-core-10.6</value>
-			<value>mariadb-common</value>
-			<value>mariadb-plugin-connect</value>
-			<value>mariadb-plugin-cracklib-password-check</value>
-			<value>mariadb-plugin-gssapi-client</value>
-			<value>mariadb-plugin-gssapi-server</value>
-			<value>mariadb-plugin-mroonga</value>
-			<value>mariadb-plugin-oqgraph</value>
-			<value>mariadb-plugin-rocksdb</value>
-			<value>mariadb-plugin-s3</value>
-			<value>mariadb-plugin-spider</value>
-			<value>mariadb-server</value>
-			<value>mariadb-server-10.6</value>
-			<value>mariadb-server-core-10.6</value>
-			<value>mariadb-test</value>
-			<value>mariadb-test-data</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:594196378278822827160866512648534048967" version="1" datatype="string" comment="Interim Release">
-			<value>openjdk-8-demo</value>
-			<value>openjdk-8-doc</value>
-			<value>openjdk-8-jdk</value>
-			<value>openjdk-8-jdk-headless</value>
-			<value>openjdk-8-jre</value>
-			<value>openjdk-8-jre-headless</value>
-			<value>openjdk-8-jre-zero</value>
-			<value>openjdk-8-source</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:594824265726513428098977138834599321613" version="1" datatype="string" comment="Interim Release">
-			<value>openjdk-17-demo</value>
-			<value>openjdk-17-doc</value>
-			<value>openjdk-17-jdk</value>
-			<value>openjdk-17-jdk-headless</value>
-			<value>openjdk-17-jre</value>
-			<value>openjdk-17-jre-headless</value>
-			<value>openjdk-17-jre-zero</value>
-			<value>openjdk-17-source</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:610167835331407453956144989635031509211" version="1" datatype="string" comment="Interim Release">
-			<value>isag</value>
-			<value>sysstat</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:611179202904196135444202632026097065931" version="1" datatype="string" comment="Interim Release">
-			<value>libnss-myhostname</value>
-			<value>libnss-mymachines</value>
-			<value>libnss-resolve</value>
-			<value>libnss-systemd</value>
-			<value>libpam-systemd</value>
-			<value>libsystemd0</value>
-			<value>libsystemd-dev</value>
-			<value>libsystemd-shared</value>
-			<value>libudev1</value>
-			<value>libudev-dev</value>
-			<value>systemd</value>
-			<value>systemd-boot</value>
-			<value>systemd-boot-efi</value>
-			<value>systemd-container</value>
-			<value>systemd-coredump</value>
-			<value>systemd-homed</value>
-			<value>systemd-journal-remote</value>
-			<value>systemd-oomd</value>
-			<value>systemd-resolved</value>
-			<value>systemd-standalone-sysusers</value>
-			<value>systemd-standalone-tmpfiles</value>
-			<value>systemd-sysv</value>
-			<value>systemd-tests</value>
-			<value>systemd-timesyncd</value>
-			<value>systemd-userdbd</value>
-			<value>udev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:614586493068582992659178966724075839696" version="1" datatype="string" comment="Interim Release">
-			<value>aspnetcore-runtime-6.0</value>
-			<value>aspnetcore-targeting-pack-6.0</value>
-			<value>dotnet6</value>
-			<value>dotnet-apphost-pack-6.0</value>
-			<value>dotnet-host</value>
-			<value>dotnet-hostfxr-6.0</value>
-			<value>dotnet-runtime-6.0</value>
-			<value>dotnet-sdk-6.0</value>
-			<value>dotnet-sdk-6.0-source-built-artifacts</value>
-			<value>dotnet-targeting-pack-6.0</value>
-			<value>dotnet-templates-6.0</value>
-			<value>netstandard-targeting-pack-2.1</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:616178400826080496692667376563065986524" version="1" datatype="string" comment="Interim Release">
-			<value>amanda-client</value>
-			<value>amanda-common</value>
-			<value>amanda-server</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:617044738928336792866513563487327714732" version="1" datatype="string" comment="Interim Release">
-			<value>libpam0g</value>
-			<value>libpam0g-dev</value>
-			<value>libpam-doc</value>
-			<value>libpam-modules</value>
-			<value>libpam-modules-bin</value>
-			<value>libpam-runtime</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:619530183886911280040321514642868879475" version="1" datatype="string" comment="Interim Release">
-			<value>containerd</value>
-			<value>golang-github-containerd-containerd-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:624827393537619041670211768643918935466" version="1" datatype="string" comment="Interim Release">
-			<value>ctdb</value>
-			<value>libnss-winbind</value>
-			<value>libpam-winbind</value>
-			<value>libsmbclient</value>
-			<value>libsmbclient-dev</value>
-			<value>libwbclient0</value>
-			<value>libwbclient-dev</value>
-			<value>python3-samba</value>
-			<value>registry-tools</value>
-			<value>samba</value>
-			<value>samba-common</value>
-			<value>samba-common-bin</value>
-			<value>samba-dev</value>
-			<value>samba-dsdb-modules</value>
-			<value>samba-libs</value>
-			<value>samba-testsuite</value>
-			<value>samba-vfs-modules</value>
-			<value>smbclient</value>
-			<value>winbind</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:629121345822772655362337005476590733119" version="1" datatype="string" comment="Interim Release">
-			<value>golang-1.13</value>
-			<value>golang-1.13-doc</value>
-			<value>golang-1.13-go</value>
-			<value>golang-1.13-src</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:629682023199519278221502729887857464075" version="1" datatype="string" comment="Interim Release">
-			<value>qemu-block-extra</value>
-			<value>qemu-guest-agent</value>
-			<value>qemu-system</value>
-			<value>qemu-system-arm</value>
-			<value>qemu-system-common</value>
-			<value>qemu-system-data</value>
-			<value>qemu-system-gui</value>
-			<value>qemu-system-mips</value>
-			<value>qemu-system-misc</value>
-			<value>qemu-system-ppc</value>
-			<value>qemu-system-s390x</value>
-			<value>qemu-system-sparc</value>
-			<value>qemu-system-x86</value>
-			<value>qemu-system-x86-xen</value>
-			<value>qemu-system-xen</value>
-			<value>qemu-user</value>
-			<value>qemu-user-binfmt</value>
-			<value>qemu-user-static</value>
-			<value>qemu-utils</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:631958552417998296346021899672447780793" version="1" datatype="string" comment="Interim Release">
-			<value>python3-future</value>
-			<value>python-future-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:633892453309035195056869752622102278477" version="1" datatype="string" comment="Interim Release">
-			<value>awstats</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:638694283058726874516743067990576610125" version="1" datatype="string" comment="Interim Release">
-			<value>openjdk-11-demo</value>
-			<value>openjdk-11-doc</value>
-			<value>openjdk-11-jdk</value>
-			<value>openjdk-11-jdk-headless</value>
-			<value>openjdk-11-jre</value>
-			<value>openjdk-11-jre-headless</value>
-			<value>openjdk-11-jre-zero</value>
-			<value>openjdk-11-source</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:640748783140167100123052950231353089670" version="1" datatype="string" comment="Interim Release">
-			<value>openjdk-8-demo</value>
-			<value>openjdk-8-doc</value>
-			<value>openjdk-8-jdk</value>
-			<value>openjdk-8-jdk-headless</value>
-			<value>openjdk-8-jre</value>
-			<value>openjdk-8-jre-headless</value>
-			<value>openjdk-8-jre-zero</value>
-			<value>openjdk-8-source</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:642260890746500258028936512332267822811" version="1" datatype="string" comment="Interim Release">
-			<value>lighttpd</value>
-			<value>lighttpd-doc</value>
-			<value>lighttpd-mod-authn-gssapi</value>
-			<value>lighttpd-mod-authn-pam</value>
-			<value>lighttpd-mod-authn-sasl</value>
-			<value>lighttpd-mod-deflate</value>
-			<value>lighttpd-mod-gnutls</value>
-			<value>lighttpd-mod-maxminddb</value>
-			<value>lighttpd-mod-mbedtls</value>
-			<value>lighttpd-mod-nss</value>
-			<value>lighttpd-mod-openssl</value>
-			<value>lighttpd-mod-vhostdb-pgsql</value>
-			<value>lighttpd-mod-webdav</value>
-			<value>lighttpd-mod-wolfssl</value>
-			<value>lighttpd-modules-dbi</value>
-			<value>lighttpd-modules-ldap</value>
-			<value>lighttpd-modules-lua</value>
-			<value>lighttpd-modules-mysql</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
-			<value>intel-microcode</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:648960540661227764469755724299606587338" version="1" datatype="string" comment="Interim Release">
-			<value>nova-ajax-console-proxy</value>
-			<value>nova-api</value>
-			<value>nova-api-metadata</value>
-			<value>nova-api-os-compute</value>
-			<value>nova-api-os-volume</value>
-			<value>nova-cells</value>
-			<value>nova-common</value>
-			<value>nova-compute</value>
-			<value>nova-compute-ironic</value>
-			<value>nova-compute-kvm</value>
-			<value>nova-compute-libvirt</value>
-			<value>nova-compute-lxc</value>
-			<value>nova-compute-qemu</value>
-			<value>nova-compute-vmware</value>
-			<value>nova-compute-xen</value>
-			<value>nova-conductor</value>
-			<value>nova-doc</value>
-			<value>nova-novncproxy</value>
-			<value>nova-scheduler</value>
-			<value>nova-serialproxy</value>
-			<value>nova-spiceproxy</value>
-			<value>nova-volume</value>
-			<value>python3-nova</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:649329492167902938502768981582619573477" version="1" datatype="string" comment="Interim Release">
-			<value>jbigkit-bin</value>
-			<value>libjbig0</value>
-			<value>libjbig-dev</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:653436444896901875860628078944275160175" version="1" datatype="string" comment="Interim Release">
-			<value>libapache2-mod-php7.4</value>
-			<value>libapache2-mod-php8.0</value>
-			<value>libapache2-mod-php8.1</value>
-			<value>libphp8.1-embed</value>
-			<value>php8.1</value>
-			<value>php8.1-bcmath</value>
-			<value>php8.1-bz2</value>
-			<value>php8.1-cgi</value>
-			<value>php8.1-cli</value>
-			<value>php8.1-common</value>
-			<value>php8.1-curl</value>
-			<value>php8.1-dba</value>
-			<value>php8.1-dev</value>
-			<value>php8.1-enchant</value>
-			<value>php8.1-fpm</value>
-			<value>php8.1-gd</value>
-			<value>php8.1-gmp</value>
-			<value>php8.1-imap</value>
-			<value>php8.1-interbase</value>
-			<value>php8.1-intl</value>
-			<value>php8.1-ldap</value>
-			<value>php8.1-mbstring</value>
-			<value>php8.1-mysql</value>
-			<value>php8.1-odbc</value>
-			<value>php8.1-opcache</value>
-			<value>php8.1-pgsql</value>
-			<value>php8.1-phpdbg</value>
-			<value>php8.1-pspell</value>
-			<value>php8.1-readline</value>
-			<value>php8.1-snmp</value>
-			<value>php8.1-soap</value>
-			<value>php8.1-sqlite3</value>
-			<value>php8.1-sybase</value>
-			<value>php8.1-tidy</value>
-			<value>php8.1-xml</value>
-			<value>php8.1-xsl</value>
-			<value>php8.1-zip</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:655167790482794012757764397431005982943" version="1" datatype="string" comment="Interim Release">
-			<value>python3-git</value>
-			<value>python-git-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:657560612727507364727812869316006386527" version="1" datatype="string" comment="Interim Release">
-			<value>idle-python3.10</value>
-			<value>libpython3.10</value>
-			<value>libpython3.10-dev</value>
-			<value>libpython3.10-minimal</value>
-			<value>libpython3.10-stdlib</value>
-			<value>libpython3.10-testsuite</value>
-			<value>python3.10</value>
-			<value>python3.10-dev</value>
-			<value>python3.10-doc</value>
-			<value>python3.10-examples</value>
-			<value>python3.10-full</value>
-			<value>python3.10-minimal</value>
-			<value>python3.10-nopie</value>
-			<value>python3.10-venv</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:659791125656350726284991968514462264078" version="1" datatype="string" comment="Interim Release">
-			<value>backport-iwlwifi-dkms</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:660495170559206769559478866569619208926" version="1" datatype="string" comment="Interim Release">
-			<value>imagemagick</value>
-			<value>imagemagick-6-common</value>
-			<value>imagemagick-6-doc</value>
-			<value>imagemagick-6.q16</value>
-			<value>imagemagick-6.q16hdri</value>
-			<value>imagemagick-common</value>
-			<value>imagemagick-doc</value>
-			<value>libimage-magick-perl</value>
-			<value>libimage-magick-q16-perl</value>
-			<value>libimage-magick-q16hdri-perl</value>
-			<value>libmagick++-6-headers</value>
-			<value>libmagick++-6.q16-8</value>
-			<value>libmagick++-6.q16-dev</value>
-			<value>libmagick++-6.q16hdri-8</value>
-			<value>libmagick++-6.q16hdri-dev</value>
-			<value>libmagick++-dev</value>
-			<value>libmagickcore-6-arch-config</value>
-			<value>libmagickcore-6-headers</value>
-			<value>libmagickcore-6.q16-6</value>
-			<value>libmagickcore-6.q16-6-extra</value>
-			<value>libmagickcore-6.q16-dev</value>
-			<value>libmagickcore-6.q16hdri-6</value>
-			<value>libmagickcore-6.q16hdri-6-extra</value>
-			<value>libmagickcore-6.q16hdri-dev</value>
-			<value>libmagickcore-dev</value>
-			<value>libmagickwand-6-headers</value>
-			<value>libmagickwand-6.q16-6</value>
-			<value>libmagickwand-6.q16-dev</value>
-			<value>libmagickwand-6.q16hdri-6</value>
-			<value>libmagickwand-6.q16hdri-dev</value>
-			<value>libmagickwand-dev</value>
-			<value>perlmagick</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:662211377037975816539192553356611374312" version="1" datatype="string" comment="Interim Release">
-			<value>golang-github-snapcore-snapd-dev</value>
-			<value>golang-github-ubuntu-core-snappy-dev</value>
-			<value>snap-confine</value>
-			<value>snapd</value>
-			<value>snapd-xdg-open</value>
-			<value>ubuntu-core-launcher</value>
-			<value>ubuntu-core-snapd-units</value>
-			<value>ubuntu-snappy</value>
-			<value>ubuntu-snappy-cli</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:669769648049874518430368087566546187447" version="1" datatype="string" comment="Interim Release">
-			<value>libmysqlclient21</value>
-			<value>libmysqlclient-dev</value>
-			<value>mysql-client</value>
-			<value>mysql-client-8.0</value>
-			<value>mysql-client-core-8.0</value>
-			<value>mysql-router</value>
-			<value>mysql-server</value>
-			<value>mysql-server-8.0</value>
-			<value>mysql-server-core-8.0</value>
-			<value>mysql-source-8.0</value>
-			<value>mysql-testsuite</value>
-			<value>mysql-testsuite-8.0</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:671061096759560505175848184868484527894" version="1" datatype="string" comment="Interim Release">
-			<value>python3-werkzeug</value>
-			<value>python-werkzeug-doc</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:674341325541302055486697690245920563356" version="1" datatype="string" comment="Interim Release">
-			<value>lrzip</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:675099850172740277002376217378302404683" version="1" datatype="string" comment="Interim Release">
-			<value>libssl3</value>
-			<value>libssl-dev</value>
-			<value>libssl-doc</value>
-			<value>openssl</value>
-		</constant_variable>
-		<local_variable id="oval:com.ubuntu.kinetic:var:390385284507746660438517495235956958270" datatype="debian_evr_string" version="1" comment="kernel version in evr format">
-			<concat>
-				<literal_component>0:</literal_component>
-				<regex_capture pattern="^([\d|\.]+-\d+)[-|\w]+$">
-					<object_component object_ref="oval:com.ubuntu.kinetic:obj:539257525261347833398619290667170696549" item_field="os_release" />
-				</regex_capture>
-			</concat>
-		</local_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:423038422882454267077261994212225292794" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1013</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:464923950276016422808312467057545872242" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1006</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:494683887320226618267264777271327636829" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-38</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:499903678034013214122256009603615943132" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1020</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:502912966637286531316433520735928499983" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1022</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:509658038786099305735747632384985906164" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1015</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:516276169035398338594658930205337608515" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1009</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:518600525001795142806560325364429042878" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1011</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:527963333460976022114995103259347436954" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1021</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:529210388683556803469448498599932893015" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1016</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:531213376475786615051170359370599445726" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1018</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:539986564341759182963821236732537700812" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-23</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:540431302184678085508224175649620226077" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-29</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:542972900253170952465693910115177988874" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1017</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:544364064732792940022838387163186759770" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-35</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:565358470189432031386687060192621155081" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1010</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:584316296219237954025489867593204397157" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-31</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:593137034869623951318896256352028800053" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-26</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:602320225009669386119397288585406788825" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1012</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:612059322204479928295170551692073942049" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1019</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:632356669451100126386394463189902179022" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-28</value>
-		</constant_variable>
-		<constant_variable id="oval:com.ubuntu.kinetic:var:657039857821125192190415580985514101641" version="1" datatype="debian_evr_string" comment="patched kernel">
-			<value>0:5.19.0-1014</value>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:347843584664133814825649129794385412748" version="1" datatype="string" comment="Interim Release">
+			<value>vim</value>
+			<value>vim-athena</value>
+			<value>vim-common</value>
+			<value>vim-doc</value>
+			<value>vim-gtk3</value>
+			<value>vim-gui-common</value>
+			<value>vim-motif</value>
+			<value>vim-nox</value>
+			<value>vim-runtime</value>
+			<value>vim-tiny</value>
+			<value>xxd</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:544403331693704723200249545743197426405" version="1" datatype="string" comment="Interim Release">
+			<value>vim</value>
+			<value>vim-athena</value>
+			<value>vim-common</value>
+			<value>vim-doc</value>
+			<value>vim-gtk3</value>
+			<value>vim-gui-common</value>
+			<value>vim-motif</value>
+			<value>vim-nox</value>
+			<value>vim-runtime</value>
+			<value>vim-tiny</value>
+			<value>xxd</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:395745467340773615785629213498215073869" version="1" datatype="string" comment="Interim Release">
+			<value>w3m</value>
+			<value>w3m-img</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:428206834402037039320327407280929522901" version="1" datatype="string" comment="Interim Release">
+			<value>xnest</value>
+			<value>xorg-server-source</value>
+			<value>xserver-common</value>
+			<value>xserver-xephyr</value>
+			<value>xserver-xorg-core</value>
+			<value>xserver-xorg-dev</value>
+			<value>xserver-xorg-legacy</value>
+			<value>xvfb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:473789858031559994353317162244846485675" version="1" datatype="string" comment="Interim Release">
+			<value>xwayland</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:352801790174052411626299755271157951056" version="1" datatype="string" comment="Interim Release">
+			<value>libyaml-snake-java</value>
+			<value>libyaml-snake-java-doc</value>
 		</constant_variable>
 	</variables>
 </oval_definitions>

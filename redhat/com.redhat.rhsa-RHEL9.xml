@@ -4,8 +4,8 @@
 		<oval:product_name>Red Hat OVAL Patch Definition Merger</oval:product_name>
 		<oval:product_version>3</oval:product_version>
 		<oval:schema_version>5.10</oval:schema_version>
-		<oval:timestamp>2023-04-03T13:35:20</oval:timestamp>
-		<oval:content_version>1680528920</oval:content_version>
+		<oval:timestamp>2023-04-04T17:15:04</oval:timestamp>
+		<oval:content_version>1680628504</oval:content_version>
 	</generator>
 	<definitions>
 		<definition class="patch" id="oval:com.redhat.rhba:def:20225749" version="635">
@@ -1068,7 +1068,7 @@ The following packages have been upgraded to a later upstream version: postgresq
 
 Security Fix(es):
 
-* postgresql: Autovacuum, REINDEX, and others omit &quot;security restricted operation&quot; sandbox (CVE-2022-1552)
+* postgresql: Autovacuum, REINDEX, and others omit "security restricted operation" sandbox (CVE-2022-1552)
 
 For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.</description>
 				<advisory from="secalert@redhat.com">
@@ -1077,7 +1077,7 @@ For more details about the security issue(s), including the impact, a CVSS score
 					<issued date="2022-05-30" />
 					<updated date="2022-05-30" />
 					<cve cvss3="8.8/CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cwe="CWE-459->CWE-89" href="https://access.redhat.com/security/cve/CVE-2022-1552" impact="important" public="20220512">CVE-2022-1552</cve>
-					<bugzilla href="https://bugzilla.redhat.com/2081126" id="2081126">CVE-2022-1552 postgresql: Autovacuum, REINDEX, and others omit &quot;security restricted operation&quot; sandbox</bugzilla>
+					<bugzilla href="https://bugzilla.redhat.com/2081126" id="2081126">CVE-2022-1552 postgresql: Autovacuum, REINDEX, and others omit "security restricted operation" sandbox</bugzilla>
 					<affected_cpe_list>
 						<cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
 						<cpe>cpe:/a:redhat:enterprise_linux:9::appstream</cpe>
@@ -1555,7 +1555,7 @@ Linux, UNIX, and similar operating systems.
 
 Security Fix(es):
 
-* cups: authorization bypass when using &quot;local&quot; authorization (CVE-2022-26691)
+* cups: authorization bypass when using "local" authorization (CVE-2022-26691)
 
 For more details about the security issue(s), including the impact, a CVSS
 score, acknowledgments, and other related information, refer to the CVE page(s)
@@ -1566,7 +1566,7 @@ listed in the References section.</description>
 					<issued date="2022-06-15" />
 					<updated date="2022-06-15" />
 					<cve cvss3="6.7/CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cwe="CWE-288" href="https://access.redhat.com/security/cve/CVE-2022-26691" impact="important" public="20220525:1500">CVE-2022-26691</cve>
-					<bugzilla href="https://bugzilla.redhat.com/2084321" id="2084321">CVE-2022-26691 cups: authorization bypass when using &quot;local&quot; authorization</bugzilla>
+					<bugzilla href="https://bugzilla.redhat.com/2084321" id="2084321">CVE-2022-26691 cups: authorization bypass when using "local" authorization</bugzilla>
 					<affected_cpe_list>
 						<cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
 						<cpe>cpe:/a:redhat:enterprise_linux:9::appstream</cpe>
@@ -3985,7 +3985,7 @@ Security Fix(es):
 
 * mariadb: assertion failure in VDec::VDec at /sql/sql_type.cc (CVE-2022-27456)
 
-* mariadb: incorrect key in &quot;dup value&quot; error after long unique (CVE-2022-27457)
+* mariadb: incorrect key in "dup value" error after long unique (CVE-2022-27457)
 
 * mariadb: use-after-poison in Binary_string::free_buffer (CVE-2022-27458)
 
@@ -4077,7 +4077,7 @@ For more details about the security issue(s), including the impact, a CVSS score
 					<bugzilla href="https://bugzilla.redhat.com/2075695" id="2075695">CVE-2022-27449 mariadb: assertion failure in sql/item_func.cc</bugzilla>
 					<bugzilla href="https://bugzilla.redhat.com/2075696" id="2075696">CVE-2022-27444 mariadb: crash when using HAVING with NOT EXIST predicate in an equality</bugzilla>
 					<bugzilla href="https://bugzilla.redhat.com/2075697" id="2075697">CVE-2022-27456 mariadb: assertion failure in VDec::VDec at /sql/sql_type.cc</bugzilla>
-					<bugzilla href="https://bugzilla.redhat.com/2075699" id="2075699">CVE-2022-27457 mariadb: incorrect key in &quot;dup value&quot; error after long unique</bugzilla>
+					<bugzilla href="https://bugzilla.redhat.com/2075699" id="2075699">CVE-2022-27457 mariadb: incorrect key in "dup value" error after long unique</bugzilla>
 					<bugzilla href="https://bugzilla.redhat.com/2075700" id="2075700">CVE-2022-27458 mariadb: use-after-poison in Binary_string::free_buffer</bugzilla>
 					<bugzilla href="https://bugzilla.redhat.com/2075701" id="2075701">CVE-2022-27455 mariadb: use-after-free when WHERE has subquery with an outer reference in HAVING</bugzilla>
 					<bugzilla href="https://bugzilla.redhat.com/2076144" id="2076144">CVE-2022-27451 mariadb: crash via window function in expression in ORDER BY</bugzilla>
@@ -5932,7 +5932,7 @@ Bug Fix(es):
 
 * Important ice bug fixes (BZ#2119290)
 
-* Power 9/ppc64le Incorrect Socket(s) &amp; &quot;Core(s) per socket&quot; reported by lscpu command. (BZ#2121719)
+* Power 9/ppc64le Incorrect Socket(s) &amp; "Core(s) per socket" reported by lscpu command. (BZ#2121719)
 
 Enhancement(s):
 
@@ -12591,7 +12591,7 @@ For more details about the security issue(s), including the impact, a CVSS score
 
 Bug Fix(es):
 
-* (podman image trust) does not support the new trust type &quot;sigstoreSigned &quot; (BZ#2120436)
+* (podman image trust) does not support the new trust type "sigstoreSigned " (BZ#2120436)
 
 * dnf-update broken for podman/catatonit (BZ#2123319)
 
@@ -13922,7 +13922,7 @@ Bug Fix(es):
 
 * Prepare for the next quarterly OpenJDK upstream release (2023-01, 8u362) [rhel-9] (BZ#2159912)
 
-* solr broken due to access denied (&quot;java.io.FilePermission&quot; &quot;/etc/pki/java/cacerts&quot; &quot;read&quot;) [rhel-9, openjdk-8] (BZ#2163594)</description>
+* solr broken due to access denied ("java.io.FilePermission" "/etc/pki/java/cacerts" "read") [rhel-9, openjdk-8] (BZ#2163594)</description>
 				<advisory from="secalert@redhat.com">
 					<severity>Moderate</severity>
 					<rights>Copyright 2023 Red Hat, Inc.</rights>
@@ -15470,13 +15470,13 @@ Bug Fix(es):
 
 * No signal showed in the VGA monitor when installing RHEL9 in the legacy bios mode (BZ#2140153)
 
-* Practically limit &quot;Dummy wait&quot; workaround to old Intel systems (BZ#2142168)
+* Practically limit "Dummy wait" workaround to old Intel systems (BZ#2142168)
 
 * ppc64le: unexpected oom panic when there's enough memory left in zswap test (BZ#2143976)
 
 * fatal error: error in backend: Branch target out of insn range (BZ#2144902)
 
-* AMdCLIENT: The kernel command line parameter &quot;nomodeset&quot; not working properly (BZ#2145217)
+* AMdCLIENT: The kernel command line parameter "nomodeset" not working properly (BZ#2145217)
 
 * Azure: PCI: hv: Do not set PCI_COMMAND_MEMORY to reduce VM boot time (BZ#2150910)
 
@@ -15648,7 +15648,7 @@ Security Fix(es):
 
 * dbus: dbus-daemon can be crashed by messages with array length inconsistent with element type (CVE-2022-42011)
 
-* dbus: `_dbus_marshal_byteswap` doesn't process fds in messages with &quot;foreign&quot; endianness correctly (CVE-2022-42012)
+* dbus: `_dbus_marshal_byteswap` doesn't process fds in messages with "foreign" endianness correctly (CVE-2022-42012)
 
 For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.</description>
 				<advisory from="secalert@redhat.com">
@@ -15661,7 +15661,7 @@ For more details about the security issue(s), including the impact, a CVSS score
 					<cve cvss3="6.5/CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cwe="CWE-400" href="https://access.redhat.com/security/cve/CVE-2022-42012" impact="moderate" public="20221005">CVE-2022-42012</cve>
 					<bugzilla href="https://bugzilla.redhat.com/2133616" id="2133616">CVE-2022-42010 dbus: dbus-daemon crashes when receiving message with incorrectly nested parentheses and curly brackets</bugzilla>
 					<bugzilla href="https://bugzilla.redhat.com/2133617" id="2133617">CVE-2022-42011 dbus: dbus-daemon can be crashed by messages with array length inconsistent with element type</bugzilla>
-					<bugzilla href="https://bugzilla.redhat.com/2133618" id="2133618">CVE-2022-42012 dbus: `_dbus_marshal_byteswap` doesn't process fds in messages with &quot;foreign&quot; endianness correctly</bugzilla>
+					<bugzilla href="https://bugzilla.redhat.com/2133618" id="2133618">CVE-2022-42012 dbus: `_dbus_marshal_byteswap` doesn't process fds in messages with "foreign" endianness correctly</bugzilla>
 					<affected_cpe_list>
 						<cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
 						<cpe>cpe:/a:redhat:enterprise_linux:9::appstream</cpe>
@@ -17684,7 +17684,7 @@ For more details about the security issue(s), including the impact, a CVSS score
 
 Bug Fix(es):
 
-* httpd-init fails to create localhost.crt, localhost.key due to &quot;sscg&quot; default now creates a /dhparams.pem and is not idempotent if the file /dhparams.pem already exists. (BZ#2165975)</description>
+* httpd-init fails to create localhost.crt, localhost.key due to "sscg" default now creates a /dhparams.pem and is not idempotent if the file /dhparams.pem already exists. (BZ#2165975)</description>
 				<advisory from="secalert@redhat.com">
 					<severity>Moderate</severity>
 					<rights>Copyright 2023 Red Hat, Inc.</rights>
@@ -18758,6 +18758,117 @@ For more details about the security issue(s), including the impact, a CVSS score
 									</criteria>
 								</criteria>
 							</criteria>
+						</criteria>
+					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition class="patch" id="oval:com.redhat.rhsa:def:20231591" version="635">
+			<metadata>
+				<title>RHSA-2023:1591: pcs security update (Important)</title>
+				<affected family="unix">
+					<platform>Red Hat Enterprise Linux 9</platform>
+				</affected>
+				<reference ref_id="RHSA-2023:1591" ref_url="https://access.redhat.com/errata/RHSA-2023:1591" source="RHSA" />
+				<reference ref_id="CVE-2023-28154" ref_url="https://access.redhat.com/security/cve/CVE-2023-28154" source="CVE" />
+				<description>The pcs packages provide a command-line configuration system for the Pacemaker and Corosync utilities.
+
+Security Fix(es):
+
+* webpack: avoid cross-realm objects (CVE-2023-28154)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.</description>
+				<advisory from="secalert@redhat.com">
+					<severity>Important</severity>
+					<rights>Copyright 2023 Red Hat, Inc.</rights>
+					<issued date="2023-04-04" />
+					<updated date="2023-04-04" />
+					<cve cvss3="9.1/CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N" href="https://access.redhat.com/security/cve/CVE-2023-28154" impact="important" public="20230313">CVE-2023-28154</cve>
+					<bugzilla href="https://bugzilla.redhat.com/2179227" id="2179227">CVE-2023-28154 webpack: avoid cross-realm objects</bugzilla>
+					<affected_cpe_list>
+						<cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
+						<cpe>cpe:/a:redhat:enterprise_linux:9::highavailability</cpe>
+						<cpe>cpe:/a:redhat:enterprise_linux:9::resilientstorage</cpe>
+					</affected_cpe_list>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:471264618690101899303826602864469167988" />
+				<criteria operator="AND">
+					<criterion comment="Red Hat Enterprise Linux 9 is installed" test_ref="oval:com.redhat.rhba:tst:539097813937109581503698613161463598473" />
+					<criteria operator="OR">
+						<criteria operator="AND">
+							<criterion comment="pcs is earlier than 0:0.11.3-4.el9_1.3" test_ref="oval:com.redhat.rhsa:tst:559451088005314683536455207345534051488" />
+							<criterion comment="pcs is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:552477376195527407159169351895089198894" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="pcs-snmp is earlier than 0:0.11.3-4.el9_1.3" test_ref="oval:com.redhat.rhsa:tst:501592935992929685897561725616001892425" />
+							<criterion comment="pcs-snmp is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:645293115245225656597931955753927221366" />
+						</criteria>
+					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition class="patch" id="oval:com.redhat.rhsa:def:20231592" version="636">
+			<metadata>
+				<title>RHSA-2023:1592: tigervnc security update (Important)</title>
+				<affected family="unix">
+					<platform>Red Hat Enterprise Linux 9</platform>
+				</affected>
+				<reference ref_id="RHSA-2023:1592" ref_url="https://access.redhat.com/errata/RHSA-2023:1592" source="RHSA" />
+				<reference ref_id="CVE-2023-1393" ref_url="https://access.redhat.com/security/cve/CVE-2023-1393" source="CVE" />
+				<description>Virtual Network Computing (VNC) is a remote display system which allows users to view a computing desktop environment not only on the machine where it is running, but from anywhere on the Internet and from a wide variety of machine architectures. TigerVNC is a suite of VNC servers and clients.
+
+Security Fix(es):
+
+* xorg-x11-server: X.Org Server Overlay Window Use-After-Free Local Privilege Escalation Vulnerability (CVE-2023-1393)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.</description>
+				<advisory from="secalert@redhat.com">
+					<severity>Important</severity>
+					<rights>Copyright 2023 Red Hat, Inc.</rights>
+					<issued date="2023-04-04" />
+					<updated date="2023-04-04" />
+					<cve cvss3="7.8/CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cwe="CWE-416" href="https://access.redhat.com/security/cve/CVE-2023-1393" impact="important" public="20230329">CVE-2023-1393</cve>
+					<bugzilla href="https://bugzilla.redhat.com/2180288" id="2180288">CVE-2023-1393 xorg-x11-server: X.Org Server Overlay Window Use-After-Free Local Privilege Escalation Vulnerability</bugzilla>
+					<affected_cpe_list>
+						<cpe>cpe:/a:redhat:enterprise_linux:9</cpe>
+						<cpe>cpe:/a:redhat:enterprise_linux:9::appstream</cpe>
+					</affected_cpe_list>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:471264618690101899303826602864469167988" />
+				<criteria operator="AND">
+					<criterion comment="Red Hat Enterprise Linux 9 is installed" test_ref="oval:com.redhat.rhba:tst:539097813937109581503698613161463598473" />
+					<criteria operator="OR">
+						<criteria operator="AND">
+							<criterion comment="tigervnc is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:652179157934175584940167480010434164949" />
+							<criterion comment="tigervnc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:639139321243644458252320101239955993571" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="tigervnc-icons is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:349100772476694221026092464410546769196" />
+							<criterion comment="tigervnc-icons is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:385867645755725553677831702888592210823" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="tigervnc-license is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:674025792945200375316895566600098173959" />
+							<criterion comment="tigervnc-license is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:402910987263650908714122738834175305611" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="tigervnc-selinux is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:477066157722681764061894631344830381242" />
+							<criterion comment="tigervnc-selinux is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:599060225747314491575325235274221804073" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="tigervnc-server is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:666422882018126737683934576249838677697" />
+							<criterion comment="tigervnc-server is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:640863579932988962749093660437756353444" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="tigervnc-server-minimal is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:618270414296640997980711833192638789793" />
+							<criterion comment="tigervnc-server-minimal is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:621833971861700179064685777439992655156" />
+						</criteria>
+						<criteria operator="AND">
+							<criterion comment="tigervnc-server-module is earlier than 0:1.12.0-5.el9_1.2" test_ref="oval:com.redhat.rhsa:tst:505327768032512306974443261458083446605" />
+							<criterion comment="tigervnc-server-module is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhsa:tst:566694303085917016589417198794529605936" />
 						</criteria>
 					</criteria>
 				</criteria>
@@ -26402,6 +26513,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:626121225382937077165125233559017304808" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:624928240122500191627413107969263396052" />
 		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="pcs is earlier than 0:0.11.3-4.el9_1.3" id="oval:com.redhat.rhsa:tst:559451088005314683536455207345534051488" version="635">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:626121225382937077165125233559017304808" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:371826329650770071107715106910986756282" />
+		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="pcs is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:552477376195527407159169351895089198894" version="635">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:626121225382937077165125233559017304808" />
 			<red-def:state state_ref="oval:com.redhat.rhba:ste:341301034769109988504822310439039377087" />
@@ -26421,6 +26536,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_test check="at least one" comment="pcs-snmp is earlier than 0:0.11.3-4.el9_1.2" id="oval:com.redhat.rhsa:tst:502429000559669686020931709695461383097" version="635">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:364895252507097459832319360948587250348" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:624928240122500191627413107969263396052" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="pcs-snmp is earlier than 0:0.11.3-4.el9_1.3" id="oval:com.redhat.rhsa:tst:501592935992929685897561725616001892425" version="635">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:364895252507097459832319360948587250348" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:371826329650770071107715106910986756282" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="pcs-snmp is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:645293115245225656597931955753927221366" version="635">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:364895252507097459832319360948587250348" />
@@ -28810,6 +28929,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:491346247490222122858049042243185472782" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:412501831218425826527513450346678541065" />
 		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:652179157934175584940167480010434164949" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:491346247490222122858049042243185472782" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:552487983192582879822510787503631121549" />
+		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:639139321243644458252320101239955993571" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:491346247490222122858049042243185472782" />
 			<red-def:state state_ref="oval:com.redhat.rhba:ste:341301034769109988504822310439039377087" />
@@ -28817,6 +28940,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-icons is earlier than 0:1.12.0-5.el9_1.1" id="oval:com.redhat.rhsa:tst:456376358019658105696379436845262187050" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:434909670602529857015108582283921593258" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:420542231195548219044873505545192463738" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc-icons is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:349100772476694221026092464410546769196" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:434909670602529857015108582283921593258" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:513181708544646679000098119496378542273" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-icons is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:385867645755725553677831702888592210823" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:434909670602529857015108582283921593258" />
@@ -28826,6 +28953,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:540931436748977290700457230354250940013" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:420542231195548219044873505545192463738" />
 		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc-license is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:674025792945200375316895566600098173959" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:540931436748977290700457230354250940013" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:513181708544646679000098119496378542273" />
+		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-license is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:402910987263650908714122738834175305611" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:540931436748977290700457230354250940013" />
 			<red-def:state state_ref="oval:com.redhat.rhba:ste:341301034769109988504822310439039377087" />
@@ -28833,6 +28964,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-selinux is earlier than 0:1.12.0-5.el9_1.1" id="oval:com.redhat.rhsa:tst:529894498013456045428208602417633585864" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:464616488296567810993288043286763888972" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:420542231195548219044873505545192463738" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc-selinux is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:477066157722681764061894631344830381242" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:464616488296567810993288043286763888972" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:513181708544646679000098119496378542273" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-selinux is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:599060225747314491575325235274221804073" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:464616488296567810993288043286763888972" />
@@ -28842,6 +28977,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:601226788416193859629663795173427826122" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:412501831218425826527513450346678541065" />
 		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc-server is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:666422882018126737683934576249838677697" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:601226788416193859629663795173427826122" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:552487983192582879822510787503631121549" />
+		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-server is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:640863579932988962749093660437756353444" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:601226788416193859629663795173427826122" />
 			<red-def:state state_ref="oval:com.redhat.rhba:ste:341301034769109988504822310439039377087" />
@@ -28850,6 +28989,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:384558683562525616265369488094187704845" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:412501831218425826527513450346678541065" />
 		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc-server-minimal is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:618270414296640997980711833192638789793" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:384558683562525616265369488094187704845" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:552487983192582879822510787503631121549" />
+		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-server-minimal is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:621833971861700179064685777439992655156" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:384558683562525616265369488094187704845" />
 			<red-def:state state_ref="oval:com.redhat.rhba:ste:341301034769109988504822310439039377087" />
@@ -28857,6 +29000,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-server-module is earlier than 0:1.12.0-5.el9_1.1" id="oval:com.redhat.rhsa:tst:473027921843230244342846300562664752149" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:492754855221952612147348919867226971216" />
 			<red-def:state state_ref="oval:com.redhat.rhsa:ste:412501831218425826527513450346678541065" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="tigervnc-server-module is earlier than 0:1.12.0-5.el9_1.2" id="oval:com.redhat.rhsa:tst:505327768032512306974443261458083446605" version="636">
+			<red-def:object object_ref="oval:com.redhat.rhsa:obj:492754855221952612147348919867226971216" />
+			<red-def:state state_ref="oval:com.redhat.rhsa:ste:552487983192582879822510787503631121549" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="tigervnc-server-module is signed with Red Hat redhatrelease2 key" id="oval:com.redhat.rhsa:tst:566694303085917016589417198794529605936" version="636">
 			<red-def:object object_ref="oval:com.redhat.rhsa:obj:492754855221952612147348919867226971216" />
@@ -29394,15 +29541,6 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_object id="oval:com.redhat.rhba:obj:637940267926454135130697652808165244663" version="635">
 			<red-def:name>dotnet-apphost-pack-6.0</red-def:name>
 		</red-def:rpminfo_object>
-		<red-def:rpmverifyfile_object id="oval:com.redhat.rhba:obj:656047598359650834874393421858902125700" version="635">
-			<red-def:behaviors noconfigfiles="true" noghostfiles="true" nogroup="true" nolinkto="true" nomd5="true" nomode="true" nomtime="true" nordev="true" nosize="true" nouser="true" />
-			<red-def:name operation="pattern match" />
-			<red-def:epoch operation="pattern match" />
-			<red-def:version operation="pattern match" />
-			<red-def:release operation="pattern match" />
-			<red-def:arch operation="pattern match" />
-			<red-def:filepath>/etc/redhat-release</red-def:filepath>
-		</red-def:rpmverifyfile_object>
 		<red-def:rpminfo_object id="oval:com.redhat.rhba:obj:656058955666466126180932390157396303940" version="635">
 			<red-def:name>dotnet-templates-6.0</red-def:name>
 		</red-def:rpminfo_object>
@@ -30183,11 +30321,6 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:432119009652024969284704535191300410224" version="636">
 			<red-def:name>dhcp-relay</red-def:name>
 		</red-def:rpminfo_object>
-		<ind-def:textfilecontent54_object id="oval:com.redhat.rhsa:obj:433279571766755120127477549431793255961" version="635">
-			<ind-def:filepath datatype="string">/boot/grub2/grubenv</ind-def:filepath>
-			<ind-def:pattern operation="pattern match">(?&lt;=^saved_entry=).*</ind-def:pattern>
-			<ind-def:instance datatype="int">1</ind-def:instance>
-		</ind-def:textfilecontent54_object>
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:433958100225518642499842750881003181503" version="636">
 			<red-def:name>libreoffice-langpack-as</red-def:name>
 		</red-def:rpminfo_object>
@@ -30467,11 +30600,6 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:468887426633449282824392167417086321055" version="636">
 			<red-def:name>libvirt-daemon-config-network</red-def:name>
 		</red-def:rpminfo_object>
-		<ind-def:textfilecontent54_object id="oval:com.redhat.rhsa:obj:470020608781925064006581809671713245618" version="635">
-			<ind-def:filepath datatype="string">/boot/grub2/grub.cfg</ind-def:filepath>
-			<ind-def:pattern operation="pattern match">^menuentry.*</ind-def:pattern>
-			<ind-def:instance datatype="int" var_ref="oval:com.redhat.rhsa:var:436757493887442100636758995347448507654" />
-		</ind-def:textfilecontent54_object>
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:470248532254011132634184549137077835220" version="635">
 			<red-def:name>golang-docs</red-def:name>
 		</red-def:rpminfo_object>
@@ -31925,11 +32053,6 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:660846498809420175806398372531193494131" version="635">
 			<red-def:name>java-17-openjdk-src-slowdebug</red-def:name>
 		</red-def:rpminfo_object>
-		<ind-def:textfilecontent54_object id="oval:com.redhat.rhsa:obj:660876375275457247520087513041065469419" version="636">
-			<ind-def:filepath datatype="string">/etc/dnf/modules.d/nodejs.module</ind-def:filepath>
-			<ind-def:pattern operation="pattern match">\[nodejs\][\w\W]*</ind-def:pattern>
-			<ind-def:instance datatype="int">1</ind-def:instance>
-		</ind-def:textfilecontent54_object>
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:660880118851415707844569892064073766134" version="636">
 			<red-def:name>samba-libs</red-def:name>
 		</red-def:rpminfo_object>
@@ -32068,6 +32191,30 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_object id="oval:com.redhat.rhsa:obj:679149024559686011480066981422749359045" version="636">
 			<red-def:name>postgresql-server</red-def:name>
 		</red-def:rpminfo_object>
+		<ind-def:textfilecontent54_object id="oval:com.redhat.rhsa:obj:470020608781925064006581809671713245618" version="635">
+			<ind-def:filepath datatype="string">/boot/grub2/grub.cfg</ind-def:filepath>
+			<ind-def:pattern operation="pattern match">^menuentry.*</ind-def:pattern>
+			<ind-def:instance datatype="int" var_ref="oval:com.redhat.rhsa:var:436757493887442100636758995347448507654" />
+		</ind-def:textfilecontent54_object>
+		<ind-def:textfilecontent54_object id="oval:com.redhat.rhsa:obj:433279571766755120127477549431793255961" version="635">
+			<ind-def:filepath datatype="string">/boot/grub2/grubenv</ind-def:filepath>
+			<ind-def:pattern operation="pattern match">(?&lt;=^saved_entry=).*</ind-def:pattern>
+			<ind-def:instance datatype="int">1</ind-def:instance>
+		</ind-def:textfilecontent54_object>
+		<ind-def:textfilecontent54_object id="oval:com.redhat.rhsa:obj:660876375275457247520087513041065469419" version="636">
+			<ind-def:filepath datatype="string">/etc/dnf/modules.d/nodejs.module</ind-def:filepath>
+			<ind-def:pattern operation="pattern match">\[nodejs\][\w\W]*</ind-def:pattern>
+			<ind-def:instance datatype="int">1</ind-def:instance>
+		</ind-def:textfilecontent54_object>
+		<red-def:rpmverifyfile_object id="oval:com.redhat.rhba:obj:656047598359650834874393421858902125700" version="635">
+			<red-def:behaviors noconfigfiles="true" noghostfiles="true" nogroup="true" nolinkto="true" nomd5="true" nomode="true" nomtime="true" nordev="true" nosize="true" nouser="true" />
+			<red-def:name operation="pattern match" />
+			<red-def:epoch operation="pattern match" />
+			<red-def:version operation="pattern match" />
+			<red-def:release operation="pattern match" />
+			<red-def:arch operation="pattern match" />
+			<red-def:filepath>/etc/redhat-release</red-def:filepath>
+		</red-def:rpmverifyfile_object>
 	</objects>
 	<states>
 		<red-def:rpminfo_state id="oval:com.redhat.rhba:ste:341301034769109988504822310439039377087" version="635">
@@ -32230,6 +32377,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:370726855053115798776043767209759185837" version="636">
 			<red-def:evr datatype="evr_string" operation="less than">32:9.16.23-5.el9_1</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:371826329650770071107715106910986756282" version="635">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:0.11.3-4.el9_1.3</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:376828205015999839566291006413663768071" version="635">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
@@ -32936,6 +33087,9 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<unix-def:uname_state id="oval:com.redhat.rhsa:ste:512446070916913411838198511091449662017" version="636">
 			<unix-def:os_release operation="pattern match">5.14.0-162.6.1.el9_1</unix-def:os_release>
 		</unix-def:uname_state>
+		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:513181708544646679000098119496378542273" version="636">
+			<red-def:evr datatype="evr_string" operation="less than">0:1.12.0-5.el9_1.2</red-def:evr>
+		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:514852374320072283136246102147529075263" version="636">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:13.7-1.el9_0</red-def:evr>
@@ -33101,6 +33255,10 @@ For more details about the security issue(s), including the impact, a CVSS score
 		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:552357371661371243327183437200515787826" version="638">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:3.79.0-17.el9_1</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:552487983192582879822510787503631121549" version="636">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:1.12.0-5.el9_1.2</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:com.redhat.rhsa:ste:552882446922047726138053746282182765678" version="635">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64</red-def:arch>
