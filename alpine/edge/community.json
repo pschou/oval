@@ -5167,17 +5167,17 @@
 			"pkg": {
 				"name": "neovim",
 				"secfixes": [
-					{"Version": "0.3.6-r0","Fixes": [{"Identifiers": ["CVE-2019-12735"],"LineNr": 40}],"LineNr": 39},
+					{"Version": "0.3.6-r0","Fixes": [{"Identifiers": ["CVE-2019-12735"],"LineNr": 39}],"LineNr": 38},
 					{
 						"Version": "0.2.0-r0",
 						"Fixes": [
-							{"Identifiers": ["CVE-2017-5953"],"LineNr": 42},
-							{"Identifiers": ["CVE-2017-6349"],"LineNr": 43},
-							{"Identifiers": ["CVE-2017-6350"],"LineNr": 44}
+							{"Identifiers": ["CVE-2017-5953"],"LineNr": 41},
+							{"Identifiers": ["CVE-2017-6349"],"LineNr": 42},
+							{"Identifiers": ["CVE-2017-6350"],"LineNr": 43}
 						],
-						"LineNr": 41
+						"LineNr": 40
 					},
-					{"Version": "0.1.6-r1","Fixes": [{"Identifiers": ["CVE-2016-1248"],"LineNr": 46}],"LineNr": 45}
+					{"Version": "0.1.6-r1","Fixes": [{"Identifiers": ["CVE-2016-1248"],"LineNr": 45}],"LineNr": 44}
 				]
 			}
 		},
@@ -5384,58 +5384,66 @@
 				"name": "nomad",
 				"secfixes": [
 					{
-						"Version": "1.5.1-r0",
+						"Version": "1.5.3-r0",
 						"Fixes": [
-							{"Identifiers": ["CVE-2023-1296"],"LineNr": 41},
-							{"Identifiers": ["CVE-2023-1299"],"LineNr": 42}
+							{"Identifiers": ["CVE-2023-24534"],"LineNr": 41},
+							{"Identifiers": ["CVE-2023-1782"],"LineNr": 42}
 						],
 						"LineNr": 40
 					},
-					{"Version": "1.3.1-r0","Fixes": [{"Identifiers": ["CVE-2022-30324"],"LineNr": 44}],"LineNr": 43},
+					{
+						"Version": "1.5.1-r0",
+						"Fixes": [
+							{"Identifiers": ["CVE-2023-1296"],"LineNr": 44},
+							{"Identifiers": ["CVE-2023-1299"],"LineNr": 45}
+						],
+						"LineNr": 43
+					},
+					{"Version": "1.3.1-r0","Fixes": [{"Identifiers": ["CVE-2022-30324"],"LineNr": 47}],"LineNr": 46},
 					{
 						"Version": "1.2.6-r0",
 						"Fixes": [
-							{"Identifiers": ["CVE-2022-24683"],"LineNr": 46},
-							{"Identifiers": ["CVE-2022-24684"],"LineNr": 47},
-							{"Identifiers": ["CVE-2022-24685"],"LineNr": 48},
-							{"Identifiers": ["CVE-2022-24686"],"LineNr": 49},
-							{"Identifiers": ["CVE-2021-44716"],"LineNr": 50},
-							{"Identifiers": ["CVE-2021-44717"],"LineNr": 51},
-							{"Identifiers": ["CVE-2021-43415"],"LineNr": 52},
-							{"Identifiers": ["CVE-2021-37218"],"LineNr": 53}
+							{"Identifiers": ["CVE-2022-24683"],"LineNr": 49},
+							{"Identifiers": ["CVE-2022-24684"],"LineNr": 50},
+							{"Identifiers": ["CVE-2022-24685"],"LineNr": 51},
+							{"Identifiers": ["CVE-2022-24686"],"LineNr": 52},
+							{"Identifiers": ["CVE-2021-44716"],"LineNr": 53},
+							{"Identifiers": ["CVE-2021-44717"],"LineNr": 54},
+							{"Identifiers": ["CVE-2021-43415"],"LineNr": 55},
+							{"Identifiers": ["CVE-2021-37218"],"LineNr": 56}
 						],
-						"LineNr": 45
+						"LineNr": 48
 					},
-					{"Version": "1.1.1-r0","Fixes": [{"Identifiers": ["CVE-2021-32575"],"LineNr": 55}],"LineNr": 54},
-					{"Version": "1.0.4-r0","Fixes": [{"Identifiers": ["CVE-2021-3283"],"LineNr": 57}],"LineNr": 56},
+					{"Version": "1.1.1-r0","Fixes": [{"Identifiers": ["CVE-2021-32575"],"LineNr": 58}],"LineNr": 57},
+					{"Version": "1.0.4-r0","Fixes": [{"Identifiers": ["CVE-2021-3283"],"LineNr": 60}],"LineNr": 59},
 					{
 						"Version": "0.12.7-r0",
 						"Fixes": [
-							{"Identifiers": ["CVE-2020-28348"],"LineNr": 59},
-							{"Identifiers": ["CVE-2020-27195"],"LineNr": 60}
+							{"Identifiers": ["CVE-2020-28348"],"LineNr": 62},
+							{"Identifiers": ["CVE-2020-27195"],"LineNr": 63}
 						],
-						"LineNr": 58
+						"LineNr": 61
 					},
-					{"Version": "0.11.1-r0","Fixes": [{"Identifiers": ["CVE-2020-10944"],"LineNr": 62}],"LineNr": 61},
-					{"Version": "0.10.3-r0","Fixes": [{"Identifiers": ["CVE-2020-7218"],"LineNr": 64}],"LineNr": 63},
+					{"Version": "0.11.1-r0","Fixes": [{"Identifiers": ["CVE-2020-10944"],"LineNr": 65}],"LineNr": 64},
+					{"Version": "0.10.3-r0","Fixes": [{"Identifiers": ["CVE-2020-7218"],"LineNr": 67}],"LineNr": 66},
 					{
 						"Version": "0.9.6-r0",
 						"Fixes": [
-							{"Identifiers": ["CVE-2019-12741"],"LineNr": 66},
-							{"Identifiers": ["CVE-2019-15928"],"LineNr": 67},
-							{"Identifiers": ["CVE-2019-16742"],"LineNr": 68}
+							{"Identifiers": ["CVE-2019-12741"],"LineNr": 69},
+							{"Identifiers": ["CVE-2019-15928"],"LineNr": 70},
+							{"Identifiers": ["CVE-2019-16742"],"LineNr": 71}
 						],
-						"LineNr": 65
+						"LineNr": 68
 					},
 					{
 						"Version": "0.9.5-r0",
 						"Fixes": [
-							{"Identifiers": ["CVE-2019-14802"],"LineNr": 70},
-							{"Identifiers": ["CVE-2019-14803"],"LineNr": 71}
+							{"Identifiers": ["CVE-2019-14802"],"LineNr": 73},
+							{"Identifiers": ["CVE-2019-14803"],"LineNr": 74}
 						],
-						"LineNr": 69
+						"LineNr": 72
 					},
-					{"Version": "0.9.2-r0","Fixes": [{"Identifiers": ["CVE-2019-12618"],"LineNr": 73}],"LineNr": 72}
+					{"Version": "0.9.2-r0","Fixes": [{"Identifiers": ["CVE-2019-12618"],"LineNr": 76}],"LineNr": 75}
 				]
 			}
 		},
@@ -10492,9 +10500,9 @@
 			"pkg": {
 				"name": "zabbix",
 				"secfixes": [
-					{"Version": "5.4.9-r1","Fixes": [{"Identifiers": ["CVE-2022-22704"],"LineNr": 85}],"LineNr": 84},
-					{"Version": "5.2.6-r0","Fixes": [{"Identifiers": ["CVE-2021-27927"],"LineNr": 87}],"LineNr": 86},
-					{"Version": "3.0.4-r0","Fixes": [{"Identifiers": ["CVE-2016-9140"],"LineNr": 89}],"LineNr": 88}
+					{"Version": "5.4.9-r1","Fixes": [{"Identifiers": ["CVE-2022-22704"],"LineNr": 84}],"LineNr": 83},
+					{"Version": "5.2.6-r0","Fixes": [{"Identifiers": ["CVE-2021-27927"],"LineNr": 86}],"LineNr": 85},
+					{"Version": "3.0.4-r0","Fixes": [{"Identifiers": ["CVE-2016-9140"],"LineNr": 88}],"LineNr": 87}
 				]
 			}
 		},
