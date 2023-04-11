@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-08T04:37:27</oval:timestamp>
+		<oval:timestamp>2023-04-11T06:37:03</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3487,6 +3487,24 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:604626605910464385799856615683432680124" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6002-1 -- Irssi vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6002-1" ref_id="USN-6002-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-29132" ref_id="CVE-2023-29132" />
+				<description>It was discovered that Irssi incorrectly handled certain internal routines. An attacker could possibly use this issue to cause a crash.  Update Instructions:  Run `sudo pro fix USN-6002-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  irssi - 1.4.2-1ubuntu1.1 irssi-dev - 1.4.2-1ubuntu1.1 irssi-plugin-otr - 1.4.2-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-10" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:465676519282939397581583822166937829346" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3692,6 +3710,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:465628488106667207227911672444252109870" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:574373725992890021504643041740577000528" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:465834181967199993106500106528173006937" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:465676519282939397581583822166937829346" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:417362845473267648377313380864079587227" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:568348332911367610304432631138257614010" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:468623473148897157198061594089682796829" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:653517505787167225446209871800349867299" />
@@ -4584,6 +4606,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:414139680681131659749218099294954135825" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:394923162567161559517091607406662679992" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:417362845473267648377313380864079587227" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:504425747287585190119480485211726833060" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:421187890122706901180091445623996174429" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:482593255751296273100713960532940627866" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5308,6 +5333,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:567855893468839126927184828806275419798" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.2+dfsg1-3ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:568348332911367610304432631138257614010" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.2-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:568889748261337763593572544916907393712" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.34+dfsg-1ubuntu0.1.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5895,6 +5923,11 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
 			<value>intel-microcode</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:504425747287585190119480485211726833060" version="1" datatype="string" comment="Interim Release">
+			<value>irssi</value>
+			<value>irssi-dev</value>
+			<value>irssi-plugin-otr</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:610167835331407453956144989635031509211" version="1" datatype="string" comment="Interim Release">
 			<value>isag</value>
