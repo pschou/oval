@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-08T06:36:09</oval:timestamp>
+		<oval:timestamp>2023-04-12T06:38:09</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -8581,6 +8581,96 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:398982477175268202940335464319346791812" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6004-1 -- Linux kernel (Intel IoTG) vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6004-1" ref_id="USN-6004-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-2196" ref_id="CVE-2022-2196" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-3424" ref_id="CVE-2022-3424" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-36280" ref_id="CVE-2022-36280" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-41218" ref_id="CVE-2022-41218" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-4382" ref_id="CVE-2022-4382" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-48423" ref_id="CVE-2022-48423" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-48424" ref_id="CVE-2022-48424" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-0045" ref_id="CVE-2023-0045" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-0210" ref_id="CVE-2023-0210" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-0266" ref_id="CVE-2023-0266" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-23454" ref_id="CVE-2023-23454" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-23455" ref_id="CVE-2023-23455" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-23559" ref_id="CVE-2023-23559" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-26606" ref_id="CVE-2023-26606" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28328" ref_id="CVE-2023-28328" />
+				<description>It was discovered that the KVM VMX implementation in the Linux kernel did not properly handle indirect branch prediction isolation between L1 and L2 VMs. An attacker in a guest VM could use this to expose sensitive information from the host OS or other guest VMs. (CVE-2022-2196)  It was discovered that a use-after-free vulnerability existed in the SGI GRU driver in the Linux kernel. A local attacker could possibly use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2022-3424)  Ziming Zhang discovered that the VMware Virtual GPU DRM driver in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-36280)  Hyunwoo Kim discovered that the DVB Core driver in the Linux kernel did not properly perform reference counting in some situations, leading to a use- after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2022-41218)  Gerald Lee discovered that the USB Gadget file system implementation in the Linux kernel contained a race condition, leading to a use-after-free vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2022-4382)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate attributes in certain situations, leading to an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-48423)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate attributes in certain situations, leading to an out-of-bounds read vulnerability. A local attacker could possibly use this to expose sensitive information (kernel memory). (CVE-2022-48424)  José Oliveira and Rodrigo Branco discovered that the prctl syscall implementation in the Linux kernel did not properly protect against indirect branch prediction attacks in some situations. A local attacker could possibly use this to expose sensitive information. (CVE-2023-0045)  It was discovered that the KSMBD implementation in the Linux kernel did not properly validate buffer lengths, leading to a heap-based buffer overflow. A remote attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-0210)  It was discovered that a use-after-free vulnerability existed in the Advanced Linux Sound Architecture (ALSA) subsystem. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-0266)  Kyle Zeng discovered that the class-based queuing discipline implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-23454)  Kyle Zeng discovered that the ATM VC queuing discipline implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-23455)  It was discovered that the RNDIS USB driver in the Linux kernel contained an integer overflow vulnerability. A local attacker with physical access could plug in a malicious USB device to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-23559)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly handle a loop termination condition, leading to an out-of-bounds read vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-26606)  Wei Chen discovered that the DVB USB AZ6027 driver in the Linux kernel contained a null pointer dereference when handling certain messages from user space. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-28328)  Update Instructions:  Run `sudo pro fix USN-6004-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-buildinfo-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-cloud-tools-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-headers-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-headers-intel-iotg - 5.15.0.1027.26 linux-image-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-image-intel-iotg - 5.15.0.1027.26 linux-image-unsigned-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-intel-iotg - 5.15.0.1027.26 linux-intel-iotg-cloud-tools-5.15.0-1027 - 5.15.0-1027.32 linux-intel-iotg-cloud-tools-common - 5.15.0-1027.32 linux-intel-iotg-headers-5.15.0-1027 - 5.15.0-1027.32 linux-intel-iotg-tools-5.15.0-1027 - 5.15.0-1027.32 linux-intel-iotg-tools-common - 5.15.0-1027.32 linux-intel-iotg-tools-host - 5.15.0-1027.32 linux-modules-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-modules-extra-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-modules-iwlwifi-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-tools-5.15.0-1027-intel-iotg - 5.15.0-1027.32 linux-tools-intel-iotg - 5.15.0.1027.26</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-11" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:468609507207424356612327580075168727360" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:424044756567000365413720813862959244677" comment="Long Term Support" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60051000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6005-1 -- Sudo vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6005-1" ref_id="USN-6005-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28486" ref_id="CVE-2023-28486" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28487" ref_id="CVE-2023-28487" />
+				<description>Matthieu Barjole and Victor Cutillas discovered that Sudo incorrectly escaped control characters in log messages and sudoreplay output. An attacker could possibly use these issues to inject terminal control characters that alter output when being viewed.  Update Instructions:  Run `sudo pro fix USN-6005-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  sudo - 1.9.9-1ubuntu2.4 sudo-ldap - 1.9.9-1ubuntu2.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-11" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:637178661036915563471735595523035509732" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60061000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6006-1 -- .NET vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6006-1" ref_id="USN-6006-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28260" ref_id="CVE-2023-28260" />
+				<description>It was discovered that .NET did not properly manage dll files. An attacker could potentially use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6006-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-6.0 - 6.0.116-0ubuntu1~22.04.1 aspnetcore-targeting-pack-6.0 - 6.0.116-0ubuntu1~22.04.1 dotnet6 - 6.0.116-0ubuntu1~22.04.1 dotnet-apphost-pack-6.0 - 6.0.116-0ubuntu1~22.04.1 dotnet-host - 6.0.116-0ubuntu1~22.04.1 dotnet-hostfxr-6.0 - 6.0.116-0ubuntu1~22.04.1 dotnet-runtime-6.0 - 6.0.116-0ubuntu1~22.04.1 dotnet-sdk-6.0 - 6.0.116-0ubuntu1~22.04.1 dotnet-sdk-6.0-source-built-artifacts - 6.0.116-0ubuntu1~22.04.1 dotnet-targeting-pack-6.0 - 6.0.116-0ubuntu1~22.04.1 dotnet-templates-6.0 - 6.0.116-0ubuntu1~22.04.1 netstandard-targeting-pack-2.1 - 6.0.116-0ubuntu1~22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-11" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:635030960288226767762463652776477628706" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60081000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6008-1 -- Exo vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 ESM</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6008-1" ref_id="USN-6008-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-32278" ref_id="CVE-2022-32278" />
+				<description>It was discovered that Exo did not properly sanitized desktop files. A remote attacker could possibly use this issue to to cause a crash or arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-6008-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  exo-utils - 4.16.3-1ubuntu0.1~esm1 libexo-2-0 - 4.16.3-1ubuntu0.1~esm1 libexo-2-dev - 4.16.3-1ubuntu0.1~esm1 libexo-common - 4.16.3-1ubuntu0.1~esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-11" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:644129919360558662794227929321891238612" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:358010827492276521125193121316322730501" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -8674,6 +8764,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:642088307118407815078132415359345066780" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:456422170962572993578761681270063203972" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:617199213487585354074904860656558180245" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:644129919360558662794227929321891238612" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:673167774789055738881620800456520640385" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:492921707064888830904586741599581155337" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:661718188720408245237456233590406231591" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:661572312111602781641891216344617795918" />
@@ -9009,6 +9103,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:421563409654396741964772055791749015407" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:343975740092286041228948468670183294036" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:424044756567000365413720813862959244677" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:673860165477808672529222114983436180100" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:425592924191919423462840211321655083146" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -10587,6 +10685,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:360343615616555773155642598329634960837" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:602249031283163558195392202895565746146" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:635030960288226767762463652776477628706" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:473010354658214732711997765146992920269" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:483601529206991098716702318767597503878" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:635411568093744936950779857139312639911" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:536836823124487679559957026368129711624" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:444670550266658356003135153072307515404" />
@@ -10594,6 +10696,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:636016139081023757540809808290691222301" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:615460913397243344507574637380380698339" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:628316562790582493794009607018031833804" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:637178661036915563471735595523035509732" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:565372657097568662386082804787021729533" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:441125631251463482078639543597740008412" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:638633289836234303280191668662153099223" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:428591144715680817760425426943381936237" />
@@ -11363,6 +11469,9 @@
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:670883655437053519328006815158318344567" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:483223527307380567768475170050542604580</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:673860165477808672529222114983436180100" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:540279855186236676805895984186655337725</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:678215887952791293753676648685169459619" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:582776816374878980499718199952729915749</ind:var_ref>
 		</ind:variable_object>
@@ -11440,6 +11549,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:661572312111602781641891216344617795918" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:679314268366092960545026382691694901904" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:673167774789055738881620800456520640385" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:559486384968937677303777304829478325782" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:341754077348905525603462650636444117940" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:386904103742759361792975674191743615214" var_check="at least one" />
@@ -11801,6 +11913,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:472149654389840545873460416281609058677" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:582256015126319973870238520492203861253" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:473010354658214732711997765146992920269" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:345443898926063000557241285383707223097" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:474678904363837264323280709516613497120" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:350419950355911379309566850337179704778" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -12043,6 +12158,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:563893748353795254552427451311236253841" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:349333159796834818421530341955582928143" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:565372657097568662386082804787021729533" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:628992543122833967169406743840067452136" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:566319003778248400560477525588754433332" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:531322322488759114360307464630776178580" var_check="at least one" />
@@ -12470,6 +12588,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:491389895021472241681034654838179432077" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.36.12+dfsg1-1ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:492921707064888830904586741599581155337" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.16.3-1ubuntu0.1~esm1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:505595950949045628385506275160722919545" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">8:6.9.11.60+dfsg-1.3ubuntu0.22.04.1+esm1</linux:evr>
 		</linux:dpkginfo_state>
@@ -12776,6 +12897,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:439315766039424271654760837768529371619" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.7.0-8ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:441125631251463482078639543597740008412" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.9-1ubuntu2.4</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:441650137083209629971036466396243140077" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.1.0-2ubuntu2.3</linux:evr>
 		</linux:dpkginfo_state>
@@ -12892,6 +13016,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:483017578312535733676855668791557678315" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2022.01+dfsg-2ubuntu2.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:483601529206991098716702318767597503878" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.116-0ubuntu1~22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:486202877904989313107941174844552846378" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.7.3-4ubuntu1.1</linux:evr>
@@ -14124,6 +14251,12 @@
 			<value>exim4-daemon-light</value>
 			<value>exim4-dev</value>
 			<value>eximon4</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:559486384968937677303777304829478325782" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>exo-utils</value>
+			<value>libexo-2-0</value>
+			<value>libexo-2-dev</value>
+			<value>libexo-common</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:598523524310341909171452554363382108213" version="1" datatype="string" comment="Long Term Support">
 			<value>expat</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-11T06:37:03</oval:timestamp>
+		<oval:timestamp>2023-04-11T22:36:26</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3505,6 +3505,44 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:465676519282939397581583822166937829346" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60051000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6005-1 -- Sudo vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6005-1" ref_id="USN-6005-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28486" ref_id="CVE-2023-28486" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28487" ref_id="CVE-2023-28487" />
+				<description>Matthieu Barjole and Victor Cutillas discovered that Sudo incorrectly escaped control characters in log messages and sudoreplay output. An attacker could possibly use these issues to inject terminal control characters that alter output when being viewed.  Update Instructions:  Run `sudo pro fix USN-6005-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  sudo - 1.9.11p3-1ubuntu1.3 sudo-ldap - 1.9.11p3-1ubuntu1.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-11" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:464220297003945499504144014234183129239" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60061000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6006-1 -- .NET vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6006-1" ref_id="USN-6006-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28260" ref_id="CVE-2023-28260" />
+				<description>It was discovered that .NET did not properly manage dll files. An attacker could potentially use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6006-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-6.0 - 6.0.116-0ubuntu1~22.10.1 aspnetcore-runtime-7.0 - 7.0.105-0ubuntu1~22.10.1 aspnetcore-targeting-pack-6.0 - 6.0.116-0ubuntu1~22.10.1 aspnetcore-targeting-pack-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet6 - 6.0.116-0ubuntu1~22.10.1 dotnet7 - 7.0.105-0ubuntu1~22.10.1 dotnet-apphost-pack-6.0 - 6.0.116-0ubuntu1~22.10.1 dotnet-apphost-pack-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet-host - 6.0.116-0ubuntu1~22.10.1 dotnet-host-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet-hostfxr-6.0 - 6.0.116-0ubuntu1~22.10.1 dotnet-hostfxr-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet-runtime-6.0 - 6.0.116-0ubuntu1~22.10.1 dotnet-runtime-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet-sdk-6.0 - 6.0.116-0ubuntu1~22.10.1 dotnet-sdk-6.0-source-built-artifacts - 6.0.116-0ubuntu1~22.10.1 dotnet-sdk-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet-sdk-7.0-source-built-artifacts - 7.0.105-0ubuntu1~22.10.1 dotnet-targeting-pack-6.0 - 6.0.116-0ubuntu1~22.10.1 dotnet-targeting-pack-7.0 - 7.0.105-0ubuntu1~22.10.1 dotnet-templates-6.0 - 6.0.116-0ubuntu1~22.10.1 dotnet-templates-7.0 - 7.0.105-0ubuntu1~22.10.1 netstandard-targeting-pack-2.1 - 6.0.116-0ubuntu1~22.10.1 netstandard-targeting-pack-2.1-7.0 - 7.0.105-0ubuntu1~22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-11" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:359497664823461791449507362320697955450" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:366318268267050705696582110032976286059" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3559,6 +3597,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:347895906529787860107570844844502903761" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:550076393250611887938222001265179421399" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:359497664823461791449507362320697955450" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:602017538746031664696411261013716681457" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:555015086256179686858450509130725348111" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:365485381461447601737185163873808430501" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:585526102543883537715506007001395663989" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:386003465626784615659449081544966975550" />
@@ -3566,6 +3608,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:365572743292579424310611127580892801231" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:408609505866381789803667745136553636173" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:414149309001327413770991359463053502844" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:366318268267050705696582110032976286059" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:644942461642297601375369814965593752896" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:393465068096643934371527473368560512789" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:366404410289586479596343297703253860009" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:528981688207444805774267453936030667153" />
@@ -3706,6 +3752,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:459557047620116932586014830650024196739" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:460906396387025594262596017900718761467" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:453309706536396009381541056065082798533" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:464220297003945499504144014234183129239" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:512000394583035332214897943965599438448" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:476655955806210076549711025702339968561" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:465628488106667207227911672444252109870" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:574373725992890021504643041740577000528" />
@@ -4729,6 +4779,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:510506078404453177088476981191841350708" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:388236145566469612965435835403692907727" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:512000394583035332214897943965599438448" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:628992543122833967169406743840067452136" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:512875263432128638090108578403892825093" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:364018962015713348103221162887907512055" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4855,6 +4908,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:600089978188308965729815908520793360710" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:557307654792941714877208571600592001701" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:602017538746031664696411261013716681457" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:345443898926063000557241285383707223097" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:609765160532186761548486268279996393124" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:635694599695396736577133819360849827337" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4920,6 +4976,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:638428867092386732603684847109216252586" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:585466785436318029037773375125937347217" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:644942461642297601375369814965593752896" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:622923979815955469455159812007479523223" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:647324618920078023749162189730878525830" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:369697572905337294106186969729055914222" var_check="at least one" />
@@ -5102,6 +5161,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:391459637553397703490820183272031761055" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:43.0-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:393465068096643934371527473368560512789" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.105-0ubuntu1~22.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:394175535935036408113976696591939790439" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.18-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5191,6 +5253,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:473079733805658160163386612827057497008" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.4.0-4ubuntu3.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:476655955806210076549711025702339968561" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.11p3-1ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:481858048820448610922468325124571747751" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9904-0ubuntu3.1</linux:evr>
@@ -5314,6 +5379,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:553974672984958897075103153187767133076" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.5+8-2ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:555015086256179686858450509130725348111" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.116-0ubuntu1~22.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:559753002978287250640198031694750760260" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.2+dfsg-1ubuntu0.2</linux:evr>
@@ -5575,6 +5643,20 @@
 			<value>dotnet-targeting-pack-6.0</value>
 			<value>dotnet-templates-6.0</value>
 			<value>netstandard-targeting-pack-2.1</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:622923979815955469455159812007479523223" version="1" datatype="string" comment="Interim Release">
+			<value>aspnetcore-runtime-7.0</value>
+			<value>aspnetcore-targeting-pack-7.0</value>
+			<value>dotnet7</value>
+			<value>dotnet-apphost-pack-7.0</value>
+			<value>dotnet-host-7.0</value>
+			<value>dotnet-hostfxr-7.0</value>
+			<value>dotnet-runtime-7.0</value>
+			<value>dotnet-sdk-7.0</value>
+			<value>dotnet-sdk-7.0-source-built-artifacts</value>
+			<value>dotnet-targeting-pack-7.0</value>
+			<value>dotnet-templates-7.0</value>
+			<value>netstandard-targeting-pack-2.1-7.0</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:633892453309035195056869752622102278477" version="1" datatype="string" comment="Interim Release">
 			<value>awstats</value>
