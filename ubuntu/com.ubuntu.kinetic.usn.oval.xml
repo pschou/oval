@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-11T22:36:26</oval:timestamp>
+		<oval:timestamp>2023-04-13T02:37:25</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3543,6 +3543,43 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:366318268267050705696582110032976286059" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6011-1 -- Json-smart vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6011-1" ref_id="USN-6011-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2021-31684" ref_id="CVE-2021-31684" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-1370" ref_id="CVE-2023-1370" />
+				<description>It was discovered that Json-smart incorrectly handled memory when processing input containing unclosed quotes. A remote attacker could possibly use this issue to cause applications using Json-smart to crash, leading to a denial of service. (CVE-2021-31684)  It was discovered that Json-smart incorrectly handled memory when processing input containing unclosed brackets. A remote attacker could possibly use this issue to cause applications using Json-smart to crash, leading to a denial of service. (CVE-2023-1370)  Update Instructions:  Run `sudo pro fix USN-6011-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libjson-smart-java - 2.2-2ubuntu0.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-12" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:356651229877072569941810774842790817523" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60121000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6012-1 -- Smarty vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6012-1" ref_id="USN-6012-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-29221" ref_id="CVE-2022-29221" />
+				<description>It was discovered that Smarty incorrectly parsed blocks' names and included files' names. A remote attacker with template writing permissions could use this issue to execute arbitrary PHP code. (CVE-2022-29221)  Update Instructions:  Run `sudo pro fix USN-6012-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  smarty3 - 3.1.39-2ubuntu1.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-12" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:591621961484623388206463325460213801641" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3588,6 +3625,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:355054128135526290689676645762200466546" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:391725835073011024450013981239418453136" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:533968834403438547766597237677531489963" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:356651229877072569941810774842790817523" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:591317744321340024191163709583326971216" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:671966639886364821673510112046281550372" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:357514210464253684671457407580127182842" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:438742694448611362940449213678862676739" />
@@ -3980,6 +4021,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:590910767283134523689851148678868782570" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:453973658794285997544309729255496954694" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:605979222406737986635864709845120479839" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:591621961484623388206463325460213801641" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:350044954117449752336937899027320280609" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:579478737987951430172313376435736296871" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:591822863194169143908934530951441095366" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:421187890122706901180091445623996174429" />
@@ -4584,6 +4629,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:348464676069425776177288249147412088723" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:647353091145153490354902517037251178087" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:350044954117449752336937899027320280609" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:419298908973427583423677670386234242031" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:351803335949821693886594749623956684252" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:616178400826080496692667376563065986524" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4895,6 +4943,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:590328535668121823293233536246969888729" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:450619503894199108563763574757102840948" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:591317744321340024191163709583326971216" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:650099724292631580545951106148107525913" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:592600714673753316339189905801130122366" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:431616919203190711323193757560838269545" var_check="at least one" />
@@ -5416,6 +5467,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:579294782463488702586409477948339994546" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.85.0-1ubuntu0.3</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:579478737987951430172313376435736296871" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.1.39-2ubuntu1.22.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:579601603231707662790110363628690756835" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.0242-1ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -5514,6 +5568,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:670447283921010283996593208717613696660" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:1.4+ds1-3ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:671966639886364821673510112046281550372" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2-2ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:672397827775582460529188372872699894743" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.1-3.1ubuntu0.22.10.1</linux:evr>
@@ -6136,6 +6193,9 @@
 			<value>postgresql-pltcl-14</value>
 			<value>postgresql-server-dev-14</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:650099724292631580545951106148107525913" version="1" datatype="string" comment="Interim Release">
+			<value>libjson-smart-java</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:383463788190616759879662763706500639534" version="1" datatype="string" comment="Interim Release">
 			<value>libksba8</value>
 			<value>libksba-dev</value>
@@ -6554,6 +6614,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:385524573855510265400251241115437789364" version="1" datatype="string" comment="Interim Release">
 			<value>rsync</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:419298908973427583423677670386234242031" version="1" datatype="string" comment="Interim Release">
+			<value>smarty3</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:628992543122833967169406743840067452136" version="1" datatype="string" comment="Interim Release">
 			<value>sudo</value>

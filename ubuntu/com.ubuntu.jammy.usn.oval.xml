@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-12T06:38:09</oval:timestamp>
+		<oval:timestamp>2023-04-13T04:37:49</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -8671,6 +8671,43 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:644129919360558662794227929321891238612" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6011-1 -- Json-smart vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6011-1" ref_id="USN-6011-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2021-31684" ref_id="CVE-2021-31684" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-1370" ref_id="CVE-2023-1370" />
+				<description>It was discovered that Json-smart incorrectly handled memory when processing input containing unclosed quotes. A remote attacker could possibly use this issue to cause applications using Json-smart to crash, leading to a denial of service. (CVE-2021-31684)  It was discovered that Json-smart incorrectly handled memory when processing input containing unclosed brackets. A remote attacker could possibly use this issue to cause applications using Json-smart to crash, leading to a denial of service. (CVE-2023-1370)  Update Instructions:  Run `sudo pro fix USN-6011-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libjson-smart-java - 2.2-2ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-12" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:555643731398911297981517435204732262957" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60121000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6012-1 -- Smarty vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6012-1" ref_id="USN-6012-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-29221" ref_id="CVE-2022-29221" />
+				<description>It was discovered that Smarty incorrectly parsed blocks' names and included files' names. A remote attacker with template writing permissions could use this issue to execute arbitrary PHP code. (CVE-2022-29221)  Update Instructions:  Run `sudo pro fix USN-6012-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  smarty3 - 3.1.39-2ubuntu1.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-12" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:377012369122038058462050082941731002605" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:358010827492276521125193121316322730501" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -9853,6 +9890,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:422922061236461452448605345310024682548" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:446379888542350638790641352690026373921" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:377012369122038058462050082941731002605" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:610460280530755404413309622145539191796" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:654574864819782146909897771699190316463" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:377581199626382425542792844971369884824" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:380305353160075520714334336362081288383" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:660311516198001640989856195205048189342" />
@@ -10376,6 +10417,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:553674191679695103427362535671791703011" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:443857054341750189667290348015220302321" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:498746473477833071265606560601061943476" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:555643731398911297981517435204732262957" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:606076970200087769362491567979589368991" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:473385944783196326355910255928739556323" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:556865463958941305633625917730859907134" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:540889983889393796416990189115343850241" />
@@ -12264,6 +12309,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:605212123484494315134390589457900710029" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:572873941894343230737314929469409592195" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:606076970200087769362491567979589368991" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:650099724292631580545951106148107525913" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:606253255056668902344828369701625679191" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:575656729121974619888619206103829828020" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -12278,6 +12326,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:609557312201834456785548690651045747138" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:598523524310341909171452554363382108213" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:610460280530755404413309622145539191796" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:419298908973427583423677670386234242031" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:610522395980274943682854510212785825657" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:385524573855510265400251241115437789364" var_check="at least one" />
@@ -12990,6 +13041,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:472977404286464559156099135769259031798" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.4-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:473385944783196326355910255928739556323" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2-2ubuntu0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:473634044069127968074166190099752946574" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.1-1.46.5-2ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -13406,6 +13460,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:653252295510313312474345462759726840868" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.12.20-2ubuntu4.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:654574864819782146909897771699190316463" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.1.39-2ubuntu1.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:654706713191572527176991413972528230986" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.36.8-0ubuntu0.22.04.1</linux:evr>
@@ -15012,6 +15069,9 @@
 			<value>libjs-moment</value>
 			<value>node-moment</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:650099724292631580545951106148107525913" version="1" datatype="string" comment="Long Term Support">
+			<value>libjson-smart-java</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:383463788190616759879662763706500639534" version="1" datatype="string" comment="Long Term Support">
 			<value>libksba8</value>
 			<value>libksba-dev</value>
@@ -15856,6 +15916,9 @@
 		<constant_variable id="oval:com.ubuntu.jammy:var:344332292235727535178598146092139787845" version="1" datatype="string" comment="Long Term Support">
 			<value>schroot</value>
 			<value>schroot-common</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:419298908973427583423677670386234242031" version="1" datatype="string" comment="Long Term Support">
+			<value>smarty3</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:519606218351535258207604709823645475990" version="1" datatype="string" comment="Long Term Support">
 			<value>sosreport</value>
