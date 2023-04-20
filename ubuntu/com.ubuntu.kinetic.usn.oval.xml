@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-19T04:37:16</oval:timestamp>
+		<oval:timestamp>2023-04-20T04:38:54</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3698,6 +3698,25 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60281000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6028-1 -- libxml2 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6028-1" ref_id="USN-6028-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28484" ref_id="CVE-2023-28484" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-29469" ref_id="CVE-2023-29469" />
+				<description>It was discovered that lixml2 incorrectly handled certain XML files. An attacker could possibly use this issue to cause a crash or execute arbitrary code. (CVE-2023-28484)  It was discovered that libxml2 incorrectly handled certain XML files. An attacker could possibly use this issue to cause a crash. (CVE-2023-29469)  Update Instructions:  Run `sudo pro fix USN-6028-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libxml2 - 2.9.14+dfsg-1ubuntu0.2 libxml2-dev - 2.9.14+dfsg-1ubuntu0.2 libxml2-doc - 2.9.14+dfsg-1ubuntu0.2 libxml2-utils - 2.9.14+dfsg-1ubuntu0.2 python3-libxml2 - 2.9.14+dfsg-1ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-19" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:433201545805676149846161521087036287945" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3895,6 +3914,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:432991024723807705153375082771273169689" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:462353648631090678030250411225638865500" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:591040069328364661816685667235412752088" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:433201545805676149846161521087036287945" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:489345478513771862981233095284807720898" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:433327765833011545250182441170142559874" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:441724101480553069046504115035535520284" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:570400388988592495669358865276737481411" />
@@ -4979,6 +5002,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:488426871450727028163627862004609451061" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:406909030607870092475713953191569668495" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:489345478513771862981233095284807720898" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:616750128513085384738145288941780407707" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:493278276589053211583098703304949546425" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:574314241787567870239052658450469390656" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5444,6 +5470,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:428849919194948836365335111750325552632" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.8.1+dfsg1-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:433327765833011545250182441170142559874" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.9.14+dfsg-1ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:434895431731863711008223987103896700738" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:4.16.8+dfsg-0ubuntu1</linux:evr>
