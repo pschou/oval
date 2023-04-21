@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-20T04:38:53</oval:timestamp>
+		<oval:timestamp>2023-04-21T06:36:38</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9040,6 +9040,42 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60341000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6034-1 -- Dnsmasq vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6034-1" ref_id="USN-6034-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2023-28450" ref_id="CVE-2023-28450" />
+				<description>It was discovered that Dnsmasq was sending large DNS messages over UDP, possibly causing transmission failures due to IP fragmentation. This update lowers the default maximum size of DNS messages to improve transmission reliability over UDP.  Update Instructions:  Run `sudo pro fix USN-6034-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  dnsmasq - 2.86-1.1ubuntu0.3 dnsmasq-base - 2.86-1.1ubuntu0.3 dnsmasq-base-lua - 2.86-1.1ubuntu0.3 dnsmasq-utils - 2.86-1.1ubuntu0.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2023-04-20" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:422673178323211733338426312404664576530" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6036-1 -- PatchELF vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 ESM</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6036-1" ref_id="USN-6036-1" />
+				<reference source="CVE" ref_url="https://ubuntu.com/security/CVE-2022-44940" ref_id="CVE-2022-44940" />
+				<description>It was discovered that PatchELF was not properly performing bounds checks, which could lead to an out-of-bounds read via a specially crafted file. An attacker could possibly use this issue to cause a denial of service or to expose sensitive information. (CVE-2022-44940)  Update Instructions:  Run `sudo pro fix USN-6036-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  patchelf - 0.14.3-1ubuntu0.1~esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-20" />
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:638391458947296752023461229011431273733" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:358010827492276521125193121316322730501" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -9129,6 +9165,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:605601197650900151362284901877789325211" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:566912290616007278577798591492402178303" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:617713363393481894590481530061836123976" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:638391458947296752023461229011431273733" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:675758817830032629381154791605949475993" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:471839393844761071282528689719913367020" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:642088307118407815078132415359345066780" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:456422170962572993578761681270063203972" />
@@ -10457,6 +10497,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:421591329705446865765393732583989698569" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:641657315230283651616754012184927424077" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:654571145321291705150018705960175064905" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:422673178323211733338426312404664576530" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:358519909651771445217174836920315754476" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:642646732057229178224960494655702663869" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:423106049997752062915679736915838602694" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:406166262964157170729166624210814591804" />
@@ -12052,6 +12096,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:673167774789055738881620800456520640385" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:559486384968937677303777304829478325782" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:675758817830032629381154791605949475993" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:452844824249641545227784257352243011174" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:341754077348905525603462650636444117940" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:386904103742759361792975674191743615214" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -12087,6 +12134,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:357638341970565778862814632147615584804" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:626503625561135631910252101663952100832" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:358519909651771445217174836920315754476" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:396649571745544250920627186783716085766" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:359334453317909463367795988928699353331" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:528323569758856208561403770134057118876" var_check="at least one" />
@@ -13113,6 +13163,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:458551669461272147710018353050420734790" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.7.18-13ubuntu1.1+esm2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:471839393844761071282528689719913367020" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.14.3-1ubuntu0.1~esm1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:491389895021472241681034654838179432077" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.36.12+dfsg1-1ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
@@ -13919,6 +13972,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:642443003840786349535099761214747003288" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2021.8.22-3ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:642646732057229178224960494655702663869" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.86-1.1ubuntu0.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:644270661143308301367177355210715960251" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.18.1-1ubuntu0.22.04.1</linux:evr>
@@ -16260,6 +16316,9 @@
 			<value>openvswitch-testcontroller</value>
 			<value>openvswitch-vtep</value>
 			<value>python3-openvswitch</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:452844824249641545227784257352243011174" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>patchelf</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:624485426529297851841266206920816336094" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<value>pdfresurrect</value>
