@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#macos linux-definitions-schema.xsd" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<generator>
+		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
+		<oval:product_version>1</oval:product_version>
+		<oval:schema_version>5.11.1</oval:schema_version>
+		<oval:timestamp>2023-04-26T06:38:32</oval:timestamp>
+		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
+	</generator>
+	<definitions>
+		<definition class="inventory" id="oval:com.ubuntu.lunar:def:100" version="1">
+			<metadata>
+				<title>Check that Ubuntu 23.04 (lunar) is installed.</title>
+				<description />
+			</metadata>
+			<criteria>
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:436126285896298213829179005660327993044" comment="Ubuntu 23.04 (lunar) is installed." />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60391000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6039-1 -- OpenSSL vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6039-1" ref_id="USN-6039-1" />
+				<description>It was discovered that OpenSSL was not properly managing file locks when processing policy constraints. If a user or automated system were tricked into processing a certificate chain with specially crafted policy constraints, a remote attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2022-3996)  David Benjamin discovered that OpenSSL was not properly performing the verification of X.509 certificate chains that include policy constraints, which could lead to excessive resource consumption. If a user or automated system were tricked into processing a specially crafted X.509 certificate chain that includes policy constraints, a remote attacker could possibly use this issue to cause a denial of service. (CVE-2023-0464)  David Benjamin discovered that OpenSSL was not properly handling invalid certificate policies in leaf certificates, which would result in certain policy checks being skipped for the certificate. If a user or automated system were tricked into processing a specially crafted certificate, a remote attacker could possibly use this issue to assert invalid certificate policies and circumvent policy checking. (CVE-2023-0465)  David Benjamin discovered that OpenSSL incorrectly documented the functionalities of function X509_VERIFY_PARAM_add0_policy, stating that it would implicitly enable certificate policy checks when doing certificate verifications, contrary to its implementation. This could cause users and applications to not perform certificate policy checks even when expected to do so. (CVE-2023-0466)  Update Instructions:  Run `sudo pro fix USN-6039-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libssl3 - 3.0.8-1ubuntu1.1 libssl-dev - 3.0.8-1ubuntu1.1 libssl-doc - 3.0.8-1ubuntu1.1 openssl - 3.0.8-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2023-04-25" />
+					<cve href="https://ubuntu.com/security/CVE-2022-3996" severity="low" public="20221213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="039-1">CVE-2022-3996</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0464" severity="low" public="20230322" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="039-1">CVE-2023-0464</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0466" severity="negligible" public="20230328" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" usns="039-1">CVE-2023-0466</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:551180166329225248168574629210367246478" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60421000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6042-1 -- Cloud-init vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6042-1" ref_id="USN-6042-1" />
+				<description>James Glovich discovered that sensitive data could be exposed in logs. An attacker could use this information to find hashed passwords and possibly escalate their privilege.  Update Instructions:  Run `sudo pro fix USN-6042-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cloud-init - 23.1.2-0ubuntu0~23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2023-04-26" />
+					<bug>https://bugs.launchpad.net/cloud-init/+bug/2013967</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:646625553873508166204397351596463782051" comment="Interim Release" />
+			</criteria>
+		</definition>
+	</definitions>
+	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:551180166329225248168574629210367246478" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:646625553873508166204397351596463782051" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" />
+		</linux:dpkginfo_test>
+		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.lunar:tst:436126285896298213829179005660327993044" version="1" comment="Ubuntu 23.04 (lunar) is installed.">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:544436420560782902077534787777774687784" />
+		</ind:textfilecontent54_test>
+	</tests>
+	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<ind:textfilecontent54_object id="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" version="1">
+			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
+			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
+	</objects>
+	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:23.1.2-0ubuntu0~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.8-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<ind:textfilecontent54_state id="oval:com.ubuntu.lunar:ste:544436420560782902077534787777774687784" version="1" comment="Ubuntu 23.04">
+			<ind:subexpression datatype="string" operation="equals">lunar</ind:subexpression>
+		</ind:textfilecontent54_state>
+	</states>
+	<variables>
+		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
+			<value>cloud-init</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" version="1" datatype="string" comment="Interim Release">
+			<value>libssl3</value>
+			<value>libssl-dev</value>
+			<value>libssl-doc</value>
+			<value>openssl</value>
+		</constant_variable>
+	</variables>
+</oval_definitions>
