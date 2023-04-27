@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-26T06:38:32</oval:timestamp>
+		<oval:timestamp>2023-04-27T02:35:14</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15,6 +15,24 @@
 			</metadata>
 			<criteria>
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:436126285896298213829179005660327993044" comment="Ubuntu 23.04 (lunar) is installed." />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60172000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6017-2 -- Ghostscript vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6017-2" ref_id="USN-6017-2" />
+				<description>USN-6017-1 fixed vulnerabilities in Ghostscript. This update provides the corresponding updates for Ubuntu 23.04.  Original advisory details:   Hadrien Perrineau discovered that Ghostscript incorrectly handled certain  inputs. An attacker could possibly use this issue to cause a denial of  service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6017-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ghostscript - 10.0.0~dfsg1-0ubuntu1.1 ghostscript-doc - 10.0.0~dfsg1-0ubuntu1.1 ghostscript-x - 10.0.0~dfsg1-0ubuntu1.1 libgs9-common - 10.0.0~dfsg1-0ubuntu1.1 libgs10 - 10.0.0~dfsg1-0ubuntu1.1 libgs10-common - 10.0.0~dfsg1-0ubuntu1.1 libgs-common - 10.0.0~dfsg1-0ubuntu1.1 libgs-dev - 10.0.0~dfsg1-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-26" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28879" severity="medium" public="20230331" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="017-1,017-2">CVE-2023-28879</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" comment="Interim Release" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.lunar:def:60391000000" version="1" class="patch">
@@ -46,8 +64,9 @@
 				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6042-1" ref_id="USN-6042-1" />
 				<description>James Glovich discovered that sensitive data could be exposed in logs. An attacker could use this information to find hashed passwords and possibly escalate their privilege.  Update Instructions:  Run `sudo pro fix USN-6042-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cloud-init - 23.1.2-0ubuntu0~23.04.1</description>
 				<advisory from="security@ubuntu.com">
-					<severity>None</severity>
+					<severity>Medium</severity>
 					<issued date="2023-04-26" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1786" severity="medium" public="20230426" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="042-1">CVE-2023-1786</cve>
 					<bug>https://bugs.launchpad.net/cloud-init/+bug/2013967</bug>
 				</advisory>
 			</metadata>
@@ -57,6 +76,10 @@
 		</definition>
 	</definitions>
 	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:615790763200592465878741261726361134661" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:551180166329225248168574629210367246478" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" />
@@ -71,6 +94,9 @@
 		</ind:textfilecontent54_test>
 	</tests>
 	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -90,6 +116,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.8-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:615790763200592465878741261726361134661" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:10.0.0~dfsg1-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<ind:textfilecontent54_state id="oval:com.ubuntu.lunar:ste:544436420560782902077534787777774687784" version="1" comment="Ubuntu 23.04">
 			<ind:subexpression datatype="string" operation="equals">lunar</ind:subexpression>
 		</ind:textfilecontent54_state>
@@ -97,6 +126,16 @@
 	<variables>
 		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
 			<value>cloud-init</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" version="1" datatype="string" comment="Interim Release">
+			<value>ghostscript</value>
+			<value>ghostscript-doc</value>
+			<value>ghostscript-x</value>
+			<value>libgs9-common</value>
+			<value>libgs10</value>
+			<value>libgs10-common</value>
+			<value>libgs-common</value>
+			<value>libgs-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" version="1" datatype="string" comment="Interim Release">
 			<value>libssl3</value>
