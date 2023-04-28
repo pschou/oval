@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-27T02:35:14</oval:timestamp>
+		<oval:timestamp>2023-04-27T18:38:16</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -28,7 +28,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-04-26" />
-					<cve href="https://ubuntu.com/security/CVE-2023-28879" severity="medium" public="20230331" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="017-1,017-2">CVE-2023-28879</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28879" severity="medium" public="20230331" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6017-1,6017-2">CVE-2023-28879</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -46,9 +46,9 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Low</severity>
 					<issued date="2023-04-25" />
-					<cve href="https://ubuntu.com/security/CVE-2022-3996" severity="low" public="20221213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="039-1">CVE-2022-3996</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-0464" severity="low" public="20230322" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="039-1">CVE-2023-0464</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-0466" severity="negligible" public="20230328" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" usns="039-1">CVE-2023-0466</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-3996" severity="low" public="20221213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6039-1">CVE-2022-3996</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0464" severity="low" public="20230322" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6039-1">CVE-2023-0464</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0466" severity="negligible" public="20230328" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" usns="6039-1">CVE-2023-0466</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -62,11 +62,11 @@
 					<platform>Ubuntu 23.04</platform>
 				</affected>
 				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6042-1" ref_id="USN-6042-1" />
-				<description>James Glovich discovered that sensitive data could be exposed in logs. An attacker could use this information to find hashed passwords and possibly escalate their privilege.  Update Instructions:  Run `sudo pro fix USN-6042-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cloud-init - 23.1.2-0ubuntu0~23.04.1</description>
+				<description>James Golovich discovered that sensitive data could be exposed in logs. An attacker could use this information to find hashed passwords and possibly escalate their privilege.  Update Instructions:  Run `sudo pro fix USN-6042-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cloud-init - 23.1.2-0ubuntu0~23.04.1</description>
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-04-26" />
-					<cve href="https://ubuntu.com/security/CVE-2023-1786" severity="medium" public="20230426" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="042-1">CVE-2023-1786</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1786" severity="medium" public="20230426" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6042-1">CVE-2023-1786</cve>
 					<bug>https://bugs.launchpad.net/cloud-init/+bug/2013967</bug>
 				</advisory>
 			</metadata>
