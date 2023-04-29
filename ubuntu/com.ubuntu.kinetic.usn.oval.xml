@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-28T06:38:23</oval:timestamp>
+		<oval:timestamp>2023-04-29T02:35:02</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3223,8 +3223,8 @@
 					<severity>High</severity>
 					<issued date="2023-03-23" />
 					<cve href="https://ubuntu.com/security/CVE-2022-37703" severity="low" public="20220913" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N" usns="5966-3">CVE-2022-37703</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-37704" severity="medium" public="20230130" usns="5966-3">CVE-2022-37704</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-37705" severity="high" public="20230130" usns="5966-3">CVE-2022-37705</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-37704" severity="medium" public="20230130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5966-3">CVE-2022-37704</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-37705" severity="high" public="20230130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5966-3">CVE-2022-37705</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -3261,8 +3261,8 @@
 					<severity>High</severity>
 					<issued date="2023-04-03" />
 					<cve href="https://ubuntu.com/security/CVE-2022-37703" severity="low" public="20220913" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N" usns="5966-3">CVE-2022-37703</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-37704" severity="medium" public="20230130" usns="5966-3">CVE-2022-37704</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-37705" severity="high" public="20230130" usns="5966-3">CVE-2022-37705</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-37704" severity="medium" public="20230130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5966-3">CVE-2022-37704</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-37705" severity="high" public="20230130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5966-3">CVE-2022-37705</cve>
 					<bug>https://launchpad.net/bugs/2012536</bug>
 				</advisory>
 			</metadata>
@@ -3755,7 +3755,7 @@
 		</definition>
 		<definition id="oval:com.ubuntu.kinetic:def:60371000000" version="1" class="patch">
 			<metadata>
-				<title>USN-6037-1 -- libcommons-net-java vulnerability</title>
+				<title>USN-6037-1 -- Apache Commons Net vulnerability</title>
 				<affected family="unix">
 					<platform>Ubuntu 22.10</platform>
 				</affected>
@@ -3763,7 +3763,7 @@
 				<description>ZeddYu Lu discovered that the FTP client from Apache Commons Net trusted the host from PASV responses by default. A remote attacker with a malicious FTP server could redirect the client to another server, which could possibly result in leaked information about services running on the private network of the client.  Update Instructions:  Run `sudo pro fix USN-6037-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libcommons-net-java - 3.6-1+deb11u1build0.22.10.1 libcommons-net-java-doc - 3.6-1+deb11u1build0.22.10.1</description>
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
-					<issued date="2023-04-24" />
+					<issued date="2023-04-28" />
 					<cve href="https://ubuntu.com/security/CVE-2021-37533" severity="medium" public="20221203" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N">CVE-2021-37533</cve>
 				</advisory>
 			</metadata>
@@ -3880,6 +3880,32 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:493455549303912561071310125747360119193" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60491000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6049-1 -- Netty vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6049-1" ref_id="USN-6049-1" />
+				<description>It was discovered that Netty's Zlib decoders did not limit memory allocations. A remote attacker could possibly use this issue to cause Netty to exhaust memory via malicious input, leading to a denial of service. This issue only affected Ubuntu 16.04 ESM and Ubuntu 20.04 ESM. (CVE-2020-11612)  It was discovered that Netty created temporary files with excessive permissions. A local attacker could possibly use this issue to expose sensitive information. This issue only affected Ubuntu 16.04 ESM, Ubuntu 18.04 ESM, and Ubuntu 20.04 ESM. (CVE-2021-21290)  It was discovered that Netty did not properly validate content-length headers. A remote attacker could possibly use this issue to smuggle requests. This issue was only fixed in Ubuntu 20.04 ESM. (CVE-2021-21295, CVE-2021-21409)  It was discovered that Netty's Bzip2 decompression decoder did not limit the decompressed output data size. A remote attacker could possibly use this issue to cause Netty to exhaust memory via malicious input, leading to a denial of service. This issue only affected Ubuntu 18.04 ESM, Ubuntu 20.04 ESM, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2021-37136)  It was discovered that Netty's Snappy frame decoder function did not limit chunk lengths. A remote attacker could possibly use this issue to cause Netty to exhaust memory via malicious input, leading to a denial of service. (CVE-2021-37137)  It was discovered that Netty did not properly handle control chars at the beginning and end of header names. A remote attacker could possibly use this issue to smuggle requests. This issue only affected Ubuntu 18.04 ESM, Ubuntu 20.04 ESM, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2021-43797)  It was discovered that Netty could be made into an infinite recursion when parsing a malformed crafted message. A remote attacker could possibly use this issue to cause Netty to crash, leading to a denial of service. This issue only affected Ubuntu 20.04 ESM, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2022-41881)  It was discovered that Netty did not validate header values under certain circumstances. A remote attacker could possibly use this issue to perform HTTP response splitting via malicious header values. This issue only affected Ubuntu 18.04 ESM, Ubuntu 20.04 ESM, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2022-41915)  Update Instructions:  Run `sudo pro fix USN-6049-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnetty-java - 1:4.1.48-5ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-04-28" />
+					<cve href="https://ubuntu.com/security/CVE-2020-11612" severity="medium" public="20200407" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="4600-2,6049-1">CVE-2020-11612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-21290" severity="medium" public="20210208" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6049-1">CVE-2021-21290</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-21295" severity="medium" public="20210309" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6049-1">CVE-2021-21295</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-21409" severity="medium" public="20210330" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6049-1">CVE-2021-21409</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-37136" severity="medium" public="20211019" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6049-1">CVE-2021-37136</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-37137" severity="medium" public="20211019" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6049-1">CVE-2021-37137</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-43797" severity="medium" public="20211209" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N" usns="6049-1">CVE-2021-43797</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41881" severity="medium" public="20221212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6049-1">CVE-2022-41881</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41915" severity="medium" public="20221213" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" usns="6049-1">CVE-2022-41915</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:403196307441698534726666899445532428136" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -4035,6 +4061,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:401734928156837288024549692933721074664" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:351803335949821693886594749623956684252" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:484239681253333390943345191638064027109" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:403196307441698534726666899445532428136" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:346419950602531062535109992508712744523" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:484283412776692655662475133864951011629" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:404676473350475778430992511039759763133" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:368638085820223652100097644204921478926" />
@@ -5077,6 +5107,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:345339145709607717985518343066433623376" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:406820018270961378671442316543747704088" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:346419950602531062535109992508712744523" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:456650845295887663689858591818444217482" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:347895906529787860107570844844502903761" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:632932875081654839787983228961183925474" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5815,6 +5848,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:484239681253333390943345191638064027109" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:3.5.1-9ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:484283412776692655662475133864951011629" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:4.1.48-5ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:485830863727400997342299556359466515001" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.7-1ubuntu3.3</linux:evr>
@@ -6823,6 +6859,9 @@
 			<value>snmpd</value>
 			<value>snmptrapd</value>
 			<value>tkmib</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:456650845295887663689858591818444217482" version="1" datatype="string" comment="Interim Release">
+			<value>libnetty-java</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:400472198045591649158952984532522787046" version="1" datatype="string" comment="Interim Release">
 			<value>libnss3</value>
