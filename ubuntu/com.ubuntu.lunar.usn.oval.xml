@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-04-27T18:38:16</oval:timestamp>
+		<oval:timestamp>2023-05-02T02:36:13</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -74,11 +74,35 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:646625553873508166204397351596463782051" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60501000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6050-1 -- Git vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6050-1" ref_id="USN-6050-1" />
+				<description>It was discovered that Git incorrectly handled certain commands. An attacker could possibly use this issue to overwriting some paths. (CVE-2023-25652)  Maxime Escourbiac and Yassine BENGANA discovered that Git incorrectly handled some gettext machinery. An attacker could possibly use this issue to allows the malicious placement of crafted messages. (CVE-2023-25815)  André Baptista and Vítor Pinho discovered that Git incorrectly handled certain configurations. An attacker could possibly use this issue to arbitrary configuration injection. (CVE-2023-29007)  Update Instructions:  Run `sudo pro fix USN-6050-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  git - 1:2.39.2-1ubuntu1.1 git-all - 1:2.39.2-1ubuntu1.1 git-cvs - 1:2.39.2-1ubuntu1.1 git-daemon-run - 1:2.39.2-1ubuntu1.1 git-daemon-sysvinit - 1:2.39.2-1ubuntu1.1 git-doc - 1:2.39.2-1ubuntu1.1 git-email - 1:2.39.2-1ubuntu1.1 git-gui - 1:2.39.2-1ubuntu1.1 git-man - 1:2.39.2-1ubuntu1.1 git-mediawiki - 1:2.39.2-1ubuntu1.1 git-svn - 1:2.39.2-1ubuntu1.1 gitk - 1:2.39.2-1ubuntu1.1 gitweb - 1:2.39.2-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-01" />
+					<cve href="https://ubuntu.com/security/CVE-2023-25652" severity="medium" public="20230425" usns="6050-1">CVE-2023-25652</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25815" severity="medium" public="20230425" usns="6050-1">CVE-2023-25815</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29007" severity="medium" public="20230425" usns="6050-1">CVE-2023-29007</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:615790763200592465878741261726361134661" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:551180166329225248168574629210367246478" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" />
@@ -103,6 +127,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:348932034868745939564492940927810360567" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<ind:textfilecontent54_object id="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
 			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
@@ -112,6 +139,9 @@
 	<states>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:23.1.2-0ubuntu0~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:2.39.2-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.8-1ubuntu1.1</linux:evr>
@@ -136,6 +166,21 @@
 			<value>libgs10-common</value>
 			<value>libgs-common</value>
 			<value>libgs-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:348932034868745939564492940927810360567" version="1" datatype="string" comment="Interim Release">
+			<value>git</value>
+			<value>git-all</value>
+			<value>git-cvs</value>
+			<value>git-daemon-run</value>
+			<value>git-daemon-sysvinit</value>
+			<value>git-doc</value>
+			<value>git-email</value>
+			<value>git-gui</value>
+			<value>git-man</value>
+			<value>git-mediawiki</value>
+			<value>git-svn</value>
+			<value>gitk</value>
+			<value>gitweb</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" version="1" datatype="string" comment="Interim Release">
 			<value>libssl3</value>
