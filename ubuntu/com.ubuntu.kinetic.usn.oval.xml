@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-03T04:36:54</oval:timestamp>
+		<oval:timestamp>2023-05-03T22:37:12</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3928,6 +3928,24 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:496205139169060077417477273947978895542" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60541000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6054-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6054-1" ref_id="USN-6054-1" />
+				<description>Moataz Al-Sharida and nawaik discovered that Django incorrectly handled uploading multiple files using one form field. A remote attacker could possibly use this issue to bypass certain validations.  Update Instructions:  Run `sudo pro fix USN-6054-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:3.2.15-1ubuntu1.3 python-django-doc - 3:3.2.15-1ubuntu1.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2023-05-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31047" severity="low" public="20230503" usns="6054-1">CVE-2023-31047</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:375682439650834578004848341479508795808" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4037,6 +4055,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:375256569491057769551019902268934853094" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:548812793062443868481629691027174713604" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:553684512054377953009608319063423060303" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:375682439650834578004848341479508795808" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:543820367141353982694782944176818629092" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:423519216658546742174332991634939286903" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:381177796459491034698255257257683953676" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:621090637878273094069238197672551544105" />
@@ -5401,6 +5423,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:542315117598281182197875701959571026347" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:571147319880710258835386861398808194549" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:543820367141353982694782944176818629092" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:548812793062443868481629691027174713604" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:585466785436318029037773375125937347217" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5791,6 +5816,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:419653591094873858552055004464252854671" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">8:6.9.11.60+dfsg-1.3ubuntu0.22.10.4</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:423519216658546742174332991634939286903" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:3.2.15-1ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:424643063610622433291031396916653922918" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.4-2ubuntu2.1</linux:evr>

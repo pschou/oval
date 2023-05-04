@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-02T02:36:13</oval:timestamp>
+		<oval:timestamp>2023-05-04T02:37:53</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -94,6 +94,24 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60541000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6054-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6054-1" ref_id="USN-6054-1" />
+				<description>Moataz Al-Sharida and nawaik discovered that Django incorrectly handled uploading multiple files using one form field. A remote attacker could possibly use this issue to bypass certain validations.  Update Instructions:  Run `sudo pro fix USN-6054-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:3.2.18-1ubuntu0.1 python-django-doc - 3:3.2.18-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2023-05-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31047" severity="low" public="20230503" usns="6054-1">CVE-2023-31047</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:649920525959579056833284258562609350556" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -112,6 +130,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:649920525959579056833284258562609350556" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:436723754817502711525905233669264182590" />
+		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.lunar:tst:436126285896298213829179005660327993044" version="1" comment="Ubuntu 23.04 (lunar) is installed.">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:544436420560782902077534787777774687784" />
@@ -123,6 +145,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
@@ -137,6 +162,9 @@
 		</ind:textfilecontent54_object>
 	</objects>
 	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:436723754817502711525905233669264182590" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:3.2.18-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:23.1.2-0ubuntu0~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -187,6 +215,10 @@
 			<value>libssl-dev</value>
 			<value>libssl-doc</value>
 			<value>openssl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
+			<value>python3-django</value>
+			<value>python-django-doc</value>
 		</constant_variable>
 	</variables>
 </oval_definitions>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-03T06:36:21</oval:timestamp>
+		<oval:timestamp>2023-05-04T06:38:36</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9030,7 +9030,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-25012" severity="low" public="20230202" cvss_score="4.6" cvss_vector="CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6033-1">CVE-2023-25012</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-28466" severity="medium" public="20230316" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1">CVE-2023-28466</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-28866" severity="medium" public="20230327" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6033-1">CVE-2023-28866</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="medium" public="20230410" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1">CVE-2023-30456</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="medium" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1">CVE-2023-30456</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -9326,6 +9326,24 @@
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:587601149479543303307190796639297503438" comment="Long Term Support" />
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:540527412494191812319111960373247709645" comment="Long Term Support" />
 				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:60541000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6054-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6054-1" ref_id="USN-6054-1" />
+				<description>Moataz Al-Sharida and nawaik discovered that Django incorrectly handled uploading multiple files using one form field. A remote attacker could possibly use this issue to bypass certain validations.  Update Instructions:  Run `sudo pro fix USN-6054-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 2:3.2.12-2ubuntu1.6 python-django-doc - 2:3.2.12-2ubuntu1.6</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2023-05-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31047" severity="low" public="20230503" usns="6054-1">CVE-2023-31047</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:475016473067725877833714836117098653573" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -10953,6 +10971,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:472195777757087740075836493904762826913" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:363028686520963192623303806155847474990" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:492472021963590046115845940477145172404" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:475016473067725877833714836117098653573" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:597653352055001192965099849521917437130" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:381570154459717316834364156394761509460" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:475441234020842942232603287754436330019" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:383964998898097968880373638626272521386" />
@@ -13169,6 +13191,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:595557045337195561023730548176241486625" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:600081929208916044455628935835493122332" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:597653352055001192965099849521917437130" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:501220369778349828853377894798062358126" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:601735410385940812309001353191416506413" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:430105401128012766385534089615441590843" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -13686,6 +13711,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:381062069948296054978152224537316186958" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:19.0.1+10-1ubuntu1~22.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:381570154459717316834364156394761509460" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:3.2.12-2ubuntu1.6</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:381865882498568169149017140285259353852" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:10.6.11-0ubuntu0.22.04.1</linux:evr>
