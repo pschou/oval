@@ -4,8 +4,8 @@
 		<oval:product_name>Rocky OVAL Patch Definition Merger</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.10</oval:schema_version>
-		<oval:timestamp>2023-04-28T03:48:21</oval:timestamp>
-		<oval:content_version>1682653701</oval:content_version>
+		<oval:timestamp>2023-05-08T17:20:25</oval:timestamp>
+		<oval:content_version>1683566425</oval:content_version>
 	</generator>
 	<definitions>
 		<definition class="patch" id="oval:org.rockylinux.rlsa:def:20224582" version="1">
@@ -2510,60 +2510,60 @@ Security Fix(es)</description>
 			<criteria operator="OR">
 				<criterion comment="Rocky Linux must be installed" test_ref="oval:org.rockylinux.rlsa:tst:367784825021154759471817052128405265350" />
 				<criteria operator="AND">
-					<criterion comment="bind is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:408787632299384816630028680709237682399" />
-					<criterion comment="bind is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:408787632299384816630028680709237682399" />
+					<criterion comment="bind is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:427508610894758435728095851368346013747" />
+					<criterion comment="bind is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:427508610894758435728095851368346013747" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-chroot is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:569757684235643624621828099765727508834" />
-					<criterion comment="bind-chroot is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:569757684235643624621828099765727508834" />
+					<criterion comment="bind-chroot is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:670342074005072967510336028990562985666" />
+					<criterion comment="bind-chroot is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:670342074005072967510336028990562985666" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:431451845264594684399921235502839390419" />
-					<criterion comment="bind-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:431451845264594684399921235502839390419" />
+					<criterion comment="bind-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:587861267836962307157167231672683115629" />
+					<criterion comment="bind-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:587861267836962307157167231672683115629" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-debugsource is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:357538953917222074554994826070822493803" />
-					<criterion comment="bind-debugsource is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:357538953917222074554994826070822493803" />
+					<criterion comment="bind-debugsource is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:639627241051284045158114126011259821698" />
+					<criterion comment="bind-debugsource is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:639627241051284045158114126011259821698" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-devel is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:539259962590724525678518711129797262070" />
-					<criterion comment="bind-devel is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:539259962590724525678518711129797262070" />
+					<criterion comment="bind-devel is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:679891250753068716702360801495822037714" />
+					<criterion comment="bind-devel is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:679891250753068716702360801495822037714" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-dnssec-doc is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:618687159204027274569367772307568089950" />
-					<criterion comment="bind-dnssec-doc is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:618687159204027274569367772307568089950" />
+					<criterion comment="bind-dnssec-doc is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:616471824493985398224631296419831511844" />
+					<criterion comment="bind-dnssec-doc is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:616471824493985398224631296419831511844" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-dnssec-utils is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:409454406547956951717025381949096767052" />
-					<criterion comment="bind-dnssec-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:409454406547956951717025381949096767052" />
+					<criterion comment="bind-dnssec-utils is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:505177789825259686230452053644227745838" />
+					<criterion comment="bind-dnssec-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:505177789825259686230452053644227745838" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-dnssec-utils-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:628571227568222388855171156882531204578" />
-					<criterion comment="bind-dnssec-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:628571227568222388855171156882531204578" />
+					<criterion comment="bind-dnssec-utils-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:510194757154730839848679956689979818262" />
+					<criterion comment="bind-dnssec-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:510194757154730839848679956689979818262" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-libs is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:507721536679438478104469054905960788383" />
-					<criterion comment="bind-libs is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:507721536679438478104469054905960788383" />
+					<criterion comment="bind-libs is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:474928118540593611825156412880956857050" />
+					<criterion comment="bind-libs is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:474928118540593611825156412880956857050" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-libs-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:546856585702667255502513277556365268429" />
-					<criterion comment="bind-libs-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:546856585702667255502513277556365268429" />
+					<criterion comment="bind-libs-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:371971645632156761357017931925519273891" />
+					<criterion comment="bind-libs-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:371971645632156761357017931925519273891" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-license is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:372583764445543501048676812003302215371" />
-					<criterion comment="bind-license is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:372583764445543501048676812003302215371" />
+					<criterion comment="bind-license is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:371321999901942318050537271093551790810" />
+					<criterion comment="bind-license is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:371321999901942318050537271093551790810" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-utils is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:564676646792238265716485270786013665366" />
-					<criterion comment="bind-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:564676646792238265716485270786013665366" />
+					<criterion comment="bind-utils is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:480144473439370030997736006508302014231" />
+					<criterion comment="bind-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:480144473439370030997736006508302014231" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="bind-utils-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:375022734263980661798148471793878053693" />
-					<criterion comment="bind-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:375022734263980661798148471793878053693" />
+					<criterion comment="bind-utils-debuginfo is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:647221037086400491623467929958802109283" />
+					<criterion comment="bind-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:647221037086400491623467929958802109283" />
 				</criteria>
 				<criteria operator="AND">
-					<criterion comment="python3-bind is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:412813842033705289200947329988614629740" />
-					<criterion comment="python3-bind is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:412813842033705289200947329988614629740" />
+					<criterion comment="python3-bind is earlier than 2:9.16.23-1.el9_0.1" test_ref="oval:org.rockylinux.rlsa:tst:341863127455919649463967455837177788918" />
+					<criterion comment="python3-bind is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:341863127455919649463967455837177788918" />
 				</criteria>
 				<criteria operator="OR">
 					<criterion comment="Rocky Linux 9 must be installed" test_ref="oval:org.rockylinux.rlsa:tst:506949449953752372664516348204422846433" />
@@ -5829,6 +5829,223 @@ Security Fix(es)</description>
 				</criteria>
 			</criteria>
 		</definition>
+		<definition class="patch" id="oval:org.rockylinux.rlsa:def:20228068" version="1">
+			<metadata>
+				<title>RLSA-2022:8068: bind security update (Moderate)</title>
+				<affected family="unix">
+					<platform>Rocky Linux 9</platform>
+				</affected>
+				<reference ref_id="RLSA-2022:8068" ref_url="https://errata.rockylinux.org/RLSA-2022:8068" source="RLSA" />
+				<description>The Berkeley Internet Name Domain (BIND) is an implementation of the Domain Name System (DNS) protocols. BIND includes a DNS server (named); a resolver library (routines for applications to use when interfacing with DNS); and tools for verifying that the DNS server is operating correctly.
+
+Security Fix(es):
+
+* bind: DNS forwarders - cache poisoning vulnerability (CVE-2021-25220)
+
+* bind: DoS from specifically crafted TCP packets (CVE-2022-0396)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Additional Changes:
+
+For detailed information on changes in this release, see the Rocky Linux 9.1 Release Notes linked from the References section.
+
+Security Fix(es)</description>
+				<advisory from="cpe:/o:rocky:rocky:9:GA">
+					<severity>Moderate</severity>
+					<rights>Copyright 2023 Rocky Enterprise Software Foundation, Inc.</rights>
+					<issued date="2022-11-15" />
+					<updated date="2022-11-15" />
+					<affected_cpe_list>
+						<cpe>cpe:/a:rocky:linux:9</cpe>
+					</affected_cpe_list>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion comment="Rocky Linux must be installed" test_ref="oval:org.rockylinux.rlsa:tst:367784825021154759471817052128405265350" />
+				<criteria operator="AND">
+					<criterion comment="bind is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:427508610894758435728095851368346013747" />
+					<criterion comment="bind is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:427508610894758435728095851368346013747" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-chroot is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:670342074005072967510336028990562985666" />
+					<criterion comment="bind-chroot is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:670342074005072967510336028990562985666" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-debuginfo is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:587861267836962307157167231672683115629" />
+					<criterion comment="bind-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:587861267836962307157167231672683115629" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-debugsource is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:639627241051284045158114126011259821698" />
+					<criterion comment="bind-debugsource is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:639627241051284045158114126011259821698" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-devel is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:679891250753068716702360801495822037714" />
+					<criterion comment="bind-devel is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:679891250753068716702360801495822037714" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-dnssec-doc is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:616471824493985398224631296419831511844" />
+					<criterion comment="bind-dnssec-doc is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:616471824493985398224631296419831511844" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-dnssec-utils is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:505177789825259686230452053644227745838" />
+					<criterion comment="bind-dnssec-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:505177789825259686230452053644227745838" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-dnssec-utils-debuginfo is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:510194757154730839848679956689979818262" />
+					<criterion comment="bind-dnssec-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:510194757154730839848679956689979818262" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-doc is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:602585257771512678685931550121996809046" />
+					<criterion comment="bind-doc is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:602585257771512678685931550121996809046" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-libs is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:474928118540593611825156412880956857050" />
+					<criterion comment="bind-libs is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:474928118540593611825156412880956857050" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-libs-debuginfo is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:371971645632156761357017931925519273891" />
+					<criterion comment="bind-libs-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:371971645632156761357017931925519273891" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-license is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:371321999901942318050537271093551790810" />
+					<criterion comment="bind-license is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:371321999901942318050537271093551790810" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-utils is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:480144473439370030997736006508302014231" />
+					<criterion comment="bind-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:480144473439370030997736006508302014231" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="bind-utils-debuginfo is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:647221037086400491623467929958802109283" />
+					<criterion comment="bind-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:647221037086400491623467929958802109283" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="python3-bind is earlier than 2:9.16.23-5.el9_1" test_ref="oval:org.rockylinux.rlsa:tst:341863127455919649463967455837177788918" />
+					<criterion comment="python3-bind is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:341863127455919649463967455837177788918" />
+				</criteria>
+				<criteria operator="OR">
+					<criterion comment="Rocky Linux 9 must be installed" test_ref="oval:org.rockylinux.rlsa:tst:506949449953752372664516348204422846433" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition class="patch" id="oval:org.rockylinux.rlsa:def:20228070" version="1">
+			<metadata>
+				<title>RLSA-2022:8070: dnsmasq security and bug fix update (Moderate)</title>
+				<affected family="unix">
+					<platform>Rocky Linux 9</platform>
+				</affected>
+				<reference ref_id="RLSA-2022:8070" ref_url="https://errata.rockylinux.org/RLSA-2022:8070" source="RLSA" />
+				<description>The dnsmasq packages contain Dnsmasq, a lightweight DNS (Domain Name Server) forwarder and DHCP (Dynamic Host Configuration Protocol) server.
+
+Security Fix(es):
+
+* dnsmasq: Heap use after free in dhcp6_no_relay (CVE-2022-0934)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Additional Changes:
+
+For detailed information on changes in this release, see the Rocky Linux 9.1 Release Notes linked from the References section.
+
+Security Fix(es)</description>
+				<advisory from="cpe:/o:rocky:rocky:9:GA">
+					<severity>Moderate</severity>
+					<rights>Copyright 2023 Rocky Enterprise Software Foundation, Inc.</rights>
+					<issued date="2022-11-15" />
+					<updated date="2022-11-15" />
+					<affected_cpe_list>
+						<cpe>cpe:/a:rocky:linux:9</cpe>
+					</affected_cpe_list>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion comment="Rocky Linux must be installed" test_ref="oval:org.rockylinux.rlsa:tst:367784825021154759471817052128405265350" />
+				<criteria operator="AND">
+					<criterion comment="dnsmasq is earlier than 0:2.85-5.el9" test_ref="oval:org.rockylinux.rlsa:tst:552918265304890808151739320820873483074" />
+					<criterion comment="dnsmasq is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:552918265304890808151739320820873483074" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="dnsmasq-debuginfo is earlier than 0:2.85-5.el9" test_ref="oval:org.rockylinux.rlsa:tst:351343551084356953700498866936023187745" />
+					<criterion comment="dnsmasq-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:351343551084356953700498866936023187745" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="dnsmasq-debugsource is earlier than 0:2.85-5.el9" test_ref="oval:org.rockylinux.rlsa:tst:557089764026627241126644553702109564873" />
+					<criterion comment="dnsmasq-debugsource is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:557089764026627241126644553702109564873" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="dnsmasq-utils is earlier than 0:2.85-5.el9" test_ref="oval:org.rockylinux.rlsa:tst:505881920464050369247962153474658853994" />
+					<criterion comment="dnsmasq-utils is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:505881920464050369247962153474658853994" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="dnsmasq-utils-debuginfo is earlier than 0:2.85-5.el9" test_ref="oval:org.rockylinux.rlsa:tst:516555613319997375572197353406591254225" />
+					<criterion comment="dnsmasq-utils-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:516555613319997375572197353406591254225" />
+				</criteria>
+				<criteria operator="OR">
+					<criterion comment="Rocky Linux 9 must be installed" test_ref="oval:org.rockylinux.rlsa:tst:506949449953752372664516348204422846433" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition class="patch" id="oval:org.rockylinux.rlsa:def:20228078" version="1">
+			<metadata>
+				<title>RLSA-2022:8078: flac security update (Moderate)</title>
+				<affected family="unix">
+					<platform>Rocky Linux 9</platform>
+				</affected>
+				<reference ref_id="RLSA-2022:8078" ref_url="https://errata.rockylinux.org/RLSA-2022:8078" source="RLSA" />
+				<description>FLAC stands for Free Lossless Audio Codec. FLAC is similar to Ogg Vorbis, but lossless. The FLAC project consists of the stream format, reference encoders and decoders in library form, a command-line program to encode and decode FLAC files, and a command-line metadata editor for FLAC files.
+
+Security Fix(es):
+
+* flac: out of bound write in append_to_verify_fifo_interleaved_ of stream_encoder.c (CVE-2021-0561)
+
+For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.
+
+Additional Changes:
+
+For detailed information on changes in this release, see the Rocky Linux 9.1 Release Notes linked from the References section.
+
+Security Fix(es)</description>
+				<advisory from="cpe:/o:rocky:rocky:9:GA">
+					<severity>Moderate</severity>
+					<rights>Copyright 2023 Rocky Enterprise Software Foundation, Inc.</rights>
+					<issued date="2022-11-15" />
+					<updated date="2022-11-15" />
+					<affected_cpe_list>
+						<cpe>cpe:/a:rocky:linux:9</cpe>
+					</affected_cpe_list>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion comment="Rocky Linux must be installed" test_ref="oval:org.rockylinux.rlsa:tst:367784825021154759471817052128405265350" />
+				<criteria operator="AND">
+					<criterion comment="flac is earlier than 0:1.3.3-10.el9" test_ref="oval:org.rockylinux.rlsa:tst:566477673148255493392336462831492384375" />
+					<criterion comment="flac is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:566477673148255493392336462831492384375" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="flac-debuginfo is earlier than 0:1.3.3-10.el9" test_ref="oval:org.rockylinux.rlsa:tst:434480060120227488644297083586040087135" />
+					<criterion comment="flac-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:434480060120227488644297083586040087135" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="flac-debugsource is earlier than 0:1.3.3-10.el9" test_ref="oval:org.rockylinux.rlsa:tst:373285532644408517348321552928309527166" />
+					<criterion comment="flac-debugsource is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:373285532644408517348321552928309527166" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="flac-devel is earlier than 0:1.3.3-10.el9" test_ref="oval:org.rockylinux.rlsa:tst:546871959875827190077320209093367992649" />
+					<criterion comment="flac-devel is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:546871959875827190077320209093367992649" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="flac-libs is earlier than 0:1.3.3-10.el9" test_ref="oval:org.rockylinux.rlsa:tst:679072888453972795436863805684483122703" />
+					<criterion comment="flac-libs is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:679072888453972795436863805684483122703" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion comment="flac-libs-debuginfo is earlier than 0:1.3.3-10.el9" test_ref="oval:org.rockylinux.rlsa:tst:584658422963474499930981874983682251944" />
+					<criterion comment="flac-libs-debuginfo is signed with Rocky Linux rockyrelease2 key" test_ref="oval:org.rockylinux.rlsa:tst:584658422963474499930981874983682251944" />
+				</criteria>
+				<criteria operator="OR">
+					<criterion comment="Rocky Linux 9 must be installed" test_ref="oval:org.rockylinux.rlsa:tst:506949449953752372664516348204422846433" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<red-def:rpminfo_test check="at least one" comment="aspnetcore-runtime-6.0 is earlier than 0:6.0.10-1.el9_0" id="oval:org.rockylinux.rlsa:tst:605961926100754960171736283132483958611" version="1">
@@ -5839,57 +6056,61 @@ Security Fix(es)</description>
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:439860744150818149878572636042695549195" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:403383501115068036264008029009297875137" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:408787632299384816630028680709237682399" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:427508610894758435728095851368346013747" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:477660372249692792794103709292877237515" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:586413967790435177651323859009192392863" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:657002090796125959045726576332643546667" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-chroot is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:569757684235643624621828099765727508834" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-chroot is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:670342074005072967510336028990562985666" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:474979212414831362743903836486094864872" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:424979685153411513956650552825019046841" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:587572374518837282593970068806502106277" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-debuginfo is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:431451845264594684399921235502839390419" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-debuginfo is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:587861267836962307157167231672683115629" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:358160618364295032466292828915734051400" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:424979685153411513956650552825019046841" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:587572374518837282593970068806502106277" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-debugsource is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:357538953917222074554994826070822493803" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-debugsource is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:639627241051284045158114126011259821698" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:386330986933718165763038347944400965162" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:424979685153411513956650552825019046841" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:587572374518837282593970068806502106277" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-devel is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:539259962590724525678518711129797262070" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-devel is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:679891250753068716702360801495822037714" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:599827312979916995783195139847890452367" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:382870844091913966275222709757765532466" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:452383478854845877540663929252260774916" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-dnssec-doc is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:618687159204027274569367772307568089950" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-dnssec-doc is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:616471824493985398224631296419831511844" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:651703865229582119637168850172826367427" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:574448137268921558863976066875514696960" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:529883094574526572511541003180679582175" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-dnssec-utils is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:409454406547956951717025381949096767052" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-dnssec-utils is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:505177789825259686230452053644227745838" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:483731387344607421007326077050038386466" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:424979685153411513956650552825019046841" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:469217904072380007952861190367678358069" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-dnssec-utils-debuginfo is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:628571227568222388855171156882531204578" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-dnssec-utils-debuginfo is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:510194757154730839848679956689979818262" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:362133440012946416253397679796727139734" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:424979685153411513956650552825019046841" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:469217904072380007952861190367678358069" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-libs is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:507721536679438478104469054905960788383" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-doc is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:602585257771512678685931550121996809046" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:518638776281346359106978579843950744416" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:361604280555646786964447939422704041789" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="bind-libs is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:474928118540593611825156412880956857050" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:492196515351560831804968691351943936399" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:382870844091913966275222709757765532466" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:452383478854845877540663929252260774916" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-libs-debuginfo is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:546856585702667255502513277556365268429" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-libs-debuginfo is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:371971645632156761357017931925519273891" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:588361350839915401927651235201381760943" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:469103479064968385672186106413381765626" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:404386207059062424096808292551008513227" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-license is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:372583764445543501048676812003302215371" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-license is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:371321999901942318050537271093551790810" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:398929740396588889100713713062616057002" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:574448137268921558863976066875514696960" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:385999853395620504691217895682270592822" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-utils is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:564676646792238265716485270786013665366" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-utils is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:480144473439370030997736006508302014231" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:399007238374812448801775017593788352165" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:469103479064968385672186106413381765626" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:404386207059062424096808292551008513227" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="bind-utils-debuginfo is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:375022734263980661798148471793878053693" version="1">
+		<red-def:rpminfo_test check="at least one" comment="bind-utils-debuginfo is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:647221037086400491623467929958802109283" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:386277113448516863387891620440451448976" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:469103479064968385672186106413381765626" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:404386207059062424096808292551008513227" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="bpftool is earlier than 0:5.14.0-70.30.1.el9" id="oval:org.rockylinux.rlsa:tst:628926243199049158226586742251352572025" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:462432664120309130708163527872589823939" />
@@ -6039,6 +6260,26 @@ Security Fix(es)</description>
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:417912758888913193389718429476156948579" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:567541873644559994453819979199136057640" />
 		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="dnsmasq is earlier than 0:2.85-5.el9" id="oval:org.rockylinux.rlsa:tst:552918265304890808151739320820873483074" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:442650849311910563386131230503582102611" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:434750948766779967635351084492335396452" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="dnsmasq-debuginfo is earlier than 0:2.85-5.el9" id="oval:org.rockylinux.rlsa:tst:351343551084356953700498866936023187745" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:585364246764315399208418508737631273629" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:361943481214558186734817930120842376859" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="dnsmasq-debugsource is earlier than 0:2.85-5.el9" id="oval:org.rockylinux.rlsa:tst:557089764026627241126644553702109564873" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:419879237683439696458235550608892924187" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:361943481214558186734817930120842376859" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="dnsmasq-utils is earlier than 0:2.85-5.el9" id="oval:org.rockylinux.rlsa:tst:505881920464050369247962153474658853994" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:660893748990492431714277331706072873145" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:361943481214558186734817930120842376859" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="dnsmasq-utils-debuginfo is earlier than 0:2.85-5.el9" id="oval:org.rockylinux.rlsa:tst:516555613319997375572197353406591254225" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:370757168406826379943025401960120601803" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:361943481214558186734817930120842376859" />
+		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="dotnet6.0 is earlier than 0:6.0.110-1.el9_0" id="oval:org.rockylinux.rlsa:tst:518610041660105112795331459122708782148" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:622037592261559887747883518013992551312" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:596680178636384133486177195699098531132" />
@@ -6110,6 +6351,30 @@ Security Fix(es)</description>
 		<red-def:rpminfo_test check="at least one" comment="expat-devel is earlier than 0:2.2.10-12.el9_0.3" id="oval:org.rockylinux.rlsa:tst:657548164062612260889755603351987034751" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:514701631092191334936681594398944542586" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:631265291254603818295958508513058656187" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="flac is earlier than 0:1.3.3-10.el9" id="oval:org.rockylinux.rlsa:tst:566477673148255493392336462831492384375" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:416239391783218523347571647782075407649" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:663730540072662859546192757633136861857" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="flac-debuginfo is earlier than 0:1.3.3-10.el9" id="oval:org.rockylinux.rlsa:tst:434480060120227488644297083586040087135" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:660391507482410771384425082943180959998" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:656935863196914322285732237315240272924" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="flac-debugsource is earlier than 0:1.3.3-10.el9" id="oval:org.rockylinux.rlsa:tst:373285532644408517348321552928309527166" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:622899279549392115715459049876137323203" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:656935863196914322285732237315240272924" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="flac-devel is earlier than 0:1.3.3-10.el9" id="oval:org.rockylinux.rlsa:tst:546871959875827190077320209093367992649" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:544537589227427535972733817209573755043" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:444326700279689811603727690502199192097" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="flac-libs is earlier than 0:1.3.3-10.el9" id="oval:org.rockylinux.rlsa:tst:679072888453972795436863805684483122703" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:616585091547382855956937468458234540913" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:444326700279689811603727690502199192097" />
+		</red-def:rpminfo_test>
+		<red-def:rpminfo_test check="at least one" comment="flac-libs-debuginfo is earlier than 0:1.3.3-10.el9" id="oval:org.rockylinux.rlsa:tst:584658422963474499930981874983682251944" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:442491736835798137546642264296674313353" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:521851871116387598487785488001137080681" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="fribidi is earlier than 0:1.0.10-6.el9.2" id="oval:org.rockylinux.rlsa:tst:649932495832518873030983477590682673843" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:496820284849620898346578988817477295589" />
@@ -8059,9 +8324,9 @@ Security Fix(es)</description>
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:578291894384937758916348725957940646013" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:567665509415685550844205403438539569634" />
 		</red-def:rpminfo_test>
-		<red-def:rpminfo_test check="at least one" comment="python3-bind is earlier than 2:9.16.23-1.el9_0.1" id="oval:org.rockylinux.rlsa:tst:412813842033705289200947329988614629740" version="1">
+		<red-def:rpminfo_test check="at least one" comment="python3-bind is earlier than 2:9.16.23-5.el9_1" id="oval:org.rockylinux.rlsa:tst:341863127455919649463967455837177788918" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:553817014952610197834091007354299200162" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:375972701121023965584487799156004376960" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:550138019085810036123219987002290969449" />
 		</red-def:rpminfo_test>
 		<red-def:rpminfo_test check="at least one" comment="python3-debug is earlier than 0:3.9.10-3.el9_0" id="oval:org.rockylinux.rlsa:tst:387964705595728164958199128445390658252" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:572955281755726851455158248272346440301" />
@@ -9187,6 +9452,9 @@ Security Fix(es)</description>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:370389714301243018637582415613314559424" version="1">
 			<red-def:name>php-odbc-debuginfo</red-def:name>
 		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:370757168406826379943025401960120601803" version="1">
+			<red-def:name>dnsmasq-utils-debuginfo</red-def:name>
+		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:371171129906469081503785619314023074799" version="1">
 			<red-def:name>webkit2gtk3-jsc</red-def:name>
 		</red-def:rpminfo_object>
@@ -9520,6 +9788,9 @@ Security Fix(es)</description>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:416179340965950997043018982291374949431" version="1">
 			<red-def:name>kernel-zfcpdump-modules-extra</red-def:name>
 		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:416239391783218523347571647782075407649" version="1">
+			<red-def:name>flac</red-def:name>
+		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:416438946668296667864539429191798092366" version="1">
 			<red-def:name>ruby-doc</red-def:name>
 		</red-def:rpminfo_object>
@@ -9561,6 +9832,9 @@ Security Fix(es)</description>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:419777918538593017229862942032418650153" version="1">
 			<red-def:name>php-mbstring-debuginfo</red-def:name>
+		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:419879237683439696458235550608892924187" version="1">
+			<red-def:name>dnsmasq-debugsource</red-def:name>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:419963109318938246036625299715964429651" version="1">
 			<red-def:name>gimp-libs-debuginfo</red-def:name>
@@ -9720,6 +9994,12 @@ Security Fix(es)</description>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:442269655276328190286915428223585341462" version="1">
 			<red-def:name>mariadb-test</red-def:name>
+		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:442491736835798137546642264296674313353" version="1">
+			<red-def:name>flac-libs-debuginfo</red-def:name>
+		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:442650849311910563386131230503582102611" version="1">
+			<red-def:name>dnsmasq</red-def:name>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:442806446844823072576668671410158943188" version="1">
 			<red-def:name>php-gd</red-def:name>
@@ -10234,6 +10514,9 @@ Security Fix(es)</description>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:517942312407938220120160772812717906342" version="1">
 			<red-def:name>rsyslog-mmkubernetes</red-def:name>
 		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:518638776281346359106978579843950744416" version="1">
+			<red-def:name>bind-doc</red-def:name>
+		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:519463082742218292900461194655196708118" version="1">
 			<red-def:name>weldr-client</red-def:name>
 		</red-def:rpminfo_object>
@@ -10392,6 +10675,9 @@ Security Fix(es)</description>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:544390422238140381342542490760032703379" version="1">
 			<red-def:name>nettle</red-def:name>
+		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:544537589227427535972733817209573755043" version="1">
+			<red-def:name>flac-devel</red-def:name>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:545814896863762248879319232235480427312" version="1">
 			<red-def:name>mod_lua-debuginfo</red-def:name>
@@ -10666,6 +10952,9 @@ Security Fix(es)</description>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:584877476712870174410437608514710759868" version="1">
 			<red-def:name>httpd-debuginfo</red-def:name>
 		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:585364246764315399208418508737631273629" version="1">
+			<red-def:name>dnsmasq-debuginfo</red-def:name>
+		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:585415949222725843790366318928318928261" version="1">
 			<red-def:name>libvirt-nss-debuginfo</red-def:name>
 		</red-def:rpminfo_object>
@@ -10867,6 +11156,9 @@ Security Fix(es)</description>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:616285314900509396391527530174475162327" version="1">
 			<red-def:name>httpd-manual</red-def:name>
 		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:616585091547382855956937468458234540913" version="1">
+			<red-def:name>flac-libs</red-def:name>
+		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:616648280328385336276402485226735224796" version="1">
 			<red-def:name>mod_ssl-debuginfo</red-def:name>
 		</red-def:rpminfo_object>
@@ -10929,6 +11221,9 @@ Security Fix(es)</description>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:622665704484831465537643450801267492768" version="1">
 			<red-def:name>libinput</red-def:name>
+		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:622899279549392115715459049876137323203" version="1">
+			<red-def:name>flac-debugsource</red-def:name>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:623061584869144117300870385513135633989" version="1">
 			<red-def:name>libguestfs-appliance</red-def:name>
@@ -11161,6 +11456,9 @@ Security Fix(es)</description>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:660099850825461325244704159828576581955" version="1">
 			<red-def:name>python-unversioned-command</red-def:name>
 		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:660391507482410771384425082943180959998" version="1">
+			<red-def:name>flac-debuginfo</red-def:name>
+		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:660556385643652162670425850570657773633" version="1">
 			<red-def:name>cups-lpd</red-def:name>
 		</red-def:rpminfo_object>
@@ -11169,6 +11467,9 @@ Security Fix(es)</description>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:660846498809420175806398372531193494131" version="1">
 			<red-def:name>java-17-openjdk-src-slowdebug</red-def:name>
+		</red-def:rpminfo_object>
+		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:660893748990492431714277331706072873145" version="1">
+			<red-def:name>dnsmasq-utils</red-def:name>
 		</red-def:rpminfo_object>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:661264308807345627701648994156054258708" version="1">
 			<red-def:name>php-dba</red-def:name>
@@ -11324,6 +11625,14 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|i686|ppc64le|s390x|x86_64|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:0.2.9-160.el9_0</red-def:evr>
 		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:361604280555646786964447939422704041789" version="1">
+			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|i686|ppc64le|s390x|x86_64|src</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:361943481214558186734817930120842376859" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|src|i686|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:2.85-5.el9</red-def:evr>
+		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:362577257066749438250492391665417077780" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.10-9.el9_0</red-def:evr>
@@ -11372,10 +11681,6 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|noarch|src|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:35.5-4.el9</red-def:evr>
 		</red-def:rpminfo_state>
-		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:375972701121023965584487799156004376960" version="1">
-			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|i686|ppc64le|s390x|src|x86_64</red-def:arch>
-			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-1.el9_0.1</red-def:evr>
-		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:376723812855164210126218872530934017221" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|i686|ppc64le|s390x|x86_64|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:3.2.33-160.el9_0</red-def:evr>
@@ -11396,10 +11701,6 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|s390x|src|x86_64|ppc64le|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.48.2-5.el9</red-def:evr>
 		</red-def:rpminfo_state>
-		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:382870844091913966275222709757765532466" version="1">
-			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64|noarch|src</red-def:arch>
-			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-1.el9_0.1</red-def:evr>
-		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:383721048664013878409907426398738724761" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64|src|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.16.2-2.el9</red-def:evr>
@@ -11407,6 +11708,10 @@ Security Fix(es)</description>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:384121629478754076110168543579961544087" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|src|i686|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:2.9.13-1.el9_0.1</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:385999853395620504691217895682270592822" version="1">
+			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|x86_64|src|i686</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:389459628639490030432760299312490028244" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|src|x86_64|i686</red-def:arch>
@@ -11467,6 +11772,10 @@ Security Fix(es)</description>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:403383501115068036264008029009297875137" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|s390x|x86_64|src|i686|ppc64le|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:6.0.10-1.el9_0</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:404386207059062424096808292551008513227" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|noarch|src|i686</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:406263262809895272476487163393112657006" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64|src|noarch</red-def:arch>
@@ -11532,10 +11841,6 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:13.7-1.el9_0</red-def:evr>
 		</red-def:rpminfo_state>
-		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:424979685153411513956650552825019046841" version="1">
-			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|i686|noarch|src</red-def:arch>
-			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-1.el9_0.1</red-def:evr>
-		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:426151123962964397936128652751565931965" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|noarch|i686|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:3.0.0-160.el9_0</red-def:evr>
@@ -11552,6 +11857,10 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|noarch|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">3:10.5.16-2.el9_0</red-def:evr>
 		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:434750948766779967635351084492335396452" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|i686|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:2.85-5.el9</red-def:evr>
+		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:435565960169863276936947572705698655108" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|x86_64|i686|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.3.5-160.el9_0</red-def:evr>
@@ -11567,6 +11876,10 @@ Security Fix(es)</description>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:443886058402670657822906029886305507780" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|noarch|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.17.12-1.el9_0</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:444326700279689811603727690502199192097" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64|src|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:1.3.3-10.el9</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:444876899410088505773925291971667474552" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|s390x|x86_64|i686|ppc64le|src|noarch</red-def:arch>
@@ -11600,6 +11913,10 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">ppc64le|aarch64|s390x|src|x86_64|noarch|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">3:10.5.16-2.el9_0</red-def:evr>
 		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:452383478854845877540663929252260774916" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|i686|ppc64le|s390x|x86_64|noarch|src</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
+		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:454666301884837480456899066879780378769" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|i686|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:7.5.15-3.el9</red-def:evr>
@@ -11632,9 +11949,9 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|i686|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.16.2-2.el9</red-def:evr>
 		</red-def:rpminfo_state>
-		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:469103479064968385672186106413381765626" version="1">
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:469217904072380007952861190367678358069" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|noarch|i686|src</red-def:arch>
-			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-1.el9_0.1</red-def:evr>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:470526270083942855268898703908022981100" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|src|aarch64|ppc64le|s390x|x86_64|i686</red-def:arch>
@@ -11796,6 +12113,10 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|s390x|x86_64|src|noarch|ppc64le|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">7:7.0.0-13.el9</red-def:evr>
 		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:521851871116387598487785488001137080681" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|src|i686|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:1.3.3-10.el9</red-def:evr>
+		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:522808627319034246997311444752394155880" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|src|x86_64|aarch64|i686|ppc64le|s390x</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:5.15.3-1.el9</red-def:evr>
@@ -11811,6 +12132,10 @@ Security Fix(es)</description>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:529249201588205506418468231878073766228" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|noarch|src|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:2.4.53-7.el9</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:529883094574526572511541003180679582175" version="1">
+			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|x86_64|i686|src</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:531589726885071553960022163880586351743" version="1">
 			<red-def:arch datatype="string" operation="pattern match">s390x|aarch64|ppc64le|x86_64|src|noarch|i686</red-def:arch>
@@ -11847,6 +12172,10 @@ Security Fix(es)</description>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:546227593749882587300850970584403791705" version="1">
 			<red-def:arch datatype="string" operation="pattern match">x86_64|noarch|aarch64|ppc64le|s390x|src|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">1:2.0.7-6.el9</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:550138019085810036123219987002290969449" version="1">
+			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|src|x86_64|i686</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:550812525788338709201241140793114865373" version="1">
 			<red-def:arch datatype="string" operation="pattern match">x86_64|aarch64|src|ppc64le|s390x|noarch|i686</red-def:arch>
@@ -11932,10 +12261,6 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.14.1-5.el9_0</red-def:evr>
 		</red-def:rpminfo_state>
-		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:574448137268921558863976066875514696960" version="1">
-			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|x86_64|i686|src</red-def:arch>
-			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-1.el9_0.1</red-def:evr>
-		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:574519354994712341633308689372124621459" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|i686|ppc64le|s390x|x86_64|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:3.3.7-160.el9_0</red-def:evr>
@@ -11980,13 +12305,13 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|x86_64|i686|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:5.14.2-160.el9_0</red-def:evr>
 		</red-def:rpminfo_state>
-		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:586413967790435177651323859009192392863" version="1">
-			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|i686|noarch</red-def:arch>
-			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-1.el9_0.1</red-def:evr>
-		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:587411924685948249486624013826634434210" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|x86_64|s390x|src|i686</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">1:1.8.0.352.b08-2.el9_0</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:587572374518837282593970068806502106277" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|i686|noarch|src</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:595550632765377722429870329910946105435" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|src</red-def:arch>
@@ -12140,6 +12465,14 @@ Security Fix(es)</description>
 			<red-def:arch datatype="string" operation="pattern match">aarch64|x86_64|src|ppc64le|s390x|i686|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">2:0.4.0-8.el9_0.1</red-def:evr>
 		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:656935863196914322285732237315240272924" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|i686|src|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:1.3.3-10.el9</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:657002090796125959045726576332643546667" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|i686|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">2:9.16.23-5.el9_1</red-def:evr>
+		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:659348469493244109675867236211796678978" version="1">
 			<red-def:arch datatype="string" operation="pattern match">noarch|aarch64|ppc64le|s390x|x86_64|i686|src</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">1:2.3.3op2-13.el9_0.1</red-def:evr>
@@ -12163,6 +12496,10 @@ Security Fix(es)</description>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:663429118977201172757629145449550035461" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|x86_64|i686|src|noarch</red-def:arch>
 			<red-def:evr datatype="evr_string" operation="less than">0:1.0.10-6.el9.2</red-def:evr>
+		</red-def:rpminfo_state>
+		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:663730540072662859546192757633136861857" version="1">
+			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|i686|noarch</red-def:arch>
+			<red-def:evr datatype="evr_string" operation="less than">0:1.3.3-10.el9</red-def:evr>
 		</red-def:rpminfo_state>
 		<red-def:rpminfo_state id="oval:org.rockylinux.rlsa:ste:664326304010166707537007090009583940249" version="1">
 			<red-def:arch datatype="string" operation="pattern match">aarch64|ppc64le|s390x|src|x86_64|noarch|i686</red-def:arch>
