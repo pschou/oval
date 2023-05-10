@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-09T00:36:34</oval:timestamp>
+		<oval:timestamp>2023-05-10T00:38:17</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -172,6 +172,24 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:654101568775468957998986783568156451751" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60621000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6062-1 -- FreeType vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6062-1" ref_id="USN-6062-1" />
+				<description>It was discovered that FreeType incorrectly handled certain malformed font files. If a user were tricked into using a specially crafted font file, a remote attacker could cause FreeType to crash, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6062-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  freetype2-demos - 2.12.1+dfsg-4ubuntu0.1 freetype2-doc - 2.12.1+dfsg-4ubuntu0.1 libfreetype6 - 2.12.1+dfsg-4ubuntu0.1 libfreetype6-dev - 2.12.1+dfsg-4ubuntu0.1 libfreetype-dev - 2.12.1+dfsg-4ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-09" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2004" severity="medium" public="20230414" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6062-1">CVE-2023-2004</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:666191225829359823842021851617228747140" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -202,6 +220,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:584342598900492973135714715642724537882" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:380611009634603810197490289350664797109" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:666191225829359823842021851617228747140" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:359722264369191091381741938940242637374" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:609635823432161508117421212680219680765" />
+		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.lunar:tst:436126285896298213829179005660327993044" version="1" comment="Ubuntu 23.04 (lunar) is installed.">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:544436420560782902077534787777774687784" />
@@ -210,6 +232,9 @@
 	<objects>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:359722264369191091381741938940242637374" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:403577194551037607235709724343394610368" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:657677555049968960121924811563711511967" var_check="at least one" />
@@ -251,6 +276,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.39.2-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609635823432161508117421212680219680765" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.12.1+dfsg-4ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.8-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -264,6 +292,13 @@
 	<variables>
 		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
 			<value>cloud-init</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" version="1" datatype="string" comment="Interim Release">
+			<value>freetype2-demos</value>
+			<value>freetype2-doc</value>
+			<value>libfreetype6</value>
+			<value>libfreetype6-dev</value>
+			<value>libfreetype-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" version="1" datatype="string" comment="Interim Release">
 			<value>ghostscript</value>

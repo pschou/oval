@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-08T22:38:38</oval:timestamp>
+		<oval:timestamp>2023-05-10T02:37:33</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4024,6 +4024,45 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:433375491315733161652965728121406610759" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60621000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6062-1 -- FreeType vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6062-1" ref_id="USN-6062-1" />
+				<description>It was discovered that FreeType incorrectly handled certain malformed font files. If a user were tricked into using a specially crafted font file, a remote attacker could cause FreeType to crash, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6062-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  freetype2-demos - 2.12.1+dfsg-3ubuntu0.1 freetype2-doc - 2.12.1+dfsg-3ubuntu0.1 libfreetype6 - 2.12.1+dfsg-3ubuntu0.1 libfreetype6-dev - 2.12.1+dfsg-3ubuntu0.1 libfreetype-dev - 2.12.1+dfsg-3ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-09" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2004" severity="medium" public="20230414" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6062-1">CVE-2023-2004</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:553293217733459239029825241273924019240" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60631000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6063-1 -- Ceph vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6063-1" ref_id="USN-6063-1" />
+				<description>Mark Kirkwood discovered that Ceph incorrectly handled certain key lengths. An attacker could possibly use this issue to create non-random encryption keys. This issue only affected Ubuntu 18.04 LTS and Ubuntu 20.04 LTS. (CVE-2021-3979)  It was discovered that Ceph incorrectly handled the volumes plugin. An attacker could possibly use this issue to obtain access to any share. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2022-0670)  It was discovered that Ceph incorrectly handled crash dumps. A local attacker could possibly use this issue to escalate privileges to root. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 22.10. (CVE-2022-3650)  It was discovered that Ceph incorrectly handled URL processing on RGW backends. An attacker could possibly use this issue to cause RGW to crash, leading to a denial of service. This issue only affected Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2022-3854)  Update Instructions:  Run `sudo pro fix USN-6063-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ceph - 17.2.5-0ubuntu0.22.10.3 ceph-base - 17.2.5-0ubuntu0.22.10.3 ceph-common - 17.2.5-0ubuntu0.22.10.3 ceph-fuse - 17.2.5-0ubuntu0.22.10.3 ceph-grafana-dashboards - 17.2.5-0ubuntu0.22.10.3 ceph-immutable-object-cache - 17.2.5-0ubuntu0.22.10.3 ceph-mds - 17.2.5-0ubuntu0.22.10.3 ceph-mgr - 17.2.5-0ubuntu0.22.10.3 ceph-mgr-cephadm - 17.2.5-0ubuntu0.22.10.3 ceph-mgr-dashboard - 17.2.5-0ubuntu0.22.10.3 ceph-mgr-diskprediction-local - 17.2.5-0ubuntu0.22.10.3 ceph-mgr-k8sevents - 17.2.5-0ubuntu0.22.10.3 ceph-mgr-modules-core - 17.2.5-0ubuntu0.22.10.3 ceph-mgr-rook - 17.2.5-0ubuntu0.22.10.3 ceph-mon - 17.2.5-0ubuntu0.22.10.3 ceph-osd - 17.2.5-0ubuntu0.22.10.3 ceph-prometheus-alerts - 17.2.5-0ubuntu0.22.10.3 ceph-resource-agents - 17.2.5-0ubuntu0.22.10.3 ceph-volume - 17.2.5-0ubuntu0.22.10.3 cephadm - 17.2.5-0ubuntu0.22.10.3 cephfs-shell - 17.2.5-0ubuntu0.22.10.3 crimson-osd - 17.2.5-0ubuntu0.22.10.3 libcephfs2 - 17.2.5-0ubuntu0.22.10.3 libcephfs-dev - 17.2.5-0ubuntu0.22.10.3 libcephfs-java - 17.2.5-0ubuntu0.22.10.3 libcephfs-jni - 17.2.5-0ubuntu0.22.10.3 librados2 - 17.2.5-0ubuntu0.22.10.3 librados-dev - 17.2.5-0ubuntu0.22.10.3 libradospp-dev - 17.2.5-0ubuntu0.22.10.3 libradosstriper1 - 17.2.5-0ubuntu0.22.10.3 libradosstriper-dev - 17.2.5-0ubuntu0.22.10.3 librbd1 - 17.2.5-0ubuntu0.22.10.3 librbd-dev - 17.2.5-0ubuntu0.22.10.3 librgw2 - 17.2.5-0ubuntu0.22.10.3 librgw-dev - 17.2.5-0ubuntu0.22.10.3 libsqlite3-mod-ceph - 17.2.5-0ubuntu0.22.10.3 libsqlite3-mod-ceph-dev - 17.2.5-0ubuntu0.22.10.3 python3-ceph - 17.2.5-0ubuntu0.22.10.3 python3-ceph-argparse - 17.2.5-0ubuntu0.22.10.3 python3-ceph-common - 17.2.5-0ubuntu0.22.10.3 python3-cephfs - 17.2.5-0ubuntu0.22.10.3 python3-rados - 17.2.5-0ubuntu0.22.10.3 python3-rbd - 17.2.5-0ubuntu0.22.10.3 python3-rgw - 17.2.5-0ubuntu0.22.10.3 rados-objclass-dev - 17.2.5-0ubuntu0.22.10.3 radosgw - 17.2.5-0ubuntu0.22.10.3 rbd-fuse - 17.2.5-0ubuntu0.22.10.3 rbd-mirror - 17.2.5-0ubuntu0.22.10.3 rbd-nbd - 17.2.5-0ubuntu0.22.10.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-09" />
+					<cve href="https://ubuntu.com/security/CVE-2021-3979" severity="low" public="20220825" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" usns="6063-1">CVE-2021-3979</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0670" severity="medium" public="20220725" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N" usns="6063-1">CVE-2022-0670</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-3650" severity="medium" public="20230117" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6063-1">CVE-2022-3650</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-3854" severity="medium" public="20230306" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6063-1">CVE-2022-3854</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:544673357076735247433149103451205493238" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4442,6 +4481,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:421192093713464112046979875879327690804" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:617114660826377918762898592335963917867" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:544673357076735247433149103451205493238" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:650010599126133446126773705993700144490" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:545102500720253475743265759976822655555" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:547543987722665821688996587071100509128" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:620980736670493677750408356419997822209" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:379581132778338512616144650548271560866" />
@@ -4453,6 +4496,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:550189984833291032766845987095622022219" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:550685535221983145255824721082999759647" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:512055001636906601365277728700025502094" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:553293217733459239029825241273924019240" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:580996308558532207209302795580978502428" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:607019215449402018997291710315859561903" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:553972442362278993152153257064284771595" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:409823745842138547142366757081012158894" />
@@ -5576,6 +5623,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:579658264285174132354000430876963356373" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:587493581055405060875729046799811251663" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:580996308558532207209302795580978502428" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:527866863768845850150034764119449272478" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:581075157853598596806597247266424538657" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:531295003763938354792131950435351807362" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5707,6 +5757,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:649360152224186758626186194170318960881" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:435344481136342063834910505568126162677" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:650010599126133446126773705993700144490" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:523979845658481355006527144658490959102" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:653517505787167225446209871800349867299" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:502637793142759130422127505017490399425" var_check="at least one" />
@@ -6105,6 +6158,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:543721367814292034320114699192740675907" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.37.2-1ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:545102500720253475743265759976822655555" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:17.2.5-0ubuntu0.22.10.3</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:546299637208770080245083469554106429701" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:102.10.0+build2-0ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -6221,6 +6277,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:605979222406737986635864709845120479839" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.7-1ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:607019215449402018997291710315859561903" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.12.1+dfsg-3ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:612636968442295104307050500714401433652" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.4-0ubuntu1.1</linux:evr>
@@ -6513,6 +6572,57 @@
 		<constant_variable id="oval:com.ubuntu.kinetic:var:396234418972084306138078714379709091094" version="1" datatype="string" comment="Interim Release">
 			<value>ca-certificates</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:523979845658481355006527144658490959102" version="1" datatype="string" comment="Interim Release">
+			<value>ceph</value>
+			<value>ceph-base</value>
+			<value>ceph-common</value>
+			<value>ceph-fuse</value>
+			<value>ceph-grafana-dashboards</value>
+			<value>ceph-immutable-object-cache</value>
+			<value>ceph-mds</value>
+			<value>ceph-mgr</value>
+			<value>ceph-mgr-cephadm</value>
+			<value>ceph-mgr-dashboard</value>
+			<value>ceph-mgr-diskprediction-local</value>
+			<value>ceph-mgr-k8sevents</value>
+			<value>ceph-mgr-modules-core</value>
+			<value>ceph-mgr-rook</value>
+			<value>ceph-mon</value>
+			<value>ceph-osd</value>
+			<value>ceph-prometheus-alerts</value>
+			<value>ceph-resource-agents</value>
+			<value>ceph-volume</value>
+			<value>cephadm</value>
+			<value>cephfs-shell</value>
+			<value>crimson-osd</value>
+			<value>libcephfs2</value>
+			<value>libcephfs-dev</value>
+			<value>libcephfs-java</value>
+			<value>libcephfs-jni</value>
+			<value>librados2</value>
+			<value>librados-dev</value>
+			<value>libradospp-dev</value>
+			<value>libradosstriper1</value>
+			<value>libradosstriper-dev</value>
+			<value>librbd1</value>
+			<value>librbd-dev</value>
+			<value>librgw2</value>
+			<value>librgw-dev</value>
+			<value>libsqlite3-mod-ceph</value>
+			<value>libsqlite3-mod-ceph-dev</value>
+			<value>python3-ceph</value>
+			<value>python3-ceph-argparse</value>
+			<value>python3-ceph-common</value>
+			<value>python3-cephfs</value>
+			<value>python3-rados</value>
+			<value>python3-rbd</value>
+			<value>python3-rgw</value>
+			<value>rados-objclass-dev</value>
+			<value>radosgw</value>
+			<value>rbd-fuse</value>
+			<value>rbd-mirror</value>
+			<value>rbd-nbd</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:626503625561135631910252101663952100832" version="1" datatype="string" comment="Interim Release">
 			<value>cinder-api</value>
 			<value>cinder-backup</value>
@@ -6720,6 +6830,13 @@
 			<value>libwinpr2-dev</value>
 			<value>libwinpr-tools2-2</value>
 			<value>winpr-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:527866863768845850150034764119449272478" version="1" datatype="string" comment="Interim Release">
+			<value>freetype2-demos</value>
+			<value>freetype2-doc</value>
+			<value>libfreetype6</value>
+			<value>libfreetype6-dev</value>
+			<value>libfreetype-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:672991627202033226294099080244856098190" version="1" datatype="string" comment="Interim Release">
 			<value>ghostscript</value>
