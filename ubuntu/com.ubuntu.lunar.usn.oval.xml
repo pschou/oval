@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-10T00:38:17</oval:timestamp>
+		<oval:timestamp>2023-05-11T02:36:05</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -190,6 +190,24 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:666191225829359823842021851617228747140" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60641000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6064-1 -- SQL parse vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6064-1" ref_id="USN-6064-1" />
+				<description>It was discovered that SQL parse incorrectly handled certain regular expression. An attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6064-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-sqlparse - 0.4.2-1ubuntu0.23.04.1 python-sqlparse-doc - 0.4.2-1ubuntu0.23.04.1 sqlformat - 0.4.2-1ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-10" />
+					<cve href="https://ubuntu.com/security/CVE-2023-30608" severity="medium" public="20230418" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6064-1">CVE-2023-30608</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:545614123953890171695796712275857835395" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -199,6 +217,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:545614123953890171695796712275857835395" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:656592607552451993771103085491831380219" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:609358269903651038256739096234178513701" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:549103905207236764881959367370170967644" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:403577194551037607235709724343394610368" />
@@ -254,6 +276,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:348932034868745939564492940927810360567" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:656592607552451993771103085491831380219" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:643333005089891056978059150726019969060" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<ind:textfilecontent54_object id="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
 			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
@@ -275,6 +300,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.39.2-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609358269903651038256739096234178513701" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.4.2-1ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609635823432161508117421212680219680765" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.12.1+dfsg-4ubuntu0.1</linux:evr>
@@ -371,6 +399,11 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
 			<value>python3-django</value>
 			<value>python-django-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:643333005089891056978059150726019969060" version="1" datatype="string" comment="Interim Release">
+			<value>python3-sqlparse</value>
+			<value>python-sqlparse-doc</value>
+			<value>sqlformat</value>
 		</constant_variable>
 	</variables>
 </oval_definitions>
