@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-11T02:36:06</oval:timestamp>
+		<oval:timestamp>2023-05-12T02:37:16</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4099,6 +4099,78 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:356683368301511568923262876699414180328" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60731000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6073-1 -- Cinder vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6073-1" ref_id="USN-6073-1" />
+				<description>Jan Wasilewski and Gorka Eguileor discovered that Cinder incorrectly handled deleted volume attachments. An authenticated user or attacker could possibly use this issue to gain access to sensitive information.  This update may require configuration changes to be completely effective, please see the upstream advisory for more information:  https://security.openstack.org/ossa/OSSA-2023-003.html  Update Instructions:  Run `sudo pro fix USN-6073-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cinder-api - 2:21.1.0-0ubuntu2.1 cinder-backup - 2:21.1.0-0ubuntu2.1 cinder-common - 2:21.1.0-0ubuntu2.1 cinder-scheduler - 2:21.1.0-0ubuntu2.1 cinder-volume - 2:21.1.0-0ubuntu2.1 python3-cinder - 2:21.1.0-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4">CVE-2023-2088</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:507315564206134547988916060236594487288" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60732000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6073-2 -- Glance_store vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6073-2" ref_id="USN-6073-2" />
+				<description>Jan Wasilewski and Gorka Eguileor discovered that Glance_store incorrectly handled deleted volume attachments. An authenticated user or attacker could possibly use this issue to gain access to sensitive information.  This update may require configuration changes to be completely effective, please see the upstream advisory for more information:  https://security.openstack.org/ossa/OSSA-2023-003.html  Update Instructions:  Run `sudo pro fix USN-6073-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-glance-store - 4.1.0-0ubuntu1.1 python-glance-store-doc - 4.1.0-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4">CVE-2023-2088</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:389952458325846627876847616872994865177" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60733000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6073-3 -- Nova vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6073-3" ref_id="USN-6073-3" />
+				<description>Jan Wasilewski and Gorka Eguileor discovered that Nova incorrectly handled deleted volume attachments. An authenticated user or attacker could possibly use this issue to gain access to sensitive information.  This update may require configuration changes to be completely effective, please see the upstream advisory for more information:  https://security.openstack.org/ossa/OSSA-2023-003.html  Update Instructions:  Run `sudo pro fix USN-6073-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  nova-ajax-console-proxy - 3:26.1.0-0ubuntu2.1 nova-api - 3:26.1.0-0ubuntu2.1 nova-api-metadata - 3:26.1.0-0ubuntu2.1 nova-api-os-compute - 3:26.1.0-0ubuntu2.1 nova-api-os-volume - 3:26.1.0-0ubuntu2.1 nova-cells - 3:26.1.0-0ubuntu2.1 nova-common - 3:26.1.0-0ubuntu2.1 nova-compute - 3:26.1.0-0ubuntu2.1 nova-compute-ironic - 3:26.1.0-0ubuntu2.1 nova-compute-kvm - 3:26.1.0-0ubuntu2.1 nova-compute-libvirt - 3:26.1.0-0ubuntu2.1 nova-compute-lxc - 3:26.1.0-0ubuntu2.1 nova-compute-qemu - 3:26.1.0-0ubuntu2.1 nova-compute-vmware - 3:26.1.0-0ubuntu2.1 nova-compute-xen - 3:26.1.0-0ubuntu2.1 nova-conductor - 3:26.1.0-0ubuntu2.1 nova-doc - 3:26.1.0-0ubuntu2.1 nova-novncproxy - 3:26.1.0-0ubuntu2.1 nova-scheduler - 3:26.1.0-0ubuntu2.1 nova-serialproxy - 3:26.1.0-0ubuntu2.1 nova-spiceproxy - 3:26.1.0-0ubuntu2.1 nova-volume - 3:26.1.0-0ubuntu2.1 python3-nova - 3:26.1.0-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4">CVE-2023-2088</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:345728142947087846462444495705254678192" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:60734000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6073-4 -- os-brick vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_url="https://ubuntu.com/security/notices/USN-6073-4" ref_id="USN-6073-4" />
+				<description>Jan Wasilewski and Gorka Eguileor discovered that os-brick incorrectly handled deleted volume attachments. An authenticated user or attacker could possibly use this issue to gain access to sensitive information.  This update may require configuration changes to be completely effective, please see the upstream advisory for more information:  https://security.openstack.org/ossa/OSSA-2023-003.html  Update Instructions:  Run `sudo pro fix USN-6073-4` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  os-brick-common - 6.1.0-0ubuntu1.1 python3-os-brick - 6.1.0-0ubuntu1.1 python-os-brick-doc - 6.1.0-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4">CVE-2023-2088</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:588156737094226914351217590576263452839" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4112,6 +4184,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:344962145638403662763156949995104172719" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:592600714673753316339189905801130122366" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:541610944200095740130729026259074861160" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:345728142947087846462444495705254678192" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:633606806241888544936169898703357000705" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:491166439411668860188016892561744323509" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:348557874771595048675554865389781380915" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:451669615890428159105983874280033545377" />
@@ -4248,6 +4324,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:389473404941645098701132017517036629231" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:590168250488591018658402311789590497165" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:537604793013433385788904695329749957206" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:389952458325846627876847616872994865177" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:472674533901310065418881201473505905886" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:562759639930584559790952513482547218023" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:393216997219189162194602209696309404971" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:549130903323579732329233941980949200063" />
@@ -4461,6 +4541,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:421944446624969155506984221713245770832" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:586706973107089129792962726210809999169" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:507315564206134547988916060236594487288" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:550858138464874585648538076733503681767" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:426161605274869749851032395715916481617" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:510998592330016320201609082425817914913" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:661588746929174994531094234174002010195" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:543721367814292034320114699192740675907" />
@@ -4600,6 +4684,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:587955441413101353646715403599634989367" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:501857797998447472646734397548302563412" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:461685294824978565934425570891160171458" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:588156737094226914351217590576263452839" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:523051446192070087577805673719624260652" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:638630432362416311924632133155376360063" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:589946490234914247773564338249689371871" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:609765160532186761548486268279996393124" />
@@ -5520,6 +5608,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:472370406360514396504810642544095219568" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:388236145566469612965435835403692907727" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:472674533901310065418881201473505905886" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:391274111027580069412726315909292973834" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:483275006887186641390747464900742573560" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:671061096759560505175848184868484527894" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5583,6 +5674,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:518976861282945632835378082562494074210" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:522105940923167541105074710491007882090" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:523051446192070087577805673719624260652" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:608813474728275520816188863243014249408" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:526281954375268850801191431098074806339" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5627,6 +5721,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:550685535221983145255824721082999759647" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:557821857881229214439117469643141107197" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:550858138464874585648538076733503681767" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:626503625561135631910252101663952100832" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:553758923196923937038873200352783325878" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:609011856797655527452124979477118387190" var_check="at least one" />
@@ -5777,6 +5874,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:633405382950523690570312889059933112474" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:585466785436318029037773375125937347217" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:633606806241888544936169898703357000705" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:371286693089090051076131807913871929287" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:635271966126695887179702880972112023640" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:657677555049968960121924811563711511967" var_check="at least one" />
@@ -6025,6 +6125,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:424643063610622433291031396916653922918" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.4-2ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:426161605274869749851032395715916481617" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.0-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:427366698160957090443409314324706525317" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:3.82-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -6120,6 +6223,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:486806034149613648890155132358401394356" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.30.1-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:491166439411668860188016892561744323509" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:26.1.0-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:492160688551198701031663107181322756088" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9.3-0ubuntu1.22.10.1</linux:evr>
@@ -6240,6 +6346,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:561895552699141326900272208886644310000" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.18.2-6ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:562759639930584559790952513482547218023" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.1.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:563507060792982388084438279094352765957" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.0242-1ubuntu1.3</linux:evr>
@@ -6363,6 +6472,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:637994393236342224421722032152759903850" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.4-2ubuntu1.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:638630432362416311924632133155376360063" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.1.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:639213785731494957066788149088194543996" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:12.5.6-1ubuntu0.1</linux:evr>
@@ -7520,6 +7632,11 @@
 			<value>openvswitch-vtep</value>
 			<value>python3-openvswitch</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:608813474728275520816188863243014249408" version="1" datatype="string" comment="Interim Release">
+			<value>os-brick-common</value>
+			<value>python3-os-brick</value>
+			<value>python-os-brick-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:452844824249641545227784257352243011174" version="1" datatype="string" comment="Interim Release">
 			<value>patchelf</value>
 		</constant_variable>
@@ -7541,6 +7658,10 @@
 		<constant_variable id="oval:com.ubuntu.kinetic:var:459847012670021494975526285717191647912" version="1" datatype="string" comment="Interim Release">
 			<value>python3-git</value>
 			<value>python-git-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:391274111027580069412726315909292973834" version="1" datatype="string" comment="Interim Release">
+			<value>python3-glance-store</value>
+			<value>python-glance-store-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:563277746812440702732634461518092780041" version="1" datatype="string" comment="Interim Release">
 			<value>python3-mako</value>
