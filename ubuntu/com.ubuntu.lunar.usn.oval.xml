@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-16T16:36:40</oval:timestamp>
+		<oval:timestamp>2023-05-18T00:36:35</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -93,9 +93,9 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-01" />
-					<cve href="https://ubuntu.com/security/CVE-2023-25652" severity="medium" public="20230425" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6050-1">CVE-2023-25652</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25652" severity="medium" public="20230425" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6050-1,6050-2">CVE-2023-25652</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-25815" severity="medium" public="20230425" cvss_score="2.2" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:L/A:N" usns="6050-1">CVE-2023-25815</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-29007" severity="medium" public="20230425" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6050-1">CVE-2023-29007</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29007" severity="medium" public="20230425" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6050-1,6050-2">CVE-2023-29007</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -114,7 +114,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Low</severity>
 					<issued date="2023-05-03" />
-					<cve href="https://ubuntu.com/security/CVE-2023-31047" severity="low" public="20230503" usns="6054-1">CVE-2023-31047</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31047" severity="low" public="20230503" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6054-1">CVE-2023-31047</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -421,11 +421,34 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:551209661183367122582366079285535007708" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60831000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6083-1 -- cups-filters vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6083-1" ref_url="https://ubuntu.com/security/notices/USN-6083-1" />
+				<reference source="CVE" ref_id="CVE-2023-24805" ref_url="https://ubuntu.com/security/CVE-2023-24805" />
+				<description>It was discovered that cups-filters incorrectly handled the beh CUPS backend. A remote attacker could possibly use this issue to cause the backend to stop responding or to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6083-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cups-filters - 2.0~rc1-0ubuntu1.2 cups-filters-core-drivers - 2.0~rc1-0ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-17" />
+					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" usns="6083-1">CVE-2023-24805</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:425307581032659656841408575913855362206" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:618380014257575710870512094380214608298" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:597213738441438630667408374656686285035" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:425307581032659656841408575913855362206" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:583858745019849151820751632661604776914" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:489599747779541656608797271118681181358" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" />
@@ -551,6 +574,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:560569341047680124436017690897745031384" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:557821857881229214439117469643141107197" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:583858745019849151820751632661604776914" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:677986168806553959527500872728429187230" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:584342598900492973135714715642724537882" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:676100531393497779434447407122187609980" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -606,6 +632,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:470342954299285084369674145895383942457" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:489599747779541656608797271118681181358" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0~rc1-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:23.1.2-0ubuntu0~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -651,6 +680,10 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
 			<value>cloud-init</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:677986168806553959527500872728429187230" version="1" datatype="string" comment="Interim Release">
+			<value>cups-filters</value>
+			<value>cups-filters-core-drivers</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" version="1" datatype="string" comment="Interim Release">
 			<value>freetype2-demos</value>
