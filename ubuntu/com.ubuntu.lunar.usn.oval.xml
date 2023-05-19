@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-18T00:36:35</oval:timestamp>
+		<oval:timestamp>2023-05-19T04:37:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -440,6 +440,29 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:425307581032659656841408575913855362206" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60881000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6088-1 -- runC vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6088-1" ref_url="https://ubuntu.com/security/notices/USN-6088-1" />
+				<reference source="CVE" ref_id="CVE-2023-25809" ref_url="https://ubuntu.com/security/CVE-2023-25809" />
+				<reference source="CVE" ref_id="CVE-2023-27561" ref_url="https://ubuntu.com/security/CVE-2023-27561" />
+				<reference source="CVE" ref_id="CVE-2023-28642" ref_url="https://ubuntu.com/security/CVE-2023-28642" />
+				<description>It was discovered that runC incorrectly made /sys/fs/cgroup writable when in rootless mode. An attacker could possibly use this issue to escalate privileges. (CVE-2023-25809)  It was discovered that runC incorrectly performed access control when mounting /proc to non-directories. An attacker could possibly use this issue to escalate privileges. (CVE-2023-27561)  It was discovered that runC incorrectly handled /proc and  /sys mounts inside a container. An attacker could possibly use this issue to bypass AppArmor, and potentially SELinux. (CVE-2023-28642)  Update Instructions:  Run `sudo pro fix USN-6088-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  golang-github-opencontainers-runc-dev - 1.1.4-0ubuntu3.1 runc - 1.1.4-0ubuntu3.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-18" />
+					<cve href="https://ubuntu.com/security/CVE-2023-25809" severity="medium" public="20230329" cvss_score="6.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L" usns="6088-1">CVE-2023-25809</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-27561" severity="medium" public="20230303" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6088-1">CVE-2023-27561</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28642" severity="medium" public="20230329" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6088-1">CVE-2023-28642</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:540958055807030099933693035044800788540" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -469,6 +492,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:540958055807030099933693035044800788540" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:350768978997286145548971204375297874171" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:536201546728321820867919146682341044853" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:545614123953890171695796712275857835395" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:656592607552451993771103085491831380219" />
@@ -532,6 +559,9 @@
 		</ind:textfilecontent54_test>
 	</tests>
 	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:350768978997286145548971204375297874171" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:665356428932256426353170084908159868455" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -641,6 +671,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:504377661589215986278127171943049303803" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.4-0.1ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:536201546728321820867919146682341044853" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.4-0ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:538397027957606924156831080997517064052" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:27.0.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -739,6 +772,10 @@
 			<value>git-svn</value>
 			<value>gitk</value>
 			<value>gitweb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:665356428932256426353170084908159868455" version="1" datatype="string" comment="Interim Release">
+			<value>golang-github-opencontainers-runc-dev</value>
+			<value>runc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:657677555049968960121924811563711511967" version="1" datatype="string" comment="Interim Release">
 			<value>libmysqlclient21</value>
