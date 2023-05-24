@@ -3184,7 +3184,9 @@
 				}
 			}
 		},
-		{"pkg": {"name": "qt5-qtbase","secfixes": {"5.15.0-r2": ["CVE-2020-17507"]}}},
+		{
+			"pkg": {"name": "qt5-qtbase","secfixes": {"5.15.0-r2": ["CVE-2020-17507"],"5.15.9_git20230505-r0": ["CVE-2023-32762","CVE-2023-32763"]}}
+		},
 		{
 			"pkg": {
 				"name": "qt5-qtwebengine",
@@ -3431,6 +3433,8 @@
 				}
 			}
 		},
+		{"pkg": {"name": "qt6-qtbase","secfixes": {"6.5.0-r5": ["CVE-2023-32762","CVE-2023-32763"]}}},
+		{"pkg": {"name": "qt6-qtsvg","secfixes": {"6.5.0-r1": ["CVE-2023-32573"]}}},
 		{"pkg": {"name": "quassel","secfixes": {"0.13.1-r6": ["CVE-2021-34825"]}}},
 		{
 			"pkg": {
