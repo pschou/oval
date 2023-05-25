@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-24T02:37:29</oval:timestamp>
+		<oval:timestamp>2023-05-25T02:38:15</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4537,7 +4537,7 @@
 					<severity>High</severity>
 					<issued date="2023-04-26" />
 					<cve href="https://ubuntu.com/security/CVE-2023-0386" severity="high" public="20230322" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6025-1,6040-1,6043-1,6057-1,6071-1,6072-1">CVE-2023-0386</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-1829" severity="high" public="20230412" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1,6043-1,6044-1,6045-1,6047-1,6051-1,6052-1,6058-1,6069-1,6070-1,6071-1,6072-1,6093-1">CVE-2023-1829</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1829" severity="high" public="20230412" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1,6043-1,6044-1,6045-1,6047-1,6051-1,6052-1,6058-1,6069-1,6070-1,6071-1,6072-1,6093-1,6107-1">CVE-2023-1829</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -5412,6 +5412,114 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:633678865637338889154037157673102508673" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61001000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6100-1 -- HTML::StripScripts vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6100-1" ref_url="https://ubuntu.com/security/notices/USN-6100-1" />
+				<reference source="CVE" ref_id="CVE-2023-24038" ref_url="https://ubuntu.com/security/CVE-2023-24038" />
+				<description>It was discovered that HTML::StripScripts does not properly parse HTML content with certain style attributes. A remote attacker could use this issue to cause a regular expression denial of service (ReDoS).  Update Instructions:  Run `sudo pro fix USN-6100-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libhtml-stripscripts-perl - 1.06-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-23" />
+					<cve href="https://ubuntu.com/security/CVE-2023-24038" severity="medium" public="20230121" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6100-1">CVE-2023-24038</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:535184374865271573808406532611994081968" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61011000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6101-1 -- GNU binutils vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6101-1" ref_url="https://ubuntu.com/security/notices/USN-6101-1" />
+				<reference source="CVE" ref_id="CVE-2023-1579" ref_url="https://ubuntu.com/security/CVE-2023-1579" />
+				<reference source="CVE" ref_id="CVE-2023-1972" ref_url="https://ubuntu.com/security/CVE-2023-1972" />
+				<reference source="CVE" ref_id="CVE-2023-25584" ref_url="https://ubuntu.com/security/CVE-2023-25584" />
+				<reference source="CVE" ref_id="CVE-2023-25585" ref_url="https://ubuntu.com/security/CVE-2023-25585" />
+				<reference source="CVE" ref_id="CVE-2023-25588" ref_url="https://ubuntu.com/security/CVE-2023-25588" />
+				<description>It was discovered that GNU binutils incorrectly handled certain DWARF files. An attacker could possibly use this issue to cause a crash or execute arbitrary code. This issue only affected Ubuntu 22.10. (CVE-2023-1579)  It was discovered that GNU binutils did not properly verify the version definitions in zer0-lengthverdef table. An attacker could possibly use this issue to cause a crash or execute arbitrary code. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10 and Ubuntu 23.04. (CVE-2023-1972)  It was discovered that GNU binutils did not properly validate the size of length parameter in vms-alpha. An attacker could possibly use this issue to cause a crash or access sensitive information. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2023-25584)  It was discovered that GNU binutils did not properly initialized the file_table field of struct module and the_bfd field of asymbol. An attacker could possibly use this issue to cause a crash. This issue only affected Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2023-25585, CVE-2023-25586)  Update Instructions:  Run `sudo pro fix USN-6101-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  binutils - 2.39-3ubuntu1.2 binutils-aarch64-linux-gnu - 2.39-3ubuntu1.2 binutils-alpha-linux-gnu - 2.39-3ubuntu1.2 binutils-arm-linux-gnueabi - 2.39-3ubuntu1.2 binutils-arm-linux-gnueabihf - 2.39-3ubuntu1.2 binutils-common - 2.39-3ubuntu1.2 binutils-dev - 2.39-3ubuntu1.2 binutils-doc - 2.39-3ubuntu1.2 binutils-for-build - 2.39-3ubuntu1.2 binutils-for-host - 2.39-3ubuntu1.2 binutils-hppa64-linux-gnu - 2.39-3ubuntu1.2 binutils-hppa-linux-gnu - 2.39-3ubuntu1.2 binutils-i686-gnu - 2.39-3ubuntu1.2 binutils-i686-kfreebsd-gnu - 2.39-3ubuntu1.2 binutils-i686-linux-gnu - 2.39-3ubuntu1.2 binutils-ia64-linux-gnu - 2.39-3ubuntu1.2 binutils-m68k-linux-gnu - 2.39-3ubuntu1.2 binutils-multiarch - 2.39-3ubuntu1.2 binutils-multiarch-dev - 2.39-3ubuntu1.2 binutils-powerpc64-linux-gnu - 2.39-3ubuntu1.2 binutils-powerpc64le-linux-gnu - 2.39-3ubuntu1.2 binutils-powerpc-linux-gnu - 2.39-3ubuntu1.2 binutils-riscv64-linux-gnu - 2.39-3ubuntu1.2 binutils-s390x-linux-gnu - 2.39-3ubuntu1.2 binutils-sh4-linux-gnu - 2.39-3ubuntu1.2 binutils-source - 2.39-3ubuntu1.2 binutils-sparc64-linux-gnu - 2.39-3ubuntu1.2 binutils-x86-64-kfreebsd-gnu - 2.39-3ubuntu1.2 binutils-x86-64-linux-gnu - 2.39-3ubuntu1.2 binutils-x86-64-linux-gnux32 - 2.39-3ubuntu1.2 libbinutils - 2.39-3ubuntu1.2 libctf0 - 2.39-3ubuntu1.2 libctf-nobfd0 - 2.39-3ubuntu1.2 libgprofng0 - 2.39-3ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1579" severity="medium" public="20230403" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6101-1">CVE-2023-1579</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1972" severity="low" public="20230412" usns="6101-1">CVE-2023-1972</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25584" severity="medium" public="20230215" usns="6101-1">CVE-2023-25584</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25585" severity="medium" public="20230215" usns="6101-1">CVE-2023-25585</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25588" severity="medium" public="20230215" usns="6101-1">CVE-2023-25588</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:384596152643272238471357830670192147033" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6102-1 -- xmldom vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6102-1" ref_url="https://ubuntu.com/security/notices/USN-6102-1" />
+				<reference source="CVE" ref_id="CVE-2021-21366" ref_url="https://ubuntu.com/security/CVE-2021-21366" />
+				<reference source="CVE" ref_id="CVE-2022-37616" ref_url="https://ubuntu.com/security/CVE-2022-37616" />
+				<reference source="CVE" ref_id="CVE-2022-39353" ref_url="https://ubuntu.com/security/CVE-2022-39353" />
+				<description>It was discovered that xmldom incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause  unexpected syntactic changes during XML processing. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-21366)  It was discovered that xmldom incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service. (CVE-2022-37616, CVE-2022-39353)  Update Instructions:  Run `sudo pro fix USN-6102-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  node-xmldom - 0.7.5-1ubuntu0.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-24" />
+					<cve href="https://ubuntu.com/security/CVE-2021-21366" severity="medium" public="20210312" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="6102-1">CVE-2021-21366</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-37616" severity="medium" public="20221011" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6102-1">CVE-2022-37616</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-39353" severity="medium" public="20221102" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6102-1">CVE-2022-39353</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:357919194606472466752436440802717504765" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6104-1 -- PostgreSQL vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6104-1" ref_url="https://ubuntu.com/security/notices/USN-6104-1" />
+				<reference source="CVE" ref_id="CVE-2023-2454" ref_url="https://ubuntu.com/security/CVE-2023-2454" />
+				<reference source="CVE" ref_id="CVE-2023-2455" ref_url="https://ubuntu.com/security/CVE-2023-2455" />
+				<description>Alexander Lakhin discovered that PostgreSQL incorrectly handled certain CREATE privileges. An authenticated user could possibly use this issue to execute arbitrary code as the bootstrap supervisor. (CVE-2023-2454)  Wolfgang Walther discovered that PostgreSQL incorrectly handled certain row security policies. An authenticated user could possibly use this issue to complete otherwise forbidden reads and modifications. (CVE-2023-2455)  Update Instructions:  Run `sudo pro fix USN-6104-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libecpg6 - 14.8-0ubuntu0.22.10.1 libecpg-compat3 - 14.8-0ubuntu0.22.10.1 libecpg-dev - 14.8-0ubuntu0.22.10.1 libpgtypes3 - 14.8-0ubuntu0.22.10.1 libpq5 - 14.8-0ubuntu0.22.10.1 libpq-dev - 14.8-0ubuntu0.22.10.1 postgresql-14 - 14.8-0ubuntu0.22.10.1 postgresql-client-14 - 14.8-0ubuntu0.22.10.1 postgresql-doc-14 - 14.8-0ubuntu0.22.10.1 postgresql-plperl-14 - 14.8-0ubuntu0.22.10.1 postgresql-plpython3-14 - 14.8-0ubuntu0.22.10.1 postgresql-pltcl-14 - 14.8-0ubuntu0.22.10.1 postgresql-server-dev-14 - 14.8-0ubuntu0.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2454" severity="medium" public="20230512" usns="6104-1">CVE-2023-2454</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2455" severity="medium" public="20230512" usns="6104-1">CVE-2023-2455</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:448690049021535193073249631808681581632" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61051000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6105-1 -- ca-certificates update</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6105-1" ref_url="https://ubuntu.com/security/notices/USN-6105-1" />
+				<description>The ca-certificates package contained outdated CA certificates. This update refreshes the included certificates to those contained in the 2.60 version of the Mozilla certificate authority bundle.  Update Instructions:  Run `sudo pro fix USN-6105-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ca-certificates - 20230311ubuntu0.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2023-05-24" />
+					<bug>https://launchpad.net/bugs/2020089</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:456616269576166857261607482727886872021" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -5477,6 +5585,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:357623220140754014380601735139411722899" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:347895906529787860107570844844502903761" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:550076393250611887938222001265179421399" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:357919194606472466752436440802717504765" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:572050302346270793471018692395439425879" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:666746848937601500659909839516225066702" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:359497664823461791449507362320697955450" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:602017538746031664696411261013716681457" />
@@ -5553,6 +5665,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:381595321026458093966420307250037198580" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:532778493178489219726293027172440619335" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:460279999293196775387458284250122004765" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:384596152643272238471357830670192147033" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:671364264785119599949036304056558111969" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:657955307036506938724251774800865955295" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:384649346981220610272836174310618546684" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:348464676069425776177288249147412088723" />
@@ -5666,6 +5782,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:650389284348742994359945437111668287032" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:380564954998193085918465205981644789809" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:448690049021535193073249631808681581632" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:390165376413771706096027923020501560193" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:377602881265467215689433414344410119193" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:450499222604546362782684101824444653634" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:507840658873451015421800000465945921692" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:586939452340169748311215836743133966406" />
@@ -5681,6 +5801,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:456151017741812929967679223552401065203" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:455014885380154101576221463265355821635" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:462153232361081994502548971014659036788" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:456616269576166857261607482727886872021" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:377413642684645439440833706741302756996" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:410425787100089726281263244399525517059" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:459557047620116932586014830650024196739" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:460906396387025594262596017900718761467" />
@@ -5865,6 +5989,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:534965800798407786738406256695997387637" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:611130443070556995862873989719099066782" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:649709704270344417995160538602715245140" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:535184374865271573808406532611994081968" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:568919781502654688097553040914027491532" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:642320887489050980110952576996129469210" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:535203295876427541451978763286233189478" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:585182261190098505280734996719968670733" />
@@ -6836,6 +6964,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:374248330212056740098897487691206083084" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:377413642684645439440833706741302756996" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:396234418972084306138078714379709091094" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:380515944680029685120653393573841572560" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:369047092955101027660664114064609179138" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6847,6 +6978,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:389612906651445058594196120676600101665" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:452844824249641545227784257352243011174" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:390165376413771706096027923020501560193" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:406820018270961378671442316543747704088" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:391725835073011024450013981239418453136" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:655906308201222205787768536650627171335" var_check="at least one" />
@@ -7127,11 +7261,17 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:564726611774085521191370691482035630472" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:674341325541302055486697690245920563356" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:568919781502654688097553040914027491532" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:424601046231594505396858425308125864279" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:570400388988592495669358865276737481411" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:365836617514815323126141254168136942892" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:571757471246117946986443063688024372108" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:482593255751296273100713960532940627866" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:572050302346270793471018692395439425879" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:391671334825565959001074597610654854556" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:573519683630631707353010340704674857194" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:626503625561135631910252101663952100832" var_check="at least one" />
@@ -7340,6 +7480,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:670825729166400869275985399033700876147" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:443606995979678857078932176829283957655" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:671364264785119599949036304056558111969" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:569840633093235951091334104023614113202" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:677654048226423372550057854947706175270" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:587071683873390085545532294459405662008" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7467,6 +7610,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:377080615266914160636431416399918630068" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.18.1-1ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:377602881265467215689433414344410119193" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:14.8-0ubuntu0.22.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:379581132778338512616144650548271560866" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.18+10-0ubuntu1~22.10</linux:evr>
 		</linux:dpkginfo_state>
@@ -7508,6 +7654,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:409423376979256240511425597071510807987" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.54-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:410425787100089726281263244399525517059" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:20230311ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:412966228327940407871865820232077309444" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:0.8.0-1ubuntu22.10.1</linux:evr>
@@ -7917,6 +8066,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:639213785731494957066788149088194543996" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:12.5.6-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:642320887489050980110952576996129469210" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.06-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:649709704270344417995160538602715245140" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -7935,11 +8087,17 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:657636023517220971430912973767400314349" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.1.0-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:657955307036506938724251774800865955295" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.39-3ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:658287173070090501754148613495887646732" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.7-6ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:664928995714412013948944354846400571005" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.3-1ubuntu0.22.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:666746848937601500659909839516225066702" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.7.5-1ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:668007016809839618284558908159054398643" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3a-1ubuntu0.1</linux:evr>
@@ -8772,6 +8930,9 @@
 			<value>postgresql-pltcl-14</value>
 			<value>postgresql-server-dev-14</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:424601046231594505396858425308125864279" version="1" datatype="string" comment="Interim Release">
+			<value>libhtml-stripscripts-perl</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:650099724292631580545951106148107525913" version="1" datatype="string" comment="Interim Release">
 			<value>libjson-smart-java</value>
 		</constant_variable>
@@ -9045,6 +9206,9 @@
 			<value>nginx-extras</value>
 			<value>nginx-full</value>
 			<value>nginx-light</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:391671334825565959001074597610654854556" version="1" datatype="string" comment="Interim Release">
+			<value>node-xmldom</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:371286693089090051076131807913871929287" version="1" datatype="string" comment="Interim Release">
 			<value>nova-ajax-console-proxy</value>

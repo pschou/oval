@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-24T02:37:29</oval:timestamp>
+		<oval:timestamp>2023-05-25T02:38:15</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -604,6 +604,72 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:581915773385226156379627017458241080907" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61011000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6101-1 -- GNU binutils vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6101-1" ref_url="https://ubuntu.com/security/notices/USN-6101-1" />
+				<reference source="CVE" ref_id="CVE-2023-1579" ref_url="https://ubuntu.com/security/CVE-2023-1579" />
+				<reference source="CVE" ref_id="CVE-2023-1972" ref_url="https://ubuntu.com/security/CVE-2023-1972" />
+				<reference source="CVE" ref_id="CVE-2023-25584" ref_url="https://ubuntu.com/security/CVE-2023-25584" />
+				<reference source="CVE" ref_id="CVE-2023-25585" ref_url="https://ubuntu.com/security/CVE-2023-25585" />
+				<reference source="CVE" ref_id="CVE-2023-25588" ref_url="https://ubuntu.com/security/CVE-2023-25588" />
+				<description>It was discovered that GNU binutils incorrectly handled certain DWARF files. An attacker could possibly use this issue to cause a crash or execute arbitrary code. This issue only affected Ubuntu 22.10. (CVE-2023-1579)  It was discovered that GNU binutils did not properly verify the version definitions in zer0-lengthverdef table. An attacker could possibly use this issue to cause a crash or execute arbitrary code. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10 and Ubuntu 23.04. (CVE-2023-1972)  It was discovered that GNU binutils did not properly validate the size of length parameter in vms-alpha. An attacker could possibly use this issue to cause a crash or access sensitive information. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2023-25584)  It was discovered that GNU binutils did not properly initialized the file_table field of struct module and the_bfd field of asymbol. An attacker could possibly use this issue to cause a crash. This issue only affected Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2023-25585, CVE-2023-25586)  Update Instructions:  Run `sudo pro fix USN-6101-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  binutils - 2.40-2ubuntu4.1 binutils-aarch64-linux-gnu - 2.40-2ubuntu4.1 binutils-alpha-linux-gnu - 2.40-2ubuntu4.1 binutils-arc-linux-gnu - 2.40-2ubuntu4.1 binutils-arm-linux-gnueabi - 2.40-2ubuntu4.1 binutils-arm-linux-gnueabihf - 2.40-2ubuntu4.1 binutils-common - 2.40-2ubuntu4.1 binutils-dev - 2.40-2ubuntu4.1 binutils-doc - 2.40-2ubuntu4.1 binutils-for-build - 2.40-2ubuntu4.1 binutils-for-host - 2.40-2ubuntu4.1 binutils-hppa64-linux-gnu - 2.40-2ubuntu4.1 binutils-hppa-linux-gnu - 2.40-2ubuntu4.1 binutils-i686-gnu - 2.40-2ubuntu4.1 binutils-i686-kfreebsd-gnu - 2.40-2ubuntu4.1 binutils-i686-linux-gnu - 2.40-2ubuntu4.1 binutils-ia64-linux-gnu - 2.40-2ubuntu4.1 binutils-m68k-linux-gnu - 2.40-2ubuntu4.1 binutils-multiarch - 2.40-2ubuntu4.1 binutils-multiarch-dev - 2.40-2ubuntu4.1 binutils-powerpc64-linux-gnu - 2.40-2ubuntu4.1 binutils-powerpc64le-linux-gnu - 2.40-2ubuntu4.1 binutils-powerpc-linux-gnu - 2.40-2ubuntu4.1 binutils-riscv64-linux-gnu - 2.40-2ubuntu4.1 binutils-s390x-linux-gnu - 2.40-2ubuntu4.1 binutils-sh4-linux-gnu - 2.40-2ubuntu4.1 binutils-source - 2.40-2ubuntu4.1 binutils-sparc64-linux-gnu - 2.40-2ubuntu4.1 binutils-x86-64-kfreebsd-gnu - 2.40-2ubuntu4.1 binutils-x86-64-linux-gnu - 2.40-2ubuntu4.1 binutils-x86-64-linux-gnux32 - 2.40-2ubuntu4.1 libbinutils - 2.40-2ubuntu4.1 libctf0 - 2.40-2ubuntu4.1 libctf-nobfd0 - 2.40-2ubuntu4.1 libgprofng0 - 2.40-2ubuntu4.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1579" severity="medium" public="20230403" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6101-1">CVE-2023-1579</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1972" severity="low" public="20230412" usns="6101-1">CVE-2023-1972</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25584" severity="medium" public="20230215" usns="6101-1">CVE-2023-25584</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25585" severity="medium" public="20230215" usns="6101-1">CVE-2023-25585</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25588" severity="medium" public="20230215" usns="6101-1">CVE-2023-25588</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:466428829342281346683506520576874782712" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6104-1 -- PostgreSQL vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6104-1" ref_url="https://ubuntu.com/security/notices/USN-6104-1" />
+				<reference source="CVE" ref_id="CVE-2023-2454" ref_url="https://ubuntu.com/security/CVE-2023-2454" />
+				<reference source="CVE" ref_id="CVE-2023-2455" ref_url="https://ubuntu.com/security/CVE-2023-2455" />
+				<description>Alexander Lakhin discovered that PostgreSQL incorrectly handled certain CREATE privileges. An authenticated user could possibly use this issue to execute arbitrary code as the bootstrap supervisor. (CVE-2023-2454)  Wolfgang Walther discovered that PostgreSQL incorrectly handled certain row security policies. An authenticated user could possibly use this issue to complete otherwise forbidden reads and modifications. (CVE-2023-2455)  Update Instructions:  Run `sudo pro fix USN-6104-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libecpg6 - 15.3-0ubuntu0.23.04.1 libecpg-compat3 - 15.3-0ubuntu0.23.04.1 libecpg-dev - 15.3-0ubuntu0.23.04.1 libpgtypes3 - 15.3-0ubuntu0.23.04.1 libpq5 - 15.3-0ubuntu0.23.04.1 libpq-dev - 15.3-0ubuntu0.23.04.1 postgresql-15 - 15.3-0ubuntu0.23.04.1 postgresql-client-15 - 15.3-0ubuntu0.23.04.1 postgresql-doc-15 - 15.3-0ubuntu0.23.04.1 postgresql-plperl-15 - 15.3-0ubuntu0.23.04.1 postgresql-plpython3-15 - 15.3-0ubuntu0.23.04.1 postgresql-pltcl-15 - 15.3-0ubuntu0.23.04.1 postgresql-server-dev-15 - 15.3-0ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2454" severity="medium" public="20230512" usns="6104-1">CVE-2023-2454</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2455" severity="medium" public="20230512" usns="6104-1">CVE-2023-2455</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:651217396522470890742013839511564852423" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61051000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6105-1 -- ca-certificates update</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6105-1" ref_url="https://ubuntu.com/security/notices/USN-6105-1" />
+				<description>The ca-certificates package contained outdated CA certificates. This update refreshes the included certificates to those contained in the 2.60 version of the Mozilla certificate authority bundle.  Update Instructions:  Run `sudo pro fix USN-6105-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ca-certificates - 20230311ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2023-05-24" />
+					<bug>https://launchpad.net/bugs/2020089</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:669792901279702951755722982929733939305" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -625,6 +691,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:453931244533390434166649383736462515705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:493436667532578796089495279251952533543" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:638268051382120490128540949586626363406" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:466428829342281346683506520576874782712" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:475524243831533136292604508647727668389" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:669575076262800296007971942928597655656" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:480044331442520886815318525840002970333" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:404971941064352171339237812896010111936" />
@@ -710,6 +780,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:436723754817502711525905233669264182590" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:651217396522470890742013839511564852423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:652700939114653721849469062107422938997" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:386201906148317945527672399780852208119" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:469277897565182035762754337995174516147" />
@@ -721,6 +795,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:666191225829359823842021851617228747140" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:359722264369191091381741938940242637374" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:609635823432161508117421212680219680765" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:669792901279702951755722982929733939305" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:452639633216921246751793140035261812003" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" />
 		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.lunar:tst:436126285896298213829179005660327993044" version="1" comment="Ubuntu 23.04 (lunar) is installed.">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:523128477417465112718916931145504218028" />
@@ -761,6 +839,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:452639633216921246751793140035261812003" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:396234418972084306138078714379709091094" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:457821651061278857357807859586240904161" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:604374575434627369423795693474718309161" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -769,6 +850,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:475524243831533136292604508647727668389" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:509739795717468772124730170521419228583" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:483861843881911196800209435383519736401" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:371286693089090051076131807913871929287" var_check="at least one" />
@@ -796,6 +880,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:348932034868745939564492940927810360567" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:618380014257575710870512094380214608298" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:455690225984329683829977907413916141272" var_check="at least one" />
@@ -885,6 +972,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.39.2-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:15.3-0ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:597213738441438630667408374656686285035" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.19+7~us1-0ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
@@ -906,6 +996,12 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:638268051382120490128540949586626363406" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.33-0ubuntu0.23.04.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:20230311ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:669575076262800296007971942928597655656" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.40-2ubuntu4.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:674412297708741997410216011421748869458" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -914,6 +1010,46 @@
 		</ind:textfilecontent54_state>
 	</states>
 	<variables>
+		<constant_variable id="oval:com.ubuntu.lunar:var:509739795717468772124730170521419228583" version="1" datatype="string" comment="Interim Release">
+			<value>binutils</value>
+			<value>binutils-aarch64-linux-gnu</value>
+			<value>binutils-alpha-linux-gnu</value>
+			<value>binutils-arc-linux-gnu</value>
+			<value>binutils-arm-linux-gnueabi</value>
+			<value>binutils-arm-linux-gnueabihf</value>
+			<value>binutils-common</value>
+			<value>binutils-dev</value>
+			<value>binutils-doc</value>
+			<value>binutils-for-build</value>
+			<value>binutils-for-host</value>
+			<value>binutils-hppa64-linux-gnu</value>
+			<value>binutils-hppa-linux-gnu</value>
+			<value>binutils-i686-gnu</value>
+			<value>binutils-i686-kfreebsd-gnu</value>
+			<value>binutils-i686-linux-gnu</value>
+			<value>binutils-ia64-linux-gnu</value>
+			<value>binutils-m68k-linux-gnu</value>
+			<value>binutils-multiarch</value>
+			<value>binutils-multiarch-dev</value>
+			<value>binutils-powerpc64-linux-gnu</value>
+			<value>binutils-powerpc64le-linux-gnu</value>
+			<value>binutils-powerpc-linux-gnu</value>
+			<value>binutils-riscv64-linux-gnu</value>
+			<value>binutils-s390x-linux-gnu</value>
+			<value>binutils-sh4-linux-gnu</value>
+			<value>binutils-source</value>
+			<value>binutils-sparc64-linux-gnu</value>
+			<value>binutils-x86-64-kfreebsd-gnu</value>
+			<value>binutils-x86-64-linux-gnu</value>
+			<value>binutils-x86-64-linux-gnux32</value>
+			<value>libbinutils</value>
+			<value>libctf0</value>
+			<value>libctf-nobfd0</value>
+			<value>libgprofng0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:396234418972084306138078714379709091094" version="1" datatype="string" comment="Interim Release">
+			<value>ca-certificates</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:626503625561135631910252101663952100832" version="1" datatype="string" comment="Interim Release">
 			<value>cinder-api</value>
 			<value>cinder-backup</value>
@@ -1012,6 +1148,21 @@
 			<value>ncurses-doc</value>
 			<value>ncurses-examples</value>
 			<value>ncurses-term</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" version="1" datatype="string" comment="Interim Release">
+			<value>libecpg6</value>
+			<value>libecpg-compat3</value>
+			<value>libecpg-dev</value>
+			<value>libpgtypes3</value>
+			<value>libpq5</value>
+			<value>libpq-dev</value>
+			<value>postgresql-15</value>
+			<value>postgresql-client-15</value>
+			<value>postgresql-doc-15</value>
+			<value>postgresql-plperl-15</value>
+			<value>postgresql-plpython3-15</value>
+			<value>postgresql-pltcl-15</value>
+			<value>postgresql-server-dev-15</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:442404279670168474096330847838651321822" version="1" datatype="string" comment="Interim Release">
 			<value>liblouis20</value>
