@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-26T02:38:08</oval:timestamp>
+		<oval:timestamp>2023-05-29T18:37:57</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3939,7 +3939,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-0045" severity="low" public="20230203" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5884-1,5913-1,5914-1,5915-1,5917-1,5924-1,5926-1,5927-1,5934-1,5939-1,5940-1,5951-1,5970-1,5975-1,5979-1,5981-1,5982-1,5984-1,5987-1,5991-1,6000-1,6004-1,6009-1,6030-1">CVE-2023-0045</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-0266" severity="medium" public="20230130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5915-1,5917-1,5924-1,5927-1,5934-1,5939-1,5940-1,5951-1,5970-1,5975-1,5979-1,5981-1,5982-1,5984-1,5987-1,5991-1,6000-1,6004-1,6009-1,6030-1">CVE-2023-0266</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-0469" severity="medium" public="20230126" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5914-1,5970-1,5979-1">CVE-2023-0469</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-1195" severity="medium" public="20230307" usns="5970-1,5979-1">CVE-2023-1195</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1195" severity="medium" public="20230307" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5970-1,5979-1">CVE-2023-1195</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23559" severity="medium" public="20230113" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5884-1,5924-1,5926-1,5927-1,5970-1,5975-1,5978-1,5979-1,5980-1,5981-1,5982-1,5984-1,5985-1,5987-1,5991-1,6004-1,6009-1,6020-1,6030-1,6031-1,6032-1">CVE-2023-23559</cve>
 				</advisory>
 			</metadata>
@@ -4194,8 +4194,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-04-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-28486" severity="medium" public="20230316" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6005-1">CVE-2023-28486</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-28487" severity="medium" public="20230316" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6005-1">CVE-2023-28487</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28486" severity="medium" public="20230316" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6005-1,6005-2">CVE-2023-28486</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28487" severity="medium" public="20230316" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6005-1,6005-2">CVE-2023-28487</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4889,7 +4889,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4908,7 +4908,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4927,7 +4927,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4946,7 +4946,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -5211,7 +5211,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-17" />
-					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" usns="6083-1">CVE-2023-24805</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6083-1">CVE-2023-24805</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -5448,7 +5448,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-05-24" />
 					<cve href="https://ubuntu.com/security/CVE-2023-1579" severity="medium" public="20230403" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6101-1">CVE-2023-1579</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-1972" severity="low" public="20230412" usns="6101-1">CVE-2023-1972</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1972" severity="low" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6101-1">CVE-2023-1972</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-25584" severity="medium" public="20230215" usns="6101-1">CVE-2023-25584</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-25585" severity="medium" public="20230215" usns="6101-1">CVE-2023-25585</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-25588" severity="medium" public="20230215" usns="6101-1">CVE-2023-25588</cve>
@@ -5533,12 +5533,55 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-25" />
-					<cve href="https://ubuntu.com/security/CVE-2021-34055" severity="medium" public="20221104" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H">CVE-2021-34055</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-41751" severity="medium" public="20221017" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H">CVE-2022-41751</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-34055" severity="medium" public="20221104" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6108-1">CVE-2021-34055</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41751" severity="medium" public="20221017" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6108-1">CVE-2022-41751</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:503796633359694335801437091290334338409" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61101000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6110-1 -- Jhead vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6110-1" ref_url="https://ubuntu.com/security/notices/USN-6110-1" />
+				<reference source="CVE" ref_id="CVE-2021-28275" ref_url="https://ubuntu.com/security/CVE-2021-28275" />
+				<reference source="CVE" ref_id="CVE-2021-28277" ref_url="https://ubuntu.com/security/CVE-2021-28277" />
+				<reference source="CVE" ref_id="CVE-2021-3496" ref_url="https://ubuntu.com/security/CVE-2021-3496" />
+				<description>It was discovered that Jhead did not properly handle certain crafted Canon images when processing them. An attacker could possibly use this issue to crash Jhead, resulting in a denial of service. (CVE-2021-3496)  It was discovered that Jhead did not properly handle certain crafted images when printing Canon-specific information. An attacker could possibly use this issue to crash Jhead, resulting in a denial of service. (CVE-2021-28275)  It was discovered that Jhead did not properly handle certain crafted images when removing unknown sections. An attacker could possibly use this issue to crash Jhead, resulting in a denial of service. (CVE-2021-28275)  Kyle Brown discovered that Jhead did not properly handle certain crafted images when editing their comments. An attacker could possibly use this to crash Jhead, resulting in a denial of service. (LP: #2020068)  Update Instructions:  Run `sudo pro fix USN-6110-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  jhead - 1:3.06.0.1-2ubuntu0.22.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-29" />
+					<cve href="https://ubuntu.com/security/CVE-2021-28275" severity="medium" public="20220323" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6110-1">CVE-2021-28275</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-28277" severity="medium" public="20220323" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6110-1">CVE-2021-28277</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3496" severity="medium" public="20210422" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6110-1">CVE-2021-3496</cve>
+					<bug>https://launchpad.net/bugs/2020068</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:401088506908024877699997938621353465605" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6111-1 -- Flask vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6111-1" ref_url="https://ubuntu.com/security/notices/USN-6111-1" />
+				<reference source="CVE" ref_id="CVE-2023-30861" ref_url="https://ubuntu.com/security/CVE-2023-30861" />
+				<description>It was discovered that Flask incorrectly handled certain data responses. An attacker could possibly use this issue to expose sensitive information.  Update Instructions:  Run `sudo pro fix USN-6111-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-flask - 2.0.3-1ubuntu1.1 python-flask-doc - 2.0.3-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-29" />
+					<cve href="https://ubuntu.com/security/CVE-2023-30861" severity="medium" public="20230502" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="6111-1">CVE-2023-30861</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:638478640600279095983200114215078221311" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -5722,6 +5765,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:401048913482601860713965796777553216008" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:500608059289844338437878700041928824388" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:566588283436671485505073562742644384016" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:401088506908024877699997938621353465605" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:360411015153847275289202604273200303430" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:505881489368732787450057759929558768372" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:401734928156837288024549692933721074664" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:351803335949821693886594749623956684252" />
@@ -6226,6 +6273,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:638204233680606890895624274226352688370" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:499760255147102733994785411065516920277" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:485830863727400997342299556359466515001" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:638478640600279095983200114215078221311" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:647781365871499337014002632644797546236" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:507991772736216960402619244530955452617" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:639035064957943447999549601638272970386" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:366320276192660685585437155941758216424" />
@@ -6968,6 +7019,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:357425452675001997208931600573523072269" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:391274111027580069412726315909292973834" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:360411015153847275289202604273200303430" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:450013526743882901364490129588669353865" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:360932585236350529495178144133540614616" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:436108731818977030557090215136893651024" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7466,6 +7520,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:647545292852855671888793590808095052727" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:368553152646317927616397778376731366846" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:647781365871499337014002632644797546236" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:461778776780774333616908186437390203742" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:648088974256872391937393072092535318873" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:587493581055405060875729046799811251663" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7842,6 +7899,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:505513486733513657986779390633552391775" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:10.6.12-0ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:505881489368732787450057759929558768372" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:3.06.0.1-2ubuntu0.22.10.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:505951348624605290440020099046424965164" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u352-ga-1~22.10</linux:evr>
 		</linux:dpkginfo_state>
@@ -7850,6 +7910,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:506201819358044221690518745651521096030" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.16.2-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:507991772736216960402619244530955452617" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.3-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:508098103079177461719369472765541439929" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:4.16.8+dfsg-0ubuntu1.1</linux:evr>
@@ -9353,6 +9416,10 @@
 		<constant_variable id="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
 			<value>python3-django</value>
 			<value>python-django-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:461778776780774333616908186437390203742" version="1" datatype="string" comment="Interim Release">
+			<value>python3-flask</value>
+			<value>python-flask-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:648756415312265582702121502022470921682" version="1" datatype="string" comment="Interim Release">
 			<value>python3-future</value>
