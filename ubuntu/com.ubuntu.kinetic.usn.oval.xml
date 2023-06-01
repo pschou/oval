@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-31T08:39:01</oval:timestamp>
+		<oval:timestamp>2023-06-01T02:37:09</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5728,6 +5728,89 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:636137600304323002613296388554833552559" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61261000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6126-1 -- libvirt vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6126-1" ref_url="https://ubuntu.com/security/notices/USN-6126-1" />
+				<reference source="CVE" ref_id="CVE-2022-0897" ref_url="https://ubuntu.com/security/CVE-2022-0897" />
+				<reference source="CVE" ref_id="CVE-2023-2700" ref_url="https://ubuntu.com/security/CVE-2023-2700" />
+				<description>It was discovered that libvirt incorrectly handled the nwfilter driver. A local attacker could possibly use this issue to cause libvirt to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-0897)  It was discovered that libvirt incorrectly handled queries for the SR-IOV PCI device capabilities. A local attacker could possibly use this issue to cause libvirt to consume resources, leading to a denial of service. (CVE-2023-2700)  Update Instructions:  Run `sudo pro fix USN-6126-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnss-libvirt - 8.6.0-0ubuntu3.2 libvirt0 - 8.6.0-0ubuntu3.2 libvirt-clients - 8.6.0-0ubuntu3.2 libvirt-daemon - 8.6.0-0ubuntu3.2 libvirt-daemon-config-network - 8.6.0-0ubuntu3.2 libvirt-daemon-config-nwfilter - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-lxc - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-qemu - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-storage-gluster - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-storage-iscsi-direct - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-storage-rbd - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-storage-zfs - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-vbox - 8.6.0-0ubuntu3.2 libvirt-daemon-driver-xen - 8.6.0-0ubuntu3.2 libvirt-daemon-system - 8.6.0-0ubuntu3.2 libvirt-daemon-system-systemd - 8.6.0-0ubuntu3.2 libvirt-daemon-system-sysv - 8.6.0-0ubuntu3.2 libvirt-dev - 8.6.0-0ubuntu3.2 libvirt-doc - 8.6.0-0ubuntu3.2 libvirt-login-shell - 8.6.0-0ubuntu3.2 libvirt-sanlock - 8.6.0-0ubuntu3.2 libvirt-wireshark - 8.6.0-0ubuntu3.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-31" />
+					<cve href="https://ubuntu.com/security/CVE-2022-0897" severity="low" public="20220325" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" usns="5399-1,6126-1">CVE-2022-0897</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2700" severity="medium" public="20230515" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6126-1">CVE-2023-2700</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:386977649186104430550144674935160076815" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61271000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6127-1 -- Linux kernel vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6127-1" ref_url="https://ubuntu.com/security/notices/USN-6127-1" />
+				<reference source="CVE" ref_id="CVE-2023-1380" ref_url="https://ubuntu.com/security/CVE-2023-1380" />
+				<reference source="CVE" ref_id="CVE-2023-2612" ref_url="https://ubuntu.com/security/CVE-2023-2612" />
+				<reference source="CVE" ref_id="CVE-2023-30456" ref_url="https://ubuntu.com/security/CVE-2023-30456" />
+				<reference source="CVE" ref_id="CVE-2023-31436" ref_url="https://ubuntu.com/security/CVE-2023-31436" />
+				<reference source="CVE" ref_id="CVE-2023-32233" ref_url="https://ubuntu.com/security/CVE-2023-32233" />
+				<description>Patryk Sondej and Piotr Krysiuk discovered that a race condition existed in the netfilter subsystem of the Linux kernel when processing batch requests, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-32233)  Gwangun Jung discovered that the Quick Fair Queueing scheduler implementation in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-31436)  Reima Ishii discovered that the nested KVM implementation for Intel x86 processors in the Linux kernel did not properly validate control registers in certain situations. An attacker in a guest VM could use this to cause a denial of service (guest crash). (CVE-2023-30456)  It was discovered that the Broadcom FullMAC USB WiFi driver in the Linux kernel did not properly perform data buffer size validation in some situations. A physically proximate attacker could use this to craft a malicious USB device that when inserted, could cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-1380)  Jean-Baptiste Cayrou discovered that the shiftfs file system in the Ubuntu Linux kernel contained a race condition when handling inode locking in some situations. A local attacker could use this to cause a denial of service (kernel deadlock). (CVE-2023-2612)  Update Instructions:  Run `sudo pro fix USN-6127-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-aws - 5.19.0.1026.23 linux-aws-cloud-tools-5.19.0-1026 - 5.19.0-1026.27 linux-aws-headers-5.19.0-1026 - 5.19.0-1026.27 linux-aws-tools-5.19.0-1026 - 5.19.0-1026.27 linux-azure - 5.19.0.1027.22 linux-azure-cloud-tools-5.19.0-1027 - 5.19.0-1027.30 linux-azure-headers-5.19.0-1027 - 5.19.0-1027.30 linux-azure-tools-5.19.0-1027 - 5.19.0-1027.30 linux-buildinfo-5.19.0-43-generic - 5.19.0-43.44 linux-buildinfo-5.19.0-43-generic-64k - 5.19.0-43.44 linux-buildinfo-5.19.0-43-generic-lpae - 5.19.0-43.44 linux-buildinfo-5.19.0-1019-raspi - 5.19.0-1019.26 linux-buildinfo-5.19.0-1019-raspi-nolpae - 5.19.0-1019.26 linux-buildinfo-5.19.0-1023-ibm - 5.19.0-1023.25 linux-buildinfo-5.19.0-1024-kvm - 5.19.0-1024.25 linux-buildinfo-5.19.0-1024-oracle - 5.19.0-1024.27 linux-buildinfo-5.19.0-1025-gcp - 5.19.0-1025.27 linux-buildinfo-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-buildinfo-5.19.0-1025-lowlatency-64k - 5.19.0-1025.26 linux-buildinfo-5.19.0-1026-aws - 5.19.0-1026.27 linux-buildinfo-5.19.0-1027-azure - 5.19.0-1027.30 linux-cloud-tools-5.19.0-43 - 5.19.0-43.44 linux-cloud-tools-5.19.0-43-generic - 5.19.0-43.44 linux-cloud-tools-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-cloud-tools-5.19.0-1026-aws - 5.19.0-1026.27 linux-cloud-tools-5.19.0-1027-azure - 5.19.0-1027.30 linux-cloud-tools-azure - 5.19.0.1027.22 linux-cloud-tools-common - 5.19.0-43.44 linux-cloud-tools-generic - 5.19.0.43.39 linux-cloud-tools-generic-hwe-22.04 - 5.19.0.43.39 linux-cloud-tools-generic-hwe-22.04-edge - 5.19.0.43.39 linux-cloud-tools-lowlatency - 5.19.0.1025.21 linux-cloud-tools-lowlatency-hwe-20.04 - 5.19.0.1025.21 linux-cloud-tools-lowlatency-hwe-20.04-edge - 5.19.0.1025.21 linux-cloud-tools-lowlatency-hwe-22.04 - 5.19.0.1025.21 linux-cloud-tools-lowlatency-hwe-22.04-edge - 5.19.0.1025.21 linux-cloud-tools-virtual - 5.19.0.43.39 linux-cloud-tools-virtual-hwe-22.04 - 5.19.0.43.39 linux-cloud-tools-virtual-hwe-22.04-edge - 5.19.0.43.39 linux-crashdump - 5.19.0.43.39 linux-doc - 5.19.0-43.44 linux-gcp - 5.19.0.1025.21 linux-gcp-headers-5.19.0-1025 - 5.19.0-1025.27 linux-gcp-tools-5.19.0-1025 - 5.19.0-1025.27 linux-generic - 5.19.0.43.39 linux-generic-64k - 5.19.0.43.39 linux-generic-64k-hwe-22.04 - 5.19.0.43.39 linux-generic-64k-hwe-22.04-edge - 5.19.0.43.39 linux-generic-hwe-22.04 - 5.19.0.43.39 linux-generic-hwe-22.04-edge - 5.19.0.43.39 linux-generic-lpae - 5.19.0.43.39 linux-generic-lpae-hwe-22.04 - 5.19.0.43.39 linux-generic-lpae-hwe-22.04-edge - 5.19.0.43.39 linux-headers-5.19.0-43 - 5.19.0-43.44 linux-headers-5.19.0-43-generic - 5.19.0-43.44 linux-headers-5.19.0-43-generic-64k - 5.19.0-43.44 linux-headers-5.19.0-43-generic-lpae - 5.19.0-43.44 linux-headers-5.19.0-1019-raspi - 5.19.0-1019.26 linux-headers-5.19.0-1019-raspi-nolpae - 5.19.0-1019.26 linux-headers-5.19.0-1023-ibm - 5.19.0-1023.25 linux-headers-5.19.0-1024-kvm - 5.19.0-1024.25 linux-headers-5.19.0-1024-oracle - 5.19.0-1024.27 linux-headers-5.19.0-1025-gcp - 5.19.0-1025.27 linux-headers-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-headers-5.19.0-1025-lowlatency-64k - 5.19.0-1025.26 linux-headers-5.19.0-1026-aws - 5.19.0-1026.27 linux-headers-5.19.0-1027-azure - 5.19.0-1027.30 linux-headers-aws - 5.19.0.1026.23 linux-headers-azure - 5.19.0.1027.22 linux-headers-gcp - 5.19.0.1025.21 linux-headers-generic - 5.19.0.43.39 linux-headers-generic-64k - 5.19.0.43.39 linux-headers-generic-64k-hwe-22.04 - 5.19.0.43.39 linux-headers-generic-64k-hwe-22.04-edge - 5.19.0.43.39 linux-headers-generic-hwe-22.04 - 5.19.0.43.39 linux-headers-generic-hwe-22.04-edge - 5.19.0.43.39 linux-headers-generic-lpae - 5.19.0.43.39 linux-headers-generic-lpae-hwe-22.04 - 5.19.0.43.39 linux-headers-generic-lpae-hwe-22.04-edge - 5.19.0.43.39 linux-headers-ibm - 5.19.0.1023.20 linux-headers-kvm - 5.19.0.1024.21 linux-headers-lowlatency - 5.19.0.1025.21 linux-headers-lowlatency-64k - 5.19.0.1025.21 linux-headers-lowlatency-64k-hwe-20.04 - 5.19.0.1025.21 linux-headers-lowlatency-64k-hwe-20.04-edge - 5.19.0.1025.21 linux-headers-lowlatency-64k-hwe-22.04 - 5.19.0.1025.21 linux-headers-lowlatency-64k-hwe-22.04-edge - 5.19.0.1025.21 linux-headers-lowlatency-hwe-20.04 - 5.19.0.1025.21 linux-headers-lowlatency-hwe-20.04-edge - 5.19.0.1025.21 linux-headers-lowlatency-hwe-22.04 - 5.19.0.1025.21 linux-headers-lowlatency-hwe-22.04-edge - 5.19.0.1025.21 linux-headers-oem-22.04 - 5.19.0.43.39 linux-headers-oracle - 5.19.0.1024.20 linux-headers-raspi - 5.19.0.1019.18 linux-headers-raspi-nolpae - 5.19.0.1019.18 linux-headers-virtual - 5.19.0.43.39 linux-headers-virtual-hwe-22.04 - 5.19.0.43.39 linux-headers-virtual-hwe-22.04-edge - 5.19.0.43.39 linux-ibm - 5.19.0.1023.20 linux-ibm-cloud-tools-common - 5.19.0-1023.25 linux-ibm-headers-5.19.0-1023 - 5.19.0-1023.25 linux-ibm-source-5.19.0 - 5.19.0-1023.25 linux-ibm-tools-5.19.0-1023 - 5.19.0-1023.25 linux-ibm-tools-common - 5.19.0-1023.25 linux-image-5.19.0-43-generic - 5.19.0-43.44 linux-image-5.19.0-43-generic-64k - 5.19.0-43.44 linux-image-5.19.0-43-generic-lpae - 5.19.0-43.44 linux-image-5.19.0-1019-raspi - 5.19.0-1019.26 linux-image-5.19.0-1019-raspi-nolpae - 5.19.0-1019.26 linux-image-5.19.0-1023-ibm - 5.19.0-1023.25 linux-image-5.19.0-1024-kvm - 5.19.0-1024.25 linux-image-5.19.0-1024-oracle - 5.19.0-1024.27 linux-image-5.19.0-1025-gcp - 5.19.0-1025.27 linux-image-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-image-5.19.0-1025-lowlatency-64k - 5.19.0-1025.26 linux-image-5.19.0-1026-aws - 5.19.0-1026.27 linux-image-5.19.0-1027-azure - 5.19.0-1027.30 linux-image-aws - 5.19.0.1026.23 linux-image-azure - 5.19.0.1027.22 linux-image-extra-virtual - 5.19.0.43.39 linux-image-extra-virtual-hwe-22.04 - 5.19.0.43.39 linux-image-extra-virtual-hwe-22.04-edge - 5.19.0.43.39 linux-image-gcp - 5.19.0.1025.21 linux-image-generic - 5.19.0.43.39 linux-image-generic-64k - 5.19.0.43.39 linux-image-generic-64k-hwe-22.04 - 5.19.0.43.39 linux-image-generic-64k-hwe-22.04-edge - 5.19.0.43.39 linux-image-generic-hwe-22.04 - 5.19.0.43.39 linux-image-generic-hwe-22.04-edge - 5.19.0.43.39 linux-image-generic-lpae - 5.19.0.43.39 linux-image-generic-lpae-hwe-22.04 - 5.19.0.43.39 linux-image-generic-lpae-hwe-22.04-edge - 5.19.0.43.39 linux-image-ibm - 5.19.0.1023.20 linux-image-kvm - 5.19.0.1024.21 linux-image-lowlatency - 5.19.0.1025.21 linux-image-lowlatency-64k - 5.19.0.1025.21 linux-image-lowlatency-64k-hwe-20.04 - 5.19.0.1025.21 linux-image-lowlatency-64k-hwe-20.04-edge - 5.19.0.1025.21 linux-image-lowlatency-64k-hwe-22.04 - 5.19.0.1025.21 linux-image-lowlatency-64k-hwe-22.04-edge - 5.19.0.1025.21 linux-image-lowlatency-hwe-20.04 - 5.19.0.1025.21 linux-image-lowlatency-hwe-20.04-edge - 5.19.0.1025.21 linux-image-lowlatency-hwe-22.04 - 5.19.0.1025.21 linux-image-lowlatency-hwe-22.04-edge - 5.19.0.1025.21 linux-image-oem-22.04 - 5.19.0.43.39 linux-image-oracle - 5.19.0.1024.20 linux-image-raspi - 5.19.0.1019.18 linux-image-raspi-nolpae - 5.19.0.1019.18 linux-image-unsigned-5.19.0-43-generic - 5.19.0-43.44 linux-image-unsigned-5.19.0-43-generic-64k - 5.19.0-43.44 linux-image-unsigned-5.19.0-1023-ibm - 5.19.0-1023.25 linux-image-unsigned-5.19.0-1024-kvm - 5.19.0-1024.25 linux-image-unsigned-5.19.0-1024-oracle - 5.19.0-1024.27 linux-image-unsigned-5.19.0-1025-gcp - 5.19.0-1025.27 linux-image-unsigned-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-image-unsigned-5.19.0-1025-lowlatency-64k - 5.19.0-1025.26 linux-image-unsigned-5.19.0-1026-aws - 5.19.0-1026.27 linux-image-unsigned-5.19.0-1027-azure - 5.19.0-1027.30 linux-image-virtual - 5.19.0.43.39 linux-image-virtual-hwe-22.04 - 5.19.0.43.39 linux-image-virtual-hwe-22.04-edge - 5.19.0.43.39 linux-kvm - 5.19.0.1024.21 linux-kvm-headers-5.19.0-1024 - 5.19.0-1024.25 linux-kvm-tools-5.19.0-1024 - 5.19.0-1024.25 linux-libc-dev - 5.19.0-43.44 linux-lowlatency - 5.19.0.1025.21 linux-lowlatency-64k - 5.19.0.1025.21 linux-lowlatency-64k-hwe-20.04 - 5.19.0.1025.21 linux-lowlatency-64k-hwe-20.04-edge - 5.19.0.1025.21 linux-lowlatency-64k-hwe-22.04 - 5.19.0.1025.21 linux-lowlatency-64k-hwe-22.04-edge - 5.19.0.1025.21 linux-lowlatency-cloud-tools-5.19.0-1025 - 5.19.0-1025.26 linux-lowlatency-cloud-tools-common - 5.19.0-1025.26 linux-lowlatency-headers-5.19.0-1025 - 5.19.0-1025.26 linux-lowlatency-hwe-20.04 - 5.19.0.1025.21 linux-lowlatency-hwe-20.04-edge - 5.19.0.1025.21 linux-lowlatency-hwe-22.04 - 5.19.0.1025.21 linux-lowlatency-hwe-22.04-edge - 5.19.0.1025.21 linux-lowlatency-tools-5.19.0-1025 - 5.19.0-1025.26 linux-lowlatency-tools-common - 5.19.0-1025.26 linux-lowlatency-tools-host - 5.19.0-1025.26 linux-modules-5.19.0-43-generic - 5.19.0-43.44 linux-modules-5.19.0-43-generic-64k - 5.19.0-43.44 linux-modules-5.19.0-43-generic-lpae - 5.19.0-43.44 linux-modules-5.19.0-1019-raspi - 5.19.0-1019.26 linux-modules-5.19.0-1019-raspi-nolpae - 5.19.0-1019.26 linux-modules-5.19.0-1023-ibm - 5.19.0-1023.25 linux-modules-5.19.0-1024-kvm - 5.19.0-1024.25 linux-modules-5.19.0-1024-oracle - 5.19.0-1024.27 linux-modules-5.19.0-1025-gcp - 5.19.0-1025.27 linux-modules-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-modules-5.19.0-1025-lowlatency-64k - 5.19.0-1025.26 linux-modules-5.19.0-1026-aws - 5.19.0-1026.27 linux-modules-5.19.0-1027-azure - 5.19.0-1027.30 linux-modules-extra-5.19.0-43-generic - 5.19.0-43.44 linux-modules-extra-5.19.0-1019-raspi - 5.19.0-1019.26 linux-modules-extra-5.19.0-1019-raspi-nolpae - 5.19.0-1019.26 linux-modules-extra-5.19.0-1023-ibm - 5.19.0-1023.25 linux-modules-extra-5.19.0-1024-oracle - 5.19.0-1024.27 linux-modules-extra-5.19.0-1025-gcp - 5.19.0-1025.27 linux-modules-extra-5.19.0-1026-aws - 5.19.0-1026.27 linux-modules-extra-5.19.0-1027-azure - 5.19.0-1027.30 linux-modules-extra-aws - 5.19.0.1026.23 linux-modules-extra-azure - 5.19.0.1027.22 linux-modules-extra-gcp - 5.19.0.1025.21 linux-modules-extra-raspi - 5.19.0.1019.18 linux-modules-extra-raspi-nolpae - 5.19.0.1019.18 linux-modules-ipu6-5.19.0-43-generic - 5.19.0-43.44 linux-modules-ipu6-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-modules-ipu6-generic - 5.19.0.43.39 linux-modules-ipu6-generic-hwe-22.04 - 5.19.0.43.39 linux-modules-ipu6-generic-hwe-22.04-edge - 5.19.0.43.39 linux-modules-ivsc-5.19.0-43-generic - 5.19.0-43.44 linux-modules-ivsc-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-modules-ivsc-generic - 5.19.0.43.39 linux-modules-ivsc-generic-hwe-22.04 - 5.19.0.43.39 linux-modules-ivsc-generic-hwe-22.04-edge - 5.19.0.43.39 linux-modules-iwlwifi-5.19.0-43-generic - 5.19.0-43.44 linux-modules-iwlwifi-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-modules-iwlwifi-generic - 5.19.0.43.39 linux-modules-iwlwifi-generic-hwe-22.04 - 5.19.0.43.39 linux-modules-iwlwifi-generic-hwe-22.04-edge - 5.19.0.43.39 linux-oem-22.04 - 5.19.0.43.39 linux-oracle - 5.19.0.1024.20 linux-oracle-headers-5.19.0-1024 - 5.19.0-1024.27 linux-oracle-tools-5.19.0-1024 - 5.19.0-1024.27 linux-raspi - 5.19.0.1019.18 linux-raspi-headers-5.19.0-1019 - 5.19.0-1019.26 linux-raspi-nolpae - 5.19.0.1019.18 linux-raspi-tools-5.19.0-1019 - 5.19.0-1019.26 linux-source - 5.19.0.43.39 linux-source-5.19.0 - 5.19.0-43.44 linux-tools-5.19.0-43 - 5.19.0-43.44 linux-tools-5.19.0-43-generic - 5.19.0-43.44 linux-tools-5.19.0-43-generic-64k - 5.19.0-43.44 linux-tools-5.19.0-43-generic-lpae - 5.19.0-43.44 linux-tools-5.19.0-1019-raspi - 5.19.0-1019.26 linux-tools-5.19.0-1019-raspi-nolpae - 5.19.0-1019.26 linux-tools-5.19.0-1023-ibm - 5.19.0-1023.25 linux-tools-5.19.0-1024-kvm - 5.19.0-1024.25 linux-tools-5.19.0-1024-oracle - 5.19.0-1024.27 linux-tools-5.19.0-1025-gcp - 5.19.0-1025.27 linux-tools-5.19.0-1025-lowlatency - 5.19.0-1025.26 linux-tools-5.19.0-1025-lowlatency-64k - 5.19.0-1025.26 linux-tools-5.19.0-1026-aws - 5.19.0-1026.27 linux-tools-5.19.0-1027-azure - 5.19.0-1027.30 linux-tools-aws - 5.19.0.1026.23 linux-tools-azure - 5.19.0.1027.22 linux-tools-common - 5.19.0-43.44 linux-tools-gcp - 5.19.0.1025.21 linux-tools-generic - 5.19.0.43.39 linux-tools-generic-64k - 5.19.0.43.39 linux-tools-generic-64k-hwe-22.04 - 5.19.0.43.39 linux-tools-generic-64k-hwe-22.04-edge - 5.19.0.43.39 linux-tools-generic-hwe-22.04 - 5.19.0.43.39 linux-tools-generic-hwe-22.04-edge - 5.19.0.43.39 linux-tools-generic-lpae - 5.19.0.43.39 linux-tools-generic-lpae-hwe-22.04 - 5.19.0.43.39 linux-tools-generic-lpae-hwe-22.04-edge - 5.19.0.43.39 linux-tools-host - 5.19.0-43.44 linux-tools-ibm - 5.19.0.1023.20 linux-tools-kvm - 5.19.0.1024.21 linux-tools-lowlatency - 5.19.0.1025.21 linux-tools-lowlatency-64k - 5.19.0.1025.21 linux-tools-lowlatency-64k-hwe-20.04 - 5.19.0.1025.21 linux-tools-lowlatency-64k-hwe-20.04-edge - 5.19.0.1025.21 linux-tools-lowlatency-64k-hwe-22.04 - 5.19.0.1025.21 linux-tools-lowlatency-64k-hwe-22.04-edge - 5.19.0.1025.21 linux-tools-lowlatency-hwe-20.04 - 5.19.0.1025.21 linux-tools-lowlatency-hwe-20.04-edge - 5.19.0.1025.21 linux-tools-lowlatency-hwe-22.04 - 5.19.0.1025.21 linux-tools-lowlatency-hwe-22.04-edge - 5.19.0.1025.21 linux-tools-oem-22.04 - 5.19.0.43.39 linux-tools-oracle - 5.19.0.1024.20 linux-tools-raspi - 5.19.0.1019.18 linux-tools-raspi-nolpae - 5.19.0.1019.18 linux-tools-virtual - 5.19.0.43.39 linux-tools-virtual-hwe-22.04 - 5.19.0.43.39 linux-tools-virtual-hwe-22.04-edge - 5.19.0.43.39 linux-virtual - 5.19.0.43.39 linux-virtual-hwe-22.04 - 5.19.0.43.39 linux-virtual-hwe-22.04-edge - 5.19.0.43.39</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-05-31" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1380" severity="high" public="20230327" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6127-1">CVE-2023-1380</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-2612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1,6127-1">CVE-2023-30456</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31436" severity="high" public="20230428" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6127-1">CVE-2023-31436</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-32233</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:625961592388182138280456634283206606024" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:497777690157284223260532189404314110801" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:577008880923831298767011379973923049536" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:567812620012663274843983309582082564533" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:618652966115435078290186887774622878564" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:456986238364515435301344601266373574768" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:383893193113600198998847664971091870149" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:492621052710675444201027495229011587353" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:673874868002450247138599907963609428760" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:481905023730500584970031836723881562190" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:440960178108306139495289227506811533453" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:554016052428868022226072569153149424385" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:643196127140962344935603866860171211043" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:404235443091831364938453608669427448540" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:438642964186746791511642874509774422888" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:667326142406425694524567429586511428545" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:620934805758417319302479654845131547756" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.kinetic:tst:355874016257453324057814443505812278687" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -5885,6 +5968,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:386348775734328854937017641265031565595" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:514462415736851529501797018184396635585" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:601118710069022780875170048048450989056" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:386977649186104430550144674935160076815" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:506960175587626360953949856090830346078" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:650421923961152809663611328437226735337" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:389335121851987865356064454676934032420" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:370842113223231316081048664527014718850" />
@@ -6630,6 +6717,10 @@
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:440243125517965186343280255553328593421" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:355874016257453324057814443505812278687" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:534350460701101047284274825968143095909" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:355880514809002746790434969407681978495" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:392232024905400826786441743839953227618" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
@@ -6660,6 +6751,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:399874504284909836668703193331366389092" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:532179042527888259541351982037837824865" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:404235443091831364938453608669427448540" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:644451559656642360164311971307350669332" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:405361324530873503767515398010903246490" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -6734,6 +6829,10 @@
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:650968168722359904346645416922826672806" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:456986238364515435301344601266373574768" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:378647030294305320679287514798388880001" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:461849937319420931438122062877963416985" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:357977717729310282781685174956989350565" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
@@ -6744,6 +6843,18 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:481791611329443489678061910524484757512" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:643354629151511529450732457921642647975" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:481905023730500584970031836723881562190" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:506635127072069081069373227350814102740" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:492621052710675444201027495229011587353" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:435213608738035079175609040936744114307" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:497777690157284223260532189404314110801" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:430230863562567680387642268961987046598" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:505298833901540703980667967118303832552" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -6794,6 +6905,10 @@
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:666132944205135444087515751025779005774" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:554016052428868022226072569153149424385" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:512284725057061030560146027290950403189" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:555600531490267272134697765124205631863" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:455413525007198829748680423324688955897" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
@@ -6804,6 +6919,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:567518168237782014198593940126699943072" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:518287073284509333497416954131120725950" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:567812620012663274843983309582082564533" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:668279490913740701965829361741897604531" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:568281194143362958911020868867504047241" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -6886,6 +7005,10 @@
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:457453849897096286299696183977421747126" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:667326142406425694524567429586511428545" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:471867336506037924219175162156749990408" />
+			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.kinetic:tst:667595480428527286859811681269397071059" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.kinetic:obj:475724212719971649404519869347201248836" />
 			<ind:state state_ref="oval:com.ubuntu.kinetic:ste:372841306190856609863326367567917005852" />
@@ -6934,6 +7057,9 @@
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:369533850994568073285185476321977981814" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:663118768310141758890464661850060985164</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:378647030294305320679287514798388880001" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:438985042036939291740315073637417733372</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:385033641313883610675382582995555632875" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:502912966637286531316433520735928499983</ind:var_ref>
 		</ind:variable_object>
@@ -6961,8 +7087,14 @@
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:428209827979879856719336933935597650953" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:518600525001795142806560325364429042878</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:430230863562567680387642268961987046598" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:612059322204479928295170551692073942049</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:431523160124877848472253650850187830587" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:499903678034013214122256009603615943132</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:435213608738035079175609040936744114307" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:438985042036939291740315073637417733372</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:436650554690073737388206774018335433282" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:489677029314348036699257469510575234667</ind:var_ref>
@@ -7006,6 +7138,9 @@
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:471327960239451335470000158035030340637" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:657039857821125192190415580985514101641</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:471867336506037924219175162156749990408" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:598285857818022628581250794286666377287</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:475724212719971649404519869347201248836" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:542972900253170952465693910115177988874</ind:var_ref>
 		</ind:variable_object>
@@ -7018,6 +7153,12 @@
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:506072139307309045415050328979749070469" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:459122406396547458683357277444049023794</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:506635127072069081069373227350814102740" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:641711007449898805342612904358687280100</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:512284725057061030560146027290950403189" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:641711007449898805342612904358687280100</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:518287073284509333497416954131120725950" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:502912966637286531316433520735928499983</ind:var_ref>
 		</ind:variable_object>
@@ -7026,6 +7167,9 @@
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:532179042527888259541351982037837824865" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:502912966637286531316433520735928499983</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:534350460701101047284274825968143095909" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:513381785297706063588616862969923610862</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:539148303449104862829786505901879347900" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:529210388683556803469448498599932893015</ind:var_ref>
@@ -7103,6 +7247,9 @@
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:643354629151511529450732457921642647975" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:542972900253170952465693910115177988874</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:644451559656642360164311971307350669332" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:489677029314348036699257469510575234667</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:645679137357105845494747819458968416718" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:499903678034013214122256009603615943132</ind:var_ref>
 		</ind:variable_object>
@@ -7129,6 +7276,9 @@
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:667115415964609623703054916993804488413" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:531213376475786615051170359370599445726</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:668279490913740701965829361741897604531" version="1">
+			<ind:var_ref>oval:com.ubuntu.kinetic:var:459122406396547458683357277444049023794</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.kinetic:obj:668416926963895965527036110790337954765" version="1">
 			<ind:var_ref>oval:com.ubuntu.kinetic:var:531213376475786615051170359370599445726</ind:var_ref>
@@ -7429,6 +7579,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:506457565443366146711032874693599826217" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:571134116297865212101351506158737198591" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:506960175587626360953949856090830346078" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:478915262643859826662066393621737783685" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:507840658873451015421800000465945921692" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:626503625561135631910252101663952100832" var_check="at least one" />
@@ -8373,6 +8526,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:649841824618323343983104658466903512911" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:14.7-0ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:650421923961152809663611328437226735337" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.6.0-0ubuntu3.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:650721630271585246094682792823381741128" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.12.5-2.1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -8473,6 +8629,9 @@
 		<constant_variable id="oval:com.ubuntu.kinetic:var:663118768310141758890464661850060985164" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.19.0-42</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:513381785297706063588616862969923610862" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-43</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:464923950276016422808312467057545872242" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.19.0-1006</value>
 		</constant_variable>
@@ -8529,6 +8688,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:489677029314348036699257469510575234667" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.19.0-1026</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:598285857818022628581250794286666377287" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-1027</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:588198976221805641852886071504056864245" version="1" datatype="string" comment="Interim Release">
 			<value>advancecomp</value>
@@ -9333,6 +9495,30 @@
 			<value>libnss3</value>
 			<value>libnss3-dev</value>
 			<value>libnss3-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:478915262643859826662066393621737783685" version="1" datatype="string" comment="Interim Release">
+			<value>libnss-libvirt</value>
+			<value>libvirt0</value>
+			<value>libvirt-clients</value>
+			<value>libvirt-daemon</value>
+			<value>libvirt-daemon-config-network</value>
+			<value>libvirt-daemon-config-nwfilter</value>
+			<value>libvirt-daemon-driver-lxc</value>
+			<value>libvirt-daemon-driver-qemu</value>
+			<value>libvirt-daemon-driver-storage-gluster</value>
+			<value>libvirt-daemon-driver-storage-iscsi-direct</value>
+			<value>libvirt-daemon-driver-storage-rbd</value>
+			<value>libvirt-daemon-driver-storage-zfs</value>
+			<value>libvirt-daemon-driver-vbox</value>
+			<value>libvirt-daemon-driver-xen</value>
+			<value>libvirt-daemon-system</value>
+			<value>libvirt-daemon-system-systemd</value>
+			<value>libvirt-daemon-system-sysv</value>
+			<value>libvirt-dev</value>
+			<value>libvirt-doc</value>
+			<value>libvirt-login-shell</value>
+			<value>libvirt-sanlock</value>
+			<value>libvirt-wireshark</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:365836617514815323126141254168136942892" version="1" datatype="string" comment="Interim Release">
 			<value>libnss-myhostname</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-31T10:38:46</oval:timestamp>
+		<oval:timestamp>2023-06-01T04:37:26</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -10788,7 +10788,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-25012" severity="low" public="20230202" cvss_score="4.6" cvss_vector="CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6033-1">CVE-2023-25012</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-28466" severity="medium" public="20230316" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1">CVE-2023-28466</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-28866" severity="medium" public="20230327" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6033-1">CVE-2023-28866</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1">CVE-2023-30456</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1,6127-1">CVE-2023-30456</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -12507,8 +12507,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2023-05-30" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1">CVE-2023-2612</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1">CVE-2023-32233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-2612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-32233</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -12535,10 +12535,10 @@
 					<severity>High</severity>
 					<issued date="2023-05-30" />
 					<cve href="https://ubuntu.com/security/CVE-2023-1670" severity="low" public="20230330" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1,6045-1,6123-1,6124-1">CVE-2023-1670</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1">CVE-2023-2612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-2612</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-26606" severity="medium" public="20230226" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5982-1,5987-1,6004-1,6024-1,6123-1">CVE-2023-26606</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1">CVE-2023-30456</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1">CVE-2023-32233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1,6127-1">CVE-2023-30456</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-32233</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -12568,9 +12568,9 @@
 					<cve href="https://ubuntu.com/security/CVE-2022-3586" severity="medium" public="20221019" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5790-1,5791-1,5792-1,5793-1,5791-2,5792-2,5793-2,5791-3,5793-3,5793-4,5815-1,5877-1,6045-1,6071-1,6124-1">CVE-2022-3586</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-4139" severity="medium" public="20230127" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5859-1,5911-1,5912-1,5917-1,5929-1,5934-1,5935-1,5938-1,5939-1,5940-1,5941-1,5950-1,5951-1,5962-1,6000-1,6089-1,6124-1">CVE-2022-4139</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-1670" severity="low" public="20230330" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6033-1,6045-1,6123-1,6124-1">CVE-2023-1670</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1">CVE-2023-2612</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1">CVE-2023-30456</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1">CVE-2023-32233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-2612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1,6127-1">CVE-2023-30456</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-32233</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -12597,6 +12597,89 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:410250106649956615935091444197485867475" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61261000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6126-1 -- libvirt vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6126-1" ref_url="https://ubuntu.com/security/notices/USN-6126-1" />
+				<reference source="CVE" ref_id="CVE-2022-0897" ref_url="https://ubuntu.com/security/CVE-2022-0897" />
+				<reference source="CVE" ref_id="CVE-2023-2700" ref_url="https://ubuntu.com/security/CVE-2023-2700" />
+				<description>It was discovered that libvirt incorrectly handled the nwfilter driver. A local attacker could possibly use this issue to cause libvirt to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-0897)  It was discovered that libvirt incorrectly handled queries for the SR-IOV PCI device capabilities. A local attacker could possibly use this issue to cause libvirt to consume resources, leading to a denial of service. (CVE-2023-2700)  Update Instructions:  Run `sudo pro fix USN-6126-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnss-libvirt - 8.0.0-1ubuntu7.5 libvirt0 - 8.0.0-1ubuntu7.5 libvirt-clients - 8.0.0-1ubuntu7.5 libvirt-daemon - 8.0.0-1ubuntu7.5 libvirt-daemon-config-network - 8.0.0-1ubuntu7.5 libvirt-daemon-config-nwfilter - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-lxc - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-qemu - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-storage-gluster - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-storage-iscsi-direct - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-storage-rbd - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-storage-zfs - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-vbox - 8.0.0-1ubuntu7.5 libvirt-daemon-driver-xen - 8.0.0-1ubuntu7.5 libvirt-daemon-system - 8.0.0-1ubuntu7.5 libvirt-daemon-system-systemd - 8.0.0-1ubuntu7.5 libvirt-daemon-system-sysv - 8.0.0-1ubuntu7.5 libvirt-dev - 8.0.0-1ubuntu7.5 libvirt-doc - 8.0.0-1ubuntu7.5 libvirt-login-shell - 8.0.0-1ubuntu7.5 libvirt-sanlock - 8.0.0-1ubuntu7.5 libvirt-wireshark - 8.0.0-1ubuntu7.5</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-31" />
+					<cve href="https://ubuntu.com/security/CVE-2022-0897" severity="low" public="20220325" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" usns="5399-1,6126-1">CVE-2022-0897</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2700" severity="medium" public="20230515" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6126-1">CVE-2023-2700</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:640162464496840928313980102100092490580" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61271000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6127-1 -- Linux kernel vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6127-1" ref_url="https://ubuntu.com/security/notices/USN-6127-1" />
+				<reference source="CVE" ref_id="CVE-2023-1380" ref_url="https://ubuntu.com/security/CVE-2023-1380" />
+				<reference source="CVE" ref_id="CVE-2023-2612" ref_url="https://ubuntu.com/security/CVE-2023-2612" />
+				<reference source="CVE" ref_id="CVE-2023-30456" ref_url="https://ubuntu.com/security/CVE-2023-30456" />
+				<reference source="CVE" ref_id="CVE-2023-31436" ref_url="https://ubuntu.com/security/CVE-2023-31436" />
+				<reference source="CVE" ref_id="CVE-2023-32233" ref_url="https://ubuntu.com/security/CVE-2023-32233" />
+				<description>Patryk Sondej and Piotr Krysiuk discovered that a race condition existed in the netfilter subsystem of the Linux kernel when processing batch requests, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-32233)  Gwangun Jung discovered that the Quick Fair Queueing scheduler implementation in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-31436)  Reima Ishii discovered that the nested KVM implementation for Intel x86 processors in the Linux kernel did not properly validate control registers in certain situations. An attacker in a guest VM could use this to cause a denial of service (guest crash). (CVE-2023-30456)  It was discovered that the Broadcom FullMAC USB WiFi driver in the Linux kernel did not properly perform data buffer size validation in some situations. A physically proximate attacker could use this to craft a malicious USB device that when inserted, could cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-1380)  Jean-Baptiste Cayrou discovered that the shiftfs file system in the Ubuntu Linux kernel contained a race condition when handling inode locking in some situations. A local attacker could use this to cause a denial of service (kernel deadlock). (CVE-2023-2612)  Update Instructions:  Run `sudo pro fix USN-6127-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-aws-cloud-tools-5.15.0-1037 - 5.15.0-1037.41 linux-aws-headers-5.15.0-1037 - 5.15.0-1037.41 linux-aws-lts-22.04 - 5.15.0.1037.36 linux-aws-tools-5.15.0-1037 - 5.15.0-1037.41 linux-azure - 5.15.0.1039.35 linux-azure-cloud-tools-5.15.0-1039 - 5.15.0-1039.46 linux-azure-headers-5.15.0-1039 - 5.15.0-1039.46 linux-azure-lts-22.04 - 5.15.0.1039.35 linux-azure-tools-5.15.0-1039 - 5.15.0-1039.46 linux-buildinfo-5.15.0-73-generic - 5.15.0-73.80 linux-buildinfo-5.15.0-73-generic-64k - 5.15.0-73.80 linux-buildinfo-5.15.0-73-generic-lpae - 5.15.0-73.80 linux-buildinfo-5.15.0-73-lowlatency - 5.15.0-73.80 linux-buildinfo-5.15.0-73-lowlatency-64k - 5.15.0-73.80 linux-buildinfo-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-buildinfo-5.15.0-1031-ibm - 5.15.0-1031.34 linux-buildinfo-5.15.0-1034-gke - 5.15.0-1034.39 linux-buildinfo-5.15.0-1034-kvm - 5.15.0-1034.39 linux-buildinfo-5.15.0-1035-gcp - 5.15.0-1035.43 linux-buildinfo-5.15.0-1036-oracle - 5.15.0-1036.42 linux-buildinfo-5.15.0-1037-aws - 5.15.0-1037.41 linux-buildinfo-5.15.0-1039-azure - 5.15.0-1039.46 linux-buildinfo-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-buildinfo-5.19.0-43-generic-64k - 5.19.0-43.44~22.04.1 linux-buildinfo-5.19.0-43-generic-lpae - 5.19.0-43.44~22.04.1 linux-cloud-tools-5.15.0-73 - 5.15.0-73.80 linux-cloud-tools-5.15.0-73-generic - 5.15.0-73.80 linux-cloud-tools-5.15.0-73-lowlatency - 5.15.0-73.80 linux-cloud-tools-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-cloud-tools-5.15.0-1037-aws - 5.15.0-1037.41 linux-cloud-tools-5.15.0-1039-azure - 5.15.0-1039.46 linux-cloud-tools-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-cloud-tools-azure - 5.15.0.1039.35 linux-cloud-tools-azure-lts-22.04 - 5.15.0.1039.35 linux-cloud-tools-common - 5.15.0-73.80 linux-cloud-tools-generic - 5.15.0.73.71 linux-cloud-tools-generic-hwe-20.04 - 5.15.0.73.71 linux-cloud-tools-generic-hwe-20.04-edge - 5.15.0.73.71 linux-cloud-tools-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-cloud-tools-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-cloud-tools-gkeop - 5.15.0.1021.20 linux-cloud-tools-gkeop-5.15 - 5.15.0.1021.20 linux-cloud-tools-lowlatency - 5.15.0.73.78 linux-cloud-tools-lowlatency-hwe-20.04 - 5.15.0.73.78 linux-cloud-tools-lowlatency-hwe-20.04-edge - 5.15.0.73.78 linux-cloud-tools-virtual - 5.15.0.73.71 linux-cloud-tools-virtual-hwe-20.04 - 5.15.0.73.71 linux-cloud-tools-virtual-hwe-20.04-edge - 5.15.0.73.71 linux-cloud-tools-virtual-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-cloud-tools-virtual-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-crashdump - 5.15.0.73.71 linux-doc - 5.15.0-73.80 linux-gcp-headers-5.15.0-1035 - 5.15.0-1035.43 linux-gcp-lts-22.04 - 5.15.0.1035.31 linux-gcp-tools-5.15.0-1035 - 5.15.0-1035.43 linux-generic - 5.15.0.73.71 linux-generic-64k - 5.15.0.73.71 linux-generic-64k-hwe-20.04 - 5.15.0.73.71 linux-generic-64k-hwe-20.04-edge - 5.15.0.73.71 linux-generic-64k-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-generic-64k-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-generic-hwe-20.04 - 5.15.0.73.71 linux-generic-hwe-20.04-edge - 5.15.0.73.71 linux-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-generic-lpae - 5.15.0.73.71 linux-generic-lpae-hwe-20.04 - 5.15.0.73.71 linux-generic-lpae-hwe-20.04-edge - 5.15.0.73.71 linux-generic-lpae-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-generic-lpae-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-gke - 5.15.0.1034.33 linux-gke-5.15 - 5.15.0.1034.33 linux-gke-headers-5.15.0-1034 - 5.15.0-1034.39 linux-gke-tools-5.15.0-1034 - 5.15.0-1034.39 linux-gkeop - 5.15.0.1021.20 linux-gkeop-5.15 - 5.15.0.1021.20 linux-gkeop-cloud-tools-5.15.0-1021 - 5.15.0-1021.26 linux-gkeop-headers-5.15.0-1021 - 5.15.0-1021.26 linux-gkeop-tools-5.15.0-1021 - 5.15.0-1021.26 linux-headers-5.15.0-73 - 5.15.0-73.80 linux-headers-5.15.0-73-generic - 5.15.0-73.80 linux-headers-5.15.0-73-generic-64k - 5.15.0-73.80 linux-headers-5.15.0-73-generic-lpae - 5.15.0-73.80 linux-headers-5.15.0-73-lowlatency - 5.15.0-73.80 linux-headers-5.15.0-73-lowlatency-64k - 5.15.0-73.80 linux-headers-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-headers-5.15.0-1031-ibm - 5.15.0-1031.34 linux-headers-5.15.0-1034-gke - 5.15.0-1034.39 linux-headers-5.15.0-1034-kvm - 5.15.0-1034.39 linux-headers-5.15.0-1035-gcp - 5.15.0-1035.43 linux-headers-5.15.0-1036-oracle - 5.15.0-1036.42 linux-headers-5.15.0-1037-aws - 5.15.0-1037.41 linux-headers-5.15.0-1039-azure - 5.15.0-1039.46 linux-headers-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-headers-5.19.0-43-generic-64k - 5.19.0-43.44~22.04.1 linux-headers-5.19.0-43-generic-lpae - 5.19.0-43.44~22.04.1 linux-headers-aws-lts-22.04 - 5.15.0.1037.36 linux-headers-azure - 5.15.0.1039.35 linux-headers-azure-lts-22.04 - 5.15.0.1039.35 linux-headers-gcp-lts-22.04 - 5.15.0.1035.31 linux-headers-generic - 5.15.0.73.71 linux-headers-generic-64k - 5.15.0.73.71 linux-headers-generic-64k-hwe-20.04 - 5.15.0.73.71 linux-headers-generic-64k-hwe-20.04-edge - 5.15.0.73.71 linux-headers-generic-64k-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-headers-generic-64k-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-headers-generic-hwe-20.04 - 5.15.0.73.71 linux-headers-generic-hwe-20.04-edge - 5.15.0.73.71 linux-headers-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-headers-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-headers-generic-lpae - 5.15.0.73.71 linux-headers-generic-lpae-hwe-20.04 - 5.15.0.73.71 linux-headers-generic-lpae-hwe-20.04-edge - 5.15.0.73.71 linux-headers-generic-lpae-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-headers-generic-lpae-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-headers-gke - 5.15.0.1034.33 linux-headers-gke-5.15 - 5.15.0.1034.33 linux-headers-gkeop - 5.15.0.1021.20 linux-headers-gkeop-5.15 - 5.15.0.1021.20 linux-headers-ibm - 5.15.0.1031.27 linux-headers-kvm - 5.15.0.1034.30 linux-headers-lowlatency - 5.15.0.73.78 linux-headers-lowlatency-64k - 5.15.0.73.78 linux-headers-lowlatency-64k-hwe-20.04 - 5.15.0.73.78 linux-headers-lowlatency-64k-hwe-20.04-edge - 5.15.0.73.78 linux-headers-lowlatency-hwe-20.04 - 5.15.0.73.78 linux-headers-lowlatency-hwe-20.04-edge - 5.15.0.73.78 linux-headers-oem-20.04 - 5.15.0.73.71 linux-headers-oracle - 5.15.0.1036.31 linux-headers-virtual - 5.15.0.73.71 linux-headers-virtual-hwe-20.04 - 5.15.0.73.71 linux-headers-virtual-hwe-20.04-edge - 5.15.0.73.71 linux-headers-virtual-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-headers-virtual-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-hwe-5.19-cloud-tools-5.19.0-43 - 5.19.0-43.44~22.04.1 linux-hwe-5.19-cloud-tools-common - 5.19.0-43.44~22.04.1 linux-hwe-5.19-headers-5.19.0-43 - 5.19.0-43.44~22.04.1 linux-hwe-5.19-tools-5.19.0-43 - 5.19.0-43.44~22.04.1 linux-hwe-5.19-tools-common - 5.19.0-43.44~22.04.1 linux-hwe-5.19-tools-host - 5.19.0-43.44~22.04.1 linux-ibm - 5.15.0.1031.27 linux-ibm-cloud-tools-common - 5.15.0-1031.34 linux-ibm-headers-5.15.0-1031 - 5.15.0-1031.34 linux-ibm-source-5.15.0 - 5.15.0-1031.34 linux-ibm-tools-5.15.0-1031 - 5.15.0-1031.34 linux-ibm-tools-common - 5.15.0-1031.34 linux-image-5.15.0-73-generic - 5.15.0-73.80 linux-image-5.15.0-73-generic-64k - 5.15.0-73.80 linux-image-5.15.0-73-generic-lpae - 5.15.0-73.80 linux-image-5.15.0-73-lowlatency - 5.15.0-73.80 linux-image-5.15.0-73-lowlatency-64k - 5.15.0-73.80 linux-image-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-image-5.15.0-1031-ibm - 5.15.0-1031.34 linux-image-5.15.0-1034-gke - 5.15.0-1034.39 linux-image-5.15.0-1034-kvm - 5.15.0-1034.39 linux-image-5.15.0-1035-gcp - 5.15.0-1035.43 linux-image-5.15.0-1036-oracle - 5.15.0-1036.42 linux-image-5.15.0-1037-aws - 5.15.0-1037.41 linux-image-5.15.0-1039-azure - 5.15.0-1039.46 linux-image-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-image-5.19.0-43-generic-64k - 5.19.0-43.44~22.04.1 linux-image-5.19.0-43-generic-lpae - 5.19.0-43.44~22.04.1 linux-image-aws-lts-22.04 - 5.15.0.1037.36 linux-image-azure - 5.15.0.1039.35 linux-image-azure-lts-22.04 - 5.15.0.1039.35 linux-image-extra-virtual - 5.15.0.73.71 linux-image-extra-virtual-hwe-20.04 - 5.15.0.73.71 linux-image-extra-virtual-hwe-20.04-edge - 5.15.0.73.71 linux-image-extra-virtual-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-image-extra-virtual-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-image-gcp-lts-22.04 - 5.15.0.1035.31 linux-image-generic - 5.15.0.73.71 linux-image-generic-64k - 5.15.0.73.71 linux-image-generic-64k-hwe-20.04 - 5.15.0.73.71 linux-image-generic-64k-hwe-20.04-edge - 5.15.0.73.71 linux-image-generic-64k-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-image-generic-64k-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-image-generic-hwe-20.04 - 5.15.0.73.71 linux-image-generic-hwe-20.04-edge - 5.15.0.73.71 linux-image-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-image-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-image-generic-lpae - 5.15.0.73.71 linux-image-generic-lpae-hwe-20.04 - 5.15.0.73.71 linux-image-generic-lpae-hwe-20.04-edge - 5.15.0.73.71 linux-image-generic-lpae-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-image-generic-lpae-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-image-gke - 5.15.0.1034.33 linux-image-gke-5.15 - 5.15.0.1034.33 linux-image-gkeop - 5.15.0.1021.20 linux-image-gkeop-5.15 - 5.15.0.1021.20 linux-image-ibm - 5.15.0.1031.27 linux-image-kvm - 5.15.0.1034.30 linux-image-lowlatency - 5.15.0.73.78 linux-image-lowlatency-64k - 5.15.0.73.78 linux-image-lowlatency-64k-hwe-20.04 - 5.15.0.73.78 linux-image-lowlatency-64k-hwe-20.04-edge - 5.15.0.73.78 linux-image-lowlatency-hwe-20.04 - 5.15.0.73.78 linux-image-lowlatency-hwe-20.04-edge - 5.15.0.73.78 linux-image-oem-20.04 - 5.15.0.73.71 linux-image-oracle - 5.15.0.1036.31 linux-image-unsigned-5.15.0-73-generic - 5.15.0-73.80 linux-image-unsigned-5.15.0-73-generic-64k - 5.15.0-73.80 linux-image-unsigned-5.15.0-73-lowlatency - 5.15.0-73.80 linux-image-unsigned-5.15.0-73-lowlatency-64k - 5.15.0-73.80 linux-image-unsigned-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-image-unsigned-5.15.0-1031-ibm - 5.15.0-1031.34 linux-image-unsigned-5.15.0-1034-gke - 5.15.0-1034.39 linux-image-unsigned-5.15.0-1034-kvm - 5.15.0-1034.39 linux-image-unsigned-5.15.0-1035-gcp - 5.15.0-1035.43 linux-image-unsigned-5.15.0-1036-oracle - 5.15.0-1036.42 linux-image-unsigned-5.15.0-1037-aws - 5.15.0-1037.41 linux-image-unsigned-5.15.0-1039-azure - 5.15.0-1039.46 linux-image-unsigned-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-image-unsigned-5.19.0-43-generic-64k - 5.19.0-43.44~22.04.1 linux-image-virtual - 5.15.0.73.71 linux-image-virtual-hwe-20.04 - 5.15.0.73.71 linux-image-virtual-hwe-20.04-edge - 5.15.0.73.71 linux-image-virtual-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-image-virtual-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-kvm - 5.15.0.1034.30 linux-kvm-headers-5.15.0-1034 - 5.15.0-1034.39 linux-kvm-tools-5.15.0-1034 - 5.15.0-1034.39 linux-libc-dev - 5.15.0-73.80 linux-lowlatency - 5.15.0.73.78 linux-lowlatency-64k - 5.15.0.73.78 linux-lowlatency-64k-hwe-20.04 - 5.15.0.73.78 linux-lowlatency-64k-hwe-20.04-edge - 5.15.0.73.78 linux-lowlatency-cloud-tools-5.15.0-73 - 5.15.0-73.80 linux-lowlatency-cloud-tools-common - 5.15.0-73.80 linux-lowlatency-headers-5.15.0-73 - 5.15.0-73.80 linux-lowlatency-hwe-20.04 - 5.15.0.73.78 linux-lowlatency-hwe-20.04-edge - 5.15.0.73.78 linux-lowlatency-tools-5.15.0-73 - 5.15.0-73.80 linux-lowlatency-tools-common - 5.15.0-73.80 linux-lowlatency-tools-host - 5.15.0-73.80 linux-modules-5.15.0-73-generic - 5.15.0-73.80 linux-modules-5.15.0-73-generic-64k - 5.15.0-73.80 linux-modules-5.15.0-73-generic-lpae - 5.15.0-73.80 linux-modules-5.15.0-73-lowlatency - 5.15.0-73.80 linux-modules-5.15.0-73-lowlatency-64k - 5.15.0-73.80 linux-modules-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-modules-5.15.0-1031-ibm - 5.15.0-1031.34 linux-modules-5.15.0-1034-gke - 5.15.0-1034.39 linux-modules-5.15.0-1034-kvm - 5.15.0-1034.39 linux-modules-5.15.0-1035-gcp - 5.15.0-1035.43 linux-modules-5.15.0-1036-oracle - 5.15.0-1036.42 linux-modules-5.15.0-1037-aws - 5.15.0-1037.41 linux-modules-5.15.0-1039-azure - 5.15.0-1039.46 linux-modules-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-modules-5.19.0-43-generic-64k - 5.19.0-43.44~22.04.1 linux-modules-5.19.0-43-generic-lpae - 5.19.0-43.44~22.04.1 linux-modules-extra-5.15.0-73-generic - 5.15.0-73.80 linux-modules-extra-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-modules-extra-5.15.0-1031-ibm - 5.15.0-1031.34 linux-modules-extra-5.15.0-1034-gke - 5.15.0-1034.39 linux-modules-extra-5.15.0-1035-gcp - 5.15.0-1035.43 linux-modules-extra-5.15.0-1036-oracle - 5.15.0-1036.42 linux-modules-extra-5.15.0-1037-aws - 5.15.0-1037.41 linux-modules-extra-5.15.0-1039-azure - 5.15.0-1039.46 linux-modules-extra-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-modules-extra-aws-lts-22.04 - 5.15.0.1037.36 linux-modules-extra-azure - 5.15.0.1039.35 linux-modules-extra-azure-lts-22.04 - 5.15.0.1039.35 linux-modules-extra-gcp-lts-22.04 - 5.15.0.1035.31 linux-modules-extra-gkeop - 5.15.0.1021.20 linux-modules-extra-gkeop-5.15 - 5.15.0.1021.20 linux-modules-ipu6-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-modules-ipu6-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-modules-ipu6-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-modules-ivsc-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-modules-ivsc-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-modules-ivsc-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-modules-iwlwifi-5.15.0-73-generic - 5.15.0-73.80 linux-modules-iwlwifi-5.15.0-73-lowlatency - 5.15.0-73.80 linux-modules-iwlwifi-5.15.0-1034-gke - 5.15.0-1034.39 linux-modules-iwlwifi-5.15.0-1035-gcp - 5.15.0-1035.43 linux-modules-iwlwifi-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-modules-iwlwifi-generic - 5.15.0.73.71 linux-modules-iwlwifi-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-modules-iwlwifi-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-oem-20.04 - 5.15.0.73.71 linux-oracle - 5.15.0.1036.31 linux-oracle-headers-5.15.0-1036 - 5.15.0-1036.42 linux-oracle-tools-5.15.0-1036 - 5.15.0-1036.42 linux-source - 5.15.0.73.71 linux-source-5.15.0 - 5.15.0-73.80 linux-source-5.19.0 - 5.19.0-43.44~22.04.1 linux-tools-5.15.0-73 - 5.15.0-73.80 linux-tools-5.15.0-73-generic - 5.15.0-73.80 linux-tools-5.15.0-73-generic-64k - 5.15.0-73.80 linux-tools-5.15.0-73-generic-lpae - 5.15.0-73.80 linux-tools-5.15.0-73-lowlatency - 5.15.0-73.80 linux-tools-5.15.0-73-lowlatency-64k - 5.15.0-73.80 linux-tools-5.15.0-1021-gkeop - 5.15.0-1021.26 linux-tools-5.15.0-1031-ibm - 5.15.0-1031.34 linux-tools-5.15.0-1034-gke - 5.15.0-1034.39 linux-tools-5.15.0-1034-kvm - 5.15.0-1034.39 linux-tools-5.15.0-1035-gcp - 5.15.0-1035.43 linux-tools-5.15.0-1036-oracle - 5.15.0-1036.42 linux-tools-5.15.0-1037-aws - 5.15.0-1037.41 linux-tools-5.15.0-1039-azure - 5.15.0-1039.46 linux-tools-5.19.0-43-generic - 5.19.0-43.44~22.04.1 linux-tools-5.19.0-43-generic-64k - 5.19.0-43.44~22.04.1 linux-tools-5.19.0-43-generic-lpae - 5.19.0-43.44~22.04.1 linux-tools-aws-lts-22.04 - 5.15.0.1037.36 linux-tools-azure - 5.15.0.1039.35 linux-tools-azure-lts-22.04 - 5.15.0.1039.35 linux-tools-common - 5.15.0-73.80 linux-tools-gcp-lts-22.04 - 5.15.0.1035.31 linux-tools-generic - 5.15.0.73.71 linux-tools-generic-64k - 5.15.0.73.71 linux-tools-generic-64k-hwe-20.04 - 5.15.0.73.71 linux-tools-generic-64k-hwe-20.04-edge - 5.15.0.73.71 linux-tools-generic-64k-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-tools-generic-64k-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-tools-generic-hwe-20.04 - 5.15.0.73.71 linux-tools-generic-hwe-20.04-edge - 5.15.0.73.71 linux-tools-generic-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-tools-generic-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-tools-generic-lpae - 5.15.0.73.71 linux-tools-generic-lpae-hwe-20.04 - 5.15.0.73.71 linux-tools-generic-lpae-hwe-20.04-edge - 5.15.0.73.71 linux-tools-generic-lpae-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-tools-generic-lpae-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-tools-gke - 5.15.0.1034.33 linux-tools-gke-5.15 - 5.15.0.1034.33 linux-tools-gkeop - 5.15.0.1021.20 linux-tools-gkeop-5.15 - 5.15.0.1021.20 linux-tools-host - 5.15.0-73.80 linux-tools-ibm - 5.15.0.1031.27 linux-tools-kvm - 5.15.0.1034.30 linux-tools-lowlatency - 5.15.0.73.78 linux-tools-lowlatency-64k - 5.15.0.73.78 linux-tools-lowlatency-64k-hwe-20.04 - 5.15.0.73.78 linux-tools-lowlatency-64k-hwe-20.04-edge - 5.15.0.73.78 linux-tools-lowlatency-hwe-20.04 - 5.15.0.73.78 linux-tools-lowlatency-hwe-20.04-edge - 5.15.0.73.78 linux-tools-oem-20.04 - 5.15.0.73.71 linux-tools-oracle - 5.15.0.1036.31 linux-tools-virtual - 5.15.0.73.71 linux-tools-virtual-hwe-20.04 - 5.15.0.73.71 linux-tools-virtual-hwe-20.04-edge - 5.15.0.73.71 linux-tools-virtual-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-tools-virtual-hwe-22.04-edge - 5.19.0.43.44~22.04.17 linux-virtual - 5.15.0.73.71 linux-virtual-hwe-20.04 - 5.15.0.73.71 linux-virtual-hwe-20.04-edge - 5.15.0.73.71 linux-virtual-hwe-22.04 - 5.19.0.43.44~22.04.17 linux-virtual-hwe-22.04-edge - 5.19.0.43.44~22.04.17</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-05-31" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1380" severity="high" public="20230327" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6127-1">CVE-2023-1380</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-2612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-30456" severity="high" public="20230410" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6033-1,6123-1,6124-1,6127-1">CVE-2023-30456</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31436" severity="high" public="20230428" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6127-1">CVE-2023-31436</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1,6127-1">CVE-2023-32233</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:456103911242922034928476846847173027483" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:603954353525168201073018555478677957859" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:592357864925463816914293035252402463201" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:461509246764625139708552473930177617238" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:680312625009362149654786006920019689740" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:562090048585741961999837977499985533345" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:540252830264938262922629799274826430866" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:409554325443941604687466580293795758053" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:401989079852055320714973530778890424813" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:436099060424376760145360696887523280196" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:392952423823785962752467668261430506369" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:412854279732872987175457823840011487926" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:585979184490415452495012767497672551713" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:548568016760272477582860086229670762806" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:466267971225144719481646408390784856337" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:388041886409327525231962936057203120592" comment="Long Term Support" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:393343539101860496520307909173917438812" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:575951035579335170965944664414574290867" comment="Long Term Support" />
+				</criteria>
 			</criteria>
 		</definition>
 	</definitions>
@@ -12957,6 +13040,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:398841381022658559743464407687657702160" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:388041886409327525231962936057203120592" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:404343958413658238997088670382281048402" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:388072788307668930681873830525336621080" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:402138567681235686305777374588394393626" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
@@ -13025,6 +13112,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:548504156943146164925081106521074592648" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:409554325443941604687466580293795758053" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:645686820509554183776729748186982485083" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:409661995614103620488964421674244107560" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:509449699229972539258541954893619623447" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
@@ -13039,6 +13130,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:412220221196204815904701759119945176416" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:514041876160194781237946096966306777077" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:412854279732872987175457823840011487926" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:574294088529757764539605371413619909792" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:413048893549705361168023011034640564831" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -13121,6 +13216,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:597079941079698159681336604667074434353" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:436099060424376760145360696887523280196" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:633388331307653960723410537427846061203" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:436628306981345479322085762760602340485" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:509036509150034519792550007613104944438" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
@@ -13199,6 +13298,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:460642590043801346813748110107914750214" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:608191547463621759174593004631458571883" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:461509246764625139708552473930177617238" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:406388986664739391301114796455207330204" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:462532050467134157378632884470449651592" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -13437,6 +13540,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:343044840107706655484742434856773013952" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:548568016760272477582860086229670762806" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:640578873722530214042975803768280565640" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:548820715776387733247226997865436400189" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:586670794504242778408180559665055300892" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
@@ -13481,6 +13588,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:383338977331355471671946351495853427858" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:562090048585741961999837977499985533345" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:580533252613877703511010014445442203761" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:564338509436490819676528837869609482819" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:531192755026147561103457178820097888859" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
@@ -13519,6 +13630,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:574940682796225929652995630963735601850" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:409003257574910716841613904153793046632" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:575951035579335170965944664414574290867" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:574390085836843575018204152883945026825" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:576452475972287525316127728126649034473" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -13591,6 +13706,10 @@
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:602751180905640365849684990549867465347" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:564325755400087322047160122628963537627" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:603954353525168201073018555478677957859" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:595816263998569264834309633540907609004" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:561713998216608247027676412773110526005" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:604134920316528627460022850243672045777" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
@@ -15041,6 +15160,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:359334453317909463367795988928699353331" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:677506757561005118801091598199503421594" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:640162464496840928313980102100092490580" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:529294248409807086366147225007702256410" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:434064665398203773016775504882608579523" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:640927721948848570144926830557941545618" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:478095453359643508925558107557695743974" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:491830019452384948341759450726482732804" />
@@ -15389,8 +15512,14 @@
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:403484670107485139248309462981757807252" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:528582012095048827000299645511650593972</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:404343958413658238997088670382281048402" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:443425479489176555874413819618484543410</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:404937433267713751075878638724148915421" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:528582012095048827000299645511650593972</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:406388986664739391301114796455207330204" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:594449150140637594811709486155436095621</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:408608450619530094118394728968629886627" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:625645386147368339718796799282819089315</ind:var_ref>
@@ -15765,14 +15894,23 @@
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:572130388165436489441436062000430990043" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:657745040179597210512943393032298414824</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:574294088529757764539605371413619909792" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:561710140790771326073479625691126625372</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:574359163741951110346183273729897573773" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:498903670745982604751057175006695382954</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:574390085836843575018204152883945026825" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:513381785297706063588616862969923610862</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:574506055417335234708514285510875190148" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:404744718610319023938479425557173991721</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:578224490317358740964936367977688750371" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:473907275057677433011606811704446897251</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:580533252613877703511010014445442203761" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:501991658589566267811713391787503183760</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:582999717386057998478355910700894075306" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:528582012095048827000299645511650593972</ind:var_ref>
@@ -15800,6 +15938,9 @@
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:592210606574354517496906967744749776531" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:543351652114870065315112393557386255526</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:595816263998569264834309633540907609004" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:444817291996479806018544026886598438105</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:595869333931934053143412859673048108871" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:594449150140637594811709486155436095621</ind:var_ref>
@@ -15885,6 +16026,9 @@
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:633351443572806158228224048945040570387" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:640968571921694404109489851567638357693</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:633388331307653960723410537427846061203" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:610637221451649739580162794792015934697</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:634305427629760662984283527302228055884" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:352960976108224724398438554621671357777</ind:var_ref>
 		</ind:variable_object>
@@ -15893,6 +16037,9 @@
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:640475355191696861674266378453282586519" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:598349878885833428773186752194125325030</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:640578873722530214042975803768280565640" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:430565433136571564106856828432133084896</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:641047900809095229711912737348942863867" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:490822670381318356090900715034151910203</ind:var_ref>
@@ -15905,6 +16052,9 @@
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:645647846923066641661120295973706285000" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:585628025585747213874486724224244254724</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:645686820509554183776729748186982485083" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:490822670381318356090900715034151910203</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:645990854164244387901091695811931664684" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:602897421546112511878769247900551635406</ind:var_ref>
@@ -16652,6 +16802,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:529081324476763928709941712593656105103" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:530902012779160770917674063722519919544" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:529294248409807086366147225007702256410" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:478915262643859826662066393621737783685" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:531910859941906907760415805026585003516" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:368553152646317927616397778376731366846" var_check="at least one" />
@@ -17621,6 +17774,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:433509498035183188966592996361748938401" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.21.1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:434064665398203773016775504882608579523" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.0-1ubuntu7.5</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:434846600349543633789613019172107416434" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-6ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -18405,6 +18561,9 @@
 		<constant_variable id="oval:com.ubuntu.jammy:var:532288201222128082766949641966889655276" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.15.0-72</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:443425479489176555874413819618484543410" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.15.0-73</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:419865763748895455262931827942884353769" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.15.0-1002</value>
 		</constant_variable>
@@ -18516,6 +18675,9 @@
 		<constant_variable id="oval:com.ubuntu.jammy:var:534474747032691688423424802101288570913" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.15.0-1038</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:430565433136571564106856828432133084896" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.15.0-1039</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:515122738672014871907997147758129368326" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.17.0-1006</value>
 		</constant_variable>
@@ -18584,6 +18746,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:663118768310141758890464661850060985164" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.19.0-42</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:513381785297706063588616862969923610862" version="1" datatype="debian_evr_string" comment="patched kernel">
+			<value>0:5.19.0-43</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:489677029314348036699257469510575234667" version="1" datatype="debian_evr_string" comment="patched kernel">
 			<value>0:5.19.0-1026</value>
@@ -20182,6 +20347,30 @@
 			<value>libnss3</value>
 			<value>libnss3-dev</value>
 			<value>libnss3-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:478915262643859826662066393621737783685" version="1" datatype="string" comment="Long Term Support">
+			<value>libnss-libvirt</value>
+			<value>libvirt0</value>
+			<value>libvirt-clients</value>
+			<value>libvirt-daemon</value>
+			<value>libvirt-daemon-config-network</value>
+			<value>libvirt-daemon-config-nwfilter</value>
+			<value>libvirt-daemon-driver-lxc</value>
+			<value>libvirt-daemon-driver-qemu</value>
+			<value>libvirt-daemon-driver-storage-gluster</value>
+			<value>libvirt-daemon-driver-storage-iscsi-direct</value>
+			<value>libvirt-daemon-driver-storage-rbd</value>
+			<value>libvirt-daemon-driver-storage-zfs</value>
+			<value>libvirt-daemon-driver-vbox</value>
+			<value>libvirt-daemon-driver-xen</value>
+			<value>libvirt-daemon-system</value>
+			<value>libvirt-daemon-system-systemd</value>
+			<value>libvirt-daemon-system-sysv</value>
+			<value>libvirt-dev</value>
+			<value>libvirt-doc</value>
+			<value>libvirt-login-shell</value>
+			<value>libvirt-sanlock</value>
+			<value>libvirt-wireshark</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:386904103742759361792975674191743615214" version="1" datatype="string" comment="Long Term Support">
 			<value>libnss-myhostname</value>

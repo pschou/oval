@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-05-31T06:39:14</oval:timestamp>
+		<oval:timestamp>2023-06-01T02:37:09</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -807,6 +807,27 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:608068718271449007705858296906264035938" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61261000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6126-1 -- libvirt vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6126-1" ref_url="https://ubuntu.com/security/notices/USN-6126-1" />
+				<reference source="CVE" ref_id="CVE-2022-0897" ref_url="https://ubuntu.com/security/CVE-2022-0897" />
+				<reference source="CVE" ref_id="CVE-2023-2700" ref_url="https://ubuntu.com/security/CVE-2023-2700" />
+				<description>It was discovered that libvirt incorrectly handled the nwfilter driver. A local attacker could possibly use this issue to cause libvirt to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-0897)  It was discovered that libvirt incorrectly handled queries for the SR-IOV PCI device capabilities. A local attacker could possibly use this issue to cause libvirt to consume resources, leading to a denial of service. (CVE-2023-2700)  Update Instructions:  Run `sudo pro fix USN-6126-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnss-libvirt - 9.0.0-2ubuntu1.1 libvirt0 - 9.0.0-2ubuntu1.1 libvirt-clients - 9.0.0-2ubuntu1.1 libvirt-clients-qemu - 9.0.0-2ubuntu1.1 libvirt-daemon - 9.0.0-2ubuntu1.1 libvirt-daemon-config-network - 9.0.0-2ubuntu1.1 libvirt-daemon-config-nwfilter - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-lxc - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-qemu - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-storage-gluster - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-storage-iscsi-direct - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-storage-rbd - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-storage-zfs - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-vbox - 9.0.0-2ubuntu1.1 libvirt-daemon-driver-xen - 9.0.0-2ubuntu1.1 libvirt-daemon-system - 9.0.0-2ubuntu1.1 libvirt-daemon-system-systemd - 9.0.0-2ubuntu1.1 libvirt-daemon-system-sysv - 9.0.0-2ubuntu1.1 libvirt-dev - 9.0.0-2ubuntu1.1 libvirt-doc - 9.0.0-2ubuntu1.1 libvirt-l10n - 9.0.0-2ubuntu1.1 libvirt-login-shell - 9.0.0-2ubuntu1.1 libvirt-sanlock - 9.0.0-2ubuntu1.1 libvirt-wireshark - 9.0.0-2ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-05-31" />
+					<cve href="https://ubuntu.com/security/CVE-2022-0897" severity="low" public="20220325" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" usns="5399-1,6126-1">CVE-2022-0897</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2700" severity="medium" public="20230515" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6126-1">CVE-2023-2700</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:423691895480397242037923901389337141827" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -816,6 +837,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:380096735142342532823364348745629759927" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:423691895480397242037923901389337141827" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:530444966362678508338008080063908247706" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:427578371650416910446307266458701233120" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:425307581032659656841408575913855362206" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:583858745019849151820751632661604776914" />
@@ -1036,6 +1061,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:391274111027580069412726315909292973834" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:530444966362678508338008080063908247706" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:482317969060746740714620704766738777316" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:531353832672864198863305052278716416401" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:461778776780774333616908186437390203742" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1117,6 +1145,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:421096958010281109099444993659740408063" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:27.0.0-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:427578371650416910446307266458701233120" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.0-2ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:432402482336079049545676271148648881687" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.2-2ubuntu1.1</linux:evr>
@@ -1414,6 +1445,32 @@
 			<value>mysql-source-8.0</value>
 			<value>mysql-testsuite</value>
 			<value>mysql-testsuite-8.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:482317969060746740714620704766738777316" version="1" datatype="string" comment="Interim Release">
+			<value>libnss-libvirt</value>
+			<value>libvirt0</value>
+			<value>libvirt-clients</value>
+			<value>libvirt-clients-qemu</value>
+			<value>libvirt-daemon</value>
+			<value>libvirt-daemon-config-network</value>
+			<value>libvirt-daemon-config-nwfilter</value>
+			<value>libvirt-daemon-driver-lxc</value>
+			<value>libvirt-daemon-driver-qemu</value>
+			<value>libvirt-daemon-driver-storage-gluster</value>
+			<value>libvirt-daemon-driver-storage-iscsi-direct</value>
+			<value>libvirt-daemon-driver-storage-rbd</value>
+			<value>libvirt-daemon-driver-storage-zfs</value>
+			<value>libvirt-daemon-driver-vbox</value>
+			<value>libvirt-daemon-driver-xen</value>
+			<value>libvirt-daemon-system</value>
+			<value>libvirt-daemon-system-systemd</value>
+			<value>libvirt-daemon-system-sysv</value>
+			<value>libvirt-dev</value>
+			<value>libvirt-doc</value>
+			<value>libvirt-l10n</value>
+			<value>libvirt-login-shell</value>
+			<value>libvirt-sanlock</value>
+			<value>libvirt-wireshark</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" version="1" datatype="string" comment="Interim Release">
 			<value>libssl3</value>
