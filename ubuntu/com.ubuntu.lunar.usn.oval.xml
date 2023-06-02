@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-01T02:37:09</oval:timestamp>
+		<oval:timestamp>2023-06-02T02:37:32</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -828,6 +828,44 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:423691895480397242037923901389337141827" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61281000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6128-1 -- CUPS vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6128-1" ref_url="https://ubuntu.com/security/notices/USN-6128-1" />
+				<reference source="CVE" ref_id="CVE-2023-32324" ref_url="https://ubuntu.com/security/CVE-2023-32324" />
+				<description>It was discovered that CUPS incorrectly handled logging. A remote attacker could use this issue to cause CUPS to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6128-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cups - 2.4.2-3ubuntu2.1 cups-bsd - 2.4.2-3ubuntu2.1 cups-client - 2.4.2-3ubuntu2.1 cups-common - 2.4.2-3ubuntu2.1 cups-core-drivers - 2.4.2-3ubuntu2.1 cups-daemon - 2.4.2-3ubuntu2.1 cups-ipp-utils - 2.4.2-3ubuntu2.1 cups-ppdc - 2.4.2-3ubuntu2.1 cups-server-common - 2.4.2-3ubuntu2.1 libcups2 - 2.4.2-3ubuntu2.1 libcups2-dev - 2.4.2-3ubuntu2.1 libcupsimage2 - 2.4.2-3ubuntu2.1 libcupsimage2-dev - 2.4.2-3ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-01" />
+					<cve href="https://ubuntu.com/security/CVE-2023-32324" severity="medium" public="20230601" usns="6128-1,6128-2">CVE-2023-32324</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:536383131462151110388127151685260149953" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61291000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6129-1 -- Avahi vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6129-1" ref_url="https://ubuntu.com/security/notices/USN-6129-1" />
+				<reference source="CVE" ref_id="CVE-2023-1981" ref_url="https://ubuntu.com/security/CVE-2023-1981" />
+				<description>It was discovered that Avahi incorrectly handled certain DBus messages. A local attacker could possibly use this issue to cause Avahi to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-6129-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  avahi-autoipd - 0.8-6ubuntu1.23.04.1 avahi-daemon - 0.8-6ubuntu1.23.04.1 avahi-discover - 0.8-6ubuntu1.23.04.1 avahi-dnsconfd - 0.8-6ubuntu1.23.04.1 avahi-ui-utils - 0.8-6ubuntu1.23.04.1 avahi-utils - 0.8-6ubuntu1.23.04.1 gir1.2-avahi-0.6 - 0.8-6ubuntu1.23.04.1 libavahi-client3 - 0.8-6ubuntu1.23.04.1 libavahi-client-dev - 0.8-6ubuntu1.23.04.1 libavahi-common3 - 0.8-6ubuntu1.23.04.1 libavahi-common-data - 0.8-6ubuntu1.23.04.1 libavahi-common-dev - 0.8-6ubuntu1.23.04.1 libavahi-compat-libdnssd1 - 0.8-6ubuntu1.23.04.1 libavahi-compat-libdnssd-dev - 0.8-6ubuntu1.23.04.1 libavahi-core7 - 0.8-6ubuntu1.23.04.1 libavahi-core-dev - 0.8-6ubuntu1.23.04.1 libavahi-glib1 - 0.8-6ubuntu1.23.04.1 libavahi-glib-dev - 0.8-6ubuntu1.23.04.1 libavahi-gobject0 - 0.8-6ubuntu1.23.04.1 libavahi-gobject-dev - 0.8-6ubuntu1.23.04.1 libavahi-ui-gtk3-0 - 0.8-6ubuntu1.23.04.1 libavahi-ui-gtk3-dev - 0.8-6ubuntu1.23.04.1 python3-avahi - 0.8-6ubuntu1.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-01" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1981" severity="medium" public="20230412" usns="6129-1">CVE-2023-1981</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:544770516924651971214304836949421411087" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -882,6 +920,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:395727078902879029211039621779907031685" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:536383131462151110388127151685260149953" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:382528475081599290640408487628484312113" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:679971840325169879361341923235195652413" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" />
@@ -889,6 +931,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:540958055807030099933693035044800788540" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:350768978997286145548971204375297874171" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:536201546728321820867919146682341044853" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:544770516924651971214304836949421411087" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:473727606232872671987987940815296631711" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:472641884442515686299339623459083250170" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:545614123953890171695796712275857835395" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:656592607552451993771103085491831380219" />
@@ -1010,6 +1056,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:608813474728275520816188863243014249408" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:382528475081599290640408487628484312113" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:386201906148317945527672399780852208119" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:577926606599381712365936689592691521220" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1045,6 +1094,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:465999917984888745901346127791412848081" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:473727606232872671987987940815296631711" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:585302504075288137323779610588985212586" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:475524243831533136292604508647727668389" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:509739795717468772124730170521419228583" var_check="at least one" />
@@ -1167,6 +1219,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:470342954299285084369674145895383942457" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:472641884442515686299339623459083250170" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.8-6ubuntu1.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -1233,11 +1288,39 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:674412297708741997410216011421748869458" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:679971840325169879361341923235195652413" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.2-3ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
 		<ind:textfilecontent54_state id="oval:com.ubuntu.lunar:ste:544436420560782902077534787777774687784" version="1" comment="Ubuntu 23.04">
 			<ind:subexpression datatype="string" operation="equals">lunar</ind:subexpression>
 		</ind:textfilecontent54_state>
 	</states>
 	<variables>
+		<constant_variable id="oval:com.ubuntu.lunar:var:585302504075288137323779610588985212586" version="1" datatype="string" comment="Interim Release">
+			<value>avahi-autoipd</value>
+			<value>avahi-daemon</value>
+			<value>avahi-discover</value>
+			<value>avahi-dnsconfd</value>
+			<value>avahi-ui-utils</value>
+			<value>avahi-utils</value>
+			<value>gir1.2-avahi-0.6</value>
+			<value>libavahi-client3</value>
+			<value>libavahi-client-dev</value>
+			<value>libavahi-common3</value>
+			<value>libavahi-common-data</value>
+			<value>libavahi-common-dev</value>
+			<value>libavahi-compat-libdnssd1</value>
+			<value>libavahi-compat-libdnssd-dev</value>
+			<value>libavahi-core7</value>
+			<value>libavahi-core-dev</value>
+			<value>libavahi-glib1</value>
+			<value>libavahi-glib-dev</value>
+			<value>libavahi-gobject0</value>
+			<value>libavahi-gobject-dev</value>
+			<value>libavahi-ui-gtk3-0</value>
+			<value>libavahi-ui-gtk3-dev</value>
+			<value>python3-avahi</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:509739795717468772124730170521419228583" version="1" datatype="string" comment="Interim Release">
 			<value>binutils</value>
 			<value>binutils-aarch64-linux-gnu</value>
@@ -1288,6 +1371,21 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
 			<value>cloud-init</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" version="1" datatype="string" comment="Interim Release">
+			<value>cups</value>
+			<value>cups-bsd</value>
+			<value>cups-client</value>
+			<value>cups-common</value>
+			<value>cups-core-drivers</value>
+			<value>cups-daemon</value>
+			<value>cups-ipp-utils</value>
+			<value>cups-ppdc</value>
+			<value>cups-server-common</value>
+			<value>libcups2</value>
+			<value>libcups2-dev</value>
+			<value>libcupsimage2</value>
+			<value>libcupsimage2-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:677986168806553959527500872728429187230" version="1" datatype="string" comment="Interim Release">
 			<value>cups-filters</value>
