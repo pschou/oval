@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-05T06:38:38</oval:timestamp>
+		<oval:timestamp>2023-06-06T06:36:38</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9529,7 +9529,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-03-16" />
-					<cve href="https://ubuntu.com/security/CVE-2023-24329" severity="medium" public="20230217" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="5888-1,5960-1">CVE-2023-24329</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24329" severity="medium" public="20230217" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="5888-1,5960-1,6139-1">CVE-2023-24329</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -11807,7 +11807,7 @@
 				<reference source="CVE" ref_id="CVE-2023-32269" ref_url="https://ubuntu.com/security/CVE-2023-32269" />
 				<description>It was discovered that some AMD x86-64 processors with SMT enabled could speculatively execute instructions using a return address from a sibling thread. A local attacker could possibly use this to expose sensitive information. (CVE-2022-27672)  Ziming Zhang discovered that the VMware Virtual GPU DRM driver in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-36280)  Zheng Wang discovered that the Intel i915 graphics driver in the Linux kernel did not properly handle certain error conditions, leading to a double-free. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2022-3707)  Haowei Yan discovered that a race condition existed in the Layer 2 Tunneling Protocol (L2TP) implementation in the Linux kernel. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2022-4129)  It was discovered that the NTFS file system implementation in the Linux kernel contained a null pointer dereference in some situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-4842)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate attributes in certain situations, leading to an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-48423)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate attributes in certain situations, leading to an out-of-bounds read vulnerability. A local attacker could possibly use this to expose sensitive information (kernel memory). (CVE-2022-48424)  It was discovered that the KSMBD implementation in the Linux kernel did not properly validate buffer lengths, leading to a heap-based buffer overflow. A remote attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-0210)  Kyle Zeng discovered that the IPv6 implementation in the Linux kernel contained a NULL pointer dereference vulnerability in certain situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-0394)  Jordy Zomer and Alexandra Sandulescu discovered that syscalls invoking the do_prlimit() function in the Linux kernel did not properly handle speculative execution barriers. A local attacker could use this to expose sensitive information (kernel memory). (CVE-2023-0458)  Jordy Zomer and Alexandra Sandulescu discovered that the Linux kernel did not properly implement speculative execution barriers in usercopy functions in certain situations. A local attacker could use this to expose sensitive information (kernel memory). (CVE-2023-0459)  It was discovered that the Human Interface Device (HID) support driver in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1073)  It was discovered that a memory leak existed in the SCTP protocol implementation in the Linux kernel. A local attacker could use this to cause a denial of service (memory exhaustion). (CVE-2023-1074)  It was discovered that the TLS subsystem in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-1075)  It was discovered that the Reliable Datagram Sockets (RDS) protocol implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-1078)  Xingyuan Mo discovered that the x86 KVM implementation in the Linux kernel did not properly initialize some data structures. A local attacker could use this to expose sensitive information (kernel memory). (CVE-2023-1513)  It was discovered that the NFS implementation in the Linux kernel did not properly handle pending tasks in some situations. A local attacker could use this to cause a denial of service (system crash) or expose sensitive information (kernel memory). (CVE-2023-1652)  It was discovered that the ARM64 EFI runtime services implementation in the Linux kernel did not properly manage concurrency calls. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-21102)  It was discovered that a race condition existed in Adreno GPU DRM driver in the Linux kernel, leading to a double-free vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-21106)  It was discovered that a use-after-free vulnerability existed in the iSCSI TCP implementation in the Linux kernel. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-2162)  Kyle Zeng discovered that the class-based queuing discipline implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-23454)  Kyle Zeng discovered that the ATM VC queuing discipline implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-23455)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate the size of attributes when parsing MFT. A local attacker could possibly use this to cause a denial of service (system crash) or expose sensitive information (kernel memory). (CVE-2023-26544)  It was discovered that the NET/ROM protocol implementation in the Linux kernel contained a race condition in some situations, leading to a use- after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-32269)  Duoming Zhou discovered that a race condition existed in the infrared receiver/transceiver driver in the Linux kernel, leading to a use-after- free vulnerability. A privileged attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-1118)  Update Instructions:  Run `sudo pro fix USN-6079-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-azure-5.19-cloud-tools-5.19.0-1026 - 5.19.0-1026.29~22.04.1 linux-azure-5.19-headers-5.19.0-1026 - 5.19.0-1026.29~22.04.1 linux-azure-5.19-tools-5.19.0-1026 - 5.19.0-1026.29~22.04.1 linux-azure-edge - 5.19.0.1026.29~22.04.1 linux-buildinfo-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-cloud-tools-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-cloud-tools-azure-edge - 5.19.0.1026.29~22.04.1 linux-headers-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-headers-azure-edge - 5.19.0.1026.29~22.04.1 linux-image-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-image-azure-edge - 5.19.0.1026.29~22.04.1 linux-image-unsigned-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-modules-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-modules-extra-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-modules-extra-azure-edge - 5.19.0.1026.29~22.04.1 linux-tools-5.19.0-1026-azure - 5.19.0-1026.29~22.04.1 linux-tools-azure-edge - 5.19.0.1026.29~22.04.1</description>
 				<advisory from="security@ubuntu.com">
-					<severity>Medium</severity>
+					<severity>High</severity>
 					<issued date="2023-05-16" />
 					<cve href="https://ubuntu.com/security/CVE-2022-27672" severity="medium" public="20230301" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="5978-1,6079-1,6080-1,6085-1,6090-1,6091-1,6096-1,6133-1,6134-1">CVE-2022-27672</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-36280" severity="medium" public="20220909" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5915-1,5917-1,5924-1,5927-1,5934-1,5939-1,5940-1,5951-1,5975-1,5976-1,5981-1,5982-1,5984-1,5987-1,5991-1,6000-1,6001-1,6004-1,6009-1,6013-1,6014-1,6030-1,6032-1,6079-1,6091-1,6096-1">CVE-2022-36280</cve>
@@ -11828,7 +11828,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-1513" severity="low" public="20230323" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N" usns="6079-1,6080-1,6081-1,6084-1,6085-1,6090-1,6091-1,6092-1,6094-1,6095-1,6096-1,6109-1,6118-1,6132-1,6133-1,6134-1">CVE-2023-1513</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-1652" severity="medium" public="20230329" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6025-1,6040-1,6057-1,6079-1,6091-1,6096-1,6134-1">CVE-2023-1652</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-21102" severity="medium" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6079-1,6091-1,6096-1,6134-1">CVE-2023-21102</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-21106" severity="medium" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6079-1,6091-1,6096-1">CVE-2023-21106</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-21106" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6079-1,6091-1,6096-1">CVE-2023-21106</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-2162" severity="medium" public="20230419" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6079-1,6080-1,6081-1,6084-1,6085-1,6090-1,6091-1,6092-1,6094-1,6095-1,6096-1,6109-1,6118-1,6132-1,6133-1,6134-1">CVE-2023-2162</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23454" severity="medium" public="20230112" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5915-1,5917-1,5934-1,5939-1,5940-1,5951-1,5982-1,5987-1,6000-1,6004-1,6079-1,6091-1,6096-1">CVE-2023-23454</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23455" severity="medium" public="20230112" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5915-1,5917-1,5924-1,5927-1,5934-1,5939-1,5940-1,5951-1,5975-1,5981-1,5982-1,5984-1,5987-1,5991-1,6000-1,6001-1,6004-1,6009-1,6013-1,6014-1,6030-1,6071-1,6072-1,6079-1,6091-1,6096-1">CVE-2023-23455</cve>
@@ -12116,7 +12116,7 @@
 				<reference source="CVE" ref_id="CVE-2023-32269" ref_url="https://ubuntu.com/security/CVE-2023-32269" />
 				<description>It was discovered that some AMD x86-64 processors with SMT enabled could speculatively execute instructions using a return address from a sibling thread. A local attacker could possibly use this to expose sensitive information. (CVE-2022-27672)  Ziming Zhang discovered that the VMware Virtual GPU DRM driver in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-36280)  Zheng Wang discovered that the Intel i915 graphics driver in the Linux kernel did not properly handle certain error conditions, leading to a double-free. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2022-3707)  Haowei Yan discovered that a race condition existed in the Layer 2 Tunneling Protocol (L2TP) implementation in the Linux kernel. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2022-4129)  It was discovered that the NTFS file system implementation in the Linux kernel contained a null pointer dereference in some situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-4842)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate attributes in certain situations, leading to an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2022-48423)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate attributes in certain situations, leading to an out-of-bounds read vulnerability. A local attacker could possibly use this to expose sensitive information (kernel memory). (CVE-2022-48424)  It was discovered that the KSMBD implementation in the Linux kernel did not properly validate buffer lengths, leading to a heap-based buffer overflow. A remote attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-0210)  Kyle Zeng discovered that the IPv6 implementation in the Linux kernel contained a NULL pointer dereference vulnerability in certain situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-0394)  Jordy Zomer and Alexandra Sandulescu discovered that syscalls invoking the do_prlimit() function in the Linux kernel did not properly handle speculative execution barriers. A local attacker could use this to expose sensitive information (kernel memory). (CVE-2023-0458)  Jordy Zomer and Alexandra Sandulescu discovered that the Linux kernel did not properly implement speculative execution barriers in usercopy functions in certain situations. A local attacker could use this to expose sensitive information (kernel memory). (CVE-2023-0459)  It was discovered that the Human Interface Device (HID) support driver in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1073)  It was discovered that a memory leak existed in the SCTP protocol implementation in the Linux kernel. A local attacker could use this to cause a denial of service (memory exhaustion). (CVE-2023-1074)  It was discovered that the TLS subsystem in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-1075)  It was discovered that the Reliable Datagram Sockets (RDS) protocol implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-1078)  Xingyuan Mo discovered that the x86 KVM implementation in the Linux kernel did not properly initialize some data structures. A local attacker could use this to expose sensitive information (kernel memory). (CVE-2023-1513)  It was discovered that the NFS implementation in the Linux kernel did not properly handle pending tasks in some situations. A local attacker could use this to cause a denial of service (system crash) or expose sensitive information (kernel memory). (CVE-2023-1652)  It was discovered that the ARM64 EFI runtime services implementation in the Linux kernel did not properly manage concurrency calls. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-21102)  It was discovered that a race condition existed in Adreno GPU DRM driver in the Linux kernel, leading to a double-free vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-21106)  It was discovered that a use-after-free vulnerability existed in the iSCSI TCP implementation in the Linux kernel. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-2162)  Kyle Zeng discovered that the class-based queuing discipline implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-23454)  Kyle Zeng discovered that the ATM VC queuing discipline implementation in the Linux kernel contained a type confusion vulnerability in some situations. An attacker could use this to cause a denial of service (system crash). (CVE-2023-23455)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate the size of attributes when parsing MFT. A local attacker could possibly use this to cause a denial of service (system crash) or expose sensitive information (kernel memory). (CVE-2023-26544)  It was discovered that the NET/ROM protocol implementation in the Linux kernel contained a race condition in some situations, leading to a use- after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-32269)  Duoming Zhou discovered that a race condition existed in the infrared receiver/transceiver driver in the Linux kernel, leading to a use-after- free vulnerability. A privileged attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-1118)  Update Instructions:  Run `sudo pro fix USN-6096-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-buildinfo-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-buildinfo-5.19.0-42-generic-64k - 5.19.0-42.43~22.04.1 linux-buildinfo-5.19.0-42-generic-lpae - 5.19.0-42.43~22.04.1 linux-cloud-tools-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-cloud-tools-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-cloud-tools-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-cloud-tools-virtual-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-cloud-tools-virtual-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-generic-64k-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-generic-64k-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-generic-lpae-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-generic-lpae-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-headers-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-headers-5.19.0-42-generic-64k - 5.19.0-42.43~22.04.1 linux-headers-5.19.0-42-generic-lpae - 5.19.0-42.43~22.04.1 linux-headers-generic-64k-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-headers-generic-64k-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-headers-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-headers-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-headers-generic-lpae-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-headers-generic-lpae-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-headers-virtual-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-headers-virtual-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-hwe-5.19-cloud-tools-5.19.0-42 - 5.19.0-42.43~22.04.1 linux-hwe-5.19-cloud-tools-common - 5.19.0-42.43~22.04.1 linux-hwe-5.19-headers-5.19.0-42 - 5.19.0-42.43~22.04.1 linux-hwe-5.19-tools-5.19.0-42 - 5.19.0-42.43~22.04.1 linux-hwe-5.19-tools-common - 5.19.0-42.43~22.04.1 linux-hwe-5.19-tools-host - 5.19.0-42.43~22.04.1 linux-image-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-image-5.19.0-42-generic-64k - 5.19.0-42.43~22.04.1 linux-image-5.19.0-42-generic-lpae - 5.19.0-42.43~22.04.1 linux-image-extra-virtual-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-image-extra-virtual-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-image-generic-64k-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-image-generic-64k-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-image-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-image-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-image-generic-lpae-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-image-generic-lpae-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-image-unsigned-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-image-unsigned-5.19.0-42-generic-64k - 5.19.0-42.43~22.04.1 linux-image-virtual-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-image-virtual-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-modules-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-modules-5.19.0-42-generic-64k - 5.19.0-42.43~22.04.1 linux-modules-5.19.0-42-generic-lpae - 5.19.0-42.43~22.04.1 linux-modules-extra-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-modules-ipu6-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-modules-ipu6-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-modules-ipu6-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-modules-ivsc-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-modules-ivsc-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-modules-ivsc-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-modules-iwlwifi-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-modules-iwlwifi-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-modules-iwlwifi-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-source-5.19.0 - 5.19.0-42.43~22.04.1 linux-tools-5.19.0-42-generic - 5.19.0-42.43~22.04.1 linux-tools-5.19.0-42-generic-64k - 5.19.0-42.43~22.04.1 linux-tools-5.19.0-42-generic-lpae - 5.19.0-42.43~22.04.1 linux-tools-generic-64k-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-tools-generic-64k-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-tools-generic-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-tools-generic-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-tools-generic-lpae-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-tools-generic-lpae-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-tools-virtual-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-tools-virtual-hwe-22.04-edge - 5.19.0.42.43~22.04.15 linux-virtual-hwe-22.04 - 5.19.0.42.43~22.04.15 linux-virtual-hwe-22.04-edge - 5.19.0.42.43~22.04.15</description>
 				<advisory from="security@ubuntu.com">
-					<severity>Medium</severity>
+					<severity>High</severity>
 					<issued date="2023-05-22" />
 					<cve href="https://ubuntu.com/security/CVE-2022-27672" severity="medium" public="20230301" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="5978-1,6079-1,6080-1,6085-1,6090-1,6091-1,6096-1,6133-1,6134-1">CVE-2022-27672</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-36280" severity="medium" public="20220909" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5915-1,5917-1,5924-1,5927-1,5934-1,5939-1,5940-1,5951-1,5975-1,5976-1,5981-1,5982-1,5984-1,5987-1,5991-1,6000-1,6001-1,6004-1,6009-1,6013-1,6014-1,6030-1,6032-1,6079-1,6091-1,6096-1">CVE-2022-36280</cve>
@@ -12137,7 +12137,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-1513" severity="low" public="20230323" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N" usns="6079-1,6080-1,6081-1,6084-1,6085-1,6090-1,6091-1,6092-1,6094-1,6095-1,6096-1,6109-1,6118-1,6132-1,6133-1,6134-1">CVE-2023-1513</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-1652" severity="medium" public="20230329" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6025-1,6040-1,6057-1,6079-1,6091-1,6096-1,6134-1">CVE-2023-1652</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-21102" severity="medium" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6079-1,6091-1,6096-1,6134-1">CVE-2023-21102</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-21106" severity="medium" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6079-1,6091-1,6096-1">CVE-2023-21106</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-21106" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6079-1,6091-1,6096-1">CVE-2023-21106</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-2162" severity="medium" public="20230419" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6079-1,6080-1,6081-1,6084-1,6085-1,6090-1,6091-1,6092-1,6094-1,6095-1,6096-1,6109-1,6118-1,6132-1,6133-1,6134-1">CVE-2023-2162</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23454" severity="medium" public="20230112" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5915-1,5917-1,5934-1,5939-1,5940-1,5951-1,5982-1,5987-1,6000-1,6004-1,6079-1,6091-1,6096-1">CVE-2023-23454</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23455" severity="medium" public="20230112" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5915-1,5917-1,5924-1,5927-1,5934-1,5939-1,5940-1,5951-1,5975-1,5981-1,5982-1,5984-1,5987-1,5991-1,6000-1,6001-1,6004-1,6009-1,6013-1,6014-1,6030-1,6071-1,6072-1,6079-1,6091-1,6096-1">CVE-2023-23455</cve>
@@ -12367,6 +12367,25 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:515317382913616066076473591340996064090" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61122000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6112-2 -- Perl vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6112-2" ref_url="https://ubuntu.com/security/notices/USN-6112-2" />
+				<reference source="CVE" ref_id="CVE-2023-31484" ref_url="https://ubuntu.com/security/CVE-2023-31484" />
+				<description>USN-6112-1 fixed vulnerabilities in Perl. This update provides the corresponding updates for Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04.  Original advisory details:   It was discovered that Perl was not properly verifying TLS certificates  when using CPAN together with HTTP::Tiny to download modules over HTTPS.  If a remote attacker were able to intercept communications, this flaw  could potentially be used to install altered modules.  Update Instructions:  Run `sudo pro fix USN-6112-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libperl5.34 - 5.34.0-3ubuntu1.2 libperl-dev - 5.34.0-3ubuntu1.2 perl - 5.34.0-3ubuntu1.2 perl-base - 5.34.0-3ubuntu1.2 perl-debug - 5.34.0-3ubuntu1.2 perl-doc - 5.34.0-3ubuntu1.2 perl-modules-5.34 - 5.34.0-3ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31484" severity="medium" public="20230429" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6112-1,6112-2">CVE-2023-31484</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:430948501592016723442966839473150973836" comment="Long Term Support" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.jammy:def:61151000000" version="1" class="patch">
@@ -12792,6 +12811,88 @@
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:587601149479543303307190796639297503438" comment="Long Term Support" />
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:351473588324549174991641691876083133616" comment="Long Term Support" />
 				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6136-1 -- FRR vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6136-1" ref_url="https://ubuntu.com/security/notices/USN-6136-1" />
+				<reference source="CVE" ref_id="CVE-2023-31489" ref_url="https://ubuntu.com/security/CVE-2023-31489" />
+				<reference source="CVE" ref_id="CVE-2023-31490" ref_url="https://ubuntu.com/security/CVE-2023-31490" />
+				<description>It was discovered that FRR incorrectly handled parsing certain BGP messages. A remote attacker could possibly use this issue to cause FRR to crash, resulting in a denial of service. This issue only affected Ubuntu 23.04. (CVE-2023-31489)  It was discovered that FRR incorrectly handled parsing certain BGP messages. A remote attacker could possibly use this issue to cause FRR to crash, resulting in a denial of service. (CVE-2023-31490)  Update Instructions:  Run `sudo pro fix USN-6136-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  frr - 8.1-1ubuntu1.4 frr-doc - 8.1-1ubuntu1.4 frr-pythontools - 8.1-1ubuntu1.4 frr-rpki-rtrlib - 8.1-1ubuntu1.4 frr-snmp - 8.1-1ubuntu1.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31489" severity="medium" public="20230509" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6136-1">CVE-2023-31489</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31490" severity="medium" public="20230509" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6136-1">CVE-2023-31490</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:442125424754388975688935079023408361308" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61371000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6137-1 -- LibRaw vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6137-1" ref_url="https://ubuntu.com/security/notices/USN-6137-1" />
+				<reference source="CVE" ref_id="CVE-2021-32142" ref_url="https://ubuntu.com/security/CVE-2021-32142" />
+				<reference source="CVE" ref_id="CVE-2023-1729" ref_url="https://ubuntu.com/security/CVE-2023-1729" />
+				<description>It was discovered that LibRaw incorrectly handled photo files. If a user or automated system were tricked into processing a specially crafted photo file, a remote attacker could cause applications linked against LibRaw to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6137-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libraw20 - 0.20.2-2ubuntu2.22.04.1 libraw-bin - 0.20.2-2ubuntu2.22.04.1 libraw-dev - 0.20.2-2ubuntu2.22.04.1 libraw-doc - 0.20.2-2ubuntu2.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-05" />
+					<cve href="https://ubuntu.com/security/CVE-2021-32142" severity="low" public="20230217" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6137-1">CVE-2021-32142</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1729" severity="medium" public="20230515" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6137-1">CVE-2023-1729</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:443083555304447213444799188600247661980" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61381000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6138-1 -- libssh vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6138-1" ref_url="https://ubuntu.com/security/notices/USN-6138-1" />
+				<reference source="CVE" ref_id="CVE-2023-1667" ref_url="https://ubuntu.com/security/CVE-2023-1667" />
+				<reference source="CVE" ref_id="CVE-2023-2283" ref_url="https://ubuntu.com/security/CVE-2023-2283" />
+				<description>Philip Turnbull discovered that libssh incorrectly handled rekeying with algorithm guessing. A remote attacker could use this issue to cause libssh to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-1667)  Kevin Backhouse discovered that libssh incorrectly handled verifying data signatures. A remote attacker could possibly use this issue to bypass authorization. (CVE-2023-2283)  Update Instructions:  Run `sudo pro fix USN-6138-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libssh-4 - 0.9.6-2ubuntu0.22.04.1 libssh-dev - 0.9.6-2ubuntu0.22.04.1 libssh-doc - 0.9.6-2ubuntu0.22.04.1 libssh-gcrypt-4 - 0.9.6-2ubuntu0.22.04.1 libssh-gcrypt-dev - 0.9.6-2ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1667" severity="medium" public="20230509" usns="6138-1">CVE-2023-1667</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2283" severity="medium" public="20230509" usns="6138-1">CVE-2023-2283</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:361092343132876614949537699436231015660" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61391000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6139-1 -- Python vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6139-1" ref_url="https://ubuntu.com/security/notices/USN-6139-1" />
+				<reference source="CVE" ref_id="CVE-2023-24329" ref_url="https://ubuntu.com/security/CVE-2023-24329" />
+				<description>Yebo Cao discovered that Python incorrectly handled certain URLs. An attacker could use this issue to bypass blockinglisting methods. This issue was first addressed in USN-5960-1, but was incomplete. Here we address an additional fix to that issue. (CVE-2023-24329)  Update Instructions:  Run `sudo pro fix USN-6139-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  idle-python3.10 - 3.10.6-1~22.04.2ubuntu1.1 libpython3.10 - 3.10.6-1~22.04.2ubuntu1.1 libpython3.10-dev - 3.10.6-1~22.04.2ubuntu1.1 libpython3.10-minimal - 3.10.6-1~22.04.2ubuntu1.1 libpython3.10-stdlib - 3.10.6-1~22.04.2ubuntu1.1 libpython3.10-testsuite - 3.10.6-1~22.04.2ubuntu1.1 python3.10 - 3.10.6-1~22.04.2ubuntu1.1 python3.10-dev - 3.10.6-1~22.04.2ubuntu1.1 python3.10-doc - 3.10.6-1~22.04.2ubuntu1.1 python3.10-examples - 3.10.6-1~22.04.2ubuntu1.1 python3.10-full - 3.10.6-1~22.04.2ubuntu1.1 python3.10-minimal - 3.10.6-1~22.04.2ubuntu1.1 python3.10-nopie - 3.10.6-1~22.04.2ubuntu1.1 python3.10-venv - 3.10.6-1~22.04.2ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-24329" severity="medium" public="20230217" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="5888-1,5960-1,6139-1">CVE-2023-24329</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:598151455513741733678608012884677200074" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -14164,6 +14265,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:497153825799854312808098481798392466253" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:503013974670877884841872923314227144164" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:361092343132876614949537699436231015660" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:370433874345510386971432582786232122900" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:458805789939804880110547221438656055455" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:363502331104397444147255720925642728092" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:442600576695221363752170056133690900591" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:558011253634005708994429430903010950757" />
@@ -14448,6 +14553,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:360305116135240684795610283113161006460" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:551965489816286980913633822538167677968" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:430948501592016723442966839473150973836" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:419931589458401233465568155487165610536" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:629335314253823016369877161055267205168" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:432850643483257753755254184724576272499" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:610522395980274943682854510212785825657" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:641577970918169884016241340418255374903" />
@@ -14503,6 +14612,14 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:441411848878308011480883601183784452879" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:463204689170241654285843666807971456899" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:382677318489570673445381262249072458938" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:442125424754388975688935079023408361308" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:561949938354067928426938806697294619551" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:526640992643374341764711029321726864661" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:443083555304447213444799188600247661980" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:452928939828095090642918675892612379489" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:429144764032254855308942474926779994274" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:443273052686331415764435464240896850998" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:432174482243840487677009724988985271128" />
@@ -15079,6 +15196,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:597266464582740754800697665974931068048" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:386367329596956860751666912285359453021" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:391323809254016938302082460649869174804" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:598151455513741733678608012884677200074" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:581870717349543179258586321434084330378" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:609366404422500514248742062412308246205" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:598427628010354597997993356802291189860" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:420507540884880866649409886231592886223" />
@@ -16418,6 +16539,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:368812012165759185001289044589211573098" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:445054936903513554492086175715939690092" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:370433874345510386971432582786232122900" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:613963896704320177719534197252616542257" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:372044845297097790889911730553100130027" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:383044576767959847621292627254952418788" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -16562,6 +16686,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:417980294615852033500732868165121113472" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:616178400826080496692667376563065986524" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:419931589458401233465568155487165610536" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:639638574591870205837664029819453587925" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:420507540884880866649409886231592886223" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:574314241787567870239052658450469390656" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -16687,6 +16814,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:450154212439784180592282177303868550379" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:501220369778349828853377894798062358126" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:452928939828095090642918675892612379489" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:614855018686908726770815214261427024493" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:453564077852392743723788707994832510334" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:349333159796834818421530341955582928143" var_check="at least one" />
@@ -17051,6 +17181,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:561002507524385687300621824626977457819" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:659791125656350726284991968514462264078" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:561949938354067928426938806697294619551" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:559683440088164987256969219992557100775" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:562798978545913928629094120419141282864" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:574314241787567870239052658450469390656" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17122,6 +17255,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:578104247696003414637796596699372144342" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:581870717349543179258586321434084330378" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:574314241787567870239052658450469390656" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:583396654068566734020347804994877919836" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:431616919203190711323193757560838269545" var_check="at least one" />
@@ -17890,6 +18026,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:428973056417120204513904091695911185924" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.29-0ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:429144764032254855308942474926779994274" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.20.2-2ubuntu2.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:429829844699217290561546527691657006520" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.15+10-0ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -17976,6 +18115,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:457711357030962130851539124874688894150" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-6ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:458805789939804880110547221438656055455" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9.6-2ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:459943298284179271513896781535126236131" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.2-0ubuntu1.9</linux:evr>
@@ -18189,6 +18331,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:524928650341386037009778021231160956573" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.34.1-1ubuntu1.9</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:526640992643374341764711029321726864661" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1-1ubuntu1.4</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:527493430106161074791793996467612118048" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.1-2.1ubuntu2.1</linux:evr>
@@ -18427,6 +18572,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:608391881494393284303878811740550362936" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.651-2ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:609366404422500514248742062412308246205" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.10.6-1~22.04.2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:609593314195687346492302021223652540068" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.3-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -18468,6 +18616,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:628523233223576035357063665188701911042" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.2-0ubuntu1~22.04.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:629335314253823016369877161055267205168" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.34.0-3ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:630266356692933004203006932159332993091" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.2.0-1ubuntu0.1</linux:evr>
@@ -20847,6 +20998,12 @@
 			<value>libprotobuf-c-dev</value>
 			<value>protobuf-c-compiler</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:614855018686908726770815214261427024493" version="1" datatype="string" comment="Long Term Support">
+			<value>libraw20</value>
+			<value>libraw-bin</value>
+			<value>libraw-dev</value>
+			<value>libraw-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:403761795573927377708515667004896442943" version="1" datatype="string" comment="Long Term Support">
 			<value>libreoffice-nlpsolver</value>
 		</constant_variable>
@@ -20878,6 +21035,13 @@
 			<value>libsox-fmt-oss</value>
 			<value>libsox-fmt-pulse</value>
 			<value>sox</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:613963896704320177719534197252616542257" version="1" datatype="string" comment="Long Term Support">
+			<value>libssh-4</value>
+			<value>libssh-dev</value>
+			<value>libssh-doc</value>
+			<value>libssh-gcrypt-4</value>
+			<value>libssh-gcrypt-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:431616919203190711323193757560838269545" version="1" datatype="string" comment="Long Term Support">
 			<value>libssl3</value>
