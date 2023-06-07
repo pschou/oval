@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-06T02:37:58</oval:timestamp>
+		<oval:timestamp>2023-06-07T02:39:17</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -967,6 +967,40 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:563671317185682668093536420452168290791" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61401000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6140-1 -- Go vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6140-1" ref_url="https://ubuntu.com/security/notices/USN-6140-1" />
+				<reference source="CVE" ref_id="CVE-2022-41724" ref_url="https://ubuntu.com/security/CVE-2022-41724" />
+				<reference source="CVE" ref_id="CVE-2022-41725" ref_url="https://ubuntu.com/security/CVE-2022-41725" />
+				<reference source="CVE" ref_id="CVE-2023-24534" ref_url="https://ubuntu.com/security/CVE-2023-24534" />
+				<reference source="CVE" ref_id="CVE-2023-24537" ref_url="https://ubuntu.com/security/CVE-2023-24537" />
+				<reference source="CVE" ref_id="CVE-2023-24538" ref_url="https://ubuntu.com/security/CVE-2023-24538" />
+				<reference source="CVE" ref_id="CVE-2023-24539" ref_url="https://ubuntu.com/security/CVE-2023-24539" />
+				<reference source="CVE" ref_id="CVE-2023-24540" ref_url="https://ubuntu.com/security/CVE-2023-24540" />
+				<reference source="CVE" ref_id="CVE-2023-29400" ref_url="https://ubuntu.com/security/CVE-2023-29400" />
+				<description>It was discovered that Go did not properly manage memory under certain circumstances. An attacker could possibly use this issue to cause a panic resulting in a denial of service. This issue only affected golang-1.19 on Ubuntu 22.10. (CVE-2022-41724, CVE-2023-24534, CVE-2023-24537)  It was discovered that Go did not properly validate the amount of memory and disk files ReadForm can consume. An attacker could possibly use this issue to cause a panic resulting in a denial of service. This issue only affected golang-1.19 on Ubuntu 22.10. (CVE-2022-41725)  It was discovered that Go did not properly validate backticks (`) as Javascript string delimiters, and did not escape them as expected. An attacker could possibly use this issue to inject arbitrary Javascript code into the Go template. This issue only affected golang-1.19 on Ubuntu 22.10. (CVE-2023-24538)  It was discovered that Go did not properly validate the angle brackets in CSS values. An attacker could possibly use this issue to inject arbitrary CSS code. (CVE-2023-24539)  It was discovered that Go did not properly validate whitespace characters in Javascript, and did not escape them as expected. An attacker could possibly use this issue to inject arbitrary Javascript code into the Go template. (CVE-2023-24540)  It was discovered that Go did not properly validate HTML attributes with empty input. An attacker could possibly use this issue to inject arbitrary HTML tags into the Go template. (CVE-2023-29400)  Update Instructions:  Run `sudo pro fix USN-6140-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  golang-1.19 - 1.19.8-1ubuntu0.1 golang-1.19-doc - 1.19.8-1ubuntu0.1 golang-1.19-go - 1.19.8-1ubuntu0.1 golang-1.19-src - 1.19.8-1ubuntu0.1 golang-1.20 - 1.20.3-1ubuntu0.1 golang-1.20-doc - 1.20.3-1ubuntu0.1 golang-1.20-go - 1.20.3-1ubuntu0.1 golang-1.20-src - 1.20.3-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-06" />
+					<cve href="https://ubuntu.com/security/CVE-2022-41724" severity="medium" public="20230228" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6140-1">CVE-2022-41724</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41725" severity="medium" public="20230228" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6140-1">CVE-2022-41725</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24534" severity="medium" public="20230406" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6038-1,6140-1">CVE-2023-24534</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24537" severity="medium" public="20230406" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6038-1,6140-1">CVE-2023-24537</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24538" severity="medium" public="20230406" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6038-1,6140-1">CVE-2023-24538</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24539" severity="medium" public="20230511" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L" usns="6140-1">CVE-2023-24539</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24540" severity="medium" public="20230511" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6140-1">CVE-2023-24540</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29400" severity="medium" public="20230511" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L" usns="6140-1">CVE-2023-29400</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:644461305614066967324306407801858859110" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:384584151318199794854244432425010763380" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -980,6 +1014,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:380096735142342532823364348745629759927" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:384584151318199794854244432425010763380" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:463163075023922912443218364778968252087" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:400008772182481741936483374201572049795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:587187116203092882684234351073228940772" />
@@ -1117,6 +1155,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:677089533244413040038089212898583953041" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:363775275189524784442021222471717289516" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:644461305614066967324306407801858859110" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:513031226480158701622623569220261201220" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:349244709539620694666994265804642802646" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:646625553873508166204397351596463782051" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" />
@@ -1240,6 +1282,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:504376496631722218124059369510203201123" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513031226480158701622623569220261201220" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:533611457783602686868373763130377418557" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:391274111027580069412726315909292973834" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1248,6 +1293,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:531353832672864198863305052278716416401" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:461778776780774333616908186437390203742" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:482182190162826536948763508793484615849" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:554788079714819304050104201883916011458" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:626503625561135631910252101663952100832" var_check="at least one" />
@@ -1307,6 +1355,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:343787318553730418489347885019794245335" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.7+7~us1-0ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:349244709539620694666994265804642802646" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.19.8-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:350375045832796155546684309018864512129" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.34+dfsg-1.2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1351,6 +1402,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:440925420380037307949984277852794659817" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-0ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:463163075023922912443218364778968252087" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.3-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:469277897565182035762754337995174516147" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20.0.1+9~us1-0ubuntu1~23.04</linux:evr>
@@ -1603,6 +1657,18 @@
 			<value>git-svn</value>
 			<value>gitk</value>
 			<value>gitweb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:533611457783602686868373763130377418557" version="1" datatype="string" comment="Interim Release">
+			<value>golang-1.19</value>
+			<value>golang-1.19-doc</value>
+			<value>golang-1.19-go</value>
+			<value>golang-1.19-src</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:482182190162826536948763508793484615849" version="1" datatype="string" comment="Interim Release">
+			<value>golang-1.20</value>
+			<value>golang-1.20-doc</value>
+			<value>golang-1.20-go</value>
+			<value>golang-1.20-src</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:665356428932256426353170084908159868455" version="1" datatype="string" comment="Interim Release">
 			<value>golang-github-opencontainers-runc-dev</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-06T02:37:58</oval:timestamp>
+		<oval:timestamp>2023-06-06T20:37:15</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5950,6 +5950,58 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:447620720761686907220966426813731810943" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61401000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6140-1 -- Go vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6140-1" ref_url="https://ubuntu.com/security/notices/USN-6140-1" />
+				<reference source="CVE" ref_id="CVE-2022-41724" ref_url="https://ubuntu.com/security/CVE-2022-41724" />
+				<reference source="CVE" ref_id="CVE-2022-41725" ref_url="https://ubuntu.com/security/CVE-2022-41725" />
+				<reference source="CVE" ref_id="CVE-2023-24534" ref_url="https://ubuntu.com/security/CVE-2023-24534" />
+				<reference source="CVE" ref_id="CVE-2023-24537" ref_url="https://ubuntu.com/security/CVE-2023-24537" />
+				<reference source="CVE" ref_id="CVE-2023-24538" ref_url="https://ubuntu.com/security/CVE-2023-24538" />
+				<reference source="CVE" ref_id="CVE-2023-24539" ref_url="https://ubuntu.com/security/CVE-2023-24539" />
+				<reference source="CVE" ref_id="CVE-2023-24540" ref_url="https://ubuntu.com/security/CVE-2023-24540" />
+				<reference source="CVE" ref_id="CVE-2023-29400" ref_url="https://ubuntu.com/security/CVE-2023-29400" />
+				<description>It was discovered that Go did not properly manage memory under certain circumstances. An attacker could possibly use this issue to cause a panic resulting in a denial of service. This issue only affected golang-1.19 on Ubuntu 22.10. (CVE-2022-41724, CVE-2023-24534, CVE-2023-24537)  It was discovered that Go did not properly validate the amount of memory and disk files ReadForm can consume. An attacker could possibly use this issue to cause a panic resulting in a denial of service. This issue only affected golang-1.19 on Ubuntu 22.10. (CVE-2022-41725)  It was discovered that Go did not properly validate backticks (`) as Javascript string delimiters, and did not escape them as expected. An attacker could possibly use this issue to inject arbitrary Javascript code into the Go template. This issue only affected golang-1.19 on Ubuntu 22.10. (CVE-2023-24538)  It was discovered that Go did not properly validate the angle brackets in CSS values. An attacker could possibly use this issue to inject arbitrary CSS code. (CVE-2023-24539)  It was discovered that Go did not properly validate whitespace characters in Javascript, and did not escape them as expected. An attacker could possibly use this issue to inject arbitrary Javascript code into the Go template. (CVE-2023-24540)  It was discovered that Go did not properly validate HTML attributes with empty input. An attacker could possibly use this issue to inject arbitrary HTML tags into the Go template. (CVE-2023-29400)  Update Instructions:  Run `sudo pro fix USN-6140-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  golang-1.19 - 1.19.2-1ubuntu1.1 golang-1.19-doc - 1.19.2-1ubuntu1.1 golang-1.19-go - 1.19.2-1ubuntu1.1 golang-1.19-src - 1.19.2-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-06" />
+					<cve href="https://ubuntu.com/security/CVE-2022-41724" severity="medium" public="20230228" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6140-1">CVE-2022-41724</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41725" severity="medium" public="20230228" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6140-1">CVE-2022-41725</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24534" severity="medium" public="20230406" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6038-1,6140-1">CVE-2023-24534</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24537" severity="medium" public="20230406" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6038-1,6140-1">CVE-2023-24537</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24538" severity="medium" public="20230406" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6038-1,6140-1">CVE-2023-24538</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24539" severity="medium" public="20230511" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L" usns="6140-1">CVE-2023-24539</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24540" severity="medium" public="20230511" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6140-1">CVE-2023-24540</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29400" severity="medium" public="20230511" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L" usns="6140-1">CVE-2023-29400</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:650603144198066043879580800291468340584" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61411000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6141-1 -- xfce4-settings vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6141-1" ref_url="https://ubuntu.com/security/notices/USN-6141-1" />
+				<reference source="CVE" ref_id="CVE-2022-45062" ref_url="https://ubuntu.com/security/CVE-2022-45062" />
+				<description>Robin Peraglie and Johannes Moritz discovered that xfce4-settings incorrectly parsed quoted input when processed through xdg-open. A remote attacker could possibly use this issue to inject arbitrary arguments into the default browser or file manager.  Update Instructions:  Run `sudo pro fix USN-6141-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  xfce4-helpers - 4.16.2-1ubuntu2.22.10.1 xfce4-settings - 4.16.2-1ubuntu2.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-06" />
+					<cve href="https://ubuntu.com/security/CVE-2022-45062" severity="medium" public="20221109" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6141-1">CVE-2022-45062</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:601401482711811265185332512266863416973" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -6600,6 +6652,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:506457565443366146711032874693599826217" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:483036675422228321710483912559740403719" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:601401482711811265185332512266863416973" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:521360761807821155363580534464336266576" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:424855971398202434837336744618055911772" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:604390132140091358642591333710127533015" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:678381154836175443255215351394205179094" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:606433697347558874555384274227355127136" />
@@ -6735,6 +6791,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:650428270141541283352546606545175805867" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:615843826358646445798784887714478364148" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:498900455969628148886736510352564289596" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:650603144198066043879580800291468340584" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:609140874902315936451899187171414610163" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:558470030707292528104962179776853339375" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:652112163189910848890338839138234012271" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:350157206627582647732186736288006069600" />
@@ -7783,6 +7843,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:518976861282945632835378082562494074210" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:522105940923167541105074710491007882090" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:521360761807821155363580534464336266576" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:424684405493590832568299688401646250575" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:523051446192070087577805673719624260652" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:608813474728275520816188863243014249408" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7953,6 +8016,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:608754921517863457120240527637296979044" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:665356428932256426353170084908159868455" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:609140874902315936451899187171414610163" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:533611457783602686868373763130377418557" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:609765160532186761548486268279996393124" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:635694599695396736577133819360849827337" var_check="at least one" />
@@ -8303,6 +8369,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:424643063610622433291031396916653922918" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.4-2ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:424855971398202434837336744618055911772" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.16.2-1ubuntu2.22.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:426161605274869749851032395715916481617" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.0-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -8545,6 +8614,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:555015086256179686858450509130725348111" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.116-0ubuntu1~22.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:558470030707292528104962179776853339375" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.19.2-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:559753002978287250640198031694750760260" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.2+dfsg-1ubuntu0.2</linux:evr>
@@ -9414,6 +9486,12 @@
 			<value>golang-1.13-doc</value>
 			<value>golang-1.13-go</value>
 			<value>golang-1.13-src</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:533611457783602686868373763130377418557" version="1" datatype="string" comment="Interim Release">
+			<value>golang-1.19</value>
+			<value>golang-1.19-doc</value>
+			<value>golang-1.19-go</value>
+			<value>golang-1.19-src</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:665356428932256426353170084908159868455" version="1" datatype="string" comment="Interim Release">
 			<value>golang-github-opencontainers-runc-dev</value>
@@ -10322,6 +10400,10 @@
 		<constant_variable id="oval:com.ubuntu.kinetic:var:553594731357326823396188043712996112244" version="1" datatype="string" comment="Interim Release">
 			<value>w3m</value>
 			<value>w3m-img</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:424684405493590832568299688401646250575" version="1" datatype="string" comment="Interim Release">
+			<value>xfce4-helpers</value>
+			<value>xfce4-settings</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:444165862507806386026143799925666168524" version="1" datatype="string" comment="Interim Release">
 			<value>xnest</value>
