@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-06T20:37:15</oval:timestamp>
+		<oval:timestamp>2023-06-08T02:38:11</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -875,7 +875,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2022-11-29" />
-					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1">CVE-2022-39377</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1,6145-1">CVE-2022-39377</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -2092,7 +2092,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2022-46877" severity="medium" public="20221214" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="5782-1,5824-1">CVE-2022-46877</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23603" severity="medium" public="20230118" usns="5816-1,5824-1">CVE-2023-23603</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23605" severity="medium" public="20230118" usns="5816-1,5824-1">CVE-2023-23605</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-0430" severity="medium" public="20230214">CVE-2023-0430</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0430" severity="medium" public="20230602">CVE-2023-0430</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4802,12 +4802,10 @@
 					<platform>Ubuntu 22.10</platform>
 				</affected>
 				<reference source="USN" ref_id="USN-6062-1" ref_url="https://ubuntu.com/security/notices/USN-6062-1" />
-				<reference source="CVE" ref_id="CVE-2023-2004" ref_url="https://ubuntu.com/security/CVE-2023-2004" />
 				<description>It was discovered that FreeType incorrectly handled certain malformed font files. If a user were tricked into using a specially crafted font file, a remote attacker could cause FreeType to crash, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6062-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  freetype2-demos - 2.12.1+dfsg-3ubuntu0.1 freetype2-doc - 2.12.1+dfsg-3ubuntu0.1 libfreetype6 - 2.12.1+dfsg-3ubuntu0.1 libfreetype6-dev - 2.12.1+dfsg-3ubuntu0.1 libfreetype-dev - 2.12.1+dfsg-3ubuntu0.1</description>
 				<advisory from="security@ubuntu.com">
-					<severity>Medium</severity>
+					<severity>None</severity>
 					<issued date="2023-05-09" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2004" severity="medium" public="20230414" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6062-1">CVE-2023-2004</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -5686,7 +5684,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-05-30" />
 					<cve href="https://ubuntu.com/security/CVE-2023-1255" severity="low" public="20230420" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6119-1">CVE-2023-1255</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2650" severity="medium" public="20230530" usns="6119-1">CVE-2023-2650</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2650" severity="medium" public="20230530" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6119-1">CVE-2023-2650</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6000,6 +5998,27 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:601401482711811265185332512266863416973" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61451000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6145-1 -- Sysstat vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6145-1" ref_url="https://ubuntu.com/security/notices/USN-6145-1" />
+				<reference source="CVE" ref_id="CVE-2022-39377" ref_url="https://ubuntu.com/security/CVE-2022-39377" />
+				<reference source="CVE" ref_id="CVE-2023-33204" ref_url="https://ubuntu.com/security/CVE-2023-33204" />
+				<description>It was discovered that Sysstat incorrectly handled certain arithmetic multiplications. An attacker could use this issue to cause Sysstat to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue was only fixed for Ubuntu 16.04 LTS. (CVE-2022-39377)  It was discovered that Sysstat incorrectly handled certain arithmetic multiplications in 64-bit systems, as a result of an incomplete fix for CVE-2022-39377. An attacker could use this issue to cause Sysstat to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-33204)  Update Instructions:  Run `sudo pro fix USN-6145-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  isag - 12.5.6-1ubuntu0.2 sysstat - 12.5.6-1ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-07" />
+					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1,6145-1">CVE-2022-39377</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-33204" severity="medium" public="20230518" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6145-1">CVE-2023-33204</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:549838050765172640871277965998544489218" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -6547,6 +6566,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:548754636191158208307076759092748368718" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:669252703044206350628873416651537875814" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:561895552699141326900272208886644310000" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:549838050765172640871277965998544489218" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:376571760460237370086040764261202588101" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:476032257150335738167432348336928835322" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:550189984833291032766845987095622022219" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:550685535221983145255824721082999759647" />
@@ -7591,6 +7614,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:375540695011182117010187584644979980308" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:613963896704320177719534197252616542257" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:376571760460237370086040764261202588101" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:610167835331407453956144989635031509211" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:377413642684645439440833706741302756996" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:396234418972084306138078714379709091094" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -8449,6 +8475,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:473079733805658160163386612827057497008" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.4.0-4ubuntu3.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:476032257150335738167432348336928835322" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:12.5.6-1ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:476655955806210076549711025702339968561" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.11p3-1ubuntu1.3</linux:evr>

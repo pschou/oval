@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-07T02:39:17</oval:timestamp>
+		<oval:timestamp>2023-06-08T04:37:25</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -76,6 +76,29 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:60282000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6028-2 -- libxml2 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6028-2" ref_url="https://ubuntu.com/security/notices/USN-6028-2" />
+				<reference source="CVE" ref_id="CVE-2022-2309" ref_url="https://ubuntu.com/security/CVE-2022-2309" />
+				<reference source="CVE" ref_id="CVE-2023-28484" ref_url="https://ubuntu.com/security/CVE-2023-28484" />
+				<reference source="CVE" ref_id="CVE-2023-29469" ref_url="https://ubuntu.com/security/CVE-2023-29469" />
+				<description>USN-6028-1 fixed vulnerabilities in libxml2. This update provides the corresponding updates for Ubuntu 23.04.  Original advisory details:   It was discovered that libxml2 incorrectly handled certain XML files.  An attacker could possibly use this issue to cause a crash.  (CVE-2022-2309)   It was discovered that lixml2 incorrectly handled certain XML files.  An attacker could possibly use this issue to cause a crash or execute  arbitrary code. (CVE-2023-28484)   It was discovered that libxml2 incorrectly handled certain XML files.  An attacker could possibly use this issue to cause a crash.  (CVE-2023-29469)  Update Instructions:  Run `sudo pro fix USN-6028-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libxml2 - 2.9.14+dfsg-1.1ubuntu0.1 libxml2-dev - 2.9.14+dfsg-1.1ubuntu0.1 libxml2-doc - 2.9.14+dfsg-1.1ubuntu0.1 libxml2-utils - 2.9.14+dfsg-1.1ubuntu0.1 python3-libxml2 - 2.9.14+dfsg-1.1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-07" />
+					<cve href="https://ubuntu.com/security/CVE-2022-2309" severity="low" public="20220705" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5760-1">CVE-2022-2309</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28484" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1">CVE-2023-28484</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29469" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1">CVE-2023-29469</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:515355357687432422994911621334763786342" comment="Interim Release" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.lunar:def:60391000000" version="1" class="patch">
@@ -272,12 +295,10 @@
 					<platform>Ubuntu 23.04</platform>
 				</affected>
 				<reference source="USN" ref_id="USN-6062-1" ref_url="https://ubuntu.com/security/notices/USN-6062-1" />
-				<reference source="CVE" ref_id="CVE-2023-2004" ref_url="https://ubuntu.com/security/CVE-2023-2004" />
 				<description>It was discovered that FreeType incorrectly handled certain malformed font files. If a user were tricked into using a specially crafted font file, a remote attacker could cause FreeType to crash, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6062-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  freetype2-demos - 2.12.1+dfsg-4ubuntu0.1 freetype2-doc - 2.12.1+dfsg-4ubuntu0.1 libfreetype6 - 2.12.1+dfsg-4ubuntu0.1 libfreetype6-dev - 2.12.1+dfsg-4ubuntu0.1 libfreetype-dev - 2.12.1+dfsg-4ubuntu0.1</description>
 				<advisory from="security@ubuntu.com">
-					<severity>Medium</severity>
+					<severity>None</severity>
 					<issued date="2023-05-09" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2004" severity="medium" public="20230414" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6062-1">CVE-2023-2004</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -765,7 +786,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-05-30" />
 					<cve href="https://ubuntu.com/security/CVE-2023-1255" severity="low" public="20230420" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6119-1">CVE-2023-1255</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2650" severity="medium" public="20230530" usns="6119-1">CVE-2023-2650</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2650" severity="medium" public="20230530" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6119-1">CVE-2023-2650</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1001,6 +1022,27 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:384584151318199794854244432425010763380" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61451000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6145-1 -- Sysstat vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6145-1" ref_url="https://ubuntu.com/security/notices/USN-6145-1" />
+				<reference source="CVE" ref_id="CVE-2022-39377" ref_url="https://ubuntu.com/security/CVE-2022-39377" />
+				<reference source="CVE" ref_id="CVE-2023-33204" ref_url="https://ubuntu.com/security/CVE-2023-33204" />
+				<description>It was discovered that Sysstat incorrectly handled certain arithmetic multiplications. An attacker could use this issue to cause Sysstat to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue was only fixed for Ubuntu 16.04 LTS. (CVE-2022-39377)  It was discovered that Sysstat incorrectly handled certain arithmetic multiplications in 64-bit systems, as a result of an incomplete fix for CVE-2022-39377. An attacker could use this issue to cause Sysstat to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-33204)  Update Instructions:  Run `sudo pro fix USN-6145-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  isag - 12.6.1-1ubuntu0.1 sysstat - 12.6.1-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-07" />
+					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1,6145-1">CVE-2022-39377</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-33204" severity="medium" public="20230518" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6145-1">CVE-2023-33204</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:648038095432402439300227625468317263659" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1066,6 +1108,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:507234753544829230139864392717948084762" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:504376496631722218124059369510203201123" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:359319671458858637537331024683760857446" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:515355357687432422994911621334763786342" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:551580261303038586579308762655176738773" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:601254816993139768526085093948731894809" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:521275066831847876751830022924196373844" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" />
@@ -1162,6 +1208,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:646625553873508166204397351596463782051" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:648038095432402439300227625468317263659" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:673189866653187617837796725243809159908" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:611535532910727321900630007221154194151" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:649920525959579056833284258562609350556" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" />
@@ -1297,6 +1347,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:482182190162826536948763508793484615849" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:551580261303038586579308762655176738773" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:616750128513085384738145288941780407707" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:554788079714819304050104201883916011458" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:626503625561135631910252101663952100832" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1338,6 +1391,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:659172248160742943885369821749263863421" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:450013526743882901364490129588669353865" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:673189866653187617837796725243809159908" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:610167835331407453956144989635031509211" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:676197135767053450216873362551934191565" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
@@ -1457,6 +1513,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:597213738441438630667408374656686285035" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.19+7~us1-0ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:601254816993139768526085093948731894809" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.9.14+dfsg-1.1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:603807610329130086813196139456587435786" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.20.2-2ubuntu2.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1471,6 +1530,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:609908105785635983704030658253307242475" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.8-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:611535532910727321900630007221154194151" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:12.6.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:615790763200592465878741261726361134661" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.0.0~dfsg1-0ubuntu1.1</linux:evr>
@@ -1701,6 +1763,10 @@
 			<value>python3.11-nopie</value>
 			<value>python3.11-venv</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:610167835331407453956144989635031509211" version="1" datatype="string" comment="Interim Release">
+			<value>isag</value>
+			<value>sysstat</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:450013526743882901364490129588669353865" version="1" datatype="string" comment="Interim Release">
 			<value>jhead</value>
 		</constant_variable>
@@ -1844,6 +1910,13 @@
 			<value>libwebpdemux2</value>
 			<value>libwebpmux3</value>
 			<value>webp</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:616750128513085384738145288941780407707" version="1" datatype="string" comment="Interim Release">
+			<value>libxml2</value>
+			<value>libxml2-dev</value>
+			<value>libxml2-doc</value>
+			<value>libxml2-utils</value>
+			<value>python3-libxml2</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:371286693089090051076131807913871929287" version="1" datatype="string" comment="Interim Release">
 			<value>nova-ajax-console-proxy</value>

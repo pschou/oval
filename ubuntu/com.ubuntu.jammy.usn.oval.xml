@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-07T06:38:20</oval:timestamp>
+		<oval:timestamp>2023-06-08T06:41:24</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5854,7 +5854,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2022-11-29" />
-					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1">CVE-2022-39377</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1,6145-1">CVE-2022-39377</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -9675,7 +9675,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-27533" severity="low" public="20230320" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5964-1,5964-2">CVE-2023-27533</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27534" severity="low" public="20230320" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5964-1">CVE-2023-27534</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27535" severity="medium" public="20230320" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27535</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-27536" severity="low" public="20230320" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27536</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-27536" severity="low" public="20230320" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27536</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27538" severity="low" public="20230320" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="5964-1">CVE-2023-27538</cve>
 				</advisory>
 			</metadata>
@@ -12866,8 +12866,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-05" />
-					<cve href="https://ubuntu.com/security/CVE-2023-1667" severity="medium" public="20230509" usns="6138-1">CVE-2023-1667</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2283" severity="medium" public="20230509" usns="6138-1">CVE-2023-2283</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1667" severity="medium" public="20230509" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6138-1">CVE-2023-1667</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2283" severity="medium" public="20230509" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" usns="6138-1">CVE-2023-2283</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -12910,6 +12910,51 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:349620898329552764049242484090099787055" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61441000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6144-1 -- LibreOffice vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6144-1" ref_url="https://ubuntu.com/security/notices/USN-6144-1" />
+				<reference source="CVE" ref_id="CVE-2023-0950" ref_url="https://ubuntu.com/security/CVE-2023-0950" />
+				<reference source="CVE" ref_id="CVE-2023-2255" ref_url="https://ubuntu.com/security/CVE-2023-2255" />
+				<description>It was discovered that LibreOffice did not properly validate the number of parameters passed to the formula interpreter, leading to an array index underflow attack. If a user were tricked into opening a specially crafted spreadsheet file, an attacker could possibly use this issue to execute arbitrary code. (CVE-2023-0950)  Amel Bouziane-Leblond discovered that LibreOffice did not prompt the user before loading the host document inside an IFrame. If a user were tricked into opening a specially crafted input file, an attacker could possibly use this issue to cause information disclosure or execute arbitrary code. (CVE-2023-2255)  Update Instructions:  Run `sudo pro fix USN-6144-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  fonts-opensymbol - 2:102.12+LibO7.3.7-0ubuntu0.22.04.3 gir1.2-lokdocview-0.1 - 1:7.3.7-0ubuntu0.22.04.3 libjuh-java - 1:7.3.7-0ubuntu0.22.04.3 libjurt-java - 1:7.3.7-0ubuntu0.22.04.3 liblibreoffice-java - 1:7.3.7-0ubuntu0.22.04.3 liblibreofficekitgtk - 1:7.3.7-0ubuntu0.22.04.3 libofficebean-java - 1:7.3.7-0ubuntu0.22.04.3 libreoffice - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-avmedia-backend-gstreamer - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-base - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-base-core - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-base-drivers - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-base-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-calc - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-calc-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-common - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-core - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-core-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-dev - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-dev-common - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-dev-doc - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-dev-gui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-draw - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-draw-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-evolution - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-gnome - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-gtk2 - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-gtk3 - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-gtk - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-ca - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-common - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-cs - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-da - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-de - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-dz - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-el - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-en-gb - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-en-us - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-es - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-et - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-eu - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-fi - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-fr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-gl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-hi - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-hu - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-id - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-it - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-ja - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-km - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-ko - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-nl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-om - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-pl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-pt - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-pt-br - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-ru - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-sk - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-sl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-sv - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-tr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-vi - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-zh-cn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-help-zh-tw - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-impress - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-impress-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-java-common - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-kde4 - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-kde5 - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-kde - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-kf5 - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-af - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-am - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ar - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-as - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ast - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-be - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-bg - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-bn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-br - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-bs - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ca - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-cs - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-cy - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-da - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-de - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-dz - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-el - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-en-gb - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-en-za - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-eo - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-es - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-et - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-eu - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-fa - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-fi - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-fr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ga - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-gd - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-gl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-gu - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-gug - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-he - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-hi - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-hr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-hu - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-id - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-in - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-is - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-it - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ja - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ka - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-kk - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-km - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-kmr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-kn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ko - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-lt - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-lv - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-mk - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ml - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-mn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-mr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-nb - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ne - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-nl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-nn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-nr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-nso - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-oc - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-om - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-or - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-pa-in - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-pl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-pt - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-pt-br - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ro - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ru - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-rw - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-si - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-sk - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-sl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-sr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ss - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-st - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-sv - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-szl - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ta - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-te - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-tg - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-th - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-tn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-tr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ts - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ug - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-uk - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-uz - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-ve - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-vi - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-xh - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-za - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-zh-cn - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-zh-tw - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-l10n-zu - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-librelogo - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-math - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-math-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-mysql-connector - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-nlpsolver - 0.9+LibO7.3.7-0ubuntu0.22.04.3 libreoffice-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-officebean - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-ogltrans - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-pdfimport - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-plasma - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-qt5 - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-report-builder - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-report-builder-bin - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-report-builder-bin-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-script-provider-bsh - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-script-provider-js - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-script-provider-python - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-sdbc-firebird - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-sdbc-hsqldb - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-sdbc-mysql - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-sdbc-postgresql - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-smoketest-data - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-breeze - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-colibre - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-elementary - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-galaxy - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-hicontrast - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-human - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-karasa-jaga - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-oxygen - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-sifr - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-sukapura - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-tango - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-style-yaru - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-subsequentcheckbase - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-systray - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-wiki-publisher - 1.2.0+LibO7.3.7-0ubuntu0.22.04.3 libreoffice-writer - 1:7.3.7-0ubuntu0.22.04.3 libreoffice-writer-nogui - 1:7.3.7-0ubuntu0.22.04.3 libreofficekit-data - 1:7.3.7-0ubuntu0.22.04.3 libreofficekit-dev - 1:7.3.7-0ubuntu0.22.04.3 libridl-java - 1:7.3.7-0ubuntu0.22.04.3 libuno-cppu3 - 1:7.3.7-0ubuntu0.22.04.3 libuno-cppuhelpergcc3-3 - 1:7.3.7-0ubuntu0.22.04.3 libuno-purpenvhelpergcc3-3 - 1:7.3.7-0ubuntu0.22.04.3 libuno-sal3 - 1:7.3.7-0ubuntu0.22.04.3 libuno-salhelpergcc3-3 - 1:7.3.7-0ubuntu0.22.04.3 libunoil-java - 1:7.3.7-0ubuntu0.22.04.3 libunoloader-java - 1:7.3.7-0ubuntu0.22.04.3 python3-access2base - 1:7.3.7-0ubuntu0.22.04.3 python3-uno - 1:7.3.7-0ubuntu0.22.04.3 uno-libs-private - 1:7.3.7-0ubuntu0.22.04.3 ure - 1:7.3.7-0ubuntu0.22.04.3 ure-java - 1:7.3.7-0ubuntu0.22.04.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-07" />
+					<cve href="https://ubuntu.com/security/CVE-2023-0950" severity="medium" public="20230525" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6144-1">CVE-2023-0950</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2255" severity="medium" public="20230525" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" usns="6144-1">CVE-2023-2255</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:640278496126707486473512649542806444638" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:487137984574500556624461433706959516865" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:340985996209156427790761382738880751453" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:603281753319780926337659079493135634418" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61451000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6145-1 -- Sysstat vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6145-1" ref_url="https://ubuntu.com/security/notices/USN-6145-1" />
+				<reference source="CVE" ref_id="CVE-2022-39377" ref_url="https://ubuntu.com/security/CVE-2022-39377" />
+				<reference source="CVE" ref_id="CVE-2023-33204" ref_url="https://ubuntu.com/security/CVE-2023-33204" />
+				<description>It was discovered that Sysstat incorrectly handled certain arithmetic multiplications. An attacker could use this issue to cause Sysstat to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue was only fixed for Ubuntu 16.04 LTS. (CVE-2022-39377)  It was discovered that Sysstat incorrectly handled certain arithmetic multiplications in 64-bit systems, as a result of an incomplete fix for CVE-2022-39377. An attacker could use this issue to cause Sysstat to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-33204)  Update Instructions:  Run `sudo pro fix USN-6145-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  isag - 12.5.2-2ubuntu0.2 sysstat - 12.5.2-2ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-07" />
+					<cve href="https://ubuntu.com/security/CVE-2022-39377" severity="medium" public="20221108" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5735-1,5748-1,6145-1">CVE-2022-39377</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-33204" severity="medium" public="20230518" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6145-1">CVE-2023-33204</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:427349968833230734963014375523533594949" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -14202,6 +14247,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:391033503393162283815420713777996860951" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:400472571868479630646485364903955822251" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:340985996209156427790761382738880751453" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:583899739337908453121690588762079305389" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:627628403297451584291122160502530393004" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:342821449553209720551196902023994614149" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:584918655460298266841151517256285608347" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:444517699781406028326847618951955734737" />
@@ -14566,6 +14615,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:440319263460952720824519790654593837718" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:546970315261197972069029830934757769429" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:427349968833230734963014375523533594949" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:548740200777980479695460066922844441787" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:508173519178619500710361227597795485572" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:429963664584522304783861798265677006426" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:341754077348905525603462650636444117940" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:430308735094870573849880991415376768623" />
@@ -14761,6 +14814,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:485030782158790851906374023572496845855" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:563318954257634255948700053965725163508" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:642443003840786349535099761214747003288" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:487137984574500556624461433706959516865" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:669402318861351615349076835906543203811" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:386189612229193024771386514827223618917" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:487521177744884810159548635358316194703" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:590918080055916789944621871506846595325" />
@@ -15250,6 +15307,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:340686194652565045387049752642157868022" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:355083168745459295029068479887854963223" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:603281753319780926337659079493135634418" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:484965900995085096641604024979378926294" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:596302720495955820212692766515499767716" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:603824213511330571259379478600703818923" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:401883263040415538607128606518877259953" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:439315766039424271654760837768529371619" />
@@ -15433,6 +15494,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:640162464496840928313980102100092490580" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:529294248409807086366147225007702256410" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:434064665398203773016775504882608579523" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:640278496126707486473512649542806444638" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:678310615639612367390370559872571611038" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:676314069473784043976204723416681072375" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:640927721948848570144926830557941545618" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:478095453359643508925558107557695743974" />
@@ -16950,6 +17015,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:484201599416150929425247877756170719605" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:643333005089891056978059150726019969060" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:484965900995085096641604024979378926294" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:553561554232162888935571460426947787263" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:485621458656519087188111871918341526493" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:612760304480786597245191187362796151083" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17157,6 +17225,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547604724348101476912279839223555026084" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:406820018270961378671442316543747704088" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:548740200777980479695460066922844441787" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:610167835331407453956144989635031509211" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:549757114720737344470063774604988316363" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:651713234194667183069530376083451011957" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17288,6 +17359,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:583829040371736414795522697652173304978" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:647353091145153490354902517037251178087" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:583899739337908453121690588762079305389" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:544014630353834788873918415000689051858" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:584918655460298266841151517256285608347" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:433189847713230693688193232878710374561" var_check="at least one" />
@@ -17505,6 +17579,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:669397562607856697526173866129268067032" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:356765248319682786866698764011575696702" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:669402318861351615349076835906543203811" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:342632652707857141165493354168280751004" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:671051369572754348875757605280181794187" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:461778776780774333616908186437390203742" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17528,6 +17605,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:677498871547461327833716209750628654596" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:403402488535330990752600496480948588492" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:678310615639612367390370559872571611038" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:403761795573927377708515667004896442943" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:679139223498945795756039358530654261479" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:391274111027580069412726315909292973834" var_check="at least one" />
@@ -17914,6 +17994,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:385149594863164041074934797487804139627" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.02.0-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:386189612229193024771386514827223618917" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0+LibO7.3.7-0ubuntu0.22.04.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:387363970653731546945854155601860097518" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:19.0.2+7-0ubuntu3~22.04</linux:evr>
@@ -18329,6 +18412,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:507540364250465044821509267150860561498" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.38.5-0ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:508173519178619500710361227597795485572" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:12.5.2-2ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:511036119866586946921102916929958562963" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:8.2.3995-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -18551,6 +18637,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:593545268976828163762115571148773342623" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.3-2ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:596302720495955820212692766515499767716" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:102.12+LibO7.3.7-0ubuntu0.22.04.3</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:597386860719601754471620793978139321757" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.7.18-13ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -18637,6 +18726,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:625687847242299392802426148054614880913" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.9-0ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:627628403297451584291122160502530393004" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:7.3.7-0ubuntu0.22.04.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:628316562790582493794009607018031833804" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.34.1-1ubuntu1.8</linux:evr>
@@ -18790,6 +18882,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:676200260868635723620120863181720933468" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.8+dfsg-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:676314069473784043976204723416681072375" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9+LibO7.3.7-0ubuntu0.22.04.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:676733607502838191159572842088256948084" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">7:4.4.2-0ubuntu0.22.04.1</linux:evr>
