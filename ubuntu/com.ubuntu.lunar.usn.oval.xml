@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-14T04:37:22</oval:timestamp>
+		<oval:timestamp>2023-06-15T04:36:14</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1180,13 +1180,55 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-24936" severity="medium" public="20230613" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-24936</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-29331" severity="medium" public="20230613" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6161-1">CVE-2023-29331</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-29337" severity="medium" public="20230613" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-29337</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-32032" severity="medium" public="20230613" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-32032</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32032" severity="medium" public="20230613" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:H" usns="6161-1">CVE-2023-32032</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-33128" severity="medium" public="20230613" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-33128</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:511787844198580358921026878743056186513" comment="Interim Release" />
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:543739722953648042758287004478223551668" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61641000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6164-1 -- c-ares vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6164-1" ref_url="https://ubuntu.com/security/notices/USN-6164-1" />
+				<reference source="CVE" ref_id="CVE-2023-31130" ref_url="https://ubuntu.com/security/CVE-2023-31130" />
+				<reference source="CVE" ref_id="CVE-2023-32067" ref_url="https://ubuntu.com/security/CVE-2023-32067" />
+				<description>Hannes Moesl discovered that c-ares incorrectly handled certain ipv6 addresses. An attacker could use this issue to cause c-ares to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-31130)  Xiang Li discovered that c-ares incorrectly handled certain UDP packets. A remote attacker could possibly use this issue to cause c-res to crash, resulting in a denial of service. (CVE-2023-32067)  Update Instructions:  Run `sudo pro fix USN-6164-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libc-ares2 - 1.18.1-2ubuntu0.1 libc-ares-dev - 1.18.1-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-14" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31130" severity="medium" public="20230525" cvss_score="6.4" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H" usns="6164-1">CVE-2023-31130</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32067" severity="medium" public="20230525" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6164-1">CVE-2023-32067</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:594600265267414316395052794875602567418" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61661000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6166-1 -- libcap2 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6166-1" ref_url="https://ubuntu.com/security/notices/USN-6166-1" />
+				<reference source="CVE" ref_id="CVE-2023-2602" ref_url="https://ubuntu.com/security/CVE-2023-2602" />
+				<reference source="CVE" ref_id="CVE-2023-2603" ref_url="https://ubuntu.com/security/CVE-2023-2603" />
+				<description>David Gstir discovered that libcap2 incorrectly handled certain return codes. An attacker could possibly use this issue to cause libcap2 to consume memory, leading to a denial of service. (CVE-2023-2602)  Richard Weinberger discovered that libcap2 incorrectly handled certain long input strings. An attacker could use this issue to cause libcap2 to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-2603)  Update Instructions:  Run `sudo pro fix USN-6166-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libcap2 - 1:2.66-3ubuntu2.1 libcap2-bin - 1:2.66-3ubuntu2.1 libcap-dev - 1:2.66-3ubuntu2.1 libpam-cap - 1:2.66-3ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-14" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2602" severity="low" public="20230515" usns="6166-1">CVE-2023-2602</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2603" severity="medium" public="20230515" usns="6166-1">CVE-2023-2603</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:605069415821220066370834788412336031298" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -1343,6 +1385,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:464713879677710250639887802351600061740" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:607069480951884146692816418561258306178" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594600265267414316395052794875602567418" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:389061546160644420012699349461913718600" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:396192154318445848251710761316358083499" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:595854815881450747630081191644321639807" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:620270900529341515604212046899207359746" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:538397027957606924156831080997517064052" />
@@ -1354,6 +1400,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:598365291300420575622217613793511402469" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:645248179875684170413570681236314551772" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:537241258925110758257051793822740252273" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:605069415821220066370834788412336031298" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:445555741939006781057049359009627888067" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:584423730684332861860579659239810653483" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:606463479460500658167146040132803170753" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:414953009635733192642625202829768093914" />
@@ -1456,6 +1506,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:386746886864570759403319672057814710298" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:614855018686908726770815214261427024493" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:389061546160644420012699349461913718600" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:428982606931675167232778569108517249056" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:389876170745763369697793786916239917610" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:462767693685172724946597401987429709877" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1482,6 +1535,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:440161164451302528317413157848088944523" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:445555741939006781057049359009627888067" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:469909185065039757774942576016745463628" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
@@ -1640,6 +1696,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:395727078902879029211039621779907031685" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:396192154318445848251710761316358083499" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.18.1-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:396197739843737750854666268838294086017" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.24.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1729,6 +1788,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:15.3-0ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:584423730684332861860579659239810653483" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:2.66-3ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:587630800864173315606201406815615701376" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:102.11.0-0ubuntu0.23.04.1</linux:evr>
@@ -2061,6 +2123,16 @@
 			<value>ncurses-doc</value>
 			<value>ncurses-examples</value>
 			<value>ncurses-term</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:428982606931675167232778569108517249056" version="1" datatype="string" comment="Interim Release">
+			<value>libc-ares2</value>
+			<value>libc-ares-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:469909185065039757774942576016745463628" version="1" datatype="string" comment="Interim Release">
+			<value>libcap2</value>
+			<value>libcap2-bin</value>
+			<value>libcap-dev</value>
+			<value>libpam-cap</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" version="1" datatype="string" comment="Interim Release">
 			<value>libecpg6</value>
