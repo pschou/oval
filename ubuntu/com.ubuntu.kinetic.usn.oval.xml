@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-15T04:36:14</oval:timestamp>
+		<oval:timestamp>2023-06-15T22:37:23</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6148,7 +6148,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-12" />
-					<cve href="https://ubuntu.com/security/CVE-2023-32681" severity="medium" public="20230526" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N" usns="6155-1">CVE-2023-32681</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32681" severity="medium" public="20230526" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N" usns="6155-1,6155-2">CVE-2023-32681</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6190,7 +6190,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-13" />
-					<cve href="https://ubuntu.com/security/CVE-2023-24936" severity="medium" public="20230613" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-24936</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24936" severity="medium" public="20230613" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-24936</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-29331" severity="medium" public="20230613" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6161-1">CVE-2023-29331</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-29337" severity="medium" public="20230613" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" usns="6161-1">CVE-2023-29337</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-32032" severity="medium" public="20230613" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:H" usns="6161-1">CVE-2023-32032</cve>
@@ -6273,6 +6273,25 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:427029403461478500167917085156359173849" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61681000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6168-1 -- libx11 vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6168-1" ref_url="https://ubuntu.com/security/notices/USN-6168-1" />
+				<reference source="CVE" ref_id="CVE-2023-3138" ref_url="https://ubuntu.com/security/CVE-2023-3138" />
+				<description>Gregory James Duck discovered that libx11 incorrectly handled certain Request, Event, or Error IDs. If a user were tricked into connecting to a malicious X Server, a remote attacker could possibly use this issue to cause libx11 to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-6168-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libx11-6 - 2:1.8.1-2ubuntu0.2 libx11-data - 2:1.8.1-2ubuntu0.2 libx11-dev - 2:1.8.1-2ubuntu0.2 libx11-doc - 2:1.8.1-2ubuntu0.2 libx11-xcb1 - 2:1.8.1-2ubuntu0.2 libx11-xcb-dev - 2:1.8.1-2ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-15" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1">CVE-2023-3138</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:405998333572153615087074883855157620301" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -6480,6 +6499,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:404676473350475778430992511039759763133" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:368638085820223652100097644204921478926" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:533436769497082554424969131069570915790" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:405998333572153615087074883855157620301" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:564573892099259682647911165776862591954" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:491178551026896374752400540628220636089" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:406230730568562699066047506093456183632" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:576829252666358459586324225739227302910" />
@@ -8267,6 +8290,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:564146832588075813601844204074678398598" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:350419950355911379309566850337179704778" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:564573892099259682647911165776862591954" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:639597497605160361505925821078970600749" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:564726611774085521191370691482035630472" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:674341325541302055486697690245920563356" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -8867,6 +8893,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:491166439411668860188016892561744323509" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:26.1.0-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:491178551026896374752400540628220636089" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:1.8.1-2ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:492160688551198701031663107181322756088" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9.3-0ubuntu1.22.10.1</linux:evr>
@@ -10424,6 +10453,14 @@
 			<value>libwebpdemux2</value>
 			<value>libwebpmux3</value>
 			<value>webp</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:639597497605160361505925821078970600749" version="1" datatype="string" comment="Interim Release">
+			<value>libx11-6</value>
+			<value>libx11-data</value>
+			<value>libx11-dev</value>
+			<value>libx11-doc</value>
+			<value>libx11-xcb1</value>
+			<value>libx11-xcb-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:616750128513085384738145288941780407707" version="1" datatype="string" comment="Interim Release">
 			<value>libxml2</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-15T06:37:34</oval:timestamp>
+		<oval:timestamp>2023-06-16T06:37:40</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -13139,7 +13139,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-12" />
-					<cve href="https://ubuntu.com/security/CVE-2023-32681" severity="medium" public="20230526" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N" usns="6155-1">CVE-2023-32681</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32681" severity="medium" public="20230526" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N" usns="6155-1,6155-2">CVE-2023-32681</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13279,12 +13279,50 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-14" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2602" severity="low" public="20230515" usns="6166-1">CVE-2023-2602</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2602" severity="low" public="20230515" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" usns="6166-1">CVE-2023-2602</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-2603" severity="medium" public="20230515" usns="6166-1">CVE-2023-2603</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:569974256027498416093021761736289038048" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61681000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6168-1 -- libx11 vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6168-1" ref_url="https://ubuntu.com/security/notices/USN-6168-1" />
+				<reference source="CVE" ref_id="CVE-2023-3138" ref_url="https://ubuntu.com/security/CVE-2023-3138" />
+				<description>Gregory James Duck discovered that libx11 incorrectly handled certain Request, Event, or Error IDs. If a user were tricked into connecting to a malicious X Server, a remote attacker could possibly use this issue to cause libx11 to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-6168-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libx11-6 - 2:1.7.5-1ubuntu0.2 libx11-data - 2:1.7.5-1ubuntu0.2 libx11-dev - 2:1.7.5-1ubuntu0.2 libx11-doc - 2:1.7.5-1ubuntu0.2 libx11-xcb1 - 2:1.7.5-1ubuntu0.2 libx11-xcb-dev - 2:1.7.5-1ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-15" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1">CVE-2023-3138</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:401095322814217024087776310953808530741" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61691000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6169-1 -- GNU SASL vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 ESM</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6169-1" ref_url="https://ubuntu.com/security/notices/USN-6169-1" />
+				<reference source="CVE" ref_id="CVE-2022-2469" ref_url="https://ubuntu.com/security/CVE-2022-2469" />
+				<description>It was discovered that GNU SASL's GSSAPI server could make an out-of-bounds reads if given specially crafted GSS-API authentication data. A remote attacker could possibly use this issue to cause a denial of service or to expose sensitive information.  Update Instructions:  Run `sudo pro fix USN-6169-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gsasl - 1.10.0-5ubuntu0.1~esm1 gsasl-common - 1.10.0-5ubuntu0.1~esm1 gsasl-doc - 1.10.0-5ubuntu0.1~esm1 libgsasl7 - 1.10.0-5ubuntu0.1~esm1 libgsasl7-dev - 1.10.0-5ubuntu0.1~esm1 libgsasl-dev - 1.10.0-5ubuntu0.1~esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2023-06-15" />
+					<cve href="https://ubuntu.com/security/CVE-2022-2469" severity="low" public="20220719" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6169-1">CVE-2022-2469</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:534035433038787185636602561744849966866" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -13372,6 +13410,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:531230032257921935383656113846002553637" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:421038714279929879321816409540102448797" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:373287085814470039807184340861606988660" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:534035433038787185636602561744849966866" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:575697757471753805941686371465433078105" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:601243752912297086299938094457694981102" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:551754640582752315836039134454649844652" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:480675786292201613445725380513637569410" />
@@ -14840,6 +14882,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:400949768222693345094763644471109919787" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:574786656845880513034674275829028800697" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:551102843771194896800086198565344375197" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:401095322814217024087776310953808530741" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:489163942155112687240079220226400939418" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:448407884950525907648749442222847088778" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:402486383200632579196708287972143641118" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:468477835297494813096464136485498535775" />
@@ -16935,6 +16981,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:566912290616007278577798591492402178303" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:401761203698566380593556264056693339589" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:575697757471753805941686371465433078105" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:526262411473697312447097342314515694188" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:585965667719268375384196777294405611444" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:456199327641142113130203695883990229666" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17459,6 +17508,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:488929766218762973281537276801854580443" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:591679641737330479310395030469533794415" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:489163942155112687240079220226400939418" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:639597497605160361505925821078970600749" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:489956064573391977570783167340886039390" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:520264688244096002636808754490444768914" var_check="at least one" />
@@ -18269,6 +18321,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:569251529180209728344733503944017041061" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.12.5-2ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:601243752912297086299938094457694981102" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.10.0-5ubuntu0.1~esm1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:613809490375455358665756555794479000162" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.13.1+dfsg-1ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
@@ -18664,6 +18719,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:448403315118477103562007179108212202751" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.31-0ubuntu0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:448407884950525907648749442222847088778" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:1.7.5-1ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:448943569812509648893624342923864939042" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.18.1-1ubuntu0.22.04.2</linux:evr>
@@ -20854,6 +20912,14 @@
 		<constant_variable id="oval:com.ubuntu.jammy:var:456199327641142113130203695883990229666" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<value>grunt</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:526262411473697312447097342314515694188" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>gsasl</value>
+			<value>gsasl-common</value>
+			<value>gsasl-doc</value>
+			<value>libgsasl7</value>
+			<value>libgsasl7-dev</value>
+			<value>libgsasl-dev</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:482593255751296273100713960532940627866" version="1" datatype="string" comment="Long Term Support">
 			<value>haproxy</value>
 			<value>haproxy-doc</value>
@@ -21753,6 +21819,14 @@
 			<value>libwebpdemux2</value>
 			<value>libwebpmux3</value>
 			<value>webp</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:639597497605160361505925821078970600749" version="1" datatype="string" comment="Long Term Support">
+			<value>libx11-6</value>
+			<value>libx11-data</value>
+			<value>libx11-dev</value>
+			<value>libx11-doc</value>
+			<value>libx11-xcb1</value>
+			<value>libx11-xcb-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:616750128513085384738145288941780407707" version="1" datatype="string" comment="Long Term Support">
 			<value>libxml2</value>
