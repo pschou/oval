@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-17T04:39:49</oval:timestamp>
+		<oval:timestamp>2023-06-19T06:41:23</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -13287,6 +13287,31 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:569974256027498416093021761736289038048" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61671000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6167-1 -- QEMU vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6167-1" ref_url="https://ubuntu.com/security/notices/USN-6167-1" />
+				<reference source="CVE" ref_id="CVE-2022-1050" ref_url="https://ubuntu.com/security/CVE-2022-1050" />
+				<reference source="CVE" ref_id="CVE-2022-4144" ref_url="https://ubuntu.com/security/CVE-2022-4144" />
+				<reference source="CVE" ref_id="CVE-2022-4172" ref_url="https://ubuntu.com/security/CVE-2022-4172" />
+				<reference source="CVE" ref_id="CVE-2023-0330" ref_url="https://ubuntu.com/security/CVE-2023-0330" />
+				<description>It was discovered that QEMU did not properly manage the guest drivers when shared buffers are not allocated. A malicious guest driver could use this issue to cause QEMU to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2022-1050)  It was discovered that QEMU did not properly check the size of the structure pointed to by the guest physical address pqxl. A malicious guest attacker could use this issue to cause QEMU to crash, resulting in a denial of service. This issue only affected Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2022-4144)  It was discovered that QEMU did not properly manage memory in the ACPI Error Record Serialization Table (ERST) device. A malicious guest attacker could use this issue to cause QEMU to crash, resulting in a denial of service. This issue only affected Ubuntu 22.10. (CVE-2022-4172)  It was discovered that QEMU did not properly manage memory when DMA memory writes happen repeatedly in the lsi53c895a device. A malicious guest attacker could use this issue to cause QEMU to crash, resulting in a denial of service. (CVE-2023-0330)  Update Instructions:  Run `sudo pro fix USN-6167-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  qemu - 1:6.2+dfsg-2ubuntu6.11 qemu-block-extra - 1:6.2+dfsg-2ubuntu6.11 qemu-guest-agent - 1:6.2+dfsg-2ubuntu6.11 qemu-system - 1:6.2+dfsg-2ubuntu6.11 qemu-system-arm - 1:6.2+dfsg-2ubuntu6.11 qemu-system-common - 1:6.2+dfsg-2ubuntu6.11 qemu-system-data - 1:6.2+dfsg-2ubuntu6.11 qemu-system-gui - 1:6.2+dfsg-2ubuntu6.11 qemu-system-mips - 1:6.2+dfsg-2ubuntu6.11 qemu-system-misc - 1:6.2+dfsg-2ubuntu6.11 qemu-system-ppc - 1:6.2+dfsg-2ubuntu6.11 qemu-system-s390x - 1:6.2+dfsg-2ubuntu6.11 qemu-system-sparc - 1:6.2+dfsg-2ubuntu6.11 qemu-system-x86 - 1:6.2+dfsg-2ubuntu6.11 qemu-system-x86-microvm - 1:6.2+dfsg-2ubuntu6.11 qemu-system-x86-xen - 1:6.2+dfsg-2ubuntu6.11 qemu-user - 1:6.2+dfsg-2ubuntu6.11 qemu-user-binfmt - 1:6.2+dfsg-2ubuntu6.11 qemu-user-static - 1:6.2+dfsg-2ubuntu6.11 qemu-utils - 1:6.2+dfsg-2ubuntu6.11</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-1050" severity="low" public="20220329" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" usns="6167-1">CVE-2022-1050</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-4144" severity="low" public="20221129" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6167-1">CVE-2022-4144</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-4172" severity="medium" public="20221129" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6167-1">CVE-2022-4172</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0330" severity="medium" public="20230306" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H" usns="6167-1">CVE-2023-0330</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:340701712663239237331976205117616575657" comment="Long Term Support" />
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.jammy:def:61681000000" version="1" class="patch">
 			<metadata>
 				<title>USN-6168-1 -- libx11 vulnerability</title>
@@ -14871,6 +14896,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:367147750888426176996783877935756902209" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:530926056965993880962477897135577678574" />
 		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:340701712663239237331976205117616575657" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:547237228979003793968318541539342941730" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:420325492025677600876700215714680173165" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:340980060567351674600268296022215826868" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:391033503393162283815420713777996860951" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:400472571868479630646485364903955822251" />
@@ -17980,6 +18009,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:546400108896829921517328107240421667236" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:665358815419755364545470867702983044810" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547237228979003793968318541539342941730" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:547144887117530939275910725019526675472" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547604724348101476912279839223555026084" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:406820018270961378671442316543747704088" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18893,6 +18925,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:418660536406535511226607860882680289325" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u362-ga-0ubuntu1~22.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:420325492025677600876700215714680173165" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:6.2+dfsg-2ubuntu6.11</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:421980541182627689505378360534646331269" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u352-ga-1~22.04</linux:evr>
