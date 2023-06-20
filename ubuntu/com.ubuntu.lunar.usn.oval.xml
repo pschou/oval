@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-17T02:37:24</oval:timestamp>
+		<oval:timestamp>2023-06-20T04:37:51</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -568,7 +568,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-17" />
-					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6083-1">CVE-2023-24805</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6083-1,6083-2">CVE-2023-24805</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -665,8 +665,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-24" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2454" severity="medium" public="20230512" usns="6104-1">CVE-2023-2454</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2455" severity="medium" public="20230512" usns="6104-1">CVE-2023-2455</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2454" severity="medium" public="20230512" cvss_score="7.2" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" usns="6104-1">CVE-2023-2454</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2455" severity="medium" public="20230512" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N" usns="6104-1">CVE-2023-2455</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1224,11 +1224,36 @@
 					<severity>Medium</severity>
 					<issued date="2023-06-14" />
 					<cve href="https://ubuntu.com/security/CVE-2023-2602" severity="low" public="20230515" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" usns="6166-1">CVE-2023-2602</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2603" severity="medium" public="20230515" usns="6166-1">CVE-2023-2603</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2603" severity="medium" public="20230515" usns="6166-1,6166-2">CVE-2023-2603</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:605069415821220066370834788412336031298" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61671000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6167-1 -- QEMU vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6167-1" ref_url="https://ubuntu.com/security/notices/USN-6167-1" />
+				<reference source="CVE" ref_id="CVE-2022-1050" ref_url="https://ubuntu.com/security/CVE-2022-1050" />
+				<reference source="CVE" ref_id="CVE-2022-4144" ref_url="https://ubuntu.com/security/CVE-2022-4144" />
+				<reference source="CVE" ref_id="CVE-2022-4172" ref_url="https://ubuntu.com/security/CVE-2022-4172" />
+				<reference source="CVE" ref_id="CVE-2023-0330" ref_url="https://ubuntu.com/security/CVE-2023-0330" />
+				<description>It was discovered that QEMU did not properly manage the guest drivers when shared buffers are not allocated. A malicious guest driver could use this issue to cause QEMU to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2022-1050)  It was discovered that QEMU did not properly check the size of the structure pointed to by the guest physical address pqxl. A malicious guest attacker could use this issue to cause QEMU to crash, resulting in a denial of service. This issue only affected Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 22.10. (CVE-2022-4144)  It was discovered that QEMU did not properly manage memory in the ACPI Error Record Serialization Table (ERST) device. A malicious guest attacker could use this issue to cause QEMU to crash, resulting in a denial of service. This issue only affected Ubuntu 22.10. (CVE-2022-4172)  It was discovered that QEMU did not properly manage memory when DMA memory writes happen repeatedly in the lsi53c895a device. A malicious guest attacker could use this issue to cause QEMU to crash, resulting in a denial of service. (CVE-2023-0330)  Update Instructions:  Run `sudo pro fix USN-6167-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  qemu-block-extra - 1:7.2+dfsg-5ubuntu2.2 qemu-guest-agent - 1:7.2+dfsg-5ubuntu2.2 qemu-system - 1:7.2+dfsg-5ubuntu2.2 qemu-system-arm - 1:7.2+dfsg-5ubuntu2.2 qemu-system-common - 1:7.2+dfsg-5ubuntu2.2 qemu-system-data - 1:7.2+dfsg-5ubuntu2.2 qemu-system-gui - 1:7.2+dfsg-5ubuntu2.2 qemu-system-mips - 1:7.2+dfsg-5ubuntu2.2 qemu-system-misc - 1:7.2+dfsg-5ubuntu2.2 qemu-system-ppc - 1:7.2+dfsg-5ubuntu2.2 qemu-system-s390x - 1:7.2+dfsg-5ubuntu2.2 qemu-system-sparc - 1:7.2+dfsg-5ubuntu2.2 qemu-system-x86 - 1:7.2+dfsg-5ubuntu2.2 qemu-system-x86-xen - 1:7.2+dfsg-5ubuntu2.2 qemu-system-xen - 1:7.2+dfsg-5ubuntu2.2 qemu-user - 1:7.2+dfsg-5ubuntu2.2 qemu-user-binfmt - 1:7.2+dfsg-5ubuntu2.2 qemu-user-static - 1:7.2+dfsg-5ubuntu2.2 qemu-utils - 1:7.2+dfsg-5ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-1050" severity="low" public="20220329" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" usns="6167-1">CVE-2022-1050</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-4144" severity="low" public="20221129" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6167-1">CVE-2022-4144</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-4172" severity="medium" public="20221129" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" usns="6167-1">CVE-2022-4172</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0330" severity="medium" public="20230306" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H" usns="6167-1">CVE-2023-0330</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:608957805455606460874538629743881848795" comment="Interim Release" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.lunar:def:61681000000" version="1" class="patch">
@@ -1503,6 +1528,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:608068718271449007705858296906264035938" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:349500376454327708245371588751948729502" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:555243528169164991762852299759313635439" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:608957805455606460874538629743881848795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:675778389701313331756355848774565328419" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:511615619183117874763412633216936248131" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:626790090218720741345011561483349415790" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:623947607985235992484587781524728480988" />
@@ -1781,6 +1810,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:673189866653187617837796725243809159908" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:610167835331407453956144989635031509211" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:675778389701313331756355848774565328419" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:512817902316899098952887733419290815212" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:676197135767053450216873362551934191565" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:431616919203190711323193757560838269545" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1904,6 +1936,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:505883319178300410494297124913574160670" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.10.4-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:511615619183117874763412633216936248131" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:7.2+dfsg-5ubuntu2.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:513867410157516416419046508015520246386" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-3ubuntu0.1</linux:evr>
@@ -2516,6 +2551,27 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" version="1" datatype="string" comment="Interim Release">
 			<value>python3-tornado</value>
 			<value>python-tornado-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:512817902316899098952887733419290815212" version="1" datatype="string" comment="Interim Release">
+			<value>qemu-block-extra</value>
+			<value>qemu-guest-agent</value>
+			<value>qemu-system</value>
+			<value>qemu-system-arm</value>
+			<value>qemu-system-common</value>
+			<value>qemu-system-data</value>
+			<value>qemu-system-gui</value>
+			<value>qemu-system-mips</value>
+			<value>qemu-system-misc</value>
+			<value>qemu-system-ppc</value>
+			<value>qemu-system-s390x</value>
+			<value>qemu-system-sparc</value>
+			<value>qemu-system-x86</value>
+			<value>qemu-system-x86-xen</value>
+			<value>qemu-system-xen</value>
+			<value>qemu-user</value>
+			<value>qemu-user-binfmt</value>
+			<value>qemu-user-static</value>
+			<value>qemu-utils</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:664589296595890954682264760344785500453" version="1" datatype="string" comment="Interim Release">
 			<value>sniproxy</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-19T06:41:23</oval:timestamp>
+		<oval:timestamp>2023-06-20T04:37:51</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4978,7 +4978,7 @@
 					<issued date="2022-10-26" />
 					<cve href="https://ubuntu.com/security/CVE-2022-32221" severity="medium" public="20221026" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5702-1,5702-2,5823-1">CVE-2022-32221</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-35260" severity="low" public="20221026" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5702-1">CVE-2022-35260</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-42915" severity="medium" public="20221026" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5702-1">CVE-2022-42915</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-42915" severity="medium" public="20221026" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5702-1">CVE-2022-42915</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-42916" severity="medium" public="20221026" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5702-1">CVE-2022-42916</cve>
 				</advisory>
 			</metadata>
@@ -11936,7 +11936,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-17" />
-					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6083-1">CVE-2023-24805</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-24805" severity="medium" public="20230517" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6083-1,6083-2">CVE-2023-24805</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -12259,8 +12259,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-24" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2454" severity="medium" public="20230512" usns="6104-1">CVE-2023-2454</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2455" severity="medium" public="20230512" usns="6104-1">CVE-2023-2455</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2454" severity="medium" public="20230512" cvss_score="7.2" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" usns="6104-1">CVE-2023-2454</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2455" severity="medium" public="20230512" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N" usns="6104-1">CVE-2023-2455</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13280,7 +13280,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-06-14" />
 					<cve href="https://ubuntu.com/security/CVE-2023-2602" severity="low" public="20230515" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" usns="6166-1">CVE-2023-2602</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2603" severity="medium" public="20230515" usns="6166-1">CVE-2023-2603</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2603" severity="medium" public="20230515" usns="6166-1,6166-2">CVE-2023-2603</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13532,6 +13532,71 @@
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:456417788310192011257893363888113542893" comment="Long Term Support" />
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:410779422707117332874339159719346249757" comment="Long Term Support" />
 				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61761000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6176-1 -- PyPDF2 vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6176-1" ref_url="https://ubuntu.com/security/notices/USN-6176-1" />
+				<reference source="CVE" ref_id="CVE-2022-24859" ref_url="https://ubuntu.com/security/CVE-2022-24859" />
+				<description>It was discovered that PyPDF2 incorrectly handled certain PDF files. If a  user or automated system were tricked into processing a specially crafted file, an attacker could possibly use this issue to consume system resources, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-6176-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-pypdf2 - 1.26.0-4ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-24859" severity="medium" public="20220418" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6176-1">CVE-2022-24859</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:355558581159323776417880986076393496696" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61771000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6177-1 -- Jettison vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6177-1" ref_url="https://ubuntu.com/security/notices/USN-6177-1" />
+				<reference source="CVE" ref_id="CVE-2022-40149" ref_url="https://ubuntu.com/security/CVE-2022-40149" />
+				<reference source="CVE" ref_id="CVE-2022-40150" ref_url="https://ubuntu.com/security/CVE-2022-40150" />
+				<reference source="CVE" ref_id="CVE-2022-45685" ref_url="https://ubuntu.com/security/CVE-2022-45685" />
+				<reference source="CVE" ref_id="CVE-2022-45693" ref_url="https://ubuntu.com/security/CVE-2022-45693" />
+				<description>It was discovered that Jettison incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6177-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libjettison-java - 1.4.1-1ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-40149" severity="low" public="20220916" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6177-1">CVE-2022-40149</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-40150" severity="low" public="20220916" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6177-1">CVE-2022-40150</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-45685" severity="medium" public="20221213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6177-1">CVE-2022-45685</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-45693" severity="medium" public="20221213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6177-1">CVE-2022-45693</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:565991338943490315904690186402223221394" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61781000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6178-1 -- SVG++ library vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6178-1" ref_url="https://ubuntu.com/security/notices/USN-6178-1" />
+				<reference source="CVE" ref_id="CVE-2019-6246" ref_url="https://ubuntu.com/security/CVE-2019-6246" />
+				<reference source="CVE" ref_id="CVE-2021-44960" ref_url="https://ubuntu.com/security/CVE-2021-44960" />
+				<description>It was discovered that in SVG++ library that the demo application incorrectly  managed memory resulting in a memory access violation  under certain circumstances. An attacker could possibly use this issue  to leak memory information or run a denial of service attack. This issue only affected Ubuntu 18.04 LTS. (CVE-2019-6246)  It was discovered that in SVG++ library that the demo application  incorrectly handled null pointers under certain circumstances.  An attacker could possibly use this issue to cause  denial of service, leak memory information or manipulate  program execution flow. (CVE-2021-44960)  Update Instructions:  Run `sudo pro fix USN-6178-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libsvgpp-dev - 1.3.0+dfsg1-3ubuntu2.22.04.1 libsvgpp-doc - 1.3.0+dfsg1-3ubuntu2.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Negligible</severity>
+					<issued date="2023-06-19" />
+					<cve href="https://ubuntu.com/security/CVE-2019-6246" severity="negligible" public="20190113" cvss_score="9.8" cvss_vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6178-1">CVE-2019-6246</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-44960" severity="negligible" public="20220215" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2021-44960</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:553373056493990381238873350670887355947" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -14972,6 +15037,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:461819719217642414929053809134846731061" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:361742600353169473073645380449849672663" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:355558581159323776417880986076393496696" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:538003358159311877212459195097420541385" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:668084601969766368857764261265056312431" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:355621013011475413633808973359440174077" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:440908587201924258520892792222596880890" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:364060133786786107622612706510365432920" />
@@ -15752,6 +15821,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:661281355189620131207509638858730922560" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:391340935892911264424796899714053439766" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:553373056493990381238873350670887355947" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:477710302675796904303425452323583262344" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:407116498829335986781925786928898740696" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:553674191679695103427362535671791703011" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:443857054341750189667290348015220302321" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:498746473477833071265606560601061943476" />
@@ -15807,6 +15880,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:565503574640989084628248323463245753989" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:423501764771950623369624303073740252056" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:641352517264376331456512974336894618452" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:565991338943490315904690186402223221394" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:547288550866041924318034324732086137369" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:501319420935285028636330865936969411815" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:566322942757551904715439357797869404621" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:650008735162249010642289766069729269712" />
@@ -17772,6 +17849,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:477368460739922612415490633648507141887" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:477710302675796904303425452323583262344" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:516430304714797929346375358734677494556" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:477847479687720362716597220359859277131" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:406820018270961378671442316543747704088" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17982,6 +18062,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:537648824905743538050446300436563545917" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:403582559770079818091885385826765223370" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:538003358159311877212459195097420541385" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:500276772235908108998383016340143571696" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:538951267485971025095248247634904918932" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:383463788190616759879662763706500639534" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18011,6 +18094,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547237228979003793968318541539342941730" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:547144887117530939275910725019526675472" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547288550866041924318034324732086137369" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:661650337904605308601543931547991099778" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547604724348101476912279839223555026084" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:406820018270961378671442316543747704088" var_check="at least one" />
@@ -18878,6 +18964,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:406676194534293964525421346359218452644" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.107-0ubuntu1~22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:407116498829335986781925786928898740696" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.3.0+dfsg1-3ubuntu2.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:407274910703708672732040515299697784164" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.18.1-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -19231,6 +19320,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:499059089759508807085749890543921309529" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.1.0-2ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:501319420935285028636330865936969411815" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.1-1ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:501846145415421454559876902134386995912" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.1+dfsg1-3ubuntu2.1</linux:evr>
@@ -19714,6 +19806,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:667823832881180680588055858718063082208" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:14.4.2+git20190427-2+deb11u1build0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:668084601969766368857764261265056312431" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.26.0-4ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:669327758416942684512503933870002002921" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:510.85.02-0ubuntu0.22.04.1</linux:evr>
@@ -21611,6 +21706,9 @@
 			<value>libinput-dev</value>
 			<value>libinput-tools</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:661650337904605308601543931547991099778" version="1" datatype="string" comment="Long Term Support">
+			<value>libjettison-java</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:540566111655609317097721360365017475977" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<value>libjs-jquery-ui</value>
 			<value>libjs-jquery-ui-docs</value>
@@ -22103,6 +22201,10 @@
 			<value>libssl-doc</value>
 			<value>openssl</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:516430304714797929346375358734677494556" version="1" datatype="string" comment="Long Term Support">
+			<value>libsvgpp-dev</value>
+			<value>libsvgpp-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:445054936903513554492086175715939690092" version="1" datatype="string" comment="Long Term Support">
 			<value>libtiff5</value>
 			<value>libtiff5-dev</value>
@@ -22499,6 +22601,9 @@
 			<value>python3-setuptools</value>
 			<value>python3-setuptools-whl</value>
 			<value>python-setuptools-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:500276772235908108998383016340143571696" version="1" datatype="string" comment="Long Term Support">
+			<value>python3-pypdf2</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:636369014381794125336828387229712238832" version="1" datatype="string" comment="Long Term Support">
 			<value>python3-requests</value>
