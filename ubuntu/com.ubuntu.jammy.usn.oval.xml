@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-20T04:37:51</oval:timestamp>
+		<oval:timestamp>2023-06-21T06:38:41</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9452,8 +9452,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-03-13" />
-					<cve href="https://ubuntu.com/security/CVE-2023-23934" severity="medium" public="20230214" cvss_score="3.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="5948-1">CVE-2023-23934</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-25577" severity="medium" public="20230214" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5948-1">CVE-2023-25577</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-23934" severity="medium" public="20230214" cvss_score="3.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="5948-1,5948-2">CVE-2023-23934</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25577" severity="medium" public="20230214" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5948-1,5948-2">CVE-2023-25577</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13324,7 +13324,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-15" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1">CVE-2023-3138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1,6168-2">CVE-2023-3138</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13592,11 +13592,61 @@
 					<severity>Negligible</severity>
 					<issued date="2023-06-19" />
 					<cve href="https://ubuntu.com/security/CVE-2019-6246" severity="negligible" public="20190113" cvss_score="9.8" cvss_vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6178-1">CVE-2019-6246</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-44960" severity="negligible" public="20220215" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2021-44960</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-44960" severity="negligible" public="20220215" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6178-1">CVE-2021-44960</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:553373056493990381238873350670887355947" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61791000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6179-1 -- Jettison vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 ESM</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6179-1" ref_url="https://ubuntu.com/security/notices/USN-6179-1" />
+				<reference source="CVE" ref_id="CVE-2023-1436" ref_url="https://ubuntu.com/security/CVE-2023-1436" />
+				<description>It was discovered that Jettison incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6179-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libjettison-java - 1.4.1-1ubuntu0.22.04.1+esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1436" severity="medium" public="20230322" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6179-1">CVE-2023-1436</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:630999448209028757596525138213376344445" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61801000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6180-1 -- VLC media player vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 ESM</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6180-1" ref_url="https://ubuntu.com/security/notices/USN-6180-1" />
+				<reference source="CVE" ref_id="CVE-2019-19721" ref_url="https://ubuntu.com/security/CVE-2019-19721" />
+				<reference source="CVE" ref_id="CVE-2020-13428" ref_url="https://ubuntu.com/security/CVE-2020-13428" />
+				<reference source="CVE" ref_id="CVE-2021-25801" ref_url="https://ubuntu.com/security/CVE-2021-25801" />
+				<reference source="CVE" ref_id="CVE-2021-25802" ref_url="https://ubuntu.com/security/CVE-2021-25802" />
+				<reference source="CVE" ref_id="CVE-2021-25803" ref_url="https://ubuntu.com/security/CVE-2021-25803" />
+				<reference source="CVE" ref_id="CVE-2021-25804" ref_url="https://ubuntu.com/security/CVE-2021-25804" />
+				<reference source="CVE" ref_id="CVE-2022-41325" ref_url="https://ubuntu.com/security/CVE-2022-41325" />
+				<description>It was discovered that VLC could be made to read out of bounds when decoding image files. If a user were tricked into opening a crafted image file, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS. (CVE-2019-19721)  It was discovered that VLC could be made to write out of bounds when processing H.264 video files. If a user were tricked into opening a crafted H.264 video file, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 18.04 LTS and  Ubuntu 20.04 LTS. (CVE-2020-13428)  It was discovered that VLC could be made to read out of bounds when processing AVI video files. If a user were tricked into opening a crafted AVI video file, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2021-25801, CVE-2021-25802, CVE-2021-25803, CVE-2021-25804)  It was discovered that the VNC module of VLC contained an arithmetic overflow. If a user were tricked into opening a crafted playlist or connecting to a rouge VNC server, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service, or possibly execute arbitrary code. (CVE-2022-41325)  Update Instructions:  Run `sudo pro fix USN-6180-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libvlc5 - 3.0.16-1ubuntu0.1~esm1 libvlc-bin - 3.0.16-1ubuntu0.1~esm1 libvlc-dev - 3.0.16-1ubuntu0.1~esm1 libvlccore9 - 3.0.16-1ubuntu0.1~esm1 libvlccore-dev - 3.0.16-1ubuntu0.1~esm1 vlc - 3.0.16-1ubuntu0.1~esm1 vlc-bin - 3.0.16-1ubuntu0.1~esm1 vlc-data - 3.0.16-1ubuntu0.1~esm1 vlc-l10n - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-access-extra - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-base - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-fluidsynth - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-jack - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-notify - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-qt - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-samba - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-skins2 - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-svg - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-video-output - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-video-splitter - 3.0.16-1ubuntu0.1~esm1 vlc-plugin-visualization - 3.0.16-1ubuntu0.1~esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-20" />
+					<cve href="https://ubuntu.com/security/CVE-2019-19721" severity="low" public="20200515" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6180-1">CVE-2019-19721</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-13428" severity="medium" public="20200608" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6180-1">CVE-2020-13428</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25801" severity="medium" public="20210726" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6180-1">CVE-2021-25801</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25802" severity="medium" public="20210726" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6180-1">CVE-2021-25802</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25803" severity="medium" public="20210726" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6180-1">CVE-2021-25803</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25804" severity="low" public="20210726" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6180-1">CVE-2021-25804</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41325" severity="medium" public="20221206" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6180-1">CVE-2022-41325</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:372283346558875913760332314727291375785" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -13612,6 +13662,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:368490001349397642961321748645098215848" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:450481952313822979452892546223582136407" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:386846189804639462613504023387660421990" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:372283346558875913760332314727291375785" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:572525253212469683716838761978633451972" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:421735079384574952086622837155489462847" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:373422111189449437541519013107658441741" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:520597862085233816257746175957201230096" />
@@ -13704,6 +13758,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:605601197650900151362284901877789325211" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:566912290616007278577798591492402178303" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:617713363393481894590481530061836123976" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:630999448209028757596525138213376344445" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:346874490811723007218423613115295685651" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:518912786244905519704333747796365802806" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:638391458947296752023461229011431273733" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:675758817830032629381154791605949475993" />
@@ -17303,6 +17361,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:345312927290782701498083346546476695994" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:635694599695396736577133819360849827337" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:346874490811723007218423613115295685651" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:661650337904605308601543931547991099778" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:352442408348850317028696941164511852046" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:532686260682189363699363841844490461011" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17362,6 +17423,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:566912290616007278577798591492402178303" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:401761203698566380593556264056693339589" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:572525253212469683716838761978633451972" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:395017485598878437029069494594920865422" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:575697757471753805941686371465433078105" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:526262411473697312447097342314515694188" var_check="at least one" />
@@ -18676,6 +18740,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:397559088527773714677707996347791494758" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.22-2ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:421735079384574952086622837155489462847" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.16-1ubuntu0.1~esm1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:434249563869999072230535148024397553144" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.1+ds-3ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
@@ -18708,6 +18775,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:505595950949045628385506275160722919545" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">8:6.9.11.60+dfsg-1.3ubuntu0.22.04.1+esm1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:518912786244905519704333747796365802806" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.1-1ubuntu0.22.04.1+esm1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:530105755299545260630840290724235996290" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.8-2ubuntu4+esm1</linux:evr>
@@ -22236,6 +22306,29 @@
 			<value>libvarnishapi-dev</value>
 			<value>varnish</value>
 			<value>varnish-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:395017485598878437029069494594920865422" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>libvlc5</value>
+			<value>libvlc-bin</value>
+			<value>libvlc-dev</value>
+			<value>libvlccore9</value>
+			<value>libvlccore-dev</value>
+			<value>vlc</value>
+			<value>vlc-bin</value>
+			<value>vlc-data</value>
+			<value>vlc-l10n</value>
+			<value>vlc-plugin-access-extra</value>
+			<value>vlc-plugin-base</value>
+			<value>vlc-plugin-fluidsynth</value>
+			<value>vlc-plugin-jack</value>
+			<value>vlc-plugin-notify</value>
+			<value>vlc-plugin-qt</value>
+			<value>vlc-plugin-samba</value>
+			<value>vlc-plugin-skins2</value>
+			<value>vlc-plugin-svg</value>
+			<value>vlc-plugin-video-output</value>
+			<value>vlc-plugin-video-splitter</value>
+			<value>vlc-plugin-visualization</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:636318991198533071346305737715131451396" version="1" datatype="string" comment="Long Term Support">
 			<value>libwayland-bin</value>

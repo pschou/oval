@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-20T04:37:51</oval:timestamp>
+		<oval:timestamp>2023-06-21T04:37:57</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -34,6 +34,27 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:506868667194064685570931934429358509283" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:59482000000" version="1" class="patch">
+			<metadata>
+				<title>USN-5948-2 -- Werkzeug vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-5948-2" ref_url="https://ubuntu.com/security/notices/USN-5948-2" />
+				<reference source="CVE" ref_id="CVE-2023-23934" ref_url="https://ubuntu.com/security/CVE-2023-23934" />
+				<reference source="CVE" ref_id="CVE-2023-25577" ref_url="https://ubuntu.com/security/CVE-2023-25577" />
+				<description>USN-5948-1 fixed vulnerabilities in Werkzeug. This update provides the corresponding updates for Ubuntu 23.04.  Original advisory details:   It was discovered that Werkzeug did not properly handle the parsing of  nameless cookies. A remote attacker could possibly use this issue to  shadow other cookies. (CVE-2023-23934)    It was discovered that Werkzeug could be made to process unlimited number  of multipart form data parts. A remote attacker could possibly use this  issue to cause Werkzeug to consume resources, leading to a denial of  service. (CVE-2023-25577)  Update Instructions:  Run `sudo pro fix USN-5948-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-werkzeug - 2.2.2-2ubuntu0.1 python-werkzeug-doc - 2.2.2-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-23934" severity="medium" public="20230214" cvss_score="3.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="5948-1,5948-2">CVE-2023-23934</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25577" severity="medium" public="20230214" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5948-1,5948-2">CVE-2023-25577</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:655931068621369559699923340594375157091" comment="Interim Release" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.lunar:def:59962000000" version="1" class="patch">
@@ -1268,7 +1289,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-15" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1">CVE-2023-3138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1,6168-2">CVE-2023-3138</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1341,6 +1362,25 @@
 					<criterion test_ref="oval:com.ubuntu.lunar:tst:590566561301508633506366347393156317468" comment="Interim Release" />
 					<criterion test_ref="oval:com.ubuntu.lunar:tst:648204321692847372852307232580556605481" comment="Interim Release" />
 				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61791000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6179-1 -- Jettison vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6179-1" ref_url="https://ubuntu.com/security/notices/USN-6179-1" />
+				<reference source="CVE" ref_id="CVE-2023-1436" ref_url="https://ubuntu.com/security/CVE-2023-1436" />
+				<description>It was discovered that Jettison incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6179-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libjettison-java - 1.5.3-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1436" severity="medium" public="20230322" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6179-1">CVE-2023-1436</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:525316233257667296335293215618151803327" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -1428,6 +1468,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:521275066831847876751830022924196373844" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:395727078902879029211039621779907031685" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:525316233257667296335293215618151803327" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:515506922537441551317849824129311749337" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:642900204406380423562587045217797908871" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:533523931755258872902459870285363207155" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:440161164451302528317413157848088944523" />
@@ -1576,6 +1620,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:655365451928035379515960711460536010634" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:386746886864570759403319672057814710298" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:603807610329130086813196139456587435786" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:655931068621369559699923340594375157091" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:586344724088698987629317903413586517505" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:582016459403333714263636453618684938514" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:657973309896966439379412052395602313702" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:659172248160742943885369821749263863421" />
@@ -1732,6 +1780,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513031226480158701622623569220261201220" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:533611457783602686868373763130377418557" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:515506922537441551317849824129311749337" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:661650337904605308601543931547991099778" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:391274111027580069412726315909292973834" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1767,6 +1818,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:584342598900492973135714715642724537882" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:676100531393497779434447407122187609980" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:586344724088698987629317903413586517505" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:671061096759560505175848184868484527894" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:587187116203092882684234351073228940772" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:559683440088164987256969219992557100775" var_check="at least one" />
@@ -1964,6 +2018,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:15.3-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:582016459403333714263636453618684938514" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.2-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:584423730684332861860579659239810653483" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.66-3ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2008,6 +2065,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:638268051382120490128540949586626363406" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.33-0ubuntu0.23.04.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:642900204406380423562587045217797908871" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.3-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20230311ubuntu0.23.04.1</linux:evr>
@@ -2341,6 +2401,9 @@
 			<value>postgresql-pltcl-15</value>
 			<value>postgresql-server-dev-15</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:661650337904605308601543931547991099778" version="1" datatype="string" comment="Interim Release">
+			<value>libjettison-java</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:416430178441357859939671563243182209518" version="1" datatype="string" comment="Interim Release">
 			<value>libkpathsea6</value>
 			<value>libkpathsea-dev</value>
@@ -2551,6 +2614,10 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" version="1" datatype="string" comment="Interim Release">
 			<value>python3-tornado</value>
 			<value>python-tornado-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:671061096759560505175848184868484527894" version="1" datatype="string" comment="Interim Release">
+			<value>python3-werkzeug</value>
+			<value>python-werkzeug-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:512817902316899098952887733419290815212" version="1" datatype="string" comment="Interim Release">
 			<value>qemu-block-extra</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-20T04:37:51</oval:timestamp>
+		<oval:timestamp>2023-06-21T06:38:40</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3663,8 +3663,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-03-13" />
-					<cve href="https://ubuntu.com/security/CVE-2023-23934" severity="medium" public="20230214" cvss_score="3.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="5948-1">CVE-2023-23934</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-25577" severity="medium" public="20230214" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5948-1">CVE-2023-25577</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-23934" severity="medium" public="20230214" cvss_score="3.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="5948-1,5948-2">CVE-2023-23934</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25577" severity="medium" public="20230214" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5948-1,5948-2">CVE-2023-25577</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6312,7 +6312,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-15" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1">CVE-2023-3138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1,6168-2">CVE-2023-3138</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6420,11 +6420,61 @@
 					<severity>Negligible</severity>
 					<issued date="2023-06-19" />
 					<cve href="https://ubuntu.com/security/CVE-2019-6246" severity="negligible" public="20190113" cvss_score="9.8" cvss_vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6178-1">CVE-2019-6246</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-44960" severity="negligible" public="20220215" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2021-44960</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-44960" severity="negligible" public="20220215" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6178-1">CVE-2021-44960</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:405895461017891515548277059402447377225" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61791000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6179-1 -- Jettison vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6179-1" ref_url="https://ubuntu.com/security/notices/USN-6179-1" />
+				<reference source="CVE" ref_id="CVE-2023-1436" ref_url="https://ubuntu.com/security/CVE-2023-1436" />
+				<description>It was discovered that Jettison incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6179-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libjettison-java - 1.4.1-1ubuntu0.22.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1436" severity="medium" public="20230322" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6179-1">CVE-2023-1436</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:407549326557553512905589985755644173281" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61801000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6180-1 -- VLC media player vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6180-1" ref_url="https://ubuntu.com/security/notices/USN-6180-1" />
+				<reference source="CVE" ref_id="CVE-2019-19721" ref_url="https://ubuntu.com/security/CVE-2019-19721" />
+				<reference source="CVE" ref_id="CVE-2020-13428" ref_url="https://ubuntu.com/security/CVE-2020-13428" />
+				<reference source="CVE" ref_id="CVE-2021-25801" ref_url="https://ubuntu.com/security/CVE-2021-25801" />
+				<reference source="CVE" ref_id="CVE-2021-25802" ref_url="https://ubuntu.com/security/CVE-2021-25802" />
+				<reference source="CVE" ref_id="CVE-2021-25803" ref_url="https://ubuntu.com/security/CVE-2021-25803" />
+				<reference source="CVE" ref_id="CVE-2021-25804" ref_url="https://ubuntu.com/security/CVE-2021-25804" />
+				<reference source="CVE" ref_id="CVE-2022-41325" ref_url="https://ubuntu.com/security/CVE-2022-41325" />
+				<description>It was discovered that VLC could be made to read out of bounds when decoding image files. If a user were tricked into opening a crafted image file, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS. (CVE-2019-19721)  It was discovered that VLC could be made to write out of bounds when processing H.264 video files. If a user were tricked into opening a crafted H.264 video file, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 18.04 LTS and  Ubuntu 20.04 LTS. (CVE-2020-13428)  It was discovered that VLC could be made to read out of bounds when processing AVI video files. If a user were tricked into opening a crafted AVI video file, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2021-25801, CVE-2021-25802, CVE-2021-25803, CVE-2021-25804)  It was discovered that the VNC module of VLC contained an arithmetic overflow. If a user were tricked into opening a crafted playlist or connecting to a rouge VNC server, a remote attacker could possibly use this issue to cause VLC to crash, leading to a denial of service, or possibly execute arbitrary code. (CVE-2022-41325)  Update Instructions:  Run `sudo pro fix USN-6180-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libvlc5 - 3.0.17.4-5ubuntu0.1 libvlc-bin - 3.0.17.4-5ubuntu0.1 libvlc-dev - 3.0.17.4-5ubuntu0.1 libvlccore9 - 3.0.17.4-5ubuntu0.1 libvlccore-dev - 3.0.17.4-5ubuntu0.1 vlc - 3.0.17.4-5ubuntu0.1 vlc-bin - 3.0.17.4-5ubuntu0.1 vlc-data - 3.0.17.4-5ubuntu0.1 vlc-l10n - 3.0.17.4-5ubuntu0.1 vlc-plugin-access-extra - 3.0.17.4-5ubuntu0.1 vlc-plugin-base - 3.0.17.4-5ubuntu0.1 vlc-plugin-fluidsynth - 3.0.17.4-5ubuntu0.1 vlc-plugin-jack - 3.0.17.4-5ubuntu0.1 vlc-plugin-notify - 3.0.17.4-5ubuntu0.1 vlc-plugin-qt - 3.0.17.4-5ubuntu0.1 vlc-plugin-samba - 3.0.17.4-5ubuntu0.1 vlc-plugin-skins2 - 3.0.17.4-5ubuntu0.1 vlc-plugin-svg - 3.0.17.4-5ubuntu0.1 vlc-plugin-video-output - 3.0.17.4-5ubuntu0.1 vlc-plugin-video-splitter - 3.0.17.4-5ubuntu0.1 vlc-plugin-visualization - 3.0.17.4-5ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-20" />
+					<cve href="https://ubuntu.com/security/CVE-2019-19721" severity="low" public="20200515" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6180-1">CVE-2019-19721</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-13428" severity="medium" public="20200608" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6180-1">CVE-2020-13428</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25801" severity="medium" public="20210726" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6180-1">CVE-2021-25801</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25802" severity="medium" public="20210726" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6180-1">CVE-2021-25802</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25803" severity="medium" public="20210726" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6180-1">CVE-2021-25803</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-25804" severity="low" public="20210726" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6180-1">CVE-2021-25804</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41325" severity="medium" public="20221206" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6180-1">CVE-2022-41325</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:492275824202960491384558293485068450849" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -6653,6 +6703,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:597592741821134249474915043720865027853" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:364339727936864481684585757166439000146" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:407549326557553512905589985755644173281" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:655050369671376845772474379326894502684" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:632550535751439873610825793993157918530" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:408711958653434556607109032703273021842" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:357070024891796605550726746813056809882" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:518180762253773220520223448141828579208" />
@@ -6864,6 +6918,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:491151949646412157838706490921124107829" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:510506078404453177088476981191841350708" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:409423376979256240511425597071510807987" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:492275824202960491384558293485068450849" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:534646002223225930362503036614342763833" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:529855164661101874937470149872539028647" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:493329499841118766782943388334712558040" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:345339145709607717985518343066433623376" />
@@ -8455,6 +8513,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:532778493178489219726293027172440619335" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:484803454117842083622926662816868581385" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:534646002223225930362503036614342763833" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:395017485598878437029069494594920865422" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:539019282656729681890002107787588261560" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:616178400826080496692667376563065986524" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -8727,6 +8788,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:653991575098277759432065574688998333521" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:509791402370841902279513060265055965868" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:655050369671376845772474379326894502684" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:661650337904605308601543931547991099778" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:655735071754070127683792302779296723067" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:348932034868745939564492940927810360567" var_check="at least one" />
@@ -9179,6 +9243,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:520424475157512841157116035421190909501" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.18-1ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:529855164661101874937470149872539028647" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.17.4-5ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:533436769497082554424969131069570915790" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.113-0ubuntu1~22.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -9409,6 +9476,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:621529254715475160051387876892791491013" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.33-0ubuntu0.22.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:632550535751439873610825793993157918530" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.1-1ubuntu0.22.10.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:637145775545133625893438393890647239859" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1-1ubuntu3.2</linux:evr>
@@ -10675,6 +10745,29 @@
 			<value>unbound</value>
 			<value>unbound-anchor</value>
 			<value>unbound-host</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:395017485598878437029069494594920865422" version="1" datatype="string" comment="Interim Release">
+			<value>libvlc5</value>
+			<value>libvlc-bin</value>
+			<value>libvlc-dev</value>
+			<value>libvlccore9</value>
+			<value>libvlccore-dev</value>
+			<value>vlc</value>
+			<value>vlc-bin</value>
+			<value>vlc-data</value>
+			<value>vlc-l10n</value>
+			<value>vlc-plugin-access-extra</value>
+			<value>vlc-plugin-base</value>
+			<value>vlc-plugin-fluidsynth</value>
+			<value>vlc-plugin-jack</value>
+			<value>vlc-plugin-notify</value>
+			<value>vlc-plugin-qt</value>
+			<value>vlc-plugin-samba</value>
+			<value>vlc-plugin-skins2</value>
+			<value>vlc-plugin-svg</value>
+			<value>vlc-plugin-video-output</value>
+			<value>vlc-plugin-video-splitter</value>
+			<value>vlc-plugin-visualization</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:404126283275040013873904088392815677940" version="1" datatype="string" comment="Interim Release">
 			<value>libwebp7</value>
