@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-21T06:38:41</oval:timestamp>
+		<oval:timestamp>2023-06-22T04:39:47</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -230,6 +230,38 @@
 				<criteria operator="AND">
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:550638453090729383820689725319255703066" comment="Long Term Support" />
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:383088033489851222620881791120828753642" comment="Long Term Support" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:951000000" version="1" class="patch">
+			<metadata>
+				<title>LSN-0095-1 -- Kernel Live Patch Security Notice</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="LSN-0095-1" ref_url="https://ubuntu.com/security/notices/LSN-0095-1" />
+				<reference source="CVE" ref_id="CVE-2023-32233" ref_url="https://ubuntu.com/security/CVE-2023-32233" />
+				<reference source="CVE" ref_id="CVE-2023-2612" ref_url="https://ubuntu.com/security/CVE-2023-2612" />
+				<reference source="CVE" ref_id="CVE-2023-0386" ref_url="https://ubuntu.com/security/CVE-2023-0386" />
+				<reference source="CVE" ref_id="CVE-2023-1872" ref_url="https://ubuntu.com/security/CVE-2023-1872" />
+				<reference source="CVE" ref_id="CVE-2023-1380" ref_url="https://ubuntu.com/security/CVE-2023-1380" />
+				<reference source="CVE" ref_id="CVE-2023-31436" ref_url="https://ubuntu.com/security/CVE-2023-31436" />
+				<description>It was discovered that the OverlayFS implementation in the Linux kernel did not properly handle copy up operation in some conditions. A local attacker could possibly use this to gain elevated privileges.(CVE-2023-0386)  It was discovered that the Broadcom FullMAC USB WiFi driver in the Linux kernel did not properly perform data buffer size validation in some situations. A physically proximate attacker could use this to craft a malicious USB device that when inserted, could cause a denial of service (system crash) or possibly expose sensitive information.(CVE-2023-1380)  It was discovered that a race condition existed in the io_uring subsystem in the Linux kernel, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code.(CVE-2023-1872)  Jean-Baptiste Cayrou discovered that the shiftfs file system in the Ubuntu Linux kernel contained a race condition when handling inode locking in some situations. A local attacker could use this to cause a denial of service (kernel deadlock).(CVE-2023-2612)    Gwangun Jung discovered that the Quick Fair Queueing scheduler implementation in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code.(CVE-2023-31436)  Patryk Sondej and Piotr Krysiuk discovered that a race condition existed in the netfilter subsystem of the Linux kernel when processing batch requests, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code.(CVE-2023-32233)  To check your kernel type and Livepatch version, enter this command:  canonical-livepatch status  lkp_Ubuntu_5_15_0[_|\d]+_aws_(\d+) - 95 lkp_Ubuntu_5_15_0[_|\d]+_azure_(\d+) - 95 lkp_Ubuntu_5_15_0[_|\d]+_gcp_(\d+) - 95 lkp_Ubuntu_5_15_0[_|\d]+_gke_(\d+) - 95 lkp_Ubuntu_5_15_0[_|\d]+_ibm_(\d+) - 95 lkp_Ubuntu_5_15_0[_|\d]+_linux_(\d+) - 95 lkp_Ubuntu_5_15_0[_|\d]+_lowlatency_(\d+) - 95 Livepatch subscription required</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-06-21" />
+					<cve href="https://ubuntu.com/security/CVE-2023-32233" severity="high" public="20230508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6122-1,6123-1,6124-1,6127-1,6130-1,6131-1,6132-1,6135-1,6149-1,6150-1,6162-1,6175-1">CVE-2023-32233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2612" severity="medium" public="20230530" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6122-1,6123-1,6124-1,6127-1,6131-1,6132-1,6135-1,6150-1,6162-1,6175-1">CVE-2023-2612</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-0386" severity="high" public="20230322" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6025-1,6040-1,6043-1,6057-1,6071-1,6072-1,6134-1">CVE-2023-0386</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1872" severity="medium" public="20230412" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6044-1,6051-1,6070-1,6107-1,6133-1,6134-1">CVE-2023-1872</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1380" severity="high" public="20230327" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6127-1,6130-1,6131-1,6132-1,6135-1,6149-1,6150-1,6162-1,6173-1,6175-1">CVE-2023-1380</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31436" severity="high" public="20230428" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6127-1,6130-1,6131-1,6132-1,6135-1,6149-1,6150-1,6162-1,6173-1,6175-1">CVE-2023-31436</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:550638453090729383820689725319255703066" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:454552577257844391819273290635443362416" comment="Long Term Support" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -6838,7 +6870,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-01-23" />
-					<cve href="https://ubuntu.com/security/CVE-2021-33621" severity="medium" public="20221118" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5806-1,5806-2,5806-3">CVE-2021-33621</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-33621" severity="medium" public="20221118" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5806-1,5806-2,5806-3,6181-1">CVE-2021-33621</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13649,6 +13681,27 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:372283346558875913760332314727291375785" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61831000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6183-1 -- Bind vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6183-1" ref_url="https://ubuntu.com/security/notices/USN-6183-1" />
+				<reference source="CVE" ref_id="CVE-2023-2828" ref_url="https://ubuntu.com/security/CVE-2023-2828" />
+				<reference source="CVE" ref_id="CVE-2023-2911" ref_url="https://ubuntu.com/security/CVE-2023-2911" />
+				<description>Shoham Danino, Anat Bremler-Barr, Yehuda Afek, and Yuval Shavitt discovered that Bind incorrectly handled the cache size limit. A remote attacker could possibly use this issue to consume memory, leading to a denial of service. (CVE-2023-2828)  It was discovered that Bind incorrectly handled the recursive-clients quota. A remote attacker could possibly use this issue to cause Bind to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-2911)  Update Instructions:  Run `sudo pro fix USN-6183-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  bind9 - 1:9.18.12-0ubuntu0.22.04.2 bind9-dev - 1:9.18.12-0ubuntu0.22.04.2 bind9-dnsutils - 1:9.18.12-0ubuntu0.22.04.2 bind9-doc - 1:9.18.12-0ubuntu0.22.04.2 bind9-host - 1:9.18.12-0ubuntu0.22.04.2 bind9-libs - 1:9.18.12-0ubuntu0.22.04.2 bind9-utils - 1:9.18.12-0ubuntu0.22.04.2 bind9utils - 1:9.18.12-0ubuntu0.22.04.2 dnsutils - 1:9.18.12-0ubuntu0.22.04.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-21" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2828" severity="medium" public="20230621" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6183-1">CVE-2023-2828</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2911" severity="medium" public="20230621" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6183-1">CVE-2023-2911</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:637594094283222687332058968327577059505" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -14995,6 +15048,10 @@
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:390960542696026310874059825115621296511" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:598106286567232742301629294693055139968" />
 		</ind:textfilecontent54_test>
+		<ind:textfilecontent54_test id="oval:com.ubuntu.jammy:tst:454552577257844391819273290635443362416" version="1" check="all" check_existence="all_exist" comment="livepatch testing">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:464552083352413451144839398850284271385" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:620610164275059937810339281224811574784" />
+		</ind:textfilecontent54_test>
 		<ind:textfilecontent54_test id="oval:com.ubuntu.jammy:tst:461391057372059974830343142524166698717" version="1" check="all" check_existence="all_exist" comment="livepatch testing">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:639553693263024322614832795483862726710" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:579897490919667125365623561017939369729" />
@@ -16306,6 +16363,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:637178661036915563471735595523035509732" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:565372657097568662386082804787021729533" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:441125631251463482078639543597740008412" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:637594094283222687332058968327577059505" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:674683120615624489374072352916046497717" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:630405013026429109320210515997788841027" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:637773274064053752781747740955069297159" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:484201599416150929425247877756170719605" />
@@ -18549,6 +18610,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:674457403357548131201710260821001756962" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:391671334825565959001074597610654854556" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:674683120615624489374072352916046497717" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:610478856289520580932193817624097837480" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:675443435179453146734888893206532570491" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18591,6 +18655,11 @@
 			<ind:instance datatype="int">1</ind:instance>
 		</ind:textfilecontent54_object>
 		<ind:textfilecontent54_object id="oval:com.ubuntu.jammy:obj:390960542696026310874059825115621296511" version="1" comment="Long Term Support">
+			<ind:filepath datatype="string">/proc/modules</ind:filepath>
+			<ind:pattern operation="pattern match" var_ref="oval:com.ubuntu.jammy:var:389506315914647520908736142610401356644" var_check="at least one" />
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
+		<ind:textfilecontent54_object id="oval:com.ubuntu.jammy:obj:464552083352413451144839398850284271385" version="1" comment="Long Term Support">
 			<ind:filepath datatype="string">/proc/modules</ind:filepath>
 			<ind:pattern operation="pattern match" var_ref="oval:com.ubuntu.jammy:var:389506315914647520908736142610401356644" var_check="at least one" />
 			<ind:instance datatype="int">1</ind:instance>
@@ -18704,6 +18773,9 @@
 		<unix:uname_state id="oval:com.ubuntu.jammy:ste:614581964408633578673545122072109337969" version="1">
 			<unix:os_release operation="pattern match">5.15.0-\d+(-lowlatency|-lowlatency-64k)</unix:os_release>
 		</unix:uname_state>
+		<ind:textfilecontent54_state id="oval:com.ubuntu.jammy:ste:620610164275059937810339281224811574784" version="1">
+			<ind:subexpression datatype="int" operation="less than">95</ind:subexpression>
+		</ind:textfilecontent54_state>
 		<unix:uname_state id="oval:com.ubuntu.jammy:ste:647980165117277827999292510723084512957" version="1">
 			<unix:os_release operation="pattern match">5.15.0-\d+(-raspi|-raspi-nolpae)</unix:os_release>
 		</unix:uname_state>
@@ -19750,6 +19822,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:630266356692933004203006932159332993091" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.2.0-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:630405013026429109320210515997788841027" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.12-0ubuntu0.22.04.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:631811816126241816737849443562191778432" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.5.11+dfsg-1~exp1ubuntu3.1</linux:evr>

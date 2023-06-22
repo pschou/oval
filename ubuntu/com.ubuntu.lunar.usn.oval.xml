@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-21T04:37:57</oval:timestamp>
+		<oval:timestamp>2023-06-22T04:39:47</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1383,6 +1383,50 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:525316233257667296335293215618151803327" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61811000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6181-1 -- Ruby vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6181-1" ref_url="https://ubuntu.com/security/notices/USN-6181-1" />
+				<reference source="CVE" ref_id="CVE-2021-33621" ref_url="https://ubuntu.com/security/CVE-2021-33621" />
+				<reference source="CVE" ref_id="CVE-2023-28755" ref_url="https://ubuntu.com/security/CVE-2023-28755" />
+				<reference source="CVE" ref_id="CVE-2023-28756" ref_url="https://ubuntu.com/security/CVE-2023-28756" />
+				<description>Hiroshi Tokumaru discovered that Ruby did not properly handle certain user input for applications the generate HTTP responses using cgi gem. An attacker could possibly use this issue to maliciously modify the response a user would receive from a vulnerable application. This issue only affected Ubuntu 22.10. (CVE-2021-33621)  It was discovered that Ruby incorrectly handled certain regular expressions. An attacker could possibly use this issue to cause a denial of service. (CVE-2023-28755, CVE-2023-28756)  Update Instructions:  Run `sudo pro fix USN-6181-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libruby3.1 - 3.1.2-6ubuntu0.23.04.1 ruby3.1 - 3.1.2-6ubuntu0.23.04.1 ruby3.1-dev - 3.1.2-6ubuntu0.23.04.1 ruby3.1-doc - 3.1.2-6ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-21" />
+					<cve href="https://ubuntu.com/security/CVE-2021-33621" severity="medium" public="20221118" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5806-1,5806-2,5806-3,6181-1">CVE-2021-33621</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28755" severity="medium" public="20230331" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" usns="6055-1,6055-2,6087-1,6181-1">CVE-2023-28755</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28756" severity="medium" public="20230331" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" usns="6055-1,6055-2,6087-1,6181-1">CVE-2023-28756</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:491671872978581340223476055400454097139" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61831000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6183-1 -- Bind vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6183-1" ref_url="https://ubuntu.com/security/notices/USN-6183-1" />
+				<reference source="CVE" ref_id="CVE-2023-2828" ref_url="https://ubuntu.com/security/CVE-2023-2828" />
+				<reference source="CVE" ref_id="CVE-2023-2911" ref_url="https://ubuntu.com/security/CVE-2023-2911" />
+				<description>Shoham Danino, Anat Bremler-Barr, Yehuda Afek, and Yuval Shavitt discovered that Bind incorrectly handled the cache size limit. A remote attacker could possibly use this issue to consume memory, leading to a denial of service. (CVE-2023-2828)  It was discovered that Bind incorrectly handled the recursive-clients quota. A remote attacker could possibly use this issue to cause Bind to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-2911)  Update Instructions:  Run `sudo pro fix USN-6183-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  bind9 - 1:9.18.12-1ubuntu1.1 bind9-dev - 1:9.18.12-1ubuntu1.1 bind9-dnsutils - 1:9.18.12-1ubuntu1.1 bind9-doc - 1:9.18.12-1ubuntu1.1 bind9-host - 1:9.18.12-1ubuntu1.1 bind9-libs - 1:9.18.12-1ubuntu1.1 bind9-utils - 1:9.18.12-1ubuntu1.1 bind9utils - 1:9.18.12-1ubuntu1.1 dnsutils - 1:9.18.12-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-21" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2828" severity="medium" public="20230621" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6183-1">CVE-2023-2828</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2911" severity="medium" public="20230621" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6183-1">CVE-2023-2911</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:580122474362729278003763877812535365645" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1436,6 +1480,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:486223939537400303434642374063420624626" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:642888260927115569576893441796537629141" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:396197739843737750854666268838294086017" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:491671872978581340223476055400454097139" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:577374704248742331712692188213947726827" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:546252292551627825403690784408171627547" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:494323071282725188648696993776553549948" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:340282715701341706614381084837504959167" />
@@ -1540,6 +1588,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:579388346040458569227295372148773496207" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:483861843881911196800209435383519736401" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:421096958010281109099444993659740408063" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:580122474362729278003763877812535365645" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:376391640925660818564173625626466473348" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:676457242948142244924483258343458237053" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:581915773385226156379627017458241080907" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:464713879677710250639887802351600061740" />
@@ -1702,6 +1754,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:608813474728275520816188863243014249408" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:376391640925660818564173625626466473348" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:610478856289520580932193817624097837480" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:382528475081599290640408487628484312113" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1809,6 +1864,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:560569341047680124436017690897745031384" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:557821857881229214439117469643141107197" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:577374704248742331712692188213947726827" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:346382628020547430561097328304040702882" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:579853738418274892864077993210152122630" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:622923979815955469455159812007479523223" var_check="at least one" />
@@ -2012,6 +2070,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.39.2-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:546252292551627825403690784408171627547" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.1.2-6ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:555243528169164991762852299759313635439" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.59.1+23.04ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2077,6 +2138,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:674412297708741997410216011421748869458" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:676457242948142244924483258343458237053" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.12-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:679971840325169879361341923235195652413" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.2-3ubuntu2.1</linux:evr>
@@ -2155,6 +2219,17 @@
 			<value>libavahi-ui-gtk3-0</value>
 			<value>libavahi-ui-gtk3-dev</value>
 			<value>python3-avahi</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:610478856289520580932193817624097837480" version="1" datatype="string" comment="Interim Release">
+			<value>bind9</value>
+			<value>bind9-dev</value>
+			<value>bind9-dnsutils</value>
+			<value>bind9-doc</value>
+			<value>bind9-host</value>
+			<value>bind9-libs</value>
+			<value>bind9-utils</value>
+			<value>bind9utils</value>
+			<value>dnsutils</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:509739795717468772124730170521419228583" version="1" datatype="string" comment="Interim Release">
 			<value>binutils</value>
@@ -2484,6 +2559,12 @@
 			<value>libraw-bin</value>
 			<value>libraw-dev</value>
 			<value>libraw-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:346382628020547430561097328304040702882" version="1" datatype="string" comment="Interim Release">
+			<value>libruby3.1</value>
+			<value>ruby3.1</value>
+			<value>ruby3.1-dev</value>
+			<value>ruby3.1-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:613963896704320177719534197252616542257" version="1" datatype="string" comment="Interim Release">
 			<value>libssh-4</value>
