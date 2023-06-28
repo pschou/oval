@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-26T06:38:43</oval:timestamp>
+		<oval:timestamp>2023-06-28T04:41:45</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6598,6 +6598,25 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61891000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6189-1 -- etcd vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6189-1" ref_url="https://ubuntu.com/security/notices/USN-6189-1" />
+				<reference source="CVE" ref_id="CVE-2021-28235" ref_url="https://ubuntu.com/security/CVE-2021-28235" />
+				<description>It was discovered that etcd leaked credentials when debugging was enabled. This allowed remote attackers to discover etcd  authentication credentials and possibly escalate privileges on systems using etcd.  Update Instructions:  Run `sudo pro fix USN-6189-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  etcd - 3.3.25+dfsg-7ubuntu0.22.10.2 etcd-client - 3.3.25+dfsg-7ubuntu0.22.10.2 etcd-server - 3.3.25+dfsg-7ubuntu0.22.10.2 golang-etcd-server-dev - 3.3.25+dfsg-7ubuntu0.22.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-28" />
+					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H">CVE-2021-28235</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:610543190065240935386437419676399939517" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -7347,6 +7366,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:608676310448430689099103919611734760283" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:499450291825725415593964754968113850368" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:482973224587902101073034154325017028628" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:610543190065240935386437419676399939517" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:511012494358120410823900525479826413725" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:472033057377239191964238586319997417446" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:611379620840380454462576993982736733888" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:599613253104655851043306869506609858647" />
@@ -8613,6 +8636,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:510506078404453177088476981191841350708" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:388236145566469612965435835403692907727" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:511012494358120410823900525479826413725" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:590123879745407855481472630013977983215" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:512000394583035332214897943965599438448" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:628992543122833967169406743840067452136" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9294,6 +9320,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:465834181967199993106500106528173006937" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:2.5.3+samba4.16.8-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:472033057377239191964238586319997417446" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.25+dfsg-7ubuntu0.22.10.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:473079733805658160163386612827057497008" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.4.0-4ubuntu3.3</linux:evr>
@@ -10238,6 +10267,12 @@
 			<value>erlang-wx</value>
 			<value>erlang-x11</value>
 			<value>erlang-xmerl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:590123879745407855481472630013977983215" version="1" datatype="string" comment="Interim Release">
+			<value>etcd</value>
+			<value>etcd-client</value>
+			<value>etcd-server</value>
+			<value>golang-etcd-server-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:557307654792941714877208571600592001701" version="1" datatype="string" comment="Interim Release">
 			<value>exim4</value>

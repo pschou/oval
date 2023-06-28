@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-27T02:37:37</oval:timestamp>
+		<oval:timestamp>2023-06-28T04:41:45</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1538,6 +1538,25 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61891000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6189-1 -- etcd vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6189-1" ref_url="https://ubuntu.com/security/notices/USN-6189-1" />
+				<reference source="CVE" ref_id="CVE-2021-28235" ref_url="https://ubuntu.com/security/CVE-2021-28235" />
+				<description>It was discovered that etcd leaked credentials when debugging was enabled. This allowed remote attackers to discover etcd  authentication credentials and possibly escalate privileges on systems using etcd.  Update Instructions:  Run `sudo pro fix USN-6189-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  etcd-client - 3.4.23-4ubuntu0.1 etcd-server - 3.4.23-4ubuntu0.1 golang-etcd-server-dev - 3.4.23-4ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-28" />
+					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H">CVE-2021-28235</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:605667169965814098842076897603599334705" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1740,6 +1759,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:445555741939006781057049359009627888067" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:584423730684332861860579659239810653483" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:605667169965814098842076897603599334705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:365419531651179722916854549068212153972" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:466718085951416618758835791568544704145" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:606463479460500658167146040132803170753" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:414953009635733192642625202829768093914" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:532407698159776339660069796087212933484" />
@@ -1917,6 +1940,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:361705337319110619459743220556618831524" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:404126283275040013873904088392815677940" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:365419531651179722916854549068212153972" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:356927798044726034788864252483957505799" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:608813474728275520816188863243014249408" var_check="at least one" />
@@ -2203,6 +2229,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:463163075023922912443218364778968252087" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.3-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:466718085951416618758835791568544704145" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.4.23-4ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:469277897565182035762754337995174516147" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20.0.1+9~us1-0ubuntu1~23.04</linux:evr>
@@ -2503,6 +2532,11 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:677986168806553959527500872728429187230" version="1" datatype="string" comment="Interim Release">
 			<value>cups-filters</value>
 			<value>cups-filters-core-drivers</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:356927798044726034788864252483957505799" version="1" datatype="string" comment="Interim Release">
+			<value>etcd-client</value>
+			<value>etcd-server</value>
+			<value>golang-etcd-server-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" version="1" datatype="string" comment="Interim Release">
 			<value>freetype2-demos</value>
