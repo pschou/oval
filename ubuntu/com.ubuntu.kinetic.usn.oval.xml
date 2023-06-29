@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-28T04:41:45</oval:timestamp>
+		<oval:timestamp>2023-06-29T04:41:53</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6610,11 +6610,30 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-28" />
-					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H">CVE-2021-28235</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6189-1">CVE-2021-28235</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:610543190065240935386437419676399939517" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61901000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6190-1 -- AccountsService vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6190-1" ref_url="https://ubuntu.com/security/notices/USN-6190-1" />
+				<reference source="CVE" ref_id="CVE-2023-3297" ref_url="https://ubuntu.com/security/CVE-2023-3297" />
+				<description>Kevin Backhouse discovered that AccountsService incorrectly handled certain D-Bus messages. A local attacker could use this issue to cause AccountsService to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6190-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  accountsservice - 22.08.8-1ubuntu1.1 gir1.2-accountsservice-1.0 - 22.08.8-1ubuntu1.1 libaccountsservice0 - 22.08.8-1ubuntu1.1 libaccountsservice-dev - 22.08.8-1ubuntu1.1 libaccountsservice-doc - 22.08.8-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-28" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3297" severity="medium" public="20230628" usns="6190-1">CVE-2023-3297</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:353817098266594322598734822939824491810" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -6658,6 +6677,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:353292603797742171765711109400715741083" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:595689295263374290197502369251612759185" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:412966228327940407871865820232077309444" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:353817098266594322598734822939824491810" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:508950840782463080276449561892358369845" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:364262009956733544974162212857284076460" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:354220480287604800184613134171951565647" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:563265144638806191057241444501486349437" />
@@ -8633,6 +8656,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:507840658873451015421800000465945921692" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:626503625561135631910252101663952100832" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:508950840782463080276449561892358369845" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:662390931122456180522243142055414937614" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:510506078404453177088476981191841350708" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:388236145566469612965435835403692907727" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9131,6 +9157,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:363285196453929369571266550248126260716" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.0-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:364262009956733544974162212857284076460" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:22.08.8-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:364339727936864481684585757166439000146" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:19.0.1+10-1</linux:evr>
@@ -9904,6 +9933,13 @@
 				</regex_capture>
 			</concat>
 		</local_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:662390931122456180522243142055414937614" version="1" datatype="string" comment="Interim Release">
+			<value>accountsservice</value>
+			<value>gir1.2-accountsservice-1.0</value>
+			<value>libaccountsservice0</value>
+			<value>libaccountsservice-dev</value>
+			<value>libaccountsservice-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:588198976221805641852886071504056864245" version="1" datatype="string" comment="Interim Release">
 			<value>advancecomp</value>
 		</constant_variable>

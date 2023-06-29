@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-26T06:38:44</oval:timestamp>
+		<oval:timestamp>2023-06-29T06:40:43</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -13741,6 +13741,44 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:618601610987502235175761468710046672487" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61891000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6189-1 -- etcd vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 ESM</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6189-1" ref_url="https://ubuntu.com/security/notices/USN-6189-1" />
+				<reference source="CVE" ref_id="CVE-2021-28235" ref_url="https://ubuntu.com/security/CVE-2021-28235" />
+				<description>It was discovered that etcd leaked credentials when debugging was enabled. This allowed remote attackers to discover etcd  authentication credentials and possibly escalate privileges on systems using etcd.  Update Instructions:  Run `sudo pro fix USN-6189-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  etcd - 3.3.25+dfsg-7ubuntu0.22.04.1+esm1 etcd-client - 3.3.25+dfsg-7ubuntu0.22.04.1+esm1 etcd-server - 3.3.25+dfsg-7ubuntu0.22.04.1+esm1 golang-etcd-server-dev - 3.3.25+dfsg-7ubuntu0.22.04.1+esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-28" />
+					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6189-1">CVE-2021-28235</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:597111288320269247372903752273118208186" comment="Available with Ubuntu Pro: https://ubuntu.com/pro" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61901000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6190-1 -- AccountsService vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6190-1" ref_url="https://ubuntu.com/security/notices/USN-6190-1" />
+				<reference source="CVE" ref_id="CVE-2023-3297" ref_url="https://ubuntu.com/security/CVE-2023-3297" />
+				<description>Kevin Backhouse discovered that AccountsService incorrectly handled certain D-Bus messages. A local attacker could use this issue to cause AccountsService to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6190-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  accountsservice - 22.07.5-2ubuntu1.4 gir1.2-accountsservice-1.0 - 22.07.5-2ubuntu1.4 libaccountsservice0 - 22.07.5-2ubuntu1.4 libaccountsservice-dev - 22.07.5-2ubuntu1.4 libaccountsservice-doc - 22.07.5-2ubuntu1.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-28" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3297" severity="medium" public="20230628" usns="6190-1">CVE-2023-3297</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:491084651381165694596230726442338013064" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -13846,6 +13884,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:553289807084477633008156947370011815769" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:437095232672859492280426934134451991286" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:360327066901922334259591896462818333799" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:597111288320269247372903752273118208186" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:471021193629159708620238937060424707144" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:429096472393605216509094182197901012972" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:605601197650900151362284901877789325211" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:566912290616007278577798591492402178303" />
@@ -15755,6 +15797,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:357638341970565778862814632147615584804" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:600630047595069025655364251977204859206" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:491084651381165694596230726442338013064" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:414576138219518293818784885785636948006" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:675905133542984779893475288882420553229" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:491852488723206092817419441880227436839" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:455443922757701441247088397314919179249" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:432510393065774221048745319177608911491" />
@@ -17509,6 +17555,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:467346184232228166220164973732968819577" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:647353091145153490354902517037251178087" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:471021193629159708620238937060424707144" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:590123879745407855481472630013977983215" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:475903626214657686758264908705784268570" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:347932146230236562429130827456503589797" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17787,6 +17836,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:413667458209622460718851091340198775296" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:598523524310341909171452554363382108213" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:414576138219518293818784885785636948006" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:662390931122456180522243142055414937614" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:414750887036251027877757335664228552182" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:348932034868745939564492940927810360567" var_check="at least one" />
@@ -18874,6 +18926,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:421735079384574952086622837155489462847" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.16-1ubuntu0.1~esm1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:429096472393605216509094182197901012972" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.25+dfsg-7ubuntu0.22.04.1+esm1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:434249563869999072230535148024397553144" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.1+ds-3ubuntu0.1~esm1</linux:evr>
@@ -20045,6 +20100,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:674427176565110283695103161849480098478" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.2-0ubuntu1.5</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:675905133542984779893475288882420553229" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:22.07.5-2ubuntu1.4</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:676200260868635723620120863181720933468" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.8+dfsg-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -21068,6 +21126,12 @@
 			<value>erlang-wx</value>
 			<value>erlang-x11</value>
 			<value>erlang-xmerl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:590123879745407855481472630013977983215" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>etcd</value>
+			<value>etcd-client</value>
+			<value>etcd-server</value>
+			<value>golang-etcd-server-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:430105401128012766385534089615441590843" version="1" datatype="string" comment="Long Term Support">
 			<value>exempi</value>

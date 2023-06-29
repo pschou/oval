@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-28T04:41:45</oval:timestamp>
+		<oval:timestamp>2023-06-29T04:41:53</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1550,11 +1550,30 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-28" />
-					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H">CVE-2021-28235</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-28235" severity="medium" public="20230404" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6189-1">CVE-2021-28235</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:605667169965814098842076897603599334705" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61901000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6190-1 -- AccountsService vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6190-1" ref_url="https://ubuntu.com/security/notices/USN-6190-1" />
+				<reference source="CVE" ref_id="CVE-2023-3297" ref_url="https://ubuntu.com/security/CVE-2023-3297" />
+				<description>Kevin Backhouse discovered that AccountsService incorrectly handled certain D-Bus messages. A local attacker could use this issue to cause AccountsService to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6190-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  accountsservice - 22.08.8-1ubuntu7.1 gir1.2-accountsservice-1.0 - 22.08.8-1ubuntu7.1 libaccountsservice0 - 22.08.8-1ubuntu7.1 libaccountsservice-dev - 22.08.8-1ubuntu7.1 libaccountsservice-doc - 22.08.8-1ubuntu7.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-06-28" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3297" severity="medium" public="20230628" usns="6190-1">CVE-2023-3297</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:382866124686978226190770375081491747724" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -1570,6 +1589,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:380096735142342532823364348745629759927" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:382866124686978226190770375081491747724" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:526202850171581704569469315585984183147" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:493899247696361113702673051633927996648" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:384584151318199794854244432425010763380" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" />
@@ -2046,6 +2069,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:526159418755563914513512206187726877047" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:636369014381794125336828387229712238832" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:526202850171581704569469315585984183147" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:662390931122456180522243142055414937614" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:529385793645978707752788937173099210833" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:664589296595890954682264760344785500453" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2257,6 +2283,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:493232719402420202637003241942154008436" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:102.12.0-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:493899247696361113702673051633927996648" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:22.08.8-1ubuntu7.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:494234439564868336927748020365013927474" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:23.1.2-0ubuntu0~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2399,6 +2428,13 @@
 				</regex_capture>
 			</concat>
 		</local_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:662390931122456180522243142055414937614" version="1" datatype="string" comment="Interim Release">
+			<value>accountsservice</value>
+			<value>gir1.2-accountsservice-1.0</value>
+			<value>libaccountsservice0</value>
+			<value>libaccountsservice-dev</value>
+			<value>libaccountsservice-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" version="1" datatype="string" comment="Interim Release">
 			<value>aspnetcore-runtime-6.0</value>
 			<value>aspnetcore-targeting-pack-6.0</value>
