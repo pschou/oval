@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-30T06:39:28</oval:timestamp>
+		<oval:timestamp>2023-07-03T04:38:56</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -13905,6 +13905,35 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61951000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6195-1 -- Vim vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6195-1" ref_url="https://ubuntu.com/security/notices/USN-6195-1" />
+				<reference source="CVE" ref_id="CVE-2022-0128" ref_url="https://ubuntu.com/security/CVE-2022-0128" />
+				<reference source="CVE" ref_id="CVE-2022-0156" ref_url="https://ubuntu.com/security/CVE-2022-0156" />
+				<reference source="CVE" ref_id="CVE-2022-0158" ref_url="https://ubuntu.com/security/CVE-2022-0158" />
+				<reference source="CVE" ref_id="CVE-2022-0393" ref_url="https://ubuntu.com/security/CVE-2022-0393" />
+				<reference source="CVE" ref_id="CVE-2022-0407" ref_url="https://ubuntu.com/security/CVE-2022-0407" />
+				<reference source="CVE" ref_id="CVE-2022-0696" ref_url="https://ubuntu.com/security/CVE-2022-0696" />
+				<description>It was discovered that Vim contained an out-of-bounds read vulnerability. An attacker could possibly use this issue to cause a denial of service or  execute arbitrary code. (CVE-2022-0128)  It was discovered that Vim did not properly manage memory when freeing allocated memory. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2022-0156)  It was discovered that Vim contained a heap-based buffer overflow vulnerability. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2022-0158)  It was discovered that Vim did not properly manage memory when recording and using select mode. An attacker could possibly use this issue to cause a denial of service. (CVE-2022-0393)  It was discovered that Vim incorrectly handled certain memory operations during a visual block yank. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2022-0407)  It was discovered that Vim contained a NULL pointer dereference vulnerability when switching tabpages. An attacker could possible use this issue to cause a denial of service. (CVE-2022-0696)  Update Instructions:  Run `sudo pro fix USN-6195-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  vim - 2:8.2.3995-1ubuntu2.9 vim-athena - 2:8.2.3995-1ubuntu2.9 vim-common - 2:8.2.3995-1ubuntu2.9 vim-doc - 2:8.2.3995-1ubuntu2.9 vim-gtk3 - 2:8.2.3995-1ubuntu2.9 vim-gtk - 2:8.2.3995-1ubuntu2.9 vim-gui-common - 2:8.2.3995-1ubuntu2.9 vim-nox - 2:8.2.3995-1ubuntu2.9 vim-runtime - 2:8.2.3995-1ubuntu2.9 vim-tiny - 2:8.2.3995-1ubuntu2.9 xxd - 2:8.2.3995-1ubuntu2.9</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2022-0128" severity="medium" public="20220106" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H">CVE-2022-0128</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0156" severity="medium" public="20220110" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2022-0156</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0158" severity="medium" public="20220110" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N">CVE-2022-0158</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0393" severity="medium" public="20220128" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H">CVE-2022-0393</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0407" severity="medium" public="20220130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H">CVE-2022-0407</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0696" severity="low" public="20220221" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2022-0696</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:453852137434803191438394595777855606163" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -15874,6 +15903,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:452842197545846216600367488141927440765" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:399364396561560760963401565408968396010" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:345924129606585646129393814087214865143" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:453852137434803191438394595777855606163" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:381495954362785100757572970414426403008" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:515048895981501390279367708355037086056" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:454401986004640294688857098858215911717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:513688121954745509238398332443339528573" />
@@ -17977,6 +18010,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:380755752277274675269988954610266639576" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:349333159796834818421530341955582928143" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:381495954362785100757572970414426403008" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:383509677909570127108759872288040632104" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:383964998898097968880373638626272521386" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:359432254461643294086424537083203456219" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19879,6 +19915,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:514342528816347688775715542641739202716" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.19.2-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:515048895981501390279367708355037086056" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:8.2.3995-1ubuntu2.9</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:515928962001785598760576991884897775086" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.108-0ubuntu1~22.04.1</linux:evr>
