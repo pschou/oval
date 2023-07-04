@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-03T04:38:56</oval:timestamp>
+		<oval:timestamp>2023-07-04T04:38:08</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9706,7 +9706,7 @@
 					<issued date="2023-03-20" />
 					<cve href="https://ubuntu.com/security/CVE-2023-27533" severity="low" public="20230320" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5964-1,5964-2">CVE-2023-27533</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27534" severity="low" public="20230320" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5964-1">CVE-2023-27534</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-27535" severity="medium" public="20230320" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27535</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-27535" severity="medium" public="20230320" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27535</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27536" severity="low" public="20230320" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27536</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27538" severity="low" public="20230320" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="5964-1">CVE-2023-27538</cve>
 				</advisory>
@@ -13734,7 +13734,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-22" />
-					<cve href="https://ubuntu.com/security/CVE-2023-34241" severity="medium" public="20230622" usns="6184-1">CVE-2023-34241</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34241" severity="medium" public="20230622" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6184-1">CVE-2023-34241</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -13922,16 +13922,54 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-07-03" />
-					<cve href="https://ubuntu.com/security/CVE-2022-0128" severity="medium" public="20220106" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H">CVE-2022-0128</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-0156" severity="medium" public="20220110" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2022-0156</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-0158" severity="medium" public="20220110" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N">CVE-2022-0158</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-0393" severity="medium" public="20220128" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H">CVE-2022-0393</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-0407" severity="medium" public="20220130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H">CVE-2022-0407</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-0696" severity="low" public="20220221" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2022-0696</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0128" severity="medium" public="20220106" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6195-1">CVE-2022-0128</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0156" severity="medium" public="20220110" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6195-1">CVE-2022-0156</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0158" severity="medium" public="20220110" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N" usns="6195-1">CVE-2022-0158</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0393" severity="medium" public="20220128" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="6195-1">CVE-2022-0393</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0407" severity="medium" public="20220130" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6195-1">CVE-2022-0407</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-0696" severity="low" public="20220221" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6195-1">CVE-2022-0696</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:453852137434803191438394595777855606163" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61961000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6196-1 -- ReportLab vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6196-1" ref_url="https://ubuntu.com/security/notices/USN-6196-1" />
+				<reference source="CVE" ref_id="CVE-2023-33733" ref_url="https://ubuntu.com/security/CVE-2023-33733" />
+				<description>It was discovered that ReportLab incorrectly handled certain PDF files. An attacker could possibly use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6196-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-renderpm - 3.6.8-1ubuntu0.1 python3-reportlab - 3.6.8-1ubuntu0.1 python3-reportlab-accel - 3.6.8-1ubuntu0.1 python-reportlab-doc - 3.6.8-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-33733" severity="high" public="20230605" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6196-1">CVE-2023-33733</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:557438912562356169679084542728031815192" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:61991000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6199-1 -- PHP vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6199-1" ref_url="https://ubuntu.com/security/notices/USN-6199-1" />
+				<reference source="CVE" ref_id="CVE-2023-3247" ref_url="https://ubuntu.com/security/CVE-2023-3247" />
+				<description>It was discovered that PHP incorrectly handled certain Digest authentication for SOAP. An attacker could possibly use this issue to expose sensitive information.  Update Instructions:  Run `sudo pro fix USN-6199-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libapache2-mod-php7.4 - 8.1.2-1ubuntu2.13 libapache2-mod-php8.0 - 8.1.2-1ubuntu2.13 libapache2-mod-php8.1 - 8.1.2-1ubuntu2.13 libphp8.1-embed - 8.1.2-1ubuntu2.13 php8.1 - 8.1.2-1ubuntu2.13 php8.1-bcmath - 8.1.2-1ubuntu2.13 php8.1-bz2 - 8.1.2-1ubuntu2.13 php8.1-cgi - 8.1.2-1ubuntu2.13 php8.1-cli - 8.1.2-1ubuntu2.13 php8.1-common - 8.1.2-1ubuntu2.13 php8.1-curl - 8.1.2-1ubuntu2.13 php8.1-dba - 8.1.2-1ubuntu2.13 php8.1-dev - 8.1.2-1ubuntu2.13 php8.1-enchant - 8.1.2-1ubuntu2.13 php8.1-fpm - 8.1.2-1ubuntu2.13 php8.1-gd - 8.1.2-1ubuntu2.13 php8.1-gmp - 8.1.2-1ubuntu2.13 php8.1-imap - 8.1.2-1ubuntu2.13 php8.1-interbase - 8.1.2-1ubuntu2.13 php8.1-intl - 8.1.2-1ubuntu2.13 php8.1-ldap - 8.1.2-1ubuntu2.13 php8.1-mbstring - 8.1.2-1ubuntu2.13 php8.1-mysql - 8.1.2-1ubuntu2.13 php8.1-odbc - 8.1.2-1ubuntu2.13 php8.1-opcache - 8.1.2-1ubuntu2.13 php8.1-pgsql - 8.1.2-1ubuntu2.13 php8.1-phpdbg - 8.1.2-1ubuntu2.13 php8.1-pspell - 8.1.2-1ubuntu2.13 php8.1-readline - 8.1.2-1ubuntu2.13 php8.1-snmp - 8.1.2-1ubuntu2.13 php8.1-soap - 8.1.2-1ubuntu2.13 php8.1-sqlite3 - 8.1.2-1ubuntu2.13 php8.1-sybase - 8.1.2-1ubuntu2.13 php8.1-tidy - 8.1.2-1ubuntu2.13 php8.1-xml - 8.1.2-1ubuntu2.13 php8.1-xsl - 8.1.2-1ubuntu2.13 php8.1-zip - 8.1.2-1ubuntu2.13</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3247" severity="medium" public="20230619" usns="6199-1">CVE-2023-3247</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:401668508785638992977488972317383983680" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -15660,6 +15698,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:489163942155112687240079220226400939418" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:448407884950525907648749442222847088778" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:401668508785638992977488972317383983680" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:508658626498964478102738560505318726415" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:352971450681954235302770748586041710560" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:402486383200632579196708287972143641118" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:468477835297494813096464136485498535775" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:542397466190094510891266651458334860945" />
@@ -16295,6 +16337,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:557104771536111352180277533565855197862" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:368812012165759185001289044589211573098" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:434846600349543633789613019172107416434" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:557438912562356169679084542728031815192" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:496482475233400190201036722855217585986" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:500277764891856695629453376871053888233" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:560093863701459106074268758486879451238" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:374244450681856138731258004448569196993" />
@@ -18451,6 +18497,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:495132767191888000709101001572118932616" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:613054071142840407656725708803378897401" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:496482475233400190201036722855217585986" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:542870479317595438803589330776150443107" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:497153825799854312808098481798392466253" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18483,6 +18532,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:508076951469060759671924893420532093664" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:657677555049968960121924811563711511967" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:508658626498964478102738560505318726415" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:433189847713230693688193232878710374561" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:512221846072120858069793536435388438070" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:639638574591870205837664029819453587925" var_check="at least one" />
@@ -19346,6 +19398,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:351804396346974400913422376929177912089" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-6ubuntu0.3</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:352971450681954235302770748586041710560" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.2-1ubuntu2.13</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:353751811136284974083049482648496344468" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.55.0~dfsg1-0ubuntu5.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -19879,6 +19934,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:499059089759508807085749890543921309529" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:22.1.0-2ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:500277764891856695629453376871053888233" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.8-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:501319420935285028636330865936969411815" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.1-1ubuntu0.22.04.1</linux:evr>
@@ -23234,6 +23292,12 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:500276772235908108998383016340143571696" version="1" datatype="string" comment="Long Term Support">
 			<value>python3-pypdf2</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:542870479317595438803589330776150443107" version="1" datatype="string" comment="Long Term Support">
+			<value>python3-renderpm</value>
+			<value>python3-reportlab</value>
+			<value>python3-reportlab-accel</value>
+			<value>python-reportlab-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:636369014381794125336828387229712238832" version="1" datatype="string" comment="Long Term Support">
 			<value>python3-requests</value>

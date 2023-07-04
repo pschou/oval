@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-30T06:39:28</oval:timestamp>
+		<oval:timestamp>2023-07-04T04:38:08</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3819,7 +3819,7 @@
 					<issued date="2023-03-20" />
 					<cve href="https://ubuntu.com/security/CVE-2023-27533" severity="low" public="20230320" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5964-1,5964-2">CVE-2023-27533</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27534" severity="low" public="20230320" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="5964-1">CVE-2023-27534</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-27535" severity="medium" public="20230320" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27535</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-27535" severity="medium" public="20230320" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27535</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27536" severity="low" public="20230320" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5964-1,5964-2">CVE-2023-27536</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-27538" severity="low" public="20230320" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="5964-1">CVE-2023-27538</cve>
 				</advisory>
@@ -6553,7 +6553,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-22" />
-					<cve href="https://ubuntu.com/security/CVE-2023-34241" severity="medium" public="20230622" usns="6184-1">CVE-2023-34241</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34241" severity="medium" public="20230622" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6184-1">CVE-2023-34241</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6698,6 +6698,44 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61961000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6196-1 -- ReportLab vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6196-1" ref_url="https://ubuntu.com/security/notices/USN-6196-1" />
+				<reference source="CVE" ref_id="CVE-2023-33733" ref_url="https://ubuntu.com/security/CVE-2023-33733" />
+				<description>It was discovered that ReportLab incorrectly handled certain PDF files. An attacker could possibly use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6196-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-renderpm - 3.6.11-1ubuntu0.1 python3-reportlab - 3.6.11-1ubuntu0.1 python3-reportlab-accel - 3.6.11-1ubuntu0.1 python-reportlab-doc - 3.6.11-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-33733" severity="high" public="20230605" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6196-1">CVE-2023-33733</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:370769379501229405729042210723680769889" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:61991000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6199-1 -- PHP vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6199-1" ref_url="https://ubuntu.com/security/notices/USN-6199-1" />
+				<reference source="CVE" ref_id="CVE-2023-3247" ref_url="https://ubuntu.com/security/CVE-2023-3247" />
+				<description>It was discovered that PHP incorrectly handled certain Digest authentication for SOAP. An attacker could possibly use this issue to expose sensitive information.  Update Instructions:  Run `sudo pro fix USN-6199-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libapache2-mod-php7.4 - 8.1.7-1ubuntu3.5 libapache2-mod-php8.0 - 8.1.7-1ubuntu3.5 libapache2-mod-php8.1 - 8.1.7-1ubuntu3.5 libphp8.1-embed - 8.1.7-1ubuntu3.5 php8.1 - 8.1.7-1ubuntu3.5 php8.1-bcmath - 8.1.7-1ubuntu3.5 php8.1-bz2 - 8.1.7-1ubuntu3.5 php8.1-cgi - 8.1.7-1ubuntu3.5 php8.1-cli - 8.1.7-1ubuntu3.5 php8.1-common - 8.1.7-1ubuntu3.5 php8.1-curl - 8.1.7-1ubuntu3.5 php8.1-dba - 8.1.7-1ubuntu3.5 php8.1-dev - 8.1.7-1ubuntu3.5 php8.1-enchant - 8.1.7-1ubuntu3.5 php8.1-fpm - 8.1.7-1ubuntu3.5 php8.1-gd - 8.1.7-1ubuntu3.5 php8.1-gmp - 8.1.7-1ubuntu3.5 php8.1-imap - 8.1.7-1ubuntu3.5 php8.1-interbase - 8.1.7-1ubuntu3.5 php8.1-intl - 8.1.7-1ubuntu3.5 php8.1-ldap - 8.1.7-1ubuntu3.5 php8.1-mbstring - 8.1.7-1ubuntu3.5 php8.1-mysql - 8.1.7-1ubuntu3.5 php8.1-odbc - 8.1.7-1ubuntu3.5 php8.1-opcache - 8.1.7-1ubuntu3.5 php8.1-pgsql - 8.1.7-1ubuntu3.5 php8.1-phpdbg - 8.1.7-1ubuntu3.5 php8.1-pspell - 8.1.7-1ubuntu3.5 php8.1-readline - 8.1.7-1ubuntu3.5 php8.1-snmp - 8.1.7-1ubuntu3.5 php8.1-soap - 8.1.7-1ubuntu3.5 php8.1-sqlite3 - 8.1.7-1ubuntu3.5 php8.1-sybase - 8.1.7-1ubuntu3.5 php8.1-tidy - 8.1.7-1ubuntu3.5 php8.1-xml - 8.1.7-1ubuntu3.5 php8.1-xsl - 8.1.7-1ubuntu3.5 php8.1-zip - 8.1.7-1ubuntu3.5</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3247" severity="medium" public="20230619" usns="6199-1">CVE-2023-3247</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:632295913873473273750799593650215424697" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -6815,6 +6853,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:370211863906945928077547734477980122229" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:396062079043425577070845946234851885159" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:359316760258737175230465665783897518571" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:370769379501229405729042210723680769889" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:594538430125464818638305189982630626746" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:376392557757886823811489366848270306983" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:372919106313526990271592099155647286017" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:435882955546584300288756621396527233348" />
@@ -7491,6 +7533,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:627733376127798980586648196205665733002" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:649360152224186758626186194170318960881" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:460600810394766341503759661060658845364" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:632295913873473273750799593650215424697" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:400577183530236778327296939325090370723" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:616974076616906649064370731324154913213" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:632358896886587308630152456678874308503" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:673049783014249982801028384446276236806" />
@@ -8568,6 +8614,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:400182043039685421538336011276737770292" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:672991627202033226294099080244856098190" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:400577183530236778327296939325090370723" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:433189847713230693688193232878710374561" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:402314483510939338012527960934145684808" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:676724231515813688112822357534767776665" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -8997,6 +9046,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:592907960397745234469490930413222317210" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:594538430125464818638305189982630626746" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:542870479317595438803589330776150443107" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:595689295263374290197502369251612759185" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:507040757124033340507842449647415429306" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9318,6 +9370,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:375423752398211187730645222112800056101" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.4.0-4ubuntu3.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:376392557757886823811489366848270306983" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.11-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:376603958339803071163297713948957878296" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:5.9~svn20110310-16ubuntu0.22.10.1</linux:evr>
@@ -9834,6 +9889,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:616089665037135778546081241467858296454" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.65-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:616974076616906649064370731324154913213" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.7-1ubuntu3.5</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:617114660826377918762898592335963917867" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.4-2ubuntu1.1</linux:evr>
@@ -11418,6 +11476,12 @@
 			<value>python3-setuptools</value>
 			<value>python3-setuptools-whl</value>
 			<value>python-setuptools-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:542870479317595438803589330776150443107" version="1" datatype="string" comment="Interim Release">
+			<value>python3-renderpm</value>
+			<value>python3-reportlab</value>
+			<value>python3-reportlab-accel</value>
+			<value>python-reportlab-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:636369014381794125336828387229712238832" version="1" datatype="string" comment="Interim Release">
 			<value>python3-requests</value>

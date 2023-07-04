@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-06-30T04:41:13</oval:timestamp>
+		<oval:timestamp>2023-07-04T02:39:46</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1459,7 +1459,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-22" />
-					<cve href="https://ubuntu.com/security/CVE-2023-34241" severity="medium" public="20230622" usns="6184-1">CVE-2023-34241</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34241" severity="medium" public="20230622" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6184-1">CVE-2023-34241</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1612,6 +1612,44 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61961000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6196-1 -- ReportLab vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6196-1" ref_url="https://ubuntu.com/security/notices/USN-6196-1" />
+				<reference source="CVE" ref_id="CVE-2023-33733" ref_url="https://ubuntu.com/security/CVE-2023-33733" />
+				<description>It was discovered that ReportLab incorrectly handled certain PDF files. An attacker could possibly use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6196-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-renderpm - 3.6.12-1ubuntu0.1 python3-reportlab - 3.6.12-1ubuntu0.1 python3-reportlab-accel - 3.6.12-1ubuntu0.1 python-reportlab-doc - 3.6.12-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-33733" severity="high" public="20230605" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6196-1">CVE-2023-33733</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:466164311677600699028401512646486249719" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:61991000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6199-1 -- PHP vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6199-1" ref_url="https://ubuntu.com/security/notices/USN-6199-1" />
+				<reference source="CVE" ref_id="CVE-2023-3247" ref_url="https://ubuntu.com/security/CVE-2023-3247" />
+				<description>It was discovered that PHP incorrectly handled certain Digest authentication for SOAP. An attacker could possibly use this issue to expose sensitive information.  Update Instructions:  Run `sudo pro fix USN-6199-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libapache2-mod-php7.4 - 8.1.12-1ubuntu4.2 libapache2-mod-php8.0 - 8.1.12-1ubuntu4.2 libapache2-mod-php8.1 - 8.1.12-1ubuntu4.2 libphp8.1-embed - 8.1.12-1ubuntu4.2 php8.1 - 8.1.12-1ubuntu4.2 php8.1-bcmath - 8.1.12-1ubuntu4.2 php8.1-bz2 - 8.1.12-1ubuntu4.2 php8.1-cgi - 8.1.12-1ubuntu4.2 php8.1-cli - 8.1.12-1ubuntu4.2 php8.1-common - 8.1.12-1ubuntu4.2 php8.1-curl - 8.1.12-1ubuntu4.2 php8.1-dba - 8.1.12-1ubuntu4.2 php8.1-dev - 8.1.12-1ubuntu4.2 php8.1-enchant - 8.1.12-1ubuntu4.2 php8.1-fpm - 8.1.12-1ubuntu4.2 php8.1-gd - 8.1.12-1ubuntu4.2 php8.1-gmp - 8.1.12-1ubuntu4.2 php8.1-imap - 8.1.12-1ubuntu4.2 php8.1-interbase - 8.1.12-1ubuntu4.2 php8.1-intl - 8.1.12-1ubuntu4.2 php8.1-ldap - 8.1.12-1ubuntu4.2 php8.1-mbstring - 8.1.12-1ubuntu4.2 php8.1-mysql - 8.1.12-1ubuntu4.2 php8.1-odbc - 8.1.12-1ubuntu4.2 php8.1-opcache - 8.1.12-1ubuntu4.2 php8.1-pgsql - 8.1.12-1ubuntu4.2 php8.1-phpdbg - 8.1.12-1ubuntu4.2 php8.1-pspell - 8.1.12-1ubuntu4.2 php8.1-readline - 8.1.12-1ubuntu4.2 php8.1-snmp - 8.1.12-1ubuntu4.2 php8.1-soap - 8.1.12-1ubuntu4.2 php8.1-sqlite3 - 8.1.12-1ubuntu4.2 php8.1-sybase - 8.1.12-1ubuntu4.2 php8.1-tidy - 8.1.12-1ubuntu4.2 php8.1-xml - 8.1.12-1ubuntu4.2 php8.1-xsl - 8.1.12-1ubuntu4.2 php8.1-zip - 8.1.12-1ubuntu4.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-03" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3247" severity="medium" public="20230619" usns="6199-1">CVE-2023-3247</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:584288555943314975834152336551566181985" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1657,6 +1695,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:453931244533390434166649383736462515705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:493436667532578796089495279251952533543" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:638268051382120490128540949586626363406" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:466164311677600699028401512646486249719" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:355947768711084057503401430279233518936" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:646072023778959882754242971408693855135" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:466428829342281346683506520576874782712" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:475524243831533136292604508647727668389" />
@@ -1793,6 +1835,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:581915773385226156379627017458241080907" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:464713879677710250639887802351600061740" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:607069480951884146692816418561258306178" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:584288555943314975834152336551566181985" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:621408306145850124821991123349022871154" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:358135731020499559208737270674660254260" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594600265267414316395052794875602567418" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:389061546160644420012699349461913718600" />
@@ -2030,6 +2076,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:355947768711084057503401430279233518936" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:542870479317595438803589330776150443107" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:359722264369191091381741938940242637374" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2195,6 +2244,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:620270900529341515604212046899207359746" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:371286693089090051076131807913871929287" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:621408306145850124821991123349022871154" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:433189847713230693688193232878710374561" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:623947607985235992484587781524728480988" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:626503625561135631910252101663952100832" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2279,6 +2331,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:356595960226933713165913628024242610961" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.118-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:358135731020499559208737270674660254260" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.12-1ubuntu4.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:359319671458858637537331024683760857446" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:102.11.0+build1-0ubuntu0.23.04.1</linux:evr>
@@ -2459,6 +2514,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:642900204406380423562587045217797908871" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.3-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:646072023778959882754242971408693855135" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.12-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:651484711348540418720126084887211495122" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.108-0ubuntu1~23.04.1</linux:evr>
@@ -2805,6 +2863,45 @@
 			<value>ncurses-examples</value>
 			<value>ncurses-term</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:433189847713230693688193232878710374561" version="1" datatype="string" comment="Interim Release">
+			<value>libapache2-mod-php7.4</value>
+			<value>libapache2-mod-php8.0</value>
+			<value>libapache2-mod-php8.1</value>
+			<value>libphp8.1-embed</value>
+			<value>php8.1</value>
+			<value>php8.1-bcmath</value>
+			<value>php8.1-bz2</value>
+			<value>php8.1-cgi</value>
+			<value>php8.1-cli</value>
+			<value>php8.1-common</value>
+			<value>php8.1-curl</value>
+			<value>php8.1-dba</value>
+			<value>php8.1-dev</value>
+			<value>php8.1-enchant</value>
+			<value>php8.1-fpm</value>
+			<value>php8.1-gd</value>
+			<value>php8.1-gmp</value>
+			<value>php8.1-imap</value>
+			<value>php8.1-interbase</value>
+			<value>php8.1-intl</value>
+			<value>php8.1-ldap</value>
+			<value>php8.1-mbstring</value>
+			<value>php8.1-mysql</value>
+			<value>php8.1-odbc</value>
+			<value>php8.1-opcache</value>
+			<value>php8.1-pgsql</value>
+			<value>php8.1-phpdbg</value>
+			<value>php8.1-pspell</value>
+			<value>php8.1-readline</value>
+			<value>php8.1-snmp</value>
+			<value>php8.1-soap</value>
+			<value>php8.1-sqlite3</value>
+			<value>php8.1-sybase</value>
+			<value>php8.1-tidy</value>
+			<value>php8.1-xml</value>
+			<value>php8.1-xsl</value>
+			<value>php8.1-zip</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:428982606931675167232778569108517249056" version="1" datatype="string" comment="Interim Release">
 			<value>libc-ares2</value>
 			<value>libc-ares-dev</value>
@@ -3036,6 +3133,12 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:391274111027580069412726315909292973834" version="1" datatype="string" comment="Interim Release">
 			<value>python3-glance-store</value>
 			<value>python-glance-store-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:542870479317595438803589330776150443107" version="1" datatype="string" comment="Interim Release">
+			<value>python3-renderpm</value>
+			<value>python3-reportlab</value>
+			<value>python3-reportlab-accel</value>
+			<value>python-reportlab-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:636369014381794125336828387229712238832" version="1" datatype="string" comment="Interim Release">
 			<value>python3-requests</value>
