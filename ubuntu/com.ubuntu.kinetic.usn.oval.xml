@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-04T04:38:08</oval:timestamp>
+		<oval:timestamp>2023-07-05T06:40:09</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -635,23 +635,23 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2022-11-24" />
-					<cve href="https://ubuntu.com/security/CVE-2021-20224" severity="medium" public="20220825" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5736-1,5736-2">CVE-2021-20224</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20241" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5335-1,5736-1,5736-2">CVE-2021-20241</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20243" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5335-1,5736-1,5736-2">CVE-2021-20243</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20244" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2">CVE-2021-20244</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20224" severity="medium" public="20220825" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5736-1,5736-2,6200-1">CVE-2021-20224</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20241" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5335-1,5736-1,5736-2,6200-1">CVE-2021-20241</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20243" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5335-1,5736-1,5736-2,6200-1">CVE-2021-20243</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20244" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20244</cve>
 					<cve href="https://ubuntu.com/security/CVE-2021-20245" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5736-1,5736-2">CVE-2021-20245</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20246" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2">CVE-2021-20246</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20309" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2">CVE-2021-20309</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20312" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2">CVE-2021-20312</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-20313" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5158-1,5736-1,5736-2">CVE-2021-20313</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20246" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20246</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20309" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20309</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20312" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20312</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20313" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20313</cve>
 					<cve href="https://ubuntu.com/security/CVE-2021-3574" severity="medium" public="20220826" cvss_score="3.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" usns="5736-1,5736-2">CVE-2021-3574</cve>
-					<cve href="https://ubuntu.com/security/CVE-2021-39212" severity="low" public="20210913" cvss_score="3.6" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N" usns="5736-1,5736-2">CVE-2021-39212</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-39212" severity="low" public="20210913" cvss_score="3.6" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N" usns="5736-1,5736-2,6200-1">CVE-2021-39212</cve>
 					<cve href="https://ubuntu.com/security/CVE-2021-4219" severity="low" public="20220323" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5736-1,5736-2">CVE-2021-4219</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-1114" severity="medium" public="20220429" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" usns="5736-1,5736-2">CVE-2022-1114</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-28463" severity="medium" public="20220508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5456-1,5736-1,5736-2">CVE-2022-28463</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-32545" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2">CVE-2022-32545</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-32546" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2">CVE-2022-32546</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-32547" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2">CVE-2022-32547</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-28463" severity="medium" public="20220508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5456-1,5736-1,5736-2,6200-1">CVE-2022-28463</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32545" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2,6200-1">CVE-2022-32545</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32546" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2,6200-1">CVE-2022-32546</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32547" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2,6200-1">CVE-2022-32547</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6736,6 +6736,63 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:632295913873473273750799593650215424697" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62001000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6200-1 -- ImageMagick vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6200-1" ref_url="https://ubuntu.com/security/notices/USN-6200-1" />
+				<reference source="CVE" ref_id="CVE-2020-29599" ref_url="https://ubuntu.com/security/CVE-2020-29599" />
+				<reference source="CVE" ref_id="CVE-2021-20224" ref_url="https://ubuntu.com/security/CVE-2021-20224" />
+				<reference source="CVE" ref_id="CVE-2021-20241" ref_url="https://ubuntu.com/security/CVE-2021-20241" />
+				<reference source="CVE" ref_id="CVE-2021-20243" ref_url="https://ubuntu.com/security/CVE-2021-20243" />
+				<reference source="CVE" ref_id="CVE-2021-20244" ref_url="https://ubuntu.com/security/CVE-2021-20244" />
+				<reference source="CVE" ref_id="CVE-2021-20246" ref_url="https://ubuntu.com/security/CVE-2021-20246" />
+				<reference source="CVE" ref_id="CVE-2021-20309" ref_url="https://ubuntu.com/security/CVE-2021-20309" />
+				<reference source="CVE" ref_id="CVE-2021-20312" ref_url="https://ubuntu.com/security/CVE-2021-20312" />
+				<reference source="CVE" ref_id="CVE-2021-20313" ref_url="https://ubuntu.com/security/CVE-2021-20313" />
+				<reference source="CVE" ref_id="CVE-2021-3610" ref_url="https://ubuntu.com/security/CVE-2021-3610" />
+				<reference source="CVE" ref_id="CVE-2021-39212" ref_url="https://ubuntu.com/security/CVE-2021-39212" />
+				<reference source="CVE" ref_id="CVE-2022-28463" ref_url="https://ubuntu.com/security/CVE-2022-28463" />
+				<reference source="CVE" ref_id="CVE-2022-32545" ref_url="https://ubuntu.com/security/CVE-2022-32545" />
+				<reference source="CVE" ref_id="CVE-2022-32546" ref_url="https://ubuntu.com/security/CVE-2022-32546" />
+				<reference source="CVE" ref_id="CVE-2022-32547" ref_url="https://ubuntu.com/security/CVE-2022-32547" />
+				<reference source="CVE" ref_id="CVE-2023-1289" ref_url="https://ubuntu.com/security/CVE-2023-1289" />
+				<reference source="CVE" ref_id="CVE-2023-1906" ref_url="https://ubuntu.com/security/CVE-2023-1906" />
+				<reference source="CVE" ref_id="CVE-2023-3195" ref_url="https://ubuntu.com/security/CVE-2023-3195" />
+				<reference source="CVE" ref_id="CVE-2023-34151" ref_url="https://ubuntu.com/security/CVE-2023-34151" />
+				<reference source="CVE" ref_id="CVE-2023-3428" ref_url="https://ubuntu.com/security/CVE-2023-3428" />
+				<description>It was discovered that ImageMagick incorrectly handled the "-authenticate" option for password-protected PDF files. An attacker could possibly use this issue to inject additional shell commands and perform arbitrary code execution. This issue only affected Ubuntu 20.04 LTS. (CVE-2020-29599)  It was discovered that ImageMagick incorrectly handled certain values when processing PDF files. If a user or automated system using ImageMagick were tricked into opening a specially crafted PDF file, an attacker could exploit this to cause a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-20224)  Zhang Xiaohui discovered that ImageMagick incorrectly handled certain values when processing image data. If a user or automated system using ImageMagick were tricked into opening a specially crafted image, an attacker could exploit this to cause a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-20241, CVE-2021-20243)  It was discovered that ImageMagick incorrectly handled certain values when processing visual effects based image files. By tricking a user into opening a specially crafted image file, an attacker could crash the application causing a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-20244, CVE-2021-20309)  It was discovered that ImageMagick incorrectly handled certain values when performing resampling operations. By tricking a user into opening a specially crafted image file, an attacker could crash the application causing a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-20246)  It was discovered that ImageMagick incorrectly handled certain values when processing thumbnail image data. By tricking a user into opening a specially crafted image file, an attacker could crash the application causing a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-20312)  It was discovered that ImageMagick incorrectly handled memory cleanup when performing certain cryptographic operations. Under certain conditions sensitive cryptographic information could be disclosed. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-20313)  It was discovered that ImageMagick did not use the correct rights when specifically excluded by a module policy. An attacker could use this issue to read and write certain restricted files. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-39212)  It was discovered that ImageMagick incorrectly handled memory under certain circumstances. If a user were tricked into opening a specially crafted image file, an attacker could possibly exploit this issue to cause a denial of service or other unspecified impact. This issue only affected Ubuntu 20.04 LTS. (CVE-2022-28463, CVE-2022-32545, CVE-2022-32546, CVE-2022-32547)  It was discovered that ImageMagick incorrectly handled memory under certain circumstances. If a user were tricked into opening a specially crafted image file, an attacker could possibly exploit this issue to cause a denial of service or other unspecified impact. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04. (CVE-2021-3610, CVE-2023-1906, CVE-2023-3428)  It was discovered that ImageMagick incorrectly handled certain values when processing specially crafted SVG files. By tricking a user into opening a specially crafted SVG file, an attacker could crash the application causing a denial of service. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-1289)  It was discovered that ImageMagick incorrectly handled memory under certain circumstances. If a user were tricked into opening a specially crafted tiff file, an attacker could possibly exploit this issue to cause a denial of service or other unspecified impact. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-3195)  It was discovered that ImageMagick incorrectly handled memory under certain circumstances. If a user were tricked into opening a specially crafted image file, an attacker could possibly exploit this issue to cause a denial of service or other unspecified impact. (CVE-2023-34151)  Update Instructions:  Run `sudo pro fix USN-6200-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  imagemagick - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 imagemagick-6-common - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 imagemagick-6-doc - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 imagemagick-6.q16 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 imagemagick-6.q16hdri - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 imagemagick-common - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 imagemagick-doc - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libimage-magick-perl - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libimage-magick-q16-perl - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libimage-magick-q16hdri-perl - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagick++-6-headers - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagick++-6.q16-8 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagick++-6.q16-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagick++-6.q16hdri-8 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagick++-6.q16hdri-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagick++-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6-arch-config - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6-headers - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6.q16-6 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6.q16-6-extra - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6.q16-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6.q16hdri-6 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6.q16hdri-6-extra - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-6.q16hdri-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickcore-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickwand-6-headers - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickwand-6.q16-6 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickwand-6.q16-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickwand-6.q16hdri-6 - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickwand-6.q16hdri-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 libmagickwand-dev - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5 perlmagick - 8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-04" />
+					<cve href="https://ubuntu.com/security/CVE-2020-29599" severity="negligible" public="20201207" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6200-1">CVE-2020-29599</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20224" severity="medium" public="20220825" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5736-1,5736-2,6200-1">CVE-2021-20224</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20241" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5335-1,5736-1,5736-2,6200-1">CVE-2021-20241</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20243" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5335-1,5736-1,5736-2,6200-1">CVE-2021-20243</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20244" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20244</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20246" severity="low" public="20210309" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20246</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20309" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20309</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20312" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20312</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-20313" severity="low" public="20210511" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="5158-1,5736-1,5736-2,6200-1">CVE-2021-20313</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3610" severity="medium" public="20220224" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6200-1">CVE-2021-3610</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-39212" severity="low" public="20210913" cvss_score="3.6" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N" usns="5736-1,5736-2,6200-1">CVE-2021-39212</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-28463" severity="medium" public="20220508" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5456-1,5736-1,5736-2,6200-1">CVE-2022-28463</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32545" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2,6200-1">CVE-2022-32545</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32546" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2,6200-1">CVE-2022-32546</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32547" severity="medium" public="20220616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5534-1,5736-1,5736-2,6200-1">CVE-2022-32547</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1289" severity="low" public="20230323" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6200-1">CVE-2023-1289</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1906" severity="low" public="20230412" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6200-1">CVE-2023-1906</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3195" severity="medium" public="20230616" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6200-1">CVE-2023-3195</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34151" severity="medium" public="20230530" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6200-1">CVE-2023-34151</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3428" severity="medium" public="20230629" usns="6200-1">CVE-2023-3428</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:405335567142263514095729100635749960102" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -6953,6 +7010,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:404676473350475778430992511039759763133" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:368638085820223652100097644204921478926" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:533436769497082554424969131069570915790" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:405335567142263514095729100635749960102" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:603303992814637487661536575351539967434" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:607156557609872310720270661677289931896" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:405895461017891515548277059402447377225" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:344812054752876098460881180153429900791" />
@@ -9070,6 +9131,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:602017538746031664696411261013716681457" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:603303992814637487661536575351539967434" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:647353091145153490354902517037251178087" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:608754921517863457120240527637296979044" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:665356428932256426353170084908159868455" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9874,6 +9938,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:607019215449402018997291710315859561903" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.12.1+dfsg-3ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:607156557609872310720270661677289931896" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">8:6.9.11.60+dfsg-1.3ubuntu0.22.10.5</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:608516010193201232443621145970140901286" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.33-0ubuntu0.22.10.2</linux:evr>
