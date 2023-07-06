@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-05T02:39:39</oval:timestamp>
+		<oval:timestamp>2023-07-06T00:37:43</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1707,6 +1707,65 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:540912534961384744831425757892334475732" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6202-1 -- containerd vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6202-1" ref_url="https://ubuntu.com/security/notices/USN-6202-1" />
+				<reference source="CVE" ref_id="CVE-2023-25153" ref_url="https://ubuntu.com/security/CVE-2023-25153" />
+				<reference source="CVE" ref_id="CVE-2023-25173" ref_url="https://ubuntu.com/security/CVE-2023-25173" />
+				<description>David Korczynski and Adam Korczynski discovered that containerd incorrectly processed certain images with large files. An attacker could possibly use this issue to cause containerd to crash, resulting in a denial of service. (CVE-2023-25153)  It was discovered that containerd incorrectly set up supplementary groups inside a container. An attacker with direct access to the container could possibly use this issue to obtain sensitive information or execute code with higher privileges. (CVE-2023-25173)  Update Instructions:  Run `sudo pro fix USN-6202-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  containerd - 1.6.12-0ubuntu3.1 golang-github-containerd-containerd-dev - 1.6.12-0ubuntu3.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-25153" severity="medium" public="20230216" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6202-1">CVE-2023-25153</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25173" severity="medium" public="20230216" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6202-1">CVE-2023-25173</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:435860040675455925195772311994264514575" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62031000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6203-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6203-1" ref_url="https://ubuntu.com/security/notices/USN-6203-1" />
+				<reference source="CVE" ref_id="CVE-2023-36053" ref_url="https://ubuntu.com/security/CVE-2023-36053" />
+				<description>Seokchan Yoon discovered that Django incorrectly handled certain regular expressions. A remote attacker could possibly use this issue to cause Django to consume resources, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-6203-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:3.2.18-1ubuntu0.3 python-django-doc - 3:3.2.18-1ubuntu0.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36053" severity="medium" public="20230704" usns="6203-1">CVE-2023-36053</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:540046562812919239454193173159280885377" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6204-1 -- CPDB vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6204-1" ref_url="https://ubuntu.com/security/notices/USN-6204-1" />
+				<reference source="CVE" ref_id="CVE-2023-34095" ref_url="https://ubuntu.com/security/CVE-2023-34095" />
+				<description>Seth Arnold discovered that CPDB incorrectly handled certain characters. An attacker could possibly use this issue to cause a crash or execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6204-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cpdb-libs-tools - 2.0~b4-0ubuntu2.1 libcpdb2 - 2.0~b4-0ubuntu2.1 libcpdb-backend-dev - 2.0~b4-0ubuntu2.1 libcpdb-dev - 2.0~b4-0ubuntu2.1 libcpdb-frontend2 - 2.0~b4-0ubuntu2.1 libcpdb-frontend-dev - 2.0~b4-0ubuntu2.1 libcpdb-libs-tools - 2.0~b4-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-34095" severity="medium" public="20230614" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6204-1">CVE-2023-34095</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:432636771441224748560607851802202960421" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1740,6 +1799,14 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:425307581032659656841408575913855362206" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:583858745019849151820751632661604776914" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:489599747779541656608797271118681181358" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:432636771441224748560607851802202960421" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:528269230841342847296551204075449452446" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:665248192227623685997405351946711862514" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:435860040675455925195772311994264514575" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:602772702567364262241447931873732436510" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:658092479434425602385965281095815653233" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" />
@@ -1820,6 +1887,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:537914295715091754119444588655145291167" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:540646527362612631250793351611706825763" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:540046562812919239454193173159280885377" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:590096790430625008056254958728731440179" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:514281057387952900714690440253099807233" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:540912534961384744831425757892334475732" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:565300820761620758705720174759236337266" />
@@ -2254,6 +2325,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:526202850171581704569469315585984183147" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:662390931122456180522243142055414937614" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:528269230841342847296551204075449452446" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:458584292614246651428981147375521764156" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:529385793645978707752788937173099210833" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:664589296595890954682264760344785500453" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2296,8 +2370,14 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:587187116203092882684234351073228940772" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:559683440088164987256969219992557100775" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:590096790430625008056254958728731440179" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:348932034868745939564492940927810360567" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:602772702567364262241447931873732436510" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:619530183886911280040321514642868879475" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" var_check="at least one" />
@@ -2501,6 +2581,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:513867410157516416419046508015520246386" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-3ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:514281057387952900714690440253099807233" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:3.2.18-1ubuntu0.3</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:532407698159776339660069796087212933484" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2022.20220321.62855-5ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2588,8 +2671,14 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:651484711348540418720126084887211495122" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.108-0ubuntu1~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:658092479434425602385965281095815653233" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.12-0ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20230311ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:665248192227623685997405351946711862514" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0~b4-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:669575076262800296007971942928597655656" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.40-2ubuntu4.1</linux:evr>
@@ -2755,6 +2844,19 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
 			<value>cloud-init</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:619530183886911280040321514642868879475" version="1" datatype="string" comment="Interim Release">
+			<value>containerd</value>
+			<value>golang-github-containerd-containerd-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:458584292614246651428981147375521764156" version="1" datatype="string" comment="Interim Release">
+			<value>cpdb-libs-tools</value>
+			<value>libcpdb2</value>
+			<value>libcpdb-backend-dev</value>
+			<value>libcpdb-dev</value>
+			<value>libcpdb-frontend2</value>
+			<value>libcpdb-frontend-dev</value>
+			<value>libcpdb-libs-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" version="1" datatype="string" comment="Interim Release">
 			<value>cups</value>

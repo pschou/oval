@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-05T06:40:09</oval:timestamp>
+		<oval:timestamp>2023-07-06T06:38:03</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6793,6 +6793,65 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:405335567142263514095729100635749960102" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6202-1 -- containerd vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6202-1" ref_url="https://ubuntu.com/security/notices/USN-6202-1" />
+				<reference source="CVE" ref_id="CVE-2023-25153" ref_url="https://ubuntu.com/security/CVE-2023-25153" />
+				<reference source="CVE" ref_id="CVE-2023-25173" ref_url="https://ubuntu.com/security/CVE-2023-25173" />
+				<description>David Korczynski and Adam Korczynski discovered that containerd incorrectly processed certain images with large files. An attacker could possibly use this issue to cause containerd to crash, resulting in a denial of service. (CVE-2023-25153)  It was discovered that containerd incorrectly set up supplementary groups inside a container. An attacker with direct access to the container could possibly use this issue to obtain sensitive information or execute code with higher privileges. (CVE-2023-25173)  Update Instructions:  Run `sudo pro fix USN-6202-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  containerd - 1.6.12-0ubuntu1~22.10.2 golang-github-containerd-containerd-dev - 1.6.12-0ubuntu1~22.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-25153" severity="medium" public="20230216" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6202-1">CVE-2023-25153</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25173" severity="medium" public="20230216" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6202-1">CVE-2023-25173</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:386941188628257663424843097089514799960" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62031000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6203-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6203-1" ref_url="https://ubuntu.com/security/notices/USN-6203-1" />
+				<reference source="CVE" ref_id="CVE-2023-36053" ref_url="https://ubuntu.com/security/CVE-2023-36053" />
+				<description>Seokchan Yoon discovered that Django incorrectly handled certain regular expressions. A remote attacker could possibly use this issue to cause Django to consume resources, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-6203-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:3.2.15-1ubuntu1.4 python-django-doc - 3:3.2.15-1ubuntu1.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36053" severity="medium" public="20230704" usns="6203-1">CVE-2023-36053</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:583937655533468806775667328625471897177" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6204-1 -- CPDB vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6204-1" ref_url="https://ubuntu.com/security/notices/USN-6204-1" />
+				<reference source="CVE" ref_id="CVE-2023-34095" ref_url="https://ubuntu.com/security/CVE-2023-34095" />
+				<description>Seth Arnold discovered that CPDB incorrectly handled certain characters. An attacker could possibly use this issue to cause a crash or execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6204-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libcpdb-libs-backend-dev - 1.2.0-0ubuntu8.1.22.10.1 libcpdb-libs-common1 - 1.2.0-0ubuntu8.1.22.10.1 libcpdb-libs-common-dev - 1.2.0-0ubuntu8.1.22.10.1 libcpdb-libs-frontend1 - 1.2.0-0ubuntu8.1.22.10.1 libcpdb-libs-frontend-dev - 1.2.0-0ubuntu8.1.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-34095" severity="medium" public="20230614" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6204-1">CVE-2023-34095</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:402473769320350093279847470975830283758" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -6963,6 +7022,10 @@
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:514462415736851529501797018184396635585" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:601118710069022780875170048048450989056" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:386941188628257663424843097089514799960" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:346444083200870846674922970627993244543" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:595453471047709956897917390611951640528" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:386977649186104430550144674935160076815" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:506960175587626360953949856090830346078" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:650421923961152809663611328437226735337" />
@@ -7002,6 +7065,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:401734928156837288024549692933721074664" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:351803335949821693886594749623956684252" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:484239681253333390943345191638064027109" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:402473769320350093279847470975830283758" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:655424650164529208536157699692254022385" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:543966204202265855806558820704869653479" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:403196307441698534726666899445532428136" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:346419950602531062535109992508712744523" />
@@ -7470,6 +7537,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:583046435754743974682221308756156002503" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:464110627838713903981805518066608485049" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:567030637053877228778869873739264179886" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:583937655533468806775667328625471897177" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:385027539542790744754466237482531198958" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:606594238521176155288056249182427909548" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:584176901528861404320235507538312438709" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:514771979704239282909248043833614830373" />
@@ -8582,6 +8653,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:346419950602531062535109992508712744523" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:456650845295887663689858591818444217482" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:346444083200870846674922970627993244543" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:619530183886911280040321514642868879475" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:347895906529787860107570844844502903761" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:632932875081654839787983228961183925474" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -8653,6 +8727,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:383235538963179080637225466725406064738" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:574314241787567870239052658450469390656" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:385027539542790744754466237482531198958" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:388928923202499162623484360807799693058" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" var_check="at least one" />
@@ -9263,6 +9340,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:655050369671376845772474379326894502684" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:661650337904605308601543931547991099778" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:655424650164529208536157699692254022385" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:632810524482413321529604680292852005858" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:655735071754070127683792302779296723067" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:348932034868745939564492940927810360567" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9771,6 +9851,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:543721367814292034320114699192740675907" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.37.2-1ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:543966204202265855806558820704869653479" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-0ubuntu8.1.22.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:545102500720253475743265759976822655555" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.2.5-0ubuntu0.22.10.3</linux:evr>
 		</linux:dpkginfo_state>
@@ -9900,6 +9983,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:594258213047904148101059702462797440330" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u362-ga-0ubuntu1~22.10</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:595453471047709956897917390611951640528" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.12-0ubuntu1~22.10.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:596307788526997556847337943409406700695" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.37.2-1ubuntu1.4</linux:evr>
 		</linux:dpkginfo_state>
@@ -9935,6 +10021,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:606433697347558874555384274227355127136" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.1.0-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:606594238521176155288056249182427909548" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:3.2.15-1ubuntu1.4</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:607019215449402018997291710315859561903" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.12.1+dfsg-3ubuntu0.1</linux:evr>
@@ -10989,6 +11078,13 @@
 			<value>libcap2-bin</value>
 			<value>libcap-dev</value>
 			<value>libpam-cap</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:632810524482413321529604680292852005858" version="1" datatype="string" comment="Interim Release">
+			<value>libcpdb-libs-backend-dev</value>
+			<value>libcpdb-libs-common1</value>
+			<value>libcpdb-libs-common-dev</value>
+			<value>libcpdb-libs-frontend1</value>
+			<value>libcpdb-libs-frontend-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:406820018270961378671442316543747704088" version="1" datatype="string" comment="Interim Release">
 			<value>libecpg6</value>
