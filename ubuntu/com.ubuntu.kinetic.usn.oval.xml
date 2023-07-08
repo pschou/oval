@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-07T06:37:47</oval:timestamp>
+		<oval:timestamp>2023-07-08T06:37:59</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6650,7 +6650,7 @@
 					<severity>High</severity>
 					<issued date="2023-06-29" />
 					<cve href="https://ubuntu.com/security/CVE-2023-2430" severity="high" public="20230508" usns="6192-1,6194-1">CVE-2023-2430</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-35788" severity="high" public="20230616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6192-1,6193-1,6194-1,6205-1,6206-1">CVE-2023-35788</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-35788" severity="high" public="20230616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6192-1,6193-1,6194-1,6205-1,6206-1,6212-1">CVE-2023-35788</cve>
 					<bug>https://launchpad.net/bugs/2023577</bug>
 					<bug>https://launchpad.net/bugs/2023220</bug>
 				</advisory>
@@ -6850,6 +6850,25 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:402473769320350093279847470975830283758" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62101000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6210-1 -- Doorkeeper vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6210-1" ref_url="https://ubuntu.com/security/notices/USN-6210-1" />
+				<reference source="CVE" ref_id="CVE-2023-34246" ref_url="https://ubuntu.com/security/CVE-2023-34246" />
+				<description>It was discovered that Doorkeeper incorrectly performed authorization checks for public clients that have been previous approved. An attacker could potentially exploit these in order to impersonate another user and obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-6210-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ruby-doorkeeper - 5.5.0-2ubuntu0.22.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-07-07" />
+					<cve href="https://ubuntu.com/security/CVE-2023-34246" severity="high" public="20230612" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" usns="6210-1">CVE-2023-34246</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:582408343535644207344106251413349084168" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -7533,6 +7552,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:582300065095851532372235820711139085865" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:402752517529175642304862632802003805416" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:444982661162058313750936394386919201389" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:582408343535644207344106251413349084168" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:545152933709857181148476437286221067148" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:408006955856828467227197612188212630827" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:583046435754743974682221308756156002503" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:464110627838713903981805518066608485049" />
@@ -9061,6 +9084,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:543820367141353982694782944176818629092" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:545152933709857181148476437286221067148" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:551669538261104706430694213434563259766" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:548812793062443868481629691027174713604" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:585466785436318029037773375125937347217" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9565,6 +9591,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:403376313332088357931763866020794589195" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.5-2ubuntu2.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:408006955856828467227197612188212630827" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.5.0-2ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:408010491091134064747590253832082972208" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.4-2ubuntu1.5</linux:evr>
@@ -11697,6 +11726,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:385524573855510265400251241115437789364" version="1" datatype="string" comment="Interim Release">
 			<value>rsync</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.kinetic:var:551669538261104706430694213434563259766" version="1" datatype="string" comment="Interim Release">
+			<value>ruby-doorkeeper</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.kinetic:var:419298908973427583423677670386234242031" version="1" datatype="string" comment="Interim Release">
 			<value>smarty3</value>

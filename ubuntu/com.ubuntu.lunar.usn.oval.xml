@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-07T04:37:55</oval:timestamp>
+		<oval:timestamp>2023-07-08T02:38:32</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1588,7 +1588,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2023-06-29" />
-					<cve href="https://ubuntu.com/security/CVE-2023-35788" severity="high" public="20230616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6192-1,6193-1,6194-1,6205-1,6206-1">CVE-2023-35788</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-35788" severity="high" public="20230616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6192-1,6193-1,6194-1,6205-1,6206-1,6212-1">CVE-2023-35788</cve>
 					<bug>https://launchpad.net/bugs/2023577</bug>
 					<bug>https://launchpad.net/bugs/2023220</bug>
 				</advisory>
@@ -1766,6 +1766,25 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:432636771441224748560607851802202960421" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62101000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6210-1 -- Doorkeeper vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6210-1" ref_url="https://ubuntu.com/security/notices/USN-6210-1" />
+				<reference source="CVE" ref_id="CVE-2023-34246" ref_url="https://ubuntu.com/security/CVE-2023-34246" />
+				<description>It was discovered that Doorkeeper incorrectly performed authorization checks for public clients that have been previous approved. An attacker could potentially exploit these in order to impersonate another user and obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-6210-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ruby-doorkeeper - 5.5.0-2ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-07-07" />
+					<cve href="https://ubuntu.com/security/CVE-2023-34246" severity="high" public="20230612" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" usns="6210-1">CVE-2023-34246</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:562263067652361540778350288356821784845" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1939,6 +1958,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:557398166627064359915583571855075535348" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:554788079714819304050104201883916011458" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:470342954299285084369674145895383942457" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:562263067652361540778350288356821784845" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:372057252574735736428504169140901139715" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:637856398245972960109706520794951857180" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:563671317185682668093536420452168290791" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:389876170745763369697793786916239917610" />
@@ -2219,6 +2242,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:365419531651179722916854549068212153972" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:356927798044726034788864252483957505799" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:372057252574735736428504169140901139715" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:551669538261104706430694213434563259766" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:373432241862831088019892402108775106431" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:608813474728275520816188863243014249408" var_check="at least one" />
@@ -2658,6 +2684,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:631576458945973011091868107282334482285" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:5.36.0-7ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:637856398245972960109706520794951857180" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.5.0-2ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:638268051382120490128540949586626363406" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.33-0ubuntu0.23.04.2</linux:evr>
@@ -3380,6 +3409,9 @@
 			<value>qemu-user-binfmt</value>
 			<value>qemu-user-static</value>
 			<value>qemu-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:551669538261104706430694213434563259766" version="1" datatype="string" comment="Interim Release">
+			<value>ruby-doorkeeper</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:664589296595890954682264760344785500453" version="1" datatype="string" comment="Interim Release">
 			<value>sniproxy</value>
