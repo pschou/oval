@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-08T06:37:59</oval:timestamp>
+		<oval:timestamp>2023-07-11T06:38:33</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5100,7 +5100,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-16" />
-					<cve href="https://ubuntu.com/security/CVE-2023-1999" severity="medium" public="20230508" usns="6078-1">CVE-2023-1999</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1999" severity="medium" public="20230508" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6078-1">CVE-2023-1999</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6332,7 +6332,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-15" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1,6168-2">CVE-2023-3138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6168-1,6168-2">CVE-2023-3138</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -6871,6 +6871,25 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:582408343535644207344106251413349084168" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62131000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6213-1 -- Ghostscript vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6213-1" ref_url="https://ubuntu.com/security/notices/USN-6213-1" />
+				<reference source="CVE" ref_id="CVE-2023-36664" ref_url="https://ubuntu.com/security/CVE-2023-36664" />
+				<description>It was discovered that Ghostscript incorrectly handled pipe devices. If a user or automated system were tricked into opening a specially crafted PDF file, a remote attacker could use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6213-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ghostscript - 9.56.1~dfsg1-0ubuntu3.2 ghostscript-doc - 9.56.1~dfsg1-0ubuntu3.2 ghostscript-x - 9.56.1~dfsg1-0ubuntu3.2 libgs9 - 9.56.1~dfsg1-0ubuntu3.2 libgs9-common - 9.56.1~dfsg1-0ubuntu3.2 libgs-dev - 9.56.1~dfsg1-0ubuntu3.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-10" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36664" severity="medium" public="20230625" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6213-1">CVE-2023-36664</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:438671986447256816326989592834153984513" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -7184,6 +7203,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:435883825542105461622816519742078046142" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:425010230811577040700448024551217622713" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:453192228869791375706577008693614735929" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:438671986447256816326989592834153984513" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:601446228871182905506785358048516626914" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:500553339501863980116780410829485766212" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:441724101480553069046504115035535520284" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:570400388988592495669358865276737481411" />
@@ -9231,6 +9254,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:601371360008711559958906160996351239233" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:396649571745544250920627186783716085766" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:601446228871182905506785358048516626914" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:672991627202033226294099080244856098190" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:602017538746031664696411261013716681457" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9780,6 +9806,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:498900455969628148886736510352564289596" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.11p3-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:500553339501863980116780410829485766212" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:9.56.1~dfsg1-0ubuntu3.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:501584147005766392719556495537545893050" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.2.7-0ubuntu0.22.10.1</linux:evr>

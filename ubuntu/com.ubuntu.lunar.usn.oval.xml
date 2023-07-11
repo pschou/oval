@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-08T02:38:32</oval:timestamp>
+		<oval:timestamp>2023-07-11T02:39:45</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -570,7 +570,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-16" />
-					<cve href="https://ubuntu.com/security/CVE-2023-1999" severity="medium" public="20230508" usns="6078-1">CVE-2023-1999</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1999" severity="medium" public="20230508" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6078-1">CVE-2023-1999</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1309,7 +1309,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-15" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" usns="6168-1,6168-2">CVE-2023-3138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3138" severity="medium" public="20230615" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6168-1,6168-2">CVE-2023-3138</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1785,6 +1785,25 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:562263067652361540778350288356821784845" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62131000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6213-1 -- Ghostscript vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6213-1" ref_url="https://ubuntu.com/security/notices/USN-6213-1" />
+				<reference source="CVE" ref_id="CVE-2023-36664" ref_url="https://ubuntu.com/security/CVE-2023-36664" />
+				<description>It was discovered that Ghostscript incorrectly handled pipe devices. If a user or automated system were tricked into opening a specially crafted PDF file, a remote attacker could use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6213-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ghostscript - 10.0.0~dfsg1-0ubuntu1.2 ghostscript-doc - 10.0.0~dfsg1-0ubuntu1.2 ghostscript-x - 10.0.0~dfsg1-0ubuntu1.2 libgs9-common - 10.0.0~dfsg1-0ubuntu1.2 libgs10 - 10.0.0~dfsg1-0ubuntu1.2 libgs10-common - 10.0.0~dfsg1-0ubuntu1.2 libgs-common - 10.0.0~dfsg1-0ubuntu1.2 libgs-dev - 10.0.0~dfsg1-0ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-10" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36664" severity="medium" public="20230625" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6213-1">CVE-2023-36664</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:444209650313743220616110398752839121645" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1830,6 +1849,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:443041749208416296483349341021974029704" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:615790763200592465878741261726361134661" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:444209650313743220616110398752839121645" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:560739699160583355660050779072969009818" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:475671861097240808635943565786293485034" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:449292035830410159207140005764541807872" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:636808824994027584244725259646559035299" />
@@ -2375,6 +2398,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:560569341047680124436017690897745031384" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:557821857881229214439117469643141107197" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:560739699160583355660050779072969009818" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:565300820761620758705720174759236337266" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:647353091145153490354902517037251178087" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2573,6 +2599,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:472852939679653399480368416613102811387" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.107-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:475671861097240808635943565786293485034" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:10.0.0~dfsg1-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-0ubuntu1.2</linux:evr>
