@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-11T02:39:45</oval:timestamp>
+		<oval:timestamp>2023-07-12T02:39:49</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1076,7 +1076,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-08" />
-					<cve href="https://ubuntu.com/security/CVE-2023-34416" severity="medium" public="20230607" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6143-1,6147-1">CVE-2023-34416</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34416" severity="medium" public="20230607" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6143-1,6147-1,6214-1">CVE-2023-34416</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1804,6 +1804,57 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:444209650313743220616110398752839121645" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62141000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6214-1 -- Thunderbird vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6214-1" ref_url="https://ubuntu.com/security/notices/USN-6214-1" />
+				<reference source="CVE" ref_id="CVE-2023-34414" ref_url="https://ubuntu.com/security/CVE-2023-34414" />
+				<reference source="CVE" ref_id="CVE-2023-34416" ref_url="https://ubuntu.com/security/CVE-2023-34416" />
+				<reference source="CVE" ref_id="CVE-2023-37201" ref_url="https://ubuntu.com/security/CVE-2023-37201" />
+				<reference source="CVE" ref_id="CVE-2023-37202" ref_url="https://ubuntu.com/security/CVE-2023-37202" />
+				<reference source="CVE" ref_id="CVE-2023-37207" ref_url="https://ubuntu.com/security/CVE-2023-37207" />
+				<reference source="CVE" ref_id="CVE-2023-37208" ref_url="https://ubuntu.com/security/CVE-2023-37208" />
+				<reference source="CVE" ref_id="CVE-2023-37211" ref_url="https://ubuntu.com/security/CVE-2023-37211" />
+				<description>Multiple security issues were discovered in Thunderbird. If a user were tricked into opening a specially crafted website in a browsing context, an attacker could potentially exploit these to cause a denial of service, obtain sensitive information, bypass security restrictions, cross-site tracing, or execute arbitrary code. (CVE-2023-34414, CVE-2023-34416, CVE-2023-37201, CVE-2023-37202, CVE-2023-37207, CVE-2023-37211)  P Umar Farooq discovered that Thunderbird did not properly provide warning when opening Diagcab files. If a user were tricked into opening a malicicous Diagcab file, an attacker could execute arbitrary code. (CVE-2023-37208)  Update Instructions:  Run `sudo pro fix USN-6214-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  thunderbird - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-dev - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-gnome-support - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-af - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ar - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ast - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-be - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-bg - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-bn - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-bn-bd - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-br - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ca - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-cak - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-cs - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-cy - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-da - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-de - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-dsb - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-el - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-en - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-en-gb - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-en-us - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-es - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-es-ar - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-es-es - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-et - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-eu - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-fa - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-fi - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-fr - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-fy - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-fy-nl - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ga - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ga-ie - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-gd - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-gl - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-he - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-hr - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-hsb - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-hu - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-hy - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-id - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-is - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-it - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ja - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ka - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-kab - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-kk - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ko - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-lt - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-lv - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-mk - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ms - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-nb - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-nb-no - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-nl - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-nn - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-nn-no - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-pa - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-pa-in - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-pl - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-pt - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-pt-br - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-pt-pt - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-rm - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ro - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ru - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-si - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-sk - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-sl - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-sq - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-sr - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-sv - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-sv-se - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ta - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-ta-lk - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-th - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-tr - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-uk - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-uz - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-vi - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-cn - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-hans - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-hant - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-tw - 1:102.13.0+build1-0ubuntu0.23.04.1 thunderbird-mozsymbols - 1:102.13.0+build1-0ubuntu0.23.04.1 xul-ext-calendar-timezones - 1:102.13.0+build1-0ubuntu0.23.04.1 xul-ext-gdata-provider - 1:102.13.0+build1-0ubuntu0.23.04.1 xul-ext-lightning - 1:102.13.0+build1-0ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-34414" severity="medium" public="20230607" cvss_score="3.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L" usns="6143-1,6214-1">CVE-2023-34414</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34416" severity="medium" public="20230607" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6143-1,6147-1,6214-1">CVE-2023-34416</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-37201" severity="medium" public="20230705" usns="6201-1,6214-1">CVE-2023-37201</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-37202" severity="medium" public="20230705" usns="6201-1,6214-1">CVE-2023-37202</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-37207" severity="medium" public="20230705" usns="6201-1,6214-1">CVE-2023-37207</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-37208" severity="medium" public="20230705" usns="6201-1,6214-1">CVE-2023-37208</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-37211" severity="medium" public="20230705" usns="6201-1,6214-1">CVE-2023-37211</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:623063629812928451698003433090911393892" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62171000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6217-1 -- .NET vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6217-1" ref_url="https://ubuntu.com/security/notices/USN-6217-1" />
+				<reference source="CVE" ref_id="CVE-2023-33170" ref_url="https://ubuntu.com/security/CVE-2023-33170" />
+				<description>McKee-Harris, Matt Cotterell, and Jack Moran discovered that .NET did not properly update account lockout maximum failed attempts. An attacker could possibly use this issue to bypass the security feature and attempt to guess more passwords for an account.  Update Instructions:  Run `sudo pro fix USN-6217-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-6.0 - 6.0.120-0ubuntu1~23.04.1 aspnetcore-runtime-7.0 - 7.0.109-0ubuntu1~23.04.1 aspnetcore-targeting-pack-6.0 - 6.0.120-0ubuntu1~23.04.1 aspnetcore-targeting-pack-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet6 - 6.0.120-0ubuntu1~23.04.1 dotnet7 - 7.0.109-0ubuntu1~23.04.1 dotnet-apphost-pack-6.0 - 6.0.120-0ubuntu1~23.04.1 dotnet-apphost-pack-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet-host - 6.0.120-0ubuntu1~23.04.1 dotnet-host-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet-hostfxr-6.0 - 6.0.120-0ubuntu1~23.04.1 dotnet-hostfxr-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet-runtime-6.0 - 6.0.120-0ubuntu1~23.04.1 dotnet-runtime-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet-sdk-6.0 - 6.0.120-0ubuntu1~23.04.1 dotnet-sdk-6.0-source-built-artifacts - 6.0.120-0ubuntu1~23.04.1 dotnet-sdk-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet-sdk-7.0-source-built-artifacts - 7.0.109-0ubuntu1~23.04.1 dotnet-targeting-pack-6.0 - 6.0.120-0ubuntu1~23.04.1 dotnet-targeting-pack-7.0 - 7.0.109-0ubuntu1~23.04.1 dotnet-templates-6.0 - 6.0.120-0ubuntu1~23.04.1 dotnet-templates-7.0 - 7.0.109-0ubuntu1~23.04.1 netstandard-targeting-pack-2.1 - 6.0.120-0ubuntu1~23.04.1 netstandard-targeting-pack-2.1-7.0 - 7.0.109-0ubuntu1~23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-33170" severity="medium" public="20230711" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6217-1">CVE-2023-33170</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:630633930725096383242842401173277296796" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:610615842732379577543669211619210768383" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2058,9 +2109,21 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:675778389701313331756355848774565328419" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:511615619183117874763412633216936248131" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:610615842732379577543669211619210768383" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:342337614281893621243909695674952942409" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:363086574793743462438180082086804878419" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:623063629812928451698003433090911393892" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:605329897951725872545325868160548962516" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:414304028715503598636887540589230251312" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:626790090218720741345011561483349415790" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:623947607985235992484587781524728480988" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:674412297708741997410216011421748869458" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:630633930725096383242842401173277296796" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:394410012985738144935252789384928059271" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:668825900287678579514326683057646623543" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:634466564750312572269212671457488610527" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:677089533244413040038089212898583953041" />
@@ -2245,6 +2308,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:340282715701341706614381084837504959167" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:639597497605160361505925821078970600749" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:342337614281893621243909695674952942409" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:622923979815955469455159812007479523223" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:349500376454327708245371588751948729502" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:413601659989219844510715265707178766686" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2289,6 +2355,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:389876170745763369697793786916239917610" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:462767693685172724946597401987429709877" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:394410012985738144935252789384928059271" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:400435015053257078907944463915272978168" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" var_check="at least one" />
@@ -2431,6 +2500,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:602772702567364262241447931873732436510" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:619530183886911280040321514642868879475" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:605329897951725872545325868160548962516" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2537,6 +2609,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:361418976635507405616505323987398839641" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.1000-4ubuntu3.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:363086574793743462438180082086804878419" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.109-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:363775275189524784442021222471717289516" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u372-ga~us1-0ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
@@ -2560,6 +2635,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:413218009342093141559616487019499559253" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:414304028715503598636887540589230251312" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:102.13.0+build1-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:421096958010281109099444993659740408063" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:27.0.0-0ubuntu1.2</linux:evr>
@@ -2737,6 +2815,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:665248192227623685997405351946711862514" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0~b4-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:668825900287678579514326683057646623543" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.120-0ubuntu1~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:669575076262800296007971942928597655656" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.40-2ubuntu4.1</linux:evr>
