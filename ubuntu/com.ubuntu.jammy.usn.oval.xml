@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-14T06:38:17</oval:timestamp>
+		<oval:timestamp>2023-07-15T06:39:34</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -14105,7 +14105,7 @@
 					<issued date="2023-07-06" />
 					<cve href="https://ubuntu.com/security/CVE-2022-4842" severity="medium" public="20230112" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="5978-1,6025-1,6040-1,6057-1,6079-1,6091-1,6096-1,6134-1,6206-1">CVE-2022-4842</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-0597" severity="medium" public="20230223" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6206-1">CVE-2023-0597</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-2124" severity="low" public="20230515" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6206-1,6224-1,6228-1">CVE-2023-2124</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2124" severity="low" public="20230515" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6206-1,6224-1,6228-1,6231-1">CVE-2023-2124</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-35788" severity="high" public="20230616" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6192-1,6193-1,6194-1,6205-1,6206-1,6212-1,6220-1,6223-1">CVE-2023-35788</cve>
 					<bug>https://launchpad.net/bugs/2023577</bug>
 					<bug>https://launchpad.net/bugs/2023220</bug>
@@ -14416,6 +14416,36 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:418392855469341681701345309740667348249" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62311000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6231-1 -- Linux kernel (OEM) vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6231-1" ref_url="https://ubuntu.com/security/notices/USN-6231-1" />
+				<reference source="CVE" ref_id="CVE-2023-2124" ref_url="https://ubuntu.com/security/CVE-2023-2124" />
+				<reference source="CVE" ref_id="CVE-2023-3090" ref_url="https://ubuntu.com/security/CVE-2023-3090" />
+				<reference source="CVE" ref_id="CVE-2023-31084" ref_url="https://ubuntu.com/security/CVE-2023-31084" />
+				<reference source="CVE" ref_id="CVE-2023-3141" ref_url="https://ubuntu.com/security/CVE-2023-3141" />
+				<reference source="CVE" ref_id="CVE-2023-3212" ref_url="https://ubuntu.com/security/CVE-2023-3212" />
+				<description>It was discovered that the XFS file system implementation in the Linux kernel did not properly perform metadata validation when mounting certain images. An attacker could use this to specially craft a file system image that, when mounted, could cause a denial of service (system crash). (CVE-2023-2124)  It was discovered that the IP-VLAN network driver for the Linux kernel did not properly initialize memory in some situations, leading to an out-of- bounds write vulnerability. An attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-3090)  It was discovered that the DVB Core driver in the Linux kernel did not properly handle locking events in certain situations. A local attacker could use this to cause a denial of service (kernel deadlock). (CVE-2023-31084)  It was discovered that the Ricoh R5C592 MemoryStick card reader driver in the Linux kernel contained a race condition during module unload, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-3141)  Yang Lan discovered that the GFS2 file system implementation in the Linux kernel could attempt to dereference a null pointer in some situations. An attacker could use this to construct a malicious GFS2 image that, when mounted and operated on, could cause a denial of service (system crash). (CVE-2023-3212)  Update Instructions:  Run `sudo pro fix USN-6231-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-buildinfo-6.1.0-1016-oem - 6.1.0-1016.16 linux-headers-6.1.0-1016-oem - 6.1.0-1016.16 linux-headers-oem-22.04c - 6.1.0.1016.16 linux-image-6.1.0-1016-oem - 6.1.0-1016.16 linux-image-oem-22.04c - 6.1.0.1016.16 linux-image-unsigned-6.1.0-1016-oem - 6.1.0-1016.16 linux-modules-6.1.0-1016-oem - 6.1.0-1016.16 linux-modules-ipu6-6.1.0-1016-oem - 6.1.0-1016.16 linux-modules-ipu6-oem-22.04c - 6.1.0.1016.16 linux-modules-ivsc-6.1.0-1016-oem - 6.1.0-1016.16 linux-modules-ivsc-oem-22.04c - 6.1.0.1016.16 linux-modules-iwlwifi-6.1.0-1016-oem - 6.1.0-1016.16 linux-modules-iwlwifi-oem-22.04c - 6.1.0.1016.16 linux-oem-6.1-headers-6.1.0-1016 - 6.1.0-1016.16 linux-oem-6.1-tools-6.1.0-1016 - 6.1.0-1016.16 linux-oem-6.1-tools-host - 6.1.0-1016.16 linux-oem-22.04c - 6.1.0.1016.16 linux-tools-6.1.0-1016-oem - 6.1.0-1016.16 linux-tools-oem-22.04c - 6.1.0.1016.16</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-07-14" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2124" severity="low" public="20230515" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6206-1,6224-1,6228-1,6231-1">CVE-2023-2124</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3090" severity="high" public="20230628" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6231-1">CVE-2023-3090</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31084" severity="low" public="20230424" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6231-1">CVE-2023-31084</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3141" severity="low" public="20230609" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" usns="6231-1">CVE-2023-3141</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3212" severity="low" public="20230623" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" usns="6231-1">CVE-2023-3212</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:346927831265247785324863624684202825797" comment="Long Term Support" />
+					<criterion test_ref="oval:com.ubuntu.jammy:tst:674354754752707390799168450506977680812" comment="Long Term Support" />
+				</criteria>
 			</criteria>
 		</definition>
 	</definitions>
@@ -15855,6 +15885,10 @@
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:672657361327867308709862765609424480296" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:387313830561826847864925889723885581542" />
 			<ind:state state_ref="oval:com.ubuntu.jammy:ste:354063128360734353091228228381586349208" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.jammy:tst:674354754752707390799168450506977680812" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.jammy:obj:412106240027202079650268875149882893176" />
+			<ind:state state_ref="oval:com.ubuntu.jammy:ste:417839060850391612071846775046673144085" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.jammy:tst:676027051980726647350915284855312543547" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.jammy:obj:496585065065011926895843003154234057900" />
@@ -17683,6 +17717,9 @@
 			<ind:var_ref>oval:com.ubuntu.jammy:var:547821259813676157304828027685285237943</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:411825510172545964364134519948160468011" version="1">
+			<ind:var_ref>oval:com.ubuntu.jammy:var:547821259813676157304828027685285237943</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.jammy:obj:412106240027202079650268875149882893176" version="1">
 			<ind:var_ref>oval:com.ubuntu.jammy:var:547821259813676157304828027685285237943</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.jammy:obj:412395506854418054481497994473624837111" version="1">
@@ -21448,6 +21485,9 @@
 		</ind:variable_state>
 		<ind:variable_state id="oval:com.ubuntu.jammy:ste:607189962273904104163141890005531399141" version="1">
 			<ind:value datatype="debian_evr_string" operation="less than">0:6.1.0-1015</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.jammy:ste:417839060850391612071846775046673144085" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.1.0-1016</ind:value>
 		</ind:variable_state>
 	</states>
 	<variables>
