@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-19T04:43:35</oval:timestamp>
+		<oval:timestamp>2023-07-20T06:42:29</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -13549,8 +13549,8 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-2156" severity="medium" public="20230509" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6173-1">CVE-2023-2156</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-2269" severity="medium" public="20230425" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" usns="6173-1">CVE-2023-2269</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-31436" severity="high" public="20230428" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6127-1,6130-1,6131-1,6132-1,6135-1,6149-1,6150-1,6162-1,6173-1,6175-1,6186-1,6222-1">CVE-2023-31436</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-32250" severity="medium" public="20230522" usns="6173-1">CVE-2023-32250</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-32254" severity="medium" public="20230523" usns="6173-1">CVE-2023-32254</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32250" severity="medium" public="20230522" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6173-1">CVE-2023-32250</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32254" severity="medium" public="20230523" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6173-1">CVE-2023-32254</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -14390,7 +14390,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-07-13" />
 					<cve href="https://ubuntu.com/security/CVE-2023-25399" severity="medium" public="20230706" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6226-1">CVE-2023-25399</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-29824" severity="medium" public="20230706" usns="6226-1">CVE-2023-29824</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29824" severity="medium" public="20230706" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6226-1">CVE-2023-29824</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -14484,6 +14484,109 @@
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:602754265169979381809511589991969680703" comment="Long Term Support" />
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:527401836151188755088369732353215979082" comment="Long Term Support" />
 				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6236-1 -- ConnMan vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6236-1" ref_url="https://ubuntu.com/security/notices/USN-6236-1" />
+				<reference source="CVE" ref_id="CVE-2021-26675" ref_url="https://ubuntu.com/security/CVE-2021-26675" />
+				<reference source="CVE" ref_id="CVE-2021-26676" ref_url="https://ubuntu.com/security/CVE-2021-26676" />
+				<reference source="CVE" ref_id="CVE-2021-33833" ref_url="https://ubuntu.com/security/CVE-2021-33833" />
+				<reference source="CVE" ref_id="CVE-2022-23096" ref_url="https://ubuntu.com/security/CVE-2022-23096" />
+				<reference source="CVE" ref_id="CVE-2022-23097" ref_url="https://ubuntu.com/security/CVE-2022-23097" />
+				<reference source="CVE" ref_id="CVE-2022-23098" ref_url="https://ubuntu.com/security/CVE-2022-23098" />
+				<reference source="CVE" ref_id="CVE-2022-32292" ref_url="https://ubuntu.com/security/CVE-2022-32292" />
+				<reference source="CVE" ref_id="CVE-2022-32293" ref_url="https://ubuntu.com/security/CVE-2022-32293" />
+				<reference source="CVE" ref_id="CVE-2023-28488" ref_url="https://ubuntu.com/security/CVE-2023-28488" />
+				<description>It was discovered that ConnMan could be made to write out of bounds. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 18.04 LTS and Ubuntu 20.04 LTS. (CVE-2021-26675, CVE-2021-33833)  It was discovered that ConnMan could be made to leak sensitive information via the gdhcp component. A remote attacker could possibly use this issue to obtain information for further exploitation. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2021-26676)  It was discovered that ConnMan could be made to read out of bounds. A remote attacker could possibly use this issue to case ConnMan to crash, resulting in a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-23096, CVE-2022-23097)  It was discovered that ConnMan could be made to run into an infinite loop. A remote attacker could possibly use this issue to cause ConnMan to consume resources and to stop operating, resulting in a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-23098)  It was discovered that ConnMan could be made to write out of bounds via the gweb component. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-32292)  It was discovered that ConnMan did not properly manage memory under certain circumstances. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-32293)  It was discovered that ConnMan could be made to write out of bounds via the gdhcp component. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-28488)  Update Instructions:  Run `sudo pro fix USN-6236-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  connman - 1.36-2.3ubuntu0.1 connman-dev - 1.36-2.3ubuntu0.1 connman-doc - 1.36-2.3ubuntu0.1 connman-vpn - 1.36-2.3ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2021-26675" severity="medium" public="20210209" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2021-26675</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-26676" severity="medium" public="20210209" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="6236-1">CVE-2021-26676</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-33833" severity="medium" public="20210609" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2021-33833</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-23096" severity="medium" public="20220128" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" usns="6236-1">CVE-2022-23096</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-23097" severity="medium" public="20220128" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" usns="6236-1">CVE-2022-23097</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-23098" severity="medium" public="20220128" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6236-1">CVE-2022-23098</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32292" severity="medium" public="20220803" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2022-32292</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32293" severity="medium" public="20220803" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2022-32293</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28488" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6236-1">CVE-2023-28488</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:596702314524091370806523152831381766794" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62371000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6237-1 -- curl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6237-1" ref_url="https://ubuntu.com/security/notices/USN-6237-1" />
+				<reference source="CVE" ref_id="CVE-2023-28321" ref_url="https://ubuntu.com/security/CVE-2023-28321" />
+				<reference source="CVE" ref_id="CVE-2023-28322" ref_url="https://ubuntu.com/security/CVE-2023-28322" />
+				<reference source="CVE" ref_id="CVE-2023-32001" ref_url="https://ubuntu.com/security/CVE-2023-32001" />
+				<description>Hiroki Kurosawa discovered that curl incorrectly handled validating certain certificate wildcards. A remote attacker could possibly use this issue to spoof certain website certificates using IDN hosts. (CVE-2023-28321)  Hiroki Kurosawa discovered that curl incorrectly handled callbacks when certain options are set by applications. This could cause applications using curl to misbehave, resulting in information disclosure, or a denial of service. (CVE-2023-28322)  It was discovered that curl incorrectly handled saving cookies to files. A local attacker could possibly use this issue to create or overwrite files. This issue only affected Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-32001)  Update Instructions:  Run `sudo pro fix USN-6237-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 7.81.0-1ubuntu1.11 libcurl3-gnutls - 7.81.0-1ubuntu1.11 libcurl3-nss - 7.81.0-1ubuntu1.11 libcurl4 - 7.81.0-1ubuntu1.11 libcurl4-doc - 7.81.0-1ubuntu1.11 libcurl4-gnutls-dev - 7.81.0-1ubuntu1.11 libcurl4-nss-dev - 7.81.0-1ubuntu1.11 libcurl4-openssl-dev - 7.81.0-1ubuntu1.11</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28321" severity="low" public="20230517" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6237-1">CVE-2023-28321</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28322" severity="low" public="20230517" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6237-1">CVE-2023-28322</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32001" severity="medium" public="20230719" usns="6237-1">CVE-2023-32001</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:554713109694583999627818621067152968407" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62372000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6237-2 -- curl regression</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6237-2" ref_url="https://ubuntu.com/security/notices/USN-6237-2" />
+				<description>USN-6237-1 fixed vulnerabilities in curl. The update caused a certificate wildcard handling regression on Ubuntu 22.04 LTS. This update fixes the problem.  We apologize for the inconvenience.  Original advisory details:   Hiroki Kurosawa discovered that curl incorrectly handled validating certain  certificate wildcards. A remote attacker could possibly use this issue to  spoof certain website certificates using IDN hosts. (CVE-2023-28321)    Hiroki Kurosawa discovered that curl incorrectly handled callbacks when  certain options are set by applications. This could cause applications  using curl to misbehave, resulting in information disclosure, or a denial  of service. (CVE-2023-28322)    It was discovered that curl incorrectly handled saving cookies to files. A  local attacker could possibly use this issue to create or overwrite files.  This issue only affected Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-32001)  Update Instructions:  Run `sudo pro fix USN-6237-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 7.81.0-1ubuntu1.13 libcurl3-gnutls - 7.81.0-1ubuntu1.13 libcurl3-nss - 7.81.0-1ubuntu1.13 libcurl4 - 7.81.0-1ubuntu1.13 libcurl4-doc - 7.81.0-1ubuntu1.13 libcurl4-gnutls-dev - 7.81.0-1ubuntu1.13 libcurl4-nss-dev - 7.81.0-1ubuntu1.13 libcurl4-openssl-dev - 7.81.0-1ubuntu1.13</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2023-07-19" />
+					<bug>https://launchpad.net/bugs/2028170</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:349186598273167113131535411811845857082" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62381000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6238-1 -- Samba vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6238-1" ref_url="https://ubuntu.com/security/notices/USN-6238-1" />
+				<reference source="CVE" ref_id="CVE-2022-2127" ref_url="https://ubuntu.com/security/CVE-2022-2127" />
+				<reference source="CVE" ref_id="CVE-2023-3347" ref_url="https://ubuntu.com/security/CVE-2023-3347" />
+				<reference source="CVE" ref_id="CVE-2023-34966" ref_url="https://ubuntu.com/security/CVE-2023-34966" />
+				<reference source="CVE" ref_id="CVE-2023-34967" ref_url="https://ubuntu.com/security/CVE-2023-34967" />
+				<reference source="CVE" ref_id="CVE-2023-34968" ref_url="https://ubuntu.com/security/CVE-2023-34968" />
+				<description>It was discovered that Samba incorrectly handled Winbind NTLM authentication responses. An attacker could possibly use this issue to cause Samba to crash, resulting in a denial of service. (CVE-2022-2127)  Andreas Schneider discovered that Samba incorrectly enforced SMB2 packet signing. A remote attacker could possibly use this issue to obtain or modify sensitive information. This issue only affected Ubuntu 23.04. (CVE-2023-3347)  Florent Saudel and Arnaud Gatignolof discovered that Samba incorrectly handled certain Spotlight requests. A remote attacker could possibly use this issue to cause Samba to consume resources, leading to a denial of service. (CVE-2023-34966, CVE-2023-34967)  Ralph Boehme and Stefan Metzmacher discovered that Samba incorrectly handled paths returned by Spotlight requests. A remote attacker could possibly use this issue to obtain sensitive information. (CVE-2023-34968)  Update Instructions:  Run `sudo pro fix USN-6238-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ctdb - 2:4.15.13+dfsg-0ubuntu1.2 libnss-winbind - 2:4.15.13+dfsg-0ubuntu1.2 libpam-winbind - 2:4.15.13+dfsg-0ubuntu1.2 libsmbclient - 2:4.15.13+dfsg-0ubuntu1.2 libsmbclient-dev - 2:4.15.13+dfsg-0ubuntu1.2 libwbclient0 - 2:4.15.13+dfsg-0ubuntu1.2 libwbclient-dev - 2:4.15.13+dfsg-0ubuntu1.2 python3-samba - 2:4.15.13+dfsg-0ubuntu1.2 registry-tools - 2:4.15.13+dfsg-0ubuntu1.2 samba - 2:4.15.13+dfsg-0ubuntu1.2 samba-common - 2:4.15.13+dfsg-0ubuntu1.2 samba-common-bin - 2:4.15.13+dfsg-0ubuntu1.2 samba-dev - 2:4.15.13+dfsg-0ubuntu1.2 samba-dsdb-modules - 2:4.15.13+dfsg-0ubuntu1.2 samba-libs - 2:4.15.13+dfsg-0ubuntu1.2 samba-testsuite - 2:4.15.13+dfsg-0ubuntu1.2 samba-vfs-modules - 2:4.15.13+dfsg-0ubuntu1.2 smbclient - 2:4.15.13+dfsg-0ubuntu1.2 winbind - 2:4.15.13+dfsg-0ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-2127" severity="medium" public="20230719" usns="6238-1">CVE-2022-2127</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3347" severity="medium" public="20230719" usns="6238-1">CVE-2023-3347</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34966" severity="medium" public="20230719" usns="6238-1">CVE-2023-34966</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34967" severity="medium" public="20230719" usns="6238-1">CVE-2023-34967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34968" severity="medium" public="20230719" usns="6238-1">CVE-2023-34968</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:564980422374499530372967954032200673558" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -16028,6 +16131,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:557689427341057453240744680891419034441" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:554391139923870317954981011091594746598" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349186598273167113131535411811845857082" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:431375990381277285528255295368674865815" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:364810195173718629099127297954559649626" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349227160825471495745514504773860786735" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:509050179095743637833672196017505292690" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:528543516515119840083274508424418385197" />
@@ -16904,6 +17011,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:583396654068566734020347804994877919836" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:459943298284179271513896781535126236131" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:554713109694583999627818621067152968407" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:576586147746875535925945305114502844689" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:476571900464175455219883837954828961800" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:555643731398911297981517435204732262957" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:606076970200087769362491567979589368991" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:473385944783196326355910255928739556323" />
@@ -16951,6 +17062,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:564808291398033938865449569540153173814" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:413342095100950854977540006790868092672" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:379156976046766934249339966504894476188" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:564980422374499530372967954032200673558" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:445514549874207774715594754899822536923" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:491827060904873630249330908225276900918" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:565503574640989084628248323463245753989" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:423501764771950623369624303073740252056" />
@@ -17123,6 +17238,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:596652612064426977018105679859437638349" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:518858066728233316066401604923113912997" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:411486573940390155473735741467213374349" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:596702314524091370806523152831381766794" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:634659270894689974774365044933900426541" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:516436406001663959306775015835137339850" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:597266464582740754800697665974931068048" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:386367329596956860751666912285359453021" />
@@ -18863,6 +18982,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:431168368886799551185347826111691370896" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:381347141197525450292422633174954276521" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:431375990381277285528255295368674865815" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:369047092955101027660664114064609179138" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:431640448667917788005157907019098083814" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:388396572789060602698819596150426140890" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18931,6 +19053,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:444502348340293158487445873350454817754" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:555391297397109921145808253545194740483" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:445514549874207774715594754899822536923" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:350419950355911379309566850337179704778" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:445997118821509425926310874846063908891" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:444165862507806386026143799925666168524" var_check="at least one" />
@@ -19451,6 +19576,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:576340192259568401924822492989990141549" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:576586147746875535925945305114502844689" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:369047092955101027660664114064609179138" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:578104247696003414637796596699372144342" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:431616919203190711323193757560838269545" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19612,6 +19740,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:634376844405253577348581386606767007034" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:421436436887303087546070541778198398654" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:634659270894689974774365044933900426541" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:591761972781067101927422908322743808902" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:635527916583531138215620240064762715816" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:587071683873390085545532294459405662008" var_check="at least one" />
@@ -20118,6 +20249,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:364732658572487095609594876412663104035" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:5.2-1ubuntu4.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:364810195173718629099127297954559649626" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.81.0-1ubuntu1.13</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:366456237722955809214675625649335315041" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -20517,6 +20651,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:476342958889003632734724450417679809493" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.1-1ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:476571900464175455219883837954828961800" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.81.0-1ubuntu1.11</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:477348307614246291692971278740244028249" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.18-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -20582,6 +20719,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:491545909734252585202742298840270731585" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.18-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:491827060904873630249330908225276900918" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:4.15.13+dfsg-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:491830019452384948341759450726482732804" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.0-1ubuntu0.1</linux:evr>
@@ -20663,6 +20803,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:515928962001785598760576991884897775086" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.108-0ubuntu1~22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:516436406001663959306775015835137339850" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.36-2.3ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:516502975667827142775304829732948073386" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20220809.0ubuntu0.22.04.1</linux:evr>
@@ -21817,6 +21960,12 @@
 		<constant_variable id="oval:com.ubuntu.jammy:var:651713234194667183069530376083451011957" version="1" datatype="string" comment="Long Term Support">
 			<value>libcommons-net-java</value>
 			<value>libcommons-net-java-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:591761972781067101927422908322743808902" version="1" datatype="string" comment="Long Term Support">
+			<value>connman</value>
+			<value>connman-dev</value>
+			<value>connman-doc</value>
+			<value>connman-vpn</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:619530183886911280040321514642868879475" version="1" datatype="string" comment="Long Term Support">
 			<value>containerd</value>

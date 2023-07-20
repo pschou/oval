@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-19T06:39:21</oval:timestamp>
+		<oval:timestamp>2023-07-20T02:37:19</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1997,6 +1997,92 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6236-1 -- ConnMan vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6236-1" ref_url="https://ubuntu.com/security/notices/USN-6236-1" />
+				<reference source="CVE" ref_id="CVE-2021-26675" ref_url="https://ubuntu.com/security/CVE-2021-26675" />
+				<reference source="CVE" ref_id="CVE-2021-26676" ref_url="https://ubuntu.com/security/CVE-2021-26676" />
+				<reference source="CVE" ref_id="CVE-2021-33833" ref_url="https://ubuntu.com/security/CVE-2021-33833" />
+				<reference source="CVE" ref_id="CVE-2022-23096" ref_url="https://ubuntu.com/security/CVE-2022-23096" />
+				<reference source="CVE" ref_id="CVE-2022-23097" ref_url="https://ubuntu.com/security/CVE-2022-23097" />
+				<reference source="CVE" ref_id="CVE-2022-23098" ref_url="https://ubuntu.com/security/CVE-2022-23098" />
+				<reference source="CVE" ref_id="CVE-2022-32292" ref_url="https://ubuntu.com/security/CVE-2022-32292" />
+				<reference source="CVE" ref_id="CVE-2022-32293" ref_url="https://ubuntu.com/security/CVE-2022-32293" />
+				<reference source="CVE" ref_id="CVE-2023-28488" ref_url="https://ubuntu.com/security/CVE-2023-28488" />
+				<description>It was discovered that ConnMan could be made to write out of bounds. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 18.04 LTS and Ubuntu 20.04 LTS. (CVE-2021-26675, CVE-2021-33833)  It was discovered that ConnMan could be made to leak sensitive information via the gdhcp component. A remote attacker could possibly use this issue to obtain information for further exploitation. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2021-26676)  It was discovered that ConnMan could be made to read out of bounds. A remote attacker could possibly use this issue to case ConnMan to crash, resulting in a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-23096, CVE-2022-23097)  It was discovered that ConnMan could be made to run into an infinite loop. A remote attacker could possibly use this issue to cause ConnMan to consume resources and to stop operating, resulting in a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-23098)  It was discovered that ConnMan could be made to write out of bounds via the gweb component. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-32292)  It was discovered that ConnMan did not properly manage memory under certain circumstances. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-32293)  It was discovered that ConnMan could be made to write out of bounds via the gdhcp component. A remote attacker could possibly use this issue to cause ConnMan to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-28488)  Update Instructions:  Run `sudo pro fix USN-6236-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  connman - 1.41-2ubuntu0.23.04.1 connman-dev - 1.41-2ubuntu0.23.04.1 connman-doc - 1.41-2ubuntu0.23.04.1 connman-vpn - 1.41-2ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2021-26675" severity="medium" public="20210209" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2021-26675</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-26676" severity="medium" public="20210209" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="6236-1">CVE-2021-26676</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-33833" severity="medium" public="20210609" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2021-33833</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-23096" severity="medium" public="20220128" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" usns="6236-1">CVE-2022-23096</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-23097" severity="medium" public="20220128" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" usns="6236-1">CVE-2022-23097</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-23098" severity="medium" public="20220128" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6236-1">CVE-2022-23098</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32292" severity="medium" public="20220803" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2022-32292</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-32293" severity="medium" public="20220803" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6236-1">CVE-2022-32293</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28488" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6236-1">CVE-2023-28488</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:668492146179176675205367707956577505928" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62371000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6237-1 -- curl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6237-1" ref_url="https://ubuntu.com/security/notices/USN-6237-1" />
+				<reference source="CVE" ref_id="CVE-2023-28321" ref_url="https://ubuntu.com/security/CVE-2023-28321" />
+				<reference source="CVE" ref_id="CVE-2023-28322" ref_url="https://ubuntu.com/security/CVE-2023-28322" />
+				<reference source="CVE" ref_id="CVE-2023-32001" ref_url="https://ubuntu.com/security/CVE-2023-32001" />
+				<description>Hiroki Kurosawa discovered that curl incorrectly handled validating certain certificate wildcards. A remote attacker could possibly use this issue to spoof certain website certificates using IDN hosts. (CVE-2023-28321)  Hiroki Kurosawa discovered that curl incorrectly handled callbacks when certain options are set by applications. This could cause applications using curl to misbehave, resulting in information disclosure, or a denial of service. (CVE-2023-28322)  It was discovered that curl incorrectly handled saving cookies to files. A local attacker could possibly use this issue to create or overwrite files. This issue only affected Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-32001)  Update Instructions:  Run `sudo pro fix USN-6237-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 7.88.1-8ubuntu2.1 libcurl3-gnutls - 7.88.1-8ubuntu2.1 libcurl3-nss - 7.88.1-8ubuntu2.1 libcurl4 - 7.88.1-8ubuntu2.1 libcurl4-doc - 7.88.1-8ubuntu2.1 libcurl4-gnutls-dev - 7.88.1-8ubuntu2.1 libcurl4-nss-dev - 7.88.1-8ubuntu2.1 libcurl4-openssl-dev - 7.88.1-8ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28321" severity="low" public="20230517" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6237-1">CVE-2023-28321</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28322" severity="low" public="20230517" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6237-1">CVE-2023-28322</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32001" severity="medium" public="20230719" usns="6237-1">CVE-2023-32001</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:506415390341758647727499057016467017067" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62381000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6238-1 -- Samba vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6238-1" ref_url="https://ubuntu.com/security/notices/USN-6238-1" />
+				<reference source="CVE" ref_id="CVE-2022-2127" ref_url="https://ubuntu.com/security/CVE-2022-2127" />
+				<reference source="CVE" ref_id="CVE-2023-3347" ref_url="https://ubuntu.com/security/CVE-2023-3347" />
+				<reference source="CVE" ref_id="CVE-2023-34966" ref_url="https://ubuntu.com/security/CVE-2023-34966" />
+				<reference source="CVE" ref_id="CVE-2023-34967" ref_url="https://ubuntu.com/security/CVE-2023-34967" />
+				<reference source="CVE" ref_id="CVE-2023-34968" ref_url="https://ubuntu.com/security/CVE-2023-34968" />
+				<description>It was discovered that Samba incorrectly handled Winbind NTLM authentication responses. An attacker could possibly use this issue to cause Samba to crash, resulting in a denial of service. (CVE-2022-2127)  Andreas Schneider discovered that Samba incorrectly enforced SMB2 packet signing. A remote attacker could possibly use this issue to obtain or modify sensitive information. This issue only affected Ubuntu 23.04. (CVE-2023-3347)  Florent Saudel and Arnaud Gatignolof discovered that Samba incorrectly handled certain Spotlight requests. A remote attacker could possibly use this issue to cause Samba to consume resources, leading to a denial of service. (CVE-2023-34966, CVE-2023-34967)  Ralph Boehme and Stefan Metzmacher discovered that Samba incorrectly handled paths returned by Spotlight requests. A remote attacker could possibly use this issue to obtain sensitive information. (CVE-2023-34968)  Update Instructions:  Run `sudo pro fix USN-6238-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ctdb - 2:4.17.7+dfsg-1ubuntu1.1 ldb-tools - 2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1 libldb2 - 2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1 libldb-dev - 2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1 libnss-winbind - 2:4.17.7+dfsg-1ubuntu1.1 libpam-winbind - 2:4.17.7+dfsg-1ubuntu1.1 libsmbclient - 2:4.17.7+dfsg-1ubuntu1.1 libsmbclient-dev - 2:4.17.7+dfsg-1ubuntu1.1 libwbclient0 - 2:4.17.7+dfsg-1ubuntu1.1 libwbclient-dev - 2:4.17.7+dfsg-1ubuntu1.1 python3-ldb - 2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1 python3-ldb-dev - 2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1 python3-samba - 2:4.17.7+dfsg-1ubuntu1.1 registry-tools - 2:4.17.7+dfsg-1ubuntu1.1 samba - 2:4.17.7+dfsg-1ubuntu1.1 samba-ad-dc - 2:4.17.7+dfsg-1ubuntu1.1 samba-ad-provision - 2:4.17.7+dfsg-1ubuntu1.1 samba-common - 2:4.17.7+dfsg-1ubuntu1.1 samba-common-bin - 2:4.17.7+dfsg-1ubuntu1.1 samba-dev - 2:4.17.7+dfsg-1ubuntu1.1 samba-dsdb-modules - 2:4.17.7+dfsg-1ubuntu1.1 samba-libs - 2:4.17.7+dfsg-1ubuntu1.1 samba-testsuite - 2:4.17.7+dfsg-1ubuntu1.1 samba-vfs-modules - 2:4.17.7+dfsg-1ubuntu1.1 smbclient - 2:4.17.7+dfsg-1ubuntu1.1 winbind - 2:4.17.7+dfsg-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-2127" severity="medium" public="20230719" usns="6238-1">CVE-2022-2127</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3347" severity="medium" public="20230719" usns="6238-1">CVE-2023-3347</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34966" severity="medium" public="20230719" usns="6238-1">CVE-2023-34966</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34967" severity="medium" public="20230719" usns="6238-1">CVE-2023-34967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34968" severity="medium" public="20230719" usns="6238-1">CVE-2023-34968</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:648133316194719359750511196905332320539" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:468389956967606090729949823605887988811" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2063,6 +2149,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:475524243831533136292604508647727668389" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:669575076262800296007971942928597655656" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:468389956967606090729949823605887988811" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:494118099222781017226232244798473917371" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:390889756482129943165456677031065628872" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:480044331442520886815318525840002970333" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:404971941064352171339237812896010111936" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:440925420380037307949984277852794659817" />
@@ -2082,6 +2172,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:498120418775172600879240356587475710539" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:676197135767053450216873362551934191565" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:439431949982645793871727329999150084566" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:506415390341758647727499057016467017067" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:418773945989710892505077137210265864910" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:481022220059628817348528687143698966949" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:506868667194064685570931934429358509283" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:457821651061278857357807859586240904161" />
@@ -2291,6 +2385,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:673189866653187617837796725243809159908" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:611535532910727321900630007221154194151" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:648133316194719359750511196905332320539" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:643118982111524930091380101539189693341" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:459831051191092154196792888598986023091" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:649920525959579056833284258562609350556" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:436723754817502711525905233669264182590" />
@@ -2326,6 +2424,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:666191225829359823842021851617228747140" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:359722264369191091381741938940242637374" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:609635823432161508117421212680219680765" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:668492146179176675205367707956577505928" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:546348142748181773095469567024610651379" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:462374039545330440804651857188307616993" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:669792901279702951755722982929733939305" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:452639633216921246751793140035261812003" />
@@ -2601,6 +2703,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:417381660045401151218873456517383565991" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:613963896704320177719534197252616542257" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:418773945989710892505077137210265864910" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:369047092955101027660664114064609179138" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:420991222414800381199158482671801966425" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:440864092123719113830621289059451862115" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2649,6 +2754,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:493436667532578796089495279251952533543" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:494118099222781017226232244798473917371" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:397679483041233973050492162414049049073" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:496667864567992781266894007909388515534" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:440864092123719113830621289059451862115" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2687,6 +2795,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:482182190162826536948763508793484615849" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:546348142748181773095469567024610651379" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:591761972781067101927422908322743808902" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:551580261303038586579308762655176738773" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:616750128513085384738145288941780407707" var_check="at least one" />
@@ -2753,6 +2864,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:642888260927115569576893441796537629141" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:442404279670168474096330847838651321822" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:643118982111524930091380101539189693341" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:600081929208916044455628935835493122332" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:645248179875684170413570681236314551772" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:642253770072746283015284565506446217955" var_check="at least one" />
@@ -2854,6 +2968,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:380611009634603810197490289350664797109" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.40.1-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:390889756482129943165456677031065628872" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:4.17.7+dfsg-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:395727078902879029211039621779907031685" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2893,6 +3010,12 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:440925420380037307949984277852794659817" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-0ubuntu2.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:459831051191092154196792888598986023091" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:462374039545330440804651857188307616993" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.41-2ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:463163075023922912443218364778968252087" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.3-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2913,6 +3036,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:475671861097240808635943565786293485034" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.0.0~dfsg1-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:481022220059628817348528687143698966949" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.88.1-8ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-0ubuntu1.2</linux:evr>
@@ -3235,6 +3361,12 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" version="1" datatype="string" comment="Interim Release">
 			<value>cloud-init</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:591761972781067101927422908322743808902" version="1" datatype="string" comment="Interim Release">
+			<value>connman</value>
+			<value>connman-dev</value>
+			<value>connman-doc</value>
+			<value>connman-vpn</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:619530183886911280040321514642868879475" version="1" datatype="string" comment="Interim Release">
 			<value>containerd</value>
 			<value>golang-github-containerd-containerd-dev</value>
@@ -3247,6 +3379,29 @@
 			<value>libcpdb-frontend2</value>
 			<value>libcpdb-frontend-dev</value>
 			<value>libcpdb-libs-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:397679483041233973050492162414049049073" version="1" datatype="string" comment="Interim Release">
+			<value>ctdb</value>
+			<value>libnss-winbind</value>
+			<value>libpam-winbind</value>
+			<value>libsmbclient</value>
+			<value>libsmbclient-dev</value>
+			<value>libwbclient0</value>
+			<value>libwbclient-dev</value>
+			<value>python3-samba</value>
+			<value>registry-tools</value>
+			<value>samba</value>
+			<value>samba-ad-dc</value>
+			<value>samba-ad-provision</value>
+			<value>samba-common</value>
+			<value>samba-common-bin</value>
+			<value>samba-dev</value>
+			<value>samba-dsdb-modules</value>
+			<value>samba-libs</value>
+			<value>samba-testsuite</value>
+			<value>samba-vfs-modules</value>
+			<value>smbclient</value>
+			<value>winbind</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" version="1" datatype="string" comment="Interim Release">
 			<value>cups</value>
@@ -3266,6 +3421,16 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:677986168806553959527500872728429187230" version="1" datatype="string" comment="Interim Release">
 			<value>cups-filters</value>
 			<value>cups-filters-core-drivers</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:369047092955101027660664114064609179138" version="1" datatype="string" comment="Interim Release">
+			<value>curl</value>
+			<value>libcurl3-gnutls</value>
+			<value>libcurl3-nss</value>
+			<value>libcurl4</value>
+			<value>libcurl4-doc</value>
+			<value>libcurl4-gnutls-dev</value>
+			<value>libcurl4-nss-dev</value>
+			<value>libcurl4-openssl-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:356927798044726034788864252483957505799" version="1" datatype="string" comment="Interim Release">
 			<value>etcd-client</value>
@@ -3430,6 +3595,13 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:450013526743882901364490129588669353865" version="1" datatype="string" comment="Interim Release">
 			<value>jhead</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:600081929208916044455628935835493122332" version="1" datatype="string" comment="Interim Release">
+			<value>ldb-tools</value>
+			<value>libldb2</value>
+			<value>libldb-dev</value>
+			<value>python3-ldb</value>
+			<value>python3-ldb-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:679896267291198622015234250028432648225" version="1" datatype="string" comment="Interim Release">
 			<value>lib32ncurses6</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-19T06:39:22</oval:timestamp>
+		<oval:timestamp>2023-07-20T04:39:13</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6995,7 +6995,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-07-13" />
 					<cve href="https://ubuntu.com/security/CVE-2023-25399" severity="medium" public="20230706" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" usns="6226-1">CVE-2023-25399</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-29824" severity="medium" public="20230706" usns="6226-1">CVE-2023-29824</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29824" severity="medium" public="20230706" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6226-1">CVE-2023-29824</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -7023,11 +7023,66 @@
 				<criterion test_ref="oval:com.ubuntu.kinetic:tst:648474671794417537898171388973522732510" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62371000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6237-1 -- curl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6237-1" ref_url="https://ubuntu.com/security/notices/USN-6237-1" />
+				<reference source="CVE" ref_id="CVE-2023-28321" ref_url="https://ubuntu.com/security/CVE-2023-28321" />
+				<reference source="CVE" ref_id="CVE-2023-28322" ref_url="https://ubuntu.com/security/CVE-2023-28322" />
+				<reference source="CVE" ref_id="CVE-2023-32001" ref_url="https://ubuntu.com/security/CVE-2023-32001" />
+				<description>Hiroki Kurosawa discovered that curl incorrectly handled validating certain certificate wildcards. A remote attacker could possibly use this issue to spoof certain website certificates using IDN hosts. (CVE-2023-28321)  Hiroki Kurosawa discovered that curl incorrectly handled callbacks when certain options are set by applications. This could cause applications using curl to misbehave, resulting in information disclosure, or a denial of service. (CVE-2023-28322)  It was discovered that curl incorrectly handled saving cookies to files. A local attacker could possibly use this issue to create or overwrite files. This issue only affected Ubuntu 22.10, and Ubuntu 23.04. (CVE-2023-32001)  Update Instructions:  Run `sudo pro fix USN-6237-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 7.85.0-1ubuntu0.6 libcurl3-gnutls - 7.85.0-1ubuntu0.6 libcurl3-nss - 7.85.0-1ubuntu0.6 libcurl4 - 7.85.0-1ubuntu0.6 libcurl4-doc - 7.85.0-1ubuntu0.6 libcurl4-gnutls-dev - 7.85.0-1ubuntu0.6 libcurl4-nss-dev - 7.85.0-1ubuntu0.6 libcurl4-openssl-dev - 7.85.0-1ubuntu0.6</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28321" severity="low" public="20230517" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6237-1">CVE-2023-28321</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28322" severity="low" public="20230517" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6237-1">CVE-2023-28322</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32001" severity="medium" public="20230719" usns="6237-1">CVE-2023-32001</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:586163742888894325379025764745206852609" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.kinetic:def:62381000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6238-1 -- Samba vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6238-1" ref_url="https://ubuntu.com/security/notices/USN-6238-1" />
+				<reference source="CVE" ref_id="CVE-2022-2127" ref_url="https://ubuntu.com/security/CVE-2022-2127" />
+				<reference source="CVE" ref_id="CVE-2023-3347" ref_url="https://ubuntu.com/security/CVE-2023-3347" />
+				<reference source="CVE" ref_id="CVE-2023-34966" ref_url="https://ubuntu.com/security/CVE-2023-34966" />
+				<reference source="CVE" ref_id="CVE-2023-34967" ref_url="https://ubuntu.com/security/CVE-2023-34967" />
+				<reference source="CVE" ref_id="CVE-2023-34968" ref_url="https://ubuntu.com/security/CVE-2023-34968" />
+				<description>It was discovered that Samba incorrectly handled Winbind NTLM authentication responses. An attacker could possibly use this issue to cause Samba to crash, resulting in a denial of service. (CVE-2022-2127)  Andreas Schneider discovered that Samba incorrectly enforced SMB2 packet signing. A remote attacker could possibly use this issue to obtain or modify sensitive information. This issue only affected Ubuntu 23.04. (CVE-2023-3347)  Florent Saudel and Arnaud Gatignolof discovered that Samba incorrectly handled certain Spotlight requests. A remote attacker could possibly use this issue to cause Samba to consume resources, leading to a denial of service. (CVE-2023-34966, CVE-2023-34967)  Ralph Boehme and Stefan Metzmacher discovered that Samba incorrectly handled paths returned by Spotlight requests. A remote attacker could possibly use this issue to obtain sensitive information. (CVE-2023-34968)  Update Instructions:  Run `sudo pro fix USN-6238-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ctdb - 2:4.16.8+dfsg-0ubuntu1.2 ldb-tools - 2:2.5.3+samba4.16.8-0ubuntu1.2 libldb2 - 2:2.5.3+samba4.16.8-0ubuntu1.2 libldb-dev - 2:2.5.3+samba4.16.8-0ubuntu1.2 libnss-winbind - 2:4.16.8+dfsg-0ubuntu1.2 libpam-winbind - 2:4.16.8+dfsg-0ubuntu1.2 libsmbclient - 2:4.16.8+dfsg-0ubuntu1.2 libsmbclient-dev - 2:4.16.8+dfsg-0ubuntu1.2 libwbclient0 - 2:4.16.8+dfsg-0ubuntu1.2 libwbclient-dev - 2:4.16.8+dfsg-0ubuntu1.2 python3-ldb - 2:2.5.3+samba4.16.8-0ubuntu1.2 python3-ldb-dev - 2:2.5.3+samba4.16.8-0ubuntu1.2 python3-samba - 2:4.16.8+dfsg-0ubuntu1.2 registry-tools - 2:4.16.8+dfsg-0ubuntu1.2 samba - 2:4.16.8+dfsg-0ubuntu1.2 samba-common - 2:4.16.8+dfsg-0ubuntu1.2 samba-common-bin - 2:4.16.8+dfsg-0ubuntu1.2 samba-dev - 2:4.16.8+dfsg-0ubuntu1.2 samba-dsdb-modules - 2:4.16.8+dfsg-0ubuntu1.2 samba-libs - 2:4.16.8+dfsg-0ubuntu1.2 samba-testsuite - 2:4.16.8+dfsg-0ubuntu1.2 samba-vfs-modules - 2:4.16.8+dfsg-0ubuntu1.2 smbclient - 2:4.16.8+dfsg-0ubuntu1.2 winbind - 2:4.16.8+dfsg-0ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-19" />
+					<cve href="https://ubuntu.com/security/CVE-2022-2127" severity="medium" public="20230719" usns="6238-1">CVE-2022-2127</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3347" severity="medium" public="20230719" usns="6238-1">CVE-2023-3347</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34966" severity="medium" public="20230719" usns="6238-1">CVE-2023-34966</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34967" severity="medium" public="20230719" usns="6238-1">CVE-2023-34967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34968" severity="medium" public="20230719" usns="6238-1">CVE-2023-34968</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:398286368286292761267020006212419233848" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.kinetic:tst:340799904723577028790374790088893026415" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340499498503463749287911111550013607061" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:497528212926504456260253792104178642418" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:543344727895240568098569074253547515008" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:340799904723577028790374790088893026415" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:448323146282596711476809027084524712265" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:492375266492840430376028981483234173477" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:343819957904330533958987371177867963355" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:573020249918937726261215046390421245200" />
@@ -7228,6 +7283,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:393216997219189162194602209696309404971" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:549130903323579732329233941980949200063" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:637243811766507316063954449592917422133" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:398286368286292761267020006212419233848" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:566598951049972289096670359532070672317" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:499878416257453049191187183833510450942" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:400058316083720114644185602306816946467" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:499808351222502118848011223248256352243" />
@@ -7752,6 +7811,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:585678038890750161864209239355280132127" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:558332042553017261258196468072058505451" />
 			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:585818498474144127372842039851379530874" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:586163742888894325379025764745206852609" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:533441306926251724154025431104752932615" />
+			<linux:state state_ref="oval:com.ubuntu.kinetic:ste:505242927536534810273135891492738525731" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.kinetic:tst:587155357467761330705405124373743750104" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.kinetic:obj:360932585236350529495178144133540614616" />
@@ -9079,6 +9142,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:448322590706267855199872330546841915557" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:661650337904605308601543931547991099778" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:448323146282596711476809027084524712265" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:350419950355911379309566850337179704778" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:449865145185243121547098556402205335544" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:636369014381794125336828387229712238832" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9268,6 +9334,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:532778493178489219726293027172440619335" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:484803454117842083622926662816868581385" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:533441306926251724154025431104752932615" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:369047092955101027660664114064609179138" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:534646002223225930362503036614342763833" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:395017485598878437029069494594920865422" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9327,6 +9396,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:564726611774085521191370691482035630472" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:674341325541302055486697690245920563356" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:566598951049972289096670359532070672317" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.kinetic:var:600081929208916044455628935835493122332" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.kinetic:obj:568099647530292458863056457291864657022" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.kinetic:var:598671916527175224885839660112995743588" var_check="at least one" />
@@ -9989,6 +10061,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:492160688551198701031663107181322756088" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9.3-0ubuntu1.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:492375266492840430376028981483234173477" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:4.16.8+dfsg-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:494582438038923597977047479678843042741" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.8-2ubuntu0.22.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -9997,6 +10072,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:498900455969628148886736510352564289596" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.11p3-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:499878416257453049191187183833510450942" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:2.5.3+samba4.16.8-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:500553339501863980116780410829485766212" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.56.1~dfsg1-0ubuntu3.2</linux:evr>
@@ -10012,6 +10090,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:505178250279277005014888599927448700263" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.4.0-4ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:505242927536534810273135891492738525731" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.85.0-1ubuntu0.6</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.kinetic:ste:505513486733513657986779390633552391775" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:10.6.12-0ubuntu0.22.10.1</linux:evr>
