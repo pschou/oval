@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-20T06:42:29</oval:timestamp>
+		<oval:timestamp>2023-07-21T06:40:47</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -14589,6 +14589,25 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:564980422374499530372967954032200673558" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62391000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6239-1 -- ECDSA Util vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6239-1" ref_url="https://ubuntu.com/security/notices/USN-6239-1" />
+				<reference source="CVE" ref_id="CVE-2022-24884" ref_url="https://ubuntu.com/security/CVE-2022-24884" />
+				<description>It was discovered that ECDSA Util did not properly verify certain  signature values. An attacker could possibly use this issue to bypass signature  verification.  Update Instructions:  Run `sudo pro fix USN-6239-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ecdsautils - 0.3.2+git20151018-2+deb10u1build0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-20" />
+					<cve href="https://ubuntu.com/security/CVE-2022-24884" severity="medium" public="20220506" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6239-1">CVE-2022-24884</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:396565266191010439139644649994865104609" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -16326,6 +16345,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:396109139751489948986179805832085598910" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:625617259948957552046287634499922008445" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:362326250262627558561798821922003012899" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:396565266191010439139644649994865104609" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:531140463990550020349524366996263877390" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:379967967666264912912962099776132925658" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:397513835999653466155049531927065271007" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:561002507524385687300621824626977457819" />
@@ -19375,6 +19398,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:529294248409807086366147225007702256410" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:478915262643859826662066393621737783685" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:531140463990550020349524366996263877390" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:668561857120314937514452039512303410410" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:531509682072750411269627685771635849958" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -20290,6 +20316,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:379156976046766934249339966504894476188" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:590-1ubuntu0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:379967967666264912912962099776132925658" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.3.2+git20151018-2+deb10u1build0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:380324281827677629173443550097370795488" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:4.15.13+dfsg-0ubuntu1.1</linux:evr>
@@ -22302,6 +22331,9 @@
 			<value>libext2fs-dev</value>
 			<value>libss2</value>
 			<value>logsave</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:668561857120314937514452039512303410410" version="1" datatype="string" comment="Long Term Support">
+			<value>ecdsautils</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:635694599695396736577133819360849827337" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<value>editorconfig</value>
