@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-07-21T06:40:47</oval:timestamp>
+		<oval:timestamp>2023-07-25T06:41:50</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11584,7 +11584,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9,6241-1">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -11603,7 +11603,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9,6241-1">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -11622,7 +11622,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9,6241-1">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -11641,7 +11641,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-05-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9">CVE-2023-2088</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9,6241-1">CVE-2023-2088</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -14608,6 +14608,48 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:396565266191010439139644649994865104609" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62411000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6241-1 -- OpenStack vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6241-1" ref_url="https://ubuntu.com/security/notices/USN-6241-1" />
+				<reference source="CVE" ref_id="CVE-2023-2088" ref_url="https://ubuntu.com/security/CVE-2023-2088" />
+				<description>Jan Wasilewski and Gorka Eguileor discovered that OpenStack incorrectly handled deleted volume attachments. An authenticated user or attacker could possibly use this issue to gain access to sensitive information.  This update may require configuration changes, please see the upstream advisory and the other links below for more information:  https://security.openstack.org/ossa/OSSA-2023-003.html https://discourse.ubuntu.com/t/cve-2023-2088-for-charmed-openstack/37051 https://lists.openstack.org/pipermail/openstack-discuss/2023-July/034439.html  Update Instructions:  Run `sudo pro fix USN-6241-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cinder-api - 2:20.2.0-0ubuntu1.1 cinder-backup - 2:20.2.0-0ubuntu1.1 cinder-common - 2:20.2.0-0ubuntu1.1 cinder-scheduler - 2:20.2.0-0ubuntu1.1 cinder-volume - 2:20.2.0-0ubuntu1.1 ironic-api - 1:20.1.0-0ubuntu1.1 ironic-common - 1:20.1.0-0ubuntu1.1 ironic-conductor - 1:20.1.0-0ubuntu1.1 nova-ajax-console-proxy - 3:25.1.1-0ubuntu1.1 nova-api - 3:25.1.1-0ubuntu1.1 nova-api-metadata - 3:25.1.1-0ubuntu1.1 nova-api-os-compute - 3:25.1.1-0ubuntu1.1 nova-api-os-volume - 3:25.1.1-0ubuntu1.1 nova-cells - 3:25.1.1-0ubuntu1.1 nova-common - 3:25.1.1-0ubuntu1.1 nova-compute - 3:25.1.1-0ubuntu1.1 nova-compute-ironic - 3:25.1.1-0ubuntu1.1 nova-compute-kvm - 3:25.1.1-0ubuntu1.1 nova-compute-libvirt - 3:25.1.1-0ubuntu1.1 nova-compute-lxc - 3:25.1.1-0ubuntu1.1 nova-compute-qemu - 3:25.1.1-0ubuntu1.1 nova-compute-vmware - 3:25.1.1-0ubuntu1.1 nova-compute-xen - 3:25.1.1-0ubuntu1.1 nova-conductor - 3:25.1.1-0ubuntu1.1 nova-doc - 3:25.1.1-0ubuntu1.1 nova-novncproxy - 3:25.1.1-0ubuntu1.1 nova-scheduler - 3:25.1.1-0ubuntu1.1 nova-serialproxy - 3:25.1.1-0ubuntu1.1 nova-spiceproxy - 3:25.1.1-0ubuntu1.1 nova-volume - 3:25.1.1-0ubuntu1.1 os-brick-common - 5.2.2-0ubuntu1.2 python3-cinder - 2:20.2.0-0ubuntu1.1 python3-glance-store - 3.0.0-0ubuntu1.3 python3-ironic - 1:20.1.0-0ubuntu1.1 python3-nova - 3:25.1.1-0ubuntu1.1 python3-os-brick - 5.2.2-0ubuntu1.2 python-glance-store-doc - 3.0.0-0ubuntu1.3 python-os-brick-doc - 5.2.2-0ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2088" severity="medium" public="20230510" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" usns="6073-1,6073-2,6073-3,6073-4,6073-5,6073-6,6073-7,6073-8,6073-9,6241-1">CVE-2023-2088</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:586607897477879104914836610426489011517" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:608079486764967828856797287145536887362" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:375361110929575689600037705200412272218" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:655879335648183891107966740342017519766" comment="Long Term Support" />
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:463691936138814196169808042024324842495" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62421000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6242-1 -- OpenSSH vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6242-1" ref_url="https://ubuntu.com/security/notices/USN-6242-1" />
+				<reference source="CVE" ref_id="CVE-2023-38408" ref_url="https://ubuntu.com/security/CVE-2023-38408" />
+				<description>It was discovered that OpenSSH incorrectly handled loading certain PKCS#11 providers. If a user forwarded their ssh-agent to an untrusted system, a remote attacker could possibly use this issue to load arbitrary libraries from the user's system and execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6242-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openssh-client - 1:8.9p1-3ubuntu0.3 openssh-server - 1:8.9p1-3ubuntu0.3 openssh-sftp-server - 1:8.9p1-3ubuntu0.3 openssh-tests - 1:8.9p1-3ubuntu0.3 ssh - 1:8.9p1-3ubuntu0.3 ssh-askpass-gnome - 1:8.9p1-3ubuntu0.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-07-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38408" severity="medium" public="20230719" usns="6242-1">CVE-2023-38408</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:603121553047321516819863346519445800325" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -16278,6 +16320,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:616112491061116234386173785934969062631" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:630266356692933004203006932159332993091" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:375361110929575689600037705200412272218" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:364789857771296325787554325693760233601" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:677369857672556333799783520085714894527" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:375500601836051139670993624969523154214" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:508076951469060759671924893420532093664" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:538926726776520656429870636940953574439" />
@@ -16689,6 +16735,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:463153281292029769477913870578029010383" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:521644241828993331419614300176844424185" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:491830019452384948341759450726482732804" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:463691936138814196169808042024324842495" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:651243113020675476553822219902328582010" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:345061691113089511887295319950964311959" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:467139757375283864540864788194698989429" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:507864065119442906175325289196519334509" />
@@ -17222,6 +17272,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:491877148125353788328919582839840180043" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:353751811136284974083049482648496344468" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:586607897477879104914836610426489011517" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:662157174239893232894346181172034971135" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:356523168896788992494642580771355955747" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:587245673533970553726586351358346357144" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:441706428241172308357608121829320705207" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:585943418462386654726966593756268861544" />
@@ -17306,6 +17360,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:363935852368822659161465463394702299664" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:360351256724449723750928728914278010510" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:603121553047321516819863346519445800325" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:579549149783946792084336553253243593167" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:633451664348600903087602872572746685848" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:603281753319780926337659079493135634418" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:484965900995085096641604024979378926294" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:596302720495955820212692766515499767716" />
@@ -17329,6 +17387,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:607363397207868239070496411442320629795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:660548516094851582919387208403609966192" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:555185428365366254757394728629793211794" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:608079486764967828856797287145536887362" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:481098969928209596897244446948772409025" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:417791063174986714208646935204748429120" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:608577080511386912562812635721823104788" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:502080142757430792845081137407432860769" />
@@ -17573,6 +17635,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:655059672946065524016012440896970243659" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:585050587542929589823762607545804923964" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:418355506606063083119979468810446765414" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:655879335648183891107966740342017519766" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:534983856516387835027731786109804546587" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:488236309522834194305752969946235717308" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:658306484686472405440798452528392873765" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:348414968066750659227381421734528837602" />
@@ -18792,6 +18858,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:364366734181715820915105740052826827834" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:619530183886911280040321514642868879475" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:364789857771296325787554325693760233601" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:391274111027580069412726315909292973834" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:366083152596213770709540797423722057542" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:627694009990393533400593027627028137067" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19212,6 +19281,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:480551953270630929616135982655895514534" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:394923162567161559517091607406662679992" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:481098969928209596897244446948772409025" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:626503625561135631910252101663952100832" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:481866160587718058061377984566669225330" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:626503625561135631910252101663952100832" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19419,6 +19491,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:533249924875791524951062402292428825581" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:408019076043703375396268029880674563829" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:534983856516387835027731786109804546587" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:371286693089090051076131807913871929287" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:535652101290186542238905028141514903832" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:506738638706304706796852153035862256665" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19607,6 +19682,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:578104247696003414637796596699372144342" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:579549149783946792084336553253243593167" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:636076809523348240659493257603584809785" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:581870717349543179258586321434084330378" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:574314241787567870239052658450469390656" var_check="at least one" />
@@ -19797,6 +19875,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:650008735162249010642289766069729269712" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:366565435611811368692839885380603451273" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:651243113020675476553822219902328582010" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:608813474728275520816188863243014249408" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:654677350082273029529174009681087714900" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:422581452294917504256834491688927761032" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19817,6 +19898,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:661281355189620131207509638858730922560" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:634231034089593835927699205015532946929" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:662157174239893232894346181172034971135" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:354614036916658092354151873823385857457" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:663170432551279580905309571306802864372" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:482593255751296273100713960532940627866" var_check="at least one" />
@@ -20185,6 +20269,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:344422657847914294463752692892530696334" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:345061691113089511887295319950964311959" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.2.2-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:345441142658927161212258552072563711364" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:25.1.0-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
@@ -20235,6 +20322,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:355083168745459295029068479887854963223" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.11.1+dfsg-1ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:356523168896788992494642580771355955747" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:20.1.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:356968253741881747893156354206561516344" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.3+7-0ubuntu0.22.04.1</linux:evr>
@@ -20460,6 +20550,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:417312719756630487587885761347909656268" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.10.6-1~22.04.2ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:417791063174986714208646935204748429120" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:20.2.0-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:418137663315251389545043448837054025962" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:42.2-0ubuntu2.1</linux:evr>
@@ -20724,6 +20817,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:488143279812548457205738918422196683671" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.1.4-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:488236309522834194305752969946235717308" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:25.1.1-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:488681628307627208396196259896159215289" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4.0-11ubuntu2.1</linux:evr>
@@ -21181,6 +21277,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:631887823086727668196622508498244968029" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.1-2ubuntu0.22.04.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:633451664348600903087602872572746685848" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:8.9p1-3ubuntu0.3</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:633532688105610081000010792237745458231" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.44-1ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -21342,6 +21441,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:676733607502838191159572842088256948084" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">7:4.4.2-0ubuntu0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:677369857672556333799783520085714894527" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.0-0ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:677506757561005118801091598199503421594" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.39-3ubuntu0.1</linux:evr>
@@ -22972,6 +23074,12 @@
 		<constant_variable id="oval:com.ubuntu.jammy:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Long Term Support">
 			<value>intel-microcode</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:354614036916658092354151873823385857457" version="1" datatype="string" comment="Long Term Support">
+			<value>ironic-api</value>
+			<value>ironic-common</value>
+			<value>ironic-conductor</value>
+			<value>python3-ironic</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:610167835331407453956144989635031509211" version="1" datatype="string" comment="Long Term Support">
 			<value>isag</value>
 			<value>sysstat</value>
@@ -24083,6 +24191,14 @@
 			<value>openjdk-19-jre-headless</value>
 			<value>openjdk-19-jre-zero</value>
 			<value>openjdk-19-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:636076809523348240659493257603584809785" version="1" datatype="string" comment="Long Term Support">
+			<value>openssh-client</value>
+			<value>openssh-server</value>
+			<value>openssh-sftp-server</value>
+			<value>openssh-tests</value>
+			<value>ssh</value>
+			<value>ssh-askpass-gnome</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:415918315883041350288423114039477002345" version="1" datatype="string" comment="Long Term Support">
 			<value>openssl-ibmca</value>
