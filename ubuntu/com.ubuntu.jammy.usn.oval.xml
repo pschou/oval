@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-01T06:38:49</oval:timestamp>
+		<oval:timestamp>2023-08-02T06:40:16</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15010,17 +15010,17 @@
 				<reference source="CVE" ref_id="CVE-2023-22045" ref_url="https://ubuntu.com/security/CVE-2023-22045" />
 				<reference source="CVE" ref_id="CVE-2023-22049" ref_url="https://ubuntu.com/security/CVE-2023-22049" />
 				<reference source="CVE" ref_id="CVE-2023-25193" ref_url="https://ubuntu.com/security/CVE-2023-25193" />
-				<description>Motoyasu Saburi discovered that OpenJDK incorrectly handled special characters in file name parameters. An attacker could possibly use this issue to insert, edit or obtain sensitive information. This issue only affected OpenJDK 11, OpenJDK 17 and OpenJDK 20. (CVE-2023-22006)  Eirik Bjørsnøs discovered that OpenJDK incorrectly handled certain ZIP archives. An attacker could possibly use this issue to cause a denial of service. This issue only affected OpenJDK 11, OpenJDK 17 and OpenJDK 20. (CVE-2023-22036)  David Stancu discovered that OpenJDK had a flaw in the AES cipher implementation. An attacker could possibly use this issue to obtain sensitive information. This issue only affected OpenJDK 11, OpenJDK 17 and OpenJDK 20. (CVE-2023-22041)  Zhiqiang Zang discovered that OpenJDK incorrectly handled array accesses when using the binary '%' operator. An attacker could possibly use this issue to obtain sensitive information. This issue only affected OpenJDK 17 and OpenJDK 20. (CVE-2023-22044)  Zhiqiang Zang discovered that OpenJDK incorrectly handled array accesses. An attacker could possibly use this issue to obtain sensitive information. (CVE-2023-22045)  It was discovered that OpenJDK incorrectly sanitized URIs strings. An attacker could possibly use this issue to insert, edit or obtain sensitive information. (CVE-2023-22049)  It was discovered that OpenJDK incorrectly handled certain glyphs. An attacker could possibly use this issue to cause a denial of service. This issue only affected OpenJDK 11, OpenJDK 17 and OpenJDK 20. (CVE-2023-25193)  Update Instructions:  Run `sudo pro fix USN-6263-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-8-demo - 8u382-ga-1~22.04.1 openjdk-8-doc - 8u382-ga-1~22.04.1 openjdk-8-jdk - 8u382-ga-1~22.04.1 openjdk-8-jdk-headless - 8u382-ga-1~22.04.1 openjdk-8-jre - 8u382-ga-1~22.04.1 openjdk-8-jre-headless - 8u382-ga-1~22.04.1 openjdk-8-jre-zero - 8u382-ga-1~22.04.1 openjdk-8-source - 8u382-ga-1~22.04.1 openjdk-11-demo - 11.0.20+8-1ubuntu1~22.04 openjdk-11-doc - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jdk - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jdk-headless - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jre - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jre-headless - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jre-zero - 11.0.20+8-1ubuntu1~22.04 openjdk-11-source - 11.0.20+8-1ubuntu1~22.04 openjdk-17-demo - 17.0.8+7-1~22.04 openjdk-17-doc - 17.0.8+7-1~22.04 openjdk-17-jdk - 17.0.8+7-1~22.04 openjdk-17-jdk-headless - 17.0.8+7-1~22.04 openjdk-17-jre - 17.0.8+7-1~22.04 openjdk-17-jre-headless - 17.0.8+7-1~22.04 openjdk-17-jre-zero - 17.0.8+7-1~22.04 openjdk-17-source - 17.0.8+7-1~22.04</description>
+				<description>Motoyasu Saburi discovered that OpenJDK incorrectly handled special characters in file name parameters. An attacker could possibly use this issue to insert, edit or obtain sensitive information. This issue only affected OpenJDK 11 and OpenJDK 17. (CVE-2023-22006)  Eirik Bjørsnøs discovered that OpenJDK incorrectly handled certain ZIP archives. An attacker could possibly use this issue to cause a denial of service. This issue only affected OpenJDK 11 and OpenJDK 17. (CVE-2023-22036)  David Stancu discovered that OpenJDK had a flaw in the AES cipher implementation. An attacker could possibly use this issue to obtain sensitive information. This issue only affected OpenJDK 11 and OpenJDK 17. (CVE-2023-22041)  Zhiqiang Zang discovered that OpenJDK incorrectly handled array accesses when using the binary '%' operator. An attacker could possibly use this issue to obtain sensitive information. This issue only affected OpenJDK 17. (CVE-2023-22044)  Zhiqiang Zang discovered that OpenJDK incorrectly handled array accesses. An attacker could possibly use this issue to obtain sensitive information. (CVE-2023-22045)  It was discovered that OpenJDK incorrectly sanitized URIs strings. An attacker could possibly use this issue to insert, edit or obtain sensitive information. (CVE-2023-22049)  It was discovered that OpenJDK incorrectly handled certain glyphs. An attacker could possibly use this issue to cause a denial of service. This issue only affected OpenJDK 11 and OpenJDK 17. (CVE-2023-25193)  Update Instructions:  Run `sudo pro fix USN-6263-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-8-demo - 8u382-ga-1~22.04.1 openjdk-8-doc - 8u382-ga-1~22.04.1 openjdk-8-jdk - 8u382-ga-1~22.04.1 openjdk-8-jdk-headless - 8u382-ga-1~22.04.1 openjdk-8-jre - 8u382-ga-1~22.04.1 openjdk-8-jre-headless - 8u382-ga-1~22.04.1 openjdk-8-jre-zero - 8u382-ga-1~22.04.1 openjdk-8-source - 8u382-ga-1~22.04.1 openjdk-11-demo - 11.0.20+8-1ubuntu1~22.04 openjdk-11-doc - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jdk - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jdk-headless - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jre - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jre-headless - 11.0.20+8-1ubuntu1~22.04 openjdk-11-jre-zero - 11.0.20+8-1ubuntu1~22.04 openjdk-11-source - 11.0.20+8-1ubuntu1~22.04 openjdk-17-demo - 17.0.8+7-1~22.04 openjdk-17-doc - 17.0.8+7-1~22.04 openjdk-17-jdk - 17.0.8+7-1~22.04 openjdk-17-jdk-headless - 17.0.8+7-1~22.04 openjdk-17-jre - 17.0.8+7-1~22.04 openjdk-17-jre-headless - 17.0.8+7-1~22.04 openjdk-17-jre-zero - 17.0.8+7-1~22.04 openjdk-17-source - 17.0.8+7-1~22.04</description>
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
-					<issued date="2023-07-31" />
-					<cve href="https://ubuntu.com/security/CVE-2023-22006" severity="medium" public="20230718" cvss_score="3.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N">CVE-2023-22006</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-22036" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L">CVE-2023-22036</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-22041" severity="medium" public="20230718" cvss_score="5.1" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N">CVE-2023-22041</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-22044" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N">CVE-2023-22044</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-22045" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N">CVE-2023-22045</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-22049" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N">CVE-2023-22049</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-25193" severity="low" public="20230204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">CVE-2023-25193</cve>
+					<issued date="2023-08-01" />
+					<cve href="https://ubuntu.com/security/CVE-2023-22006" severity="medium" public="20230718" cvss_score="3.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N" usns="6263-1">CVE-2023-22006</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22036" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" usns="6263-1">CVE-2023-22036</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22041" severity="medium" public="20230718" cvss_score="5.1" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="6263-1">CVE-2023-22041</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22044" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6263-1">CVE-2023-22044</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22045" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6263-1">CVE-2023-22045</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22049" severity="medium" public="20230718" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" usns="6263-1">CVE-2023-22049</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-25193" severity="low" public="20230204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6263-1">CVE-2023-25193</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -15056,6 +15056,25 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:674840965557814610360539304289258116466" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62661000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6266-1 -- librsvg vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6266-1" ref_url="https://ubuntu.com/security/notices/USN-6266-1" />
+				<reference source="CVE" ref_id="CVE-2023-38633" ref_url="https://ubuntu.com/security/CVE-2023-38633" />
+				<description>Zac Sims discovered that librsvg incorrectly handled decoding URLs. A remote attacker could possibly use this issue to read arbitrary files by using an include element.  Update Instructions:  Run `sudo pro fix USN-6266-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-rsvg-2.0 - 2.52.5+dfsg-3ubuntu0.2 librsvg2-2 - 2.52.5+dfsg-3ubuntu0.2 librsvg2-bin - 2.52.5+dfsg-3ubuntu0.2 librsvg2-common - 2.52.5+dfsg-3ubuntu0.2 librsvg2-dev - 2.52.5+dfsg-3ubuntu0.2 librsvg2-doc - 2.52.5+dfsg-3ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-01" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38633" severity="medium" public="20230722" usns="6266-1">CVE-2023-38633</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:449279781984999945112753261684999551217" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -17163,6 +17182,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:449064911827634936081430046201493417432" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:513532182810209351047155846910981423900" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:432316596258567787815985297847912452682" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:449279781984999945112753261684999551217" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:593234103620830774319475339198525766255" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:503570701006729958761961906995694600957" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:450956547127684225238425003522039749042" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:537648824905743538050446300436563545917" />
@@ -20318,6 +20341,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:590971402456694888472061498092426972672" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:440864092123719113830621289059451862115" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:593234103620830774319475339198525766255" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:483891127166958577711120301965879973703" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:593605507820984749225623449304526786939" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:349333159796834818421530341955582928143" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -21532,6 +21558,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:503082588284952107082987672794442993489" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.113-0ubuntu1~22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:503570701006729958761961906995694600957" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.52.5+dfsg-3ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:505245124554936438825228021317739778257" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:8.2.3995-1ubuntu2.8</linux:evr>
@@ -23749,6 +23778,14 @@
 			<value>libpoppler-qt5-1</value>
 			<value>libpoppler-qt5-dev</value>
 			<value>poppler-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:483891127166958577711120301965879973703" version="1" datatype="string" comment="Long Term Support">
+			<value>gir1.2-rsvg-2.0</value>
+			<value>librsvg2-2</value>
+			<value>librsvg2-bin</value>
+			<value>librsvg2-common</value>
+			<value>librsvg2-dev</value>
+			<value>librsvg2-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:348932034868745939564492940927810360567" version="1" datatype="string" comment="Long Term Support">
 			<value>git</value>
