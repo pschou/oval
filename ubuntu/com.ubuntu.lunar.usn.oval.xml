@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-02T02:40:19</oval:timestamp>
+		<oval:timestamp>2023-08-03T04:40:16</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2072,10 +2072,10 @@
 					<severity>Medium</severity>
 					<issued date="2023-07-19" />
 					<cve href="https://ubuntu.com/security/CVE-2022-2127" severity="medium" public="20230719" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6238-1">CVE-2022-2127</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-3347" severity="medium" public="20230719" usns="6238-1">CVE-2023-3347</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-34966" severity="medium" public="20230719" usns="6238-1">CVE-2023-34966</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-34967" severity="medium" public="20230719" usns="6238-1">CVE-2023-34967</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-34968" severity="medium" public="20230719" usns="6238-1">CVE-2023-34968</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3347" severity="medium" public="20230719" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6238-1">CVE-2023-3347</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34966" severity="medium" public="20230719" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6238-1">CVE-2023-34966</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34967" severity="medium" public="20230719" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" usns="6238-1">CVE-2023-34967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34968" severity="medium" public="20230719" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6238-1">CVE-2023-34968</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -2137,7 +2137,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-07-24" />
-					<cve href="https://ubuntu.com/security/CVE-2023-38408" severity="medium" public="20230719" usns="6242-1,6242-2">CVE-2023-38408</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38408" severity="medium" public="20230719" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6242-1,6242-2">CVE-2023-38408</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -2365,6 +2365,46 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:563350931913822997128879078127761870109" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62681000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6268-1 -- GStreamer Base Plugins vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6268-1" ref_url="https://ubuntu.com/security/notices/USN-6268-1" />
+				<reference source="CVE" ref_id="CVE-2023-37327" ref_url="https://ubuntu.com/security/CVE-2023-37327" />
+				<reference source="CVE" ref_id="CVE-2023-37328" ref_url="https://ubuntu.com/security/CVE-2023-37328" />
+				<description>It was discovered that GStreamer Base Plugins incorrectly handled certain FLAC image tags. A remote attacker could use this issue to cause GStreamer Base Plugins to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-37327)  It was discovered that GStreamer Base Plugins incorrectly handled certain subtitles. A remote attacker could use this issue to cause GStreamer Base Plugins to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-37328)  Update Instructions:  Run `sudo pro fix USN-6268-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-gst-plugins-base-1.0 - 1.22.1-1ubuntu1.1 gstreamer1.0-alsa - 1.22.1-1ubuntu1.1 gstreamer1.0-gl - 1.22.1-1ubuntu1.1 gstreamer1.0-plugins-base - 1.22.1-1ubuntu1.1 gstreamer1.0-plugins-base-apps - 1.22.1-1ubuntu1.1 gstreamer1.0-x - 1.22.1-1ubuntu1.1 libgstreamer-gl1.0-0 - 1.22.1-1ubuntu1.1 libgstreamer-plugins-base1.0-0 - 1.22.1-1ubuntu1.1 libgstreamer-plugins-base1.0-dev - 1.22.1-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-37327" severity="medium" public="20230731" usns="6268-1,6269-1">CVE-2023-37327</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-37328" severity="medium" public="20230731" usns="6268-1">CVE-2023-37328</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:385974480980465334165928217538071321113" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62691000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6269-1 -- GStreamer Good Plugins vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6269-1" ref_url="https://ubuntu.com/security/notices/USN-6269-1" />
+				<reference source="CVE" ref_id="CVE-2023-37327" ref_url="https://ubuntu.com/security/CVE-2023-37327" />
+				<description>It was discovered that GStreamer Good Plugins incorrectly handled certain FLAC image tags. A remote attacker could use this issue to cause GStreamer Good Plugins to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-37327)  Update Instructions:  Run `sudo pro fix USN-6269-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gstreamer1.0-gtk3 - 1.22.1-1ubuntu1.2 gstreamer1.0-plugins-good - 1.22.1-1ubuntu1.2 gstreamer1.0-pulseaudio - 1.22.1-1ubuntu1.2 gstreamer1.0-qt5 - 1.22.1-1ubuntu1.2 gstreamer1.0-qt6 - 1.22.1-1ubuntu1.2 libgstreamer-plugins-good1.0-0 - 1.22.1-1ubuntu1.2 libgstreamer-plugins-good1.0-dev - 1.22.1-1ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-37327" severity="medium" public="20230731" usns="6268-1,6269-1">CVE-2023-37327</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:359298026400950750222893171515533115256" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2374,6 +2414,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:618380014257575710870512094380214608298" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:597213738441438630667408374656686285035" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:359298026400950750222893171515533115256" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:481380449815837564816679902184130840300" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:578012934152092645789986868569583482505" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:362542871825066326583701799776959073858" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:633141951830547750713609832672182975610" />
@@ -2398,6 +2442,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:384584151318199794854244432425010763380" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:463163075023922912443218364778968252087" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:385974480980465334165928217538071321113" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:606761745875701093070100722421066995054" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:663407400164967692701264771061599069597" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:391090617851664242620378803767119562708" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:504176197517450881182631330397124051739" />
@@ -3154,6 +3202,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:475524243831533136292604508647727668389" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:509739795717468772124730170521419228583" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:481380449815837564816679902184130840300" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:597595571645113772291639767185518015026" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:483861843881911196800209435383519736401" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:371286693089090051076131807913871929287" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3276,6 +3327,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:605329897951725872545325868160548962516" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:606761745875701093070100722421066995054" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:395931049589956894343217377871553820845" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" var_check="at least one" />
@@ -3584,6 +3638,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:568831060027292046424563591063955556455" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.54.5+dfsg-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:578012934152092645789986868569583482505" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.1-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:15.3-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -3685,6 +3742,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20230311ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:663407400164967692701264771061599069597" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.1-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:665248192227623685997405351946711862514" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0~b4-0ubuntu2.1</linux:evr>
@@ -4135,6 +4195,17 @@
 			<value>libgs-common</value>
 			<value>libgs-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:395931049589956894343217377871553820845" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-gst-plugins-base-1.0</value>
+			<value>gstreamer1.0-alsa</value>
+			<value>gstreamer1.0-gl</value>
+			<value>gstreamer1.0-plugins-base</value>
+			<value>gstreamer1.0-plugins-base-apps</value>
+			<value>gstreamer1.0-x</value>
+			<value>libgstreamer-gl1.0-0</value>
+			<value>libgstreamer-plugins-base1.0-0</value>
+			<value>libgstreamer-plugins-base1.0-dev</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:676100531393497779434447407122187609980" version="1" datatype="string" comment="Interim Release">
 			<value>gir1.2-javascriptcoregtk-4.0</value>
 			<value>gir1.2-javascriptcoregtk-4.1</value>
@@ -4220,6 +4291,15 @@
 			<value>ubuntu-core-snapd-units</value>
 			<value>ubuntu-snappy</value>
 			<value>ubuntu-snappy-cli</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:597595571645113772291639767185518015026" version="1" datatype="string" comment="Interim Release">
+			<value>gstreamer1.0-gtk3</value>
+			<value>gstreamer1.0-plugins-good</value>
+			<value>gstreamer1.0-pulseaudio</value>
+			<value>gstreamer1.0-qt5</value>
+			<value>gstreamer1.0-qt6</value>
+			<value>libgstreamer-plugins-good1.0-0</value>
+			<value>libgstreamer-plugins-good1.0-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:462767693685172724946597401987429709877" version="1" datatype="string" comment="Interim Release">
 			<value>idle-python3.11</value>
