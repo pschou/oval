@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-08T04:38:32</oval:timestamp>
+		<oval:timestamp>2023-08-09T04:38:55</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2478,6 +2478,30 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:568288265288520908433786582165692694116" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62781000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6278-1 -- .NET vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6278-1" ref_url="https://ubuntu.com/security/notices/USN-6278-1" />
+				<reference source="CVE" ref_id="CVE-2023-35390" ref_url="https://ubuntu.com/security/CVE-2023-35390" />
+				<reference source="CVE" ref_id="CVE-2023-38178" ref_url="https://ubuntu.com/security/CVE-2023-38178" />
+				<reference source="CVE" ref_id="CVE-2023-38180" ref_url="https://ubuntu.com/security/CVE-2023-38180" />
+				<description>It was discovered that .NET did not properly handle the execution of certain commands. An attacker could possibly use this issue to achieve remote code execution. (CVE-2023-35390)  Benoit Foucher discovered that .NET did not properly implement the QUIC stream limit in HTTP/3. An attacker could possibly use this issue to cause a denial of service. (CVE-2023-38178)  It was discovered that .NET did not properly handle the disconnection of potentially malicious clients interfacing with a Kestrel server. An attacker could possibly use this issue to cause a denial of service. (CVE-2023-38180)  Update Instructions:  Run `sudo pro fix USN-6278-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-6.0 - 6.0.121-0ubuntu1~23.04.1 aspnetcore-runtime-7.0 - 7.0.110-0ubuntu1~23.04.1 aspnetcore-targeting-pack-6.0 - 6.0.121-0ubuntu1~23.04.1 aspnetcore-targeting-pack-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet6 - 6.0.121-0ubuntu1~23.04.1 dotnet7 - 7.0.110-0ubuntu1~23.04.1 dotnet-apphost-pack-6.0 - 6.0.121-0ubuntu1~23.04.1 dotnet-apphost-pack-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet-host - 6.0.121-0ubuntu1~23.04.1 dotnet-host-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet-hostfxr-6.0 - 6.0.121-0ubuntu1~23.04.1 dotnet-hostfxr-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet-runtime-6.0 - 6.0.121-0ubuntu1~23.04.1 dotnet-runtime-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet-sdk-6.0 - 6.0.121-0ubuntu1~23.04.1 dotnet-sdk-6.0-source-built-artifacts - 6.0.121-0ubuntu1~23.04.1 dotnet-sdk-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet-sdk-7.0-source-built-artifacts - 7.0.110-0ubuntu1~23.04.1 dotnet-targeting-pack-6.0 - 6.0.121-0ubuntu1~23.04.1 dotnet-targeting-pack-7.0 - 7.0.110-0ubuntu1~23.04.1 dotnet-templates-6.0 - 6.0.121-0ubuntu1~23.04.1 dotnet-templates-7.0 - 7.0.110-0ubuntu1~23.04.1 netstandard-targeting-pack-2.1 - 6.0.121-0ubuntu1~23.04.1 netstandard-targeting-pack-2.1-7.0 - 7.0.110-0ubuntu1~23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-08" />
+					<cve href="https://ubuntu.com/security/CVE-2023-35390" severity="medium" public="20230808" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6278-1">CVE-2023-35390</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38178" severity="medium" public="20230808" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6278-1">CVE-2023-38178</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38180" severity="medium" public="20230808" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6278-1">CVE-2023-38180</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:659135214425646090683816638161535235092" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:543627462808442203698474864091716170370" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2704,6 +2728,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:350768978997286145548971204375297874171" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:536201546728321820867919146682341044853" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:543627462808442203698474864091716170370" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:435184035392097204127423165449439155912" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:613177680280082226388792313874932975779" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:543739722953648042758287004478223551668" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:579853738418274892864077993210152122630" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:472852939679653399480368416613102811387" />
@@ -2907,6 +2935,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:657973309896966439379412052395602313702" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:659172248160742943885369821749263863421" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:596039313011805392314385026037472002043" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:659135214425646090683816638161535235092" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:564957540678897887822390308646151612090" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:524472030481702126340815120492547004697" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:666191225829359823842021851617228747140" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:359722264369191091381741938940242637374" />
@@ -3251,6 +3283,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:424720782104074996481985724294093544336" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:418964179744210512164981148234929792958" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:435184035392097204127423165449439155912" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:622923979815955469455159812007479523223" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:435735308741757731279163779204569793523" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:391274111027580069412726315909292973834" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3379,6 +3414,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:564059415733978506817887687065424491872" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:483891127166958577711120301965879973703" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:564957540678897887822390308646151612090" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:565300820761620758705720174759236337266" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:647353091145153490354902517037251178087" var_check="at least one" />
@@ -3705,6 +3743,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:514281057387952900714690440253099807233" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:3.2.18-1ubuntu0.3</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:524472030481702126340815120492547004697" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.121-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:532407698159776339660069796087212933484" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2022.20220321.62855-5ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -3797,6 +3838,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:613027155039314877686158047503791471655" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:21.4.0-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:613177680280082226388792313874932975779" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.110-0ubuntu1~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:614049848525749730906769656991559583430" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:15.0.7-3ubuntu0.23.04.1</linux:evr>
