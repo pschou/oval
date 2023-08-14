@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-12T04:36:48</oval:timestamp>
+		<oval:timestamp>2023-08-14T04:37:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2568,6 +2568,29 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62861000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6286-1 -- Intel Microcode vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6286-1" ref_url="https://ubuntu.com/security/notices/USN-6286-1" />
+				<reference source="CVE" ref_id="CVE-2022-40982" ref_url="https://ubuntu.com/security/CVE-2022-40982" />
+				<reference source="CVE" ref_id="CVE-2022-41804" ref_url="https://ubuntu.com/security/CVE-2022-41804" />
+				<reference source="CVE" ref_id="CVE-2023-23908" ref_url="https://ubuntu.com/security/CVE-2023-23908" />
+				<description>Daniel Moghimi discovered that some Intel(R) Processors did not properly clear microarchitectural state after speculative execution of various instructions. A local unprivileged user could use this to obtain to sensitive information. (CVE-2022-40982)  It was discovered that some Intel(R) Xeon(R) Processors did not properly restrict error injection for Intel(R) SGX or Intel(R) TDX. A local privileged user could use this to further escalate their privileges. (CVE-2022-41804)  It was discovered that some 3rd Generation Intel(R) Xeon(R) Scalable processors did not properly restrict access in some situations. A local privileged attacker could use this to obtain sensitive information. (CVE-2023-23908)  Update Instructions:  Run `sudo pro fix USN-6286-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  intel-microcode - 3.20230808.0ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-14" />
+					<cve href="https://ubuntu.com/security/CVE-2022-40982" severity="medium" public="20230808" usns="6286-1">CVE-2022-40982</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41804" severity="medium" public="20230808" usns="6286-1">CVE-2022-41804</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-23908" severity="medium" public="20230808" usns="6286-1">CVE-2023-23908</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:525016993309606519725485825955392940649" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2765,6 +2788,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:522142426782499360056487153871364056569" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:472160181614721016257093674130386237507" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:601852524458813232920705671029882183501" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:525016993309606519725485825955392940649" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:513181005240506517526103491494373974641" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:489086397977149924505170204966701736231" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:525316233257667296335293215618151803327" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:515506922537441551317849824129311749337" />
@@ -3466,6 +3493,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513031226480158701622623569220261201220" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:533611457783602686868373763130377418557" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513181005240506517526103491494373974641" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:642917223997026211090222810349093146056" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:515506922537441551317849824129311749337" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:661650337904605308601543931547991099778" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3817,6 +3847,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:482660574328801265614818409761992682931" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.0-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:489086397977149924505170204966701736231" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20230808.0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:489599747779541656608797271118681181358" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0~rc1-0ubuntu1.2</linux:evr>
@@ -4634,6 +4667,9 @@
 			<value>libmagickwand-6.q16hdri-dev</value>
 			<value>libmagickwand-dev</value>
 			<value>perlmagick</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
+			<value>intel-microcode</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:354614036916658092354151873823385857457" version="1" datatype="string" comment="Interim Release">
 			<value>ironic-api</value>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-12T06:37:36</oval:timestamp>
+		<oval:timestamp>2023-08-14T06:38:15</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15210,7 +15210,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-08-03" />
-					<cve href="https://ubuntu.com/security/CVE-2023-38497" severity="medium" public="20230803" usns="6275-1">CVE-2023-38497</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38497" severity="medium" public="20230803" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H" usns="6275-1">CVE-2023-38497</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -15275,7 +15275,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-08-10" />
-					<cve href="https://ubuntu.com/security/CVE-2023-36810" severity="medium" public="20230630" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H">CVE-2023-36810</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-36810" severity="medium" public="20230630" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6280-1">CVE-2023-36810</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -15328,6 +15328,29 @@
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:346927831265247785324863624684202825797" comment="Long Term Support" />
 					<criterion test_ref="oval:com.ubuntu.jammy:tst:470328215028750563355256160990807195801" comment="Long Term Support" />
 				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62861000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6286-1 -- Intel Microcode vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6286-1" ref_url="https://ubuntu.com/security/notices/USN-6286-1" />
+				<reference source="CVE" ref_id="CVE-2022-40982" ref_url="https://ubuntu.com/security/CVE-2022-40982" />
+				<reference source="CVE" ref_id="CVE-2022-41804" ref_url="https://ubuntu.com/security/CVE-2022-41804" />
+				<reference source="CVE" ref_id="CVE-2023-23908" ref_url="https://ubuntu.com/security/CVE-2023-23908" />
+				<description>Daniel Moghimi discovered that some Intel(R) Processors did not properly clear microarchitectural state after speculative execution of various instructions. A local unprivileged user could use this to obtain to sensitive information. (CVE-2022-40982)  It was discovered that some Intel(R) Xeon(R) Processors did not properly restrict error injection for Intel(R) SGX or Intel(R) TDX. A local privileged user could use this to further escalate their privileges. (CVE-2022-41804)  It was discovered that some 3rd Generation Intel(R) Xeon(R) Scalable processors did not properly restrict access in some situations. A local privileged attacker could use this to obtain sensitive information. (CVE-2023-23908)  Update Instructions:  Run `sudo pro fix USN-6286-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  intel-microcode - 3.20230808.0ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-14" />
+					<cve href="https://ubuntu.com/security/CVE-2022-40982" severity="medium" public="20230808" usns="6286-1">CVE-2022-40982</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-41804" severity="medium" public="20230808" usns="6286-1">CVE-2022-41804</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-23908" severity="medium" public="20230808" usns="6286-1">CVE-2023-23908</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:360836070862141218201623537391822715096" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -17027,6 +17050,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:360627887774750019134553387185609942720" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:497153825799854312808098481798392466253" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:503013974670877884841872923314227144164" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:360836070862141218201623537391822715096" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:409688156165991677073285455436152263493" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:476344294933713476149727650709572553099" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:361092343132876614949537699436231015660" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:370433874345510386971432582786232122900" />
@@ -19910,6 +19937,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:408460130893536789300234121493919826618" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:348932034868745939564492940927810360567" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:409688156165991677073285455436152263493" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:642917223997026211090222810349093146056" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:410135678974327324064388491365154372514" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:614646682472364780414462848825916867995" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -21781,6 +21811,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:476342958889003632734724450417679809493" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.1-1ubuntu1.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:476344294933713476149727650709572553099" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20230808.0ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:476571900464175455219883837954828961800" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.81.0-1ubuntu1.11</linux:evr>
