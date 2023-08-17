@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-16T04:37:17</oval:timestamp>
+		<oval:timestamp>2023-08-17T06:38:49</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11429,7 +11429,7 @@
 					<issued date="2023-05-09" />
 					<cve href="https://ubuntu.com/security/CVE-2021-3979" severity="low" public="20220825" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" usns="6063-1">CVE-2021-3979</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-0670" severity="medium" public="20220725" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N" usns="6063-1">CVE-2022-0670</cve>
-					<cve href="https://ubuntu.com/security/CVE-2022-3650" severity="medium" public="20230117" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6063-1">CVE-2022-3650</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-3650" severity="medium" public="20230117" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6063-1,6292-1">CVE-2022-3650</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-3854" severity="medium" public="20230306" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6063-1">CVE-2022-3854</cve>
 				</advisory>
 			</metadata>
@@ -15344,7 +15344,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-08-14" />
-					<cve href="https://ubuntu.com/security/CVE-2022-40982" severity="medium" public="20230808" usns="6286-1">CVE-2022-40982</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-40982" severity="medium" public="20230808" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N" usns="6286-1">CVE-2022-40982</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-41804" severity="medium" public="20230808" usns="6286-1">CVE-2022-41804</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-23908" severity="medium" public="20230808" usns="6286-1">CVE-2023-23908</cve>
 				</advisory>
@@ -15462,6 +15462,63 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:357218953044035932502005384195194123875" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62931000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6293-1 -- OpenStack Heat vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6293-1" ref_url="https://ubuntu.com/security/notices/USN-6293-1" />
+				<reference source="CVE" ref_id="CVE-2023-1625" ref_url="https://ubuntu.com/security/CVE-2023-1625" />
+				<description>It was discovered that OpenStack Heat incorrectly handled certain hidden parameter values. A remote authenticated user could possibly use this issue to obtain sensitive data.  Update Instructions:  Run `sudo pro fix USN-6293-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  heat-api - 1:18.0.1-0ubuntu1.1 heat-api-cfn - 1:18.0.1-0ubuntu1.1 heat-common - 1:18.0.1-0ubuntu1.1 heat-engine - 1:18.0.1-0ubuntu1.1 python3-heat - 1:18.0.1-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-16" />
+					<cve href="https://ubuntu.com/security/CVE-2023-1625" severity="medium" public="20230327" usns="6066-1,6293-1">CVE-2023-1625</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:452809130723724146430673373675349889822" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62941000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6294-1 -- HAProxy vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6294-1" ref_url="https://ubuntu.com/security/notices/USN-6294-1" />
+				<reference source="CVE" ref_id="CVE-2023-40225" ref_url="https://ubuntu.com/security/CVE-2023-40225" />
+				<description>Ben Kallus discovered that HAProxy incorrectly handled empty Content-Length headers. A remote attacker could possibly use this issue to manipulate the payload and bypass certain restrictions.  Update Instructions:  Run `sudo pro fix USN-6294-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  haproxy - 2.4.22-0ubuntu0.22.04.2 haproxy-doc - 2.4.22-0ubuntu0.22.04.2 vim-haproxy - 2.4.22-0ubuntu0.22.04.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-16" />
+					<cve href="https://ubuntu.com/security/CVE-2023-40225" severity="medium" public="20230810" usns="6294-1">CVE-2023-40225</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:346552199903069368855565682821447187795" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:62951000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6295-1 -- Podman vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6295-1" ref_url="https://ubuntu.com/security/notices/USN-6295-1" />
+				<reference source="CVE" ref_id="CVE-2022-2989" ref_url="https://ubuntu.com/security/CVE-2022-2989" />
+				<description>It was discovered that Podman incorrectly handled certain supplementary groups. An attacker could possibly use this issue to expose sensitive information or execute binary code.  Update Instructions:  Run `sudo pro fix USN-6295-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  podman - 3.4.4+ds1-1ubuntu1.22.04.2 podman-docker - 3.4.4+ds1-1ubuntu1.22.04.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-16" />
+					<cve href="https://ubuntu.com/security/CVE-2022-2989" severity="medium" public="20220913" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N" usns="6295-1">CVE-2022-2989</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:485238824714955495050135959970236671982" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -17078,6 +17135,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:626083172512114197884189490880811063429" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:410205595562047804020687688025770134952" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:346552199903069368855565682821447187795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:594931359034155444678638540262711939817" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:396484159902013513425465787024080890023" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:347954782625324745560146421601716505718" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:526343808816310341180404332344051517998" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:418660536406535511226607860882680289325" />
@@ -17614,6 +17675,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:537648824905743538050446300436563545917" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:456360801954552087435621718550910037784" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:452809130723724146430673373675349889822" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:424787906148947223845000230164228603781" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:516076845141233517736412265210910004898" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:452811338869895876425845323888996147573" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:503945203035481824431355783947838932236" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:646219222016984825755946402755489484918" />
@@ -17733,6 +17798,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:485030782158790851906374023572496845855" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:563318954257634255948700053965725163508" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:642443003840786349535099761214747003288" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:485238824714955495050135959970236671982" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:502898556808400991519772270051587350983" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:571880725318272690029381604596964020051" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:486744218670245153442400928467116658765" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:518043958372627197918836817035053731569" />
@@ -20123,6 +20192,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:423501764771950623369624303073740252056" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:348932034868745939564492940927810360567" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:424787906148947223845000230164228603781" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:504775937556764297668539874127446740820" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:425314460849512509003042813851923653996" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:369047092955101027660664114064609179138" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -20455,6 +20527,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:502080142757430792845081137407432860769" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:626012418595586731605798905476107764240" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:502898556808400991519772270051587350983" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:632220654682299423248444210058677901827" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:503320517414080323379798388869776690253" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:557821857881229214439117469643141107197" var_check="at least one" />
@@ -20836,6 +20911,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:593605507820984749225623449304526786939" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:349333159796834818421530341955582928143" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:594931359034155444678638540262711939817" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:482593255751296273100713960532940627866" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:595557045337195561023730548176241486625" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:600081929208916044455628935835493122332" var_check="at least one" />
@@ -21641,6 +21719,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:396440689677048583364811588682886139539" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.7-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:396484159902013513425465787024080890023" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.22-0ubuntu0.22.04.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:398359750469676045206963182179069845198" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.5+8-2ubuntu1~22.04</linux:evr>
 		</linux:dpkginfo_state>
@@ -22118,6 +22199,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:515928962001785598760576991884897775086" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.108-0ubuntu1~22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:516076845141233517736412265210910004898" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:18.0.1-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:516436406001663959306775015835137339850" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.36-2.3ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -22300,6 +22384,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:571150195294465917826690706115577683796" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.36.6-0ubuntu0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:571880725318272690029381604596964020051" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.4.4+ds1-1ubuntu1.22.04.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:573826735120284093466598238348733403282" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.34.1-1ubuntu1.1</linux:evr>
@@ -24463,6 +24550,13 @@
 			<value>haproxy</value>
 			<value>haproxy-doc</value>
 			<value>vim-haproxy</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:504775937556764297668539874127446740820" version="1" datatype="string" comment="Long Term Support">
+			<value>heat-api</value>
+			<value>heat-api-cfn</value>
+			<value>heat-common</value>
+			<value>heat-engine</value>
+			<value>python3-heat</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:462990990817176734365424772222627375283" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<value>idle-python2.7</value>

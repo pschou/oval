@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-16T04:37:17</oval:timestamp>
+		<oval:timestamp>2023-08-17T04:39:38</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2702,6 +2702,44 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:486637244293884546143437489314345492838" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62921000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6292-1 -- Ceph vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6292-1" ref_url="https://ubuntu.com/security/notices/USN-6292-1" />
+				<reference source="CVE" ref_id="CVE-2022-3650" ref_url="https://ubuntu.com/security/CVE-2022-3650" />
+				<description>It was discovered that Ceph incorrectly handled crash dumps. A local attacker could possibly use this issue to escalate privileges to root.  Update Instructions:  Run `sudo pro fix USN-6292-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ceph - 17.2.6-0ubuntu0.23.04.2 ceph-base - 17.2.6-0ubuntu0.23.04.2 ceph-common - 17.2.6-0ubuntu0.23.04.2 ceph-fuse - 17.2.6-0ubuntu0.23.04.2 ceph-grafana-dashboards - 17.2.6-0ubuntu0.23.04.2 ceph-immutable-object-cache - 17.2.6-0ubuntu0.23.04.2 ceph-mds - 17.2.6-0ubuntu0.23.04.2 ceph-mgr - 17.2.6-0ubuntu0.23.04.2 ceph-mgr-cephadm - 17.2.6-0ubuntu0.23.04.2 ceph-mgr-dashboard - 17.2.6-0ubuntu0.23.04.2 ceph-mgr-diskprediction-local - 17.2.6-0ubuntu0.23.04.2 ceph-mgr-k8sevents - 17.2.6-0ubuntu0.23.04.2 ceph-mgr-modules-core - 17.2.6-0ubuntu0.23.04.2 ceph-mgr-rook - 17.2.6-0ubuntu0.23.04.2 ceph-mon - 17.2.6-0ubuntu0.23.04.2 ceph-osd - 17.2.6-0ubuntu0.23.04.2 ceph-prometheus-alerts - 17.2.6-0ubuntu0.23.04.2 ceph-resource-agents - 17.2.6-0ubuntu0.23.04.2 ceph-volume - 17.2.6-0ubuntu0.23.04.2 cephadm - 17.2.6-0ubuntu0.23.04.2 cephfs-mirror - 17.2.6-0ubuntu0.23.04.2 cephfs-shell - 17.2.6-0ubuntu0.23.04.2 crimson-osd - 17.2.6-0ubuntu0.23.04.2 libcephfs2 - 17.2.6-0ubuntu0.23.04.2 libcephfs-dev - 17.2.6-0ubuntu0.23.04.2 libcephfs-java - 17.2.6-0ubuntu0.23.04.2 libcephfs-jni - 17.2.6-0ubuntu0.23.04.2 librados2 - 17.2.6-0ubuntu0.23.04.2 librados-dev - 17.2.6-0ubuntu0.23.04.2 libradospp-dev - 17.2.6-0ubuntu0.23.04.2 libradosstriper1 - 17.2.6-0ubuntu0.23.04.2 libradosstriper-dev - 17.2.6-0ubuntu0.23.04.2 librbd1 - 17.2.6-0ubuntu0.23.04.2 librbd-dev - 17.2.6-0ubuntu0.23.04.2 librgw2 - 17.2.6-0ubuntu0.23.04.2 librgw-dev - 17.2.6-0ubuntu0.23.04.2 libsqlite3-mod-ceph - 17.2.6-0ubuntu0.23.04.2 libsqlite3-mod-ceph-dev - 17.2.6-0ubuntu0.23.04.2 python3-ceph - 17.2.6-0ubuntu0.23.04.2 python3-ceph-argparse - 17.2.6-0ubuntu0.23.04.2 python3-ceph-common - 17.2.6-0ubuntu0.23.04.2 python3-cephfs - 17.2.6-0ubuntu0.23.04.2 python3-rados - 17.2.6-0ubuntu0.23.04.2 python3-rbd - 17.2.6-0ubuntu0.23.04.2 python3-rgw - 17.2.6-0ubuntu0.23.04.2 rados-objclass-dev - 17.2.6-0ubuntu0.23.04.2 radosgw - 17.2.6-0ubuntu0.23.04.2 rbd-fuse - 17.2.6-0ubuntu0.23.04.2 rbd-mirror - 17.2.6-0ubuntu0.23.04.2 rbd-nbd - 17.2.6-0ubuntu0.23.04.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-16" />
+					<cve href="https://ubuntu.com/security/CVE-2022-3650" severity="medium" public="20230117" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6063-1,6292-1">CVE-2022-3650</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:619684504432954058052937613340122918137" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:62941000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6294-1 -- HAProxy vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6294-1" ref_url="https://ubuntu.com/security/notices/USN-6294-1" />
+				<reference source="CVE" ref_id="CVE-2023-40225" ref_url="https://ubuntu.com/security/CVE-2023-40225" />
+				<description>Ben Kallus discovered that HAProxy incorrectly handled empty Content-Length headers. A remote attacker could possibly use this issue to manipulate the payload and bypass certain restrictions.  Update Instructions:  Run `sudo pro fix USN-6294-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  haproxy - 2.6.9-1ubuntu1.1 haproxy-doc - 2.6.9-1ubuntu1.1 vim-haproxy - 2.6.9-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-16" />
+					<cve href="https://ubuntu.com/security/CVE-2023-40225" severity="medium" public="20230810" usns="6294-1">CVE-2023-40225</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:399048219652215051467102401037419767523" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2751,6 +2789,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:391866203061341719926189493364601082817" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:457572982621954770339864539274145172212" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:536827574961130205218041670719823329954" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:399048219652215051467102401037419767523" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:446028443828082203613680795742250385906" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:679718129533231844326765951765346376259" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:400008772182481741936483374201572049795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:587187116203092882684234351073228940772" />
@@ -3083,6 +3125,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:610615842732379577543669211619210768383" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:342337614281893621243909695674952942409" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:363086574793743462438180082086804878419" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:619684504432954058052937613340122918137" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:459136687688787932160303492480855428259" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:493177519212438004767503107650720546628" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:623063629812928451698003433090911393892" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:605329897951725872545325868160548962516" />
@@ -3553,6 +3599,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:445555741939006781057049359009627888067" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:469909185065039757774942576016745463628" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:446028443828082203613680795742250385906" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:482593255751296273100713960532940627866" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3570,6 +3619,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:457821651061278857357807859586240904161" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:604374575434627369423795693474718309161" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:459136687688787932160303492480855428259" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:559114482920459688144047818486608867459" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:464713879677710250639887802351600061740" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:679896267291198622015234250028432648225" var_check="at least one" />
@@ -3989,6 +4041,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:491060683266353864844266195122774275297" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:1.8.4-2ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:493177519212438004767503107650720546628" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:17.2.6-0ubuntu0.23.04.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:493232719402420202637003241942154008436" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:102.12.0-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4192,6 +4247,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:676457242948142244924483258343458237053" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.12-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:679718129533231844326765951765346376259" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.9-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:679971840325169879361341923235195652413" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.2-3ubuntu2.1</linux:evr>
@@ -4420,6 +4478,58 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:396234418972084306138078714379709091094" version="1" datatype="string" comment="Interim Release">
 			<value>ca-certificates</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:559114482920459688144047818486608867459" version="1" datatype="string" comment="Interim Release">
+			<value>ceph</value>
+			<value>ceph-base</value>
+			<value>ceph-common</value>
+			<value>ceph-fuse</value>
+			<value>ceph-grafana-dashboards</value>
+			<value>ceph-immutable-object-cache</value>
+			<value>ceph-mds</value>
+			<value>ceph-mgr</value>
+			<value>ceph-mgr-cephadm</value>
+			<value>ceph-mgr-dashboard</value>
+			<value>ceph-mgr-diskprediction-local</value>
+			<value>ceph-mgr-k8sevents</value>
+			<value>ceph-mgr-modules-core</value>
+			<value>ceph-mgr-rook</value>
+			<value>ceph-mon</value>
+			<value>ceph-osd</value>
+			<value>ceph-prometheus-alerts</value>
+			<value>ceph-resource-agents</value>
+			<value>ceph-volume</value>
+			<value>cephadm</value>
+			<value>cephfs-mirror</value>
+			<value>cephfs-shell</value>
+			<value>crimson-osd</value>
+			<value>libcephfs2</value>
+			<value>libcephfs-dev</value>
+			<value>libcephfs-java</value>
+			<value>libcephfs-jni</value>
+			<value>librados2</value>
+			<value>librados-dev</value>
+			<value>libradospp-dev</value>
+			<value>libradosstriper1</value>
+			<value>libradosstriper-dev</value>
+			<value>librbd1</value>
+			<value>librbd-dev</value>
+			<value>librgw2</value>
+			<value>librgw-dev</value>
+			<value>libsqlite3-mod-ceph</value>
+			<value>libsqlite3-mod-ceph-dev</value>
+			<value>python3-ceph</value>
+			<value>python3-ceph-argparse</value>
+			<value>python3-ceph-common</value>
+			<value>python3-cephfs</value>
+			<value>python3-rados</value>
+			<value>python3-rbd</value>
+			<value>python3-rgw</value>
+			<value>rados-objclass-dev</value>
+			<value>radosgw</value>
+			<value>rbd-fuse</value>
+			<value>rbd-mirror</value>
+			<value>rbd-nbd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:626503625561135631910252101663952100832" version="1" datatype="string" comment="Interim Release">
 			<value>cinder-api</value>
@@ -4758,6 +4868,11 @@
 			<value>gstreamer1.0-qt6</value>
 			<value>libgstreamer-plugins-good1.0-0</value>
 			<value>libgstreamer-plugins-good1.0-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:482593255751296273100713960532940627866" version="1" datatype="string" comment="Interim Release">
+			<value>haproxy</value>
+			<value>haproxy-doc</value>
+			<value>vim-haproxy</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:462767693685172724946597401987429709877" version="1" datatype="string" comment="Interim Release">
 			<value>idle-python3.11</value>
