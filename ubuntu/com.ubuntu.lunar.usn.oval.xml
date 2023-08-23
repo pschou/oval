@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-22T04:38:29</oval:timestamp>
+		<oval:timestamp>2023-08-23T04:40:09</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -113,9 +113,9 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-06-07" />
-					<cve href="https://ubuntu.com/security/CVE-2022-2309" severity="low" public="20220705" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5760-1">CVE-2022-2309</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-28484" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1">CVE-2023-28484</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-29469" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1">CVE-2023-29469</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-2309" severity="low" public="20220705" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5760-1,6028-2">CVE-2022-2309</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28484" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1,6028-2">CVE-2023-28484</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29469" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1,6028-2">CVE-2023-29469</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -1740,7 +1740,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-07-05" />
-					<cve href="https://ubuntu.com/security/CVE-2023-36053" severity="medium" public="20230704" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6203-1">CVE-2023-36053</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-36053" severity="medium" public="20230704" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6203-1,6203-2">CVE-2023-36053</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -2799,6 +2799,28 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:484021896710099355792105260264414590481" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:63041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6304-1 -- Inetutils vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6304-1" ref_url="https://ubuntu.com/security/notices/USN-6304-1" />
+				<reference source="CVE" ref_id="CVE-2022-39028" ref_url="https://ubuntu.com/security/CVE-2022-39028" />
+				<reference source="CVE" ref_id="CVE-2023-40303" ref_url="https://ubuntu.com/security/CVE-2023-40303" />
+				<description>It was discovered that telnetd in GNU Inetutils incorrectly handled certain inputs. An attacker could possibly use this issue to cause a crash.  This issue only affected Ubuntu 20.04 LTS and Ubuntu 22.04 LTS (CVE-2022-39028)  It was discovered that Inetutils incorrectly handled certain inputs. An attacker could possibly use this issue to expose sensitive information, or execute arbitrary code. (CVE-2023-40303)  Update Instructions:  Run `sudo pro fix USN-6304-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  inetutils-ftp - 2:2.4-2ubuntu1.1 inetutils-ftpd - 2:2.4-2ubuntu1.1 inetutils-inetd - 2:2.4-2ubuntu1.1 inetutils-ping - 2:2.4-2ubuntu1.1 inetutils-syslogd - 2:2.4-2ubuntu1.1 inetutils-talk - 2:2.4-2ubuntu1.1 inetutils-talkd - 2:2.4-2ubuntu1.1 inetutils-telnet - 2:2.4-2ubuntu1.1 inetutils-telnetd - 2:2.4-2ubuntu1.1 inetutils-tools - 2:2.4-2ubuntu1.1 inetutils-traceroute - 2:2.4-2ubuntu1.1 telnet - 0.17+2.4-2ubuntu1.1 telnetd - 0.17+2.4-2ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-22" />
+					<cve href="https://ubuntu.com/security/CVE-2022-39028" severity="medium" public="20220830" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6304-1">CVE-2022-39028</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40303" severity="medium" public="20230814" usns="6304-1">CVE-2023-40303</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:578610057913164000186972460022915747755" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:426505351252282129326225811327843064536" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2872,6 +2894,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:425307581032659656841408575913855362206" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:583858745019849151820751632661604776914" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:489599747779541656608797271118681181358" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:426505351252282129326225811327843064536" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:604836118423169819902142056428034853341" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:559035825729136319841289919365294267939" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:432636771441224748560607851802202960421" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:528269230841342847296551204075449452446" />
@@ -3124,6 +3150,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:578537309063078701008370007678034444149" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:531353832672864198863305052278716416401" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:432402482336079049545676271148648881687" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:578610057913164000186972460022915747755" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:503768552524491112503119811223515559829" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:586042389197805264373689854920824915992" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:579388346040458569227295372148773496207" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:483861843881911196800209435383519736401" />
@@ -3733,6 +3763,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:499042982485216214175788503473682331587" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:577926606599381712365936689592691521220" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:503768552524491112503119811223515559829" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:658444334609974550126973445209365242993" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:504176197517450881182631330397124051739" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:557821857881229214439117469643141107197" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3855,6 +3888,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:603890088877449158521042810109684858763" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:404401339249636207688127335573623629646" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:604836118423169819902142056428034853341" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:497118114605605213544791788403554855712" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:605329897951725872545325868160548962516" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
@@ -4190,6 +4226,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:555243528169164991762852299759313635439" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.59.1+23.04ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:559035825729136319841289919365294267939" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:2.4-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:561614842103010074849482711782394782498" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.119-0ubuntu1~23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4213,6 +4252,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:584423730684332861860579659239810653483" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.66-3ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:586042389197805264373689854920824915992" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.17+2.4-2ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:587630800864173315606201406815615701376" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:102.11.0-0ubuntu0.23.04.1</linux:evr>
@@ -5025,6 +5067,19 @@
 			<value>libmagickwand-dev</value>
 			<value>perlmagick</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:497118114605605213544791788403554855712" version="1" datatype="string" comment="Interim Release">
+			<value>inetutils-ftp</value>
+			<value>inetutils-ftpd</value>
+			<value>inetutils-inetd</value>
+			<value>inetutils-ping</value>
+			<value>inetutils-syslogd</value>
+			<value>inetutils-talk</value>
+			<value>inetutils-talkd</value>
+			<value>inetutils-telnet</value>
+			<value>inetutils-telnetd</value>
+			<value>inetutils-tools</value>
+			<value>inetutils-traceroute</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
 			<value>intel-microcode</value>
 		</constant_variable>
@@ -5422,6 +5477,10 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:604374575434627369423795693474718309161" version="1" datatype="string" comment="Interim Release">
 			<value>tar</value>
 			<value>tar-scripts</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:658444334609974550126973445209365242993" version="1" datatype="string" comment="Interim Release">
+			<value>telnet</value>
+			<value>telnetd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" version="1" datatype="string" comment="Interim Release">
 			<value>thunderbird</value>

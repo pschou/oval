@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-22T06:40:05</oval:timestamp>
+		<oval:timestamp>2023-08-23T04:40:09</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6123,7 +6123,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2022-12-05" />
-					<cve href="https://ubuntu.com/security/CVE-2022-2309" severity="low" public="20220705" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5760-1">CVE-2022-2309</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-2309" severity="low" public="20220705" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5760-1,6028-2">CVE-2022-2309</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-40303" severity="medium" public="20221123" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="5760-1,5760-2">CVE-2022-40303</cve>
 					<cve href="https://ubuntu.com/security/CVE-2022-40304" severity="medium" public="20221123" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="5760-1,5760-2">CVE-2022-40304</cve>
 				</advisory>
@@ -7316,7 +7316,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Negligible</severity>
 					<issued date="2023-01-25" />
-					<cve href="https://ubuntu.com/security/CVE-2022-28321" severity="negligible" public="20220919" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5825-1">CVE-2022-28321</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-28321" severity="negligible" public="20220919" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5825-1,5825-2">CVE-2022-28321</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -7335,7 +7335,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Negligible</severity>
 					<issued date="2023-02-06" />
-					<cve href="https://ubuntu.com/security/CVE-2022-28321" severity="negligible" public="20220919" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5825-1">CVE-2022-28321</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-28321" severity="negligible" public="20220919" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="5825-1,5825-2">CVE-2022-28321</cve>
 					<bug>https://launchpad.net/bugs/2006073</bug>
 				</advisory>
 			</metadata>
@@ -10724,8 +10724,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-04-19" />
-					<cve href="https://ubuntu.com/security/CVE-2023-28484" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1">CVE-2023-28484</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-29469" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1">CVE-2023-29469</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28484" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1,6028-2">CVE-2023-28484</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-29469" severity="medium" public="20230412" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" usns="6028-1,6028-2">CVE-2023-29469</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -10830,7 +10830,7 @@
 				<reference source="CVE" ref_id="CVE-2023-28466" ref_url="https://ubuntu.com/security/CVE-2023-28466" />
 				<reference source="CVE" ref_id="CVE-2023-28866" ref_url="https://ubuntu.com/security/CVE-2023-28866" />
 				<reference source="CVE" ref_id="CVE-2023-30456" ref_url="https://ubuntu.com/security/CVE-2023-30456" />
-				<description>It was discovered that the Traffic-Control Index (TCINDEX) implementation in the Linux kernel did not properly perform filter deactivation in some situations. A local attacker could possibly use this to gain elevated privileges. Please note that with the fix for this CVE, kernel support for the TCINDEX classifier has been removed. (CVE-2023-1829)  William Zhao discovered that the Traffic Control (TC) subsystem in the Linux kernel did not properly handle network packet retransmission in certain situations. A local attacker could use this to cause a denial of service (kernel deadlock). (CVE-2022-4269)  Thadeu Cascardo discovered that the io_uring subsystem contained a double- free vulnerability in certain memory allocation error conditions. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-1032)  It was discovered that the TUN/TAP driver in the Linux kernel did not properly initialize socket data. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1076)  It was discovered that the Real-Time Scheduling Class implementation in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1077)  It was discovered that the ASUS HID driver in the Linux kernel did not properly handle device removal, leading to a use-after-free vulnerability. A local attacker with physical access could plug in a specially crafted USB device to cause a denial of service (system crash). (CVE-2023-1079)  It was discovered that the io_uring subsystem in the Linux kernel did not properly perform file table updates in some situations, leading to a null pointer dereference vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1583)  It was discovered that the Xircom PCMCIA network device driver in the Linux kernel did not properly handle device removal events. A physically proximate attacker could use this to cause a denial of service (system crash). (CVE-2023-1670)  It was discovered that the APM X-Gene SoC hardware monitoring driver in the Linux kernel contained a race condition, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or expose sensitive information (kernel memory). (CVE-2023-1855)  It was discovered that a race condition existed in the Bluetooth HCI SDIO driver, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1989)  It was discovered that the ST NCI NFC driver did not properly handle device removal events. A physically proximate attacker could use this to cause a denial of service (system crash). (CVE-2023-1990)  José Oliveira and Rodrigo Branco discovered that the Spectre Variant 2 mitigations with prctl syscall were insufficient in some situations. A local attacker could possibly use this to expose sensitive information. (CVE-2023-1998)  It was discovered that the BigBen Interactive Kids' gamepad driver in the Linux kernel did not properly handle device removal, leading to a use- after-free vulnerability. A local attacker with physical access could plug in a specially crafted USB device to cause a denial of service (system crash). (CVE-2023-25012)  It was discovered that a race condition existed in the TLS subsystem in the Linux kernel, leading to a use-after-free or a null pointer dereference vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-28466)  It was discovered that the Bluetooth subsystem in the Linux kernel did not properly initialize some data structures, leading to an out-of-bounds access vulnerability in certain situations. An attacker could use this to expose sensitive information (kernel memory). (CVE-2023-28866)  Reima Ishii discovered that the nested KVM implementation for Intel x86 processors in the Linux kernel did not properly validate control registers in certain situations. An attacker in a guest VM could use this to cause a denial of service (guest crash). (CVE-2023-30456)  Duoming Zhou discovered that a race condition existed in the infrared receiver/transceiver driver in the Linux kernel, leading to a use-after- free vulnerability. A privileged attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-1118)  Update Instructions:  Run `sudo pro fix USN-6033-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-buildinfo-6.1.0-1009-oem - 6.1.0-1009.9 linux-headers-6.1.0-1009-oem - 6.1.0-1009.9 linux-headers-oem-22.04c - 6.1.0.1009.9 linux-image-6.1.0-1009-oem - 6.1.0-1009.9 linux-image-oem-22.04c - 6.1.0.1009.9 linux-image-unsigned-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-ipu6-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-ipu6-oem-22.04c - 6.1.0.1009.9 linux-modules-ivsc-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-ivsc-oem-22.04c - 6.1.0.1009.9 linux-oem-6.1-headers-6.1.0-1009 - 6.1.0-1009.9 linux-oem-6.1-tools-6.1.0-1009 - 6.1.0-1009.9 linux-oem-6.1-tools-host - 6.1.0-1009.9 linux-oem-22.04c - 6.1.0.1009.9 linux-tools-6.1.0-1009-oem - 6.1.0-1009.9 linux-tools-oem-22.04c - 6.1.0.1009.9</description>
+				<description>It was discovered that the Traffic-Control Index (TCINDEX) implementation in the Linux kernel did not properly perform filter deactivation in some situations. A local attacker could possibly use this to gain elevated privileges. Please note that with the fix for this CVE, kernel support for the TCINDEX classifier has been removed. (CVE-2023-1829)  William Zhao discovered that the Traffic Control (TC) subsystem in the Linux kernel did not properly handle network packet retransmission in certain situations. A local attacker could use this to cause a denial of service (kernel deadlock). (CVE-2022-4269)  Thadeu Cascardo discovered that the io_uring subsystem contained a double- free vulnerability in certain memory allocation error conditions. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-1032)  It was discovered that the TUN/TAP driver in the Linux kernel did not properly initialize socket data. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1076)  It was discovered that the Real-Time Scheduling Class implementation in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1077)  It was discovered that the ASUS HID driver in the Linux kernel did not properly handle device removal, leading to a use-after-free vulnerability. A local attacker with physical access could plug in a specially crafted USB device to cause a denial of service (system crash). (CVE-2023-1079)  It was discovered that the io_uring subsystem in the Linux kernel did not properly perform file table updates in some situations, leading to a null pointer dereference vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1583)  It was discovered that the Xircom PCMCIA network device driver in the Linux kernel did not properly handle device removal events. A physically proximate attacker could use this to cause a denial of service (system crash). (CVE-2023-1670)  It was discovered that the APM X-Gene SoC hardware monitoring driver in the Linux kernel contained a race condition, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or expose sensitive information (kernel memory). (CVE-2023-1855)  It was discovered that a race condition existed in the Bluetooth HCI SDIO driver, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-1989)  It was discovered that the ST NCI NFC driver did not properly handle device removal events. A physically proximate attacker could use this to cause a denial of service (system crash). (CVE-2023-1990)  Jose Oliveira and Rodrigo Branco discovered that the Spectre Variant 2 mitigations with prctl syscall were insufficient in some situations. A local attacker could possibly use this to expose sensitive information. (CVE-2023-1998)  It was discovered that the BigBen Interactive Kids' gamepad driver in the Linux kernel did not properly handle device removal, leading to a use- after-free vulnerability. A local attacker with physical access could plug in a specially crafted USB device to cause a denial of service (system crash). (CVE-2023-25012)  It was discovered that a race condition existed in the TLS subsystem in the Linux kernel, leading to a use-after-free or a null pointer dereference vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-28466)  It was discovered that the Bluetooth subsystem in the Linux kernel did not properly initialize some data structures, leading to an out-of-bounds access vulnerability in certain situations. An attacker could use this to expose sensitive information (kernel memory). (CVE-2023-28866)  Reima Ishii discovered that the nested KVM implementation for Intel x86 processors in the Linux kernel did not properly validate control registers in certain situations. An attacker in a guest VM could use this to cause a denial of service (guest crash). (CVE-2023-30456)  Duoming Zhou discovered that a race condition existed in the infrared receiver/transceiver driver in the Linux kernel, leading to a use-after- free vulnerability. A privileged attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-1118)  Update Instructions:  Run `sudo pro fix USN-6033-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-buildinfo-6.1.0-1009-oem - 6.1.0-1009.9 linux-headers-6.1.0-1009-oem - 6.1.0-1009.9 linux-headers-oem-22.04c - 6.1.0.1009.9 linux-image-6.1.0-1009-oem - 6.1.0-1009.9 linux-image-oem-22.04c - 6.1.0.1009.9 linux-image-unsigned-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-ipu6-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-ipu6-oem-22.04c - 6.1.0.1009.9 linux-modules-ivsc-6.1.0-1009-oem - 6.1.0-1009.9 linux-modules-ivsc-oem-22.04c - 6.1.0.1009.9 linux-oem-6.1-headers-6.1.0-1009 - 6.1.0-1009.9 linux-oem-6.1-tools-6.1.0-1009 - 6.1.0-1009.9 linux-oem-6.1-tools-host - 6.1.0-1009.9 linux-oem-22.04c - 6.1.0.1009.9 linux-tools-6.1.0-1009-oem - 6.1.0-1009.9 linux-tools-oem-22.04c - 6.1.0.1009.9</description>
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2023-04-19" />
@@ -14092,7 +14092,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-07-05" />
-					<cve href="https://ubuntu.com/security/CVE-2023-36053" severity="medium" public="20230704" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6203-1">CVE-2023-36053</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-36053" severity="medium" public="20230704" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6203-1,6203-2">CVE-2023-36053</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -15725,6 +15725,27 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:382163105359169500635471012756695259254" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:63041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6304-1 -- Inetutils vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6304-1" ref_url="https://ubuntu.com/security/notices/USN-6304-1" />
+				<reference source="CVE" ref_id="CVE-2022-39028" ref_url="https://ubuntu.com/security/CVE-2022-39028" />
+				<reference source="CVE" ref_id="CVE-2023-40303" ref_url="https://ubuntu.com/security/CVE-2023-40303" />
+				<description>It was discovered that telnetd in GNU Inetutils incorrectly handled certain inputs. An attacker could possibly use this issue to cause a crash.  This issue only affected Ubuntu 20.04 LTS and Ubuntu 22.04 LTS (CVE-2022-39028)  It was discovered that Inetutils incorrectly handled certain inputs. An attacker could possibly use this issue to expose sensitive information, or execute arbitrary code. (CVE-2023-40303)  Update Instructions:  Run `sudo pro fix USN-6304-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  inetutils-ftp - 2:2.2-2ubuntu0.1 inetutils-ftpd - 2:2.2-2ubuntu0.1 inetutils-inetd - 2:2.2-2ubuntu0.1 inetutils-ping - 2:2.2-2ubuntu0.1 inetutils-syslogd - 2:2.2-2ubuntu0.1 inetutils-talk - 2:2.2-2ubuntu0.1 inetutils-talkd - 2:2.2-2ubuntu0.1 inetutils-telnet - 2:2.2-2ubuntu0.1 inetutils-telnetd - 2:2.2-2ubuntu0.1 inetutils-tools - 2:2.2-2ubuntu0.1 inetutils-traceroute - 2:2.2-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-22" />
+					<cve href="https://ubuntu.com/security/CVE-2022-39028" severity="medium" public="20220830" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6304-1">CVE-2022-39028</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40303" severity="medium" public="20230814" usns="6304-1">CVE-2023-40303</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:460210399130442368665473586595407495471" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -17964,6 +17985,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:459891562884241613471462237226273797166" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:520313408486078913520161398930392956253" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:539005013474748629315784567172034577795" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:460210399130442368665473586595407495471" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:654615635027801879655486739770271090149" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:460469622862281305871967414557005319594" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:460259261800188584921986968712675813078" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:353577182159141318198590249783848500233" />
@@ -21387,6 +21412,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:651243113020675476553822219902328582010" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:608813474728275520816188863243014249408" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:654615635027801879655486739770271090149" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:497118114605605213544791788403554855712" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:654677350082273029529174009681087714900" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:422581452294917504256834491688927761032" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -22262,6 +22290,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:460172941090559037179713966133318348125" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.9-1ubuntu2.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:460469622862281305871967414557005319594" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:2.2-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:460772115422352600597771258513741078466" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:0.5.0-1ubuntu22.04.1</linux:evr>
@@ -24939,6 +24970,19 @@
 			<value>libmagickwand-6.q16hdri-dev</value>
 			<value>libmagickwand-dev</value>
 			<value>perlmagick</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:497118114605605213544791788403554855712" version="1" datatype="string" comment="Long Term Support">
+			<value>inetutils-ftp</value>
+			<value>inetutils-ftpd</value>
+			<value>inetutils-inetd</value>
+			<value>inetutils-ping</value>
+			<value>inetutils-syslogd</value>
+			<value>inetutils-talk</value>
+			<value>inetutils-talkd</value>
+			<value>inetutils-telnet</value>
+			<value>inetutils-telnetd</value>
+			<value>inetutils-tools</value>
+			<value>inetutils-traceroute</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Long Term Support">
 			<value>intel-microcode</value>
