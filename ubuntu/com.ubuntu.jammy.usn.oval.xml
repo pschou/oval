@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-23T04:40:09</oval:timestamp>
+		<oval:timestamp>2023-08-24T04:39:26</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15741,11 +15741,32 @@
 					<severity>Medium</severity>
 					<issued date="2023-08-22" />
 					<cve href="https://ubuntu.com/security/CVE-2022-39028" severity="medium" public="20220830" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6304-1">CVE-2022-39028</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-40303" severity="medium" public="20230814" usns="6304-1">CVE-2023-40303</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40303" severity="medium" public="20230814" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" usns="6304-1">CVE-2023-40303</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:460210399130442368665473586595407495471" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:63051000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6305-1 -- PHP vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6305-1" ref_url="https://ubuntu.com/security/notices/USN-6305-1" />
+				<reference source="CVE" ref_id="CVE-2023-3823" ref_url="https://ubuntu.com/security/CVE-2023-3823" />
+				<reference source="CVE" ref_id="CVE-2023-3824" ref_url="https://ubuntu.com/security/CVE-2023-3824" />
+				<description>It was discovered that PHP incorrectly handled certain XML files. An attacker could possibly use this issue to expose sensitive information. (CVE-2023-3823)  It was discovered that PHP incorrectly handled certain PHAR files. An attacker could possibly use this issue to cause a crash, expose sensitive information or execute arbitrary code. (CVE-2023-3824)  Update Instructions:  Run `sudo pro fix USN-6305-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libapache2-mod-php7.4 - 8.1.2-1ubuntu2.14 libapache2-mod-php8.0 - 8.1.2-1ubuntu2.14 libapache2-mod-php8.1 - 8.1.2-1ubuntu2.14 libphp8.1-embed - 8.1.2-1ubuntu2.14 php8.1 - 8.1.2-1ubuntu2.14 php8.1-bcmath - 8.1.2-1ubuntu2.14 php8.1-bz2 - 8.1.2-1ubuntu2.14 php8.1-cgi - 8.1.2-1ubuntu2.14 php8.1-cli - 8.1.2-1ubuntu2.14 php8.1-common - 8.1.2-1ubuntu2.14 php8.1-curl - 8.1.2-1ubuntu2.14 php8.1-dba - 8.1.2-1ubuntu2.14 php8.1-dev - 8.1.2-1ubuntu2.14 php8.1-enchant - 8.1.2-1ubuntu2.14 php8.1-fpm - 8.1.2-1ubuntu2.14 php8.1-gd - 8.1.2-1ubuntu2.14 php8.1-gmp - 8.1.2-1ubuntu2.14 php8.1-imap - 8.1.2-1ubuntu2.14 php8.1-interbase - 8.1.2-1ubuntu2.14 php8.1-intl - 8.1.2-1ubuntu2.14 php8.1-ldap - 8.1.2-1ubuntu2.14 php8.1-mbstring - 8.1.2-1ubuntu2.14 php8.1-mysql - 8.1.2-1ubuntu2.14 php8.1-odbc - 8.1.2-1ubuntu2.14 php8.1-opcache - 8.1.2-1ubuntu2.14 php8.1-pgsql - 8.1.2-1ubuntu2.14 php8.1-phpdbg - 8.1.2-1ubuntu2.14 php8.1-pspell - 8.1.2-1ubuntu2.14 php8.1-readline - 8.1.2-1ubuntu2.14 php8.1-snmp - 8.1.2-1ubuntu2.14 php8.1-soap - 8.1.2-1ubuntu2.14 php8.1-sqlite3 - 8.1.2-1ubuntu2.14 php8.1-sybase - 8.1.2-1ubuntu2.14 php8.1-tidy - 8.1.2-1ubuntu2.14 php8.1-xml - 8.1.2-1ubuntu2.14 php8.1-xsl - 8.1.2-1ubuntu2.14 php8.1-zip - 8.1.2-1ubuntu2.14</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-23" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3823" severity="medium" public="20230811" usns="6305-1">CVE-2023-3823</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3824" severity="medium" public="20230811" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6305-1">CVE-2023-3824</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:393682830363981706691419397358623829910" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -17637,6 +17658,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:392580744330740951863794262122648204796" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:397064340252993027178203951500810498027" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:608391881494393284303878811740550362936" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:393682830363981706691419397358623829910" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:528349864695345063253370572573684908099" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:522594813731080476805118235742696982976" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:396109139751489948986179805832085598910" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:625617259948957552046287634499922008445" />
@@ -20956,6 +20981,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:528053296276862065089104254656512741698" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:679896267291198622015234250028432648225" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:528349864695345063253370572573684908099" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:433189847713230693688193232878710374561" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:528837811668450131647533943874469272256" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:645664383362288817963782126341697477835" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -22560,6 +22588,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:521295978216806845261161257708736688230" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20.0-2ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:522594813731080476805118235742696982976" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.2-1ubuntu2.14</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:523590930815497919973634972743423145971" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:102.11.0-0ubuntu0.22.04.1</linux:evr>
