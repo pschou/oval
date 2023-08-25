@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-08-24T02:39:38</oval:timestamp>
+		<oval:timestamp>2023-08-25T04:37:24</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2834,7 +2834,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-08-23" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3823" severity="medium" public="20230811" usns="6305-1">CVE-2023-3823</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3823" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" usns="6305-1">CVE-2023-3823</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-3824" severity="medium" public="20230811" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6305-1">CVE-2023-3824</cve>
 				</advisory>
 			</metadata>
@@ -2842,11 +2842,65 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:435803134735997748660267582689369396684" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:63061000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6306-1 -- Fast DDS vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6306-1" ref_url="https://ubuntu.com/security/notices/USN-6306-1" />
+				<reference source="CVE" ref_id="CVE-2021-38425" ref_url="https://ubuntu.com/security/CVE-2021-38425" />
+				<reference source="CVE" ref_id="CVE-2023-39534" ref_url="https://ubuntu.com/security/CVE-2023-39534" />
+				<reference source="CVE" ref_id="CVE-2023-39945" ref_url="https://ubuntu.com/security/CVE-2023-39945" />
+				<reference source="CVE" ref_id="CVE-2023-39946" ref_url="https://ubuntu.com/security/CVE-2023-39946" />
+				<reference source="CVE" ref_id="CVE-2023-39947" ref_url="https://ubuntu.com/security/CVE-2023-39947" />
+				<reference source="CVE" ref_id="CVE-2023-39948" ref_url="https://ubuntu.com/security/CVE-2023-39948" />
+				<reference source="CVE" ref_id="CVE-2023-39949" ref_url="https://ubuntu.com/security/CVE-2023-39949" />
+				<description>It was discovered that Fast DDS incorrectly handled certain inputs. A remote attacker could possibly use this issue to cause a denial of service and information exposure. This issue only affected Ubuntu 22.04 LTS. (CVE-2021-38425)  It was discovered that Fast DDS incorrectly handled certain inputs. An attacker could possibly use this issue to cause a crash. (CVE-2023-39534, CVE-2023-39945, CVE-2023-39946, CVE-2023-39947, CVE-2023-39948, CVE-2023-39949)  Update Instructions:  Run `sudo pro fix USN-6306-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  fastdds-tools - 2.9.1+ds-1ubuntu0.1 libfastrtps2.9 - 2.9.1+ds-1ubuntu0.1 libfastrtps-dev - 2.9.1+ds-1ubuntu0.1 libfastrtps-doc - 2.9.1+ds-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-24" />
+					<cve href="https://ubuntu.com/security/CVE-2021-38425" severity="medium" public="20220505" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" usns="6306-1">CVE-2021-38425</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39534" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6306-1">CVE-2023-39534</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39945" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6306-1">CVE-2023-39945</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39946" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6306-1">CVE-2023-39946</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39947" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6306-1">CVE-2023-39947</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39948" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6306-1">CVE-2023-39948</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39949" severity="medium" public="20230811" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6306-1">CVE-2023-39949</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:491782435258691765220659616484818559530" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:63071000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6307-1 -- JOSE for C/C++ vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6307-1" ref_url="https://ubuntu.com/security/notices/USN-6307-1" />
+				<reference source="CVE" ref_id="CVE-2023-37464" ref_url="https://ubuntu.com/security/CVE-2023-37464" />
+				<description>It was discovered that JOSE for C/C++ AES GCM decryption routine incorrectly uses the Tag length from the actual Authentication Tag provided in the JWE. An attacker could use this to cause a denial of service (system crash) or might expose sensitive information.  Update Instructions:  Run `sudo pro fix USN-6307-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libcjose0 - 0.6.2.1-1ubuntu0.1 libcjose-dev - 0.6.2.1-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-08-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-37464" severity="medium" public="20230714" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N">CVE-2023-37464</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:350959563259511065109846127629853395687" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:417381660045401151218873456517383565991" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:505883319178300410494297124913574160670" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:350959563259511065109846127629853395687" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:450428950034010890706221405776146551710" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:456386649289645372540845312701227490758" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:358435671938002106942880418383917149802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:618380014257575710870512094380214608298" />
@@ -3003,6 +3057,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:491671872978581340223476055400454097139" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:577374704248742331712692188213947726827" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:546252292551627825403690784408171627547" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:491782435258691765220659616484818559530" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:449615324700468362535435602224380666998" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:677184189875900855473191300024035113546" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:494323071282725188648696993776553549948" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:340282715701341706614381084837504959167" />
@@ -3737,6 +3795,12 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:448503799760668142732240888930175319996" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:449615324700468362535435602224380666998" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:347202128053469539627243249240694510987" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:450428950034010890706221405776146551710" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:406837409859499748764881357444765195735" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:452207837482007518982938478255431392278" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:430898704376703188750560685326056504594" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4143,6 +4207,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:446476926700281925367131348419946105698" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.20+8-1ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:456386649289645372540845312701227490758" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.6.2.1-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:459831051191092154196792888598986023091" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:2.6.2+samba4.17.7+dfsg-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4409,6 +4476,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:676457242948142244924483258343458237053" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.12-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:677184189875900855473191300024035113546" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.9.1+ds-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:679718129533231844326765951765346376259" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.9-1ubuntu1.1</linux:evr>
@@ -4897,6 +4967,12 @@
 			<value>etcd-server</value>
 			<value>golang-etcd-server-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:347202128053469539627243249240694510987" version="1" datatype="string" comment="Interim Release">
+			<value>fastdds-tools</value>
+			<value>libfastrtps2.9</value>
+			<value>libfastrtps-dev</value>
+			<value>libfastrtps-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" version="1" datatype="string" comment="Interim Release">
 			<value>freetype2-demos</value>
 			<value>freetype2-doc</value>
@@ -5207,6 +5283,10 @@
 			<value>libcap2-bin</value>
 			<value>libcap-dev</value>
 			<value>libpam-cap</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:406837409859499748764881357444765195735" version="1" datatype="string" comment="Interim Release">
+			<value>libcjose0</value>
+			<value>libcjose-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" version="1" datatype="string" comment="Interim Release">
 			<value>libecpg6</value>
