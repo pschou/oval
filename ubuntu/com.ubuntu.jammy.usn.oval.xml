@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-01T06:40:44</oval:timestamp>
+		<oval:timestamp>2023-09-04T06:38:34</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -16291,6 +16291,41 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:63331000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6333-1 -- Thunderbird vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6333-1" ref_url="https://ubuntu.com/security/notices/USN-6333-1" />
+				<reference source="CVE" ref_id="CVE-2023-3417" ref_url="https://ubuntu.com/security/CVE-2023-3417" />
+				<reference source="CVE" ref_id="CVE-2023-4045" ref_url="https://ubuntu.com/security/CVE-2023-4045" />
+				<reference source="CVE" ref_id="CVE-2023-4046" ref_url="https://ubuntu.com/security/CVE-2023-4046" />
+				<reference source="CVE" ref_id="CVE-2023-4047" ref_url="https://ubuntu.com/security/CVE-2023-4047" />
+				<reference source="CVE" ref_id="CVE-2023-4048" ref_url="https://ubuntu.com/security/CVE-2023-4048" />
+				<reference source="CVE" ref_id="CVE-2023-4049" ref_url="https://ubuntu.com/security/CVE-2023-4049" />
+				<reference source="CVE" ref_id="CVE-2023-4050" ref_url="https://ubuntu.com/security/CVE-2023-4050" />
+				<reference source="CVE" ref_id="CVE-2023-4055" ref_url="https://ubuntu.com/security/CVE-2023-4055" />
+				<reference source="CVE" ref_id="CVE-2023-4056" ref_url="https://ubuntu.com/security/CVE-2023-4056" />
+				<description>Junsung Lee discovered that Thunderbird did not properly validate the text direction override unicode character in filenames. An attacker could potentially exploits this issue by spoofing file extension while attaching a file in emails. (CVE-2023-3417)  Max Vlasov discovered that Thunderbird Offscreen Canvas did not properly track cross-origin tainting. An attacker could potentially exploit this issue to access image data from another site in violation of same-origin policy. (CVE-2023-4045)  Alexander Guryanov discovered that Thunderbird did not properly update the value of a global variable in WASM JIT analysis in some circumstances. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2023-4046)  Mark Brand discovered that Thunderbird did not properly validate the size of an untrusted input stream. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2023-4050)  Multiple security issues were discovered in Thunderbird. If a user were tricked into opening a specially crafted website in a browsing context, an attacker could potentially exploit these to cause a denial of service, obtain sensitive information, bypass security restrictions, cross-site tracing, or execute arbitrary code. (CVE-2023-4047, CVE-2023-4048, CVE-2023-4049, CVE-2023-4055, CVE-2023-4056)  Update Instructions:  Run `sudo pro fix USN-6333-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  thunderbird - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-dev - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-gnome-support - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-af - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ar - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ast - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-be - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-bg - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-bn - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-bn-bd - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-br - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ca - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-cak - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-cs - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-cy - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-da - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-de - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-dsb - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-el - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-en - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-en-gb - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-en-us - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-es - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-es-ar - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-es-es - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-et - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-eu - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-fa - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-fi - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-fr - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-fy - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-fy-nl - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ga - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ga-ie - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-gd - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-gl - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-he - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-hr - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-hsb - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-hu - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-hy - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-id - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-is - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-it - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ja - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ka - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-kab - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-kk - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ko - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-lt - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-lv - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-mk - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ms - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-nb - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-nb-no - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-nl - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-nn - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-nn-no - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-pa - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-pa-in - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-pl - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-pt - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-pt-br - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-pt-pt - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-rm - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ro - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ru - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-si - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-sk - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-sl - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-sq - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-sr - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-sv - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-sv-se - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ta - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-ta-lk - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-th - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-tr - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-uk - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-uz - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-vi - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-zh-cn - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-zh-hans - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-zh-hant - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-locale-zh-tw - 1:102.15.0+build1-0ubuntu0.22.04.1 thunderbird-mozsymbols - 1:102.15.0+build1-0ubuntu0.22.04.1 xul-ext-calendar-timezones - 1:102.15.0+build1-0ubuntu0.22.04.1 xul-ext-gdata-provider - 1:102.15.0+build1-0ubuntu0.22.04.1 xul-ext-lightning - 1:102.15.0+build1-0ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-09-04" />
+					<cve href="https://ubuntu.com/security/CVE-2023-3417" severity="medium" public="20230724" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6333-1">CVE-2023-3417</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4045" severity="medium" public="20230801" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N" usns="6267-1,6333-1">CVE-2023-4045</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4046" severity="medium" public="20230801" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" usns="6267-1,6333-1">CVE-2023-4046</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4047" severity="medium" public="20230801" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" usns="6267-1,6333-1">CVE-2023-4047</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4048" severity="medium" public="20230801" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6267-1,6333-1">CVE-2023-4048</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4049" severity="medium" public="20230801" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6267-1,6333-1">CVE-2023-4049</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4050" severity="medium" public="20230801" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" usns="6267-1,6333-1">CVE-2023-4050</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4055" severity="medium" public="20230802" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" usns="6267-1,6333-1">CVE-2023-4055</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4056" severity="medium" public="20230802" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" usns="6267-1,6333-1">CVE-2023-4056</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:665913502845848950784832586350495910426" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -19689,6 +19724,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:417518765484011861957009435618306375113" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:516502975667827142775304829732948073386" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:665913502845848950784832586350495910426" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:568519280225014626443970917405926456143" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:463224744561125634294448664527453455579" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:666364720821302631935713298785666329371" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:501617686309504673526754656050933485996" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:569767840144433160545296863004898182433" />
@@ -21874,6 +21913,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:568352259814697261694616053383972433051" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:610167835331407453956144989635031509211" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:568519280225014626443970917405926456143" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:358558821857642227064834266318205127694" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:568542365758475932410551511015342827745" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:538687959946284714853427277654466124985" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -23076,6 +23118,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:462770915992540877233299428723448230480" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.4+8-1~22.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:463224744561125634294448664527453455579" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:102.15.0+build1-0ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:463930095066902107479872093260293379912" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:91.10.0-0ubuntu1</linux:evr>
