@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-15T04:39:42</oval:timestamp>
+		<oval:timestamp>2023-09-16T04:39:12</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3465,9 +3465,9 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-09-14" />
-					<cve href="https://ubuntu.com/security/CVE-2023-4573" priority="medium" public="20230830" usns="6320-1,6368-1">CVE-2023-4573</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-4574" priority="medium" public="20230830" usns="6320-1,6368-1">CVE-2023-4574</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-4575" priority="medium" public="20230830" usns="6320-1,6368-1">CVE-2023-4575</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4573" priority="medium" public="20230830" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6320-1,6368-1">CVE-2023-4573</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4574" priority="medium" public="20230830" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6320-1,6368-1">CVE-2023-4574</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4575" priority="medium" public="20230830" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6320-1,6368-1">CVE-2023-4575</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4581" priority="medium" public="20230830" usns="6320-1,6368-1">CVE-2023-4581</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4584" priority="medium" public="20230830" usns="6320-1,6368-1">CVE-2023-4584</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4863" priority="medium" public="20230912" usns="6367-1,6368-1,6369-1">CVE-2023-4863</cve>
@@ -3515,6 +3515,24 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:632069068105396573337400803524917246512" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:63751000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6375-1 -- atftp vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6375-1" ref_url="https://ubuntu.com/security/notices/USN-6375-1" />
+				<description>Florian Fainelli discovered that atftp did not properly manage requests made to a non-existent file, which could lead to a crash. A remote  attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6375-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  atftp - 0.8.0-3build0.23.04.1 atftpd - 0.8.0-3build0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2023-09-15" />
+					<bug>https://launchpad.net/bugs/1989816</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:524057075900862242426881164961613543438" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -3786,6 +3804,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:522142426782499360056487153871364056569" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:472160181614721016257093674130386237507" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:601852524458813232920705671029882183501" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:524057075900862242426881164961613543438" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:548938230787539923006692757391631712448" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:631124686516169674633055454252154748548" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:525016993309606519725485825955392940649" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:513181005240506517526103491494373974641" />
@@ -4780,6 +4802,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:546348142748181773095469567024610651379" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:591761972781067101927422908322743808902" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:548938230787539923006692757391631712448" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:678977106018571312937523174019541082310" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:551580261303038586579308762655176738773" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:616750128513085384738145288941780407707" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5366,6 +5391,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:624857154715797588961312955775173150240" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.40.4-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:631124686516169674633055454252154748548" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.8.0-3build0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:631576458945973011091868107282334482285" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:5.36.0-7ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5542,6 +5570,10 @@
 			<value>dotnet-targeting-pack-7.0</value>
 			<value>dotnet-templates-7.0</value>
 			<value>netstandard-targeting-pack-2.1-7.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:678977106018571312937523174019541082310" version="1" datatype="string" comment="Interim Release">
+			<value>atftp</value>
+			<value>atftpd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:585302504075288137323779610588985212586" version="1" datatype="string" comment="Interim Release">
 			<value>avahi-autoipd</value>

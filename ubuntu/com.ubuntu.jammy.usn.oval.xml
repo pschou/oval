@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-15T06:43:27</oval:timestamp>
+		<oval:timestamp>2023-09-16T06:41:05</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -17011,6 +17011,24 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:660103457327770290816167463987787156603" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:63751000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6375-1 -- atftp vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6375-1" ref_url="https://ubuntu.com/security/notices/USN-6375-1" />
+				<description>Florian Fainelli discovered that atftp did not properly manage requests made to a non-existent file, which could lead to a crash. A remote  attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6375-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  atftp - 0.7.git20210915-4build1 atftpd - 0.7.git20210915-4build1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2023-09-15" />
+					<bug>https://launchpad.net/bugs/1989816</bug>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:431560095421369804170676794271243003517" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -19308,6 +19326,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:430948501592016723442966839473150973836" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:419931589458401233465568155487165610536" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:629335314253823016369877161055267205168" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:431560095421369804170676794271243003517" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:540790822220916480050160453175827005419" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:503281732186612727075693682323385576147" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:432850643483257753755254184724576272499" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:610522395980274943682854510212785825657" />
@@ -22727,6 +22749,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:538951267485971025095248247634904918932" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:383463788190616759879662763706500639534" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:540790822220916480050160453175827005419" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:678977106018571312937523174019541082310" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:540889983889393796416990189115343850241" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:509791402370841902279513060265055965868" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -24322,6 +24347,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:503082588284952107082987672794442993489" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.113-0ubuntu1~22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:503281732186612727075693682323385576147" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.7.git20210915-4build1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:503570701006729958761961906995694600957" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.52.5+dfsg-3ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -25469,6 +25497,10 @@
 			<value>dotnet-targeting-pack-7.0</value>
 			<value>dotnet-templates-7.0</value>
 			<value>netstandard-targeting-pack-2.1-7.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:678977106018571312937523174019541082310" version="1" datatype="string" comment="Long Term Support">
+			<value>atftp</value>
+			<value>atftpd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:585302504075288137323779610588985212586" version="1" datatype="string" comment="Long Term Support">
 			<value>avahi-autoipd</value>
