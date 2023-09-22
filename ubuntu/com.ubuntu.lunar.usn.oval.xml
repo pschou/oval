@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-21T06:41:07</oval:timestamp>
+		<oval:timestamp>2023-09-22T04:42:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3644,8 +3644,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-09-20" />
-					<cve href="https://ubuntu.com/security/CVE-2023-3341" priority="medium" public="20230920" usns="6390-1">CVE-2023-3341</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-4236" priority="medium" public="20230920" usns="6390-1">CVE-2023-4236</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3341" priority="medium" public="20230920" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6390-1">CVE-2023-3341</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4236" priority="medium" public="20230920" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6390-1">CVE-2023-4236</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -3664,7 +3664,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-09-20" />
-					<cve href="https://ubuntu.com/security/CVE-2023-4504" priority="medium" public="20230920" cvss_score="0.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:N" cvss_severity="none" usns="6391-1,6392-1">CVE-2023-4504</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4504" priority="medium" public="20230920" cvss_score="0.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:N" cvss_severity="none" usns="6391-1,6392-1,6391-2">CVE-2023-4504</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -3683,11 +3683,30 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-09-20" />
-					<cve href="https://ubuntu.com/security/CVE-2023-4504" priority="medium" public="20230920" cvss_score="0.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:N" cvss_severity="none" usns="6391-1,6392-1">CVE-2023-4504</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4504" priority="medium" public="20230920" cvss_score="0.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:N" cvss_severity="none" usns="6391-1,6392-1,6391-2">CVE-2023-4504</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:435675597731377014865603480714689732448" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:63951000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6395-1 -- GNOME Shell vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6395-1" ref_url="https://ubuntu.com/security/notices/USN-6395-1" />
+				<reference source="CVE" ref_id="CVE-2023-43090" ref_url="https://ubuntu.com/security/CVE-2023-43090" />
+				<description>Mickael Karatekin discovered that GNOME Shell incorrectly allowed the screenshot tool to view open windows when a session was locked. A local attacker could possibly use this issue to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-6395-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gnome-shell - 44.3-0ubuntu1.1 gnome-shell-common - 44.3-0ubuntu1.1 gnome-shell-extension-prefs - 44.3-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-09-21" />
+					<cve href="https://ubuntu.com/security/CVE-2023-43090" priority="medium" public="20230918" usns="6395-1">CVE-2023-43090</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:600475141001335860554009181264087916323" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -4155,6 +4174,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:599905308869767617824245705346556160066" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:356240239154794954740922037753351949576" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:644405604395805741437004684203393098682" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:600475141001335860554009181264087916323" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:592760151036454027071946337543292228400" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:647848069620789555863998139713391638123" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:603979134570425076463461455155657655431" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:455488632529379527983680840947093217864" />
@@ -5100,6 +5123,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:590738002471975375874713540145697456138" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:536147848866234950776066910500535687247" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:592760151036454027071946337543292228400" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:346406560604251957765934193713756082869" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:593702714424772612138055032801790098992" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:636076809523348240659493257603584809785" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5685,6 +5711,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:646072023778959882754242971408693855135" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.12-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:647848069620789555863998139713391638123" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:44.3-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:651484711348540418720126084887211495122" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.108-0ubuntu1~23.04.1</linux:evr>
@@ -6362,6 +6391,11 @@
 			<value>libglusterd0</value>
 			<value>libglusterfs0</value>
 			<value>libglusterfs-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:346406560604251957765934193713756082869" version="1" datatype="string" comment="Interim Release">
+			<value>gnome-shell</value>
+			<value>gnome-shell-common</value>
+			<value>gnome-shell-extension-prefs</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:533611457783602686868373763130377418557" version="1" datatype="string" comment="Interim Release">
 			<value>golang-1.19</value>
