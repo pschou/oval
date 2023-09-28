@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-27T06:39:19</oval:timestamp>
+		<oval:timestamp>2023-09-28T04:41:15</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -16958,7 +16958,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-4575" priority="medium" public="20230830" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6320-1,6368-1">CVE-2023-4575</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4581" priority="medium" public="20230830" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N" cvss_severity="medium" usns="6320-1,6368-1">CVE-2023-4581</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4584" priority="medium" public="20230830" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6320-1,6368-1">CVE-2023-4584</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-4863" priority="medium" public="20230912" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6367-1,6368-1,6369-1">CVE-2023-4863</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4863" priority="medium" public="20230912" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6367-1,6368-1,6369-1,6369-2">CVE-2023-4863</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -16977,7 +16977,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-09-14" />
-					<cve href="https://ubuntu.com/security/CVE-2023-4863" priority="medium" public="20230912" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6367-1,6368-1,6369-1">CVE-2023-4863</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4863" priority="medium" public="20230912" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6367-1,6368-1,6369-1,6369-2">CVE-2023-4863</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -17369,6 +17369,27 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:448148001685159457055905781627168768032" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:63981000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6398-1 -- ReadyMedia vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6398-1" ref_url="https://ubuntu.com/security/notices/USN-6398-1" />
+				<reference source="CVE" ref_id="CVE-2022-26505" ref_url="https://ubuntu.com/security/CVE-2022-26505" />
+				<reference source="CVE" ref_id="CVE-2023-33476" ref_url="https://ubuntu.com/security/CVE-2023-33476" />
+				<description>It was discovered that ReadyMedia was vulnerable to DNS rebinding attacks. A remote attacker could possibly use this issue to trick the local DLNA server to leak information. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2022-26505)  It was discovered that ReadyMedia incorrectly handled certain HTTP requests using chunked transport encoding. A remote attacker could possibly use this issue to cause buffer overflows, resulting in out-of-bounds reads and writes. (CVE-2023-33476)  Update Instructions:  Run `sudo pro fix USN-6398-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  minidlna - 1.3.0+dfsg-2.1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-09-27" />
+					<cve href="https://ubuntu.com/security/CVE-2022-26505" priority="medium" public="20220306" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N" cvss_severity="high" usns="6398-1">CVE-2022-26505</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-33476" priority="medium" public="20230602" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6398-1">CVE-2023-33476</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:625826384831213296607532257911183235213" comment="Long Term Support" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -20813,6 +20834,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:475388744350716192552884801219836682506" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:473933552854285631293950906850108825404" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:625826384831213296607532257911183235213" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:617303759094307435595445457174553539039" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:370573574128098910447754029747683655815" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:625949944418742128691820368803828486979" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:404078362551298577482922742462573849205" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:582560819332926346337958173143754064538" />
@@ -23589,6 +23614,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:616112491061116234386173785934969062631" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:563539197224125522556145382451968719886" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:617303759094307435595445457174553539039" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:623688996325253874833381886848645199975" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:618027723913712523671755202230097764925" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:369047092955101027660664114064609179138" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -24250,6 +24278,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:368974303300163669883071261820728251010" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.37.1-2ubuntu0.22.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:370573574128098910447754029747683655815" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.3.0+dfsg-2.1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:372083635102595804234933132590046280737" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.13.8-1ubuntu2.22.04.1</linux:evr>
@@ -28487,6 +28518,9 @@
 			<value>mplayer</value>
 			<value>mplayer-doc</value>
 			<value>mplayer-gui</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:623688996325253874833381886848645199975" version="1" datatype="string" comment="Long Term Support">
+			<value>minidlna</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:548990305050191590694432132298301503898" version="1" datatype="string" comment="Long Term Support">
 			<value>mutt</value>
