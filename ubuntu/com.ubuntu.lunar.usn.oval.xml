@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-30T04:42:58</oval:timestamp>
+		<oval:timestamp>2023-10-03T02:39:36</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3749,6 +3749,46 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:415288412197455580762110220061637880602" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6402-1 -- LibTomMath vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6402-1" ref_url="https://ubuntu.com/security/notices/USN-6402-1" />
+				<reference source="CVE" ref_id="CVE-2023-36328" ref_url="https://ubuntu.com/security/CVE-2023-36328" />
+				<description>It was discovered that LibTomMath incorrectly handled certain inputs. An attacker could possibly use this issue to execute arbitrary code and cause a denial of service (DoS).  Update Instructions:  Run `sudo pro fix USN-6402-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libtommath1 - 1.2.0-6ubuntu0.23.04.1 libtommath-dev - 1.2.0-6ubuntu0.23.04.1 libtommath-doc - 1.2.0-6ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36328" priority="medium" public="20230901" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6402-1">CVE-2023-36328</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:570800490332453662715119928054964325678" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64031000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6403-1 -- libvpx vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6403-1" ref_url="https://ubuntu.com/security/notices/USN-6403-1" />
+				<reference source="CVE" ref_id="CVE-2023-44488" ref_url="https://ubuntu.com/security/CVE-2023-44488" />
+				<reference source="CVE" ref_id="CVE-2023-5217" ref_url="https://ubuntu.com/security/CVE-2023-5217" />
+				<description>It was discovered that libvpx did not properly handle certain malformed media files. If an application using libvpx opened a specially crafted file, a remote attacker could cause a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6403-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libvpx7 - 1.12.0-1ubuntu1.2 libvpx-dev - 1.12.0-1ubuntu1.2 libvpx-doc - 1.12.0-1ubuntu1.2 vpx-tools - 1.12.0-1ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-44488" priority="medium" public="20231002" usns="6403-1">CVE-2023-44488</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5217" priority="medium" public="20230929" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6403-1">CVE-2023-5217</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:386463474654671272042704359584315405881" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3810,6 +3850,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:385974480980465334165928217538071321113" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:606761745875701093070100722421066995054" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:663407400164967692701264771061599069597" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:386463474654671272042704359584315405881" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:400906001501458108610547288859925365503" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:477542760946179147602397740518537077765" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:391090617851664242620378803767119562708" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:504176197517450881182631330397124051739" />
@@ -4146,6 +4190,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:568288265288520908433786582165692694116" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:410353362187456146767730608017813109556" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:387738744976644514693208394758769602279" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:570800490332453662715119928054964325678" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:440209178622848662367525238721081041525" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:497339008634298751299665342104034324471" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:571007156422584316994261112440145106622" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:525957273075399256538568884750756021238" />
@@ -4928,6 +4976,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:400435015053257078907944463915272978168" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:400906001501458108610547288859925365503" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:530258684714261246376086090799544660222" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:403577194551037607235709724343394610368" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4972,6 +5023,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:440161164451302528317413157848088944523" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:440209178622848662367525238721081041525" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:537166095918850410020538615252964206353" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:445555741939006781057049359009627888067" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:469909185065039757774942576016745463628" var_check="at least one" />
@@ -5544,6 +5598,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:476671273588007252300674704785800329176" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:27.0.0-0ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:477542760946179147602397740518537077765" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.12.0-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:481022220059628817348528687143698966949" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.88.1-8ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5582,6 +5639,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:494270412402930678357008463105995325957" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.6.0-2ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:497339008634298751299665342104034324471" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-6ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:504377661589215986278127171943049303803" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.4-0.1ubuntu0.23.04.1</linux:evr>
@@ -6812,6 +6872,17 @@
 			<value>libtiff-opengl</value>
 			<value>libtiff-tools</value>
 			<value>libtiffxx6</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:537166095918850410020538615252964206353" version="1" datatype="string" comment="Interim Release">
+			<value>libtommath1</value>
+			<value>libtommath-dev</value>
+			<value>libtommath-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:530258684714261246376086090799544660222" version="1" datatype="string" comment="Interim Release">
+			<value>libvpx7</value>
+			<value>libvpx-dev</value>
+			<value>libvpx-doc</value>
+			<value>vpx-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:404126283275040013873904088392815677940" version="1" datatype="string" comment="Interim Release">
 			<value>libwebp7</value>

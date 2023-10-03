@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-09-30T06:41:59</oval:timestamp>
+		<oval:timestamp>2023-10-03T06:42:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -17420,6 +17420,46 @@
 				<criterion test_ref="oval:com.ubuntu.jammy:tst:625826384831213296607532257911183235213" comment="Long Term Support" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:64021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6402-1 -- LibTomMath vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6402-1" ref_url="https://ubuntu.com/security/notices/USN-6402-1" />
+				<reference source="CVE" ref_id="CVE-2023-36328" ref_url="https://ubuntu.com/security/CVE-2023-36328" />
+				<description>It was discovered that LibTomMath incorrectly handled certain inputs. An attacker could possibly use this issue to execute arbitrary code and cause a denial of service (DoS).  Update Instructions:  Run `sudo pro fix USN-6402-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libtommath1 - 1.2.0-6ubuntu0.22.04.1 libtommath-dev - 1.2.0-6ubuntu0.22.04.1 libtommath-doc - 1.2.0-6ubuntu0.22.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36328" priority="medium" public="20230901" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6402-1">CVE-2023-36328</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:517493573965879603943170905529899829732" comment="Long Term Support" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.jammy:def:64031000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6403-1 -- libvpx vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 22.04 LTS</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6403-1" ref_url="https://ubuntu.com/security/notices/USN-6403-1" />
+				<reference source="CVE" ref_id="CVE-2023-44488" ref_url="https://ubuntu.com/security/CVE-2023-44488" />
+				<reference source="CVE" ref_id="CVE-2023-5217" ref_url="https://ubuntu.com/security/CVE-2023-5217" />
+				<description>It was discovered that libvpx did not properly handle certain malformed media files. If an application using libvpx opened a specially crafted file, a remote attacker could cause a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6403-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libvpx7 - 1.11.0-2ubuntu2.2 libvpx-dev - 1.11.0-2ubuntu2.2 libvpx-doc - 1.11.0-2ubuntu2.2 vpx-tools - 1.11.0-2ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-44488" priority="medium" public="20231002" usns="6403-1">CVE-2023-44488</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5217" priority="medium" public="20230929" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6403-1">CVE-2023-5217</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.jammy:tst:636005966758415882117966804785205647606" comment="Long Term Support" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:349706163119525757995379423399231433717" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
@@ -20274,6 +20314,10 @@
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:443361584839237551709929149259526400125" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:447024026800938965060397936388208225444" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:517493573965879603943170905529899829732" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:548659610039644756126573561085177068330" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:507165629505489768192587649522539507917" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:518264584617232655104766000713493371077" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:679139223498945795756039358530654261479" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:366456237722955809214675625649335315041" />
@@ -20917,6 +20961,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:635411568093744936950779857139312639911" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:536836823124487679559957026368129711624" />
 			<linux:state state_ref="oval:com.ubuntu.jammy:ste:444670550266658356003135153072307515404" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:636005966758415882117966804785205647606" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
+			<linux:object object_ref="oval:com.ubuntu.jammy:obj:486467696708691525157378528552924274471" />
+			<linux:state state_ref="oval:com.ubuntu.jammy:ste:415642053961718934992237634035651481238" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.jammy:tst:636016139081023757540809808290691222301" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Support">
 			<linux:object object_ref="oval:com.ubuntu.jammy:obj:615460913397243344507574637380380698339" />
@@ -23070,6 +23118,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:485621458656519087188111871918341526493" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:612760304480786597245191187362796151083" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:486467696708691525157378528552924274471" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:530258684714261246376086090799544660222" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:487122211229517045302906443388044401414" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:443606995979678857078932176829283957655" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -23351,6 +23402,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:547604724348101476912279839223555026084" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:406820018270961378671442316543747704088" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:548659610039644756126573561085177068330" version="1" comment="Long Term Support">
+			<linux:name var_ref="oval:com.ubuntu.jammy:var:537166095918850410020538615252964206353" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.jammy:obj:548740200777980479695460066922844441787" version="1" comment="Long Term Support">
 			<linux:name var_ref="oval:com.ubuntu.jammy:var:610167835331407453956144989635031509211" var_check="at least one" />
@@ -24512,6 +24566,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:413711991778866495134545386789337902193" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">8:6.9.11.60+dfsg-1.3ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:415642053961718934992237634035651481238" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.11.0-2ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:416041163486407527205590978510030279530" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.18-0ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
@@ -24940,6 +24997,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:506327756152331291109850084231641689850" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.34.1-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:507165629505489768192587649522539507917" version="1" comment="Long Term Support">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-6ubuntu0.22.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.jammy:ste:507540364250465044821509267150860561498" version="1" comment="Long Term Support">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.38.5-0ubuntu0.22.04.1</linux:evr>
@@ -28386,6 +28446,11 @@
 			<value>libtirpc-common</value>
 			<value>libtirpc-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:537166095918850410020538615252964206353" version="1" datatype="string" comment="Long Term Support">
+			<value>libtommath1</value>
+			<value>libtommath-dev</value>
+			<value>libtommath-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:450619503894199108563763574757102840948" version="1" datatype="string" comment="Long Term Support">
 			<value>libtpms0</value>
 			<value>libtpms-dev</value>
@@ -28426,6 +28491,12 @@
 			<value>vlc-plugin-video-output</value>
 			<value>vlc-plugin-video-splitter</value>
 			<value>vlc-plugin-visualization</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.jammy:var:530258684714261246376086090799544660222" version="1" datatype="string" comment="Long Term Support">
+			<value>libvpx7</value>
+			<value>libvpx-dev</value>
+			<value>libvpx-doc</value>
+			<value>vpx-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.jammy:var:636318991198533071346305737715131451396" version="1" datatype="string" comment="Long Term Support">
 			<value>libwayland-bin</value>
