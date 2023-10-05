@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-04T06:42:09</oval:timestamp>
+		<oval:timestamp>2023-10-05T04:39:15</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2998,7 +2998,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2023-08-30" />
-					<cve href="https://ubuntu.com/security/CVE-2023-20569" priority="high" public="20230808" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6319-1">CVE-2023-20569</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-20569" priority="high" public="20230808" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6319-1,6412-1,6415-1,6416-1">CVE-2023-20569</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -3547,7 +3547,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-09-18" />
-					<cve href="https://ubuntu.com/security/CVE-2023-41164" priority="medium" public="20230904" usns="6378-1">CVE-2023-41164</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-41164" priority="medium" public="20230904" usns="6378-1,6414-2">CVE-2023-41164</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -3749,6 +3749,43 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:415288412197455580762110220061637880602" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64011000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6401-1 -- FreeRDP vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6401-1" ref_url="https://ubuntu.com/security/notices/USN-6401-1" />
+				<reference source="CVE" ref_id="CVE-2023-39350" ref_url="https://ubuntu.com/security/CVE-2023-39350" />
+				<reference source="CVE" ref_id="CVE-2023-39351" ref_url="https://ubuntu.com/security/CVE-2023-39351" />
+				<reference source="CVE" ref_id="CVE-2023-39353" ref_url="https://ubuntu.com/security/CVE-2023-39353" />
+				<reference source="CVE" ref_id="CVE-2023-39354" ref_url="https://ubuntu.com/security/CVE-2023-39354" />
+				<reference source="CVE" ref_id="CVE-2023-40181" ref_url="https://ubuntu.com/security/CVE-2023-40181" />
+				<reference source="CVE" ref_id="CVE-2023-40186" ref_url="https://ubuntu.com/security/CVE-2023-40186" />
+				<reference source="CVE" ref_id="CVE-2023-40188" ref_url="https://ubuntu.com/security/CVE-2023-40188" />
+				<reference source="CVE" ref_id="CVE-2023-40567" ref_url="https://ubuntu.com/security/CVE-2023-40567" />
+				<reference source="CVE" ref_id="CVE-2023-40569" ref_url="https://ubuntu.com/security/CVE-2023-40569" />
+				<reference source="CVE" ref_id="CVE-2023-40589" ref_url="https://ubuntu.com/security/CVE-2023-40589" />
+				<description>It was discovered that FreeRDP did not properly manage certain inputs. A malicious server could use this issue to cause FreeRDP clients to crash, resulting in a denial of service, or possibly obtain sensitive  information. (cve-2023-39350, cve-2023-39351,  CVE-2023-39353,  CVE-2023-39354, CVE-2023-40181, CVE-2023-40188, CVE-2023-40589)  It was discovered that FreeRDP did not properly manage certain inputs. A malicious server could use this issue to cause FreeRDP clients to crash, resulting in a denial of service, or possibly execute arbitrary code. (cve-2023-40186 CVE-2023-40567, CVE-2023-40569)  Update Instructions:  Run `sudo pro fix USN-6401-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  freerdp2-dev - 2.10.0+dfsg1-1ubuntu0.2 freerdp2-shadow-x11 - 2.10.0+dfsg1-1ubuntu0.2 freerdp2-wayland - 2.10.0+dfsg1-1ubuntu0.2 freerdp2-x11 - 2.10.0+dfsg1-1ubuntu0.2 libfreerdp2-2 - 2.10.0+dfsg1-1ubuntu0.2 libfreerdp-client2-2 - 2.10.0+dfsg1-1ubuntu0.2 libfreerdp-server2-2 - 2.10.0+dfsg1-1ubuntu0.2 libfreerdp-shadow2-2 - 2.10.0+dfsg1-1ubuntu0.2 libfreerdp-shadow-subsystem2-2 - 2.10.0+dfsg1-1ubuntu0.2 libuwac0-0 - 2.10.0+dfsg1-1ubuntu0.2 libuwac0-dev - 2.10.0+dfsg1-1ubuntu0.2 libwinpr2-2 - 2.10.0+dfsg1-1ubuntu0.2 libwinpr2-dev - 2.10.0+dfsg1-1ubuntu0.2 libwinpr-tools2-2 - 2.10.0+dfsg1-1ubuntu0.2 winpr-utils - 2.10.0+dfsg1-1ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-04" />
+					<cve href="https://ubuntu.com/security/CVE-2023-39350" priority="low" public="20230831" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2023-39350</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39351" priority="medium" public="20230831" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2023-39351</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39353" priority="medium" public="20230831" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical">CVE-2023-39353</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-39354" priority="medium" public="20230831" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2023-39354</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40181" priority="medium" public="20230831" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical">CVE-2023-40181</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40186" priority="medium" public="20230831" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical">CVE-2023-40186</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40188" priority="medium" public="20230831" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical">CVE-2023-40188</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40567" priority="medium" public="20230831" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical">CVE-2023-40567</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40569" priority="medium" public="20230831" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical">CVE-2023-40569</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40589" priority="medium" public="20230831" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2023-40589</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:594232322252435716819163602675870974682" comment="Interim Release" />
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.lunar:def:64021000000" version="1" class="patch">
 			<metadata>
 				<title>USN-6402-1 -- LibTomMath vulnerability</title>
@@ -3818,8 +3855,8 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-4580" priority="medium" public="20230830" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6320-1,6405-1">CVE-2023-4580</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4583" priority="medium" public="20230830" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="high" usns="6320-1,6405-1">CVE-2023-4583</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4585" priority="medium" public="20230830" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6320-1,6405-1">CVE-2023-4585</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5169" priority="medium" public="20230928" usns="6404-1,6405-1">CVE-2023-5169</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5171" priority="medium" public="20230928" usns="6404-1,6405-1">CVE-2023-5171</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5169" priority="medium" public="20230928" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6404-1,6405-1">CVE-2023-5169</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5171" priority="medium" public="20230928" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6404-1,6405-1">CVE-2023-5171</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5176" priority="medium" public="20230928" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6404-1,6405-1">CVE-2023-5176</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5217" priority="medium" public="20230929" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6403-1,6404-1,6405-1">CVE-2023-5217</cve>
 				</advisory>
@@ -3936,6 +3973,114 @@
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:673168886141969344659525407691125040911" comment="Interim Release" />
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:555226145241576949700950368332589844288" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6411-1 -- Exim vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6411-1" ref_url="https://ubuntu.com/security/notices/USN-6411-1" />
+				<reference source="CVE" ref_id="CVE-2023-42114" ref_url="https://ubuntu.com/security/CVE-2023-42114" />
+				<reference source="CVE" ref_id="CVE-2023-42115" ref_url="https://ubuntu.com/security/CVE-2023-42115" />
+				<reference source="CVE" ref_id="CVE-2023-42116" ref_url="https://ubuntu.com/security/CVE-2023-42116" />
+				<description>It was discovered that Exim incorrectly handled certain challenge requests. A remote attacker could possibly use this issue to perform out-of-bounds reads, resulting in information leakage. (CVE-2023-42114)  It was discovered that Exim incorrectly handled validation of user-supplied data. A remote attacker could possibly use this issue to perform out-of-bounds writes, resulting in arbitrary code execution. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-42115)  It was discovered that Exim incorrectly handled certain challenge requests. A remote attacker could possibly use this issue to perform out-of-bounds writes, resulting in arbitrary code execution. (CVE-2023-42116)  Update Instructions:  Run `sudo pro fix USN-6411-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  exim4 - 4.96-14ubuntu1.2 exim4-base - 4.96-14ubuntu1.2 exim4-config - 4.96-14ubuntu1.2 exim4-daemon-heavy - 4.96-14ubuntu1.2 exim4-daemon-light - 4.96-14ubuntu1.2 exim4-dev - 4.96-14ubuntu1.2 eximon4 - 4.96-14ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-04" />
+					<cve href="https://ubuntu.com/security/CVE-2023-42114" priority="medium" public="20230928" usns="6411-1">CVE-2023-42114</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42115" priority="medium" public="20230928" usns="6411-1">CVE-2023-42115</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42116" priority="medium" public="20230928" usns="6411-1">CVE-2023-42116</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:429884518269032234003606317878754364605" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64121000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6412-1 -- Linux kernel vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6412-1" ref_url="https://ubuntu.com/security/notices/USN-6412-1" />
+				<reference source="CVE" ref_id="CVE-2022-45886" ref_url="https://ubuntu.com/security/CVE-2022-45886" />
+				<reference source="CVE" ref_id="CVE-2022-45887" ref_url="https://ubuntu.com/security/CVE-2022-45887" />
+				<reference source="CVE" ref_id="CVE-2022-45919" ref_url="https://ubuntu.com/security/CVE-2022-45919" />
+				<reference source="CVE" ref_id="CVE-2022-48425" ref_url="https://ubuntu.com/security/CVE-2022-48425" />
+				<reference source="CVE" ref_id="CVE-2023-1206" ref_url="https://ubuntu.com/security/CVE-2023-1206" />
+				<reference source="CVE" ref_id="CVE-2023-20569" ref_url="https://ubuntu.com/security/CVE-2023-20569" />
+				<reference source="CVE" ref_id="CVE-2023-2156" ref_url="https://ubuntu.com/security/CVE-2023-2156" />
+				<reference source="CVE" ref_id="CVE-2023-3212" ref_url="https://ubuntu.com/security/CVE-2023-3212" />
+				<reference source="CVE" ref_id="CVE-2023-38427" ref_url="https://ubuntu.com/security/CVE-2023-38427" />
+				<reference source="CVE" ref_id="CVE-2023-38431" ref_url="https://ubuntu.com/security/CVE-2023-38431" />
+				<reference source="CVE" ref_id="CVE-2023-4155" ref_url="https://ubuntu.com/security/CVE-2023-4155" />
+				<reference source="CVE" ref_id="CVE-2023-4194" ref_url="https://ubuntu.com/security/CVE-2023-4194" />
+				<reference source="CVE" ref_id="CVE-2023-4273" ref_url="https://ubuntu.com/security/CVE-2023-4273" />
+				<description>Hyunwoo Kim discovered that the DVB Core driver in the Linux kernel contained a race condition during device removal, leading to a use-after- free vulnerability. A physically proximate attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2022-45886, CVE-2022-45919)  Hyunwoo Kim discovered that the Technotrend/Hauppauge USB DEC driver in the Linux kernel did not properly handle device removal events. A physically proximate attacker could use this to cause a denial of service (system crash). (CVE-2022-45887)  It was discovered that the NTFS file system implementation in the Linux kernel did not properly validate MFT flags in certain situations. An attacker could use this to construct a malicious NTFS image that, when mounted and operated on, could cause a denial of service (system crash). (CVE-2022-48425)  It was discovered that the IPv6 implementation in the Linux kernel contained a high rate of hash collisions in connection lookup table. A remote attacker could use this to cause a denial of service (excessive CPU consumption). (CVE-2023-1206)  Daniël Trujillo, Johannes Wikner, and Kaveh Razavi discovered that some AMD processors utilising speculative execution and branch prediction may allow unauthorised memory reads via a speculative side-channel attack. A local attacker could use this to expose sensitive information, including kernel memory. (CVE-2023-20569)  It was discovered that the IPv6 RPL protocol implementation in the Linux kernel did not properly handle user-supplied data. A remote attacker could use this to cause a denial of service (system crash). (CVE-2023-2156)  Yang Lan discovered that the GFS2 file system implementation in the Linux kernel could attempt to dereference a null pointer in some situations. An attacker could use this to construct a malicious GFS2 image that, when mounted and operated on, could cause a denial of service (system crash). (CVE-2023-3212)  It was discovered that the KSMBD implementation in the Linux kernel did not properly validate buffer sizes in certain operations, leading to an integer underflow and out-of-bounds read vulnerability. A remote attacker could use this to cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-38427)  Chih-Yen Chang discovered that the KSMBD implementation in the Linux kernel did not properly validate packet header sizes in certain situations, leading to an out-of-bounds read vulnerability. A remote attacker could use this to cause a denial of service (system crash) or possibly expose sensitive information. (CVE-2023-38431)  Andy Nguyen discovered that the KVM implementation for AMD processors in the Linux kernel with Secure Encrypted Virtualization (SEV) contained a race condition when accessing the GHCB page. A local attacker in a SEV guest VM could possibly use this to cause a denial of service (host system crash). (CVE-2023-4155)  It was discovered that the TUN/TAP driver in the Linux kernel did not properly initialize socket data. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-4194)  Maxim Suhanov discovered that the exFAT file system implementation in the Linux kernel did not properly check a file name length, leading to an out- of-bounds write vulnerability. An attacker could use this to construct a malicious exFAT image that, when mounted and operated on, could cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-4273)  Update Instructions:  Run `sudo pro fix USN-6412-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-aws - 6.2.0.1013.14 linux-aws-cloud-tools-6.2.0-1013 - 6.2.0-1013.13 linux-aws-headers-6.2.0-1013 - 6.2.0-1013.13 linux-aws-tools-6.2.0-1013 - 6.2.0-1013.13 linux-azure - 6.2.0.1014.14 linux-azure-cloud-tools-6.2.0-1014 - 6.2.0-1014.14 linux-azure-headers-6.2.0-1014 - 6.2.0-1014.14 linux-azure-tools-6.2.0-1014 - 6.2.0-1014.14 linux-buildinfo-6.2.0-34-generic - 6.2.0-34.34 linux-buildinfo-6.2.0-34-generic-64k - 6.2.0-34.34 linux-buildinfo-6.2.0-34-generic-lpae - 6.2.0-34.34 linux-buildinfo-6.2.0-1006-starfive - 6.2.0-1006.7 linux-buildinfo-6.2.0-1013-aws - 6.2.0-1013.13 linux-buildinfo-6.2.0-1013-oracle - 6.2.0-1013.13 linux-buildinfo-6.2.0-1014-azure - 6.2.0-1014.14 linux-buildinfo-6.2.0-1014-kvm - 6.2.0-1014.14 linux-buildinfo-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-buildinfo-6.2.0-1014-lowlatency-64k - 6.2.0-1014.14 linux-buildinfo-6.2.0-1014-raspi - 6.2.0-1014.16 linux-buildinfo-6.2.0-1016-gcp - 6.2.0-1016.18 linux-cloud-tools-6.2.0-34 - 6.2.0-34.34 linux-cloud-tools-6.2.0-34-generic - 6.2.0-34.34 linux-cloud-tools-6.2.0-1013-aws - 6.2.0-1013.13 linux-cloud-tools-6.2.0-1014-azure - 6.2.0-1014.14 linux-cloud-tools-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-cloud-tools-azure - 6.2.0.1014.14 linux-cloud-tools-common - 6.2.0-34.34 linux-cloud-tools-generic - 6.2.0.34.34 linux-cloud-tools-generic-hwe-22.04 - 6.2.0.34.34 linux-cloud-tools-generic-hwe-22.04-edge - 6.2.0.34.34 linux-cloud-tools-lowlatency - 6.2.0.1014.14 linux-cloud-tools-lowlatency-hwe-20.04 - 6.2.0.1014.14 linux-cloud-tools-lowlatency-hwe-20.04-edge - 6.2.0.1014.14 linux-cloud-tools-lowlatency-hwe-22.04 - 6.2.0.1014.14 linux-cloud-tools-lowlatency-hwe-22.04-edge - 6.2.0.1014.14 linux-cloud-tools-virtual - 6.2.0.34.34 linux-cloud-tools-virtual-hwe-22.04 - 6.2.0.34.34 linux-cloud-tools-virtual-hwe-22.04-edge - 6.2.0.34.34 linux-crashdump - 6.2.0.34.34 linux-doc - 6.2.0-34.34 linux-gcp - 6.2.0.1016.16 linux-gcp-headers-6.2.0-1016 - 6.2.0-1016.18 linux-gcp-tools-6.2.0-1016 - 6.2.0-1016.18 linux-generic - 6.2.0.34.34 linux-generic-64k - 6.2.0.34.34 linux-generic-64k-hwe-22.04 - 6.2.0.34.34 linux-generic-64k-hwe-22.04-edge - 6.2.0.34.34 linux-generic-hwe-22.04 - 6.2.0.34.34 linux-generic-hwe-22.04-edge - 6.2.0.34.34 linux-generic-lpae - 6.2.0.34.34 linux-generic-lpae-hwe-22.04 - 6.2.0.34.34 linux-generic-lpae-hwe-22.04-edge - 6.2.0.34.34 linux-headers-6.2.0-34 - 6.2.0-34.34 linux-headers-6.2.0-34-generic - 6.2.0-34.34 linux-headers-6.2.0-34-generic-64k - 6.2.0-34.34 linux-headers-6.2.0-34-generic-lpae - 6.2.0-34.34 linux-headers-6.2.0-1006-starfive - 6.2.0-1006.7 linux-headers-6.2.0-1013-aws - 6.2.0-1013.13 linux-headers-6.2.0-1013-oracle - 6.2.0-1013.13 linux-headers-6.2.0-1014-azure - 6.2.0-1014.14 linux-headers-6.2.0-1014-kvm - 6.2.0-1014.14 linux-headers-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-headers-6.2.0-1014-lowlatency-64k - 6.2.0-1014.14 linux-headers-6.2.0-1014-raspi - 6.2.0-1014.16 linux-headers-6.2.0-1016-gcp - 6.2.0-1016.18 linux-headers-aws - 6.2.0.1013.14 linux-headers-azure - 6.2.0.1014.14 linux-headers-gcp - 6.2.0.1016.16 linux-headers-generic - 6.2.0.34.34 linux-headers-generic-64k - 6.2.0.34.34 linux-headers-generic-64k-hwe-22.04 - 6.2.0.34.34 linux-headers-generic-64k-hwe-22.04-edge - 6.2.0.34.34 linux-headers-generic-hwe-22.04 - 6.2.0.34.34 linux-headers-generic-hwe-22.04-edge - 6.2.0.34.34 linux-headers-generic-lpae - 6.2.0.34.34 linux-headers-generic-lpae-hwe-22.04 - 6.2.0.34.34 linux-headers-generic-lpae-hwe-22.04-edge - 6.2.0.34.34 linux-headers-kvm - 6.2.0.1014.14 linux-headers-lowlatency - 6.2.0.1014.14 linux-headers-lowlatency-64k - 6.2.0.1014.14 linux-headers-lowlatency-64k-hwe-20.04 - 6.2.0.1014.14 linux-headers-lowlatency-64k-hwe-20.04-edge - 6.2.0.1014.14 linux-headers-lowlatency-64k-hwe-22.04 - 6.2.0.1014.14 linux-headers-lowlatency-64k-hwe-22.04-edge - 6.2.0.1014.14 linux-headers-lowlatency-hwe-20.04 - 6.2.0.1014.14 linux-headers-lowlatency-hwe-20.04-edge - 6.2.0.1014.14 linux-headers-lowlatency-hwe-22.04 - 6.2.0.1014.14 linux-headers-lowlatency-hwe-22.04-edge - 6.2.0.1014.14 linux-headers-oem-20.04 - 6.2.0.34.34 linux-headers-oracle - 6.2.0.1013.13 linux-headers-raspi - 6.2.0.1014.17 linux-headers-raspi-nolpae - 6.2.0.1014.17 linux-headers-starfive - 6.2.0.1006.9 linux-headers-virtual - 6.2.0.34.34 linux-headers-virtual-hwe-22.04 - 6.2.0.34.34 linux-headers-virtual-hwe-22.04-edge - 6.2.0.34.34 linux-image-6.2.0-34-generic - 6.2.0-34.34 linux-image-6.2.0-34-generic-64k - 6.2.0-34.34 linux-image-6.2.0-34-generic-lpae - 6.2.0-34.34 linux-image-6.2.0-1006-starfive - 6.2.0-1006.7 linux-image-6.2.0-1013-aws - 6.2.0-1013.13 linux-image-6.2.0-1013-oracle - 6.2.0-1013.13 linux-image-6.2.0-1014-azure - 6.2.0-1014.14 linux-image-6.2.0-1014-kvm - 6.2.0-1014.14 linux-image-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-image-6.2.0-1014-lowlatency-64k - 6.2.0-1014.14 linux-image-6.2.0-1014-raspi - 6.2.0-1014.16 linux-image-6.2.0-1016-gcp - 6.2.0-1016.18 linux-image-aws - 6.2.0.1013.14 linux-image-azure - 6.2.0.1014.14 linux-image-extra-virtual - 6.2.0.34.34 linux-image-extra-virtual-hwe-22.04 - 6.2.0.34.34 linux-image-extra-virtual-hwe-22.04-edge - 6.2.0.34.34 linux-image-gcp - 6.2.0.1016.16 linux-image-generic - 6.2.0.34.34 linux-image-generic-64k - 6.2.0.34.34 linux-image-generic-64k-hwe-22.04 - 6.2.0.34.34 linux-image-generic-64k-hwe-22.04-edge - 6.2.0.34.34 linux-image-generic-hwe-22.04 - 6.2.0.34.34 linux-image-generic-hwe-22.04-edge - 6.2.0.34.34 linux-image-generic-lpae - 6.2.0.34.34 linux-image-generic-lpae-hwe-22.04 - 6.2.0.34.34 linux-image-generic-lpae-hwe-22.04-edge - 6.2.0.34.34 linux-image-kvm - 6.2.0.1014.14 linux-image-lowlatency - 6.2.0.1014.14 linux-image-lowlatency-64k - 6.2.0.1014.14 linux-image-lowlatency-64k-hwe-20.04 - 6.2.0.1014.14 linux-image-lowlatency-64k-hwe-20.04-edge - 6.2.0.1014.14 linux-image-lowlatency-64k-hwe-22.04 - 6.2.0.1014.14 linux-image-lowlatency-64k-hwe-22.04-edge - 6.2.0.1014.14 linux-image-lowlatency-hwe-20.04 - 6.2.0.1014.14 linux-image-lowlatency-hwe-20.04-edge - 6.2.0.1014.14 linux-image-lowlatency-hwe-22.04 - 6.2.0.1014.14 linux-image-lowlatency-hwe-22.04-edge - 6.2.0.1014.14 linux-image-oem-20.04 - 6.2.0.34.34 linux-image-oracle - 6.2.0.1013.13 linux-image-raspi - 6.2.0.1014.17 linux-image-raspi-nolpae - 6.2.0.1014.17 linux-image-starfive - 6.2.0.1006.9 linux-image-unsigned-6.2.0-34-generic - 6.2.0-34.34 linux-image-unsigned-6.2.0-34-generic-64k - 6.2.0-34.34 linux-image-unsigned-6.2.0-1013-aws - 6.2.0-1013.13 linux-image-unsigned-6.2.0-1013-oracle - 6.2.0-1013.13 linux-image-unsigned-6.2.0-1014-azure - 6.2.0-1014.14 linux-image-unsigned-6.2.0-1014-kvm - 6.2.0-1014.14 linux-image-unsigned-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-image-unsigned-6.2.0-1014-lowlatency-64k - 6.2.0-1014.14 linux-image-unsigned-6.2.0-1016-gcp - 6.2.0-1016.18 linux-image-virtual - 6.2.0.34.34 linux-image-virtual-hwe-22.04 - 6.2.0.34.34 linux-image-virtual-hwe-22.04-edge - 6.2.0.34.34 linux-kvm - 6.2.0.1014.14 linux-kvm-headers-6.2.0-1014 - 6.2.0-1014.14 linux-kvm-tools-6.2.0-1014 - 6.2.0-1014.14 linux-lib-rust-6.2.0-34-generic - 6.2.0-34.34 linux-libc-dev - 6.2.0-34.34 linux-lowlatency - 6.2.0.1014.14 linux-lowlatency-64k - 6.2.0.1014.14 linux-lowlatency-64k-hwe-20.04 - 6.2.0.1014.14 linux-lowlatency-64k-hwe-20.04-edge - 6.2.0.1014.14 linux-lowlatency-64k-hwe-22.04 - 6.2.0.1014.14 linux-lowlatency-64k-hwe-22.04-edge - 6.2.0.1014.14 linux-lowlatency-cloud-tools-6.2.0-1014 - 6.2.0-1014.14 linux-lowlatency-cloud-tools-common - 6.2.0-1014.14 linux-lowlatency-headers-6.2.0-1014 - 6.2.0-1014.14 linux-lowlatency-hwe-20.04 - 6.2.0.1014.14 linux-lowlatency-hwe-20.04-edge - 6.2.0.1014.14 linux-lowlatency-hwe-22.04 - 6.2.0.1014.14 linux-lowlatency-hwe-22.04-edge - 6.2.0.1014.14 linux-lowlatency-tools-6.2.0-1014 - 6.2.0-1014.14 linux-lowlatency-tools-common - 6.2.0-1014.14 linux-lowlatency-tools-host - 6.2.0-1014.14 linux-modules-6.2.0-34-generic - 6.2.0-34.34 linux-modules-6.2.0-34-generic-64k - 6.2.0-34.34 linux-modules-6.2.0-34-generic-lpae - 6.2.0-34.34 linux-modules-6.2.0-1006-starfive - 6.2.0-1006.7 linux-modules-6.2.0-1013-aws - 6.2.0-1013.13 linux-modules-6.2.0-1013-oracle - 6.2.0-1013.13 linux-modules-6.2.0-1014-azure - 6.2.0-1014.14 linux-modules-6.2.0-1014-kvm - 6.2.0-1014.14 linux-modules-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-modules-6.2.0-1014-lowlatency-64k - 6.2.0-1014.14 linux-modules-6.2.0-1014-raspi - 6.2.0-1014.16 linux-modules-6.2.0-1016-gcp - 6.2.0-1016.18 linux-modules-extra-6.2.0-34-generic - 6.2.0-34.34 linux-modules-extra-6.2.0-1006-starfive - 6.2.0-1006.7 linux-modules-extra-6.2.0-1013-aws - 6.2.0-1013.13 linux-modules-extra-6.2.0-1013-oracle - 6.2.0-1013.13 linux-modules-extra-6.2.0-1014-azure - 6.2.0-1014.14 linux-modules-extra-6.2.0-1014-raspi - 6.2.0-1014.16 linux-modules-extra-6.2.0-1016-gcp - 6.2.0-1016.18 linux-modules-extra-aws - 6.2.0.1013.14 linux-modules-extra-azure - 6.2.0.1014.14 linux-modules-extra-gcp - 6.2.0.1016.16 linux-modules-extra-raspi - 6.2.0.1014.17 linux-modules-extra-raspi-nolpae - 6.2.0.1014.17 linux-modules-ipu6-6.2.0-34-generic - 6.2.0-34.34 linux-modules-ipu6-generic - 6.2.0.34.34 linux-modules-ipu6-generic-hwe-22.04 - 6.2.0.34.34 linux-modules-ipu6-generic-hwe-22.04-edge - 6.2.0.34.34 linux-modules-ivsc-6.2.0-34-generic - 6.2.0-34.34 linux-modules-ivsc-generic - 6.2.0.34.34 linux-modules-ivsc-generic-hwe-22.04 - 6.2.0.34.34 linux-modules-ivsc-generic-hwe-22.04-edge - 6.2.0.34.34 linux-modules-iwlwifi-6.2.0-34-generic - 6.2.0-34.34 linux-modules-iwlwifi-6.2.0-1013-aws - 6.2.0-1013.13 linux-modules-iwlwifi-6.2.0-1013-oracle - 6.2.0-1013.13 linux-modules-iwlwifi-6.2.0-1014-azure - 6.2.0-1014.14 linux-modules-iwlwifi-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-modules-iwlwifi-6.2.0-1016-gcp - 6.2.0-1016.18 linux-modules-iwlwifi-aws - 6.2.0.1013.14 linux-modules-iwlwifi-azure - 6.2.0.1014.14 linux-modules-iwlwifi-gcp - 6.2.0.1016.16 linux-modules-iwlwifi-generic - 6.2.0.34.34 linux-modules-iwlwifi-generic-hwe-22.04 - 6.2.0.34.34 linux-modules-iwlwifi-generic-hwe-22.04-edge - 6.2.0.34.34 linux-modules-iwlwifi-lowlatency - 6.2.0.1014.14 linux-modules-iwlwifi-lowlatency-hwe-22.04 - 6.2.0.1014.14 linux-modules-iwlwifi-lowlatency-hwe-22.04-edge - 6.2.0.1014.14 linux-modules-iwlwifi-oracle - 6.2.0.1013.13 linux-oem-20.04 - 6.2.0.34.34 linux-oracle - 6.2.0.1013.13 linux-oracle-headers-6.2.0-1013 - 6.2.0-1013.13 linux-oracle-tools-6.2.0-1013 - 6.2.0-1013.13 linux-raspi - 6.2.0.1014.17 linux-raspi-headers-6.2.0-1014 - 6.2.0-1014.16 linux-raspi-nolpae - 6.2.0.1014.17 linux-raspi-tools-6.2.0-1014 - 6.2.0-1014.16 linux-source - 6.2.0.34.34 linux-source-6.2.0 - 6.2.0-34.34 linux-starfive - 6.2.0.1006.9 linux-starfive-headers-6.2.0-1006 - 6.2.0-1006.7 linux-starfive-tools-6.2.0-1006 - 6.2.0-1006.7 linux-tools-6.2.0-34 - 6.2.0-34.34 linux-tools-6.2.0-34-generic - 6.2.0-34.34 linux-tools-6.2.0-34-generic-64k - 6.2.0-34.34 linux-tools-6.2.0-34-generic-lpae - 6.2.0-34.34 linux-tools-6.2.0-1006-starfive - 6.2.0-1006.7 linux-tools-6.2.0-1013-aws - 6.2.0-1013.13 linux-tools-6.2.0-1013-oracle - 6.2.0-1013.13 linux-tools-6.2.0-1014-azure - 6.2.0-1014.14 linux-tools-6.2.0-1014-kvm - 6.2.0-1014.14 linux-tools-6.2.0-1014-lowlatency - 6.2.0-1014.14 linux-tools-6.2.0-1014-lowlatency-64k - 6.2.0-1014.14 linux-tools-6.2.0-1014-raspi - 6.2.0-1014.16 linux-tools-6.2.0-1016-gcp - 6.2.0-1016.18 linux-tools-aws - 6.2.0.1013.14 linux-tools-azure - 6.2.0.1014.14 linux-tools-common - 6.2.0-34.34 linux-tools-gcp - 6.2.0.1016.16 linux-tools-generic - 6.2.0.34.34 linux-tools-generic-64k - 6.2.0.34.34 linux-tools-generic-64k-hwe-22.04 - 6.2.0.34.34 linux-tools-generic-64k-hwe-22.04-edge - 6.2.0.34.34 linux-tools-generic-hwe-22.04 - 6.2.0.34.34 linux-tools-generic-hwe-22.04-edge - 6.2.0.34.34 linux-tools-generic-lpae - 6.2.0.34.34 linux-tools-generic-lpae-hwe-22.04 - 6.2.0.34.34 linux-tools-generic-lpae-hwe-22.04-edge - 6.2.0.34.34 linux-tools-host - 6.2.0-34.34 linux-tools-kvm - 6.2.0.1014.14 linux-tools-lowlatency - 6.2.0.1014.14 linux-tools-lowlatency-64k - 6.2.0.1014.14 linux-tools-lowlatency-64k-hwe-20.04 - 6.2.0.1014.14 linux-tools-lowlatency-64k-hwe-20.04-edge - 6.2.0.1014.14 linux-tools-lowlatency-64k-hwe-22.04 - 6.2.0.1014.14 linux-tools-lowlatency-64k-hwe-22.04-edge - 6.2.0.1014.14 linux-tools-lowlatency-hwe-20.04 - 6.2.0.1014.14 linux-tools-lowlatency-hwe-20.04-edge - 6.2.0.1014.14 linux-tools-lowlatency-hwe-22.04 - 6.2.0.1014.14 linux-tools-lowlatency-hwe-22.04-edge - 6.2.0.1014.14 linux-tools-oem-20.04 - 6.2.0.34.34 linux-tools-oracle - 6.2.0.1013.13 linux-tools-raspi - 6.2.0.1014.17 linux-tools-raspi-nolpae - 6.2.0.1014.17 linux-tools-starfive - 6.2.0.1006.9 linux-tools-virtual - 6.2.0.34.34 linux-tools-virtual-hwe-22.04 - 6.2.0.34.34 linux-tools-virtual-hwe-22.04-edge - 6.2.0.34.34 linux-virtual - 6.2.0.34.34 linux-virtual-hwe-22.04 - 6.2.0.34.34 linux-virtual-hwe-22.04-edge - 6.2.0.34.34</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-10-04" />
+					<cve href="https://ubuntu.com/security/CVE-2022-45886" priority="low" public="20221125" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6412-1">CVE-2022-45886</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-45887" priority="medium" public="20221125" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6412-1">CVE-2022-45887</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-45919" priority="low" public="20221127" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6412-1">CVE-2022-45919</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-48425" priority="medium" public="20230319" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6339-1,6350-1,6351-1,6339-2,6339-3,6339-4,6412-1">CVE-2022-48425</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1206" priority="medium" public="20230630" cvss_score="5.7" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6343-1,6385-1,6412-1,6416-1,6417-1">CVE-2023-1206</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-20569" priority="high" public="20230808" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6319-1,6412-1,6415-1,6416-1">CVE-2023-20569</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2156" priority="medium" public="20230509" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6173-1,6412-1,6416-1">CVE-2023-2156</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3212" priority="low" public="20230623" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6231-1,6339-1,6350-1,6351-1,6339-2,6339-3,6339-4,6388-1,6396-1,6412-1,6417-1">CVE-2023-3212</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38427" priority="medium" public="20230718" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6412-1">CVE-2023-38427</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38431" priority="medium" public="20230718" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="6412-1">CVE-2023-38431</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4155" priority="medium" public="20230809" cvss_score="5.6" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="6343-1,6412-1,6416-1">CVE-2023-4155</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4194" priority="medium" public="20230807" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6343-1,6385-1,6412-1,6416-1,6417-1">CVE-2023-4194</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4273" priority="medium" public="20230809" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6343-1,6385-1,6412-1,6416-1">CVE-2023-4273</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:390352731904116356353334658917621972953" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:380218146005311368556004488883589885109" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:430878935640902947988870294668093385570" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:626681639898035509300936527754133655629" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:370102605209438011957946366281481036476" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:611136713538005789416521268828986710182" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:467637803099971814841839681011798502009" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:367658384077781601025390361255704049315" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:356875443878223651707468162962324793869" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:570048862894692760226743693484550435492" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:590566561301508633506366347393156317468" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:521366817254077528566733249129959388915" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64141000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6414-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6414-1" ref_url="https://ubuntu.com/security/notices/USN-6414-1" />
+				<reference source="CVE" ref_id="CVE-2023-43665" ref_url="https://ubuntu.com/security/CVE-2023-43665" />
+				<description>Wenchao Li discovered that the Django Truncator function incorrectly handled very long HTML input. A remote attacker could possibly use this issue to cause Django to consume resources, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-6414-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:3.2.18-1ubuntu0.5 python-django-doc - 3:3.2.18-1ubuntu0.5</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-04" />
+					<cve href="https://ubuntu.com/security/CVE-2023-43665" priority="medium" public="20231004" usns="6414-1,6414-2">CVE-2023-43665</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:572593488321333005917744788032555033764" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -4059,6 +4204,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:427362499745399451834959015540732459075" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:410440744029832419826637439034756279822" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:486134196218966112679599672072660954275" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:429884518269032234003606317878754364605" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:569617882741741937427333161719583817626" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:476796424175884162626477505728995791570" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:431426730088901423182978593159272490049" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:434755991633755007366767882766368237249" />
@@ -4364,6 +4513,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:525957273075399256538568884750756021238" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:377603310923961537715903601789993623444" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:572593488321333005917744788032555033764" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:652638743849672047804436490163840198014" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:512930735075972873346322221260588081531" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:576497781418576844309061188498445631027" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:510303711104871096822122038518291109922" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:596278791515775222296676341641246049407" />
@@ -4399,6 +4552,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:592984412611790405812204194778463601516" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:464077032067903050435028499167193266610" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:404970888482463552136068973952836443904" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594232322252435716819163602675870974682" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:603693738674008218294494578088488888632" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:442244336676693541377369274928612515353" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594547707118879169937407251965714952070" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:663073610434828250643529424312816046479" />
@@ -4608,9 +4765,17 @@
 			<unix:object object_ref="oval:com.ubuntu.lunar:obj:539257525261347833398619290667170696549" />
 			<unix:state state_ref="oval:com.ubuntu.lunar:ste:617384667673048363047415807939129241911" />
 		</unix:uname_test>
+		<unix:uname_test check="at least one" comment="Is kernel 6.2.0-\d+(-aws|-oracle) currently running?" id="oval:com.ubuntu.lunar:tst:430878935640902947988870294668093385570" version="1">
+			<unix:object object_ref="oval:com.ubuntu.lunar:obj:539257525261347833398619290667170696549" />
+			<unix:state state_ref="oval:com.ubuntu.lunar:ste:364474722019755094341362677587005032707" />
+		</unix:uname_test>
 		<unix:uname_test check="at least one" comment="Is kernel 6.2.0-\d+(-azure) currently running?" id="oval:com.ubuntu.lunar:tst:516778158663761621670552687156562174354" version="1">
 			<unix:object object_ref="oval:com.ubuntu.lunar:obj:539257525261347833398619290667170696549" />
 			<unix:state state_ref="oval:com.ubuntu.lunar:ste:643512688494359050688348395275705686173" />
+		</unix:uname_test>
+		<unix:uname_test check="at least one" comment="Is kernel 6.2.0-\d+(-azure|-kvm|-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.lunar:tst:370102605209438011957946366281481036476" version="1">
+			<unix:object object_ref="oval:com.ubuntu.lunar:obj:539257525261347833398619290667170696549" />
+			<unix:state state_ref="oval:com.ubuntu.lunar:ste:569328967235288933813414864509158249106" />
 		</unix:uname_test>
 		<unix:uname_test check="at least one" comment="Is kernel 6.2.0-\d+(-azure|-oracle) currently running?" id="oval:com.ubuntu.lunar:tst:598593147191649780035962837866504405935" version="1">
 			<unix:object object_ref="oval:com.ubuntu.lunar:obj:539257525261347833398619290667170696549" />
@@ -4688,9 +4853,17 @@
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:400800697110889788553046533057802022892" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:511080423108255238918450602862277937827" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.lunar:tst:367658384077781601025390361255704049315" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:664164415427413637037814969680639760621" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:647009656430539202180302946152464748940" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:370036496972713104293305097855763478548" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:373255939849661720108328069079340133115" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:355884290071136113126684140039107821326" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.lunar:tst:380218146005311368556004488883589885109" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:623947908799912088147934019395709357157" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:611839413983949903936254740214509719528" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:380612231585965404041031571596224915578" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:353784576388772011458662867014163294418" />
@@ -4776,6 +4949,10 @@
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:534357047265416445407052242324892435573" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:677639819535863295559337035100844667595" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.lunar:tst:521366817254077528566733249129959388915" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:535465853739296011597740812889873387367" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:523245833354482119682950959923434307891" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:536518736245814056414373814017867091992" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:530878976499141330960871048864026366419" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:677639819535863295559337035100844667595" />
@@ -4795,6 +4972,10 @@
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:558220789064341613534347460522039604139" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:444576283097393892361053341070277380635" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:624563923210670017619378460512517458135" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.lunar:tst:570048862894692760226743693484550435492" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:667009795390288872370605778840249576480" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:581272873460242294628880971130069323750" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:576472310373628870129768192462101320383" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:497591069422473619530875110559624723199" />
@@ -4820,6 +5001,10 @@
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:552080357032903350787057526997803106180" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:361077376764456145816244582511650945291" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.lunar:tst:611136713538005789416521268828986710182" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:588544641177600131505634477387813013549" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:647009656430539202180302946152464748940" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:623826715480654694246268050549209781389" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:470288319949114376441889468504083756676" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:548451923041851502586840480834617344192" />
@@ -4827,6 +5012,10 @@
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:625033579697624522276851741420535487460" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:660117464157731465954140123279822945767" />
 			<ind:state state_ref="oval:com.ubuntu.lunar:ste:346942140265004302105725240362409273137" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.lunar:tst:626681639898035509300936527754133655629" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.lunar:obj:497266016986118620382144292397769367339" />
+			<ind:state state_ref="oval:com.ubuntu.lunar:ste:361077376764456145816244582511650945291" />
 		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.lunar:tst:628279915004884470127795907417389191639" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.lunar:obj:460097571358463056434047568489922993601" />
@@ -4978,6 +5167,9 @@
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:485672585111965278190923210734399910478" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.lunar:obj:497266016986118620382144292397769367339" version="1">
+			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:497591069422473619530875110559624723199" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
@@ -5005,6 +5197,9 @@
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:534357047265416445407052242324892435573" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.lunar:obj:535465853739296011597740812889873387367" version="1">
+			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
+		</ind:variable_object>
 		<unix:uname_object id="oval:com.ubuntu.lunar:obj:539257525261347833398619290667170696549" version="1" />
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:539657369294673764935752013010507446843" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
@@ -5027,6 +5222,9 @@
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:575242478542642785056211943109431079364" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.lunar:obj:588544641177600131505634477387813013549" version="1">
+			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
+		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:595741964994767335940650003000192156689" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
@@ -5037,6 +5235,9 @@
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:618936291294891230844662501295092544949" version="1">
+			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.lunar:obj:623947908799912088147934019395709357157" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:628412548498233702566289571215104259853" version="1">
@@ -5061,6 +5262,12 @@
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:660117464157731465954140123279822945767" version="1">
+			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.lunar:obj:664164415427413637037814969680639760621" version="1">
+			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.lunar:obj:667009795390288872370605778840249576480" version="1">
 			<ind:var_ref>oval:com.ubuntu.lunar:var:369267586268309811335197808307948456297</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.lunar:obj:669949509746374525397809575070415047802" version="1">
@@ -5399,6 +5606,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:565300820761620758705720174759236337266" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:647353091145153490354902517037251178087" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:569617882741741937427333161719583817626" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:557307654792941714877208571600592001701" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:577374704248742331712692188213947726827" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:346382628020547430561097328304040702882" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5449,6 +5659,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:603259405161430460014960334231285930647" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:626503625561135631910252101663952100832" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:603693738674008218294494578088488888632" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:513933541816334725303941665058794978701" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:603890088877449158521042810109684858763" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:404401339249636207688127335573623629646" var_check="at least one" />
@@ -5528,6 +5741,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:652501889683245365774914690322947702700" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:371286693089090051076131807913871929287" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:652638743849672047804436490163840198014" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:501220369778349828853377894798062358126" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:656592607552451993771103085491831380219" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:643333005089891056978059150726019969060" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5568,6 +5784,9 @@
 		<unix:uname_state id="oval:com.ubuntu.lunar:ste:357936295503678772119370660459906245836" version="1">
 			<unix:os_release operation="pattern match">6.2.0-\d+(-ibm)</unix:os_release>
 		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.lunar:ste:364474722019755094341362677587005032707" version="1">
+			<unix:os_release operation="pattern match">6.2.0-\d+(-aws|-oracle)</unix:os_release>
+		</unix:uname_state>
 		<unix:uname_state id="oval:com.ubuntu.lunar:ste:394980984459037011524401608388186832057" version="1">
 			<unix:os_release operation="pattern match">6.2.0-\d+(-raspi)</unix:os_release>
 		</unix:uname_state>
@@ -5591,6 +5810,9 @@
 		</unix:uname_state>
 		<unix:uname_state id="oval:com.ubuntu.lunar:ste:565913483854948778163301261520098822379" version="1">
 			<unix:os_release operation="pattern match">6.2.0-\d+(-gcp)</unix:os_release>
+		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.lunar:ste:569328967235288933813414864509158249106" version="1">
+			<unix:os_release operation="pattern match">6.2.0-\d+(-azure|-kvm|-lowlatency|-lowlatency-64k)</unix:os_release>
 		</unix:uname_state>
 		<unix:uname_state id="oval:com.ubuntu.lunar:ste:586365949617945424929263857815370078344" version="1">
 			<unix:os_release operation="pattern match">6.2.0-\d+(-starfive)</unix:os_release>
@@ -5748,6 +5970,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:440925420380037307949984277852794659817" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-0ubuntu2.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:442244336676693541377369274928612515353" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.10.0+dfsg1-1ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:443410587396192560225644236018760142981" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:14.0.6-12ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5801,6 +6026,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:476671273588007252300674704785800329176" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:27.0.0-0ubuntu1.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:476796424175884162626477505728995791570" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.96-14ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:477542760946179147602397740518537077765" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.12.0-1ubuntu1.2</linux:evr>
@@ -5861,6 +6089,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:511615619183117874763412633216936248131" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:7.2+dfsg-5ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:512930735075972873346322221260588081531" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:3.2.18-1ubuntu0.5</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:513867410157516416419046508015520246386" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.2.0-3ubuntu0.1</linux:evr>
@@ -6129,6 +6360,9 @@
 		<ind:variable_state id="oval:com.ubuntu.lunar:ste:670166182972409051936105296743633560642" version="1">
 			<ind:value datatype="debian_evr_string" operation="less than">0:6.2.0-33</ind:value>
 		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.lunar:ste:523245833354482119682950959923434307891" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.2.0-34</ind:value>
+		</ind:variable_state>
 		<ind:variable_state id="oval:com.ubuntu.lunar:ste:543822954581680770139978086173102770206" version="1">
 			<ind:value datatype="debian_evr_string" operation="less than">0:6.2.0-1003</ind:value>
 		</ind:variable_state>
@@ -6164,6 +6398,9 @@
 		</ind:variable_state>
 		<ind:variable_state id="oval:com.ubuntu.lunar:ste:647009656430539202180302946152464748940" version="1">
 			<ind:value datatype="debian_evr_string" operation="less than">0:6.2.0-1014</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.lunar:ste:581272873460242294628880971130069323750" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.2.0-1016</ind:value>
 		</ind:variable_state>
 	</states>
 	<variables>
@@ -6615,11 +6852,37 @@
 			<value>etcd-server</value>
 			<value>golang-etcd-server-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:557307654792941714877208571600592001701" version="1" datatype="string" comment="Interim Release">
+			<value>exim4</value>
+			<value>exim4-base</value>
+			<value>exim4-config</value>
+			<value>exim4-daemon-heavy</value>
+			<value>exim4-daemon-light</value>
+			<value>exim4-dev</value>
+			<value>eximon4</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:347202128053469539627243249240694510987" version="1" datatype="string" comment="Interim Release">
 			<value>fastdds-tools</value>
 			<value>libfastrtps2.9</value>
 			<value>libfastrtps-dev</value>
 			<value>libfastrtps-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:513933541816334725303941665058794978701" version="1" datatype="string" comment="Interim Release">
+			<value>freerdp2-dev</value>
+			<value>freerdp2-shadow-x11</value>
+			<value>freerdp2-wayland</value>
+			<value>freerdp2-x11</value>
+			<value>libfreerdp2-2</value>
+			<value>libfreerdp-client2-2</value>
+			<value>libfreerdp-server2-2</value>
+			<value>libfreerdp-shadow2-2</value>
+			<value>libfreerdp-shadow-subsystem2-2</value>
+			<value>libuwac0-0</value>
+			<value>libuwac0-dev</value>
+			<value>libwinpr2-2</value>
+			<value>libwinpr2-dev</value>
+			<value>libwinpr-tools2-2</value>
+			<value>winpr-utils</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:527866863768845850150034764119449272478" version="1" datatype="string" comment="Interim Release">
 			<value>freetype2-demos</value>
