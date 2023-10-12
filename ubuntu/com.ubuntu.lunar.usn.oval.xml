@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-11T04:38:43</oval:timestamp>
+		<oval:timestamp>2023-10-12T04:40:58</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4247,6 +4247,27 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:355234368959717515473227140932168002939" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64291000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6429-1 -- curl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6429-1" ref_url="https://ubuntu.com/security/notices/USN-6429-1" />
+				<reference source="CVE" ref_id="CVE-2023-38545" ref_url="https://ubuntu.com/security/CVE-2023-38545" />
+				<reference source="CVE" ref_id="CVE-2023-38546" ref_url="https://ubuntu.com/security/CVE-2023-38546" />
+				<description>Jay Satiro discovered that curl incorrectly handled hostnames when using a SOCKS5 proxy. In environments where curl is configured to use a SOCKS5 proxy, a remote attacker could possibly use this issue to execute arbitrary code. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-38545)  It was discovered that curl incorrectly handled cookies when an application duplicated certain handles. A local attacker could possibly create a cookie file and inject arbitrary cookies into subsequent connections. (CVE-2023-38546)  Update Instructions:  Run `sudo pro fix USN-6429-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 7.88.1-8ubuntu2.3 libcurl3-gnutls - 7.88.1-8ubuntu2.3 libcurl3-nss - 7.88.1-8ubuntu2.3 libcurl4 - 7.88.1-8ubuntu2.3 libcurl4-doc - 7.88.1-8ubuntu2.3 libcurl4-gnutls-dev - 7.88.1-8ubuntu2.3 libcurl4-nss-dev - 7.88.1-8ubuntu2.3 libcurl4-openssl-dev - 7.88.1-8ubuntu2.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-10-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38545" priority="high" public="20231011" usns="6429-1">CVE-2023-38545</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38546" priority="low" public="20231011" usns="6429-1,6429-2">CVE-2023-38546</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:552505139855365314188673247010861764297" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4656,6 +4677,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:551968350840796865965031662972500943488" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:560569341047680124436017690897745031384" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:343787318553730418489347885019794245335" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:552505139855365314188673247010861764297" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:574543600073227894022745234329503790457" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:464758412366803711297587897170891750709" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:553206319794452132242158703769891799402" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:420991222414800381199158482671801966425" />
@@ -5823,6 +5848,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:570729406370496843872743236290459300511" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:622923979815955469455159812007479523223" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:574543600073227894022745234329503790457" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:369047092955101027660664114064609179138" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:577374704248742331712692188213947726827" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:346382628020547430561097328304040702882" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6225,6 +6253,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:463163075023922912443218364778968252087" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.3-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:464758412366803711297587897170891750709" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.88.1-8ubuntu2.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:465516972333923426619790003014825642219" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20230206.0~ds1-5ubuntu0.1</linux:evr>
