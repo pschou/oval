@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-13T04:38:28</oval:timestamp>
+		<oval:timestamp>2023-10-17T04:42:45</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4268,6 +4268,25 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:552505139855365314188673247010861764297" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64312000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6431-2 -- iperf3 vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6431-2" ref_url="https://ubuntu.com/security/notices/USN-6431-2" />
+				<reference source="CVE" ref_id="CVE-2023-38403" ref_url="https://ubuntu.com/security/CVE-2023-38403" />
+				<description>USN-6431-1 fixed a vulnerability in iperf3. This update provides the corresponding update for Ubuntu 22.04 LTS and Ubuntu 23.04.  Original advisory details:   It was discovered that iperf3 did not properly manage certain inputs,   which could lead to a crash. A remote attacker could possibly use this  issue to cause a denial of service. (CVE-2023-38403)  Update Instructions:  Run `sudo pro fix USN-6431-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  iperf3 - 3.12-1+deb12u1build0.23.04.1 libiperf0 - 3.12-1+deb12u1build0.23.04.1 libiperf-dev - 3.12-1+deb12u1build0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-16" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38403" priority="medium" public="20230717" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6431-1,6431-2">CVE-2023-38403</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:651420220619143722660818926167413443877" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4917,6 +4936,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:651217396522470890742013839511564852423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:651420220619143722660818926167413443877" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:429800814982849464059660003880756121265" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:632300132812542731240200861084652565387" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:652700939114653721849469062107422938997" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:386201906148317945527672399780852208119" />
@@ -5631,6 +5654,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:425707912412432791164448809821204694000" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:592351485679654156992749460133716848911" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:429800814982849464059660003880756121265" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:670734864857628029892142458766837270857" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:434755991633755007366767882766368237249" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
@@ -6530,6 +6556,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:632178230114191311883794863968462781613" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20.0.2+9+ds1-0ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:632300132812542731240200861084652565387" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12-1+deb12u1build0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:637180686029394639932915565087848157928" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.1.2-6ubuntu0.23.04.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -7415,6 +7444,11 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
 			<value>intel-microcode</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:670734864857628029892142458766837270857" version="1" datatype="string" comment="Interim Release">
+			<value>iperf3</value>
+			<value>libiperf0</value>
+			<value>libiperf-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:354614036916658092354151873823385857457" version="1" datatype="string" comment="Interim Release">
 			<value>ironic-api</value>
