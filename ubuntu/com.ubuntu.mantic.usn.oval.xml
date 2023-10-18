@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#macos linux-definitions-schema.xsd" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<generator>
+		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
+		<oval:product_version>1</oval:product_version>
+		<oval:schema_version>5.11.1</oval:schema_version>
+		<oval:timestamp>2023-10-18T02:40:51</oval:timestamp>
+		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
+	</generator>
+	<definitions>
+		<definition class="inventory" id="oval:com.ubuntu.mantic:def:100" version="1">
+			<metadata>
+				<title>Check that Ubuntu 23.10 (mantic) is installed.</title>
+				<description />
+			</metadata>
+			<criteria>
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" comment="Ubuntu 23.10 (mantic) is installed." />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64232000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6423-2 -- CUE vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6423-2" ref_url="https://ubuntu.com/security/notices/USN-6423-2" />
+				<reference source="CVE" ref_id="CVE-2023-43641" ref_url="https://ubuntu.com/security/CVE-2023-43641" />
+				<description>USN-6423-1 fixed a vulnerability in CUE. This update provides the corresponding updates for Ubuntu 23.10.  Original advisory details:   It was discovered that CUE incorrectly handled certain files.  An attacker could possibly use this issue to expose sensitive  information or execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6423-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libcue2 - 2.2.1-4ubuntu1 libcue-dev - 2.2.1-4ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-17" />
+					<cve href="https://ubuntu.com/security/CVE-2023-43641" priority="medium" public="20231009" usns="6423-1,6423-2">CVE-2023-43641</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:616735649377285903388272372098866118499" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64253000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6425-3 -- Samba vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6425-3" ref_url="https://ubuntu.com/security/notices/USN-6425-3" />
+				<reference source="CVE" ref_id="CVE-2023-4091" ref_url="https://ubuntu.com/security/CVE-2023-4091" />
+				<reference source="CVE" ref_id="CVE-2023-4154" ref_url="https://ubuntu.com/security/CVE-2023-4154" />
+				<reference source="CVE" ref_id="CVE-2023-42669" ref_url="https://ubuntu.com/security/CVE-2023-42669" />
+				<reference source="CVE" ref_id="CVE-2023-42670" ref_url="https://ubuntu.com/security/CVE-2023-42670" />
+				<description>USN-6425-1 fixed vulnerabilities in Samba. This update provides the corresponding updates for Ubuntu 23.10.  Original advisory details:   Sri Nagasubramanian discovered that the Samba acl_xattr VFS module  incorrectly handled read-only files. When Samba is configured to ignore  system ACLs, a remote attacker could possibly use this issue to truncate  read-only files. (CVE-2023-4091)    Andrew Bartlett discovered that Samba incorrectly handled the DirSync  control. A remote attacker with an RODC DC account could possibly use this  issue to obtain all domain secrets. (CVE-2023-4154)    Andrew Bartlett discovered that Samba incorrectly handled the rpcecho  development server. A remote attacker could possibly use this issue to  cause Samba to stop responding, resulting in a denial of service.  (CVE-2023-42669)    Kirin van der Veer discovered that Samba incorrectly handled certain RPC  service listeners. A remote attacker could possibly use this issue to cause  Samba to start multiple incompatible RPC listeners, resulting in a denial  of service. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 23.04.  (CVE-2023-42670)  Update Instructions:  Run `sudo pro fix USN-6425-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ctdb - 2:4.18.6+dfsg-1ubuntu2.1 ldb-tools - 2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1 libldb2 - 2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1 libldb-dev - 2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1 libnss-winbind - 2:4.18.6+dfsg-1ubuntu2.1 libpam-winbind - 2:4.18.6+dfsg-1ubuntu2.1 libsmbclient - 2:4.18.6+dfsg-1ubuntu2.1 libsmbclient-dev - 2:4.18.6+dfsg-1ubuntu2.1 libwbclient0 - 2:4.18.6+dfsg-1ubuntu2.1 libwbclient-dev - 2:4.18.6+dfsg-1ubuntu2.1 python3-ldb - 2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1 python3-ldb-dev - 2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1 python3-samba - 2:4.18.6+dfsg-1ubuntu2.1 registry-tools - 2:4.18.6+dfsg-1ubuntu2.1 samba - 2:4.18.6+dfsg-1ubuntu2.1 samba-ad-dc - 2:4.18.6+dfsg-1ubuntu2.1 samba-ad-provision - 2:4.18.6+dfsg-1ubuntu2.1 samba-common - 2:4.18.6+dfsg-1ubuntu2.1 samba-common-bin - 2:4.18.6+dfsg-1ubuntu2.1 samba-dev - 2:4.18.6+dfsg-1ubuntu2.1 samba-dsdb-modules - 2:4.18.6+dfsg-1ubuntu2.1 samba-libs - 2:4.18.6+dfsg-1ubuntu2.1 samba-testsuite - 2:4.18.6+dfsg-1ubuntu2.1 samba-vfs-modules - 2:4.18.6+dfsg-1ubuntu2.1 smbclient - 2:4.18.6+dfsg-1ubuntu2.1 winbind - 2:4.18.6+dfsg-1ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-17" />
+					<cve href="https://ubuntu.com/security/CVE-2023-4091" priority="medium" public="20231010" usns="6425-1,6425-3">CVE-2023-4091</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4154" priority="medium" public="20231010" usns="6425-1,6425-3">CVE-2023-4154</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42669" priority="medium" public="20231010" usns="6425-1,6425-3">CVE-2023-42669</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42670" priority="medium" public="20231010" usns="6425-1,6425-3">CVE-2023-42670</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:527584859555126332325675847280538838947" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64293000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6429-3 -- curl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6429-3" ref_url="https://ubuntu.com/security/notices/USN-6429-3" />
+				<reference source="CVE" ref_id="CVE-2023-38545" ref_url="https://ubuntu.com/security/CVE-2023-38545" />
+				<reference source="CVE" ref_id="CVE-2023-38546" ref_url="https://ubuntu.com/security/CVE-2023-38546" />
+				<description>USN-6429-1 fixed vulnerabilities in curl. This update provides the corresponding updates for Ubuntu 23.10.  Original advisory details:   Jay Satiro discovered that curl incorrectly handled hostnames when using a  SOCKS5 proxy. In environments where curl is configured to use a SOCKS5  proxy, a remote attacker could possibly use this issue to execute arbitrary  code. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 23.04.  (CVE-2023-38545)    It was discovered that curl incorrectly handled cookies when an application  duplicated certain handles. A local attacker could possibly create a cookie  file and inject arbitrary cookies into subsequent connections.  (CVE-2023-38546)  Update Instructions:  Run `sudo pro fix USN-6429-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 8.2.1-1ubuntu3.1 libcurl3-gnutls - 8.2.1-1ubuntu3.1 libcurl3-nss - 8.2.1-1ubuntu3.1 libcurl4 - 8.2.1-1ubuntu3.1 libcurl4-doc - 8.2.1-1ubuntu3.1 libcurl4-gnutls-dev - 8.2.1-1ubuntu3.1 libcurl4-nss-dev - 8.2.1-1ubuntu3.1 libcurl4-openssl-dev - 8.2.1-1ubuntu3.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-10-17" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38545" priority="high" public="20231011" usns="6429-1,6429-3">CVE-2023-38545</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38546" priority="low" public="20231011" usns="6429-1,6429-2,6429-3">CVE-2023-38546</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64331000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6433-1 -- Ghostscript vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6433-1" ref_url="https://ubuntu.com/security/notices/USN-6433-1" />
+				<reference source="CVE" ref_id="CVE-2023-43115" ref_url="https://ubuntu.com/security/CVE-2023-43115" />
+				<description>It was discovered that Ghostscript incorrectly handled certain PDF documents. If a user or automated system were tricked into opening a specially crafted PDF file, a remote attacker could use this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6433-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ghostscript - 10.01.2~dfsg1-0ubuntu2.1 ghostscript-doc - 10.01.2~dfsg1-0ubuntu2.1 ghostscript-x - 10.01.2~dfsg1-0ubuntu2.1 libgs9-common - 10.01.2~dfsg1-0ubuntu2.1 libgs10 - 10.01.2~dfsg1-0ubuntu2.1 libgs10-common - 10.01.2~dfsg1-0ubuntu2.1 libgs-common - 10.01.2~dfsg1-0ubuntu2.1 libgs-dev - 10.01.2~dfsg1-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-17" />
+					<cve href="https://ubuntu.com/security/CVE-2023-43115" priority="medium" public="20230918" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6433-1">CVE-2023-43115</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" comment="Interim Release" />
+			</criteria>
+		</definition>
+	</definitions>
+	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:527584859555126332325675847280538838947" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:606799607954290480602081218671432943078" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:434411669851997419049597994309189947076" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:602913262670811392096670807876860504794" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:478992860970055157629725780074862987219" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:616735649377285903388272372098866118499" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365162248457552228787285456462626388824" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" />
+		</linux:dpkginfo_test>
+		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" version="1" comment="Ubuntu 23.10 (mantic) is installed.">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:450983574323384779092868378208779369654" />
+		</ind:textfilecontent54_test>
+	</tests>
+	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:365162248457552228787285456462626388824" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:369047092955101027660664114064609179138" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:606799607954290480602081218671432943078" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:600081929208916044455628935835493122332" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:439484508567309958833928065207204426446" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<ind:textfilecontent54_object id="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" version="1">
+			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
+			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
+	</objects>
+	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:434411669851997419049597994309189947076" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:478992860970055157629725780074862987219" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:4.18.6+dfsg-1ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:10.01.2~dfsg1-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:602913262670811392096670807876860504794" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.2.1-1ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.1-4ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<ind:textfilecontent54_state id="oval:com.ubuntu.mantic:ste:450983574323384779092868378208779369654" version="1" comment="Ubuntu 23.10">
+			<ind:subexpression datatype="string" operation="equals">mantic</ind:subexpression>
+		</ind:textfilecontent54_state>
+	</states>
+	<variables>
+		<constant_variable id="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" version="1" datatype="string" comment="Interim Release">
+			<value>ctdb</value>
+			<value>libnss-winbind</value>
+			<value>libpam-winbind</value>
+			<value>libsmbclient</value>
+			<value>libsmbclient-dev</value>
+			<value>libwbclient0</value>
+			<value>libwbclient-dev</value>
+			<value>python3-samba</value>
+			<value>registry-tools</value>
+			<value>samba</value>
+			<value>samba-ad-dc</value>
+			<value>samba-ad-provision</value>
+			<value>samba-common</value>
+			<value>samba-common-bin</value>
+			<value>samba-dev</value>
+			<value>samba-dsdb-modules</value>
+			<value>samba-libs</value>
+			<value>samba-testsuite</value>
+			<value>samba-vfs-modules</value>
+			<value>smbclient</value>
+			<value>winbind</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:369047092955101027660664114064609179138" version="1" datatype="string" comment="Interim Release">
+			<value>curl</value>
+			<value>libcurl3-gnutls</value>
+			<value>libcurl3-nss</value>
+			<value>libcurl4</value>
+			<value>libcurl4-doc</value>
+			<value>libcurl4-gnutls-dev</value>
+			<value>libcurl4-nss-dev</value>
+			<value>libcurl4-openssl-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:439484508567309958833928065207204426446" version="1" datatype="string" comment="Interim Release">
+			<value>ghostscript</value>
+			<value>ghostscript-doc</value>
+			<value>ghostscript-x</value>
+			<value>libgs9-common</value>
+			<value>libgs10</value>
+			<value>libgs10-common</value>
+			<value>libgs-common</value>
+			<value>libgs-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:600081929208916044455628935835493122332" version="1" datatype="string" comment="Interim Release">
+			<value>ldb-tools</value>
+			<value>libldb2</value>
+			<value>libldb-dev</value>
+			<value>python3-ldb</value>
+			<value>python3-ldb-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" version="1" datatype="string" comment="Interim Release">
+			<value>libcue2</value>
+			<value>libcue-dev</value>
+		</constant_variable>
+	</variables>
+</oval_definitions>
