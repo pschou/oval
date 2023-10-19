@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-18T04:42:27</oval:timestamp>
+		<oval:timestamp>2023-10-19T04:43:04</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4306,6 +4306,29 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:388973407508139601924446710626865976121" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6436-1 -- FRR vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6436-1" ref_url="https://ubuntu.com/security/notices/USN-6436-1" />
+				<reference source="CVE" ref_id="CVE-2023-41358" ref_url="https://ubuntu.com/security/CVE-2023-41358" />
+				<reference source="CVE" ref_id="CVE-2023-41360" ref_url="https://ubuntu.com/security/CVE-2023-41360" />
+				<reference source="CVE" ref_id="CVE-2023-41909" ref_url="https://ubuntu.com/security/CVE-2023-41909" />
+				<description>It was discovered that the FRR did not properly check the attribute length in NRLI. A remote attacker could possibly use this issue to cause a denial of service. (CVE-2023-41358)  It was discovered that the FRR did not properly manage memory when reading initial bytes of ORF header. A remote attacker could possibly use this issue to cause a denial of service. (CVE-2023-41360)  It was discovered that FRR did not properly validate the attributes in the BGP FlowSpec functionality. A remote attacker could possibly use this issue to cause a denial of service. (CVE-2023-41909)  Update Instructions:  Run `sudo pro fix USN-6436-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  frr - 8.4.2-1ubuntu1.4 frr-doc - 8.4.2-1ubuntu1.4 frr-pythontools - 8.4.2-1ubuntu1.4 frr-rpki-rtrlib - 8.4.2-1ubuntu1.4 frr-snmp - 8.4.2-1ubuntu1.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-18" />
+					<cve href="https://ubuntu.com/security/CVE-2023-41358" priority="medium" public="20230829" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6432-1,6436-1">CVE-2023-41358</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-41360" priority="low" public="20230829" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="6432-1,6436-1">CVE-2023-41360</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-41909" priority="medium" public="20230905" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6436-1">CVE-2023-41909</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:448861217997932325720156760159361209708" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4491,6 +4514,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:445346855158139265942151608512833151705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:418160765449816055330136192238140239580" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:581213707394996940252367990275346958993" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:448861217997932325720156760159361209708" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:483948387940222693381990983951930774805" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:469968623472790717550992618051568333645" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:449292035830410159207140005764541807872" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:636808824994027584244725259646559035299" />
@@ -5771,6 +5798,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:483861843881911196800209435383519736401" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:371286693089090051076131807913871929287" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:483948387940222693381990983951930774805" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:559683440088164987256969219992557100775" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:493436667532578796089495279251952533543" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6317,6 +6347,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:469277897565182035762754337995174516147" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20.0.1+9~us1-0ubuntu1~23.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:469968623472790717550992618051568333645" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.4.2-1ubuntu1.4</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:470342954299285084369674145895383942457" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.1</linux:evr>
