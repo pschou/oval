@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-18T02:40:51</oval:timestamp>
+		<oval:timestamp>2023-10-20T02:42:08</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15,6 +15,27 @@
 			</metadata>
 			<criteria>
 				<criterion test_ref="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" comment="Ubuntu 23.10 (mantic) is installed." />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:63742000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6374-2 -- Mutt vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6374-2" ref_url="https://ubuntu.com/security/notices/USN-6374-2" />
+				<reference source="CVE" ref_id="CVE-2023-4874" ref_url="https://ubuntu.com/security/CVE-2023-4874" />
+				<reference source="CVE" ref_id="CVE-2023-4875" ref_url="https://ubuntu.com/security/CVE-2023-4875" />
+				<description>USN-6374-1 fixed vulnerabilities in Mutt. This update provides the corresponding updates for Ubuntu 23.10.  Original advisory details:   It was discovered that Mutt incorrectly handled certain email header  contents. If a user were tricked into opening a specially crafted message,  a remote attacker could possibly use this issue to cause a denial of  service. (CVE-2023-4874, CVE-2023-4875)  Update Instructions:  Run `sudo pro fix USN-6374-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  mutt - 2.2.9-1ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-4874" priority="medium" public="20230909" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6374-1,6374-2">CVE-2023-4874</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4875" priority="medium" public="20230909" cvss_score="5.7" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6374-1,6374-2">CVE-2023-4875</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" comment="Interim Release" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64232000000" version="1" class="patch">
@@ -62,6 +83,27 @@
 				<criterion test_ref="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64272000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6427-2 -- .NET vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6427-2" ref_url="https://ubuntu.com/security/notices/USN-6427-2" />
+				<reference source="CVE" ref_id="CVE-2023-44487" ref_url="https://ubuntu.com/security/CVE-2023-44487" />
+				<description>USN-6427-1 fixed a vulnerability in .NET. This update provides the corresponding update for .NET 8.  Original advisory details:   It was discovered that the .NET Kestrel web server did not properly handle  HTTP/2 requests. A remote attacker could possibly use this issue to cause a  denial of service.  Update Instructions:  Run `sudo pro fix USN-6427-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-8.0 - 8.0.0~rc2-0ubuntu1 aspnetcore-targeting-pack-8.0 - 8.0.0~rc2-0ubuntu1 dotnet8 - 8.0.100-8.0.0~rc2-0ubuntu1 dotnet-apphost-pack-8.0 - 8.0.0~rc2-0ubuntu1 dotnet-host-8.0 - 8.0.0~rc2-0ubuntu1 dotnet-hostfxr-8.0 - 8.0.0~rc2-0ubuntu1 dotnet-runtime-8.0 - 8.0.0~rc2-0ubuntu1 dotnet-sdk-8.0 - 8.0.100~rc2-0ubuntu1 dotnet-sdk-8.0-source-built-artifacts - 8.0.100~rc2-0ubuntu1 dotnet-targeting-pack-8.0 - 8.0.0~rc2-0ubuntu1 dotnet-templates-8.0 - 8.0.100~rc2-0ubuntu1 netstandard-targeting-pack-2.1-8.0 - 8.0.100~rc2-0ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-44487" priority="medium" public="20231010" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6427-1,6427-2,6438-1">CVE-2023-44487</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:356370434344336863135984827053952325373" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:582730876201787951729800857644041207777" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:452533455579102724958575909744512937896" comment="Interim Release" />
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64293000000" version="1" class="patch">
 			<metadata>
 				<title>USN-6429-3 -- curl vulnerabilities</title>
@@ -102,19 +144,61 @@
 				<criterion test_ref="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64381000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6438-1 -- .NET vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6438-1" ref_url="https://ubuntu.com/security/notices/USN-6438-1" />
+				<reference source="CVE" ref_id="CVE-2023-36799" ref_url="https://ubuntu.com/security/CVE-2023-36799" />
+				<reference source="CVE" ref_id="CVE-2023-44487" ref_url="https://ubuntu.com/security/CVE-2023-44487" />
+				<description>Kevin Jones discovered that .NET did not properly process certain X.509 certificates. An attacker could possibly use this issue to cause a denial of service. (CVE-2023-36799)  It was discovered that the .NET Kestrel web server did not properly handle HTTP/2 requests. A remote attacker could possibly use this issue to cause a denial of service. (CVE-2023-44487)  Update Instructions:  Run `sudo pro fix USN-6438-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-6.0 - 6.0.123-0ubuntu1 aspnetcore-runtime-7.0 - 7.0.112-0ubuntu1 aspnetcore-targeting-pack-6.0 - 6.0.123-0ubuntu1 aspnetcore-targeting-pack-7.0 - 7.0.112-0ubuntu1 dotnet6 - 6.0.123-0ubuntu1 dotnet7 - 7.0.112-0ubuntu1 dotnet-apphost-pack-6.0 - 6.0.123-0ubuntu1 dotnet-apphost-pack-7.0 - 7.0.112-0ubuntu1 dotnet-host - 6.0.123-0ubuntu1 dotnet-host-7.0 - 7.0.112-0ubuntu1 dotnet-hostfxr-6.0 - 6.0.123-0ubuntu1 dotnet-hostfxr-7.0 - 7.0.112-0ubuntu1 dotnet-runtime-6.0 - 6.0.123-0ubuntu1 dotnet-runtime-7.0 - 7.0.112-0ubuntu1 dotnet-sdk-6.0 - 6.0.123-0ubuntu1 dotnet-sdk-6.0-source-built-artifacts - 6.0.123-0ubuntu1 dotnet-sdk-7.0 - 7.0.112-0ubuntu1 dotnet-sdk-7.0-source-built-artifacts - 7.0.112-0ubuntu1 dotnet-targeting-pack-6.0 - 6.0.123-0ubuntu1 dotnet-targeting-pack-7.0 - 7.0.112-0ubuntu1 dotnet-templates-6.0 - 6.0.123-0ubuntu1 dotnet-templates-7.0 - 7.0.112-0ubuntu1 netstandard-targeting-pack-2.1 - 6.0.123-0ubuntu1 netstandard-targeting-pack-2.1-7.0 - 7.0.112-0ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36799" priority="medium" public="20230912" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6362-1,6438-1">CVE-2023-36799</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-44487" priority="medium" public="20231010" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6427-1,6427-2,6438-1">CVE-2023-44487</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:656058972143020912467062552424694997934" comment="Interim Release" />
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:540275722423705513407631667923711580049" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:356370434344336863135984827053952325373" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:372943558245940854347635315241023167719" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:452533455579102724958575909744512937896" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:411421192463553128611984786136395216144" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:433126625628580297306141474042395088770" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:363505817989458850079761608882388082987" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:369664800460721471539382152886851212798" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:527584859555126332325675847280538838947" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:606799607954290480602081218671432943078" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:434411669851997419049597994309189947076" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:540275722423705513407631667923711580049" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:570651488780058365972666109198970707929" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:640897104531435023880463678365588136283" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:602913262670811392096670807876860504794" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:582730876201787951729800857644041207777" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:666601804437872620450469826531919172303" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:590547875939386230722926345097578014755" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" />
@@ -124,14 +208,30 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365162248457552228787285456462626388824" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:656058972143020912467062552424694997934" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:410771646507712183407282928030362608400" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:648999051905091173091271215414360894176" />
+		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" version="1" comment="Ubuntu 23.10 (mantic) is installed.">
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" />
 			<ind:state state_ref="oval:com.ubuntu.mantic:ste:450983574323384779092868378208779369654" />
 		</ind:textfilecontent54_test>
 	</tests>
 	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:363505817989458850079761608882388082987" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:548990305050191590694432132298301503898" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:365162248457552228787285456462626388824" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:410771646507712183407282928030362608400" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:345443898926063000557241285383707223097" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:411421192463553128611984786136395216144" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:377192690333785565021363311062941690327" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:369047092955101027660664114064609179138" var_check="at least one" />
@@ -139,11 +239,17 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:570651488780058365972666109198970707929" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:622923979815955469455159812007479523223" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:606799607954290480602081218671432943078" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:600081929208916044455628935835493122332" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:439484508567309958833928065207204426446" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:666601804437872620450469826531919172303" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:576433769504538664619461474509787922514" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<ind:textfilecontent54_object id="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
@@ -152,6 +258,15 @@
 		</ind:textfilecontent54_object>
 	</objects>
 	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:369664800460721471539382152886851212798" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.9-1ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:372943558245940854347635315241023167719" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.0~rc2-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:433126625628580297306141474042395088770" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100~rc2-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:434411669851997419049597994309189947076" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -161,8 +276,17 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.01.2~dfsg1-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:590547875939386230722926345097578014755" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-8.0.0~rc2-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:602913262670811392096670807876860504794" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.2.1-1ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:640897104531435023880463678365588136283" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.112-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:648999051905091173091271215414360894176" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.123-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.1-4ubuntu1</linux:evr>
@@ -172,6 +296,43 @@
 		</ind:textfilecontent54_state>
 	</states>
 	<variables>
+		<constant_variable id="oval:com.ubuntu.mantic:var:345443898926063000557241285383707223097" version="1" datatype="string" comment="Interim Release">
+			<value>aspnetcore-runtime-6.0</value>
+			<value>aspnetcore-targeting-pack-6.0</value>
+			<value>dotnet6</value>
+			<value>dotnet-apphost-pack-6.0</value>
+			<value>dotnet-host</value>
+			<value>dotnet-hostfxr-6.0</value>
+			<value>dotnet-runtime-6.0</value>
+			<value>dotnet-sdk-6.0</value>
+			<value>dotnet-sdk-6.0-source-built-artifacts</value>
+			<value>dotnet-targeting-pack-6.0</value>
+			<value>dotnet-templates-6.0</value>
+			<value>netstandard-targeting-pack-2.1</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:622923979815955469455159812007479523223" version="1" datatype="string" comment="Interim Release">
+			<value>aspnetcore-runtime-7.0</value>
+			<value>aspnetcore-targeting-pack-7.0</value>
+			<value>dotnet7</value>
+			<value>dotnet-apphost-pack-7.0</value>
+			<value>dotnet-host-7.0</value>
+			<value>dotnet-hostfxr-7.0</value>
+			<value>dotnet-runtime-7.0</value>
+			<value>dotnet-sdk-7.0</value>
+			<value>dotnet-sdk-7.0-source-built-artifacts</value>
+			<value>dotnet-targeting-pack-7.0</value>
+			<value>dotnet-templates-7.0</value>
+			<value>netstandard-targeting-pack-2.1-7.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" version="1" datatype="string" comment="Interim Release">
+			<value>aspnetcore-runtime-8.0</value>
+			<value>aspnetcore-targeting-pack-8.0</value>
+			<value>dotnet-apphost-pack-8.0</value>
+			<value>dotnet-host-8.0</value>
+			<value>dotnet-hostfxr-8.0</value>
+			<value>dotnet-runtime-8.0</value>
+			<value>dotnet-targeting-pack-8.0</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" version="1" datatype="string" comment="Interim Release">
 			<value>ctdb</value>
 			<value>libnss-winbind</value>
@@ -205,6 +366,15 @@
 			<value>libcurl4-nss-dev</value>
 			<value>libcurl4-openssl-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:576433769504538664619461474509787922514" version="1" datatype="string" comment="Interim Release">
+			<value>dotnet8</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:377192690333785565021363311062941690327" version="1" datatype="string" comment="Interim Release">
+			<value>dotnet-sdk-8.0</value>
+			<value>dotnet-sdk-8.0-source-built-artifacts</value>
+			<value>dotnet-templates-8.0</value>
+			<value>netstandard-targeting-pack-2.1-8.0</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:439484508567309958833928065207204426446" version="1" datatype="string" comment="Interim Release">
 			<value>ghostscript</value>
 			<value>ghostscript-doc</value>
@@ -225,6 +395,9 @@
 		<constant_variable id="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" version="1" datatype="string" comment="Interim Release">
 			<value>libcue2</value>
 			<value>libcue-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:548990305050191590694432132298301503898" version="1" datatype="string" comment="Interim Release">
+			<value>mutt</value>
 		</constant_variable>
 	</variables>
 </oval_definitions>
