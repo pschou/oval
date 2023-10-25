@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-20T02:42:08</oval:timestamp>
+		<oval:timestamp>2023-10-25T02:40:49</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -36,6 +36,27 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64222000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6422-2 -- Ring vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6422-2" ref_url="https://ubuntu.com/security/notices/USN-6422-2" />
+				<reference source="CVE" ref_id="CVE-2021-37706" ref_url="https://ubuntu.com/security/CVE-2021-37706" />
+				<reference source="CVE" ref_id="CVE-2023-27585" ref_url="https://ubuntu.com/security/CVE-2023-27585" />
+				<description>It was discovered that Ring incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to execute arbitrary code. (CVE-2021-37706)  It was discovered that Ring incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service. (CVE-2023-27585)   Original advisory details:     It was discovered that Ring incorrectly handled certain inputs. If a user or  an automated system were tricked into opening a specially crafted input file,  a remote attacker could possibly use this issue to execute arbitrary code.  (CVE-2021-37706)    It was discovered that Ring incorrectly handled certain inputs. If a user or  an automated system were tricked into opening a specially crafted input file,  a remote attacker could possibly use this issue to cause a denial of service.  This issue only affected Ubuntu 18.04 LTS and Ubuntu 20.04 LTS.   (CVE-2021-43299, CVE-2021-43300, CVE-2021-43301, CVE-2021-43302,   CVE-2021-43303, CVE-2021-43804, CVE-2021-43845, CVE-2022-21723,   CVE-2022-23537, CVE-2022-23547, CVE-2022-23608, CVE-2022-24754,  CVE-2022-24763, CVE-2022-24764, CVE-2022-24793, CVE-2022-31031,  CVE-2022-39244)    It was discovered that Ring incorrectly handled certain inputs. If a user or  an automated system were tricked into opening a specially crafted input file,  a remote attacker could possibly use this issue to cause a denial of service.  This issue only affected Ubuntu 20.04 LTS. (CVE-2022-21722)    It was discovered that Ring incorrectly handled certain inputs. If a user or  an automated system were tricked into opening a specially crafted input file,  a remote attacker could possibly use this issue to cause a denial of service.  (CVE-2023-27585)  Update Instructions:  Run `sudo pro fix USN-6422-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  jami - 20230206.0~ds2-1.3ubuntu0.1 jami-daemon - 20230206.0~ds2-1.3ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-24" />
+					<cve href="https://ubuntu.com/security/CVE-2021-37706" priority="medium" public="20211222" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6422-1,6422-2">CVE-2021-37706</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-27585" priority="medium" public="20230314" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6422-1,6422-2">CVE-2023-27585</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:667132925386908948762214757304330292769" comment="Interim Release" />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64232000000" version="1" class="patch">
@@ -166,11 +187,59 @@
 				<criterion test_ref="oval:com.ubuntu.mantic:tst:540275722423705513407631667923711580049" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64481000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6448-1 -- Sofia-SIP vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6448-1" ref_url="https://ubuntu.com/security/notices/USN-6448-1" />
+				<reference source="CVE" ref_id="CVE-2023-32307" ref_url="https://ubuntu.com/security/CVE-2023-32307" />
+				<description>Xu Biang discovered that Sofia-SIP did not properly manage memory when handling STUN packets. An attacker could use this issue to cause Sofia-SIP to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6448-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libsofia-sip-ua0 - 1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1 libsofia-sip-ua-dev - 1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1 libsofia-sip-ua-glib3 - 1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1 libsofia-sip-ua-glib-dev - 1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1 sofia-sip-bin - 1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1 sofia-sip-doc - 1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-32307" priority="medium" public="20230526" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2023-32307</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:609249445692863259146323567887499405187" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64501000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6450-1 -- OpenSSL vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6450-1" ref_url="https://ubuntu.com/security/notices/USN-6450-1" />
+				<reference source="CVE" ref_id="CVE-2023-2975" ref_url="https://ubuntu.com/security/CVE-2023-2975" />
+				<reference source="CVE" ref_id="CVE-2023-3446" ref_url="https://ubuntu.com/security/CVE-2023-3446" />
+				<reference source="CVE" ref_id="CVE-2023-3817" ref_url="https://ubuntu.com/security/CVE-2023-3817" />
+				<reference source="CVE" ref_id="CVE-2023-5363" ref_url="https://ubuntu.com/security/CVE-2023-5363" />
+				<description>Tony Battersby discovered that OpenSSL incorrectly handled key and initialization vector (IV) lengths. This could lead to truncation issues and result in loss of confidentiality for some symmetric cipher modes. (CVE-2023-5363)  Juerg Wullschleger discovered that OpenSSL incorrectly handled the AES-SIV cipher. This could lead to empty data entries being ignored, resulting in certain applications being misled. This issue only affected Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-2975)  It was discovered that OpenSSL incorrectly handled checking excessively long DH keys or parameters. A remote attacker could possibly use this issue to cause OpenSSL to consume resources, leading to a denial of service. This issue only affected Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-3446, CVE-2023-3817)  Update Instructions:  Run `sudo pro fix USN-6450-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libssl3 - 3.0.10-1ubuntu2.1 libssl-dev - 3.0.10-1ubuntu2.1 libssl-doc - 3.0.10-1ubuntu2.1 openssl - 3.0.10-1ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2975" priority="low" public="20230714" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6450-1">CVE-2023-2975</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3446" priority="low" public="20230719" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6435-1,6450-1">CVE-2023-3446</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3817" priority="low" public="20230731" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6435-1,6450-1">CVE-2023-3817</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5363" priority="medium" public="20231024" usns="6450-1">CVE-2023-5363</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:373330512272995811093425799194655457319" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:356370434344336863135984827053952325373" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:372943558245940854347635315241023167719" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:373330512272995811093425799194655457319" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:638432188888545270273794465997852147035" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:638521214742562911482751842365441159939" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" />
@@ -204,6 +273,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:478992860970055157629725780074862987219" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:609249445692863259146323567887499405187" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:593716846586356189784861671594813363344" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:640335263028257572410990779949611062167" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:616735649377285903388272372098866118499" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365162248457552228787285456462626388824" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" />
@@ -211,6 +284,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:656058972143020912467062552424694997934" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:410771646507712183407282928030362608400" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:648999051905091173091271215414360894176" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:667132925386908948762214757304330292769" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:556947293543263864446653428581492790186" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:592022451705243989922300870167121234478" />
 		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" version="1" comment="Ubuntu 23.10 (mantic) is installed.">
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" />
@@ -236,14 +313,23 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:369047092955101027660664114064609179138" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:556947293543263864446653428581492790186" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:389589031901910029101020056410029524895" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:570651488780058365972666109198970707929" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:622923979815955469455159812007479523223" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:593716846586356189784861671594813363344" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:587071683873390085545532294459405662008" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:606799607954290480602081218671432943078" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:600081929208916044455628935835493122332" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:638432188888545270273794465997852147035" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:431616919203190711323193757560838269545" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:439484508567309958833928065207204426446" var_check="at least one" />
@@ -279,8 +365,17 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:590547875939386230722926345097578014755" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-8.0.0~rc2-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:592022451705243989922300870167121234478" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:20230206.0~ds2-1.3ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:602913262670811392096670807876860504794" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.2.1-1ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:638521214742562911482751842365441159939" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.10-1ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:640335263028257572410990779949611062167" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.12.11+20110422.1+1e14eea~dfsg-4ubuntu1.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:640897104531435023880463678365588136283" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.112-0ubuntu1</linux:evr>
@@ -385,6 +480,10 @@
 			<value>libgs-common</value>
 			<value>libgs-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:389589031901910029101020056410029524895" version="1" datatype="string" comment="Interim Release">
+			<value>jami</value>
+			<value>jami-daemon</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:600081929208916044455628935835493122332" version="1" datatype="string" comment="Interim Release">
 			<value>ldb-tools</value>
 			<value>libldb2</value>
@@ -395,6 +494,20 @@
 		<constant_variable id="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" version="1" datatype="string" comment="Interim Release">
 			<value>libcue2</value>
 			<value>libcue-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:587071683873390085545532294459405662008" version="1" datatype="string" comment="Interim Release">
+			<value>libsofia-sip-ua0</value>
+			<value>libsofia-sip-ua-dev</value>
+			<value>libsofia-sip-ua-glib3</value>
+			<value>libsofia-sip-ua-glib-dev</value>
+			<value>sofia-sip-bin</value>
+			<value>sofia-sip-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:431616919203190711323193757560838269545" version="1" datatype="string" comment="Interim Release">
+			<value>libssl3</value>
+			<value>libssl-dev</value>
+			<value>libssl-doc</value>
+			<value>openssl</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:548990305050191590694432132298301503898" version="1" datatype="string" comment="Interim Release">
 			<value>mutt</value>
