@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-10-28T00:41:52</oval:timestamp>
+		<oval:timestamp>2023-10-31T04:47:18</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -71,7 +71,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-10-17" />
-					<cve href="https://ubuntu.com/security/CVE-2023-43641" priority="medium" public="20231009" usns="6423-1,6423-2">CVE-2023-43641</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-43641" priority="medium" public="20231009" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6423-1,6423-2">CVE-2023-43641</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -331,10 +331,10 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2023-10-26" />
-					<cve href="https://ubuntu.com/security/CVE-2023-42756" priority="high" public="20230928" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6441-1,6442-1,6443-1,6444-1,6445-1,6446-1,6441-2,6444-2,6445-2,6446-2,6446-3,6454-1">CVE-2023-42756</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-4881" priority="high" public="20230911" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6439-1,6440-1,6441-1,6442-1,6443-1,6444-1,6445-1,6446-1,6440-2,6439-2,6441-2,6444-2,6445-2,6446-2,6440-3,6446-3,6454-1">CVE-2023-4881</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-4921" priority="high" public="20230912" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6439-1,6440-1,6441-1,6442-1,6444-1,6445-1,6446-1,6440-2,6439-2,6441-2,6444-2,6445-2,6446-2,6440-3,6446-3,6454-1">CVE-2023-4921</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1">CVE-2023-5197</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42756" priority="high" public="20230928" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6441-1,6442-1,6443-1,6444-1,6445-1,6446-1,6441-2,6444-2,6445-2,6446-2,6446-3,6454-1,6441-3,6454-2">CVE-2023-42756</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4881" priority="high" public="20230911" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6439-1,6440-1,6441-1,6442-1,6443-1,6444-1,6445-1,6446-1,6440-2,6439-2,6441-2,6444-2,6445-2,6446-2,6440-3,6446-3,6454-1,6441-3,6454-2">CVE-2023-4881</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4921" priority="high" public="20230912" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6439-1,6440-1,6441-1,6442-1,6444-1,6445-1,6446-1,6440-2,6439-2,6441-2,6444-2,6445-2,6446-2,6440-3,6446-3,6454-1,6441-3,6454-2">CVE-2023-4921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1,6454-2">CVE-2023-5197</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -345,6 +345,46 @@
 				<criteria operator="AND">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:451780807732586846079998353239250224093" comment="Interim Release" />
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:514727047235890972053010903780859821002" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64542000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6454-2 -- Linux kernel vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6454-2" ref_url="https://ubuntu.com/security/notices/USN-6454-2" />
+				<reference source="CVE" ref_id="CVE-2023-42756" ref_url="https://ubuntu.com/security/CVE-2023-42756" />
+				<reference source="CVE" ref_id="CVE-2023-4881" ref_url="https://ubuntu.com/security/CVE-2023-4881" />
+				<reference source="CVE" ref_id="CVE-2023-4921" ref_url="https://ubuntu.com/security/CVE-2023-4921" />
+				<reference source="CVE" ref_id="CVE-2023-5197" ref_url="https://ubuntu.com/security/CVE-2023-5197" />
+				<description>Kyle Zeng discovered that the netfilter subsystem in the Linux kernel contained a race condition in IP set operations in certain situations. A local attacker could use this to cause a denial of service (system crash). (CVE-2023-42756)  Alex Birnberg discovered that the netfilter subsystem in the Linux kernel did not properly validate register length, leading to an out-of- bounds write vulnerability. A local attacker could possibly use this to cause a denial of service (system crash). (CVE-2023-4881)  It was discovered that the Quick Fair Queueing scheduler implementation in the Linux kernel did not properly handle network packets in certain conditions, leading to a use after free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2023-4921)  Kevin Rich discovered that the netfilter subsystem in the Linux kernel did not properly handle removal of rules from chain bindings in certain circumstances, leading to a use-after-free vulnerability. A local attacker could possibly use this to cause a denial of service (system crash) or execute arbitrary code. (CVE-2023-5197)  Update Instructions:  Run `sudo pro fix USN-6454-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-aws - 6.5.0.1009.9 linux-aws-cloud-tools-6.5.0-1009 - 6.5.0-1009.9 linux-aws-headers-6.5.0-1009 - 6.5.0-1009.9 linux-aws-tools-6.5.0-1009 - 6.5.0-1009.9 linux-azure - 6.5.0.1008.10 linux-azure-cloud-tools-6.5.0-1008 - 6.5.0-1008.8 linux-azure-fde - 6.5.0.1008.10 linux-azure-headers-6.5.0-1008 - 6.5.0-1008.8 linux-azure-tools-6.5.0-1008 - 6.5.0-1008.8 linux-buildinfo-6.5.0-1006-raspi - 6.5.0-1006.8 linux-buildinfo-6.5.0-1008-azure - 6.5.0-1008.8 linux-buildinfo-6.5.0-1008-gcp - 6.5.0-1008.8 linux-buildinfo-6.5.0-1009-aws - 6.5.0-1009.9 linux-buildinfo-6.5.0-1011-oracle - 6.5.0-1011.11 linux-cloud-tools-6.5.0-1008-azure - 6.5.0-1008.8 linux-cloud-tools-6.5.0-1009-aws - 6.5.0-1009.9 linux-cloud-tools-azure - 6.5.0.1008.10 linux-gcp - 6.5.0.1008.8 linux-gcp-headers-6.5.0-1008 - 6.5.0-1008.8 linux-gcp-tools-6.5.0-1008 - 6.5.0-1008.8 linux-headers-6.5.0-1006-raspi - 6.5.0-1006.8 linux-headers-6.5.0-1008-azure - 6.5.0-1008.8 linux-headers-6.5.0-1008-gcp - 6.5.0-1008.8 linux-headers-6.5.0-1009-aws - 6.5.0-1009.9 linux-headers-6.5.0-1011-oracle - 6.5.0-1011.11 linux-headers-aws - 6.5.0.1009.9 linux-headers-azure - 6.5.0.1008.10 linux-headers-gcp - 6.5.0.1008.8 linux-headers-oracle - 6.5.0.1011.11 linux-headers-raspi - 6.5.0.1006.7 linux-headers-raspi-nolpae - 6.5.0.1006.7 linux-image-6.5.0-1006-raspi - 6.5.0-1006.8 linux-image-6.5.0-1008-azure - 6.5.0-1008.8 linux-image-6.5.0-1008-azure-fde - 6.5.0-1008.8 linux-image-6.5.0-1008-gcp - 6.5.0-1008.8 linux-image-6.5.0-1009-aws - 6.5.0-1009.9 linux-image-6.5.0-1011-oracle - 6.5.0-1011.11 linux-image-aws - 6.5.0.1009.9 linux-image-azure - 6.5.0.1008.10 linux-image-azure-fde - 6.5.0.1008.10 linux-image-gcp - 6.5.0.1008.8 linux-image-oracle - 6.5.0.1011.11 linux-image-raspi - 6.5.0.1006.7 linux-image-raspi-nolpae - 6.5.0.1006.7 linux-image-unsigned-6.5.0-1008-azure - 6.5.0-1008.8 linux-image-unsigned-6.5.0-1008-gcp - 6.5.0-1008.8 linux-image-unsigned-6.5.0-1009-aws - 6.5.0-1009.9 linux-image-unsigned-6.5.0-1011-oracle - 6.5.0-1011.11 linux-modules-6.5.0-1006-raspi - 6.5.0-1006.8 linux-modules-6.5.0-1008-azure - 6.5.0-1008.8 linux-modules-6.5.0-1008-gcp - 6.5.0-1008.8 linux-modules-6.5.0-1009-aws - 6.5.0-1009.9 linux-modules-6.5.0-1011-oracle - 6.5.0-1011.11 linux-modules-extra-6.5.0-1006-raspi - 6.5.0-1006.8 linux-modules-extra-6.5.0-1008-azure - 6.5.0-1008.8 linux-modules-extra-6.5.0-1008-gcp - 6.5.0-1008.8 linux-modules-extra-6.5.0-1009-aws - 6.5.0-1009.9 linux-modules-extra-6.5.0-1011-oracle - 6.5.0-1011.11 linux-modules-extra-aws - 6.5.0.1009.9 linux-modules-extra-azure - 6.5.0.1008.10 linux-modules-extra-gcp - 6.5.0.1008.8 linux-modules-extra-raspi - 6.5.0.1006.7 linux-modules-extra-raspi-nolpae - 6.5.0.1006.7 linux-modules-iwlwifi-6.5.0-1008-azure - 6.5.0-1008.8 linux-modules-iwlwifi-6.5.0-1008-gcp - 6.5.0-1008.8 linux-modules-iwlwifi-6.5.0-1011-oracle - 6.5.0-1011.11 linux-modules-iwlwifi-azure - 6.5.0.1008.10 linux-modules-iwlwifi-gcp - 6.5.0.1008.8 linux-modules-iwlwifi-oracle - 6.5.0.1011.11 linux-oracle - 6.5.0.1011.11 linux-oracle-headers-6.5.0-1011 - 6.5.0-1011.11 linux-oracle-tools-6.5.0-1011 - 6.5.0-1011.11 linux-raspi - 6.5.0.1006.7 linux-raspi-headers-6.5.0-1006 - 6.5.0-1006.8 linux-raspi-nolpae - 6.5.0.1006.7 linux-raspi-tools-6.5.0-1006 - 6.5.0-1006.8 linux-tools-6.5.0-1006-raspi - 6.5.0-1006.8 linux-tools-6.5.0-1008-azure - 6.5.0-1008.8 linux-tools-6.5.0-1008-gcp - 6.5.0-1008.8 linux-tools-6.5.0-1009-aws - 6.5.0-1009.9 linux-tools-6.5.0-1011-oracle - 6.5.0-1011.11 linux-tools-aws - 6.5.0.1009.9 linux-tools-azure - 6.5.0.1008.10 linux-tools-gcp - 6.5.0.1008.8 linux-tools-oracle - 6.5.0.1011.11 linux-tools-raspi - 6.5.0.1006.7 linux-tools-raspi-nolpae - 6.5.0.1006.7</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2023-42756" priority="high" public="20230928" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6441-1,6442-1,6443-1,6444-1,6445-1,6446-1,6441-2,6444-2,6445-2,6446-2,6446-3,6454-1,6441-3,6454-2">CVE-2023-42756</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4881" priority="high" public="20230911" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6439-1,6440-1,6441-1,6442-1,6443-1,6444-1,6445-1,6446-1,6440-2,6439-2,6441-2,6444-2,6445-2,6446-2,6440-3,6446-3,6454-1,6441-3,6454-2">CVE-2023-4881</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4921" priority="high" public="20230912" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6439-1,6440-1,6441-1,6442-1,6444-1,6445-1,6446-1,6440-2,6439-2,6441-2,6444-2,6445-2,6446-2,6440-3,6446-3,6454-1,6441-3,6454-2">CVE-2023-4921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1,6454-2">CVE-2023-5197</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:510543510855627116086750748584815414263" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:435477669282091628090262603480918415021" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:472628111696157807966368037072050043668" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:606272057618346589994959341490179815467" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:643934751742078154741995470111529226538" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:606593045059213393499051176476987201196" comment="Interim Release" />
+				</criteria>
+				<criteria operator="AND">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:512137668716635689514115665207619840824" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:575730740503078475455041398624005267167" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -361,12 +401,57 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-10-26" />
-					<cve href="https://ubuntu.com/security/CVE-2023-42117" priority="medium" public="20230928">CVE-2023-42117</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-42119" priority="medium" public="20230928">CVE-2023-42119</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42117" priority="medium" public="20230928" usns="6455-1">CVE-2023-42117</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42119" priority="medium" public="20230928" usns="6455-1">CVE-2023-42119</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.mantic:tst:622558574082053044817723303812322666591" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64591000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6459-1 -- MySQL vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6459-1" ref_url="https://ubuntu.com/security/notices/USN-6459-1" />
+				<reference source="CVE" ref_id="CVE-2023-22032" ref_url="https://ubuntu.com/security/CVE-2023-22032" />
+				<reference source="CVE" ref_id="CVE-2023-22059" ref_url="https://ubuntu.com/security/CVE-2023-22059" />
+				<reference source="CVE" ref_id="CVE-2023-22064" ref_url="https://ubuntu.com/security/CVE-2023-22064" />
+				<reference source="CVE" ref_id="CVE-2023-22066" ref_url="https://ubuntu.com/security/CVE-2023-22066" />
+				<reference source="CVE" ref_id="CVE-2023-22068" ref_url="https://ubuntu.com/security/CVE-2023-22068" />
+				<reference source="CVE" ref_id="CVE-2023-22070" ref_url="https://ubuntu.com/security/CVE-2023-22070" />
+				<reference source="CVE" ref_id="CVE-2023-22078" ref_url="https://ubuntu.com/security/CVE-2023-22078" />
+				<reference source="CVE" ref_id="CVE-2023-22079" ref_url="https://ubuntu.com/security/CVE-2023-22079" />
+				<reference source="CVE" ref_id="CVE-2023-22084" ref_url="https://ubuntu.com/security/CVE-2023-22084" />
+				<reference source="CVE" ref_id="CVE-2023-22092" ref_url="https://ubuntu.com/security/CVE-2023-22092" />
+				<reference source="CVE" ref_id="CVE-2023-22097" ref_url="https://ubuntu.com/security/CVE-2023-22097" />
+				<reference source="CVE" ref_id="CVE-2023-22103" ref_url="https://ubuntu.com/security/CVE-2023-22103" />
+				<reference source="CVE" ref_id="CVE-2023-22112" ref_url="https://ubuntu.com/security/CVE-2023-22112" />
+				<reference source="CVE" ref_id="CVE-2023-22114" ref_url="https://ubuntu.com/security/CVE-2023-22114" />
+				<description>Multiple security issues were discovered in MySQL and this update includes new upstream MySQL versions to fix these issues.  MySQL has been updated to 8.0.35 in Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 23.04, and Ubuntu 23.10.  In addition to security fixes, the updated packages contain bug fixes, new features, and possibly incompatible changes.  Please see the following for more information:  https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-35.html https://www.oracle.com/security-alerts/cpuoct2023.html  Update Instructions:  Run `sudo pro fix USN-6459-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libmysqlclient21 - 8.0.35-0ubuntu0.23.10.1 libmysqlclient-dev - 8.0.35-0ubuntu0.23.10.1 mysql-client - 8.0.35-0ubuntu0.23.10.1 mysql-client-8.0 - 8.0.35-0ubuntu0.23.10.1 mysql-client-core-8.0 - 8.0.35-0ubuntu0.23.10.1 mysql-router - 8.0.35-0ubuntu0.23.10.1 mysql-server - 8.0.35-0ubuntu0.23.10.1 mysql-server-8.0 - 8.0.35-0ubuntu0.23.10.1 mysql-server-core-8.0 - 8.0.35-0ubuntu0.23.10.1 mysql-source-8.0 - 8.0.35-0ubuntu0.23.10.1 mysql-testsuite - 8.0.35-0ubuntu0.23.10.1 mysql-testsuite-8.0 - 8.0.35-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2023-22032" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22032</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22059" priority="medium" public="20231017" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22059</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22064" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22064</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22066" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22066</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22068" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22068</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22070" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22070</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22078" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22078</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22079" priority="medium" public="20231017" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22079</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22084" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22084</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22092" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22092</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22097" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22097</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22103" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22103</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22112" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22112</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-22114" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22114</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:612491811869601792463852350430216763751" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -431,6 +516,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:593716846586356189784861671594813363344" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:640335263028257572410990779949611062167" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:612491811869601792463852350430216763751" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:377131679861559358636458586093456733328" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:561595120535185407570845136494942466347" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:616735649377285903388272372098866118499" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365162248457552228787285456462626388824" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" />
@@ -451,6 +540,14 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:598118567630372265784608630428382308996" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:418149509811288187509160602622916719996" />
 		</linux:dpkginfo_test>
+		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-aws) currently running?" id="oval:com.ubuntu.mantic:tst:643934751742078154741995470111529226538" version="1">
+			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
+			<unix:state state_ref="oval:com.ubuntu.mantic:ste:506936702719139425637849443908832616948" />
+		</unix:uname_test>
+		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-azure|-azure-fde|-gcp) currently running?" id="oval:com.ubuntu.mantic:tst:472628111696157807966368037072050043668" version="1">
+			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
+			<unix:state state_ref="oval:com.ubuntu.mantic:ste:475159809921143657710076249586525783960" />
+		</unix:uname_test>
 		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-generic|-generic-64k) currently running?" id="oval:com.ubuntu.mantic:tst:596739999937487961838944625432221228215" version="1">
 			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
 			<unix:state state_ref="oval:com.ubuntu.mantic:ste:460395456471344325955100628529873262312" />
@@ -459,13 +556,37 @@
 			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
 			<unix:state state_ref="oval:com.ubuntu.mantic:ste:556934733794169303873737544174362791122" />
 		</unix:uname_test>
+		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-oracle) currently running?" id="oval:com.ubuntu.mantic:tst:512137668716635689514115665207619840824" version="1">
+			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
+			<unix:state state_ref="oval:com.ubuntu.mantic:ste:558813418871542177810696090041013050147" />
+		</unix:uname_test>
+		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-raspi) currently running?" id="oval:com.ubuntu.mantic:tst:510543510855627116086750748584815414263" version="1">
+			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
+			<unix:state state_ref="oval:com.ubuntu.mantic:ste:468886494222683240423170064086953751800" />
+		</unix:uname_test>
 		<ind:variable_test id="oval:com.ubuntu.mantic:tst:382035721409507540726899343878212969328" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:476817337086383464685827645449218417161" />
 			<ind:state state_ref="oval:com.ubuntu.mantic:ste:587703685102167665975616502857973922870" />
 		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.mantic:tst:435477669282091628090262603480918415021" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:535505956780091859613723061721931318399" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:653920946022116214332920097293463737147" />
+		</ind:variable_test>
 		<ind:variable_test id="oval:com.ubuntu.mantic:tst:514727047235890972053010903780859821002" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:385544708627381742973222017034194460031" />
 			<ind:state state_ref="oval:com.ubuntu.mantic:ste:587703685102167665975616502857973922870" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.mantic:tst:575730740503078475455041398624005267167" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:494892282313209020760643295100870059772" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:510590945366929710047608449549740973200" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.mantic:tst:606272057618346589994959341490179815467" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:667912462439647276702123852055534671302" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:555876650714446689061590142289410302338" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.mantic:tst:606593045059213393499051176476987201196" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:510688289306525972369506166380422814277" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:462969952023357640329197638552971716107" />
 		</ind:variable_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" version="1" comment="Ubuntu 23.10 (mantic) is installed.">
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" />
@@ -479,7 +600,19 @@
 		<ind:variable_object id="oval:com.ubuntu.mantic:obj:476817337086383464685827645449218417161" version="1">
 			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
 		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.mantic:obj:494892282313209020760643295100870059772" version="1">
+			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.mantic:obj:510688289306525972369506166380422814277" version="1">
+			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.mantic:obj:535505956780091859613723061721931318399" version="1">
+			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
+		</ind:variable_object>
 		<unix:uname_object id="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" version="1" />
+		<ind:variable_object id="oval:com.ubuntu.mantic:obj:667912462439647276702123852055534671302" version="1">
+			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
+		</ind:variable_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:348105259246228168958401545823995560282" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:444165862507806386026143799925666168524" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -491,6 +624,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:377131679861559358636458586093456733328" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:393098847507717506641551964377645640550" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:473789858031559994353317162244846485675" var_check="at least one" />
@@ -550,8 +686,20 @@
 		<unix:uname_state id="oval:com.ubuntu.mantic:ste:460395456471344325955100628529873262312" version="1">
 			<unix:os_release operation="pattern match">6.5.0-\d+(-generic|-generic-64k)</unix:os_release>
 		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.mantic:ste:468886494222683240423170064086953751800" version="1">
+			<unix:os_release operation="pattern match">6.5.0-\d+(-raspi)</unix:os_release>
+		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.mantic:ste:475159809921143657710076249586525783960" version="1">
+			<unix:os_release operation="pattern match">6.5.0-\d+(-azure|-azure-fde|-gcp)</unix:os_release>
+		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.mantic:ste:506936702719139425637849443908832616948" version="1">
+			<unix:os_release operation="pattern match">6.5.0-\d+(-aws)</unix:os_release>
+		</unix:uname_state>
 		<unix:uname_state id="oval:com.ubuntu.mantic:ste:556934733794169303873737544174362791122" version="1">
 			<unix:os_release operation="pattern match">6.5.0-\d+(-lowlatency|-lowlatency-64k)</unix:os_release>
+		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.mantic:ste:558813418871542177810696090041013050147" version="1">
+			<unix:os_release operation="pattern match">6.5.0-\d+(-oracle)</unix:os_release>
 		</unix:uname_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:344954311051535048218752031580380542614" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:23.2.0-1ubuntu0.1</linux:evr>
@@ -586,6 +734,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:555158054181252363876234210786672332031" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.113-0ubuntu1~23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:561595120535185407570845136494942466347" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.35-0ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:590547875939386230722926345097578014755" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-8.0.0~rc2-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
@@ -618,6 +769,18 @@
 		</ind:textfilecontent54_state>
 		<ind:variable_state id="oval:com.ubuntu.mantic:ste:587703685102167665975616502857973922870" version="1">
 			<ind:value datatype="debian_evr_string" operation="less than">0:6.5.0-10</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.mantic:ste:653920946022116214332920097293463737147" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.5.0-1006</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.mantic:ste:555876650714446689061590142289410302338" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.5.0-1008</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.mantic:ste:462969952023357640329197638552971716107" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.5.0-1009</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.mantic:ste:510590945366929710047608449549740973200" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.5.0-1011</ind:value>
 		</ind:variable_state>
 	</states>
 	<variables>
@@ -741,6 +904,20 @@
 		<constant_variable id="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" version="1" datatype="string" comment="Interim Release">
 			<value>libcue2</value>
 			<value>libcue-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:657677555049968960121924811563711511967" version="1" datatype="string" comment="Interim Release">
+			<value>libmysqlclient21</value>
+			<value>libmysqlclient-dev</value>
+			<value>mysql-client</value>
+			<value>mysql-client-8.0</value>
+			<value>mysql-client-core-8.0</value>
+			<value>mysql-router</value>
+			<value>mysql-server</value>
+			<value>mysql-server-8.0</value>
+			<value>mysql-server-core-8.0</value>
+			<value>mysql-source-8.0</value>
+			<value>mysql-testsuite</value>
+			<value>mysql-testsuite-8.0</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:587071683873390085545532294459405662008" version="1" datatype="string" comment="Interim Release">
 			<value>libsofia-sip-ua0</value>
