@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-02T04:42:29</oval:timestamp>
+		<oval:timestamp>2023-11-03T04:39:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4669,6 +4669,73 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64681000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6468-1 -- Thunderbird vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6468-1" ref_url="https://ubuntu.com/security/notices/USN-6468-1" />
+				<reference source="CVE" ref_id="CVE-2023-5721" ref_url="https://ubuntu.com/security/CVE-2023-5721" />
+				<reference source="CVE" ref_id="CVE-2023-5732" ref_url="https://ubuntu.com/security/CVE-2023-5732" />
+				<reference source="CVE" ref_id="CVE-2023-5724" ref_url="https://ubuntu.com/security/CVE-2023-5724" />
+				<reference source="CVE" ref_id="CVE-2023-5725" ref_url="https://ubuntu.com/security/CVE-2023-5725" />
+				<reference source="CVE" ref_id="CVE-2023-5728" ref_url="https://ubuntu.com/security/CVE-2023-5728" />
+				<reference source="CVE" ref_id="CVE-2023-5730" ref_url="https://ubuntu.com/security/CVE-2023-5730" />
+				<description>Multiple security issues were discovered in Thunderbird. If a user were tricked into opening a specially crafted website in a browsing context, an attacker could potentially exploit these to cause a denial of service, obtain sensitive information, bypass security restrictions, cross-site tracing, or execute arbitrary code. (CVE-2023-5724, CVE-2023-5728, CVE-2023-5730, CVE-2023-5732)  Kelsey Gilbert discovered that Thunderbird did not properly manage certain browser prompts and dialogs due to an insufficient activation-delay. An attacker could potentially exploit this issue to perform clickjacking. (CVE-2023-5721)  Shaheen Fazim discovered that Thunderbird did not properly validate the URLs open by installed WebExtension. An attacker could potentially exploit this issue to obtain sensitive information. (CVE-2023-5725)  Update Instructions:  Run `sudo pro fix USN-6468-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  thunderbird - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-dev - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-gnome-support - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-af - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ar - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ast - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-be - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-bg - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-bn - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-bn-bd - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-br - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ca - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-cak - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-cs - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-cy - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-da - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-de - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-dsb - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-el - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-en - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-en-gb - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-en-us - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-es - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-es-ar - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-es-es - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-et - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-eu - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-fa - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-fi - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-fr - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-fy - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-fy-nl - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ga - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ga-ie - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-gd - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-gl - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-he - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-hr - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-hsb - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-hu - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-hy - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-id - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-is - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-it - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ja - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ka - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-kab - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-kk - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ko - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-lt - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-lv - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-mk - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ms - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-nb - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-nb-no - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-nl - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-nn - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-nn-no - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-pa - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-pa-in - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-pl - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-pt - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-pt-br - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-pt-pt - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-rm - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ro - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ru - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-si - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-sk - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-sl - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-sq - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-sr - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-sv - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-sv-se - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ta - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-ta-lk - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-th - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-tr - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-uk - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-uz - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-vi - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-cn - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-hans - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-hant - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-locale-zh-tw - 1:115.4.1+build1-0ubuntu0.23.04.1 thunderbird-mozsymbols - 1:115.4.1+build1-0ubuntu0.23.04.1 xul-ext-calendar-timezones - 1:115.4.1+build1-0ubuntu0.23.04.1 xul-ext-gdata-provider - 1:115.4.1+build1-0ubuntu0.23.04.1 xul-ext-lightning - 1:115.4.1+build1-0ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-5721" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5721</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5732" priority="medium" public="20231025" usns="6468-1">CVE-2023-5732</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5724" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5724</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5725" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5725</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5728" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5728</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5730" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5730</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:598605196602719553159807119085645780135" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64701000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6470-1 -- Axis vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6470-1" ref_url="https://ubuntu.com/security/notices/USN-6470-1" />
+				<reference source="CVE" ref_id="CVE-2023-40743" ref_url="https://ubuntu.com/security/CVE-2023-40743" />
+				<description>It was discovered that Axis incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2023-40743)  Update Instructions:  Run `sudo pro fix USN-6470-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libaxis-java - 1.4-28+deb10u1build0.23.04.1 libaxis-java-doc - 1.4-28+deb10u1build0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-40743" priority="medium" public="20230905" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6470-1">CVE-2023-40743</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:379101502792658262341725534182816743829" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64711000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6471-1 -- libsndfile vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6471-1" ref_url="https://ubuntu.com/security/notices/USN-6471-1" />
+				<reference source="CVE" ref_id="CVE-2022-33065" ref_url="https://ubuntu.com/security/CVE-2022-33065" />
+				<description>It was discovered that libsndfile contained multiple arithmetic overflows. If a user or automated system were tricked into processing a specially crafted audio file, an attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6471-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libsndfile1 - 1.2.0-1ubuntu0.1 libsndfile1-dev - 1.2.0-1ubuntu0.1 sndfile-programs - 1.2.0-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-02" />
+					<cve href="https://ubuntu.com/security/CVE-2022-33065" priority="medium" public="20230718" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6471-1">CVE-2022-33065</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:524914146892183861443138399749401180388" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4730,6 +4797,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:378707938419181764478699544604048080749" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:440267173052165023966980113676971860094" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:420171025490527989253590865969818204910" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:379101502792658262341725534182816743829" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:642032248870075046237416572518292804961" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:498174013727393367246483610772630521492" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:380096735142342532823364348745629759927" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" />
@@ -5019,6 +5090,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:548938230787539923006692757391631712448" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:631124686516169674633055454252154748548" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:524914146892183861443138399749401180388" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:522367271206269719137165348756603458149" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:564949757128442194183490209872437397997" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:525016993309606519725485825955392940649" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:513181005240506517526103491494373974641" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:489086397977149924505170204966701736231" />
@@ -5234,6 +5309,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:598602628871864676525699032455856610808" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:556702347742049025690407684146647759999" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:350348460878371277157643694567392233142" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:598605196602719553159807119085645780135" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:527991874035880357351110985146890705628" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:374085168745447248223589417152053307030" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:598889816924256199995454169310048499680" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:576658710137528256443451936092142711549" />
@@ -6322,6 +6401,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:518027404624956113658416563688995467473" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:391274111027580069412726315909292973834" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:522367271206269719137165348756603458149" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:359084828402709891008873241447499223122" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:525957273075399256538568884750756021238" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6336,6 +6418,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:526722015338841413873807702133378992244" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:676100531393497779434447407122187609980" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:527991874035880357351110985146890705628" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:528269230841342847296551204075449452446" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:458584292614246651428981147375521764156" var_check="at least one" />
@@ -6541,6 +6626,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:638260478897054561906779081572027489379" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:622923979815955469455159812007479523223" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:642032248870075046237416572518292804961" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:389032809522511005220797537846449207121" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:642194435545455825825234362463346590219" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:557821857881229214439117469643141107197" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6715,6 +6803,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:373000266455824937657425294125034172650" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.1.12-1ubuntu4.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:374085168745447248223589417152053307030" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:115.4.1+build1-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:375714765871627911335622504131170447296" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:22.0.0-0ubuntu1.3</linux:evr>
@@ -6941,6 +7032,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:497339008634298751299665342104034324471" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-6ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:498174013727393367246483610772630521492" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4-28+deb10u1build0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:504377661589215986278127171943049303803" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.4-0.1ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -7018,6 +7112,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:561614842103010074849482711782394782498" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.119-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:564949757128442194183490209872437397997" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:568831060027292046424563591063955556455" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.54.5+dfsg-1ubuntu2.1</linux:evr>
@@ -8139,6 +8236,10 @@
 			<value>php8.1-xsl</value>
 			<value>php8.1-zip</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:389032809522511005220797537846449207121" version="1" datatype="string" comment="Interim Release">
+			<value>libaxis-java</value>
+			<value>libaxis-java-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:428982606931675167232778569108517249056" version="1" datatype="string" comment="Interim Release">
 			<value>libc-ares2</value>
 			<value>libc-ares-dev</value>
@@ -8269,6 +8370,11 @@
 			<value>ruby3.1</value>
 			<value>ruby3.1-dev</value>
 			<value>ruby3.1-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:359084828402709891008873241447499223122" version="1" datatype="string" comment="Interim Release">
+			<value>libsndfile1</value>
+			<value>libsndfile1-dev</value>
+			<value>sndfile-programs</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:587071683873390085545532294459405662008" version="1" datatype="string" comment="Interim Release">
 			<value>libsofia-sip-ua0</value>
