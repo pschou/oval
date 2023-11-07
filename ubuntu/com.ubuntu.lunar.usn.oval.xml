@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-04T04:38:50</oval:timestamp>
+		<oval:timestamp>2023-11-07T04:41:35</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4511,8 +4511,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-10-25" />
-					<cve href="https://ubuntu.com/security/CVE-2023-5367" priority="medium" public="20231025" usns="6453-1,6453-2">CVE-2023-5367</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5380" priority="medium" public="20231025" usns="6453-1,6453-2">CVE-2023-5380</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5367" priority="medium" public="20231025" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6453-1,6453-2">CVE-2023-5367</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5380" priority="medium" public="20231025" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6453-1,6453-2">CVE-2023-5380</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4669,6 +4669,25 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64672000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6467-2 -- Kerberos vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6467-2" ref_url="https://ubuntu.com/security/notices/USN-6467-2" />
+				<reference source="CVE" ref_id="CVE-2023-36054" ref_url="https://ubuntu.com/security/CVE-2023-36054" />
+				<description>USN-6467-1 fixed a vulnerability in Kerberos. This update provides the corresponding update for Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 23.04.  Original advisory details:   Robert Morris discovered that Kerberos did not properly handle memory  access when processing RPC data through kadmind, which could lead to the  freeing of uninitialized memory. An authenticated remote attacker could  possibly use this issue to cause kadmind to crash, resulting in a denial  of service.  Update Instructions:  Run `sudo pro fix USN-6467-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  krb5-admin-server - 1.20.1-1ubuntu0.1 krb5-doc - 1.20.1-1ubuntu0.1 krb5-gss-samples - 1.20.1-1ubuntu0.1 krb5-k5tls - 1.20.1-1ubuntu0.1 krb5-kdc - 1.20.1-1ubuntu0.1 krb5-kdc-ldap - 1.20.1-1ubuntu0.1 krb5-kpropd - 1.20.1-1ubuntu0.1 krb5-locales - 1.20.1-1ubuntu0.1 krb5-multidev - 1.20.1-1ubuntu0.1 krb5-otp - 1.20.1-1ubuntu0.1 krb5-pkinit - 1.20.1-1ubuntu0.1 krb5-user - 1.20.1-1ubuntu0.1 libgssapi-krb5-2 - 1.20.1-1ubuntu0.1 libgssrpc4 - 1.20.1-1ubuntu0.1 libk5crypto3 - 1.20.1-1ubuntu0.1 libkadm5clnt-mit12 - 1.20.1-1ubuntu0.1 libkadm5srv-mit12 - 1.20.1-1ubuntu0.1 libkdb5-10 - 1.20.1-1ubuntu0.1 libkrad0 - 1.20.1-1ubuntu0.1 libkrad-dev - 1.20.1-1ubuntu0.1 libkrb5-3 - 1.20.1-1ubuntu0.1 libkrb5-dev - 1.20.1-1ubuntu0.1 libkrb5support0 - 1.20.1-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-06" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36054" priority="medium" public="20230807" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6467-1,6467-2">CVE-2023-36054</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:480263962959489357957128668381711374807" comment="Interim Release" />
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.lunar:def:64681000000" version="1" class="patch">
 			<metadata>
 				<title>USN-6468-1 -- Thunderbird vulnerabilities</title>
@@ -4688,9 +4707,9 @@
 					<issued date="2023-11-02" />
 					<cve href="https://ubuntu.com/security/CVE-2023-5721" priority="medium" public="20231025" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6456-1,6468-1">CVE-2023-5721</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5732" priority="medium" public="20231025" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6468-1">CVE-2023-5732</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5724" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5724</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5725" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5725</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5728" priority="medium" public="20231025" usns="6456-1,6468-1">CVE-2023-5728</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5724" priority="medium" public="20231025" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6456-1,6468-1">CVE-2023-5724</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5725" priority="medium" public="20231025" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N" cvss_severity="medium" usns="6456-1,6468-1">CVE-2023-5725</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5728" priority="medium" public="20231025" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6456-1,6468-1">CVE-2023-5728</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5730" priority="medium" public="20231025" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6456-1,6468-1">CVE-2023-5730</cve>
 				</advisory>
 			</metadata>
@@ -4981,6 +5000,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:480044331442520886815318525840002970333" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:404971941064352171339237812896010111936" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:440925420380037307949984277852794659817" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:480263962959489357957128668381711374807" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:434672226988526994087052416116499863812" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:412253726959299329988806349120178538591" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:484021896710099355792105260264414590481" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:603890088877449158521042810109684858763" />
@@ -6266,6 +6289,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:429800814982849464059660003880756121265" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:670734864857628029892142458766837270857" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:434672226988526994087052416116499863812" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:640303835586564704803883278731062302450" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:434755991633755007366767882766368237249" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6866,6 +6892,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:407404861816308227204918058517602726623" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.20.1+1-0ubuntu1~23.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:412253726959299329988806349120178538591" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:412423856063216433716116306627518988624" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:13.0.1-11ubuntu14.1</linux:evr>
@@ -8164,6 +8193,31 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:450013526743882901364490129588669353865" version="1" datatype="string" comment="Interim Release">
 			<value>jhead</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:640303835586564704803883278731062302450" version="1" datatype="string" comment="Interim Release">
+			<value>krb5-admin-server</value>
+			<value>krb5-doc</value>
+			<value>krb5-gss-samples</value>
+			<value>krb5-k5tls</value>
+			<value>krb5-kdc</value>
+			<value>krb5-kdc-ldap</value>
+			<value>krb5-kpropd</value>
+			<value>krb5-locales</value>
+			<value>krb5-multidev</value>
+			<value>krb5-otp</value>
+			<value>krb5-pkinit</value>
+			<value>krb5-user</value>
+			<value>libgssapi-krb5-2</value>
+			<value>libgssrpc4</value>
+			<value>libk5crypto3</value>
+			<value>libkadm5clnt-mit12</value>
+			<value>libkadm5srv-mit12</value>
+			<value>libkdb5-10</value>
+			<value>libkrad0</value>
+			<value>libkrad-dev</value>
+			<value>libkrb5-3</value>
+			<value>libkrb5-dev</value>
+			<value>libkrb5support0</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:600081929208916044455628935835493122332" version="1" datatype="string" comment="Interim Release">
 			<value>ldb-tools</value>
