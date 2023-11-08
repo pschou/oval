@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-07T04:41:35</oval:timestamp>
+		<oval:timestamp>2023-11-08T06:41:07</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4755,6 +4755,48 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:524914146892183861443138399749401180388" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64721000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6472-1 -- GNU Scientific Library vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6472-1" ref_url="https://ubuntu.com/security/notices/USN-6472-1" />
+				<reference source="CVE" ref_id="CVE-2020-35357" ref_url="https://ubuntu.com/security/CVE-2020-35357" />
+				<description>It was discovered that GNU Scientific Library incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service or execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6472-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gsl-bin - 2.7.1+dfsg-3ubuntu0.23.04.1 libgsl27 - 2.7.1+dfsg-3ubuntu0.23.04.1 libgsl-dev - 2.7.1+dfsg-3ubuntu0.23.04.1 libgslcblas0 - 2.7.1+dfsg-3ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-07" />
+					<cve href="https://ubuntu.com/security/CVE-2020-35357" priority="medium" public="20230822" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6472-1">CVE-2020-35357</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:572110902468628105060599638509784680912" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64731000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6473-1 -- urllib3 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6473-1" ref_url="https://ubuntu.com/security/notices/USN-6473-1" />
+				<reference source="CVE" ref_id="CVE-2018-25091" ref_url="https://ubuntu.com/security/CVE-2018-25091" />
+				<reference source="CVE" ref_id="CVE-2023-43804" ref_url="https://ubuntu.com/security/CVE-2023-43804" />
+				<reference source="CVE" ref_id="CVE-2023-45803" ref_url="https://ubuntu.com/security/CVE-2023-45803" />
+				<description>It was discovered that urllib3 didn't strip HTTP Authorization header on cross-origin redirects. A remote attacker could possibly use this  issue to obtain sensitive information. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS. (CVE-2018-25091)  It was discovered that urllib3 didn't strip HTTP Cookie header on  cross-origin redirects. A remote attacker could possibly use this  issue to obtain sensitive information. (CVE-2023-43804)  It was discovered that urllib3 didn't strip HTTP body on status code 303 redirects under certain circumstances. A remote attacker could  possibly use this issue to obtain sensitive information. (CVE-2023-45803)  Update Instructions:  Run `sudo pro fix USN-6473-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-urllib3 - 1.26.12-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-07" />
+					<cve href="https://ubuntu.com/security/CVE-2018-25091" priority="medium" public="20231015" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium">CVE-2018-25091</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-43804" priority="medium" public="20231004" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high">CVE-2023-43804</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-45803" priority="medium" public="20231017" cvss_score="4.2" cvss_vector="CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium">CVE-2023-45803</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:486699770156347972464813564828559614577" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -5021,6 +5063,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:452207837482007518982938478255431392278" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:507307322828571018092730505265402821174" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:486699770156347972464813564828559614577" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:557429193291679779459791470237658562348" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:447664321711324352770248150848843450916" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:488253485228304260758271969401736753245" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:529985258369662558253757848746441913145" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:654262684868635748013409556771918841590" />
@@ -5256,6 +5302,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:571007156422584316994261112440145106622" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:525957273075399256538568884750756021238" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:377603310923961537715903601789993623444" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:572110902468628105060599638509784680912" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:539290599507241063502778716772618386906" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:579613125251163368703600218220096799894" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:572593488321333005917744788032555033764" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:652638743849672047804436490163840198014" />
@@ -6478,6 +6528,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:537897157155999315322048092374221493086" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:482182190162826536948763508793484615849" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:539290599507241063502778716772618386906" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:403937282595941891699997176449140020758" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:542311989913285043562943003142700271763" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:587071683873390085545532294459405662008" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6501,6 +6554,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:556702347742049025690407684146647759999" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:404126283275040013873904088392815677940" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:557429193291679779459791470237658562348" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:475552723821216169067395075348794160072" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:557852329060838648239705536762075791800" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:598671916527175224885839660112995743588" var_check="at least one" />
@@ -6947,6 +7003,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:446476926700281925367131348419946105698" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.20+8-1ubuntu1~23.04</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:447664321711324352770248150848843450916" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.26.12-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:456386649289645372540845312701227490758" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.6.2.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -7159,6 +7218,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:578012934152092645789986868569583482505" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.1-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:579613125251163368703600218220096799894" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.7.1+dfsg-3ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:579936695967108003320892859306864841801" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:15.3-0ubuntu0.23.04.1</linux:evr>
@@ -8088,6 +8150,12 @@
 			<value>grub-efi-amd64-signed</value>
 			<value>grub-efi-arm64-signed</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:403937282595941891699997176449140020758" version="1" datatype="string" comment="Interim Release">
+			<value>gsl-bin</value>
+			<value>libgsl27</value>
+			<value>libgsl-dev</value>
+			<value>libgslcblas0</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:597595571645113772291639767185518015026" version="1" datatype="string" comment="Interim Release">
 			<value>gstreamer1.0-gtk3</value>
 			<value>gstreamer1.0-plugins-good</value>
@@ -8639,6 +8707,9 @@
 		<constant_variable id="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" version="1" datatype="string" comment="Interim Release">
 			<value>python3-tornado</value>
 			<value>python-tornado-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:475552723821216169067395075348794160072" version="1" datatype="string" comment="Interim Release">
+			<value>python3-urllib3</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:671061096759560505175848184868484527894" version="1" datatype="string" comment="Interim Release">
 			<value>python3-werkzeug</value>
