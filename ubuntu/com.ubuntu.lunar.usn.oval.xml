@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-11T04:43:25</oval:timestamp>
+		<oval:timestamp>2023-11-14T02:41:42</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4450,7 +4450,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-2975" priority="low" public="20230714" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6450-1">CVE-2023-2975</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-3446" priority="low" public="20230719" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6435-1,6450-1,6435-2">CVE-2023-3446</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-3817" priority="low" public="20230731" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6435-1,6450-1,6435-2">CVE-2023-3817</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5363" priority="medium" public="20231024" usns="6450-1">CVE-2023-5363</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5363" priority="medium" public="20231024" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="high" usns="6450-1">CVE-2023-5363</cve>
 				</advisory>
 			</metadata>
 			<criteria operator="OR">
@@ -4795,6 +4795,27 @@
 			</metadata>
 			<criteria operator="OR">
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:486699770156347972464813564828559614577" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64761000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6476-1 -- Memcached vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6476-1" ref_url="https://ubuntu.com/security/notices/USN-6476-1" />
+				<reference source="CVE" ref_id="CVE-2023-46852" ref_url="https://ubuntu.com/security/CVE-2023-46852" />
+				<reference source="CVE" ref_id="CVE-2023-46853" ref_url="https://ubuntu.com/security/CVE-2023-46853" />
+				<description>It was discovered that Memcached incorrectly handled certain multiget requests in proxy mode. A remote attacker could use this issue to cause Memcached to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-46852)  It was discovered that Memcached incorrectly handled certain proxy requests in proxy mode. A remote attacker could use this issue to cause Memcached to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-46853)  Update Instructions:  Run `sudo pro fix USN-6476-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  memcached - 1.6.18-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-13" />
+					<cve href="https://ubuntu.com/security/CVE-2023-46852" priority="medium" public="20231027" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6476-1">CVE-2023-46852</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46853" priority="medium" public="20231027" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6476-1">CVE-2023-46853</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:557584697238254067415668413550599740284" comment="Interim Release" />
 			</criteria>
 		</definition>
 	</definitions>
@@ -5266,6 +5287,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:557398166627064359915583571855075535348" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:554788079714819304050104201883916011458" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:470342954299285084369674145895383942457" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:557584697238254067415668413550599740284" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:568385512491234751330399789528566379890" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:587843428476388212472025024590317653647" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:562263067652361540778350288356821784845" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:372057252574735736428504169140901139715" />
@@ -6576,6 +6601,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:565300820761620758705720174759236337266" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:647353091145153490354902517037251178087" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:568385512491234751330399789528566379890" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:620546322946438377960770987315997870545" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:569617882741741937427333161719583817626" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:557307654792941714877208571600592001701" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7251,6 +7279,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:587630800864173315606201406815615701376" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:102.11.0-0ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:587843428476388212472025024590317653647" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.18-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:592228746493423564502748153159523024683" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.8+7-1~23.04</linux:evr>
@@ -8577,6 +8608,9 @@
 			<value>libxpm4</value>
 			<value>libxpm-dev</value>
 			<value>xpmutils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:620546322946438377960770987315997870545" version="1" datatype="string" comment="Interim Release">
+			<value>memcached</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:623688996325253874833381886848645199975" version="1" datatype="string" comment="Interim Release">
 			<value>minidlna</value>
