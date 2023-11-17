@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-16T06:43:23</oval:timestamp>
+		<oval:timestamp>2023-11-17T04:42:51</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4198,7 +4198,7 @@
 					<issued date="2023-10-10" />
 					<cve href="https://ubuntu.com/security/CVE-2023-4091" priority="medium" public="20231010" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6425-1,6425-3">CVE-2023-4091</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4154" priority="medium" public="20231010" usns="6425-1,6425-3">CVE-2023-4154</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-42669" priority="medium" public="20231010" usns="6425-1,6425-3">CVE-2023-42669</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42669" priority="medium" public="20231010" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6425-1,6425-3">CVE-2023-42669</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-42670" priority="medium" public="20231010" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6425-1,6425-3">CVE-2023-42670</cve>
 				</advisory>
 			</metadata>
@@ -4922,6 +4922,46 @@
 				<criterion test_ref="oval:com.ubuntu.lunar:tst:604726149235921572498153056263812614953" comment="Interim Release" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64841000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6484-1 -- OpenVPN vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6484-1" ref_url="https://ubuntu.com/security/notices/USN-6484-1" />
+				<reference source="CVE" ref_id="CVE-2023-46849" ref_url="https://ubuntu.com/security/CVE-2023-46849" />
+				<reference source="CVE" ref_id="CVE-2023-46850" ref_url="https://ubuntu.com/security/CVE-2023-46850" />
+				<description>It was discovered that OpenVPN incorrectly handled the --fragment option in certain configurations. A remote attacker could possibly use this issue to cause OpenVPN to crash, resulting in a denial of service. (CVE-2023-46849)  It was discovered that OpenVPN incorrectly handled certain memory operations. A remote attacker could use this issue to cause OpenVPN to crash, obtain sensitive information, or possibly execute arbitrary code. (CVE-2023-46850)  Update Instructions:  Run `sudo pro fix USN-6484-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openvpn - 2.6.1-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-16" />
+					<cve href="https://ubuntu.com/security/CVE-2023-46849" priority="medium" public="20231115" usns="6484-1">CVE-2023-46849</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46850" priority="medium" public="20231115" usns="6484-1">CVE-2023-46850</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:349066956247363769711911328490782077690" comment="Interim Release" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:64851000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6485-1 -- Intel Microcode vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6485-1" ref_url="https://ubuntu.com/security/notices/USN-6485-1" />
+				<reference source="CVE" ref_id="CVE-2023-23583" ref_url="https://ubuntu.com/security/CVE-2023-23583" />
+				<description>Benoit Morgan, Paul Grosen, Thais Moreira Hamasaki, Ke Sun, Alyssa Milburn, Hisham Shafi, Nir Shlomovich, Tavis Ormandy, Daniel Moghimi, Josh Eads, Salman Qazi, Alexandra Sandulescu, Andy Nguyen, Eduardo Vela, Doug Kwan, and Kostik Shtoyk discovered that some Intel(R) Processors did not properly handle certain sequences of processor instructions. A local attacker could possibly use this to cause a core hang (resulting in a denial of service), gain access to sensitive information or possibly escalate their privileges.  Update Instructions:  Run `sudo pro fix USN-6485-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  intel-microcode - 3.20231114.0ubuntu0.23.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2023-11-17" />
+					<cve href="https://ubuntu.com/security/CVE-2023-23583" priority="high" public="20231114" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" cvss_severity="high" usns="6485-1">CVE-2023-23583</cve>
+				</advisory>
+			</metadata>
+			<criteria operator="OR">
+				<criterion test_ref="oval:com.ubuntu.lunar:tst:402833817168613472334737281999046686945" comment="Interim Release" />
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342539657013098665561295560194246452326" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4931,6 +4971,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:344607855204881675544726484150614935876" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:638260478897054561906779081572027489379" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:398473323500128674626685665309908358710" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:349066956247363769711911328490782077690" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:438916025928375418487970339315699642225" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:508927659485090005716925618103399191892" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:350959563259511065109846127629853395687" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:450428950034010890706221405776146551710" />
@@ -5039,6 +5083,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:400008772182481741936483374201572049795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:587187116203092882684234351073228940772" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:622671963085772706214875191487610823277" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:402833817168613472334737281999046686945" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:602681568052252171574975445934450412795" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:430318758627816066885530087470805363823" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:403067091248452417120537989331731691000" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:557852329060838648239705536762075791800" />
@@ -6519,6 +6567,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:437395111922067329990812529974537687772" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:438916025928375418487970339315699642225" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:445700442326711283010289658525192898655" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:440161164451302528317413157848088944523" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6806,6 +6857,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:601816294149313199851495105930052415862" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:348932034868745939564492940927810360567" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:602681568052252171574975445934450412795" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:602772702567364262241447931873732436510" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:619530183886911280040321514642868879475" var_check="at least one" />
@@ -7150,6 +7204,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:427578371650416910446307266458701233120" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.0-2ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:430318758627816066885530087470805363823" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20231114.0ubuntu0.23.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:432402482336079049545676271148648881687" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.2-2ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -7317,6 +7374,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:507849471649608530602953220593352875121" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.5.0-5ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:508927659485090005716925618103399191892" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.1-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:511615619183117874763412633216936248131" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:7.2+dfsg-5ubuntu2.2</linux:evr>
@@ -8872,6 +8932,9 @@
 			<value>openssh-tests</value>
 			<value>ssh</value>
 			<value>ssh-askpass-gnome</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:445700442326711283010289658525192898655" version="1" datatype="string" comment="Interim Release">
+			<value>openvpn</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:608813474728275520816188863243014249408" version="1" datatype="string" comment="Interim Release">
 			<value>os-brick-common</value>
