@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-18T02:41:02</oval:timestamp>
+		<oval:timestamp>2023-11-21T04:43:19</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -14,7 +14,8 @@
 				<description />
 			</metadata>
 			<criteria>
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" comment="Ubuntu 23.10 (mantic) is installed." />
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:385026344161666994746680583892470711984" comment="The host is part of the unix family." />
+				<criterion test_ref="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" comment="The host is running Ubuntu 23.10 (mantic)." />
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:63742000000" version="1" class="patch">
@@ -34,8 +35,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-4875" priority="medium" public="20230909" cvss_score="5.7" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6374-1,6374-2">CVE-2023-4875</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64222000000" version="1" class="patch">
@@ -55,8 +59,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-27585" priority="medium" public="20230314" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6422-1,6422-2">CVE-2023-27585</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:667132925386908948762214757304330292769" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:667132925386908948762214757304330292769" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64232000000" version="1" class="patch">
@@ -74,8 +81,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-43641" priority="medium" public="20231009" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6423-1,6423-2">CVE-2023-43641</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:616735649377285903388272372098866118499" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:616735649377285903388272372098866118499" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64253000000" version="1" class="patch">
@@ -99,9 +109,12 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-42670" priority="medium" public="20231010" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6425-1,6425-3">CVE-2023-42670</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:527584859555126332325675847280538838947" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:527584859555126332325675847280538838947" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64272000000" version="1" class="patch">
@@ -119,10 +132,13 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-44487" priority="medium" public="20231010" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6427-1,6427-2,6438-1">CVE-2023-44487</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:356370434344336863135984827053952325373" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:582730876201787951729800857644041207777" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:452533455579102724958575909744512937896" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:356370434344336863135984827053952325373" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:582730876201787951729800857644041207777" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:452533455579102724958575909744512937896" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64293000000" version="1" class="patch">
@@ -142,8 +158,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-38546" priority="low" public="20231011" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="6429-1,6429-2,6429-3">CVE-2023-38546</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64331000000" version="1" class="patch">
@@ -161,8 +180,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-43115" priority="medium" public="20230918" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6433-1">CVE-2023-43115</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64381000000" version="1" class="patch">
@@ -182,9 +204,12 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-44487" priority="medium" public="20231010" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6427-1,6427-2,6438-1">CVE-2023-44487</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:656058972143020912467062552424694997934" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:540275722423705513407631667923711580049" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:656058972143020912467062552424694997934" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:540275722423705513407631667923711580049" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64382000000" version="1" class="patch">
@@ -204,9 +229,12 @@
 					<bug>https://launchpad.net/bugs/2040208</bug>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:673055070161072665123700872053651560254" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:433131482723095114568652095342150669239" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:673055070161072665123700872053651560254" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:433131482723095114568652095342150669239" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64481000000" version="1" class="patch">
@@ -224,8 +252,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-32307" priority="medium" public="20230526" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6448-1">CVE-2023-32307</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:609249445692863259146323567887499405187" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:609249445692863259146323567887499405187" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64501000000" version="1" class="patch">
@@ -249,8 +280,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5363" priority="medium" public="20231024" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="high" usns="6450-1">CVE-2023-5363</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:373330512272995811093425799194655457319" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:373330512272995811093425799194655457319" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64521000000" version="1" class="patch">
@@ -290,8 +324,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5535" priority="medium" public="20231011" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6452-1">CVE-2023-5535</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:384598151505864979241207106571944075831" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:384598151505864979241207106571944075831" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64531000000" version="1" class="patch">
@@ -311,9 +348,12 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5380" priority="medium" public="20231025" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6453-1,6453-2">CVE-2023-5380</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:406927405655697903254574757293399166887" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:421121973844413344506311800224470437681" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:406927405655697903254574757293399166887" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:421121973844413344506311800224470437681" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64541000000" version="1" class="patch">
@@ -337,14 +377,17 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1,6454-2,6466-1,6454-3,6454-4,6479-1">CVE-2023-5197</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:596739999937487961838944625432221228215" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:382035721409507540726899343878212969328" comment="Interim Release" />
-				</criteria>
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:451780807732586846079998353239250224093" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:514727047235890972053010903780859821002" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:596739999937487961838944625432221228215" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:382035721409507540726899343878212969328" comment="Interim Release" />
+					</criteria>
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:451780807732586846079998353239250224093" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:514727047235890972053010903780859821002" comment="Interim Release" />
+					</criteria>
 				</criteria>
 			</criteria>
 		</definition>
@@ -369,22 +412,25 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1,6454-2,6466-1,6454-3,6454-4,6479-1">CVE-2023-5197</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:510543510855627116086750748584815414263" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:435477669282091628090262603480918415021" comment="Interim Release" />
-				</criteria>
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:472628111696157807966368037072050043668" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:606272057618346589994959341490179815467" comment="Interim Release" />
-				</criteria>
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:643934751742078154741995470111529226538" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:606593045059213393499051176476987201196" comment="Interim Release" />
-				</criteria>
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:512137668716635689514115665207619840824" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:575730740503078475455041398624005267167" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:510543510855627116086750748584815414263" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:435477669282091628090262603480918415021" comment="Interim Release" />
+					</criteria>
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:472628111696157807966368037072050043668" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:606272057618346589994959341490179815467" comment="Interim Release" />
+					</criteria>
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:643934751742078154741995470111529226538" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:606593045059213393499051176476987201196" comment="Interim Release" />
+					</criteria>
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:512137668716635689514115665207619840824" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:575730740503078475455041398624005267167" comment="Interim Release" />
+					</criteria>
 				</criteria>
 			</criteria>
 		</definition>
@@ -409,10 +455,13 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1,6454-2,6466-1,6454-3,6454-4,6479-1">CVE-2023-5197</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:410763378202224712244839913376497603231" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:562500094665170671554357830467071005097" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:410763378202224712244839913376497603231" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:562500094665170671554357830467071005097" comment="Interim Release" />
+					</criteria>
 				</criteria>
 			</criteria>
 		</definition>
@@ -437,10 +486,13 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5197" priority="medium" public="20230927" cvss_score="6.6" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H" cvss_severity="medium" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6454-1,6454-2,6466-1,6454-3,6454-4,6479-1">CVE-2023-5197</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criteria operator="AND">
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:492245842950526912057508158469950511386" comment="Interim Release" />
-					<criterion test_ref="oval:com.ubuntu.mantic:tst:600375990311024189250346418692361462386" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:492245842950526912057508158469950511386" comment="Interim Release" />
+						<criterion test_ref="oval:com.ubuntu.mantic:tst:600375990311024189250346418692361462386" comment="Interim Release" />
+					</criteria>
 				</criteria>
 			</criteria>
 		</definition>
@@ -461,8 +513,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-42119" priority="medium" public="20230928" usns="6455-1">CVE-2023-42119</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:622558574082053044817723303812322666591" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:622558574082053044817723303812322666591" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64591000000" version="1" class="patch">
@@ -506,8 +561,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-22114" priority="medium" public="20231017" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6459-1">CVE-2023-22114</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:612491811869601792463852350430216763751" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:612491811869601792463852350430216763751" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64631000000" version="1" class="patch">
@@ -527,8 +585,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-34059" priority="medium" public="20231026" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6463-1">CVE-2023-34059</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:562488756857000461863671708931607304858" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:562488756857000461863671708931607304858" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64681000000" version="1" class="patch">
@@ -556,8 +617,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-5730" priority="medium" public="20231025" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6456-1,6468-1">CVE-2023-5730</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:482310822280189302465905480973758672149" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:482310822280189302465905480973758672149" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64701000000" version="1" class="patch">
@@ -575,8 +639,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-40743" priority="medium" public="20230905" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6470-1">CVE-2023-40743</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:531363541349392264665491151181744460518" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:531363541349392264665491151181744460518" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64711000000" version="1" class="patch">
@@ -594,8 +661,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2022-33065" priority="medium" public="20230718" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6471-1">CVE-2022-33065</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:615794881838311008716026436769891916452" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:615794881838311008716026436769891916452" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64731000000" version="1" class="patch">
@@ -617,8 +687,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-45803" priority="medium" public="20231017" cvss_score="4.2" cvss_vector="CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6473-1,6473-2">CVE-2023-45803</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:408151643372069266424338398694057007077" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:408151643372069266424338398694057007077" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64732000000" version="1" class="patch">
@@ -640,8 +713,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-45803" priority="medium" public="20231017" cvss_score="4.2" cvss_vector="CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6473-1,6473-2">CVE-2023-45803</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:669407012441126102201378310959977555032" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:669407012441126102201378310959977555032" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64761000000" version="1" class="patch">
@@ -661,8 +737,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-46853" priority="medium" public="20231027" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6476-1">CVE-2023-46853</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:591977941693064781915018405964716558456" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:591977941693064781915018405964716558456" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64771000000" version="1" class="patch">
@@ -680,8 +759,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-4016" priority="low" public="20230802" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6477-1">CVE-2023-4016</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:451778632968346734893300793892341505904" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:451778632968346734893300793892341505904" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64801000000" version="1" class="patch">
@@ -701,12 +783,15 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-36558" priority="medium" public="20231114" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6480-1">CVE-2023-36558</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:400285462820053063392619888315473015191" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:586058084882002447481161776460226389182" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:603778455398554693833869969544044703388" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:639394904819888321550902308106222011989" comment="Interim Release" />
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:394179377191746622188706388972822797580" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:400285462820053063392619888315473015191" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:586058084882002447481161776460226389182" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:603778455398554693833869969544044703388" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:639394904819888321550902308106222011989" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:394179377191746622188706388972822797580" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64811000000" version="1" class="patch">
@@ -726,8 +811,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-46753" priority="medium" public="20231026" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6481-1,6482-1">CVE-2023-46753</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:501222566775145025327997606627021871207" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:501222566775145025327997606627021871207" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64831000000" version="1" class="patch">
@@ -745,8 +833,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2021-33391" priority="medium" public="20230217" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6483-1">CVE-2021-33391</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:483684169793605889230568293191291169947" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:483684169793605889230568293191291169947" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64841000000" version="1" class="patch">
@@ -766,8 +857,11 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-46850" priority="medium" public="20231115" usns="6484-1">CVE-2023-46850</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:429134733221669023158902526280416744139" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:429134733221669023158902526280416744139" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.mantic:def:64851000000" version="1" class="patch">
@@ -785,12 +879,117 @@
 					<cve href="https://ubuntu.com/security/CVE-2023-23583" priority="high" public="20231114" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" cvss_severity="high" usns="6485-1">CVE-2023-23583</cve>
 				</advisory>
 			</metadata>
-			<criteria operator="OR">
-				<criterion test_ref="oval:com.ubuntu.mantic:tst:539989946820818135020729819683625344920" comment="Interim Release" />
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:539989946820818135020729819683625344920" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64861000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6486-1 -- iniParser vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6486-1" ref_url="https://ubuntu.com/security/notices/USN-6486-1" />
+				<reference source="CVE" ref_id="CVE-2023-33461" ref_url="https://ubuntu.com/security/CVE-2023-33461" />
+				<description>It was discovered that iniParser incorrectly handled certain files. An attacker could possibly use this issue to cause a crash.  Update Instructions:  Run `sudo pro fix USN-6486-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libiniparser1 - 4.1-6ubuntu0.23.10.1 libiniparser-dev - 4.1-6ubuntu0.23.10.1 libiniparser-doc - 4.1-6ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-33461" priority="medium" public="20230601" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6486-1">CVE-2023-33461</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:432486829339618453179311058775006074485" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64871000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6487-1 -- Avahi vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6487-1" ref_url="https://ubuntu.com/security/notices/USN-6487-1" />
+				<reference source="CVE" ref_id="CVE-2023-38469" ref_url="https://ubuntu.com/security/CVE-2023-38469" />
+				<reference source="CVE" ref_id="CVE-2023-38470" ref_url="https://ubuntu.com/security/CVE-2023-38470" />
+				<reference source="CVE" ref_id="CVE-2023-38471" ref_url="https://ubuntu.com/security/CVE-2023-38471" />
+				<reference source="CVE" ref_id="CVE-2023-38472" ref_url="https://ubuntu.com/security/CVE-2023-38472" />
+				<reference source="CVE" ref_id="CVE-2023-38473" ref_url="https://ubuntu.com/security/CVE-2023-38473" />
+				<description>Evgeny Vereshchagin discovered that Avahi contained several reachable  assertions, which could lead to intentional assertion failures when  specially crafted user input was given. An attacker could possibly use this issue to cause a denial of service. (CVE-2023-38469, CVE-2023-38470, CVE-2023-38471, CVE-2023-38472, CVE-2023-38473)  Update Instructions:  Run `sudo pro fix USN-6487-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  avahi-autoipd - 0.8-10ubuntu1.1 avahi-daemon - 0.8-10ubuntu1.1 avahi-discover - 0.8-10ubuntu1.1 avahi-dnsconfd - 0.8-10ubuntu1.1 avahi-ui-utils - 0.8-10ubuntu1.1 avahi-utils - 0.8-10ubuntu1.1 gir1.2-avahi-0.6 - 0.8-10ubuntu1.1 libavahi-client3 - 0.8-10ubuntu1.1 libavahi-client-dev - 0.8-10ubuntu1.1 libavahi-common3 - 0.8-10ubuntu1.1 libavahi-common-data - 0.8-10ubuntu1.1 libavahi-common-dev - 0.8-10ubuntu1.1 libavahi-compat-libdnssd1 - 0.8-10ubuntu1.1 libavahi-compat-libdnssd-dev - 0.8-10ubuntu1.1 libavahi-core7 - 0.8-10ubuntu1.1 libavahi-core-dev - 0.8-10ubuntu1.1 libavahi-glib1 - 0.8-10ubuntu1.1 libavahi-glib-dev - 0.8-10ubuntu1.1 libavahi-gobject0 - 0.8-10ubuntu1.1 libavahi-gobject-dev - 0.8-10ubuntu1.1 libavahi-ui-gtk3-0 - 0.8-10ubuntu1.1 libavahi-ui-gtk3-dev - 0.8-10ubuntu1.1 python3-avahi - 0.8-10ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38469" priority="medium" public="20231102" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6487-1">CVE-2023-38469</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38470" priority="medium" public="20231102" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6487-1">CVE-2023-38470</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38471" priority="medium" public="20231102" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6487-1">CVE-2023-38471</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38472" priority="medium" public="20231102" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6487-1">CVE-2023-38472</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-38473" priority="medium" public="20231102" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6487-1">CVE-2023-38473</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:345625954387148324441054610725218524408" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64881000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6488-1 -- strongSwan vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6488-1" ref_url="https://ubuntu.com/security/notices/USN-6488-1" />
+				<reference source="CVE" ref_id="CVE-2023-41913" ref_url="https://ubuntu.com/security/CVE-2023-41913" />
+				<description>Florian Picca discovered that strongSwan incorrectly handled certain DH public values. A remote attacker could use this issue to cause strongSwan to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6488-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  charon-cmd - 5.9.11-1ubuntu1.1 charon-systemd - 5.9.11-1ubuntu1.1 libcharon-extauth-plugins - 5.9.11-1ubuntu1.1 libcharon-extra-plugins - 5.9.11-1ubuntu1.1 libstrongswan - 5.9.11-1ubuntu1.1 libstrongswan-extra-plugins - 5.9.11-1ubuntu1.1 libstrongswan-standard-plugins - 5.9.11-1ubuntu1.1 strongswan - 5.9.11-1ubuntu1.1 strongswan-charon - 5.9.11-1ubuntu1.1 strongswan-libcharon - 5.9.11-1ubuntu1.1 strongswan-nm - 5.9.11-1ubuntu1.1 strongswan-pki - 5.9.11-1ubuntu1.1 strongswan-starter - 5.9.11-1ubuntu1.1 strongswan-swanctl - 5.9.11-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-41913" priority="medium" public="20231120" usns="6488-1">CVE-2023-41913</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:633751898976449715002213352479854699828" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64901000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6490-1 -- WebKitGTK vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6490-1" ref_url="https://ubuntu.com/security/notices/USN-6490-1" />
+				<reference source="CVE" ref_id="CVE-2023-41983" ref_url="https://ubuntu.com/security/CVE-2023-41983" />
+				<reference source="CVE" ref_id="CVE-2023-42852" ref_url="https://ubuntu.com/security/CVE-2023-42852" />
+				<description>Several security issues were discovered in the WebKitGTK Web and JavaScript engines. If a user were tricked into viewing a malicious website, a remote attacker could exploit a variety of issues related to web browser security, including cross-site scripting attacks, denial of service attacks, and arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-6490-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-javascriptcoregtk-4.0 - 2.42.2-0ubuntu0.23.10.1 gir1.2-javascriptcoregtk-4.1 - 2.42.2-0ubuntu0.23.10.1 gir1.2-javascriptcoregtk-6.0 - 2.42.2-0ubuntu0.23.10.1 gir1.2-webkit2-4.0 - 2.42.2-0ubuntu0.23.10.1 gir1.2-webkit2-4.1 - 2.42.2-0ubuntu0.23.10.1 gir1.2-webkit-6.0 - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-4.0-18 - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-4.0-bin - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-4.0-dev - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-4.1-0 - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-4.1-dev - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-6.0-1 - 2.42.2-0ubuntu0.23.10.1 libjavascriptcoregtk-6.0-dev - 2.42.2-0ubuntu0.23.10.1 libwebkit2gtk-4.0-37 - 2.42.2-0ubuntu0.23.10.1 libwebkit2gtk-4.0-dev - 2.42.2-0ubuntu0.23.10.1 libwebkit2gtk-4.0-doc - 2.42.2-0ubuntu0.23.10.1 libwebkit2gtk-4.1-0 - 2.42.2-0ubuntu0.23.10.1 libwebkit2gtk-4.1-dev - 2.42.2-0ubuntu0.23.10.1 libwebkitgtk-6.0-4 - 2.42.2-0ubuntu0.23.10.1 libwebkitgtk-6.0-dev - 2.42.2-0ubuntu0.23.10.1 webkit2gtk-driver - 2.42.2-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-20" />
+					<cve href="https://ubuntu.com/security/CVE-2023-41983" priority="medium" public="20231116" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6490-1">CVE-2023-41983</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42852" priority="medium" public="20231116" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6490-1">CVE-2023-42852</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:673524728778070792696793793360536687348" comment="Interim Release" />
+				</criteria>
 			</criteria>
 		</definition>
 	</definitions>
 	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:345625954387148324441054610725218524408" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:624283864739436553282500448533305562882" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:576494285938333882096799367753013241504" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:356370434344336863135984827053952325373" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:372943558245940854347635315241023167719" />
@@ -830,6 +1029,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:432486829339618453179311058775006074485" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:428889517515555317600370453789871244343" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:441980619022353080775857724591639440575" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:433131482723095114568652095342150669239" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:640989882411753167733276230734622127652" />
@@ -923,6 +1126,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:414860281523375548388646059771482620414" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:397936403395729863340527771063765325589" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:633751898976449715002213352479854699828" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:523680699492126845887268757573019376051" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:395776465400458046936560909258467309894" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:639394904819888321550902308106222011989" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:594774160045534791560380635634231828617" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:572647902746092898754344172860728544371" />
@@ -942,6 +1149,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:673055070161072665123700872053651560254" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:598118567630372265784608630428382308996" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:418149509811288187509160602622916719996" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:673524728778070792696793793360536687348" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:533252973869089486761080309585193893368" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:457201334385795134070331037776076974867" />
 		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-aws) currently running?" id="oval:com.ubuntu.mantic:tst:643934751742078154741995470111529226538" version="1">
 			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
@@ -975,6 +1186,14 @@
 			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
 			<unix:state state_ref="oval:com.ubuntu.mantic:ste:527079506580715177652887254706220878296" />
 		</unix:uname_test>
+		<ind:family_test id="oval:com.ubuntu.mantic:tst:385026344161666994746680583892470711984" check="at least one" check_existence="at_least_one_exists" version="1" comment="Is the host part of the unix family?">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:532773462681133181223736521966032213178" />
+		</ind:family_test>
+		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" version="1" comment="Is the host running Ubuntu mantic?">
+			<ind:object object_ref="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" />
+			<ind:state state_ref="oval:com.ubuntu.mantic:ste:450983574323384779092868378208779369654" />
+		</ind:textfilecontent54_test>
 		<ind:variable_test id="oval:com.ubuntu.mantic:tst:382035721409507540726899343878212969328" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:476817337086383464685827645449218417161" />
 			<ind:state state_ref="oval:com.ubuntu.mantic:ste:587703685102167665975616502857973922870" />
@@ -1007,10 +1226,6 @@
 			<ind:object object_ref="oval:com.ubuntu.mantic:obj:510688289306525972369506166380422814277" />
 			<ind:state state_ref="oval:com.ubuntu.mantic:ste:462969952023357640329197638552971716107" />
 		</ind:variable_test>
-		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.mantic:tst:434262319645722020032194065891686282068" version="1" comment="Ubuntu 23.10 (mantic) is installed.">
-			<ind:object object_ref="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" />
-			<ind:state state_ref="oval:com.ubuntu.mantic:ste:450983574323384779092868378208779369654" />
-		</ind:textfilecontent54_test>
 	</tests>
 	<objects>
 		<ind:variable_object id="oval:com.ubuntu.mantic:obj:385544708627381742973222017034194460031" version="1">
@@ -1031,7 +1246,6 @@
 		<ind:variable_object id="oval:com.ubuntu.mantic:obj:535505956780091859613723061721931318399" version="1">
 			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
 		</ind:variable_object>
-		<unix:uname_object id="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" version="1" />
 		<ind:variable_object id="oval:com.ubuntu.mantic:obj:544409155813673788586920817364479398892" version="1">
 			<ind:var_ref>oval:com.ubuntu.mantic:var:645366408683330920114270718896131744994</ind:var_ref>
 		</ind:variable_object>
@@ -1074,6 +1288,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:428037284032035202394446107209226746006" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:406909030607870092475713953191569668495" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:428889517515555317600370453789871244343" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:369964320601684946368920698910419708727" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:434808485760514541149912464597326451123" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:559683440088164987256969219992557100775" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1092,11 +1309,17 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:523653682481509660035860027579253708251" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:620546322946438377960770987315997870545" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:523680699492126845887268757573019376051" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:651628223003297934521020871987319094957" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:524152483884377130131545314919253057993" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:475552723821216169067395075348794160072" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:526882907320567959015975650066780567653" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:345443898926063000557241285383707223097" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:533252973869089486761080309585193893368" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:676100531393497779434447407122187609980" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:546484741515648016364370622580963673593" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:576433769504538664619461474509787922514" var_check="at least one" />
@@ -1128,6 +1351,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:612123305759894952637052449360249840811" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:389032809522511005220797537846449207121" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:624283864739436553282500448533305562882" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:585302504075288137323779610588985212586" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:628906835011881386333177930518203752490" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:359084828402709891008873241447499223122" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1152,6 +1378,7 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:678311886007417293270853736347247430115" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:591679641737330479310395030469533794415" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<ind:family_object id="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" version="1" comment="The singleton family object." />
 		<ind:textfilecontent54_object id="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
 			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
@@ -1198,6 +1425,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:372943558245940854347635315241023167719" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.0~rc2-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:395776465400458046936560909258467309894" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.9.11-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:397936403395729863340527771063765325589" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.96-17ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1210,8 +1440,14 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:434411669851997419049597994309189947076" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:2.7.2+samba4.18.6+dfsg-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:441980619022353080775857724591639440575" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.1-6ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:455022379592254049102081384328765040634" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.125-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:457201334385795134070331037776076974867" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.2-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:466111612112833474596774901761659006655" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:5.6.0-11ubuntu0.23.10.1</linux:evr>
@@ -1258,6 +1494,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:572647902746092898754344172860728544371" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-0ubuntu1~23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:576494285938333882096799367753013241504" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.8-10ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:590547875939386230722926345097578014755" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-8.0.0~rc2-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1297,6 +1536,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:664916219536049414516981229343558149717" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.1-4ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
+		<ind:family_state id="oval:com.ubuntu.mantic:ste:532773462681133181223736521966032213178" version="1" comment="The singleton family object.">
+			<ind:family>unix</ind:family>
+		</ind:family_state>
 		<ind:textfilecontent54_state id="oval:com.ubuntu.mantic:ste:450983574323384779092868378208779369654" version="1" comment="Ubuntu 23.10">
 			<ind:subexpression datatype="string" operation="equals">mantic</ind:subexpression>
 		</ind:textfilecontent54_state>
@@ -1368,6 +1610,47 @@
 			<value>dotnet-runtime-8.0</value>
 			<value>dotnet-targeting-pack-8.0</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:585302504075288137323779610588985212586" version="1" datatype="string" comment="Interim Release">
+			<value>avahi-autoipd</value>
+			<value>avahi-daemon</value>
+			<value>avahi-discover</value>
+			<value>avahi-dnsconfd</value>
+			<value>avahi-ui-utils</value>
+			<value>avahi-utils</value>
+			<value>gir1.2-avahi-0.6</value>
+			<value>libavahi-client3</value>
+			<value>libavahi-client-dev</value>
+			<value>libavahi-common3</value>
+			<value>libavahi-common-data</value>
+			<value>libavahi-common-dev</value>
+			<value>libavahi-compat-libdnssd1</value>
+			<value>libavahi-compat-libdnssd-dev</value>
+			<value>libavahi-core7</value>
+			<value>libavahi-core-dev</value>
+			<value>libavahi-glib1</value>
+			<value>libavahi-glib-dev</value>
+			<value>libavahi-gobject0</value>
+			<value>libavahi-gobject-dev</value>
+			<value>libavahi-ui-gtk3-0</value>
+			<value>libavahi-ui-gtk3-dev</value>
+			<value>python3-avahi</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:651628223003297934521020871987319094957" version="1" datatype="string" comment="Interim Release">
+			<value>charon-cmd</value>
+			<value>charon-systemd</value>
+			<value>libcharon-extauth-plugins</value>
+			<value>libcharon-extra-plugins</value>
+			<value>libstrongswan</value>
+			<value>libstrongswan-extra-plugins</value>
+			<value>libstrongswan-standard-plugins</value>
+			<value>strongswan</value>
+			<value>strongswan-charon</value>
+			<value>strongswan-libcharon</value>
+			<value>strongswan-nm</value>
+			<value>strongswan-pki</value>
+			<value>strongswan-starter</value>
+			<value>strongswan-swanctl</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" version="1" datatype="string" comment="Interim Release">
 			<value>ctdb</value>
 			<value>libnss-winbind</value>
@@ -1436,6 +1719,29 @@
 			<value>libgs-common</value>
 			<value>libgs-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:676100531393497779434447407122187609980" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-javascriptcoregtk-4.0</value>
+			<value>gir1.2-javascriptcoregtk-4.1</value>
+			<value>gir1.2-javascriptcoregtk-6.0</value>
+			<value>gir1.2-webkit2-4.0</value>
+			<value>gir1.2-webkit2-4.1</value>
+			<value>gir1.2-webkit-6.0</value>
+			<value>libjavascriptcoregtk-4.0-18</value>
+			<value>libjavascriptcoregtk-4.0-bin</value>
+			<value>libjavascriptcoregtk-4.0-dev</value>
+			<value>libjavascriptcoregtk-4.1-0</value>
+			<value>libjavascriptcoregtk-4.1-dev</value>
+			<value>libjavascriptcoregtk-6.0-1</value>
+			<value>libjavascriptcoregtk-6.0-dev</value>
+			<value>libwebkit2gtk-4.0-37</value>
+			<value>libwebkit2gtk-4.0-dev</value>
+			<value>libwebkit2gtk-4.0-doc</value>
+			<value>libwebkit2gtk-4.1-0</value>
+			<value>libwebkit2gtk-4.1-dev</value>
+			<value>libwebkitgtk-6.0-4</value>
+			<value>libwebkitgtk-6.0-dev</value>
+			<value>webkit2gtk-driver</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:642917223997026211090222810349093146056" version="1" datatype="string" comment="Interim Release">
 			<value>intel-microcode</value>
 		</constant_variable>
@@ -1457,6 +1763,11 @@
 		<constant_variable id="oval:com.ubuntu.mantic:var:423503941555164629223418644851399191903" version="1" datatype="string" comment="Interim Release">
 			<value>libcue2</value>
 			<value>libcue-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:369964320601684946368920698910419708727" version="1" datatype="string" comment="Interim Release">
+			<value>libiniparser1</value>
+			<value>libiniparser-dev</value>
+			<value>libiniparser-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:657677555049968960121924811563711511967" version="1" datatype="string" comment="Interim Release">
 			<value>libmysqlclient21</value>
