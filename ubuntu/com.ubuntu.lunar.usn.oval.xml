@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-23T06:43:19</oval:timestamp>
+		<oval:timestamp>2023-11-24T02:41:34</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5928,7 +5928,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-11-22" />
-					<cve href="https://ubuntu.com/security/CVE-2023-31122" priority="low" public="20231023" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6506-1">CVE-2023-31122</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31122" priority="low" public="20231023" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6506-1,6510-1">CVE-2023-31122</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-43622" priority="low" public="20231023" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6506-1">CVE-2023-43622</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-45802" priority="medium" public="20231023" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6506-1">CVE-2023-45802</cve>
 				</advisory>
@@ -5962,6 +5962,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6511-1 -- OpenZFS vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6511-1" ref_url="https://ubuntu.com/security/notices/USN-6511-1" />
+				<reference source="CVE" ref_id="CVE-2013-20001" ref_url="https://ubuntu.com/security/CVE-2013-20001" />
+				<description>It was discovered that the OpenZFS sharenfs feature incorrectly handled IPv6 address data. This could result in IPv6 restrictions not being applied, contrary to expectations.  Update Instructions:  Run `sudo pro fix USN-6511-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnvpair3linux - 2.1.9-2ubuntu1.2 libpam-zfs - 2.1.9-2ubuntu1.2 libuutil3linux - 2.1.9-2ubuntu1.2 libzfs4linux - 2.1.9-2ubuntu1.2 libzfsbootenv1linux - 2.1.9-2ubuntu1.2 libzfslinux-dev - 2.1.9-2ubuntu1.2 libzpool5linux - 2.1.9-2ubuntu1.2 python3-pyzfs - 2.1.9-2ubuntu1.2 pyzfs-doc - 2.1.9-2ubuntu1.2 zfs-dkms - 2.1.9-2ubuntu1.2 zfs-dracut - 2.1.9-2ubuntu1.2 zfs-initramfs - 2.1.9-2ubuntu1.2 zfs-test - 2.1.9-2ubuntu1.2 zfs-zed - 2.1.9-2ubuntu1.2 zfsutils-linux - 2.1.9-2ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-23" />
+					<cve href="https://ubuntu.com/security/CVE-2013-20001" priority="medium" public="20210212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="high" usns="6511-1">CVE-2013-20001</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:351440483858877942698340804873545461950" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:342072445205851656930890663024803986752" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -5983,6 +6005,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:350959563259511065109846127629853395687" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:450428950034010890706221405776146551710" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:456386649289645372540845312701227490758" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:351440483858877942698340804873545461950" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:513048706722541512890156422521338499140" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:535741138161721946724534013054754953002" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:355234368959717515473227140932168002939" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:377048366567370109075591130975538106069" />
@@ -7803,6 +7829,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513031226480158701622623569220261201220" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:533611457783602686868373763130377418557" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513048706722541512890156422521338499140" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:605507367066002733983936986236078402375" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:513181005240506517526103491494373974641" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -8584,6 +8613,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:534118288344705342811548291830278782098" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.125-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:535741138161721946724534013054754953002" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.1.9-2ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:536201546728321820867919146682341044853" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.4-0ubuntu3.1</linux:evr>
@@ -9978,6 +10010,23 @@
 			<value>libvirt-login-shell</value>
 			<value>libvirt-sanlock</value>
 			<value>libvirt-wireshark</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:605507367066002733983936986236078402375" version="1" datatype="string" comment="Interim Release">
+			<value>libnvpair3linux</value>
+			<value>libpam-zfs</value>
+			<value>libuutil3linux</value>
+			<value>libzfs4linux</value>
+			<value>libzfsbootenv1linux</value>
+			<value>libzfslinux-dev</value>
+			<value>libzpool5linux</value>
+			<value>python3-pyzfs</value>
+			<value>pyzfs-doc</value>
+			<value>zfs-dkms</value>
+			<value>zfs-dracut</value>
+			<value>zfs-initramfs</value>
+			<value>zfs-test</value>
+			<value>zfs-zed</value>
+			<value>zfsutils-linux</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:617659953950482257300729066035023652845" version="1" datatype="string" comment="Interim Release">
 			<value>libperl5.36</value>
