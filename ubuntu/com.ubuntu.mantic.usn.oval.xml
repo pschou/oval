@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-11-24T02:41:34</oval:timestamp>
+		<oval:timestamp>2023-11-28T06:44:02</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -39,6 +39,28 @@
 				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:64022000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6402-2 -- LibTomMath vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6402-2" ref_url="https://ubuntu.com/security/notices/USN-6402-2" />
+				<reference source="CVE" ref_id="CVE-2023-36328" ref_url="https://ubuntu.com/security/CVE-2023-36328" />
+				<description>USN-6402-1 fixed vulnerabilities in LibTomMath. This update provides the corresponding updates for Ubuntu 23.10.  Original advisory details:   It was discovered that LibTomMath incorrectly handled certain inputs.  An attacker could possibly use this issue to execute arbitrary code  and cause a denial of service (DoS).  Update Instructions:  Run `sudo pro fix USN-6402-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libtommath1 - 1.2.0-6ubuntu0.23.10.1 libtommath-dev - 1.2.0-6ubuntu0.23.10.1 libtommath-doc - 1.2.0-6ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2023-36328" priority="medium" public="20230901" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6402-1">CVE-2023-36328</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:374599098761301839728076563336175129933" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -1123,10 +1145,10 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2023-11-21" />
-					<cve href="https://ubuntu.com/security/CVE-2023-31085" priority="low" public="20230424" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6461-1,6494-1,6495-1,6496-1,6502-1,6503-1">CVE-2023-31085</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-31085" priority="low" public="20230424" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6461-1,6494-1,6495-1,6496-1,6502-1,6503-1,6516-1,6502-2">CVE-2023-31085</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-4244" priority="high" public="20230906" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6443-1,6444-1,6445-1,6446-1,6444-2,6445-2,6446-2,6446-3,6461-1,6466-1,6503-1">CVE-2023-4244</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5090" priority="high" public="20231106" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6497-1,6502-1,6503-1">CVE-2023-5090</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5345" priority="high" public="20231003" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6461-1,6502-1,6503-1">CVE-2023-5345</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5090" priority="high" public="20231106" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6497-1,6502-1,6503-1,6502-2">CVE-2023-5090</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5345" priority="high" public="20231003" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6461-1,6502-1,6503-1,6502-2">CVE-2023-5345</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5633" priority="high" public="20231023" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6503-1">CVE-2023-5633</cve>
 				</advisory>
 			</metadata>
@@ -1256,6 +1278,64 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65151000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6515-1 -- Thunderbird vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6515-1" ref_url="https://ubuntu.com/security/notices/USN-6515-1" />
+				<reference source="CVE" ref_id="CVE-2023-6204" ref_url="https://ubuntu.com/security/CVE-2023-6204" />
+				<reference source="CVE" ref_id="CVE-2023-6205" ref_url="https://ubuntu.com/security/CVE-2023-6205" />
+				<reference source="CVE" ref_id="CVE-2023-6206" ref_url="https://ubuntu.com/security/CVE-2023-6206" />
+				<reference source="CVE" ref_id="CVE-2023-6207" ref_url="https://ubuntu.com/security/CVE-2023-6207" />
+				<reference source="CVE" ref_id="CVE-2023-6208" ref_url="https://ubuntu.com/security/CVE-2023-6208" />
+				<reference source="CVE" ref_id="CVE-2023-6209" ref_url="https://ubuntu.com/security/CVE-2023-6209" />
+				<reference source="CVE" ref_id="CVE-2023-6212" ref_url="https://ubuntu.com/security/CVE-2023-6212" />
+				<description>Multiple security issues were discovered in Thunderbird. If a user were tricked into opening a specially crafted website in a browsing context, an attacker could potentially exploit these to cause a denial of service, obtain sensitive information, bypass security restrictions, cross-site tracing, or execute arbitrary code. (CVE-2023-6206, CVE-2023-6212)  It was discovered that Thudnerbird did not properly manage memory when images were created on the canvas element. An attacker could potentially exploit this issue to obtain sensitive information. (CVE-2023-6204)  It discovered that Thunderbird incorrectly handled certain memory when using a MessagePort. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2023-6205)  It discovered that Thunderbird incorrectly did not properly manage ownership in ReadableByteStreams. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2023-6207)  It discovered that Thudnerbird incorrectly did not properly manage copy operations when using Selection API in X11. An attacker could potentially exploit this issue to obtain sensitive information. (CVE-2023-6208)  Rachmat Abdul Rokhim discovered that Thunderbird incorrectly handled parsing of relative URLS starting with "///". An attacker could potentially exploit this issue to cause a denial of service. (CVE-2023-6209)  Update Instructions:  Run `sudo pro fix USN-6515-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  thunderbird - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-dev - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-gnome-support - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-af - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ar - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ast - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-be - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-bg - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-bn - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-bn-bd - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-br - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ca - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-cak - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-cs - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-cy - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-da - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-de - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-dsb - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-el - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-en - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-en-gb - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-en-us - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-es - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-es-ar - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-es-es - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-et - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-eu - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-fa - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-fi - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-fr - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-fy - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-fy-nl - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ga - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ga-ie - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-gd - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-gl - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-he - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-hr - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-hsb - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-hu - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-hy - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-id - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-is - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-it - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ja - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ka - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-kab - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-kk - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ko - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-lt - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-lv - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-mk - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ms - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-nb - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-nb-no - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-nl - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-nn - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-nn-no - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-pa - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-pa-in - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-pl - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-pt - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-pt-br - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-pt-pt - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-rm - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ro - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ru - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-si - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-sk - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-sl - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-sq - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-sr - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-sv - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-sv-se - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ta - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-ta-lk - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-th - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-tr - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-uk - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-uz - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-vi - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-cn - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-hans - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-hant - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-tw - 1:115.5.0+build1-0ubuntu0.23.10.1 thunderbird-mozsymbols - 1:115.5.0+build1-0ubuntu0.23.10.1 xul-ext-calendar-timezones - 1:115.5.0+build1-0ubuntu0.23.10.1 xul-ext-gdata-provider - 1:115.5.0+build1-0ubuntu0.23.10.1 xul-ext-lightning - 1:115.5.0+build1-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2023-6204" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6204</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6205" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6205</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6206" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6206</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6207" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6207</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6208" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6208</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6209" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6209</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6212" priority="medium" public="20231121" usns="6509-1,6515-1">CVE-2023-6212</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:577369666510424653766656047270943106675" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65171000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6517-1 -- Perl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6517-1" ref_url="https://ubuntu.com/security/notices/USN-6517-1" />
+				<reference source="CVE" ref_id="CVE-2022-48522" ref_url="https://ubuntu.com/security/CVE-2022-48522" />
+				<reference source="CVE" ref_id="CVE-2023-47038" ref_url="https://ubuntu.com/security/CVE-2023-47038" />
+				<description>It was discovered that Perl incorrectly handled printing certain warning messages. An attacker could possibly use this issue to cause Perl to consume resources, leading to a denial of service. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-48522)  Nathan Mills discovered that Perl incorrectly handled certain regular expressions. An attacker could use this issue to cause Perl to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2023-47038)  Update Instructions:  Run `sudo pro fix USN-6517-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libperl5.36 - 5.36.0-9ubuntu1.1 libperl-dev - 5.36.0-9ubuntu1.1 perl - 5.36.0-9ubuntu1.1 perl-base - 5.36.0-9ubuntu1.1 perl-debug - 5.36.0-9ubuntu1.1 perl-doc - 5.36.0-9ubuntu1.1 perl-modules-5.36 - 5.36.0-9ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2022-48522" priority="low" public="20230822" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6517-1">CVE-2022-48522</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-47038" priority="medium" public="20231125" usns="6517-1">CVE-2023-47038</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:531810932300135537505701710677292546645" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:345625954387148324441054610725218524408" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1273,6 +1353,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:373330512272995811093425799194655457319" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:638432188888545270273794465997852147035" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:638521214742562911482751842365441159939" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:374599098761301839728076563336175129933" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:372713693515205163615622791800058785002" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:357022706617408876735684215215553128834" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:375572160270727543031037671356085281354" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:558850881569226510833907407994665686805" />
@@ -1362,6 +1446,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:612123305759894952637052449360249840811" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:467710811672917940804179605742661382784" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:531810932300135537505701710677292546645" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:484405809912470826704803101016324247983" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:422900295011991714226677186919385420745" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:537564960098065196047618777252225373816" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:397166525954386841799612932608960721240" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:671859577158322932414416580928101875935" />
@@ -1385,6 +1473,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:562488756857000461863671708931607304858" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:492840115442369720275408591419234980289" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:619529538126226555130245007994637949573" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:577369666510424653766656047270943106675" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:385588780224112047988104423356927153294" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:417922591159781237519249756045442389427" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:582730876201787951729800857644041207777" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:666601804437872620450469826531919172303" />
@@ -1621,11 +1713,17 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:372713693515205163615622791800058785002" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:537166095918850410020538615252964206353" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:377131679861559358636458586093456733328" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:382478090973952891004148083301116018250" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:385588780224112047988104423356927153294" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:393098847507717506641551964377645640550" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:473789858031559994353317162244846485675" var_check="at least one" />
@@ -1668,6 +1766,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:480332954370563311448166750351480237606" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:467725885276343531201428157530429777472" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:484405809912470826704803101016324247983" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:617659953950482257300729066035023652845" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:369047092955101027660664114064609179138" var_check="at least one" />
@@ -1806,6 +1907,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:353074691432922420400558504353521207814" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.7-3ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:357022706617408876735684215215553128834" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-6ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:358321972309195642642850904709234603043" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.3-5ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1821,8 +1925,14 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:397936403395729863340527771063765325589" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.96-17ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:417922591159781237519249756045442389427" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:115.5.0+build1-0ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:418149509811288187509160602622916719996" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.124-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:422900295011991714226677186919385420745" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.36.0-9ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:433126625628580297306141474042395088770" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100~rc2-0ubuntu1</linux:evr>
@@ -2255,6 +2365,15 @@
 			<value>nghttp2-proxy</value>
 			<value>nghttp2-server</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:617659953950482257300729066035023652845" version="1" datatype="string" comment="Interim Release">
+			<value>libperl5.36</value>
+			<value>libperl-dev</value>
+			<value>perl</value>
+			<value>perl-base</value>
+			<value>perl-debug</value>
+			<value>perl-doc</value>
+			<value>perl-modules-5.36</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:429789154393825498895165412390293553649" version="1" datatype="string" comment="Interim Release">
 			<value>libproc2-0</value>
 			<value>libproc2-dev</value>
@@ -2283,6 +2402,11 @@
 			<value>libtidy5deb1</value>
 			<value>libtidy-dev</value>
 			<value>tidy</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:537166095918850410020538615252964206353" version="1" datatype="string" comment="Interim Release">
+			<value>libtommath1</value>
+			<value>libtommath-dev</value>
+			<value>libtommath-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:620546322946438377960770987315997870545" version="1" datatype="string" comment="Interim Release">
 			<value>memcached</value>
