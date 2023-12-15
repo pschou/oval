@@ -685,7 +685,9 @@
 		{"pkg": {"name": "iproute2","secfixes": {"5.1.0-r0": ["CVE-2019-20795"]}}},
 		{"pkg": {"name": "jansson","secfixes": {"0": ["CVE-2020-36325"]}}},
 		{"pkg": {"name": "jbig2dec","secfixes": {"0.18-r0": ["CVE-2020-12268"]}}},
-		{"pkg": {"name": "jq","secfixes": {"1.6_rc1-r0": ["CVE-2016-4074"]}}},
+		{
+			"pkg": {"name": "jq","secfixes": {"1.6_rc1-r0": ["CVE-2016-4074"],"1.7.1-r0": ["CVE-2023-50246","CVE-2023-50268"]}}
+		},
 		{"pkg": {"name": "json-c","secfixes": {"0.14-r1": ["CVE-2020-12762"]}}},
 		{"pkg": {"name": "kamailio","secfixes": {"5.1.4-r0": ["CVE-2018-14767"]}}},
 		{"pkg": {"name": "kea","secfixes": {"1.7.2-r0": ["CVE-2019-6472","CVE-2019-6473","CVE-2019-6474"]}}},

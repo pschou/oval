@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-12-14T04:40:18</oval:timestamp>
+		<oval:timestamp>2023-12-15T04:42:56</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -964,7 +964,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-11-20" />
-					<cve href="https://ubuntu.com/security/CVE-2023-41913" priority="medium" public="20231120" usns="6488-1">CVE-2023-41913</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-41913" priority="medium" public="20231120" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6488-1">CVE-2023-41913</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -1513,7 +1513,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-12-06" />
-					<cve href="https://ubuntu.com/security/CVE-2023-46218" priority="medium" public="20231206" usns="6535-1">CVE-2023-46218</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46218" priority="medium" public="20231206" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6535-1">CVE-2023-46218</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-46219" priority="low" public="20231206" usns="6535-1">CVE-2023-46219</cve>
 				</advisory>
 			</metadata>
@@ -1763,8 +1763,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-12-11" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6185" priority="medium" public="20231211" usns="6546-1">CVE-2023-6185</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6186" priority="medium" public="20231211" usns="6546-1">CVE-2023-6186</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6185" priority="medium" public="20231211" usns="6546-1,6546-2">CVE-2023-6185</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6186" priority="medium" public="20231211" usns="6546-1,6546-2">CVE-2023-6186</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -1846,6 +1846,116 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65561000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6556-1 -- Budgie Extras vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6556-1" ref_url="https://ubuntu.com/security/notices/USN-6556-1" />
+				<reference source="CVE" ref_id="CVE-2023-49342" ref_url="https://ubuntu.com/security/CVE-2023-49342" />
+				<reference source="CVE" ref_id="CVE-2023-49343" ref_url="https://ubuntu.com/security/CVE-2023-49343" />
+				<reference source="CVE" ref_id="CVE-2023-49344" ref_url="https://ubuntu.com/security/CVE-2023-49344" />
+				<reference source="CVE" ref_id="CVE-2023-49345" ref_url="https://ubuntu.com/security/CVE-2023-49345" />
+				<reference source="CVE" ref_id="CVE-2023-49346" ref_url="https://ubuntu.com/security/CVE-2023-49346" />
+				<reference source="CVE" ref_id="CVE-2023-49347" ref_url="https://ubuntu.com/security/CVE-2023-49347" />
+				<description>It was discovered that Budgie Extras incorrectly handled certain temporary file paths. An attacker could possibly use this issue to inject false information or deny access to the application. (CVE-2023-49342, CVE-2023-49343, CVE-2023-49347)  Matthias Gerstner discovered that Budgie Extras incorrectly handled certain temporary file paths. A local attacker could use this to inject arbitrary PNG data in this path and have it displayed on the victim's desktop or deny access to the application. (CVE-2023-49344)  Matthias Gerstner discovered that Budgie Extras incorrectly handled certain temporary file paths. A local attacker could use this to inject false information or deny access to the application. (CVE-2023-49345, CVE-2023-49346)  Update Instructions:  Run `sudo pro fix USN-6556-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  budgie-app-launcher-applet - 1.7.0-3.0ubuntu1 budgie-applications-menu-applet - 1.7.0-3.0ubuntu1 budgie-brightness-controller-applet - 1.7.0-3.0ubuntu1 budgie-clockworks-applet - 1.7.0-3.0ubuntu1 budgie-countdown-applet - 1.7.0-3.0ubuntu1 budgie-dropby-applet - 1.7.0-3.0ubuntu1 budgie-extras-common - 1.7.0-3.0ubuntu1 budgie-extras-daemon - 1.7.0-3.0ubuntu1 budgie-fuzzyclock-applet - 1.7.0-3.0ubuntu1 budgie-hotcorners-applet - 1.7.0-3.0ubuntu1 budgie-kangaroo-applet - 1.7.0-3.0ubuntu1 budgie-keyboard-autoswitch-applet - 1.7.0-3.0ubuntu1 budgie-network-manager-applet - 1.7.0-3.0ubuntu1 budgie-previews - 1.7.0-3.0ubuntu1 budgie-quickchar - 1.7.0-3.0ubuntu1 budgie-quicknote-applet - 1.7.0-3.0ubuntu1 budgie-recentlyused-applet - 1.7.0-3.0ubuntu1 budgie-rotation-lock-applet - 1.7.0-3.0ubuntu1 budgie-showtime-applet - 1.7.0-3.0ubuntu1 budgie-takeabreak-applet - 1.7.0-3.0ubuntu1 budgie-trash-applet - 1.7.0-3.0ubuntu1 budgie-visualspace-applet - 1.7.0-3.0ubuntu1 budgie-wallstreet - 1.7.0-3.0ubuntu1 budgie-weathershow-applet - 1.7.0-3.0ubuntu1 budgie-window-shuffler - 1.7.0-3.0ubuntu1 budgie-workspace-stopwatch-applet - 1.7.0-3.0ubuntu1 budgie-workspace-wallpaper-applet - 1.7.0-3.0ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-12-14" />
+					<cve href="https://ubuntu.com/security/CVE-2023-49342" priority="medium" public="20231214" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H" cvss_severity="medium" usns="6556-1">CVE-2023-49342</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49343" priority="medium" public="20231214" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H" cvss_severity="medium" usns="6556-1">CVE-2023-49343</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49344" priority="medium" public="20231214" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H" cvss_severity="medium" usns="6556-1">CVE-2023-49344</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49345" priority="medium" public="20231214" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H" cvss_severity="medium" usns="6556-1">CVE-2023-49345</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49346" priority="medium" public="20231214" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H" cvss_severity="medium" usns="6556-1">CVE-2023-49346</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49347" priority="medium" public="20231214" cvss_score="6.0" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H" cvss_severity="medium" usns="6556-1">CVE-2023-49347</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:558800735451554131164942025002496696802" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65571000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6557-1 -- Vim vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6557-1" ref_url="https://ubuntu.com/security/notices/USN-6557-1" />
+				<reference source="CVE" ref_id="CVE-2022-1725" ref_url="https://ubuntu.com/security/CVE-2022-1725" />
+				<reference source="CVE" ref_id="CVE-2022-1771" ref_url="https://ubuntu.com/security/CVE-2022-1771" />
+				<reference source="CVE" ref_id="CVE-2022-1886" ref_url="https://ubuntu.com/security/CVE-2022-1886" />
+				<reference source="CVE" ref_id="CVE-2022-1897" ref_url="https://ubuntu.com/security/CVE-2022-1897" />
+				<reference source="CVE" ref_id="CVE-2022-2000" ref_url="https://ubuntu.com/security/CVE-2022-2000" />
+				<reference source="CVE" ref_id="CVE-2022-2042" ref_url="https://ubuntu.com/security/CVE-2022-2042" />
+				<reference source="CVE" ref_id="CVE-2023-46246" ref_url="https://ubuntu.com/security/CVE-2023-46246" />
+				<reference source="CVE" ref_id="CVE-2023-48231" ref_url="https://ubuntu.com/security/CVE-2023-48231" />
+				<reference source="CVE" ref_id="CVE-2023-48232" ref_url="https://ubuntu.com/security/CVE-2023-48232" />
+				<reference source="CVE" ref_id="CVE-2023-48233" ref_url="https://ubuntu.com/security/CVE-2023-48233" />
+				<reference source="CVE" ref_id="CVE-2023-48234" ref_url="https://ubuntu.com/security/CVE-2023-48234" />
+				<reference source="CVE" ref_id="CVE-2023-48235" ref_url="https://ubuntu.com/security/CVE-2023-48235" />
+				<reference source="CVE" ref_id="CVE-2023-48236" ref_url="https://ubuntu.com/security/CVE-2023-48236" />
+				<reference source="CVE" ref_id="CVE-2023-48237" ref_url="https://ubuntu.com/security/CVE-2023-48237" />
+				<reference source="CVE" ref_id="CVE-2023-48706" ref_url="https://ubuntu.com/security/CVE-2023-48706" />
+				<description>It was discovered that Vim could be made to dereference invalid memory. An attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-1725)  It was discovered that Vim could be made to recurse infinitely. An attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-1771)  It was discovered that Vim could be made to write out of bounds with a put command. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-1886)  It was discovered that Vim could be made to write out of bounds. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 14.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2022-1897, CVE-2022-2000)  It was discovered that Vim did not properly manage memory in the spell command. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-2042)  It was discovered that Vim did not properly manage memory. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2023-46246, CVE-2023-48231)  It was discovered that Vim could be made to divide by zero. An attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 23.04 and Ubuntu 23.10. (CVE-2023-48232)  It was discovered that Vim contained multiple arithmetic overflows. An attacker could possibly use these issues to cause a denial of service. (CVE-2023-48233, CVE-2023-48234, CVE-2023-48235, CVE-2023-48236, CVE-2023-48237)  It was discovered that Vim did not properly manage memory in the substitute command. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 22.04 LTS, Ubuntu 23.04, and Ubuntu 23.10. (CVE-2023-48706)  Update Instructions:  Run `sudo pro fix USN-6557-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  vim - 2:9.0.1672-1ubuntu2.2 vim-athena - 2:9.0.1672-1ubuntu2.2 vim-common - 2:9.0.1672-1ubuntu2.2 vim-doc - 2:9.0.1672-1ubuntu2.2 vim-gtk3 - 2:9.0.1672-1ubuntu2.2 vim-gui-common - 2:9.0.1672-1ubuntu2.2 vim-motif - 2:9.0.1672-1ubuntu2.2 vim-nox - 2:9.0.1672-1ubuntu2.2 vim-runtime - 2:9.0.1672-1ubuntu2.2 vim-tiny - 2:9.0.1672-1ubuntu2.2 xxd - 2:9.0.1672-1ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-12-14" />
+					<cve href="https://ubuntu.com/security/CVE-2022-1725" priority="low" public="20220929" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="5723-1,6557-1">CVE-2022-1725</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-1771" priority="low" public="20220518" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6557-1">CVE-2022-1771</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-1886" priority="low" public="20220526" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6557-1">CVE-2022-1886</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-1897" priority="low" public="20220527" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="5507-1,6557-1">CVE-2022-1897</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-2000" priority="medium" public="20220609" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="5516-1,6557-1">CVE-2022-2000</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-2042" priority="medium" public="20220610" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="5492-1,6557-1">CVE-2022-2042</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46246" priority="medium" public="20231027" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6557-1">CVE-2023-46246</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48231" priority="medium" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48231</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48232" priority="medium" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48232</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48233" priority="low" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48234" priority="low" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48234</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48235" priority="low" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48235</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48236" priority="low" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48236</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48237" priority="low" public="20231116" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6557-1">CVE-2023-48237</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48706" priority="medium" public="20231122" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6557-1">CVE-2023-48706</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:396523719153466144179732158205967022150" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65581000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6558-1 -- audiofile vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6558-1" ref_url="https://ubuntu.com/security/notices/USN-6558-1" />
+				<reference source="CVE" ref_id="CVE-2018-13440" ref_url="https://ubuntu.com/security/CVE-2018-13440" />
+				<reference source="CVE" ref_id="CVE-2018-17095" ref_url="https://ubuntu.com/security/CVE-2018-17095" />
+				<reference source="CVE" ref_id="CVE-2019-13147" ref_url="https://ubuntu.com/security/CVE-2019-13147" />
+				<reference source="CVE" ref_id="CVE-2022-24599" ref_url="https://ubuntu.com/security/CVE-2022-24599" />
+				<description>It was discovered that audiofile could be made to dereference invalid memory. If a user or an automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS. (CVE-2018-13440)  It was discovered that audiofile could be made to write out of bounds. If a user or an automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS. (CVE-2018-17095)  It was discovered that audiofile could be made to dereference invalid memory. If a user or an automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service. (CVE-2019-13147)  It was discovered that audiofile could be made to leak memory. If a user or an automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to obtain sensitive information. (CVE-2022-24599)  Update Instructions:  Run `sudo pro fix USN-6558-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  audiofile-tools - 0.3.6-5+deb10u1build0.23.10.1 libaudiofile1 - 0.3.6-5+deb10u1build0.23.10.1 libaudiofile-dev - 0.3.6-5+deb10u1build0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-12-14" />
+					<cve href="https://ubuntu.com/security/CVE-2018-13440" priority="low" public="20180708" cvss_score="6.5" cvss_vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="3800-1,6558-1">CVE-2018-13440</cve>
+					<cve href="https://ubuntu.com/security/CVE-2018-17095" priority="medium" public="20180916" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="3800-1,6558-1">CVE-2018-17095</cve>
+					<cve href="https://ubuntu.com/security/CVE-2019-13147" priority="medium" public="20190702" cvss_score="6.5" cvss_vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6558-1">CVE-2019-13147</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-24599" priority="low" public="20220224" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6558-1">CVE-2022-24599</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:431852547166389586458121812151252397077" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:345625954387148324441054610725218524408" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -1912,6 +2022,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:526890351564162813448553131245335535312" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:407892018751192682755558505865526031413" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:396523719153466144179732158205967022150" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:371490610462514725770771264770760621885" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:525622944659292201919638965995494436158" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:400285462820053063392619888315473015191" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:526882907320567959015975650066780567653" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:455022379592254049102081384328765040634" />
@@ -1943,6 +2057,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:430718797632931554634039305664690243423" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:659934040650415785414821895527937576281" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:431852547166389586458121812151252397077" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:598316742801617101112897171688174610084" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:414902385562485929195002138440987816726" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:432486829339618453179311058775006074485" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:428889517515555317600370453789871244343" />
@@ -2043,6 +2161,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:602913262670811392096670807876860504794" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:558800735451554131164942025002496696802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:599457653857406489782903099472410424137" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:586846517204178363718611781719543204051" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:562488756857000461863671708931607304858" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:492840115442369720275408591419234980289" />
@@ -2394,6 +2516,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:365901668366224570538343016900241817753" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:371490610462514725770771264770760621885" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:406909030607870092475713953191569668495" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:372713693515205163615622791800058785002" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:537166095918850410020538615252964206353" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2544,8 +2669,14 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:598118567630372265784608630428382308996" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:345443898926063000557241285383707223097" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:598316742801617101112897171688174610084" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:657384628614870990956001712345804637050" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:599076244799041551639836787133615200848" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:455690225984329683829977907413916141272" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:599457653857406489782903099472410424137" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:542780910115618381445050034212250911979" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:606799607954290480602081218671432943078" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:600081929208916044455628935835493122332" var_check="at least one" />
@@ -2690,6 +2821,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:407892018751192682755558505865526031413" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:5.68-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:414902385562485929195002138440987816726" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.3.6-5+deb10u1build0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:417922591159781237519249756045442389427" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:115.5.0+build1-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2768,6 +2902,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:525400911308126188260497672850374918155" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.9+9-1~23.10</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:525622944659292201919638965995494436158" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.1672-1ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:528639981948944788153735136813406062633" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:38.0.4-4ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -2791,6 +2928,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:576494285938333882096799367753013241504" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.8-10ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:586846517204178363718611781719543204051" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.7.0-3.0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:590547875939386230722926345097578014755" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-8.0.0~rc2-0ubuntu1</linux:evr>
@@ -2972,6 +3112,11 @@
 			<value>dotnet-runtime-8.0</value>
 			<value>dotnet-targeting-pack-8.0</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:657384628614870990956001712345804637050" version="1" datatype="string" comment="Interim Release">
+			<value>audiofile-tools</value>
+			<value>libaudiofile1</value>
+			<value>libaudiofile-dev</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:585302504075288137323779610588985212586" version="1" datatype="string" comment="Interim Release">
 			<value>avahi-autoipd</value>
 			<value>avahi-daemon</value>
@@ -3007,6 +3152,35 @@
 			<value>bluez-tests</value>
 			<value>libbluetooth3</value>
 			<value>libbluetooth-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:542780910115618381445050034212250911979" version="1" datatype="string" comment="Interim Release">
+			<value>budgie-app-launcher-applet</value>
+			<value>budgie-applications-menu-applet</value>
+			<value>budgie-brightness-controller-applet</value>
+			<value>budgie-clockworks-applet</value>
+			<value>budgie-countdown-applet</value>
+			<value>budgie-dropby-applet</value>
+			<value>budgie-extras-common</value>
+			<value>budgie-extras-daemon</value>
+			<value>budgie-fuzzyclock-applet</value>
+			<value>budgie-hotcorners-applet</value>
+			<value>budgie-kangaroo-applet</value>
+			<value>budgie-keyboard-autoswitch-applet</value>
+			<value>budgie-network-manager-applet</value>
+			<value>budgie-previews</value>
+			<value>budgie-quickchar</value>
+			<value>budgie-quicknote-applet</value>
+			<value>budgie-recentlyused-applet</value>
+			<value>budgie-rotation-lock-applet</value>
+			<value>budgie-showtime-applet</value>
+			<value>budgie-takeabreak-applet</value>
+			<value>budgie-trash-applet</value>
+			<value>budgie-visualspace-applet</value>
+			<value>budgie-wallstreet</value>
+			<value>budgie-weathershow-applet</value>
+			<value>budgie-window-shuffler</value>
+			<value>budgie-workspace-stopwatch-applet</value>
+			<value>budgie-workspace-wallpaper-applet</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:651628223003297934521020871987319094957" version="1" datatype="string" comment="Interim Release">
 			<value>charon-cmd</value>
