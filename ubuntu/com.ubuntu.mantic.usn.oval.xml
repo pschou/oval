@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-12-15T04:42:56</oval:timestamp>
+		<oval:timestamp>2023-12-16T06:41:40</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -964,7 +964,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-11-20" />
-					<cve href="https://ubuntu.com/security/CVE-2023-41913" priority="medium" public="20231120" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6488-1">CVE-2023-41913</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-41913" priority="medium" public="20231120" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6488-1,6488-2">CVE-2023-41913</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -1646,9 +1646,9 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-12-06" />
-					<cve href="https://ubuntu.com/security/CVE-2023-5868" priority="medium" public="20231115" usns="6538-1">CVE-2023-5868</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5869" priority="medium" public="20231115" usns="6538-1">CVE-2023-5869</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5870" priority="medium" public="20231115" usns="6538-1">CVE-2023-5870</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5868" priority="medium" public="20231115" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N" cvss_severity="medium" usns="6538-1">CVE-2023-5868</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5869" priority="medium" public="20231115" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6538-1">CVE-2023-5869</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5870" priority="medium" public="20231115" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6538-1">CVE-2023-5870</cve>
 				</advisory>
 			</metadata>
 			<criteria>
