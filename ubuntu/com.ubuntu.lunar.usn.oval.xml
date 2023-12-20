@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2023-12-19T06:42:00</oval:timestamp>
+		<oval:timestamp>2023-12-20T04:43:14</oval:timestamp>
 		<terms_of_use>Copyright (C) 2023 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6502,7 +6502,7 @@
 					<severity>Medium</severity>
 					<issued date="2023-12-06" />
 					<cve href="https://ubuntu.com/security/CVE-2023-46218" priority="medium" public="20231206" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6535-1">CVE-2023-46218</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-46219" priority="low" public="20231206" usns="6535-1">CVE-2023-46219</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46219" priority="low" public="20231206" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6535-1">CVE-2023-46219</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -6574,7 +6574,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-12-07" />
-					<cve href="https://ubuntu.com/security/CVE-2023-45866" priority="medium" public="20231206" usns="6540-1">CVE-2023-45866</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-45866" priority="medium" public="20231206" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6540-1">CVE-2023-45866</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -6906,6 +6906,52 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65601000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6560-1 -- OpenSSH vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6560-1" ref_url="https://ubuntu.com/security/notices/USN-6560-1" />
+				<reference source="CVE" ref_id="CVE-2023-28531" ref_url="https://ubuntu.com/security/CVE-2023-28531" />
+				<reference source="CVE" ref_id="CVE-2023-48795" ref_url="https://ubuntu.com/security/CVE-2023-48795" />
+				<description>Fabian Bäumer, Marcus Brinkmann, Jörg Schwenk discovered that the SSH protocol was vulnerable to a prefix truncation attack. If a remote attacker was able to intercept SSH communications, extension negotiation messages could be truncated, possibly leading to certain algorithms and features being downgraded. This issue is known as the Terrapin attack. This update adds protocol extensions to mitigate this issue. (CVE-2023-48795)  Luci Stanescu discovered that OpenSSH incorrectly added destination constraints when smartcard keys were added to ssh-agent, contrary to expectations. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-28531)  Update Instructions:  Run `sudo pro fix USN-6560-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openssh-client - 1:9.0p1-1ubuntu8.6 openssh-server - 1:9.0p1-1ubuntu8.6 openssh-sftp-server - 1:9.0p1-1ubuntu8.6 openssh-tests - 1:9.0p1-1ubuntu8.6 ssh - 1:9.0p1-1ubuntu8.6 ssh-askpass-gnome - 1:9.0p1-1ubuntu8.6</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-12-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28531" priority="low" public="20230317" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6560-1">CVE-2023-28531</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-48795" priority="medium" public="20231218" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6560-1,6561-1">CVE-2023-48795</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:399554036080400460857020897096692746209" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65611000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6561-1 -- libssh vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6561-1" ref_url="https://ubuntu.com/security/notices/USN-6561-1" />
+				<reference source="CVE" ref_id="CVE-2023-48795" ref_url="https://ubuntu.com/security/CVE-2023-48795" />
+				<description>Fabian Bäumer, Marcus Brinkmann, Jörg Schwenk discovered that the SSH protocol was vulnerable to a prefix truncation attack. If a remote attacker was able to intercept SSH communications, extension negotiation messages could be truncated, possibly leading to certain algorithms and features being downgraded. This issue is known as the Terrapin attack. This update adds protocol extensions to mitigate this issue.  Update Instructions:  Run `sudo pro fix USN-6561-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libssh-4 - 0.10.4-2ubuntu0.2 libssh-dev - 0.10.4-2ubuntu0.2 libssh-doc - 0.10.4-2ubuntu0.2 libssh-gcrypt-4 - 0.10.4-2ubuntu0.2 libssh-gcrypt-dev - 0.10.4-2ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2023-12-19" />
+					<cve href="https://ubuntu.com/security/CVE-2023-48795" priority="medium" public="20231218" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6560-1,6561-1">CVE-2023-48795</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:594629378983700546813243004304754859742" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:341632732784785172761766966300950668990" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -7075,6 +7121,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:399497273727925144524704162407909625156" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:596397891980423123850251522587317234357" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:536974017978602666581411473534301802325" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:399554036080400460857020897096692746209" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:351033511057364783876877793771246901575" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:423747731587587873249439309745722055266" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:400008772182481741936483374201572049795" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:587187116203092882684234351073228940772" />
@@ -7667,6 +7717,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594613856041212712203966366122657825749" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:347391607837304680585375790217437440120" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:637180686029394639932915565087848157928" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594629378983700546813243004304754859742" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:537117742006162680213861217658633376588" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:659301547669484524288403335172765221009" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:594918856931935971093517901730327456866" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:520276108811219417934607440703213761287" />
@@ -8668,6 +8722,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:350768978997286145548971204375297874171" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:665356428932256426353170084908159868455" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:351033511057364783876877793771246901575" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:636076809523348240659493257603584809785" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9090,6 +9147,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:536475154910580000558903752955508909971" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:403761795573927377708515667004896442943" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:537117742006162680213861217658633376588" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:613963896704320177719534197252616542257" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:537201413800037554335881965914043004183" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:455690225984329683829977907413916141272" var_check="at least one" />
@@ -9669,6 +9729,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:422321433144402776415785048149241974842" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:1.2.0+LibO7.5.9-0ubuntu0.23.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:423747731587587873249439309745722055266" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:9.0p1-1ubuntu8.6</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:424075492496245393565227414442954075236" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:5.66-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -10187,6 +10250,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:658092479434425602385965281095815653233" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.12-0ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:659301547669484524288403335172765221009" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.10.4-2ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:20230311ubuntu0.23.04.1</linux:evr>
