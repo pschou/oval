@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-03T04:43:34</oval:timestamp>
+		<oval:timestamp>2024-01-04T04:41:07</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2044,6 +2044,56 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65651000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6565-1 -- OpenSSH vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6565-1" ref_url="https://ubuntu.com/security/notices/USN-6565-1" />
+				<reference source="CVE" ref_id="CVE-2021-41617" ref_url="https://ubuntu.com/security/CVE-2021-41617" />
+				<reference source="CVE" ref_id="CVE-2023-51384" ref_url="https://ubuntu.com/security/CVE-2023-51384" />
+				<reference source="CVE" ref_id="CVE-2023-51385" ref_url="https://ubuntu.com/security/CVE-2023-51385" />
+				<description>It was discovered that OpenSSH incorrectly handled supplemental groups when running helper programs for AuthorizedKeysCommand and AuthorizedPrincipalsCommand as a different user. An attacker could possibly use this issue to escalate privileges. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-41617)  It was discovered that OpenSSH incorrectly added destination constraints when PKCS#11 token keys were added to ssh-agent, contrary to expectations. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-51384)  It was discovered that OpenSSH incorrectly handled user names or host names with shell metacharacters. An attacker could possibly use this issue to perform OS command injection. (CVE-2023-51385)  Update Instructions:  Run `sudo pro fix USN-6565-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openssh-client - 1:9.3p1-1ubuntu3.2 openssh-server - 1:9.3p1-1ubuntu3.2 openssh-sftp-server - 1:9.3p1-1ubuntu3.2 openssh-tests - 1:9.3p1-1ubuntu3.2 ssh - 1:9.3p1-1ubuntu3.2 ssh-askpass-gnome - 1:9.3p1-1ubuntu3.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-03" />
+					<cve href="https://ubuntu.com/security/CVE-2021-41617" priority="low" public="20210926" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="5666-1,6565-1">CVE-2021-41617</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-51384" priority="medium" public="20231220" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6565-1">CVE-2023-51384</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-51385" priority="medium" public="20231220" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6565-1">CVE-2023-51385</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:594695031613389476486114270639276499778" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65661000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6566-1 -- SQLite vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6566-1" ref_url="https://ubuntu.com/security/notices/USN-6566-1" />
+				<reference source="CVE" ref_id="CVE-2022-46908" ref_url="https://ubuntu.com/security/CVE-2022-46908" />
+				<reference source="CVE" ref_id="CVE-2023-7104" ref_url="https://ubuntu.com/security/CVE-2023-7104" />
+				<description>It was discovered that SQLite incorrectly handled certain protection mechanisms when using a CLI script with the --safe option, contrary to expectations. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-46908)  It was discovered that SQLite incorrectly handled certain memory operations in the sessions extension. A remote attacker could possibly use this issue to cause SQLite to crash, resulting in a denial of service. (CVE-2023-7104)  Update Instructions:  Run `sudo pro fix USN-6566-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  lemon - 3.42.0-1ubuntu0.1 libsqlite3-0 - 3.42.0-1ubuntu0.1 libsqlite3-dev - 3.42.0-1ubuntu0.1 libsqlite3-tcl - 3.42.0-1ubuntu0.1 sqlite3 - 3.42.0-1ubuntu0.1 sqlite3-doc - 3.42.0-1ubuntu0.1 sqlite3-tools - 3.42.0-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-03" />
+					<cve href="https://ubuntu.com/security/CVE-2022-46908" priority="low" public="20221212" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L" cvss_severity="high" usns="6566-1">CVE-2022-46908</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-7104" priority="medium" public="20231229" usns="6566-1">CVE-2023-7104</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:406311849709099723704846640870223487625" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:345625954387148324441054610725218524408" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -2121,6 +2171,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:400285462820053063392619888315473015191" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:526882907320567959015975650066780567653" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:455022379592254049102081384328765040634" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:406311849709099723704846640870223487625" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:344327703630911287197979135319665308946" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:502170113765906781593530034591908958886" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:406927405655697903254574757293399166887" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:348105259246228168958401545823995560282" />
@@ -2285,6 +2339,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:591977941693064781915018405964716558456" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:523653682481509660035860027579253708251" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:347931573941653675288079828258031838615" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:594695031613389476486114270639276499778" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:479979828323032077060115341167349944860" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:552314037836309811196151715217895176137" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:599359525126804372161474937455868641585" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:637514274273546008244759038732120685276" />
@@ -2595,6 +2653,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:342216948709735361076317811223810518246" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:613963896704320177719534197252616542257" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:344327703630911287197979135319665308946" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:352979997206987978196552105173675371835" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:348105259246228168958401545823995560282" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:444165862507806386026143799925666168524" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2690,6 +2751,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:478462282567421678912100236223375715238" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:400150679116061103824391303018681517456" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:479979828323032077060115341167349944860" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:636076809523348240659493257603584809785" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:480332954370563311448166750351480237606" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:467725885276343531201428157530429777472" var_check="at least one" />
@@ -3008,6 +3072,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:502162737630706454548663822619693118833" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.4.4-1.1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:502170113765906781593530034591908958886" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.42.0-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:522525538210711984499240949986284190809" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.3-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -3025,6 +3092,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:548381247112005490618829482783245061263" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.26.16-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:552314037836309811196151715217895176137" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:9.3p1-1ubuntu3.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:554947917444538529535880677635062889982" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.0-0ubuntu1~23.10.1</linux:evr>
@@ -3700,6 +3770,15 @@
 			<value>libldb-dev</value>
 			<value>python3-ldb</value>
 			<value>python3-ldb-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:352979997206987978196552105173675371835" version="1" datatype="string" comment="Interim Release">
+			<value>lemon</value>
+			<value>libsqlite3-0</value>
+			<value>libsqlite3-dev</value>
+			<value>libsqlite3-tcl</value>
+			<value>sqlite3</value>
+			<value>sqlite3-doc</value>
+			<value>sqlite3-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:389032809522511005220797537846449207121" version="1" datatype="string" comment="Interim Release">
 			<value>libaxis-java</value>

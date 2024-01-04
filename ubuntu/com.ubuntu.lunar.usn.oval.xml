@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-03T04:43:34</oval:timestamp>
+		<oval:timestamp>2024-01-04T06:41:52</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6994,6 +6994,56 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65651000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6565-1 -- OpenSSH vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6565-1" ref_url="https://ubuntu.com/security/notices/USN-6565-1" />
+				<reference source="CVE" ref_id="CVE-2021-41617" ref_url="https://ubuntu.com/security/CVE-2021-41617" />
+				<reference source="CVE" ref_id="CVE-2023-51384" ref_url="https://ubuntu.com/security/CVE-2023-51384" />
+				<reference source="CVE" ref_id="CVE-2023-51385" ref_url="https://ubuntu.com/security/CVE-2023-51385" />
+				<description>It was discovered that OpenSSH incorrectly handled supplemental groups when running helper programs for AuthorizedKeysCommand and AuthorizedPrincipalsCommand as a different user. An attacker could possibly use this issue to escalate privileges. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-41617)  It was discovered that OpenSSH incorrectly added destination constraints when PKCS#11 token keys were added to ssh-agent, contrary to expectations. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-51384)  It was discovered that OpenSSH incorrectly handled user names or host names with shell metacharacters. An attacker could possibly use this issue to perform OS command injection. (CVE-2023-51385)  Update Instructions:  Run `sudo pro fix USN-6565-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openssh-client - 1:9.0p1-1ubuntu8.7 openssh-server - 1:9.0p1-1ubuntu8.7 openssh-sftp-server - 1:9.0p1-1ubuntu8.7 openssh-tests - 1:9.0p1-1ubuntu8.7 ssh - 1:9.0p1-1ubuntu8.7 ssh-askpass-gnome - 1:9.0p1-1ubuntu8.7</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-03" />
+					<cve href="https://ubuntu.com/security/CVE-2021-41617" priority="low" public="20210926" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="5666-1,6565-1">CVE-2021-41617</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-51384" priority="medium" public="20231220" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6565-1">CVE-2023-51384</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-51385" priority="medium" public="20231220" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6565-1">CVE-2023-51385</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:416957504176812064723567947969035487569" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65661000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6566-1 -- SQLite vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6566-1" ref_url="https://ubuntu.com/security/notices/USN-6566-1" />
+				<reference source="CVE" ref_id="CVE-2022-46908" ref_url="https://ubuntu.com/security/CVE-2022-46908" />
+				<reference source="CVE" ref_id="CVE-2023-7104" ref_url="https://ubuntu.com/security/CVE-2023-7104" />
+				<description>It was discovered that SQLite incorrectly handled certain protection mechanisms when using a CLI script with the --safe option, contrary to expectations. This issue only affected Ubuntu 22.04 LTS. (CVE-2022-46908)  It was discovered that SQLite incorrectly handled certain memory operations in the sessions extension. A remote attacker could possibly use this issue to cause SQLite to crash, resulting in a denial of service. (CVE-2023-7104)  Update Instructions:  Run `sudo pro fix USN-6566-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  lemon - 3.40.1-1ubuntu0.1 libsqlite3-0 - 3.40.1-1ubuntu0.1 libsqlite3-dev - 3.40.1-1ubuntu0.1 libsqlite3-tcl - 3.40.1-1ubuntu0.1 sqlite3 - 3.40.1-1ubuntu0.1 sqlite3-doc - 3.40.1-1ubuntu0.1 sqlite3-tools - 3.40.1-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-03" />
+					<cve href="https://ubuntu.com/security/CVE-2022-46908" priority="low" public="20221212" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L" cvss_severity="high" usns="6566-1">CVE-2022-46908</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-7104" priority="medium" public="20231229" usns="6566-1">CVE-2023-7104</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:670625957187955137846685785262524442341" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:341632732784785172761766966300950668990" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -7207,6 +7257,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:415288412197455580762110220061637880602" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:384345294548620123114499111649429451157" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:389373747271655495492688071919510484501" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:416957504176812064723567947969035487569" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:609825179365313552743416623785816268035" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:452592096711601537671027874416121836904" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:420445976296158630132321675628122250893" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:370922932972944568435048272147404094953" />
@@ -8004,6 +8058,10 @@
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:452639633216921246751793140035261812003" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:660743799916427388147375134991232359488" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:670625957187955137846685785262524442341" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:353129625689826536237827394478654701098" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:564309690704019308722645137613341859490" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:673168886141969344659525407691125040911" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:414531295614462932941016447882620656244" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:642960544554690204081859880855102451604" />
@@ -8774,6 +8832,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:352780613940177524191789592573072785369" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:439484508567309958833928065207204426446" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:353129625689826536237827394478654701098" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:352979997206987978196552105173675371835" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:355947768711084057503401430279233518936" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:542870479317595438803589330776150443107" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9383,6 +9444,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:608623758421151901034164344829308950441" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:604315459036506367134456077740012535284" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:609825179365313552743416623785816268035" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:636076809523348240659493257603584809785" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:610868368373407707022775525559692945211" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:423503941555164629223418644851399191903" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9835,6 +9899,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:447664321711324352770248150848843450916" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.26.12-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:452592096711601537671027874416121836904" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:9.0p1-1ubuntu8.7</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:452688671169808566956451704210347963545" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:23.0.1+dfsg-1ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -10089,6 +10156,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:561614842103010074849482711782394782498" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.119-0ubuntu1~23.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:564309690704019308722645137613341859490" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.40.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:564949757128442194183490209872437397997" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.0-1ubuntu0.1</linux:evr>
@@ -11573,6 +11643,15 @@
 			<value>libldb-dev</value>
 			<value>python3-ldb</value>
 			<value>python3-ldb-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:352979997206987978196552105173675371835" version="1" datatype="string" comment="Interim Release">
+			<value>lemon</value>
+			<value>libsqlite3-0</value>
+			<value>libsqlite3-dev</value>
+			<value>libsqlite3-tcl</value>
+			<value>sqlite3</value>
+			<value>sqlite3-doc</value>
+			<value>sqlite3-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:679896267291198622015234250028432648225" version="1" datatype="string" comment="Interim Release">
 			<value>lib32ncurses6</value>
