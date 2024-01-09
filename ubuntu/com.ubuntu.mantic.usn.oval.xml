@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-06T02:42:07</oval:timestamp>
+		<oval:timestamp>2024-01-09T02:41:30</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1059,7 +1059,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-11-21" />
-					<cve href="https://ubuntu.com/security/CVE-2023-5981" priority="medium" public="20231117" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6499-1">CVE-2023-5981</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5981" priority="medium" public="20231117" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6499-1,6499-2">CVE-2023-5981</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -2084,13 +2084,106 @@
 					<severity>Medium</severity>
 					<issued date="2024-01-03" />
 					<cve href="https://ubuntu.com/security/CVE-2022-46908" priority="low" public="20221212" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L" cvss_severity="high" usns="6566-1">CVE-2022-46908</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-7104" priority="medium" public="20231229" usns="6566-1">CVE-2023-7104</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-7104" priority="medium" public="20231229" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6566-1">CVE-2023-7104</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:406311849709099723704846640870223487625" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65671000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6567-1 -- QEMU vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6567-1" ref_url="https://ubuntu.com/security/notices/USN-6567-1" />
+				<reference source="CVE" ref_id="CVE-2020-14394" ref_url="https://ubuntu.com/security/CVE-2020-14394" />
+				<reference source="CVE" ref_id="CVE-2020-24165" ref_url="https://ubuntu.com/security/CVE-2020-24165" />
+				<reference source="CVE" ref_id="CVE-2021-3611" ref_url="https://ubuntu.com/security/CVE-2021-3611" />
+				<reference source="CVE" ref_id="CVE-2021-3638" ref_url="https://ubuntu.com/security/CVE-2021-3638" />
+				<reference source="CVE" ref_id="CVE-2023-1544" ref_url="https://ubuntu.com/security/CVE-2023-1544" />
+				<reference source="CVE" ref_id="CVE-2023-2861" ref_url="https://ubuntu.com/security/CVE-2023-2861" />
+				<reference source="CVE" ref_id="CVE-2023-3180" ref_url="https://ubuntu.com/security/CVE-2023-3180" />
+				<reference source="CVE" ref_id="CVE-2023-3255" ref_url="https://ubuntu.com/security/CVE-2023-3255" />
+				<reference source="CVE" ref_id="CVE-2023-3301" ref_url="https://ubuntu.com/security/CVE-2023-3301" />
+				<reference source="CVE" ref_id="CVE-2023-3354" ref_url="https://ubuntu.com/security/CVE-2023-3354" />
+				<reference source="CVE" ref_id="CVE-2023-40360" ref_url="https://ubuntu.com/security/CVE-2023-40360" />
+				<reference source="CVE" ref_id="CVE-2023-4135" ref_url="https://ubuntu.com/security/CVE-2023-4135" />
+				<reference source="CVE" ref_id="CVE-2023-42467" ref_url="https://ubuntu.com/security/CVE-2023-42467" />
+				<reference source="CVE" ref_id="CVE-2023-5088" ref_url="https://ubuntu.com/security/CVE-2023-5088" />
+				<description>Gaoning Pan and Xingwei Li discovered that QEMU incorrectly handled the USB xHCI controller device. A privileged guest attacker could possibly use this issue to cause QEMU to crash, leading to a denial of service. This issue only affected Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2020-14394)  It was discovered that QEMU incorrectly handled the TCG Accelerator. A local attacker could use this issue to cause QEMU to crash, leading to a denial of service, or possibly execute arbitrary code and esclate privileges. This issue only affected Ubuntu 20.04 LTS. (CVE-2020-24165)  It was discovered that QEMU incorrectly handled the Intel HD audio device. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service. This issue only affected Ubuntu 22.04 LTS. (CVE-2021-3611)  It was discovered that QEMU incorrectly handled the ATI VGA device. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-3638)  It was discovered that QEMU incorrectly handled the VMWare paravirtual RDMA device. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service. (CVE-2023-1544)  It was discovered that QEMU incorrectly handled the 9p passthrough filesystem. A malicious guest attacker could possibly use this issue to open special files and escape the exported 9p tree. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-2861)  It was discovered that QEMU incorrectly handled the virtual crypto device. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-3180)  It was discovered that QEMU incorrectly handled the built-in VNC server. A remote authenticated attacker could possibly use this issue to cause QEMU to stop responding, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-3255)  It was discovered that QEMU incorrectly handled net device hot-unplugging. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service. This issue only affected Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-3301)  It was discovered that QEMU incorrectly handled the built-in VNC server. A remote attacker could possibly use this issue to cause QEMU to crash, resulting in a denial of service. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2023-3354)  It was discovered that QEMU incorrectly handled NVME devices. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service. This issue only affected Ubuntu 23.10. (CVE-2023-40360)  It was discovered that QEMU incorrectly handled NVME devices. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service, or possibly obtain sensitive information. This issue only affected Ubuntu 23.10. (CVE-2023-4135)  It was discovered that QEMU incorrectly handled SCSI devices. A malicious guest attacker could use this issue to cause QEMU to crash, leading to a denial of service. This issue only affected Ubuntu 23.04 and Ubuntu 23.10. (CVE-2023-42467)  It was discovered that QEMU incorrectly handled certain disk offsets. A malicious guest attacker could possibly use this issue to gain control of the host in certain nested virtualization scenarios. (CVE-2023-5088)  Update Instructions:  Run `sudo pro fix USN-6567-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  qemu-block-extra - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-guest-agent - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-arm - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-common - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-data - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-gui - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-mips - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-misc - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-ppc - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-s390x - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-sparc - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-x86 - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-x86-xen - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-system-xen - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-user - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-user-binfmt - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-user-static - 1:8.0.4+dfsg-1ubuntu3.23.10.2 qemu-utils - 1:8.0.4+dfsg-1ubuntu3.23.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-08" />
+					<cve href="https://ubuntu.com/security/CVE-2020-14394" priority="low" public="20220817" cvss_score="3.2" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:L" cvss_severity="low" usns="6567-1">CVE-2020-14394</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-24165" priority="medium" public="20230828" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" cvss_severity="high" usns="6567-1">CVE-2020-24165</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3611" priority="low" public="20220511" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2021-3611</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3638" priority="medium" public="20220303" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2021-3638</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-1544" priority="medium" public="20230323" cvss_score="6.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2023-1544</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-2861" priority="low" public="20230630" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6567-1">CVE-2023-2861</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3180" priority="medium" public="20230803" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2023-3180</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3255" priority="low" public="20230913" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2023-3255</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3301" priority="medium" public="20230913" cvss_score="5.6" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2023-3301</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3354" priority="low" public="20230711" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6567-1">CVE-2023-3354</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40360" priority="medium" public="20230814" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2023-40360</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4135" priority="medium" public="20230804" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N" cvss_severity="medium" usns="6567-1">CVE-2023-4135</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-42467" priority="low" public="20230911" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6567-1">CVE-2023-42467</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5088" priority="medium" public="20231103" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6567-1">CVE-2023-5088</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:636225921718498057391659421998324611057" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65681000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6568-1 -- ClamAV update</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6568-1" ref_url="https://ubuntu.com/security/notices/USN-6568-1" />
+				<description>The ClamAV package was updated to a new upstream version to remain compatible with signature database downloads.  Update Instructions:  Run `sudo pro fix USN-6568-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  clamav - 1.0.4+dfsg-0ubuntu0.23.10.1 clamav-base - 1.0.4+dfsg-0ubuntu0.23.10.1 clamav-daemon - 1.0.4+dfsg-0ubuntu0.23.10.1 clamav-docs - 1.0.4+dfsg-0ubuntu0.23.10.1 clamav-freshclam - 1.0.4+dfsg-0ubuntu0.23.10.1 clamav-milter - 1.0.4+dfsg-0ubuntu0.23.10.1 clamav-testfiles - 1.0.4+dfsg-0ubuntu0.23.10.1 clamdscan - 1.0.4+dfsg-0ubuntu0.23.10.1 libclamav11 - 1.0.4+dfsg-0ubuntu0.23.10.1 libclamav-dev - 1.0.4+dfsg-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2024-01-08" />
+					<bug>https://launchpad.net/bugs/2046581</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:548100082179847879685605383542557836521" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65691000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6569-1 -- libclamunrar vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6569-1" ref_url="https://ubuntu.com/security/notices/USN-6569-1" />
+				<reference source="CVE" ref_id="CVE-2022-30333" ref_url="https://ubuntu.com/security/CVE-2022-30333" />
+				<reference source="CVE" ref_id="CVE-2023-40477" ref_url="https://ubuntu.com/security/CVE-2023-40477" />
+				<description>it was discovered that libclamunrar incorrectly handled directories when extracting RAR archives. A remote attacker could possibly use this issue to overwrite arbitrary files and execute arbitrary code. This issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, and Ubuntu 23.04. (CVE-2022-30333)  It was discovered that libclamunrar incorrectly validated certain structures when extracting RAR archives. A remote attacker could possibly use this issue to execute arbitrary code. (CVE-2023-40477)  Update Instructions:  Run `sudo pro fix USN-6569-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  clamav-testfiles-rar - 1.0.4-0ubuntu0.23.10.1 libclamunrar11 - 1.0.4-0ubuntu0.23.10.1 libclamunrar - 1.0.4-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-08" />
+					<cve href="https://ubuntu.com/security/CVE-2022-30333" priority="medium" public="20220509" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="high" usns="6569-1">CVE-2022-30333</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-40477" priority="medium" public="20230825" usns="6569-1">CVE-2023-40477</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:497955956132746491811914716054120687072" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -2256,6 +2349,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:405343521650542255459243967887066399669" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:522525538210711984499240949986284190809" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:497955956132746491811914716054120687072" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:474957563741187042416755074660917074821" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:475518757493185936078200927210938910784" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:501222566775145025327997606627021871207" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:434808485760514541149912464597326451123" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:502162737630706454548663822619693118833" />
@@ -2307,6 +2404,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:545293732213454167511642804463458611922" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:478462282567421678912100236223375715238" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:473759638229087535449528335198598801021" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:548100082179847879685605383542557836521" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:644608517740231907143556714847641377929" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:575017555437554849494091817811491258563" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:553242136718058097811315926731415786934" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:679796897083952200333348465049496062610" />
@@ -2387,6 +2488,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:633751898976449715002213352479854699828" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:523680699492126845887268757573019376051" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:395776465400458046936560909258467309894" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:636225921718498057391659421998324611057" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:638269421902401967048486869877402512376" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:342848486687169722562732056172207645369" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:639394904819888321550902308106222011989" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:594774160045534791560380635634231828617" />
@@ -2743,6 +2848,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:465154301298605304211203762756631644856" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:474957563741187042416755074660917074821" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:633003933596737625774721067645143064652" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:477414860398075380332507542082228112030" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:642253770072746283015284565506446217955" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2872,6 +2980,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:637514274273546008244759038732120685276" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:394923162567161559517091607406662679992" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:638269421902401967048486869877402512376" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:512817902316899098952887733419290815212" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:638432188888545270273794465997852147035" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:431616919203190711323193757560838269545" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -2880,6 +2991,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:641879531818054251302125689637040767418" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:572446697085812830942981359108671786386" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:644608517740231907143556714847641377929" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:455633846354868870875164094853439016372" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:650274237243593913089258937231364715101" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:445700442326711283010289658525192898655" var_check="at least one" />
@@ -2940,6 +3054,9 @@
 		<unix:uname_state id="oval:com.ubuntu.mantic:ste:582606709055968270667652147185003170230" version="1">
 			<unix:os_release operation="pattern match">6.5.0-\d+(-laptop)</unix:os_release>
 		</unix:uname_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:342848486687169722562732056172207645369" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:8.0.4+dfsg-1ubuntu3.23.10.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:344954311051535048218752031580380542614" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:23.2.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -3042,6 +3159,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:475500543994915234537262864682349871044" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.4-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:475518757493185936078200927210938910784" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.4-0ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:477181361959975129143174094909468088839" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.1+git20230216.9ac1209f7-0ubuntu1.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -3110,6 +3230,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:572647902746092898754344172860728544371" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:575017555437554849494091817811491258563" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.4+dfsg-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:576494285938333882096799367753013241504" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.8-10ubuntu1.1</linux:evr>
@@ -3385,6 +3508,23 @@
 			<value>strongswan-pki</value>
 			<value>strongswan-starter</value>
 			<value>strongswan-swanctl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:455633846354868870875164094853439016372" version="1" datatype="string" comment="Interim Release">
+			<value>clamav</value>
+			<value>clamav-base</value>
+			<value>clamav-daemon</value>
+			<value>clamav-docs</value>
+			<value>clamav-freshclam</value>
+			<value>clamav-milter</value>
+			<value>clamav-testfiles</value>
+			<value>clamdscan</value>
+			<value>libclamav11</value>
+			<value>libclamav-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:633003933596737625774721067645143064652" version="1" datatype="string" comment="Interim Release">
+			<value>clamav-testfiles-rar</value>
+			<value>libclamunrar</value>
+			<value>libclamunrar11</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" version="1" datatype="string" comment="Interim Release">
 			<value>ctdb</value>
@@ -3962,6 +4102,27 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:475552723821216169067395075348794160072" version="1" datatype="string" comment="Interim Release">
 			<value>python3-urllib3</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:512817902316899098952887733419290815212" version="1" datatype="string" comment="Interim Release">
+			<value>qemu-block-extra</value>
+			<value>qemu-guest-agent</value>
+			<value>qemu-system</value>
+			<value>qemu-system-arm</value>
+			<value>qemu-system-common</value>
+			<value>qemu-system-data</value>
+			<value>qemu-system-gui</value>
+			<value>qemu-system-mips</value>
+			<value>qemu-system-misc</value>
+			<value>qemu-system-ppc</value>
+			<value>qemu-system-s390x</value>
+			<value>qemu-system-sparc</value>
+			<value>qemu-system-x86</value>
+			<value>qemu-system-x86-xen</value>
+			<value>qemu-system-xen</value>
+			<value>qemu-user</value>
+			<value>qemu-user-binfmt</value>
+			<value>qemu-user-static</value>
+			<value>qemu-utils</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:532148923542829555538913028177069801349" version="1" datatype="string" comment="Interim Release">
 			<value>rabbitmq-server</value>
