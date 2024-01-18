@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-17T06:45:07</oval:timestamp>
+		<oval:timestamp>2024-01-18T04:44:28</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6919,8 +6919,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-01-16" />
-					<cve href="https://ubuntu.com/security/CVE-2019-0201" priority="low" public="20190523" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium">CVE-2019-0201</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-44981" priority="medium" public="20231011" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="critical">CVE-2023-44981</cve>
+					<cve href="https://ubuntu.com/security/CVE-2019-0201" priority="low" public="20190523" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6559-1">CVE-2019-0201</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-44981" priority="medium" public="20231011" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="critical" usns="6559-1">CVE-2023-44981</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -7371,6 +7371,28 @@
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.lunar:tst:497163898971619792731584696442421532968" comment="Interim Release" />
 					<criterion test_ref="oval:com.ubuntu.lunar:tst:431812867859404520386513057190119705758" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65881000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6588-1 -- PAM vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6588-1" ref_url="https://ubuntu.com/security/notices/USN-6588-1" />
+				<reference source="CVE" ref_id="CVE-2024-22365" ref_url="https://ubuntu.com/security/CVE-2024-22365" />
+				<description>Matthias Gerstner discovered that the PAM pam_namespace module incorrectly handled special files when performing directory checks. A local attacker could possibly use this issue to cause PAM to stop responding, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-6588-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libpam0g - 1.5.2-5ubuntu1.1 libpam0g-dev - 1.5.2-5ubuntu1.1 libpam-doc - 1.5.2-5ubuntu1.1 libpam-modules - 1.5.2-5ubuntu1.1 libpam-modules-bin - 1.5.2-5ubuntu1.1 libpam-runtime - 1.5.2-5ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-17" />
+					<cve href="https://ubuntu.com/security/CVE-2024-22365" priority="medium" public="20240117" usns="6588-1">CVE-2024-22365</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:671807689914252046886370187292763012642" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -8451,6 +8473,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:670625957187955137846685785262524442341" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:353129625689826536237827394478654701098" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:564309690704019308722645137613341859490" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:671807689914252046886370187292763012642" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:600768350056068666423371406551192033232" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:352199304448099968010696372099365129939" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:673168886141969344659525407691125040911" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:414531295614462932941016447882620656244" />
@@ -9831,6 +9857,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:596397891980423123850251522587317234357" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:628621234967416458006226404787687202194" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:600768350056068666423371406551192033232" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:655944096764808563560098120980545464715" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:601286234202173704861537219652389705563" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:379980261540416894741680464211218242333" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -10111,6 +10140,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:352129121191514681605446127709052686552" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.37-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:352199304448099968010696372099365129939" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.2-5ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:354341470565430372460666161291327015200" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.11.2-6ubuntu0.1</linux:evr>
@@ -12359,6 +12391,14 @@
 			<value>zfs-test</value>
 			<value>zfs-zed</value>
 			<value>zfsutils-linux</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.lunar:var:655944096764808563560098120980545464715" version="1" datatype="string" comment="Interim Release">
+			<value>libpam0g</value>
+			<value>libpam0g-dev</value>
+			<value>libpam-doc</value>
+			<value>libpam-modules</value>
+			<value>libpam-modules-bin</value>
+			<value>libpam-runtime</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.lunar:var:617659953950482257300729066035023652845" version="1" datatype="string" comment="Interim Release">
 			<value>libperl5.36</value>
