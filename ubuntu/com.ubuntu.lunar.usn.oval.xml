@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-19T04:42:51</oval:timestamp>
+		<oval:timestamp>2024-01-23T02:42:51</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -7358,12 +7358,12 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-01-16" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6816" priority="medium" public="20240116" usns="6587-1">CVE-2023-6816</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0229" priority="medium" public="20240116" usns="6587-1">CVE-2024-0229</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0408" priority="medium" public="20240116" usns="6587-1">CVE-2024-0408</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0409" priority="medium" public="20240116" usns="6587-1">CVE-2024-0409</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-21885" priority="medium" public="20240116" usns="6587-1">CVE-2024-21885</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-21886" priority="medium" public="20240116" usns="6587-1">CVE-2024-21886</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6816" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2023-6816</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0229" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0229</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0408" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0408</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0409" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0409</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21885" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-21885</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21886" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-21886</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -7396,6 +7396,54 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65921000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6592-1 -- libssh vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6592-1" ref_url="https://ubuntu.com/security/notices/USN-6592-1" />
+				<reference source="CVE" ref_id="CVE-2023-6004" ref_url="https://ubuntu.com/security/CVE-2023-6004" />
+				<reference source="CVE" ref_id="CVE-2023-6918" ref_url="https://ubuntu.com/security/CVE-2023-6918" />
+				<description>It was discovered that libssh incorrectly handled the ProxyCommand and the ProxyJump features. A remote attacker could possibly use this issue to inject malicious code into the command of the features mentioned through the hostname parameter. (CVE-2023-6004)  It was discovered that libssh incorrectly handled return codes when performing message digest operations. A remote attacker could possibly use this issue to cause libssh to crash, obtain sensitive information, or execute arbitrary code. (CVE-2023-6918)  Update Instructions:  Run `sudo pro fix USN-6592-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libssh-4 - 0.10.4-2ubuntu0.3 libssh-dev - 0.10.4-2ubuntu0.3 libssh-doc - 0.10.4-2ubuntu0.3 libssh-gcrypt-4 - 0.10.4-2ubuntu0.3 libssh-gcrypt-dev - 0.10.4-2ubuntu0.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-22" />
+					<cve href="https://ubuntu.com/security/CVE-2023-6004" priority="medium" public="20240103" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="6592-1">CVE-2023-6004</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6918" priority="medium" public="20231219" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6592-1">CVE-2023-6918</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:621716083955723013326807654646149116604" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65931000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6593-1 -- GnuTLS vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6593-1" ref_url="https://ubuntu.com/security/notices/USN-6593-1" />
+				<reference source="CVE" ref_id="CVE-2024-0553" ref_url="https://ubuntu.com/security/CVE-2024-0553" />
+				<reference source="CVE" ref_id="CVE-2024-0567" ref_url="https://ubuntu.com/security/CVE-2024-0567" />
+				<description>It was discovered that GnuTLS had a timing side-channel when processing malformed ciphertexts in RSA-PSK ClientKeyExchange. A remote attacker could possibly use this issue to recover sensitive information. (CVE-2024-0553)  It was discovered that GnuTLS incorrectly handled certain certificate chains with a cross-signing loop. A remote attacker could possibly use this issue to cause GnuTLS to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS, Ubuntu 23.04, and Ubuntu 23.10. (CVE-2024-0567)  Update Instructions:  Run `sudo pro fix USN-6593-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gnutls-bin - 3.7.8-5ubuntu1.2 gnutls-doc - 3.7.8-5ubuntu1.2 guile-gnutls - 3.7.8-5ubuntu1.2 libgnutls28-dev - 3.7.8-5ubuntu1.2 libgnutls30 - 3.7.8-5ubuntu1.2 libgnutls-dane0 - 3.7.8-5ubuntu1.2 libgnutls-openssl27 - 3.7.8-5ubuntu1.2 libgnutlsxx30 - 3.7.8-5ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-22" />
+					<cve href="https://ubuntu.com/security/CVE-2024-0553" priority="medium" public="20240116" usns="6593-1">CVE-2024-0553</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0567" priority="medium" public="20240116" usns="6593-1">CVE-2024-0567</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:345127401615569596942147956833754122615" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:341632732784785172761766966300950668990" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -7413,6 +7461,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:344607855204881675544726484150614935876" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:638260478897054561906779081572027489379" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:398473323500128674626685665309908358710" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:345127401615569596942147956833754122615" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:439652015740891639697894768164543412758" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:345476492268104600451262186206401841686" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:346379316019788577886027462428861671591" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:555062862888972290871217779255210455424" />
@@ -8313,6 +8365,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:619687523031850511598709712447506192960" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:407997295675741440482318126344146570583" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:606820319756408385980845874818345627989" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:621716083955723013326807654646149116604" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:564178591949886048725421088750201324148" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:643448448718792478583328765205995398578" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:623041260549840140928184722600786244413" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:460288329847637916386893373489328809801" />
@@ -9467,6 +9523,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:438916025928375418487970339315699642225" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:445700442326711283010289658525192898655" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:439652015740891639697894768164543412758" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:476319598913811094101114816538150220281" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:440161164451302528317413157848088944523" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:522510580713017626262665478668919352709" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -9772,6 +9831,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:564059415733978506817887687065424491872" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:483891127166958577711120301965879973703" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:564178591949886048725421088750201324148" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:613963896704320177719534197252616542257" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:564957540678897887822390308646151612090" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:345443898926063000557241285383707223097" var_check="at least one" />
@@ -10119,6 +10181,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:344430974573224402176315951215435841161" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.11.4-1~23.04.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:345476492268104600451262186206401841686" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.7.8-5ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:347983922764646243439672379689004351699" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.123-0ubuntu1~23.04.1</linux:evr>
@@ -10845,6 +10910,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:642960544554690204081859880855102451604" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.193.2+2.06-2ubuntu17.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:643448448718792478583328765205995398578" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.10.4-2ubuntu0.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:644405604395805741437004684203393098682" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:15.4-0ubuntu0.23.04.1</linux:evr>
