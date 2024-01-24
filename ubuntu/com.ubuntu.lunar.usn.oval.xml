@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-23T02:42:51</oval:timestamp>
+		<oval:timestamp>2024-01-24T04:44:21</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -7444,6 +7444,32 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.lunar:def:65941000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6594-1 -- Squid vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.04</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6594-1" ref_url="https://ubuntu.com/security/notices/USN-6594-1" />
+				<reference source="CVE" ref_id="CVE-2023-49285" ref_url="https://ubuntu.com/security/CVE-2023-49285" />
+				<reference source="CVE" ref_id="CVE-2023-49286" ref_url="https://ubuntu.com/security/CVE-2023-49286" />
+				<reference source="CVE" ref_id="CVE-2023-50269" ref_url="https://ubuntu.com/security/CVE-2023-50269" />
+				<description>Joshua Rogers discovered that Squid incorrectly handled HTTP message processing. A remote attacker could possibly use this issue to cause Squid to crash, resulting in a denial of service. (CVE-2023-49285)  Joshua Rogers discovered that Squid incorrectly handled Helper process management. A remote attacker could possibly use this issue to cause Squid to crash, resulting in a denial of service. (CVE-2023-49286)  Joshua Rogers discovered that Squid incorrectly handled HTTP request parsing. A remote attacker could possibly use this issue to cause Squid to crash, resulting in a denial of service. (CVE-2023-50269)  Update Instructions:  Run `sudo pro fix USN-6594-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  squid - 5.7-1ubuntu3.2 squid-cgi - 5.7-1ubuntu3.2 squid-common - 5.7-1ubuntu3.2 squid-openssl - 5.7-1ubuntu3.2 squid-purge - 5.7-1ubuntu3.2 squidclient - 5.7-1ubuntu3.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-23" />
+					<cve href="https://ubuntu.com/security/CVE-2023-49285" priority="medium" public="20231204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6594-1">CVE-2023-49285</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49286" priority="medium" public="20231204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6594-1">CVE-2023-49286</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-50269" priority="medium" public="20231214" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6594-1">CVE-2023-50269</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.lunar:def:100" comment="Ubuntu 23.04 (lunar) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.lunar:tst:464550056862573532410190205889047809816" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:341632732784785172761766966300950668990" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -7825,6 +7851,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:462155496596149329387862097039306992604" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:393828680325368270029704932789496727205" />
 			<linux:state state_ref="oval:com.ubuntu.lunar:ste:473028349902259661818363056017041561044" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:464550056862573532410190205889047809816" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.lunar:obj:344716842368222707358282946338482292302" />
+			<linux:state state_ref="oval:com.ubuntu.lunar:ste:639732553508049761274449762607972350640" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.lunar:tst:464727706148349183481579430023438618626" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.lunar:obj:657639502164168646763763824789396902808" />
@@ -9288,6 +9318,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:343563608939441788038041390989126268821" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:559683440088164987256969219992557100775" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:344716842368222707358282946338482292302" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.lunar:var:575549404029728743157521028039500018284" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.lunar:obj:347391607837304680585375790217437440120" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.lunar:var:346382628020547430561097328304040702882" var_check="at least one" />
@@ -10898,6 +10931,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:638268051382120490128540949586626363406" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.33-0ubuntu0.23.04.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:639732553508049761274449762607972350640" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:5.7-1ubuntu3.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.lunar:ste:640022164018675393614980601873646099151" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.2.4+debian-1ubuntu0.23.04.1</linux:evr>
