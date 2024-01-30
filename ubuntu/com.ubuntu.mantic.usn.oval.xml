@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-27T04:42:06</oval:timestamp>
+		<oval:timestamp>2024-01-30T04:40:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2497,7 +2497,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-01-16" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6816" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2023-6816</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6816" priority="medium" public="20240116" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6587-1,6587-2">CVE-2023-6816</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-0229" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0229</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-0408" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0408</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-0409" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0409</cve>
@@ -2762,10 +2762,10 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-01-25" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1">CVE-2023-6606</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2">CVE-2023-6606</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-6817" priority="high" public="20231218" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6606-1,6607-1,6608-1,6609-1">CVE-2023-6817</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1">CVE-2023-6931</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1">CVE-2023-6932</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2">CVE-2023-6931</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1,6604-2,6605-2">CVE-2023-6932</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-0193" priority="high" public="20240102" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6606-1,6607-1,6608-1,6609-1">CVE-2024-0193</cve>
 				</advisory>
 			</metadata>
@@ -2804,6 +2804,72 @@
 						<criterion test_ref="oval:com.ubuntu.mantic:tst:451780807732586846079998353239250224093" comment="Interim Release" />
 						<criterion test_ref="oval:com.ubuntu.mantic:tst:668827307451016746001077380390132743667" comment="Interim Release" />
 					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6611-1 -- Exim vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6611-1" ref_url="https://ubuntu.com/security/notices/USN-6611-1" />
+				<reference source="CVE" ref_id="CVE-2023-51766" ref_url="https://ubuntu.com/security/CVE-2023-51766" />
+				<description>It was discovered that Exim incorrectly handled certain requests. A remote attacker could possibly use a published exploitation technique to inject e-mail messages with a spoofed MAIL FROM address, allowing bypass of an SPF protection mechanism.  Update Instructions:  Run `sudo pro fix USN-6611-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  exim4 - 4.96-17ubuntu2.2 exim4-base - 4.96-17ubuntu2.2 exim4-config - 4.96-17ubuntu2.2 exim4-daemon-heavy - 4.96-17ubuntu2.2 exim4-daemon-light - 4.96-17ubuntu2.2 exim4-dev - 4.96-17ubuntu2.2 eximon4 - 4.96-17ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-29" />
+					<cve href="https://ubuntu.com/security/CVE-2023-51766" priority="medium" public="20231224" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6611-1">CVE-2023-51766</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:571402596784675229863551894802762930726" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66121000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6612-1 -- TinyXML vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6612-1" ref_url="https://ubuntu.com/security/notices/USN-6612-1" />
+				<reference source="CVE" ref_id="CVE-2023-34194" ref_url="https://ubuntu.com/security/CVE-2023-34194" />
+				<description>It was discovered that TinyXML incorrectly handled certain inputs. If a user or an automated system were tricked into opening a specially crafted XML file, a remote attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6612-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libtinyxml2.6.2v5 - 2.6.2-6ubuntu0.23.10.1 libtinyxml-dev - 2.6.2-6ubuntu0.23.10.1 libtinyxml-doc - 2.6.2-6ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-29" />
+					<cve href="https://ubuntu.com/security/CVE-2023-34194" priority="medium" public="20231213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2023-34194</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:375973841266091008906195969135567278193" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66131000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6613-1 -- Ceph vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6613-1" ref_url="https://ubuntu.com/security/notices/USN-6613-1" />
+				<reference source="CVE" ref_id="CVE-2023-43040" ref_url="https://ubuntu.com/security/CVE-2023-43040" />
+				<description>Lucas Henry discovered that Ceph incorrectly handled specially crafted POST requests. An uprivileged user could use this to  bypass Ceph's authorization checks and upload a file to any bucket.  Update Instructions:  Run `sudo pro fix USN-6613-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ceph - 18.2.0-0ubuntu3.1 ceph-base - 18.2.0-0ubuntu3.1 ceph-common - 18.2.0-0ubuntu3.1 ceph-fuse - 18.2.0-0ubuntu3.1 ceph-grafana-dashboards - 18.2.0-0ubuntu3.1 ceph-immutable-object-cache - 18.2.0-0ubuntu3.1 ceph-mds - 18.2.0-0ubuntu3.1 ceph-mgr - 18.2.0-0ubuntu3.1 ceph-mgr-cephadm - 18.2.0-0ubuntu3.1 ceph-mgr-dashboard - 18.2.0-0ubuntu3.1 ceph-mgr-diskprediction-local - 18.2.0-0ubuntu3.1 ceph-mgr-k8sevents - 18.2.0-0ubuntu3.1 ceph-mgr-modules-core - 18.2.0-0ubuntu3.1 ceph-mgr-rook - 18.2.0-0ubuntu3.1 ceph-mon - 18.2.0-0ubuntu3.1 ceph-osd - 18.2.0-0ubuntu3.1 ceph-prometheus-alerts - 18.2.0-0ubuntu3.1 ceph-resource-agents - 18.2.0-0ubuntu3.1 ceph-volume - 18.2.0-0ubuntu3.1 cephadm - 18.2.0-0ubuntu3.1 cephfs-mirror - 18.2.0-0ubuntu3.1 cephfs-shell - 18.2.0-0ubuntu3.1 crimson-osd - 18.2.0-0ubuntu3.1 libcephfs2 - 18.2.0-0ubuntu3.1 libcephfs-dev - 18.2.0-0ubuntu3.1 libcephfs-java - 18.2.0-0ubuntu3.1 libcephfs-jni - 18.2.0-0ubuntu3.1 librados2 - 18.2.0-0ubuntu3.1 librados-dev - 18.2.0-0ubuntu3.1 libradospp-dev - 18.2.0-0ubuntu3.1 libradosstriper1 - 18.2.0-0ubuntu3.1 libradosstriper-dev - 18.2.0-0ubuntu3.1 librbd1 - 18.2.0-0ubuntu3.1 librbd-dev - 18.2.0-0ubuntu3.1 librgw2 - 18.2.0-0ubuntu3.1 librgw-dev - 18.2.0-0ubuntu3.1 libsqlite3-mod-ceph - 18.2.0-0ubuntu3.1 libsqlite3-mod-ceph-dev - 18.2.0-0ubuntu3.1 python3-ceph - 18.2.0-0ubuntu3.1 python3-ceph-argparse - 18.2.0-0ubuntu3.1 python3-ceph-common - 18.2.0-0ubuntu3.1 python3-cephfs - 18.2.0-0ubuntu3.1 python3-rados - 18.2.0-0ubuntu3.1 python3-rbd - 18.2.0-0ubuntu3.1 python3-rgw - 18.2.0-0ubuntu3.1 rados-objclass-dev - 18.2.0-0ubuntu3.1 radosgw - 18.2.0-0ubuntu3.1 rbd-fuse - 18.2.0-0ubuntu3.1 rbd-mirror - 18.2.0-0ubuntu3.1 rbd-nbd - 18.2.0-0ubuntu3.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-29" />
+					<cve href="https://ubuntu.com/security/CVE-2023-43040" priority="medium" public="20230927" usns="6613-1">CVE-2023-43040</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:580480933346880608653152860158784467956" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -2852,6 +2918,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:375572160270727543031037671356085281354" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:558850881569226510833907407994665686805" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:477181361959975129143174094909468088839" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:375973841266091008906195969135567278193" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:422586731456408737171623852310526127037" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:649303565731063556525277745801621394256" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:380023185513727979478874515938168089943" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:496237340197393187624859059466240773139" />
@@ -3125,9 +3195,17 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:492840115442369720275408591419234980289" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:619529538126226555130245007994637949573" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:571402596784675229863551894802762930726" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:420873930191691601867149627641200897399" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:545925680824724572053925323492799040667" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:577369666510424653766656047270943106675" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:385588780224112047988104423356927153294" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:417922591159781237519249756045442389427" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:580480933346880608653152860158784467956" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:589841889472733553882219408224531259664" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:384761894524399045586748628023463752284" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:582730876201787951729800857644041207777" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:666601804437872620450469826531919172303" />
@@ -3632,6 +3710,12 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:414860281523375548388646059771482620414" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:557307654792941714877208571600592001701" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:420873930191691601867149627641200897399" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:557307654792941714877208571600592001701" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:422586731456408737171623852310526127037" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:415695756921696535649595052494243722332" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:425858634750361453900479739419342010749" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3787,6 +3871,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:587013831635041771393155512246593529852" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:589841889472733553882219408224531259664" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:559114482920459688144047818486608867459" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:593716846586356189784861671594813363344" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:587071683873390085545532294459405662008" var_check="at least one" />
@@ -3973,6 +4060,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:381002204654871934086274159602619174110" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:21.0.1+12-2~23.10</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:384761894524399045586748628023463752284" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:18.2.0-0ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:385766803315128036682521575871156348723" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:1.2.0+LibO7.6.4-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4126,6 +4216,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:538789987096699652417962017525386455731" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:10.11.6-0ubuntu0.23.10.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:545925680824724572053925323492799040667" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.96-17ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:546269042074203548807973091794519546600" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.2-6ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4233,6 +4326,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:648999051905091173091271215414360894176" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.123-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:649303565731063556525277745801621394256" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.2-6ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:662594627208356530669023573612279593549" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.114-0ubuntu1~23.10.1</linux:evr>
@@ -4441,6 +4537,58 @@
 			<value>budgie-window-shuffler</value>
 			<value>budgie-workspace-stopwatch-applet</value>
 			<value>budgie-workspace-wallpaper-applet</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:559114482920459688144047818486608867459" version="1" datatype="string" comment="Interim Release">
+			<value>ceph</value>
+			<value>ceph-base</value>
+			<value>ceph-common</value>
+			<value>ceph-fuse</value>
+			<value>ceph-grafana-dashboards</value>
+			<value>ceph-immutable-object-cache</value>
+			<value>ceph-mds</value>
+			<value>ceph-mgr</value>
+			<value>ceph-mgr-cephadm</value>
+			<value>ceph-mgr-dashboard</value>
+			<value>ceph-mgr-diskprediction-local</value>
+			<value>ceph-mgr-k8sevents</value>
+			<value>ceph-mgr-modules-core</value>
+			<value>ceph-mgr-rook</value>
+			<value>ceph-mon</value>
+			<value>ceph-osd</value>
+			<value>ceph-prometheus-alerts</value>
+			<value>ceph-resource-agents</value>
+			<value>ceph-volume</value>
+			<value>cephadm</value>
+			<value>cephfs-mirror</value>
+			<value>cephfs-shell</value>
+			<value>crimson-osd</value>
+			<value>libcephfs2</value>
+			<value>libcephfs-dev</value>
+			<value>libcephfs-java</value>
+			<value>libcephfs-jni</value>
+			<value>librados2</value>
+			<value>librados-dev</value>
+			<value>libradospp-dev</value>
+			<value>libradosstriper1</value>
+			<value>libradosstriper-dev</value>
+			<value>librbd1</value>
+			<value>librbd-dev</value>
+			<value>librgw2</value>
+			<value>librgw-dev</value>
+			<value>libsqlite3-mod-ceph</value>
+			<value>libsqlite3-mod-ceph-dev</value>
+			<value>python3-ceph</value>
+			<value>python3-ceph-argparse</value>
+			<value>python3-ceph-common</value>
+			<value>python3-cephfs</value>
+			<value>python3-rados</value>
+			<value>python3-rbd</value>
+			<value>python3-rgw</value>
+			<value>rados-objclass-dev</value>
+			<value>radosgw</value>
+			<value>rbd-fuse</value>
+			<value>rbd-mirror</value>
+			<value>rbd-nbd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:651628223003297934521020871987319094957" version="1" datatype="string" comment="Interim Release">
 			<value>charon-cmd</value>
@@ -5005,6 +5153,11 @@
 			<value>libtidy5deb1</value>
 			<value>libtidy-dev</value>
 			<value>tidy</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:415695756921696535649595052494243722332" version="1" datatype="string" comment="Interim Release">
+			<value>libtinyxml2.6.2v5</value>
+			<value>libtinyxml-dev</value>
+			<value>libtinyxml-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:537166095918850410020538615252964206353" version="1" datatype="string" comment="Interim Release">
 			<value>libtommath1</value>
