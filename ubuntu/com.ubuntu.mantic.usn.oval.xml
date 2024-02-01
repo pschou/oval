@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-01-31T06:42:40</oval:timestamp>
+		<oval:timestamp>2024-02-01T06:42:46</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2590,7 +2590,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-01-22" />
-					<cve href="https://ubuntu.com/security/CVE-2023-51764" priority="medium" public="20231224" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6591-1">CVE-2023-51764</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-51764" priority="medium" public="20231224" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6591-1,6591-2">CVE-2023-51764</cve>
 					<bug>https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/2049337</bug>
 				</advisory>
 			</metadata>
@@ -2598,6 +2598,30 @@
 				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:557032543032176563878540755755751542929" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:65912000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6591-2 -- Postfix update</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6591-2" ref_url="https://ubuntu.com/security/notices/USN-6591-2" />
+				<reference source="CVE" ref_id="CVE-2023-51764" ref_url="https://ubuntu.com/security/CVE-2023-51764" />
+				<description>USN-6591-1 fixed vulnerabilities in Postfix. A fix with less risk of regression has been made available since the last update. This update updates the fix and aligns with the latest configuration guidelines regarding this vulnerability.  We apologize for the inconvenience.  Original advisory details:   Timo Longin discovered that Postfix incorrectly handled certain email line  endings. A remote attacker could possibly use this issue to bypass an email  authentication mechanism, allowing domain spoofing and potential spamming.    Please note that certain configuration changes are required to address  this issue. They are not enabled by default for backward compatibility.  Information can be found at https://www.postfix.org/smtp-smuggling.html.  Update Instructions:  Run `sudo pro fix USN-6591-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  postfix - 3.8.1-2ubuntu0.2 postfix-cdb - 3.8.1-2ubuntu0.2 postfix-doc - 3.8.1-2ubuntu0.2 postfix-ldap - 3.8.1-2ubuntu0.2 postfix-lmdb - 3.8.1-2ubuntu0.2 postfix-mysql - 3.8.1-2ubuntu0.2 postfix-pcre - 3.8.1-2ubuntu0.2 postfix-pgsql - 3.8.1-2ubuntu0.2 postfix-sqlite - 3.8.1-2ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-01-31" />
+					<cve href="https://ubuntu.com/security/CVE-2023-51764" priority="medium" public="20231224" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6591-1,6591-2">CVE-2023-51764</cve>
+					<bug>https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/2049337</bug>
+					<bug>https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/2050834</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:631254101524075176675165751400191839258" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -3004,6 +3028,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66191000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6619-1 -- runC vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6619-1" ref_url="https://ubuntu.com/security/notices/USN-6619-1" />
+				<reference source="CVE" ref_id="CVE-2024-21626" ref_url="https://ubuntu.com/security/CVE-2024-21626" />
+				<description>Rory McNamara discovered that runC did not properly manage internal file descriptor while managing containers. An attacker could possibly use this issue to obtain sensitive information or bypass container restrictions.  Update Instructions:  Run `sudo pro fix USN-6619-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  golang-github-opencontainers-runc-dev - 1.1.7-0ubuntu2.2 runc - 1.1.7-0ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-01-31" />
+					<cve href="https://ubuntu.com/security/CVE-2024-21626" priority="high" public="20240131" usns="6619-1">CVE-2024-21626</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:489232141099904247497547155244712742162" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3218,6 +3264,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:477414860398075380332507542082228112030" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:358321972309195642642850904709234603043" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:489232141099904247497547155244712742162" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:440354891384050552694222832141486729882" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:518647662790002744241762296148580421620" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:491612599972256138194464557704732819363" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:374700063106894408437310813822341041599" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:425693122386799651569027705771077168796" />
@@ -3413,6 +3463,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:627347743831272470644814388764931455808" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:457852329911742717817057819364404633515" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:525400911308126188260497672850374918155" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:631254101524075176675165751400191839258" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:382850650819523493647636035908235042037" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:348060705589198688381488039745820209016" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:633751898976449715002213352479854699828" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:523680699492126845887268757573019376051" />
@@ -3830,6 +3884,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:382478090973952891004148083301116018250" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:478098459931016905044032152504682697829" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:382850650819523493647636035908235042037" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:375332710533474772467184887552936684526" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:383670419861870093550911640507363299154" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:443090709986684154457956966506563182334" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -3889,6 +3946,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:437396372036569299525201338944729609194" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:473789858031559994353317162244846485675" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:440354891384050552694222832141486729882" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:665356428932256426353170084908159868455" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:447268734586774245949110358934035753797" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:507935021922380742965284418283267454749" var_check="at least one" />
@@ -4174,6 +4234,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:347931573941653675288079828258031838615" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.21-1ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:348060705589198688381488039745820209016" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.8.1-2ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:351745216381132695526514391287708918942" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.55.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4353,6 +4416,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:512343109617957744810808210217940238173" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.126-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:518647662790002744241762296148580421620" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.7-0ubuntu2.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:522420495410033925841784750099162972447" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.2.4+debian-1ubuntu0.23.10.1</linux:evr>
@@ -5182,6 +5248,10 @@
 			<value>golang-1.21-doc</value>
 			<value>golang-1.21-go</value>
 			<value>golang-1.21-src</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:665356428932256426353170084908159868455" version="1" datatype="string" comment="Interim Release">
+			<value>golang-github-opencontainers-runc-dev</value>
+			<value>runc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:353186704881158650862270222257165349808" version="1" datatype="string" comment="Interim Release">
 			<value>hibagent</value>
