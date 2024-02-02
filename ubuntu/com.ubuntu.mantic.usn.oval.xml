@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-01T06:42:46</oval:timestamp>
+		<oval:timestamp>2024-02-02T06:40:36</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2499,8 +2499,8 @@
 					<issued date="2024-01-16" />
 					<cve href="https://ubuntu.com/security/CVE-2023-6816" priority="medium" public="20240116" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6587-1,6587-2">CVE-2023-6816</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-0229" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0229</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0408" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0408</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0409" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-0409</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0408" priority="medium" public="20240116" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6587-1,6587-2">CVE-2024-0408</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0409" priority="medium" public="20240116" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6587-1,6587-2">CVE-2024-0409</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21885" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-21885</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21886" priority="medium" public="20240116" usns="6587-1,6587-2">CVE-2024-21886</cve>
 				</advisory>
@@ -3050,6 +3050,32 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66201000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6620-1 -- GNU C Library vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6620-1" ref_url="https://ubuntu.com/security/notices/USN-6620-1" />
+				<reference source="CVE" ref_id="CVE-2023-6246" ref_url="https://ubuntu.com/security/CVE-2023-6246" />
+				<reference source="CVE" ref_id="CVE-2023-6779" ref_url="https://ubuntu.com/security/CVE-2023-6779" />
+				<reference source="CVE" ref_id="CVE-2023-6780" ref_url="https://ubuntu.com/security/CVE-2023-6780" />
+				<description>It was discovered that the GNU C Library incorrectly handled the syslog() function call. A local attacker could use this issue to execute arbitrary code and possibly escalate privileges.  Update Instructions:  Run `sudo pro fix USN-6620-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  glibc-doc - 2.38-1ubuntu6.1 glibc-source - 2.38-1ubuntu6.1 libc6 - 2.38-1ubuntu6.1 libc6-amd64 - 2.38-1ubuntu6.1 libc6-dev - 2.38-1ubuntu6.1 libc6-dev-amd64 - 2.38-1ubuntu6.1 libc6-dev-i386 - 2.38-1ubuntu6.1 libc6-dev-s390 - 2.38-1ubuntu6.1 libc6-dev-x32 - 2.38-1ubuntu6.1 libc6-i386 - 2.38-1ubuntu6.1 libc6-prof - 2.38-1ubuntu6.1 libc6-s390 - 2.38-1ubuntu6.1 libc6-x32 - 2.38-1ubuntu6.1 libc-bin - 2.38-1ubuntu6.1 libc-dev-bin - 2.38-1ubuntu6.1 libc-devtools - 2.38-1ubuntu6.1 locales - 2.38-1ubuntu6.1 locales-all - 2.38-1ubuntu6.1 nscd - 2.38-1ubuntu6.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-01" />
+					<cve href="https://ubuntu.com/security/CVE-2023-6246" priority="medium" public="20240131" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6620-1">CVE-2023-6246</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6779" priority="medium" public="20240131" usns="6620-1">CVE-2023-6779</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6780" priority="medium" public="20240131" usns="6620-1">CVE-2023-6780</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:506948188604451211859365307126415773355" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3291,6 +3317,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:502889576125391878107836557021019574125" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:539940429531248938145042587194052327745" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:613195547196493188915137259311810005236" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:506948188604451211859365307126415773355" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:527077752164220645806054373629204721543" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:422373324080338766858701188840950722032" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:512162486110129820233524832462357271551" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:513840102851057120015241282573009146634" />
@@ -4034,6 +4064,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:526890351564162813448553131245335535312" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:613312478723934550179396469465418912630" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:527077752164220645806054373629204721543" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:536907279945975024127417072902274427906" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:533252973869089486761080309585193893368" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:676100531393497779434447407122187609980" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4326,6 +4359,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:418149509811288187509160602622916719996" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.124-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:422373324080338766858701188840950722032" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.38-1ubuntu6.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:422900295011991714226677186919385420745" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:5.36.0-9ubuntu1.1</linux:evr>
@@ -5209,6 +5245,27 @@
 			<value>uno-libs-private</value>
 			<value>ure</value>
 			<value>ure-java</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:536907279945975024127417072902274427906" version="1" datatype="string" comment="Interim Release">
+			<value>glibc-doc</value>
+			<value>glibc-source</value>
+			<value>libc6</value>
+			<value>libc6-amd64</value>
+			<value>libc6-dev</value>
+			<value>libc6-dev-amd64</value>
+			<value>libc6-dev-i386</value>
+			<value>libc6-dev-s390</value>
+			<value>libc6-dev-x32</value>
+			<value>libc6-i386</value>
+			<value>libc6-prof</value>
+			<value>libc6-s390</value>
+			<value>libc6-x32</value>
+			<value>libc-bin</value>
+			<value>libc-dev-bin</value>
+			<value>libc-devtools</value>
+			<value>locales</value>
+			<value>locales-all</value>
+			<value>nscd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:642253770072746283015284565506446217955" version="1" datatype="string" comment="Interim Release">
 			<value>glusterfs-cli</value>
