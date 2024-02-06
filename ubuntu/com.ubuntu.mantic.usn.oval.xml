@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-02T06:40:36</oval:timestamp>
+		<oval:timestamp>2024-02-06T06:45:40</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2638,8 +2638,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-01-22" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6004" priority="medium" public="20240103" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="6592-1">CVE-2023-6004</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6918" priority="medium" public="20231219" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6592-1">CVE-2023-6918</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6004" priority="medium" public="20240103" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="6592-1,6592-2">CVE-2023-6004</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6918" priority="medium" public="20231219" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6592-1,6592-2">CVE-2023-6918</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -2809,7 +2809,7 @@
 					<issued date="2024-01-25" />
 					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6606</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-6817" priority="high" public="20231218" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6606-1,6607-1,6608-1,6609-1,6609-2">CVE-2023-6817</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6931</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6931</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6932</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-0193" priority="high" public="20240102" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6606-1,6607-1,6608-1,6609-1,6609-2">CVE-2024-0193</cve>
 				</advisory>
@@ -2864,7 +2864,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-01-29" />
-					<cve href="https://ubuntu.com/security/CVE-2023-51766" priority="medium" public="20231224" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6611-1">CVE-2023-51766</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-51766" priority="medium" public="20231224" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="6611-1">CVE-2023-51766</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -3076,6 +3076,34 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66221000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6622-1 -- OpenSSL vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6622-1" ref_url="https://ubuntu.com/security/notices/USN-6622-1" />
+				<reference source="CVE" ref_id="CVE-2023-5678" ref_url="https://ubuntu.com/security/CVE-2023-5678" />
+				<reference source="CVE" ref_id="CVE-2023-6129" ref_url="https://ubuntu.com/security/CVE-2023-6129" />
+				<reference source="CVE" ref_id="CVE-2023-6237" ref_url="https://ubuntu.com/security/CVE-2023-6237" />
+				<reference source="CVE" ref_id="CVE-2024-0727" ref_url="https://ubuntu.com/security/CVE-2024-0727" />
+				<description>David Benjamin discovered that OpenSSL incorrectly handled excessively long X9.42 DH keys. A remote attacker could possibly use this issue to cause OpenSSL to consume resources, leading to a denial of service. (CVE-2023-5678)  Sverker Eriksson discovered that OpenSSL incorrectly handled POLY1304 MAC on the PowerPC architecture. A remote attacker could use this issue to cause OpenSSL to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-6129)  It was discovered that OpenSSL incorrectly handled excessively long RSA public keys. A remote attacker could possibly use this issue to cause OpenSSL to consume resources, leading to a denial of service. This issue only affected Ubuntu 22.04 LTS and Ubuntu 23.04. (CVE-2023-6237)  Bahaa Naamneh discovered that OpenSSL incorrectly handled certain malformed PKCS12 files. A remote attacker could possibly use this issue to cause OpenSSL to crash, resulting in a denial of service. (CVE-2024-0727)  Update Instructions:  Run `sudo pro fix USN-6622-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libssl3 - 3.0.10-1ubuntu2.2 libssl-dev - 3.0.10-1ubuntu2.2 libssl-doc - 3.0.10-1ubuntu2.2 openssl - 3.0.10-1ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-02-05" />
+					<cve href="https://ubuntu.com/security/CVE-2023-5678" priority="low" public="20231106" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="6622-1">CVE-2023-5678</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6129" priority="low" public="20240109" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H" cvss_severity="medium" usns="6622-1">CVE-2023-6129</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6237" priority="low" public="20240115" usns="6622-1">CVE-2023-6237</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0727" priority="low" public="20240126" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6622-1">CVE-2024-0727</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:483501614055570571313683815950458685457" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3281,6 +3309,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:482310822280189302465905480973758672149" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:465154301298605304211203762756631644856" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:492841401921286637845761555265111964209" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:483501614055570571313683815950458685457" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:680117318594239282948499650903884200010" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:614583778640656612141160314971278552131" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:483684169793605889230568293191291169947" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:566524677975566717068688942562153088654" />
@@ -4220,6 +4252,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:679796897083952200333348465049496062610" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:358558821857642227064834266318205127694" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:680117318594239282948499650903884200010" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<ind:family_object id="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" version="1" comment="The singleton family object." />
 		<ind:textfilecontent54_object id="oval:com.ubuntu.mantic:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
@@ -4551,6 +4586,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:613412145579614709045197839993474080521" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100-8.0.0-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:614583778640656612141160314971278552131" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.10-1ubuntu2.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:616825465203154283971746524639232235437" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.1672-1ubuntu2.1</linux:evr>
