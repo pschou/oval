@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-06T06:45:40</oval:timestamp>
+		<oval:timestamp>2024-02-07T04:44:44</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2807,11 +2807,11 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-01-25" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6606</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6817" priority="high" public="20231218" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6606-1,6607-1,6608-1,6609-1,6609-2">CVE-2023-6817</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6931</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2">CVE-2023-6932</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0193" priority="high" public="20240102" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6606-1,6607-1,6608-1,6609-1,6609-2">CVE-2024-0193</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3">CVE-2023-6606</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6817" priority="high" public="20231218" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6606-1,6607-1,6608-1,6609-1,6609-2,6609-3">CVE-2023-6817</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3">CVE-2023-6931</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3">CVE-2023-6932</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0193" priority="high" public="20240102" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6606-1,6607-1,6608-1,6609-1,6609-2,6609-3">CVE-2024-0193</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -3104,6 +3104,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66231000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6623-1 -- Django vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6623-1" ref_url="https://ubuntu.com/security/notices/USN-6623-1" />
+				<reference source="CVE" ref_id="CVE-2024-24680" ref_url="https://ubuntu.com/security/CVE-2024-24680" />
+				<description>It was discovered that Django incorrectly handled certain inputs that uses intcomma template filter. An attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6623-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:4.2.4-1ubuntu2.1 python-django-doc - 3:4.2.4-1ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-06" />
+					<cve href="https://ubuntu.com/security/CVE-2024-24680" priority="medium" public="20240206" usns="6623-1">CVE-2024-24680</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:371000942755867208958596007015430490465" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3141,6 +3163,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:365405604888920144385629828309273876994" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:533270801332403891494221869294079330385" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:459868575716042625090119116386230057909" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:371000942755867208958596007015430490465" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:631708769581173062064148444067905606700" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:467084507369185704673967864451447844500" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:372665040692606778499442989061234400121" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:558441990306613473651447978220351778641" />
@@ -4207,6 +4233,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:631450006751165947476809367419068294633" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:465533765387434935470115711590661269551" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:631708769581173062064148444067905606700" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:501220369778349828853377894798062358126" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:635329565389563503996146449134151629079" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:388236145566469612965435835403692907727" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4424,6 +4453,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:466111612112833474596774901761659006655" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:5.6.0-11ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:467084507369185704673967864451447844500" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.4-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:467710811672917940804179605742661382784" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.4-28+deb10u1build0.23.10.1</linux:evr>
@@ -5640,6 +5672,10 @@
 		<constant_variable id="oval:com.ubuntu.mantic:var:507935021922380742965284418283267454749" version="1" datatype="string" comment="Interim Release">
 			<value>python3-cryptography</value>
 			<value>python-cryptography-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
+			<value>python3-django</value>
+			<value>python-django-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:426449558341931716865830626666249084185" version="1" datatype="string" comment="Interim Release">
 			<value>python3-jinja2</value>
