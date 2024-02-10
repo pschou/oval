@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-09T06:44:20</oval:timestamp>
+		<oval:timestamp>2024-02-10T06:46:27</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2807,11 +2807,11 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-01-25" />
-					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3">CVE-2023-6606</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6817" priority="high" public="20231218" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6606-1,6607-1,6608-1,6609-1,6609-2,6609-3">CVE-2023-6817</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3">CVE-2023-6931</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3">CVE-2023-6932</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0193" priority="high" public="20240102" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6606-1,6607-1,6608-1,6609-1,6609-2,6609-3">CVE-2024-0193</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6606" priority="medium" public="20231208" cvss_score="7.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3,6628-1">CVE-2023-6606</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6817" priority="high" public="20231218" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6606-1,6607-1,6608-1,6609-1,6609-2,6609-3,6628-1">CVE-2023-6817</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6931" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6602-1,6603-1,6604-1,6605-1,6606-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3,6628-1">CVE-2023-6931</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6932" priority="high" public="20231219" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6601-1,6602-1,6603-1,6604-1,6605-1,6607-1,6608-1,6609-1,6604-2,6605-2,6609-2,6609-3,6628-1">CVE-2023-6932</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0193" priority="high" public="20240102" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="6606-1,6607-1,6608-1,6609-1,6609-2,6609-3,6628-1">CVE-2024-0193</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -3146,15 +3146,15 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-02-07" />
-					<cve href="https://ubuntu.com/security/CVE-2023-34324" priority="medium" public="20231011" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6461-1,6624-1,6625-1,6626-1,6625-2">CVE-2023-34324</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-35827" priority="low" public="20230618" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6624-1,6625-1,6626-1,6625-2">CVE-2023-35827</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-46813" priority="medium" public="20231027" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6533-1,6624-1,6626-1">CVE-2023-46813</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34324" priority="medium" public="20231011" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6461-1,6624-1,6625-1,6626-1,6625-2,6628-1">CVE-2023-34324</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-35827" priority="low" public="20230618" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6624-1,6625-1,6626-1,6625-2,6628-1">CVE-2023-35827</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46813" priority="medium" public="20231027" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6533-1,6624-1,6626-1,6628-1">CVE-2023-46813</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-46862" priority="medium" public="20231029" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6533-1,6624-1">CVE-2023-46862</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5972" priority="medium" public="20231123" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6624-1">CVE-2023-5972</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6176" priority="high" public="20231116" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6548-1,6548-2,6548-3,6548-4,6548-5,6624-1,6626-1">CVE-2023-6176</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6176" priority="high" public="20231116" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6548-1,6548-2,6548-3,6548-4,6548-5,6624-1,6626-1,6628-1">CVE-2023-6176</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-6531" priority="medium" public="20240121" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6624-1">CVE-2023-6531</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-6622" priority="medium" public="20231208" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6624-1,6626-1">CVE-2023-6622</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-0641" priority="medium" public="20240117" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6624-1,6626-1">CVE-2024-0641</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6622" priority="medium" public="20231208" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6624-1,6626-1,6628-1">CVE-2023-6622</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-0641" priority="medium" public="20240117" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6624-1,6626-1,6628-1">CVE-2024-0641</cve>
 				</advisory>
 			</metadata>
 			<criteria>
