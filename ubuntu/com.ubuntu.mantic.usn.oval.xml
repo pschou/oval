@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-12T06:44:54</oval:timestamp>
+		<oval:timestamp>2024-02-13T04:45:31</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3191,6 +3191,54 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66301000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6630-1 -- Glance_store vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6630-1" ref_url="https://ubuntu.com/security/notices/USN-6630-1" />
+				<reference source="CVE" ref_id="CVE-2024-1141" ref_url="https://ubuntu.com/security/CVE-2024-1141" />
+				<description>It was discovered that Glance_store incorrectly handled logging when the DEBUG log level is enabled. A local attacker could use this issue to obtain access_key values.  Update Instructions:  Run `sudo pro fix USN-6630-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-glance-store - 4.6.1-0ubuntu1.1 python-glance-store-doc - 4.6.1-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-12" />
+					<cve href="https://ubuntu.com/security/CVE-2024-1141" priority="medium" public="20240201" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6630-1">CVE-2024-1141</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:372279006147180644174734004427627667870" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66311000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6631-1 -- WebKitGTK vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6631-1" ref_url="https://ubuntu.com/security/notices/USN-6631-1" />
+				<reference source="CVE" ref_id="CVE-2024-23206" ref_url="https://ubuntu.com/security/CVE-2024-23206" />
+				<reference source="CVE" ref_id="CVE-2024-23213" ref_url="https://ubuntu.com/security/CVE-2024-23213" />
+				<reference source="CVE" ref_id="CVE-2024-23222" ref_url="https://ubuntu.com/security/CVE-2024-23222" />
+				<description>Several security issues were discovered in the WebKitGTK Web and JavaScript engines. If a user were tricked into viewing a malicious website, a remote attacker could exploit a variety of issues related to web browser security, including cross-site scripting attacks, denial of service attacks, and arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-6631-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-javascriptcoregtk-4.0 - 2.42.5-0ubuntu0.23.10.2 gir1.2-javascriptcoregtk-4.1 - 2.42.5-0ubuntu0.23.10.2 gir1.2-javascriptcoregtk-6.0 - 2.42.5-0ubuntu0.23.10.2 gir1.2-webkit2-4.0 - 2.42.5-0ubuntu0.23.10.2 gir1.2-webkit2-4.1 - 2.42.5-0ubuntu0.23.10.2 gir1.2-webkit-6.0 - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-4.0-18 - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-4.0-bin - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-4.0-dev - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-4.1-0 - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-4.1-dev - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-6.0-1 - 2.42.5-0ubuntu0.23.10.2 libjavascriptcoregtk-6.0-dev - 2.42.5-0ubuntu0.23.10.2 libwebkit2gtk-4.0-37 - 2.42.5-0ubuntu0.23.10.2 libwebkit2gtk-4.0-dev - 2.42.5-0ubuntu0.23.10.2 libwebkit2gtk-4.0-doc - 2.42.5-0ubuntu0.23.10.2 libwebkit2gtk-4.1-0 - 2.42.5-0ubuntu0.23.10.2 libwebkit2gtk-4.1-dev - 2.42.5-0ubuntu0.23.10.2 libwebkitgtk-6.0-4 - 2.42.5-0ubuntu0.23.10.2 libwebkitgtk-6.0-dev - 2.42.5-0ubuntu0.23.10.2 webkit2gtk-driver - 2.42.5-0ubuntu0.23.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-12" />
+					<cve href="https://ubuntu.com/security/CVE-2024-23206" priority="medium" public="20240123" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6631-1">CVE-2024-23206</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23213" priority="medium" public="20240123" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6631-1">CVE-2024-23213</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23222" priority="medium" public="20240123" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6631-1">CVE-2024-23222</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:378740158915704547623727138087932982457" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3233,6 +3281,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:631708769581173062064148444067905606700" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:467084507369185704673967864451447844500" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:372279006147180644174734004427627667870" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:430950517224701882516656519122902966260" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:651006112848480298615409903598930956321" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:372665040692606778499442989061234400121" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:558441990306613473651447978220351778641" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:560278044798688866163618575322527514924" />
@@ -3252,6 +3304,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:375973841266091008906195969135567278193" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:422586731456408737171623852310526127037" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:649303565731063556525277745801621394256" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:378740158915704547623727138087932982457" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:470863821980827341222636240374515628965" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:355657983755005781933551516972883455987" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:380023185513727979478874515938168089943" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:496237340197393187624859059466240773139" />
@@ -4141,6 +4197,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:428889517515555317600370453789871244343" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:369964320601684946368920698910419708727" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:430950517224701882516656519122902966260" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:391274111027580069412726315909292973834" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:432353540069142786652431190011335317683" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:393799580311004666632081529807697199036" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4173,6 +4232,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:470799316065949735141741381786509101949" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:444165862507806386026143799925666168524" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:470863821980827341222636240374515628965" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:676100531393497779434447407122187609980" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:471248621374986061020644864072117220343" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:613963896704320177719534197252616542257" var_check="at least one" />
@@ -4460,6 +4522,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:353074691432922420400558504353521207814" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.7-3ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:355657983755005781933551516972883455987" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.5-0ubuntu0.23.10.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:356437165863095501723869688313836892750" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:102.12+LibO7.6.4-0ubuntu0.23.10.1</linux:evr>
@@ -4793,6 +4858,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:649303565731063556525277745801621394256" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.2-6ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:651006112848480298615409903598930956321" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.6.1-0ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:662594627208356530669023573612279593549" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.0.114-0ubuntu1~23.10.1</linux:evr>
@@ -5803,6 +5871,10 @@
 		<constant_variable id="oval:com.ubuntu.mantic:var:501220369778349828853377894798062358126" version="1" datatype="string" comment="Interim Release">
 			<value>python3-django</value>
 			<value>python-django-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:391274111027580069412726315909292973834" version="1" datatype="string" comment="Interim Release">
+			<value>python3-glance-store</value>
+			<value>python-glance-store-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:426449558341931716865830626666249084185" version="1" datatype="string" comment="Interim Release">
 			<value>python3-jinja2</value>
