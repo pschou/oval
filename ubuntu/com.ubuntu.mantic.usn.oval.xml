@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-24T06:45:18</oval:timestamp>
+		<oval:timestamp>2024-02-26T06:47:18</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -199,7 +199,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2023-10-17" />
-					<cve href="https://ubuntu.com/security/CVE-2023-43115" priority="medium" public="20230918" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6433-1">CVE-2023-43115</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-43115" priority="medium" public="20230918" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6433-1">CVE-2023-43115</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -3540,6 +3540,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66541000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6654-1 -- Roundcube Webmail vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6654-1" ref_url="https://ubuntu.com/security/notices/USN-6654-1" />
+				<reference source="CVE" ref_id="CVE-2023-43770" ref_url="https://ubuntu.com/security/CVE-2023-43770" />
+				<description>It was discovered that Roundcube Webmail incorrectly sanitized characters in the linkrefs text messages. An attacker could possibly use this issue to execute a cross-site scripting (XSS) attack. (CVE-2023-43770)  Update Instructions:  Run `sudo pro fix USN-6654-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  roundcube - 1.6.2+dfsg-1ubuntu0.1 roundcube-core - 1.6.2+dfsg-1ubuntu0.1 roundcube-mysql - 1.6.2+dfsg-1ubuntu0.1 roundcube-pgsql - 1.6.2+dfsg-1ubuntu0.1 roundcube-plugins - 1.6.2+dfsg-1ubuntu0.1 roundcube-sqlite3 - 1.6.2+dfsg-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-26" />
+					<cve href="https://ubuntu.com/security/CVE-2023-43770" priority="medium" public="20230922" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="6654-1">CVE-2023-43770</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:427714749585155187542236384932395895490" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3709,6 +3731,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:423062370086461975170349749496801040419" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:542540017618061161348445614614204613826" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:628939470794732854687224004274916704949" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:427714749585155187542236384932395895490" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:671249753806933419696604531712753077257" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:351365730871869758906343576044213855135" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:429134733221669023158902526280416744139" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:650274237243593913089258937231364715101" />
@@ -4879,6 +4905,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:666601804437872620450469826531919172303" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:576433769504538664619461474509787922514" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:671249753806933419696604531712753077257" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:383383059510166933904554634587957271798" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:677887702756423878289099442644752872264" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:575549404029728743157521028039500018284" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4943,6 +4972,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:348060705589198688381488039745820209016" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.8.1-2ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:351365730871869758906343576044213855135" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.6.2+dfsg-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:351745216381132695526514391287708918942" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.55.1-1ubuntu0.1</linux:evr>
@@ -6436,6 +6468,14 @@
 			<value>rt4-doc-html</value>
 			<value>rt4-fcgi</value>
 			<value>rt4-standalone</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:383383059510166933904554634587957271798" version="1" datatype="string" comment="Interim Release">
+			<value>roundcube</value>
+			<value>roundcube-core</value>
+			<value>roundcube-mysql</value>
+			<value>roundcube-pgsql</value>
+			<value>roundcube-plugins</value>
+			<value>roundcube-sqlite3</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:575549404029728743157521028039500018284" version="1" datatype="string" comment="Interim Release">
 			<value>squid</value>
