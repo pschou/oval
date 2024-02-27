@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-02-26T06:47:18</oval:timestamp>
+		<oval:timestamp>2024-02-27T04:48:19</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3256,8 +3256,8 @@
 					<severity>Medium</severity>
 					<issued date="2024-02-13" />
 					<cve href="https://ubuntu.com/security/CVE-2023-4408" priority="medium" public="20240213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6633-1,6642-1">CVE-2023-4408</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-50387" priority="medium" public="20240213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6633-1,6642-1">CVE-2023-50387</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-50868" priority="medium" public="20240213" usns="6633-1,6642-1">CVE-2023-50868</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-50387" priority="medium" public="20240213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6633-1,6642-1,6657-1">CVE-2023-50387</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-50868" priority="medium" public="20240213" usns="6633-1,6642-1,6657-1">CVE-2023-50868</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5517" priority="medium" public="20240213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6633-1,6642-1">CVE-2023-5517</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-5679" priority="medium" public="20240213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6633-1">CVE-2023-5679</cve>
 				</advisory>
@@ -3562,6 +3562,170 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66561000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6656-1 -- PostgreSQL vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6656-1" ref_url="https://ubuntu.com/security/notices/USN-6656-1" />
+				<reference source="CVE" ref_id="CVE-2024-0985" ref_url="https://ubuntu.com/security/CVE-2024-0985" />
+				<description>It was discovered that PostgreSQL incorrectly handled dropping privileges when handling REFRESH MATERIALIZED VIEW CONCURRENTLY commands. If a user or automatic system were tricked into running a specially crafted command, a remote attacker could possibly use this issue to execute arbitrary SQL functions.  Update Instructions:  Run `sudo pro fix USN-6656-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libecpg6 - 15.6-0ubuntu0.23.10.1 libecpg-compat3 - 15.6-0ubuntu0.23.10.1 libecpg-dev - 15.6-0ubuntu0.23.10.1 libpgtypes3 - 15.6-0ubuntu0.23.10.1 libpq5 - 15.6-0ubuntu0.23.10.1 libpq-dev - 15.6-0ubuntu0.23.10.1 postgresql-15 - 15.6-0ubuntu0.23.10.1 postgresql-client-15 - 15.6-0ubuntu0.23.10.1 postgresql-doc-15 - 15.6-0ubuntu0.23.10.1 postgresql-plperl-15 - 15.6-0ubuntu0.23.10.1 postgresql-plpython3-15 - 15.6-0ubuntu0.23.10.1 postgresql-pltcl-15 - 15.6-0ubuntu0.23.10.1 postgresql-server-dev-15 - 15.6-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-26" />
+					<cve href="https://ubuntu.com/security/CVE-2024-0985" priority="medium" public="20240208" cvss_score="8.0" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6656-1">CVE-2024-0985</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:550938876276219624180888311534106442828" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66571000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6657-1 -- Dnsmasq vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6657-1" ref_url="https://ubuntu.com/security/notices/USN-6657-1" />
+				<reference source="CVE" ref_id="CVE-2023-28450" ref_url="https://ubuntu.com/security/CVE-2023-28450" />
+				<reference source="CVE" ref_id="CVE-2023-50387" ref_url="https://ubuntu.com/security/CVE-2023-50387" />
+				<reference source="CVE" ref_id="CVE-2023-50868" ref_url="https://ubuntu.com/security/CVE-2023-50868" />
+				<description>Elias Heftrig, Haya Schulmann, Niklas Vogel, and Michael Waidner discovered that Dnsmasq icorrectly handled validating DNSSEC messages. A remote attacker could possibly use this issue to cause Dnsmasq to consume resources, leading to a denial of service. (CVE-2023-50387)  It was discovered that Dnsmasq incorrectly handled preparing an NSEC3 closest encloser proof. A remote attacker could possibly use this issue to cause Dnsmasq to consume resources, leading to a denial of service. (CVE-2023-50868)  It was discovered that Dnsmasq incorrectly set the maximum EDNS.0 UDP packet size as required by DNS Flag Day 2020. This issue only affected Ubuntu 23.10. (CVE-2023-28450)  Update Instructions:  Run `sudo pro fix USN-6657-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  dnsmasq - 2.90-0ubuntu0.23.10.1 dnsmasq-base - 2.90-0ubuntu0.23.10.1 dnsmasq-base-lua - 2.90-0ubuntu0.23.10.1 dnsmasq-utils - 2.90-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-26" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28450" priority="low" public="20230315" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6034-1,6657-1">CVE-2023-28450</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-50387" priority="medium" public="20240213" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6633-1,6642-1,6657-1">CVE-2023-50387</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-50868" priority="medium" public="20240213" usns="6633-1,6642-1,6657-1">CVE-2023-50868</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:416209867235987806931661078266508653408" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66581000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6658-1 -- libxml2 vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6658-1" ref_url="https://ubuntu.com/security/notices/USN-6658-1" />
+				<reference source="CVE" ref_id="CVE-2024-25062" ref_url="https://ubuntu.com/security/CVE-2024-25062" />
+				<description>It was discovered that libxml2 incorrectly handled certain XML documents. A remote attacker could possibly use this issue to cause libxml2 to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6658-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libxml2 - 2.9.14+dfsg-1.3ubuntu0.1 libxml2-dev - 2.9.14+dfsg-1.3ubuntu0.1 libxml2-doc - 2.9.14+dfsg-1.3ubuntu0.1 libxml2-utils - 2.9.14+dfsg-1.3ubuntu0.1 python3-libxml2 - 2.9.14+dfsg-1.3ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-26" />
+					<cve href="https://ubuntu.com/security/CVE-2024-25062" priority="medium" public="20240204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6658-1">CVE-2024-25062</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:539204263133814145941735361031081503420" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66601000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6660-1 -- OpenJDK 11 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6660-1" ref_url="https://ubuntu.com/security/notices/USN-6660-1" />
+				<reference source="CVE" ref_id="CVE-2024-20918" ref_url="https://ubuntu.com/security/CVE-2024-20918" />
+				<reference source="CVE" ref_id="CVE-2024-20919" ref_url="https://ubuntu.com/security/CVE-2024-20919" />
+				<reference source="CVE" ref_id="CVE-2024-20921" ref_url="https://ubuntu.com/security/CVE-2024-20921" />
+				<reference source="CVE" ref_id="CVE-2024-20926" ref_url="https://ubuntu.com/security/CVE-2024-20926" />
+				<reference source="CVE" ref_id="CVE-2024-20945" ref_url="https://ubuntu.com/security/CVE-2024-20945" />
+				<reference source="CVE" ref_id="CVE-2024-20952" ref_url="https://ubuntu.com/security/CVE-2024-20952" />
+				<description>Yi Yang discovered that the Hotspot component of OpenJDK 11 incorrectly handled array accesses in the C1 compiler. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. (CVE-2024-20918)  It was discovered that the Hotspot component of OpenJDK 11 did not properly verify bytecode in certain situations. An attacker could possibly use this issue to bypass Java sandbox restrictions. (CVE-2024-20919)  It was discovered that the Hotspot component of OpenJDK 11 had an optimization flaw when generating range check loop predicates. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. (CVE-2024-20921)  Valentin Eudeline discovered that OpenJDK 11 incorrectly handled certain options in the Nashorn JavaScript subcomponent. An attacker could possibly use this issue to execute arbitrary code. (CVE-2024-20926)  It was discovered that OpenJDK 11 could produce debug logs that contained private keys used for digital signatures. An attacker could possibly use this issue to obtain sensitive information. (CVE-2024-20945)  Hubert Kario discovered that the TLS implementation in OpenJDK 11 had a timing side-channel and incorrectly handled RSA padding. A remote attacker could possibly use this issue to recover sensitive information. (CVE-2024-20952)  Update Instructions:  Run `sudo pro fix USN-6660-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-11-demo - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-doc - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-jdk - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-jdk-headless - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-jre - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-jre-headless - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-jre-zero - 11.0.22+7-0ubuntu2~23.10.1 openjdk-11-source - 11.0.22+7-0ubuntu2~23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20918" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1">CVE-2024-20918</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20919" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20919</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20921" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20926" priority="medium" public="20240116" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1">CVE-2024-20926</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20945" priority="medium" public="20240217" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20945</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20952" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1">CVE-2024-20952</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:625423199169958589831555078465762310587" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66611000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6661-1 -- OpenJDK 17 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6661-1" ref_url="https://ubuntu.com/security/notices/USN-6661-1" />
+				<reference source="CVE" ref_id="CVE-2024-20918" ref_url="https://ubuntu.com/security/CVE-2024-20918" />
+				<reference source="CVE" ref_id="CVE-2024-20919" ref_url="https://ubuntu.com/security/CVE-2024-20919" />
+				<reference source="CVE" ref_id="CVE-2024-20921" ref_url="https://ubuntu.com/security/CVE-2024-20921" />
+				<reference source="CVE" ref_id="CVE-2024-20932" ref_url="https://ubuntu.com/security/CVE-2024-20932" />
+				<reference source="CVE" ref_id="CVE-2024-20945" ref_url="https://ubuntu.com/security/CVE-2024-20945" />
+				<reference source="CVE" ref_id="CVE-2024-20952" ref_url="https://ubuntu.com/security/CVE-2024-20952" />
+				<description>Yi Yang discovered that the Hotspot component of OpenJDK 17 incorrectly handled array accesses in the C1 compiler. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. (CVE-2024-20918)  It was discovered that the Hotspot component of OpenJDK 17 did not properly verify bytecode in certain situations. An attacker could possibly use this issue to bypass Java sandbox restrictions. (CVE-2024-20919)  It was discovered that the Hotspot component of OpenJDK 17 had an optimization flaw when generating range check loop predicates. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. (CVE-2024-20921)  Yakov Shafranovich discovered that OpenJDK 17 incorrectly handled ZIP archives that have file and directory entries with the same name. An attacker could possibly use this issue to bypass Java sandbox restrictions. (CVE-2024-20932)  It was discovered that OpenJDK 17 could produce debug logs that contained private keys used for digital signatures. An attacker could possibly use this issue to obtain sensitive information. (CVE-2024-20945)  Hubert Kario discovered that the TLS implementation in OpenJDK 17 had a timing side-channel and incorrectly handled RSA padding. A remote attacker could possibly use this issue to recover sensitive information. (CVE-2024-20952)  Update Instructions:  Run `sudo pro fix USN-6661-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-17-demo - 17.0.10+7-1~23.10.1 openjdk-17-doc - 17.0.10+7-1~23.10.1 openjdk-17-jdk - 17.0.10+7-1~23.10.1 openjdk-17-jdk-headless - 17.0.10+7-1~23.10.1 openjdk-17-jre - 17.0.10+7-1~23.10.1 openjdk-17-jre-headless - 17.0.10+7-1~23.10.1 openjdk-17-jre-zero - 17.0.10+7-1~23.10.1 openjdk-17-source - 17.0.10+7-1~23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20918" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1">CVE-2024-20918</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20919" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20919</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20921" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20932" priority="medium" public="20240116" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="high" usns="6661-1">CVE-2024-20932</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20945" priority="medium" public="20240217" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20945</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20952" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1">CVE-2024-20952</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:432191310695568839163481886114155420866" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66621000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6662-1 -- OpenJDK 21 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6662-1" ref_url="https://ubuntu.com/security/notices/USN-6662-1" />
+				<reference source="CVE" ref_id="CVE-2024-20918" ref_url="https://ubuntu.com/security/CVE-2024-20918" />
+				<reference source="CVE" ref_id="CVE-2024-20919" ref_url="https://ubuntu.com/security/CVE-2024-20919" />
+				<reference source="CVE" ref_id="CVE-2024-20921" ref_url="https://ubuntu.com/security/CVE-2024-20921" />
+				<reference source="CVE" ref_id="CVE-2024-20945" ref_url="https://ubuntu.com/security/CVE-2024-20945" />
+				<reference source="CVE" ref_id="CVE-2024-20952" ref_url="https://ubuntu.com/security/CVE-2024-20952" />
+				<description>Yi Yang discovered that the Hotspot component of OpenJDK 21 incorrectly handled array accesses in the C1 compiler. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. (CVE-2024-20918)  It was discovered that the Hotspot component of OpenJDK 21 did not properly verify bytecode in certain situations. An attacker could possibly use this issue to bypass Java sandbox restrictions. (CVE-2024-20919)  It was discovered that the Hotspot component of OpenJDK 21 had an optimization flaw when generating range check loop predicates. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. (CVE-2024-20921)  It was discovered that OpenJDK 21 could produce debug logs that contained private keys used for digital signatures. An attacker could possibly use this issue to obtain sensitive information. (CVE-2024-20945)  Hubert Kario discovered that the TLS implementation in OpenJDK 21 had a timing side-channel and incorrectly handled RSA padding. A remote attacker could possibly use this issue to recover sensitive information. (CVE-2024-20952)  Update Instructions:  Run `sudo pro fix USN-6662-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-21-demo - 21.0.2+13-1~23.10.1 openjdk-21-doc - 21.0.2+13-1~23.10.1 openjdk-21-jdk - 21.0.2+13-1~23.10.1 openjdk-21-jdk-headless - 21.0.2+13-1~23.10.1 openjdk-21-jre - 21.0.2+13-1~23.10.1 openjdk-21-jre-headless - 21.0.2+13-1~23.10.1 openjdk-21-jre-zero - 21.0.2+13-1~23.10.1 openjdk-21-source - 21.0.2+13-1~23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-02-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20918" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1">CVE-2024-20918</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20919" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20919</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20921" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20945" priority="medium" public="20240217" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1">CVE-2024-20945</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20952" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1">CVE-2024-20952</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:680559738137211499613329341847168082417" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -3720,6 +3884,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:577744199920868061201978724113244934498" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:663920194185740670378738725524230140426" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:416209867235987806931661078266508653408" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:426316152094553042427964274976665400982" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:670926368637654171976156724775099046119" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:419388540063355431841918233684009262070" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:609745025438473350139788800800713030294" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:584951186945149219761832439479491973011" />
@@ -3751,6 +3919,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:431852547166389586458121812151252397077" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:598316742801617101112897171688174610084" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:414902385562485929195002138440987816726" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:432191310695568839163481886114155420866" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:537788871772347892840134347133254020917" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:539605580935530215267792271211637406116" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:432486829339618453179311058775006074485" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:428889517515555317600370453789871244343" />
@@ -3908,6 +4080,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:397166525954386841799612932608960721240" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:671859577158322932414416580928101875935" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:539204263133814145941735361031081503420" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:432947273575852285842710707598021172003" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:617679440697285005434880113327163683806" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:539989946820818135020729819683625344920" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:425858634750361453900479739419342010749" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:473115500286386682385208091026222315034" />
@@ -3927,6 +4103,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:548100082179847879685605383542557836521" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:644608517740231907143556714847641377929" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:575017555437554849494091817811491258563" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:550938876276219624180888311534106442828" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:539097151552127203729139510068935001872" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:535318124690181814245040653836000004788" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:553242136718058097811315926731415786934" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:679796897083952200333348465049496062610" />
@@ -4028,6 +4208,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:414860281523375548388646059771482620414" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:397936403395729863340527771063765325589" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:625423199169958589831555078465762310587" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:603228600472112763730233353778288204914" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:496141765748868663625092991322320754506" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:625951227506728523957276963671846698785" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:365831369437563925059385553421613909823" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:475500543994915234537262864682349871044" />
@@ -4119,6 +4303,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:677960298153927920518078551154671215105" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:545394538848424594760125340361421613895" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:635038830281114017964691264843981558346" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:680559738137211499613329341847168082417" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:463584791305010318807128441303847863820" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:432003458454162209363493386103103962104" />
 		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" comment="Is kernel 6.5.0-\d+(-aws) currently running?" id="oval:com.ubuntu.mantic:tst:643934751742078154741995470111529226538" version="1">
 			<unix:object object_ref="oval:com.ubuntu.mantic:obj:539257525261347833398619290667170696549" />
@@ -4617,6 +4805,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:425858634750361453900479739419342010749" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:426316152094553042427964274976665400982" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:396649571745544250920627186783716085766" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:427029474201463562737753259611644839949" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:421436436887303087546070541778198398654" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4634,6 +4825,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:432353540069142786652431190011335317683" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:393799580311004666632081529807697199036" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:432947273575852285842710707598021172003" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:616750128513085384738145288941780407707" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:434633572264214188197547831667413665469" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:575549404029728743157521028039500018284" var_check="at least one" />
@@ -4658,6 +4852,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:457852329911742717817057819364404633515" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:557821857881229214439117469643141107197" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:463584791305010318807128441303847863820" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:668840071293986336158098404930840000558" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:465154301298605304211203762756631644856" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:358558821857642227064834266318205127694" var_check="at least one" />
@@ -4746,6 +4943,12 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:533270801332403891494221869294079330385" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:482182190162826536948763508793484615849" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:537788871772347892840134347133254020917" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:557821857881229214439117469643141107197" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:539097151552127203729139510068935001872" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:604315459036506367134456077740012535284" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:539940429531248938145042587194052327745" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:473789858031559994353317162244846485675" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4826,6 +5029,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:599457653857406489782903099472410424137" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:542780910115618381445050034212250911979" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:603228600472112763730233353778288204914" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:455690225984329683829977907413916141272" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:604833372393480708018236463896254165149" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:364260987676318732284529329552086601022" var_check="at least one" />
@@ -5084,6 +5290,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:425693122386799651569027705771077168796" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.4-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:432003458454162209363493386103103962104" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:21.0.2+13-1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:433126625628580297306141474042395088770" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.100~rc2-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5162,6 +5371,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:494435535002431747194031783422956010935" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2.2-1ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:496141765748868663625092991322320754506" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.22+7-0ubuntu2~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:500264735541283490303160405135164592703" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.7-3ubuntu2.4</linux:evr>
 		</linux:dpkginfo_state>
@@ -5207,6 +5419,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:532223034309496013202962946033010740013" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.7-3ubuntu2.7</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:535318124690181814245040653836000004788" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:15.6-0ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:536212881633357569761225524916219862062" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.10.5-3ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -5218,6 +5433,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:539013051167353359499126567323266551574" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.18.18-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:539605580935530215267792271211637406116" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.10+7-1~23.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:545925680824724572053925323492799040667" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.96-17ubuntu2.2</linux:evr>
@@ -5297,6 +5515,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:616825465203154283971746524639232235437" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.1672-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:617679440697285005434880113327163683806" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.9.14+dfsg-1.3ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:618206594433496751061111659564137161343" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.2-0ubuntu1~23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -5368,6 +5589,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:667010332598939846744181955861742483747" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.1-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:670926368637654171976156724775099046119" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.90-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:671859577158322932414416580928101875935" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.4.6-0ubuntu0.23.10.1</linux:evr>
@@ -5707,6 +5931,12 @@
 			<value>libcurl4-gnutls-dev</value>
 			<value>libcurl4-nss-dev</value>
 			<value>libcurl4-openssl-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:396649571745544250920627186783716085766" version="1" datatype="string" comment="Interim Release">
+			<value>dnsmasq</value>
+			<value>dnsmasq-base</value>
+			<value>dnsmasq-base-lua</value>
+			<value>dnsmasq-utils</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:576433769504538664619461474509787922514" version="1" datatype="string" comment="Interim Release">
 			<value>dotnet8</value>
@@ -6272,6 +6502,13 @@
 			<value>libxerces-c-dev</value>
 			<value>libxerces-c-doc</value>
 			<value>libxerces-c-samples</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:616750128513085384738145288941780407707" version="1" datatype="string" comment="Interim Release">
+			<value>libxml2</value>
+			<value>libxml2-dev</value>
+			<value>libxml2-doc</value>
+			<value>libxml2-utils</value>
+			<value>python3-libxml2</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:364260987676318732284529329552086601022" version="1" datatype="string" comment="Interim Release">
 			<value>libzookeeper-java</value>
