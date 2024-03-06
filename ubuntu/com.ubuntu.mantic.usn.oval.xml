@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-03-05T06:32:47</oval:timestamp>
+		<oval:timestamp>2024-03-06T06:32:26</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -2979,7 +2979,7 @@
 					<platform>Ubuntu 23.10</platform>
 				</affected>
 				<reference source="USN" ref_id="USN-6669-1" ref_url="https://ubuntu.com/security/notices/USN-6669-1" />
-				<description>Multiple security issues were discovered in Thunderbird. If a user were tricked into opening a specially crafted website in a browsing context, an attacker could potentially exploit these to cause a denial of service, obtain sensitive information, bypass security restrictions, cross-site tracing, or execute arbitrary code. (CVE-2024-0741, CVE-2024-0742, CVE-2024-0747, CVE-2024-0749, CVE-2024-0750, CVE-2024-0751, CVE-2024-0753, CVE-2024-0755, CVE-2024-1547, CVE-2024-1548, CVE-2024-1549, CVE-2024-1550, CVE-2024-1553)  Cornel Ionce discovered that Thunderbird did not properly manage memory when opening the print preview dialog. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2024-0746)  Alfred Peters discovered that Thunderbird did not properly manage memory when storing and re-accessing data on a networking channel. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2024-1546)  Johan Carlsson discovered that Thunderbird incorrectly handled Set-Cookie response headers in multipart HTTP responses. An attacker could potentially exploit this issue to inject arbitrary cookie values. (CVE-2024-1551)  Gary Kwong discovered that Thunderbird incorrectly generated codes on 32-bit ARM devices, which could lead to unexpected numeric conversions or undefined behaviour. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-1552)  Update Instructions:  Run `sudo pro fix USN-6669-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  thunderbird - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-dev - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-gnome-support - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-af - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ar - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ast - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-be - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-bg - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-bn - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-bn-bd - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-br - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ca - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-cak - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-cs - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-cy - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-da - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-de - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-dsb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-el - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-en - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-en-gb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-en-us - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-es - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-es-ar - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-es-es - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-et - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-eu - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fa - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fi - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fy - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fy-nl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ga - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ga-ie - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-gd - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-gl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-he - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hsb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hu - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hy - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-id - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-is - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-it - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ja - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ka - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-kab - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-kk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ko - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-lt - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-lv - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-mk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ms - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nb-no - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nn - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nn-no - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pa - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pa-in - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pt - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pt-br - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pt-pt - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-rm - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ro - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ru - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-si - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sq - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sv - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sv-se - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ta - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ta-lk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-th - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-tr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-uk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-uz - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-vi - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-cn - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-hans - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-hant - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-tw - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-mozsymbols - 1:115.8.1+build1-0ubuntu0.23.10.1 xul-ext-calendar-timezones - 1:115.8.1+build1-0ubuntu0.23.10.1 xul-ext-gdata-provider - 1:115.8.1+build1-0ubuntu0.23.10.1 xul-ext-lightning - 1:115.8.1+build1-0ubuntu0.23.10.1</description>
+				<description>Multiple security issues were discovered in Thunderbird. If a user were tricked into opening a specially crafted website in a browsing context, an attacker could potentially exploit these to cause a denial of service, obtain sensitive information, bypass security restrictions, cross-site tracing, or execute arbitrary code. (CVE-2024-0741, CVE-2024-0742, CVE-2024-0747, CVE-2024-0749, CVE-2024-0750, CVE-2024-0751, CVE-2024-0753, CVE-2024-0755, CVE-2024-1547, CVE-2024-1548, CVE-2024-1549, CVE-2024-1550, CVE-2024-1553, CVE-2024-1936)  Cornel Ionce discovered that Thunderbird did not properly manage memory when opening the print preview dialog. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2024-0746)  Alfred Peters discovered that Thunderbird did not properly manage memory when storing and re-accessing data on a networking channel. An attacker could potentially exploit this issue to cause a denial of service. (CVE-2024-1546)  Johan Carlsson discovered that Thunderbird incorrectly handled Set-Cookie response headers in multipart HTTP responses. An attacker could potentially exploit this issue to inject arbitrary cookie values. (CVE-2024-1551)  Gary Kwong discovered that Thunderbird incorrectly generated codes on 32-bit ARM devices, which could lead to unexpected numeric conversions or undefined behaviour. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-1552)  Update Instructions:  Run `sudo pro fix USN-6669-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  thunderbird - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-dev - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-gnome-support - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-af - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ar - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ast - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-be - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-bg - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-bn - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-bn-bd - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-br - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ca - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-cak - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-cs - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-cy - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-da - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-de - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-dsb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-el - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-en - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-en-gb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-en-us - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-es - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-es-ar - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-es-es - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-et - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-eu - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fa - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fi - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fy - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-fy-nl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ga - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ga-ie - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-gd - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-gl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-he - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hsb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hu - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-hy - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-id - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-is - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-it - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ja - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ka - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-kab - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-kk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ko - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-lt - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-lv - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-mk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ms - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nb - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nb-no - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nn - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-nn-no - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pa - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pa-in - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pt - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pt-br - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-pt-pt - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-rm - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ro - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ru - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-si - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sl - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sq - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sv - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-sv-se - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ta - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-ta-lk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-th - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-tr - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-uk - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-uz - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-vi - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-cn - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-hans - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-hant - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-locale-zh-tw - 1:115.8.1+build1-0ubuntu0.23.10.1 thunderbird-mozsymbols - 1:115.8.1+build1-0ubuntu0.23.10.1 xul-ext-calendar-timezones - 1:115.8.1+build1-0ubuntu0.23.10.1 xul-ext-gdata-provider - 1:115.8.1+build1-0ubuntu0.23.10.1 xul-ext-lightning - 1:115.8.1+build1-0ubuntu0.23.10.1</description>
 				<advisory from="security@ubuntu.com">
 					<severity>None</severity>
 					<issued date="2024-03-04" />
@@ -3049,6 +3049,46 @@
 				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:513265532323833711329730286187880094436" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66771000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6677-1 -- libde265 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6677-1" ref_url="https://ubuntu.com/security/notices/USN-6677-1" />
+				<description>It was discovered that libde265 could be made to dereference invalid memory. If a user or automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2023-27102)  It was discovered that libde265 could be made to write out of bounds. If a user or automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2023-27103)  It was discovered that libde265 could be made to write out of bounds. If a user or automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2023-43887, CVE-2023-47471, CVE-2023-49465, CVE-2023-49467, CVE-2023-49468)  Update Instructions:  Run `sudo pro fix USN-6677-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libde265-0 - 1.0.12-2ubuntu0.1 libde265-dev - 1.0.12-2ubuntu0.1 libde265-examples - 1.0.12-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2024-03-05" />
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:433286928724258483512930938444636147407" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66781000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6678-1 -- libgit2 vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6678-1" ref_url="https://ubuntu.com/security/notices/USN-6678-1" />
+				<description>It was discovered that libgit2 mishandled equivalent filenames on NTFS partitions. If a user or automated system were tricked into cloning a specially crafted repository, an attacker could possibly use this issue to execute arbitrary code. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS. (CVE-2020-12278, CVE-2020-12279)  It was discovered that libgit2 did not perform certificate checking by default. An attacker could possibly use this issue to perform a machine-in-the-middle attack. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2023-22742)  It was discovered that libgit2 could be made to run into an infinite loop. An attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 23.10. (CVE-2024-24575)  It was discovered that libgit2 did not properly manage memory. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2024-24577)  Update Instructions:  Run `sudo pro fix USN-6678-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libgit2-1.5 - 1.5.1+ds-1ubuntu1.1 libgit2-dev - 1.5.1+ds-1ubuntu1.1 libgit2-fixtures - 1.5.1+ds-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2024-03-05" />
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:648402339485254222287872613938454205073" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -3273,6 +3313,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:433131482723095114568652095342150669239" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:640989882411753167733276230734622127652" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:555158054181252363876234210786672332031" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:433286928724258483512930938444636147407" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:425815091354398068798483025406648428620" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:524034899022795196961181817441137637405" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:433976365357553617889130844493547181342" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:471423973085882626292994315412833524809" />
@@ -3609,6 +3653,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:646556676947946139424896993424902312504" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:641879531818054251302125689637040767418" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:502013200369017199021749208427134487472" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:648402339485254222287872613938454205073" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:503248556762378280020853738115181207562" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:617367008422512144737598578217645123868" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:652335263399512076713261759798568066564" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:677887702756423878289099442644752872264" />
@@ -4173,6 +4221,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:423173089357273740108920845441325966392" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:616178400826080496692667376563065986524" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:425815091354398068798483025406648428620" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:622568722693946194002417605154299034860" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:425858634750361453900479739419342010749" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:642917223997026211090222810349093146056" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -4280,6 +4331,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:496237340197393187624859059466240773139" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:403761795573927377708515667004896442943" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:503248556762378280020853738115181207562" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:463288494155407921459433030947516556206" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:504027432202283273346422043889838342764" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:526285244916791319249349060033572648495" var_check="at least one" />
@@ -4799,6 +4853,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:522525538210711984499240949986284190809" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.3-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:524034899022795196961181817441137637405" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.12-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:524849991581516216806588962859371720665" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.01.2~dfsg1-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -4924,6 +4981,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:616825465203154283971746524639232235437" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.0.1672-1ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:617367008422512144737598578217645123868" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.5.1+ds-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:617679440697285005434880113327163683806" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.9.14+dfsg-1.3ubuntu0.1</linux:evr>
@@ -5774,6 +5834,11 @@
 			<value>libcue2</value>
 			<value>libcue-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:622568722693946194002417605154299034860" version="1" datatype="string" comment="Interim Release">
+			<value>libde265-0</value>
+			<value>libde265-dev</value>
+			<value>libde265-examples</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:604315459036506367134456077740012535284" version="1" datatype="string" comment="Interim Release">
 			<value>libecpg6</value>
 			<value>libecpg-compat3</value>
@@ -5795,6 +5860,11 @@
 			<value>libfreeimageplus3</value>
 			<value>libfreeimageplus-dev</value>
 			<value>libfreeimageplus-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:463288494155407921459433030947516556206" version="1" datatype="string" comment="Interim Release">
+			<value>libgit2-1.5</value>
+			<value>libgit2-dev</value>
+			<value>libgit2-fixtures</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:369964320601684946368920698910419708727" version="1" datatype="string" comment="Interim Release">
 			<value>libiniparser1</value>
