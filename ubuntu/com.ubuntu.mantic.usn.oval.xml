@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-03-14T02:40:25</oval:timestamp>
+		<oval:timestamp>2024-03-15T06:40:57</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -3943,7 +3943,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-03-04" />
-					<cve href="https://ubuntu.com/security/CVE-2023-50782" priority="medium" public="20240205" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="high" usns="6663-1,6673-1">CVE-2023-50782</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-50782" priority="medium" public="20240205" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="high" usns="6663-1,6673-1,6673-2">CVE-2023-50782</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-26130" priority="medium" public="20240221" usns="6673-1">CVE-2024-26130</cve>
 				</advisory>
 			</metadata>
@@ -4279,6 +4279,56 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66941000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6694-1 -- Expat vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6694-1" ref_url="https://ubuntu.com/security/notices/USN-6694-1" />
+				<reference source="CVE" ref_id="CVE-2023-52425" ref_url="https://ubuntu.com/security/CVE-2023-52425" />
+				<reference source="CVE" ref_id="CVE-2024-28757" ref_url="https://ubuntu.com/security/CVE-2024-28757" />
+				<description>It was discovered that Expat could be made to consume large amounts of resources. If a user or automated system were tricked into processing specially crafted input, an attacker could possibly use this issue to cause a denial of service. (CVE-2023-52425, CVE-2024-28757)  Update Instructions:  Run `sudo pro fix USN-6694-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  expat - 2.5.0-2ubuntu0.1 libexpat1 - 2.5.0-2ubuntu0.1 libexpat1-dev - 2.5.0-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-03-14" />
+					<cve href="https://ubuntu.com/security/CVE-2023-52425" priority="medium" public="20240204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6694-1">CVE-2023-52425</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-28757" priority="medium" public="20240310" usns="6694-1">CVE-2024-28757</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:386916824192745268439217612143596165113" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:66951000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6695-1 -- TeX Live vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6695-1" ref_url="https://ubuntu.com/security/notices/USN-6695-1" />
+				<reference source="CVE" ref_id="CVE-2019-18604" ref_url="https://ubuntu.com/security/CVE-2019-18604" />
+				<reference source="CVE" ref_id="CVE-2023-32668" ref_url="https://ubuntu.com/security/CVE-2023-32668" />
+				<reference source="CVE" ref_id="CVE-2024-25262" ref_url="https://ubuntu.com/security/CVE-2024-25262" />
+				<description>It was discovered that TeX Live incorrectly handled certain memory operations in the embedded axodraw2 tool. An attacker could possibly use this issue to cause TeX Live to crash, resulting in a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2019-18604)  It was discovered that TeX Live allowed documents to make arbitrary network requests. If a user or automated system were tricked into opening a specially crafted document, a remote attacker could possibly use this issue to exfiltrate sensitive information, or perform other network-related attacks. This issue only affected Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2023-32668)  It was discovered that TeX Live incorrectly handled certain TrueType fonts. If a user or automated system were tricked into opening a specially crafted TrueType font, a remote attacker could use this issue to cause TeX Live to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2024-25262)  Update Instructions:  Run `sudo pro fix USN-6695-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libkpathsea6 - 2023.20230311.66589-6ubuntu0.1 libkpathsea-dev - 2023.20230311.66589-6ubuntu0.1 libptexenc1 - 2023.20230311.66589-6ubuntu0.1 libptexenc-dev - 2023.20230311.66589-6ubuntu0.1 libsynctex2 - 2023.20230311.66589-6ubuntu0.1 libsynctex-dev - 2023.20230311.66589-6ubuntu0.1 libtexlua53 - 2023.20230311.66589-6ubuntu0.1 libtexlua53-5 - 2023.20230311.66589-6ubuntu0.1 libtexlua53-dev - 2023.20230311.66589-6ubuntu0.1 libtexlua-dev - 2023.20230311.66589-6ubuntu0.1 libtexluajit2 - 2023.20230311.66589-6ubuntu0.1 libtexluajit-dev - 2023.20230311.66589-6ubuntu0.1 texlive-binaries - 2023.20230311.66589-6ubuntu0.1 texlive-binaries-sse2 - 2023.20230311.66589-6ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-03-14" />
+					<cve href="https://ubuntu.com/security/CVE-2019-18604" priority="low" public="20191029" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="6695-1">CVE-2019-18604</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-32668" priority="medium" public="20230511" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6695-1">CVE-2023-32668</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-25262" priority="medium" public="20240229" usns="6695-1">CVE-2024-25262</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:525452235999615312771208558504632600100" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -4384,6 +4434,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:384598151505864979241207106571944075831" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:428037284032035202394446107209226746006" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:616825465203154283971746524639232235437" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:386916824192745268439217612143596165113" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:351767107871151577549302640645940420822" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:491132185687239355365149927422489423574" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:386948232760259182493393076957877021987" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:625532336777875508492883450432703260819" />
@@ -4644,6 +4698,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:522882514650030513005491830956534423802" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:480332954370563311448166750351480237606" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:351745216381132695526514391287708918942" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:525452235999615312771208558504632600100" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:439796499307916303995218944885600719524" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:609153002425195329253258538599951629009" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:525769847154136625864305038270581904917" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:363505817989458850079761608882388082987" />
@@ -5411,6 +5469,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:350259112187540096510072928016449524198" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:553561554232162888935571460426947787263" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:351767107871151577549302640645940420822" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:598523524310341909171452554363382108213" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:354400947453582332505241706373378924206" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:619616406775378836901820337972075878176" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -5545,6 +5606,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:437396372036569299525201338944729609194" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:473789858031559994353317162244846485675" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:439796499307916303995218944885600719524" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:450017548588615266402255356994509321724" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:440354891384050552694222832141486729882" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:665356428932256426353170084908159868455" var_check="at least one" />
@@ -6145,6 +6209,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:489838783090843560718477260963197434030" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.8.1-4ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:491132185687239355365149927422489423574" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.5.0-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:492841401921286637845761555265111964209" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:115.4.1+build1-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -6309,6 +6376,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:608970568940481699380011247794468185452" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:23.09.0-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:609153002425195329253258538599951629009" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2023.20230311.66589-6ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:613195547196493188915137259311810005236" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:23.2.0-1ubuntu0.3</linux:evr>
@@ -6785,6 +6855,11 @@
 			<value>exim4-dev</value>
 			<value>eximon4</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:598523524310341909171452554363382108213" version="1" datatype="string" comment="Interim Release">
+			<value>expat</value>
+			<value>libexpat1</value>
+			<value>libexpat1-dev</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:395958084494310618328892881805414203000" version="1" datatype="string" comment="Interim Release">
 			<value>filezilla</value>
 			<value>filezilla-common</value>
@@ -7220,6 +7295,22 @@
 			<value>libiniparser1</value>
 			<value>libiniparser-dev</value>
 			<value>libiniparser-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:450017548588615266402255356994509321724" version="1" datatype="string" comment="Interim Release">
+			<value>libkpathsea6</value>
+			<value>libkpathsea-dev</value>
+			<value>libptexenc1</value>
+			<value>libptexenc-dev</value>
+			<value>libsynctex2</value>
+			<value>libsynctex-dev</value>
+			<value>libtexlua53</value>
+			<value>libtexlua53-5</value>
+			<value>libtexlua53-dev</value>
+			<value>libtexlua-dev</value>
+			<value>libtexluajit2</value>
+			<value>libtexluajit-dev</value>
+			<value>texlive-binaries</value>
+			<value>texlive-binaries-sse2</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:657677555049968960121924811563711511967" version="1" datatype="string" comment="Interim Release">
 			<value>libmysqlclient21</value>

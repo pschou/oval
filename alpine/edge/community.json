@@ -594,7 +594,12 @@
 				}
 			}
 		},
-		{"pkg": {"name": "dotnet8-runtime","secfixes": {"8.0.2-r0": ["CVE-2024-21386","CVE-2024-21404"]}}},
+		{
+			"pkg": {
+				"name": "dotnet8-runtime",
+				"secfixes": {"8.0.2-r0": ["CVE-2024-21386","CVE-2024-21404"],"8.0.3-r0": ["CVE-2024-21392","CVE-2024-26190"]}
+			}
+		},
 		{
 			"pkg": {
 				"name": "drupal7",
@@ -1878,6 +1883,7 @@
 				}
 			}
 		},
+		{"pkg": {"name": "grpc","secfixes": {"1.59.3-r0": ["CVE-2023-44487"]}}},
 		{"pkg": {"name": "gsoap","secfixes": {"2.8.113-r0": ["CVE-2021-21783"]}}},
 		{
 			"pkg": {
