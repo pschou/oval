@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-04-10T04:41:37</oval:timestamp>
+		<oval:timestamp>2024-04-11T04:42:47</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4624,7 +4624,7 @@
 					<severity>Medium</severity>
 					<issued date="2024-03-26" />
 					<cve href="https://ubuntu.com/security/CVE-2024-0743" priority="medium" public="20240123" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6610-1,6717-1">CVE-2024-0743</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5388" priority="medium" public="20231023" usns="6703-1,6717-1">CVE-2023-5388</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5388" priority="medium" public="20231023" usns="6703-1,6717-1,6727-1">CVE-2023-5388</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-2607" priority="medium" public="20240319" usns="6703-1,6717-1">CVE-2024-2607</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-2608" priority="medium" public="20240319" usns="6703-1,6717-1">CVE-2024-2608</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-2610" priority="medium" public="20240319" usns="6703-1,6717-1">CVE-2024-2610</cve>
@@ -4677,7 +4677,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-03-27" />
-					<cve href="https://ubuntu.com/security/CVE-2024-28085" priority="medium" public="20240327" usns="6719-1">CVE-2024-28085</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-28085" priority="medium" public="20240327" usns="6719-1,6719-2">CVE-2024-28085</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -4685,6 +4685,29 @@
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:458976947043834388348456418976323064721" comment="Interim Release" />
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:565645188758289390737029262463140980793" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:67192000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6719-2 -- util-linux vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6719-2" ref_url="https://ubuntu.com/security/notices/USN-6719-2" />
+				<reference source="CVE" ref_id="CVE-2024-28085" ref_url="https://ubuntu.com/security/CVE-2024-28085" />
+				<description>USN-6719-1 fixed a vulnerability in util-linux. Unfortunately, it was discovered that the fix did not fully address the issue. This update removes the setgid permission bit from the wall and write utilities.  Original advisory details:   Skyler Ferrante discovered that the util-linux wall command did not filter  escape sequences from command line arguments. A local attacker could  possibly use this issue to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-6719-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  bsdextrautils - 2.39.1-4ubuntu2.2 bsdutils - 1:2.39.1-4ubuntu2.2 eject - 2.39.1-4ubuntu2.2 fdisk - 2.39.1-4ubuntu2.2 libblkid1 - 2.39.1-4ubuntu2.2 libblkid-dev - 2.39.1-4ubuntu2.2 libfdisk1 - 2.39.1-4ubuntu2.2 libfdisk-dev - 2.39.1-4ubuntu2.2 libmount1 - 2.39.1-4ubuntu2.2 libmount-dev - 2.39.1-4ubuntu2.2 libsmartcols1 - 2.39.1-4ubuntu2.2 libsmartcols-dev - 2.39.1-4ubuntu2.2 libuuid1 - 2.39.1-4ubuntu2.2 mount - 2.39.1-4ubuntu2.2 rfkill - 2.39.1-4ubuntu2.2 util-linux - 2.39.1-4ubuntu2.2 util-linux-extra - 2.39.1-4ubuntu2.2 util-linux-locales - 2.39.1-4ubuntu2.2 uuid-dev - 2.39.1-4ubuntu2.2 uuid-runtime - 2.39.1-4ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-10" />
+					<cve href="https://ubuntu.com/security/CVE-2024-28085" priority="medium" public="20240327" usns="6719-1,6719-2">CVE-2024-28085</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:588977482572468510036225576310690844012" comment="Interim Release" />
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:441966148069195817779563232900704761484" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -4807,6 +4830,62 @@
 						<criterion test_ref="oval:com.ubuntu.mantic:tst:451780807732586846079998353239250224093" comment="Interim Release" />
 						<criterion test_ref="oval:com.ubuntu.mantic:tst:356323062358273086295495664544748872811" comment="Interim Release" />
 					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:67271000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6727-1 -- NSS vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6727-1" ref_url="https://ubuntu.com/security/notices/USN-6727-1" />
+				<reference source="CVE" ref_id="CVE-2023-4421" ref_url="https://ubuntu.com/security/CVE-2023-4421" />
+				<reference source="CVE" ref_id="CVE-2023-5388" ref_url="https://ubuntu.com/security/CVE-2023-5388" />
+				<reference source="CVE" ref_id="CVE-2023-6135" ref_url="https://ubuntu.com/security/CVE-2023-6135" />
+				<description>It was discovered that NSS incorrectly handled padding when checking PKCS#1 certificates. A remote attacker could possibly use this issue to perform Bleichenbacher-like attacks and recover private data. This issue only affected Ubuntu 20.04 LTS. (CVE-2023-4421)  It was discovered that NSS had a timing side-channel when performing RSA decryption. A remote attacker could possibly use this issue to recover private data. (CVE-2023-5388)  It was discovered that NSS had a timing side-channel when using certain NIST curves. A remote attacker could possibly use this issue to recover private data. (CVE-2023-6135)  The NSS package contained outdated CA certificates. This update refreshes the NSS package to version 3.98 which includes the latest CA certificate bundle and other security improvements.  Update Instructions:  Run `sudo pro fix USN-6727-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnss3 - 2:3.98-0ubuntu0.23.10.1 libnss3-dev - 2:3.98-0ubuntu0.23.10.1 libnss3-tools - 2:3.98-0ubuntu0.23.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-10" />
+					<cve href="https://ubuntu.com/security/CVE-2023-4421" priority="medium" public="20231212" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6727-1">CVE-2023-4421</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5388" priority="medium" public="20231023" usns="6703-1,6717-1,6727-1">CVE-2023-5388</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-6135" priority="medium" public="20231220" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N" cvss_severity="medium" usns="6562-1,6727-1">CVE-2023-6135</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:600110586564682498956608265915561307798" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:67281000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6728-1 -- Squid vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6728-1" ref_url="https://ubuntu.com/security/notices/USN-6728-1" />
+				<reference source="CVE" ref_id="CVE-2023-49288" ref_url="https://ubuntu.com/security/CVE-2023-49288" />
+				<reference source="CVE" ref_id="CVE-2023-5824" ref_url="https://ubuntu.com/security/CVE-2023-5824" />
+				<reference source="CVE" ref_id="CVE-2024-23638" ref_url="https://ubuntu.com/security/CVE-2024-23638" />
+				<reference source="CVE" ref_id="CVE-2024-25111" ref_url="https://ubuntu.com/security/CVE-2024-25111" />
+				<reference source="CVE" ref_id="CVE-2024-25617" ref_url="https://ubuntu.com/security/CVE-2024-25617" />
+				<description>Joshua Rogers discovered that Squid incorrectly handled collapsed forwarding. A remote attacker could possibly use this issue to cause Squid to crash, resulting in a denial of service. This issue only affected Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2023-49288)  Joshua Rogers discovered that Squid incorrectly handled certain structural elements. A remote attacker could possibly use this issue to cause Squid to crash, resulting in a denial of service. (CVE-2023-5824)  Joshua Rogers discovered that Squid incorrectly handled Cache Manager error responses. A remote trusted client can possibly use this issue to cause Squid to crash, resulting in a denial of service. (CVE-2024-23638)  Joshua Rogers discovered that Squid incorrectly handled the HTTP Chunked decoder. A remote attacker could possibly use this issue to cause Squid to stop responding, resulting in a denial of service. (CVE-2024-25111)  Joshua Rogers discovered that Squid incorrectly handled HTTP header parsing. A remote trusted client can possibly use this issue to cause Squid to crash, resulting in a denial of service. (CVE-2024-25617)  Update Instructions:  Run `sudo pro fix USN-6728-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  squid - 6.1-2ubuntu1.3 squid-cgi - 6.1-2ubuntu1.3 squid-common - 6.1-2ubuntu1.3 squid-openssl - 6.1-2ubuntu1.3 squid-purge - 6.1-2ubuntu1.3 squidclient - 6.1-2ubuntu1.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-10" />
+					<cve href="https://ubuntu.com/security/CVE-2023-49288" priority="medium" public="20231204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6728-1">CVE-2023-49288</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5824" priority="medium" public="20231103" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6728-1">CVE-2023-5824</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23638" priority="medium" public="20240124" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6728-1">CVE-2024-23638</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-25111" priority="medium" public="20240306" usns="6728-1">CVE-2024-25111</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-25617" priority="medium" public="20240214" usns="6728-1">CVE-2024-25617</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:410100812435812048393582515341048229872" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -4984,6 +5063,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:524152483884377130131545314919253057993" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:548381247112005490618829482783245061263" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:410100812435812048393582515341048229872" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:442940327842311739815931841367735103608" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:622213192934432009815336418880199420567" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:410327818656338851018999491641772401547" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:599104631068703223363689963501887702052" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:522420495410033925841784750099162972447" />
@@ -5055,6 +5138,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:433976365357553617889130844493547181342" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:471423973085882626292994315412833524809" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:489838783090843560718477260963197434030" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:441966148069195817779563232900704761484" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:375936445022698688414803005397935616793" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:560831294444119559732282265293782051598" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:443148022359338047835275965513203787073" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:489311154989831425485290497521930319170" />
@@ -5328,6 +5415,10 @@
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:447498614120664460606517039904051864226" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:662594627208356530669023573612279593549" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:588977482572468510036225576310690844012" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:391876087922470005346966597085796245161" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:537699857486474023155783713197124359162" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:591977941693064781915018405964716558456" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:523653682481509660035860027579253708251" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:347931573941653675288079828258031838615" />
@@ -5351,6 +5442,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:599649583720421760159036343267893746159" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:478992860970055157629725780074862987219" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:600110586564682498956608265915561307798" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:561882456062688780817002567880223625761" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:458291649561559510078030067573508032403" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:601631457166416030243721819805581787867" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:475965579492697951529720861967392835913" />
@@ -6163,6 +6258,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:375389382735623067301894218975777090686" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:553594731357326823396188043712996112244" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:375936445022698688414803005397935616793" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:368277054297113979997131117059126743264" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:377131679861559358636458586093456733328" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:657677555049968960121924811563711511967" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6183,6 +6281,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:390845858383524133190032491356685906143" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:580746137900862903073653880605699085753" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:391876087922470005346966597085796245161" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:556359878136031779058573372932273758027" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:393098847507717506641551964377645640550" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:473789858031559994353317162244846485675" var_check="at least one" />
@@ -6276,6 +6377,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:440565908307499298787406569708318891562" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:431616919203190711323193757560838269545" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:442940327842311739815931841367735103608" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:575549404029728743157521028039500018284" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:447268734586774245949110358934035753797" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:507935021922380742965284418283267454749" var_check="at least one" />
@@ -6462,6 +6566,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:560622548546875876584570412878937733843" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:345443898926063000557241285383707223097" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:561882456062688780817002567880223625761" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:400472198045591649158952984532522787046" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:563919075335707763635861433558403377625" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:397679483041233973050492162414049049073" var_check="at least one" />
@@ -6861,6 +6968,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:457201334385795134070331037776076974867" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.42.2-0ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:458291649561559510078030067573508032403" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:3.98-0ubuntu0.23.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:459868575716042625090119116386230057909" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.8-1ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -6996,6 +7106,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:536748621484728362214833568825382018980" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.21.1-1ubuntu0.23.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:537699857486474023155783713197124359162" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:2.39.1-4ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:538789987096699652417962017525386455731" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:10.11.6-0ubuntu0.23.10.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -7040,6 +7153,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:560278044798688866163618575322527514924" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12.1-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:560831294444119559732282265293782051598" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.39.1-4ubuntu2.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:561595120535185407570845136494942466347" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.35-0ubuntu0.23.10.1</linux:evr>
@@ -7133,6 +7249,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:620613548693480506555622116590674691790" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.21+9-0ubuntu1~23.10</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:622213192934432009815336418880199420567" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.1-2ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:622848292007318230731084457323539399723" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:23.2.0-1ubuntu0.5</linux:evr>
@@ -8112,6 +8231,11 @@
 			<value>libnode-dev</value>
 			<value>nodejs</value>
 			<value>nodejs-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.mantic:var:400472198045591649158952984532522787046" version="1" datatype="string" comment="Interim Release">
+			<value>libnss3</value>
+			<value>libnss3-dev</value>
+			<value>libnss3-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.mantic:var:479514667853271818762547754464912190778" version="1" datatype="string" comment="Interim Release">
 			<value>libodbc2</value>
