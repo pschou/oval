@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-04-11T04:42:47</oval:timestamp>
+		<oval:timestamp>2024-04-12T04:39:58</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -4875,8 +4875,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-04-10" />
-					<cve href="https://ubuntu.com/security/CVE-2023-49288" priority="medium" public="20231204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6728-1">CVE-2023-49288</cve>
-					<cve href="https://ubuntu.com/security/CVE-2023-5824" priority="medium" public="20231103" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6728-1">CVE-2023-5824</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-49288" priority="medium" public="20231204" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6728-1,6728-2">CVE-2023-49288</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-5824" priority="medium" public="20231103" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6728-1,6728-2">CVE-2023-5824</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-23638" priority="medium" public="20240124" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6728-1">CVE-2024-23638</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-25111" priority="medium" public="20240306" usns="6728-1">CVE-2024-25111</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-25617" priority="medium" public="20240214" usns="6728-1">CVE-2024-25617</cve>
@@ -4886,6 +4886,32 @@
 				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.mantic:tst:410100812435812048393582515341048229872" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:67291000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6729-1 -- Apache HTTP Server vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6729-1" ref_url="https://ubuntu.com/security/notices/USN-6729-1" />
+				<reference source="CVE" ref_id="CVE-2023-38709" ref_url="https://ubuntu.com/security/CVE-2023-38709" />
+				<reference source="CVE" ref_id="CVE-2024-24795" ref_url="https://ubuntu.com/security/CVE-2024-24795" />
+				<reference source="CVE" ref_id="CVE-2024-27316" ref_url="https://ubuntu.com/security/CVE-2024-27316" />
+				<description>Orange Tsai discovered that the Apache HTTP Server incorrectly handled validating certain input. A remote attacker could possibly use this issue to perform HTTP request splitting attacks. (CVE-2023-38709)  Keran Mu and Jianjun Chen discovered that the Apache HTTP Server incorrectly handled validating certain input. A remote attacker could possibly use this issue to perform HTTP request splitting attacks. (CVE-2024-24795)  Bartek Nowotarski discovered that the Apache HTTP Server HTTP/2 module incorrectly handled endless continuation frames. A remote attacker could possibly use this issue to cause the server to consume resources, leading to a denial of service. (CVE-2024-27316)  Update Instructions:  Run `sudo pro fix USN-6729-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  apache2 - 2.4.57-2ubuntu2.4 apache2-bin - 2.4.57-2ubuntu2.4 apache2-data - 2.4.57-2ubuntu2.4 apache2-dev - 2.4.57-2ubuntu2.4 apache2-doc - 2.4.57-2ubuntu2.4 apache2-ssl-dev - 2.4.57-2ubuntu2.4 apache2-suexec-custom - 2.4.57-2ubuntu2.4 apache2-suexec-pristine - 2.4.57-2ubuntu2.4 apache2-utils - 2.4.57-2ubuntu2.4 libapache2-mod-md - 2.4.57-2ubuntu2.4 libapache2-mod-proxy-uwsgi - 2.4.57-2ubuntu2.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38709" priority="medium" public="20240404" usns="6729-1">CVE-2023-38709</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-24795" priority="medium" public="20240404" usns="6729-1">CVE-2024-24795</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-27316" priority="medium" public="20240327" usns="6729-1">CVE-2024-27316</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:553461658972563857845016950442266856205" comment="Interim Release" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -5362,6 +5388,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:553242136718058097811315926731415786934" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:679796897083952200333348465049496062610" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:374299411691793535322005502176759433252" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:553461658972563857845016950442266856205" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:361927751186872411537403860833539428654" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:513526710421723202094769664285929122885" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:554087282112596740514741190668914442297" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:486478455379761641840947955802830611790" />
@@ -6231,6 +6261,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:360191356184774717577509894635704317482" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:655944096764808563560098120980545464715" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:361927751186872411537403860833539428654" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:388236145566469612965435835403692907727" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:363505817989458850079761608882388082987" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:548990305050191590694432132298301503898" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7066,6 +7099,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:512343109617957744810808210217940238173" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0.126-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:513526710421723202094769664285929122885" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.57-2ubuntu2.4</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:518647662790002744241762296148580421620" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.7-0ubuntu2.2</linux:evr>
