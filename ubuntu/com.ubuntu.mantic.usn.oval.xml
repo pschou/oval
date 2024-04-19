@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-04-18T04:42:29</oval:timestamp>
+		<oval:timestamp>2024-04-19T04:44:22</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5128,6 +5128,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.mantic:def:67371000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6737-1 -- GNU C Library vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 23.10</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6737-1" ref_url="https://ubuntu.com/security/notices/USN-6737-1" />
+				<reference source="CVE" ref_id="CVE-2024-2961" ref_url="https://ubuntu.com/security/CVE-2024-2961" />
+				<description>Charles Fol discovered that the GNU C Library iconv feature incorrectly handled certain input sequences. An attacker could use this issue to cause the GNU C Library to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6737-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  glibc-doc - 2.38-1ubuntu6.2 glibc-source - 2.38-1ubuntu6.2 libc6 - 2.38-1ubuntu6.2 libc6-amd64 - 2.38-1ubuntu6.2 libc6-dev - 2.38-1ubuntu6.2 libc6-dev-amd64 - 2.38-1ubuntu6.2 libc6-dev-i386 - 2.38-1ubuntu6.2 libc6-dev-s390 - 2.38-1ubuntu6.2 libc6-dev-x32 - 2.38-1ubuntu6.2 libc6-i386 - 2.38-1ubuntu6.2 libc6-prof - 2.38-1ubuntu6.2 libc6-s390 - 2.38-1ubuntu6.2 libc6-x32 - 2.38-1ubuntu6.2 libc-bin - 2.38-1ubuntu6.2 libc-dev-bin - 2.38-1ubuntu6.2 libc-devtools - 2.38-1ubuntu6.2 locales - 2.38-1ubuntu6.2 locales-all - 2.38-1ubuntu6.2 nscd - 2.38-1ubuntu6.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-2961" priority="medium" public="20240417" usns="6737-1">CVE-2024-2961</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.mantic:def:100" comment="Ubuntu 23.10 (mantic) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.mantic:tst:650494596577443184779176425343146084081" comment="Interim Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:341329452814696744721760630985685447705" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
@@ -5825,6 +5847,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:648402339485254222287872613938454205073" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:503248556762378280020853738115181207562" />
 			<linux:state state_ref="oval:com.ubuntu.mantic:ste:617367008422512144737598578217645123868" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:650494596577443184779176425343146084081" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
+			<linux:object object_ref="oval:com.ubuntu.mantic:obj:448755419458585511113877168380725803665" />
+			<linux:state state_ref="oval:com.ubuntu.mantic:ste:416026018441219392795474484160426991462" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.mantic:tst:652335263399512076713261759798568066564" version="1" check_existence="at_least_one_exists" check="at least one" comment="Interim Release">
 			<linux:object object_ref="oval:com.ubuntu.mantic:obj:677887702756423878289099442644752872264" />
@@ -6673,6 +6699,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:447498614120664460606517039904051864226" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:622923979815955469455159812007479523223" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:448755419458585511113877168380725803665" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.mantic:var:536907279945975024127417072902274427906" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.mantic:obj:454465004087014453877240743368587606297" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.mantic:var:375332710533474772467184887552936684526" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7214,6 +7243,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:414989391063472009872117513835621615147" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.103-0ubuntu1~23.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:416026018441219392795474484160426991462" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.38-1ubuntu6.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.mantic:ste:416050407022327930906889357757937748570" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.101-8.0.1-0ubuntu1~23.10.1</linux:evr>
