@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-04-29T04:41:16</oval:timestamp>
+		<oval:timestamp>2024-04-30T06:47:45</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -18,6 +18,200 @@
 				<criterion test_ref="oval:com.ubuntu.noble:tst:433802476555242390331857360987864442811" comment="The host is running Ubuntu 24.04 LTS. (noble)." />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67183000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6718-3 -- curl vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6718-3" ref_url="https://ubuntu.com/security/notices/USN-6718-3" />
+				<reference source="CVE" ref_id="CVE-2024-2004" ref_url="https://ubuntu.com/security/CVE-2024-2004" />
+				<reference source="CVE" ref_id="CVE-2024-2398" ref_url="https://ubuntu.com/security/CVE-2024-2398" />
+				<description>USN-6718-1 fixed vulnerabilities in curl. This update provides the corresponding updates for Ubuntu 24.04 LTS.  Original advisory details:   Dan Fandrich discovered that curl would incorrectly use the default set of  protocols when a parameter option disabled all protocols without adding  any, contrary to expectations. This issue only affected Ubuntu 23.10.  (CVE-2024-2004)    It was discovered that curl incorrectly handled memory when limiting the  amount of headers when HTTP/2 server push is allowed. A remote attacker  could possibly use this issue to cause curl to consume resources, leading  to a denial of service. (CVE-2024-2398)  Update Instructions:  Run `sudo pro fix USN-6718-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 8.5.0-2ubuntu10.1 libcurl3t64-gnutls - 8.5.0-2ubuntu10.1 libcurl4-doc - 8.5.0-2ubuntu10.1 libcurl4-gnutls-dev - 8.5.0-2ubuntu10.1 libcurl4-openssl-dev - 8.5.0-2ubuntu10.1 libcurl4t64 - 8.5.0-2ubuntu10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-2004" priority="low" public="20240327" usns="6718-1,6718-3">CVE-2024-2004</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-2398" priority="medium" public="20240327" usns="6718-1,6718-2,6718-3">CVE-2024-2398</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:342369487856323964156351400302837366273" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67293000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6729-3 -- Apache HTTP Server vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6729-3" ref_url="https://ubuntu.com/security/notices/USN-6729-3" />
+				<reference source="CVE" ref_id="CVE-2023-38709" ref_url="https://ubuntu.com/security/CVE-2023-38709" />
+				<reference source="CVE" ref_id="CVE-2024-24795" ref_url="https://ubuntu.com/security/CVE-2024-24795" />
+				<reference source="CVE" ref_id="CVE-2024-27316" ref_url="https://ubuntu.com/security/CVE-2024-27316" />
+				<description>USN-6729-1 fixed vulnerabilities in Apache HTTP Server. This update provides the corresponding updates for Ubuntu 24.04 LTS.  Original advisory details:   Orange Tsai discovered that the Apache HTTP Server incorrectly handled  validating certain input. A remote attacker could possibly use this  issue to perform HTTP request splitting attacks. (CVE-2023-38709)    Keran Mu and Jianjun Chen discovered that the Apache HTTP Server  incorrectly handled validating certain input. A remote attacker could  possibly use this issue to perform HTTP request splitting attacks.  (CVE-2024-24795)    Bartek Nowotarski discovered that the Apache HTTP Server HTTP/2 module  incorrectly handled endless continuation frames. A remote attacker could  possibly use this issue to cause the server to consume resources, leading  to a denial of service. (CVE-2024-27316)  Update Instructions:  Run `sudo pro fix USN-6729-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  apache2 - 2.4.58-1ubuntu8.1 apache2-bin - 2.4.58-1ubuntu8.1 apache2-data - 2.4.58-1ubuntu8.1 apache2-dev - 2.4.58-1ubuntu8.1 apache2-doc - 2.4.58-1ubuntu8.1 apache2-ssl-dev - 2.4.58-1ubuntu8.1 apache2-suexec-custom - 2.4.58-1ubuntu8.1 apache2-suexec-pristine - 2.4.58-1ubuntu8.1 apache2-utils - 2.4.58-1ubuntu8.1 libapache2-mod-md - 2.4.58-1ubuntu8.1 libapache2-mod-proxy-uwsgi - 2.4.58-1ubuntu8.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2023-38709" priority="medium" public="20240404" usns="6729-1,6729-2,6729-3">CVE-2023-38709</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-24795" priority="medium" public="20240404" usns="6729-1,6729-2,6729-3">CVE-2024-24795</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-27316" priority="medium" public="20240327" usns="6729-1,6729-2,6729-3">CVE-2024-27316</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:668556808487031061461695455188779632166" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67332000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6733-2 -- GnuTLS vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6733-2" ref_url="https://ubuntu.com/security/notices/USN-6733-2" />
+				<reference source="CVE" ref_id="CVE-2024-28834" ref_url="https://ubuntu.com/security/CVE-2024-28834" />
+				<reference source="CVE" ref_id="CVE-2024-28835" ref_url="https://ubuntu.com/security/CVE-2024-28835" />
+				<description>USN-6733-1 fixed vulnerabilities in GnuTLS. This update provides the corresponding updates for Ubuntu 24.04 LTS.  Original advisory details:   It was discovered that GnuTLS had a timing side-channel when performing  certain ECDSA operations. A remote attacker could possibly use this issue  to recover sensitive information. (CVE-2024-28834)    It was discovered that GnuTLS incorrectly handled verifying certain PEM  bundles. A remote attacker could possibly use this issue to cause GnuTLS to  crash, resulting in a denial of service. This issue only affected Ubuntu  22.04 LTS and Ubuntu 23.10. (CVE-2024-28835)  Update Instructions:  Run `sudo pro fix USN-6733-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gnutls-bin - 3.8.3-1.1ubuntu3.1 gnutls-doc - 3.8.3-1.1ubuntu3.1 libgnutls28-dev - 3.8.3-1.1ubuntu3.1 libgnutls30t64 - 3.8.3-1.1ubuntu3.1 libgnutls-dane0t64 - 3.8.3-1.1ubuntu3.1 libgnutls-openssl27t64 - 3.8.3-1.1ubuntu3.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-28834" priority="medium" public="20240321" usns="6733-1,6733-2">CVE-2024-28834</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-28835" priority="medium" public="20240321" usns="6733-1,6733-2">CVE-2024-28835</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:676079145321054062729235553760769321374" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67342000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6734-2 -- libvirt vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6734-2" ref_url="https://ubuntu.com/security/notices/USN-6734-2" />
+				<reference source="CVE" ref_id="CVE-2024-1441" ref_url="https://ubuntu.com/security/CVE-2024-1441" />
+				<reference source="CVE" ref_id="CVE-2024-2494" ref_url="https://ubuntu.com/security/CVE-2024-2494" />
+				<description>USN-6734-1 fixed vulnerabilities in libvirt. This update provides the corresponding updates for Ubuntu 24.04 LTS.  Original advisory details:   Alexander Kuznetsov discovered that libvirt incorrectly handled certain API  calls. An attacker could possibly use this issue to cause libvirt to crash,  resulting in a denial of service. (CVE-2024-1441)    It was discovered that libvirt incorrectly handled certain RPC library API  calls. An attacker could possibly use this issue to cause libvirt to crash,  resulting in a denial of service. (CVE-2024-2494)  Update Instructions:  Run `sudo pro fix USN-6734-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnss-libvirt - 10.0.0-2ubuntu8.1 libvirt0 - 10.0.0-2ubuntu8.1 libvirt-clients - 10.0.0-2ubuntu8.1 libvirt-clients-qemu - 10.0.0-2ubuntu8.1 libvirt-daemon - 10.0.0-2ubuntu8.1 libvirt-daemon-config-network - 10.0.0-2ubuntu8.1 libvirt-daemon-config-nwfilter - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-lxc - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-qemu - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-storage-gluster - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-storage-iscsi-direct - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-storage-rbd - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-storage-zfs - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-vbox - 10.0.0-2ubuntu8.1 libvirt-daemon-driver-xen - 10.0.0-2ubuntu8.1 libvirt-daemon-system - 10.0.0-2ubuntu8.1 libvirt-daemon-system-systemd - 10.0.0-2ubuntu8.1 libvirt-daemon-system-sysv - 10.0.0-2ubuntu8.1 libvirt-dev - 10.0.0-2ubuntu8.1 libvirt-doc - 10.0.0-2ubuntu8.1 libvirt-l10n - 10.0.0-2ubuntu8.1 libvirt-login-shell - 10.0.0-2ubuntu8.1 libvirt-sanlock - 10.0.0-2ubuntu8.1 libvirt-wireshark - 10.0.0-2ubuntu8.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-1441" priority="medium" public="20240311" usns="6734-1,6734-2">CVE-2024-1441</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-2494" priority="medium" public="20240320" usns="6734-1,6734-2">CVE-2024-2494</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:608506415366952979681275405608288737428" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67372000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6737-2 -- GNU C Library vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6737-2" ref_url="https://ubuntu.com/security/notices/USN-6737-2" />
+				<reference source="CVE" ref_id="CVE-2024-2961" ref_url="https://ubuntu.com/security/CVE-2024-2961" />
+				<description>USN-6737-1 fixed a vulnerability in the GNU C Library. This update provides the corresponding update for Ubuntu 24.04 LTS.  Original advisory details:   Charles Fol discovered that the GNU C Library iconv feature incorrectly  handled certain input sequences. An attacker could use this issue to cause  the GNU C Library to crash, resulting in a denial of service, or possibly  execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6737-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  glibc-doc - 2.39-0ubuntu8.1 glibc-source - 2.39-0ubuntu8.1 libc6 - 2.39-0ubuntu8.1 libc6-amd64 - 2.39-0ubuntu8.1 libc6-dev - 2.39-0ubuntu8.1 libc6-dev-amd64 - 2.39-0ubuntu8.1 libc6-dev-i386 - 2.39-0ubuntu8.1 libc6-dev-s390 - 2.39-0ubuntu8.1 libc6-dev-x32 - 2.39-0ubuntu8.1 libc6-i386 - 2.39-0ubuntu8.1 libc6-s390 - 2.39-0ubuntu8.1 libc6-x32 - 2.39-0ubuntu8.1 libc-bin - 2.39-0ubuntu8.1 libc-dev-bin - 2.39-0ubuntu8.1 libc-devtools - 2.39-0ubuntu8.1 locales - 2.39-0ubuntu8.1 locales-all - 2.39-0ubuntu8.1 nscd - 2.39-0ubuntu8.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-2961" priority="medium" public="20240417" usns="6737-1,6737-2">CVE-2024-2961</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:361253914959108866267508777001337113941" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67443000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6744-3 -- Pillow vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6744-3" ref_url="https://ubuntu.com/security/notices/USN-6744-3" />
+				<reference source="CVE" ref_id="CVE-2024-28219" ref_url="https://ubuntu.com/security/CVE-2024-28219" />
+				<description>USN-6744-1 fixed a vulnerability in Pillow. This update provides the corresponding updates for Ubuntu 24.04 LTS.  Original advisory details:   Hugo van Kemenade discovered that Pillow was not properly performing   bounds checks when processing an ICC file, which could lead to a buffer  overflow. If a user or automated system were tricked into processing a   specially crafted ICC file, an attacker could possibly use this issue   to cause a denial of service or execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-6744-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-pil - 10.2.0-1ubuntu1 python3-pil.imagetk - 10.2.0-1ubuntu1 python-pil-doc - 10.2.0-1ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-28219" priority="medium" public="20240403" usns="6744-1,6744-2,6744-3">CVE-2024-28219</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:439577218271276907663493057474519713412" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67561000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6756-1 -- less vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6756-1" ref_url="https://ubuntu.com/security/notices/USN-6756-1" />
+				<reference source="CVE" ref_id="CVE-2024-32487" ref_url="https://ubuntu.com/security/CVE-2024-32487" />
+				<description>It was discovered that less mishandled newline characters in file names. If a user or automated system were tricked into opening specially crafted files, an attacker could possibly use this issue to execute arbitrary commands on the host.  Update Instructions:  Run `sudo pro fix USN-6756-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  less - 590-2ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-32487" priority="medium" public="20240413" usns="6756-1">CVE-2024-32487</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:668972541622790714057131474973442363501" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67591000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6759-1 -- FreeRDP vulnerabilities</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6759-1" ref_url="https://ubuntu.com/security/notices/USN-6759-1" />
+				<reference source="CVE" ref_id="CVE-2024-32658" ref_url="https://ubuntu.com/security/CVE-2024-32658" />
+				<reference source="CVE" ref_id="CVE-2024-32659" ref_url="https://ubuntu.com/security/CVE-2024-32659" />
+				<reference source="CVE" ref_id="CVE-2024-32660" ref_url="https://ubuntu.com/security/CVE-2024-32660" />
+				<reference source="CVE" ref_id="CVE-2024-32661" ref_url="https://ubuntu.com/security/CVE-2024-32661" />
+				<reference source="CVE" ref_id="CVE-2024-32662" ref_url="https://ubuntu.com/security/CVE-2024-32662" />
+				<description>It was discovered that FreeRDP incorrectly handled certain memory operations. If a user were tricked into connecting to a malicious server, a remote attacker could possibly use this issue to cause FreeRDP to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-6759-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  freerdp3-dev - 3.5.1+dfsg1-0ubuntu1 freerdp3-shadow-x11 - 3.5.1+dfsg1-0ubuntu1 freerdp3-wayland - 3.5.1+dfsg1-0ubuntu1 freerdp3-x11 - 3.5.1+dfsg1-0ubuntu1 libfreerdp3-3 - 3.5.1+dfsg1-0ubuntu1 libfreerdp-client3-3 - 3.5.1+dfsg1-0ubuntu1 libfreerdp-server3-3 - 3.5.1+dfsg1-0ubuntu1 libfreerdp-shadow3-3 - 3.5.1+dfsg1-0ubuntu1 libfreerdp-shadow-subsystem3-3 - 3.5.1+dfsg1-0ubuntu1 libwinpr3-3 - 3.5.1+dfsg1-0ubuntu1 libwinpr3-dev - 3.5.1+dfsg1-0ubuntu1 libwinpr-tools3-3 - 3.5.1+dfsg1-0ubuntu1 winpr3-utils - 3.5.1+dfsg1-0ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-32658" priority="low" public="20240423" usns="6752-1,6759-1">CVE-2024-32658</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-32659" priority="low" public="20240423" usns="6752-1,6759-1">CVE-2024-32659</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-32660" priority="low" public="20240423" usns="6752-1,6759-1">CVE-2024-32660</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-32661" priority="low" public="20240423" usns="6752-1,6759-1">CVE-2024-32661</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-32662" priority="low" public="20240423" usns="6759-1">CVE-2024-32662</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:491825079033900826876083939068536162463" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<ind:family_test id="oval:com.ubuntu.noble:tst:400392267027195378478351342541727140289" check="at least one" check_existence="at_least_one_exists" version="1" comment="Is the host part of the unix family?">
@@ -28,8 +222,64 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:523128477417465112718916931145504218028" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:530318921298018152699289634827586118142" />
 		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:342369487856323964156351400302837366273" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:581335584004508162047171662093858768778" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:599328374087856448273522823970655810614" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:361253914959108866267508777001337113941" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:590200863373692860191976661640225031155" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:481163500072157008484714961779214439529" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:439577218271276907663493057474519713412" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:561908542415553382759131554738560824108" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:373691992392061942978520404066657995862" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:491825079033900826876083939068536162463" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:501835264471441476210431580597253436018" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:567839033698074784362830960396439809054" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:608506415366952979681275405608288737428" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:346006833640868148755007735705099051725" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:366634652550084880194807322042833580935" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:668556808487031061461695455188779632166" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:494814853398226873798607731532097090022" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:557830860690782061030316695995165249407" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:668972541622790714057131474973442363501" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:597967628042798746632892884783295244876" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:368243886042072761316013299753358627460" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:676079145321054062729235553760769321374" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:366548210790679631943402057459757776101" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:667053357993040038552561594022308208957" />
+		</linux:dpkginfo_test>
 	</tests>
 	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:346006833640868148755007735705099051725" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:482317969060746740714620704766738777316" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:366548210790679631943402057459757776101" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:566129480094719306135458141054100951831" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:494814853398226873798607731532097090022" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:388236145566469612965435835403692907727" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:501835264471441476210431580597253436018" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:454751740266024538777751131161283777796" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:561908542415553382759131554738560824108" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:393799580311004666632081529807697199036" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:581335584004508162047171662093858768778" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:432650516768456727410419834719762667665" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:590200863373692860191976661640225031155" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:450356886588731698773941349021567414520" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:597967628042798746632892884783295244876" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:436108731818977030557090215136893651024" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<ind:family_object id="oval:com.ubuntu.noble:obj:539257525261347833398619290667170696549" version="1" comment="The singleton family object." />
 		<ind:textfilecontent54_object id="oval:com.ubuntu.noble:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
@@ -38,6 +288,30 @@
 		</ind:textfilecontent54_object>
 	</objects>
 	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:366634652550084880194807322042833580935" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:10.0.0-2ubuntu8.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:368243886042072761316013299753358627460" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:590-2ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:373691992392061942978520404066657995862" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:10.2.0-1ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:481163500072157008484714961779214439529" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.39-0ubuntu8.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:557830860690782061030316695995165249407" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.58-1ubuntu8.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:567839033698074784362830960396439809054" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.5.1+dfsg1-0ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:599328374087856448273522823970655810614" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.5.0-2ubuntu10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:667053357993040038552561594022308208957" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.8.3-1.1ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
 		<ind:family_state id="oval:com.ubuntu.noble:ste:532773462681133181223736521966032213178" version="1" comment="The singleton family object.">
 			<ind:family>unix</ind:family>
 		</ind:family_state>
@@ -45,5 +319,104 @@
 			<ind:subexpression datatype="string" operation="equals">noble</ind:subexpression>
 		</ind:textfilecontent54_state>
 	</states>
-	<variables />
+	<variables>
+		<constant_variable id="oval:com.ubuntu.noble:var:388236145566469612965435835403692907727" version="1" datatype="string" comment="Long Term Release">
+			<value>apache2</value>
+			<value>apache2-bin</value>
+			<value>apache2-data</value>
+			<value>apache2-dev</value>
+			<value>apache2-doc</value>
+			<value>apache2-ssl-dev</value>
+			<value>apache2-suexec-custom</value>
+			<value>apache2-suexec-pristine</value>
+			<value>apache2-utils</value>
+			<value>libapache2-mod-md</value>
+			<value>libapache2-mod-proxy-uwsgi</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:432650516768456727410419834719762667665" version="1" datatype="string" comment="Long Term Release">
+			<value>curl</value>
+			<value>libcurl3t64-gnutls</value>
+			<value>libcurl4-doc</value>
+			<value>libcurl4-gnutls-dev</value>
+			<value>libcurl4-openssl-dev</value>
+			<value>libcurl4t64</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:454751740266024538777751131161283777796" version="1" datatype="string" comment="Long Term Release">
+			<value>freerdp3-dev</value>
+			<value>freerdp3-shadow-x11</value>
+			<value>freerdp3-wayland</value>
+			<value>freerdp3-x11</value>
+			<value>libfreerdp3-3</value>
+			<value>libfreerdp-client3-3</value>
+			<value>libfreerdp-server3-3</value>
+			<value>libfreerdp-shadow3-3</value>
+			<value>libfreerdp-shadow-subsystem3-3</value>
+			<value>libwinpr3-3</value>
+			<value>libwinpr3-dev</value>
+			<value>libwinpr-tools3-3</value>
+			<value>winpr3-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:450356886588731698773941349021567414520" version="1" datatype="string" comment="Long Term Release">
+			<value>glibc-doc</value>
+			<value>glibc-source</value>
+			<value>libc6</value>
+			<value>libc6-amd64</value>
+			<value>libc6-dev</value>
+			<value>libc6-dev-amd64</value>
+			<value>libc6-dev-i386</value>
+			<value>libc6-dev-s390</value>
+			<value>libc6-dev-x32</value>
+			<value>libc6-i386</value>
+			<value>libc6-s390</value>
+			<value>libc6-x32</value>
+			<value>libc-bin</value>
+			<value>libc-dev-bin</value>
+			<value>libc-devtools</value>
+			<value>locales</value>
+			<value>locales-all</value>
+			<value>nscd</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:566129480094719306135458141054100951831" version="1" datatype="string" comment="Long Term Release">
+			<value>gnutls-bin</value>
+			<value>gnutls-doc</value>
+			<value>libgnutls28-dev</value>
+			<value>libgnutls30t64</value>
+			<value>libgnutls-dane0t64</value>
+			<value>libgnutls-openssl27t64</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:436108731818977030557090215136893651024" version="1" datatype="string" comment="Long Term Release">
+			<value>less</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:482317969060746740714620704766738777316" version="1" datatype="string" comment="Long Term Release">
+			<value>libnss-libvirt</value>
+			<value>libvirt0</value>
+			<value>libvirt-clients</value>
+			<value>libvirt-clients-qemu</value>
+			<value>libvirt-daemon</value>
+			<value>libvirt-daemon-config-network</value>
+			<value>libvirt-daemon-config-nwfilter</value>
+			<value>libvirt-daemon-driver-lxc</value>
+			<value>libvirt-daemon-driver-qemu</value>
+			<value>libvirt-daemon-driver-storage-gluster</value>
+			<value>libvirt-daemon-driver-storage-iscsi-direct</value>
+			<value>libvirt-daemon-driver-storage-rbd</value>
+			<value>libvirt-daemon-driver-storage-zfs</value>
+			<value>libvirt-daemon-driver-vbox</value>
+			<value>libvirt-daemon-driver-xen</value>
+			<value>libvirt-daemon-system</value>
+			<value>libvirt-daemon-system-systemd</value>
+			<value>libvirt-daemon-system-sysv</value>
+			<value>libvirt-dev</value>
+			<value>libvirt-doc</value>
+			<value>libvirt-l10n</value>
+			<value>libvirt-login-shell</value>
+			<value>libvirt-sanlock</value>
+			<value>libvirt-wireshark</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:393799580311004666632081529807697199036" version="1" datatype="string" comment="Long Term Release">
+			<value>python3-pil</value>
+			<value>python3-pil.imagetk</value>
+			<value>python-pil-doc</value>
+		</constant_variable>
+	</variables>
 </oval_definitions>
