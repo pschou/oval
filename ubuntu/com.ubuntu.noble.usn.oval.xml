@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-04-30T06:47:45</oval:timestamp>
+		<oval:timestamp>2024-05-01T05:25:22</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -212,6 +212,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:67611000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6761-1 -- Anope vulnerability</title>
+				<affected family="unix">
+					<platform>Ubuntu 24.04 LTS.</platform>
+				</affected>
+				<reference source="USN" ref_id="USN-6761-1" ref_url="https://ubuntu.com/security/notices/USN-6761-1" />
+				<reference source="CVE" ref_id="CVE-2024-30187" ref_url="https://ubuntu.com/security/CVE-2024-30187" />
+				<description>It was discovered that Anope did not properly process credentials for suspended accounts. An attacker could possibly use this issue to normally  login to the platform as a suspended user after changing their password.  Update Instructions:  Run `sudo pro fix USN-6761-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  anope - 2.0.12-1ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-04-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-30187" priority="medium" public="20240325" usns="6761-1">CVE-2024-30187</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS. (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:585676529769884816123759636319189069902" comment="Long Term Release" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<ind:family_test id="oval:com.ubuntu.noble:tst:400392267027195378478351342541727140289" check="at least one" check_existence="at_least_one_exists" version="1" comment="Is the host part of the unix family?">
@@ -237,6 +259,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:491825079033900826876083939068536162463" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:501835264471441476210431580597253436018" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:567839033698074784362830960396439809054" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:585676529769884816123759636319189069902" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:604263834800270816857298270857869282810" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:578994130894283842936431949679520471038" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:608506415366952979681275405608288737428" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:346006833640868148755007735705099051725" />
@@ -280,6 +306,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:597967628042798746632892884783295244876" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:436108731818977030557090215136893651024" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:604263834800270816857298270857869282810" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:535095236215096118392030345785581774775" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<ind:family_object id="oval:com.ubuntu.noble:obj:539257525261347833398619290667170696549" version="1" comment="The singleton family object." />
 		<ind:textfilecontent54_object id="oval:com.ubuntu.noble:obj:523128477417465112718916931145504218028" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
@@ -306,6 +335,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:567839033698074784362830960396439809054" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.5.1+dfsg1-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:578994130894283842936431949679520471038" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.12-1ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:599328374087856448273522823970655810614" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.5.0-2ubuntu10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -320,6 +352,9 @@
 		</ind:textfilecontent54_state>
 	</states>
 	<variables>
+		<constant_variable id="oval:com.ubuntu.noble:var:535095236215096118392030345785581774775" version="1" datatype="string" comment="Long Term Release">
+			<value>anope</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:388236145566469612965435835403692907727" version="1" datatype="string" comment="Long Term Release">
 			<value>apache2</value>
 			<value>apache2-bin</value>
