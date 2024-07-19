@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-07-18T17:31:53</oval:timestamp>
+		<oval:timestamp>2024-07-19T05:31:54</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5102,555 +5102,555 @@
 		</definition>
 	</definitions>
 	<tests>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1496602662754" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
-			<linux:object object_ref="oval:com.ubuntu.noble:obj:1607199928435" />
-			<linux:state state_ref="oval:com.ubuntu.noble:ste:2055745033796" />
-		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1723225586457" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
-			<linux:object object_ref="oval:com.ubuntu.noble:obj:1867158514721" />
-			<linux:state state_ref="oval:com.ubuntu.noble:ste:2033515904587" />
-		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1864324837688" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
-			<linux:object object_ref="oval:com.ubuntu.noble:obj:1547419287839" />
-			<linux:state state_ref="oval:com.ubuntu.noble:ste:1297675218039" />
-		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1869232144512" version="1" check_existence="at_least_one_exists" check="at least one" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
-			<linux:object object_ref="oval:com.ubuntu.noble:obj:1277704063614" />
-			<linux:state state_ref="oval:com.ubuntu.noble:ste:1192787090760" />
-		</linux:dpkginfo_test>
-		<unix:file_test id="oval:com.ubuntu.noble:tst:1758035288646" version="1" check="all" check_existence="all_exist" comment="canonical-livepatch installed">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1356073206500" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1579642990699" />
-		</unix:file_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-aws) currently running?" id="oval:com.ubuntu.noble:tst:1390653055554" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1689325338318" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-azure|-azure-fde) currently running?" id="oval:com.ubuntu.noble:tst:2177086071564" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1639785420442" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-gcp) currently running?" id="oval:com.ubuntu.noble:tst:1584873897491" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:2188596607079" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-generic|-generic-64k) currently running?" id="oval:com.ubuntu.noble:tst:1838839642827" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1165531700093" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-gke) currently running?" id="oval:com.ubuntu.noble:tst:1155779562042" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:2051009972440" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-ibm) currently running?" id="oval:com.ubuntu.noble:tst:1819673525503" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1299656445966" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-ibm|-oem) currently running?" id="oval:com.ubuntu.noble:tst:1172135605189" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1630549805772" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-intel) currently running?" id="oval:com.ubuntu.noble:tst:1692274765390" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1137888917763" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-lowlatency|-lowlatency-64k) currently running?" id="oval:com.ubuntu.noble:tst:1417607841301" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1869924565868" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-nvidia|-nvidia-64k) currently running?" id="oval:com.ubuntu.noble:tst:1760198533064" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:1610038428599" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-oem) currently running?" id="oval:com.ubuntu.noble:tst:1560635771199" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:2166127823088" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-oracle|-oracle-64k) currently running?" id="oval:com.ubuntu.noble:tst:1226735299823" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:2135323317202" />
-		</unix:uname_test>
-		<unix:uname_test check="at least one" comment="Is kernel 6.8.0-\d+(-raspi) currently running?" id="oval:com.ubuntu.noble:tst:1814881083490" version="1">
-			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<unix:state state_ref="oval:com.ubuntu.noble:ste:2027708641353" />
-		</unix:uname_test>
-		<ind:family_test id="oval:com.ubuntu.noble:tst:2106972708644" check="at least one" check_existence="at_least_one_exists" version="1" comment="Is the host part of the unix family?">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1721483903174" />
-		</ind:family_test>
-		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.noble:tst:1377030061107" version="1" comment="Is the host running Ubuntu noble?">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1690319274976" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1713552852217" />
-		</ind:textfilecontent54_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1107397048576" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1694605426507" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1117175756425" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2070177409637" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:2038155430763" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1135268583669" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1583326067783" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1158417828063" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1829129085025" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1165632414610" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1403145570925" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1385347826240" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1196575079310" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2005775805944" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1229550579572" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1424281679439" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1241268834723" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1330263488749" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1244551308519" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1817442193205" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:2038155430763" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1267872484967" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1230304866447" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1269348181705" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2194025112920" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1880856932537" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1350615730895" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2058108767161" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1358499940532" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1562172315064" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1802458198079" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1402703609007" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1389707818331" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1802458198079" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1491970782666" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1113421803035" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1880856932537" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1584438134211" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1607405276258" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1385347826240" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1633914354515" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1427257205023" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1513290535063" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1664527773641" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1739913918159" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1670838472691" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1789224770221" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1779463323620" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1224623998006" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1888097304186" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2028104008296" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1893648051416" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1873038008724" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1905054547778" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1876641010294" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1911370138644" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1968593345436" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:1999562654541" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1209271641298" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:2002292848537" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1980299915901" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:2018510056164" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1682487468378" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:2020977026294" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2026934759634" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:2035244478665" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1221566814926" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:2065414216333" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1409294033601" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
-		</ind:variable_test>
-		<ind:variable_test id="oval:com.ubuntu.noble:tst:2146178757540" version="1" check="all" check_existence="all_exist" comment="kernel version comparison">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:1786447562429" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1802458198079" />
-		</ind:variable_test>
-		<ind:textfilecontent54_test id="oval:com.ubuntu.noble:tst:1214597840877" version="1" check="all" check_existence="all_exist" comment="livepatch testing">
-			<ind:object object_ref="oval:com.ubuntu.noble:obj:2053355336090" />
-			<ind:state state_ref="oval:com.ubuntu.noble:ste:1811674223292" />
-		</ind:textfilecontent54_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1907041842557" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1554723120030" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1131518281256" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1107397048576" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1694605426507" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1117175756425" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2070177409637" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:2038155430763" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1131518281256" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1184381146609" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2155365645586" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1132903158311" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1132903158311" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1790730844512" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1543474165674" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1140765002129" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1135268583669" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1583326067783" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1140765002129" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1318576013755" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1900836281814" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1146973957528" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1146973957528" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1118008377338" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1184660454998" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1150016962270" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1150016962270" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1855560580775" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1662376326991" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1170911537960" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1155779562042" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:2051009972440" />
+		</unix:uname_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1158417828063" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1829129085025" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1165632414610" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1403145570925" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1385347826240" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1170911537960" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1563724627036" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1747663346341" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1174203274006" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1172135605189" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1630549805772" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1174203274006" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1868172118309" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2118225453924" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1214873757532" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1196575079310" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2005775805944" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
+		</ind:variable_test>
+		<ind:textfilecontent54_test id="oval:com.ubuntu.noble:tst:1214597840877" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2053355336090" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1811674223292" />
+		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1214873757532" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1878396579983" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1936534420306" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1220549072129" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1220549072129" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1624746985882" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1830761262938" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1226463196931" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1226463196931" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1952481753959" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1870830936944" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1246816105834" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1226735299823" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:2135323317202" />
+		</unix:uname_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1229550579572" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1424281679439" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1241268834723" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1330263488749" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1244551308519" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1817442193205" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:2038155430763" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1246816105834" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2048171446862" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1428921310807" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1317419777763" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1267872484967" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1230304866447" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1269348181705" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2194025112920" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1880856932537" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1317419777763" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1875033860635" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1538238428652" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1328368428247" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1328368428247" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2029462032141" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2193079804544" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1328560156633" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1328560156633" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1605003139038" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1936246602490" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1343373275585" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1343373275585" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1640203167151" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1475443330982" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1347716927444" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1347716927444" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1643311987319" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2043346884782" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1380406227584" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1350615730895" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2058108767161" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1358499940532" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1562172315064" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1802458198079" />
+		</ind:variable_test>
+		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.noble:tst:1377030061107" version="1">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1690319274976" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1713552852217" />
+		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1380406227584" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1813937564780" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1972267267666" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1382085740457" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1382085740457" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1408042755467" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1724678989880" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1385767366388" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1385767366388" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1503950919279" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1540660310249" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1391063300815" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1390653055554" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1689325338318" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1391063300815" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1132338652752" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1715522785314" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1391730104396" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1391730104396" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1598833021618" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1802448722840" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1393540164405" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1393540164405" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1194240447156" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2075791560588" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1398386287951" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1398386287951" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2006874001784" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1982750341260" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1409939842589" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1402703609007" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1389707818331" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1802458198079" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1409939842589" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1379511558039" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1617266519789" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1444751971921" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1417607841301" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1869924565868" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1444751971921" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1951014843318" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1575285678513" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1450459974694" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1450459974694" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1583230404185" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1769944671079" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1451293989017" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1451293989017" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1178300926624" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1550840755678" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1482184372125" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1482184372125" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1690603741833" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2185216037481" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1490947705265" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1490947705265" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1772757816744" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2052121290987" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1494257043729" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1491970782666" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1113421803035" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1880856932537" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1494257043729" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2162417731320" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1281562009805" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1503904814072" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1496602662754" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1607199928435" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2055745033796" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1503904814072" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1815624423101" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1207463949894" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1505747029577" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1505747029577" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1769302318178" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1820667613638" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1515925834912" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1515925834912" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1883654297743" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1759808933393" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1533503730230" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1533503730230" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1621517193227" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1834786873929" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1564459053962" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1560635771199" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:2166127823088" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1564459053962" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2157372748460" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1970214291420" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1571026708200" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1571026708200" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1617312985509" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1211519587519" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1575262998864" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1575262998864" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1146516758393" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1711458996382" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1578995473342" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1578995473342" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2137531080376" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1312471419192" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1594142193168" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1584438134211" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1607405276258" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1385347826240" />
+		</ind:variable_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1584873897491" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:2188596607079" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1594142193168" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1307824672546" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2078654280356" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1624580396829" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1624580396829" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1137651034187" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1539524162642" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1637291493950" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1633914354515" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1427257205023" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1513290535063" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1637291493950" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1263339201104" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1519911943110" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1655814359671" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1655814359671" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1178667929664" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1790619262688" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1660583881303" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1660583881303" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1775046975427" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1690212528410" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1675160768504" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1664527773641" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1739913918159" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1670838472691" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1789224770221" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1675160768504" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2059377855385" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1287842163295" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1714905100017" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1692274765390" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1137888917763" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1714905100017" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1810663552917" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1583943047092" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1726606272782" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1723225586457" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1867158514721" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2033515904587" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1726606272782" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1180036605121" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1300887511681" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1760783543555" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:file_test id="oval:com.ubuntu.noble:tst:1758035288646" version="1" check="all" check_existence="all_exist">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1356073206500" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1579642990699" />
+		</unix:file_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1760198533064" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1610038428599" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1760783543555" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1651296182745" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1400625541996" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1788407803000" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1779463323620" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1224623998006" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1788407803000" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1619130833294" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2068560675584" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1808687764723" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1808687764723" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1598557114577" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2125825271484" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1839938441491" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1814881083490" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:2027708641353" />
+		</unix:uname_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1819673525503" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1299656445966" />
+		</unix:uname_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1838839642827" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1165531700093" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1839938441491" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1763046791767" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1553346576375" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1859302310210" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1859302310210" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1313988657645" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1531645680053" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1871260887167" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1864324837688" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1547419287839" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1297675218039" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1869232144512" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1277704063614" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1192787090760" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1871260887167" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1495961030582" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1338143576124" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1886982119554" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1886982119554" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1310733429115" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1123322841839" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1889312180964" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1888097304186" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2028104008296" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1889312180964" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1895660435483" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1399977111350" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1895818604039" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1893648051416" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1873038008724" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1895818604039" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2111365505296" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1539827336501" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1897041698325" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1897041698325" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1837200126865" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1601009231242" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1917697321569" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1905054547778" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1876641010294" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1911370138644" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1968593345436" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1917697321569" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2173237919323" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1797522928863" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1923758644788" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1923758644788" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1337031954289" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1615851378243" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1942295492770" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1942295492770" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1721514888127" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1824077122326" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1942301641854" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1942301641854" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1876187498859" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1534425927787" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1947110358500" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1947110358500" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2078234528326" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1667394999545" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1948065726745" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1948065726745" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2155552446314" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2006202322827" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1965530906108" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1965530906108" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1153941346497" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1876544124620" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1969475696291" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1969475696291" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1932137612700" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1189860168848" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1970605601888" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1970605601888" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1394063521562" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1948644338190" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1980155021747" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1980155021747" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1342004613918" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1728655113348" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1981258124831" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1981258124831" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1458979241257" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1918450249684" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1983610934427" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1983610934427" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2023643246807" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1261137576815" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1988497547733" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1988497547733" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2051913621123" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2069292845144" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1994099438036" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1994099438036" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1663461872742" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1222125717088" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2007352392949" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1999562654541" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1209271641298" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:2002292848537" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1980299915901" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2007352392949" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1995667397573" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1457844839874" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2011221975354" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2011221975354" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2154526819754" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1160867364734" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2012080407713" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2012080407713" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1345259427067" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1979593361051" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2025777785966" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:2018510056164" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1682487468378" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
+		</ind:variable_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:2020977026294" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:2026934759634" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2025777785966" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1508394685801" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1418202975948" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2046004267352" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:2035244478665" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1221566814926" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2046004267352" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1639598201845" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1105924779046" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2047414420778" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2047414420778" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1341493878041" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1633649572453" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2063690480169" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2063690480169" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1339444939822" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1424860456405" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2064820151117" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2064820151117" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1752384631790" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1846530272253" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2084707147266" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:2065414216333" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1409294033601" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2084707147266" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1369893025454" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1658206570621" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2092820137011" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2092820137011" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2109897757647" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1808213893226" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2132966324858" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:family_test id="oval:com.ubuntu.noble:tst:2106972708644" check="at least one" check_existence="at_least_one_exists" version="1">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1721483903174" />
+		</ind:family_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2132966324858" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1106891955752" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1761613009063" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2144581358960" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2144581358960" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2122529800947" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1987598003522" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2155014501525" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:2146178757540" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1786447562429" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1802458198079" />
+		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2155014501525" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1833335697863" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1203530214405" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2187533704431" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:2177086071564" version="1">
+			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.noble:ste:1639785420442" />
+		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2187533704431" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1562256108961" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2096455166910" />
 		</linux:dpkginfo_test>
-		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2192351774573" version="1" check_existence="at_least_one_exists" check="at least one" comment="Long Term Release">
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2192351774573" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2141464620952" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1397841607778" />
 		</linux:dpkginfo_test>

@@ -22676,6 +22676,10 @@ Security Fix(es)</description>
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1231231612096" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1469672110468" />
 		</red-def:rpminfo_test>
+		<red-def:rpmverifyfile_test check="none satisfy" id="oval:org.rockylinux.rlsa:tst:1788107882265" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1551656745204" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1106883908024" />
+		</red-def:rpmverifyfile_test>
 		<red-def:rpminfo_test check="at least one" id="oval:org.rockylinux.rlsa:tst:1789541991675" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1961156617249" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1367933993984" />
@@ -22708,6 +22712,10 @@ Security Fix(es)</description>
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1267562013867" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1469672110468" />
 		</red-def:rpminfo_test>
+		<red-def:rpmverifyfile_test check="at least one" id="oval:org.rockylinux.rlsa:tst:1792171617383" version="1">
+			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1551656745204" />
+			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1595569066217" />
+		</red-def:rpmverifyfile_test>
 		<red-def:rpminfo_test check="at least one" id="oval:org.rockylinux.rlsa:tst:1792687308830" version="1">
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:2129186052310" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1469672110468" />
@@ -25468,14 +25476,6 @@ Security Fix(es)</description>
 			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1809135799236" />
 			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1202860035132" />
 		</red-def:rpminfo_test>
-		<red-def:rpmverifyfile_test check="at least one" comment="Rocky Linux 9 must be installed" id="oval:org.rockylinux.rlsa:tst:1792171617383" version="1">
-			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1551656745204" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1595569066217" />
-		</red-def:rpmverifyfile_test>
-		<red-def:rpmverifyfile_test check="none satisfy" comment="Rocky Linux must be installed" id="oval:org.rockylinux.rlsa:tst:1788107882265" version="1">
-			<red-def:object object_ref="oval:org.rockylinux.rlsa:obj:1551656745204" />
-			<red-def:state state_ref="oval:org.rockylinux.rlsa:ste:1106883908024" />
-		</red-def:rpmverifyfile_test>
 	</tests>
 	<objects>
 		<red-def:rpminfo_object id="oval:org.rockylinux.rlsa:obj:1100427720269" version="1">
