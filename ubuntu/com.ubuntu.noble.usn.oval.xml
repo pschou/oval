@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-07-20T05:32:03</oval:timestamp>
+		<oval:timestamp>2024-07-23T05:32:04</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5100,6 +5100,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6904-1 -- PyMongo vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6904-1" ref_url="https://ubuntu.com/security/notices/USN-6904-1" />
+				<reference source="CVE" ref_id="CVE-2024-5629" ref_url="https://ubuntu.com/security/CVE-2024-5629" />
+				<description>It was discovered that PyMongo incorrectly handled certain BSON. An attacker could possibly use this issue to read sensitive information or cause a crash.  Update Instructions:  Run `sudo pro fix USN-6904-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-bson - 3.11.0-1ubuntu0.24.04.1 python3-bson-ext - 3.11.0-1ubuntu0.24.04.1 python3-gridfs - 3.11.0-1ubuntu0.24.04.1 python3-pymongo - 3.11.0-1ubuntu0.24.04.1 python3-pymongo-ext - 3.11.0-1ubuntu0.24.04.1 python-pymongo-doc - 3.11.0-1ubuntu0.24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-07-22" />
+					<cve href="https://ubuntu.com/security/CVE-2024-5629" priority="medium" public="20240605" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H" cvss_severity="high" usns="6904-1">CVE-2024-5629</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:2182700838546" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -5646,6 +5666,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1639785420442" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2182700838546" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1142218268099" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1894269319058" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2187533704431" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1562256108961" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2096455166910" />
@@ -5772,6 +5796,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1137651034187" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1455181583265" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1142218268099" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1723251553084" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1146516758393" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1788653849670" var_check="at least one" />
@@ -6280,6 +6307,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1876544124620" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.3.12-1ubuntu0.24.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1894269319058" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.11.0-1ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1900836281814" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:46.2-1~ubuntu24.04.2</linux:evr>
@@ -7275,6 +7305,14 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1440135800386" version="1" datatype="string" comment="Long Term Release">
 			<value>openvpn</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1723251553084" version="1" datatype="string" comment="Long Term Release">
+			<value>python3-bson</value>
+			<value>python3-bson-ext</value>
+			<value>python3-gridfs</value>
+			<value>python3-pymongo</value>
+			<value>python3-pymongo-ext</value>
+			<value>python-pymongo-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1641226572542" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-cryptography</value>
