@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-07-24T05:34:13</oval:timestamp>
+		<oval:timestamp>2024-07-25T05:32:58</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -5509,7 +5509,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-07-24" />
-					<cve href="https://ubuntu.com/security/CVE-2024-5569" priority="medium" public="20240709">CVE-2024-5569</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-5569" priority="medium" public="20240709" usns="6906-1">CVE-2024-5569</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -5582,6 +5582,47 @@
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1549234902282" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69121000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6912-1 -- provd vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6912-1" ref_url="https://ubuntu.com/security/notices/USN-6912-1" />
+				<reference source="CVE" ref_id="CVE-2024-6714" ref_url="https://ubuntu.com/security/CVE-2024-6714" />
+				<description>James Henstridge discovered that provd incorrectly handled environment variables. A local attacker could possibly use this issue to run arbitrary programs and escalate privileges.  Update Instructions:  Run `sudo pro fix USN-6912-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  provd - 0.1.2+24.04</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-07-24" />
+					<cve href="https://ubuntu.com/security/CVE-2024-6714" priority="medium" public="20240722" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" cvss_severity="high" usns="6912-1">CVE-2024-6714</cve>
+					<bug>https://bugs.launchpad.net/ubuntu/+source/provd/+bug/2071574</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1906937208346" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69151000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6915-1 -- poppler vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6915-1" ref_url="https://ubuntu.com/security/notices/USN-6915-1" />
+				<reference source="CVE" ref_id="CVE-2024-6239" ref_url="https://ubuntu.com/security/CVE-2024-6239" />
+				<description>It was discovered that poppler incorrectly handled certain malformed PDF. An attacker could possibly use this issue to cause a denial of service.  Update Instructions:  Run `sudo pro fix USN-6915-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-poppler-0.18 - 24.02.0-1ubuntu9.1 libpoppler134 - 24.02.0-1ubuntu9.1 libpoppler-cpp0t64 - 24.02.0-1ubuntu9.1 libpoppler-cpp-dev - 24.02.0-1ubuntu9.1 libpoppler-dev - 24.02.0-1ubuntu9.1 libpoppler-glib8t64 - 24.02.0-1ubuntu9.1 libpoppler-glib-dev - 24.02.0-1ubuntu9.1 libpoppler-glib-doc - 24.02.0-1ubuntu9.1 libpoppler-private-dev - 24.02.0-1ubuntu9.1 libpoppler-qt5-1t64 - 24.02.0-1ubuntu9.1 libpoppler-qt5-dev - 24.02.0-1ubuntu9.1 libpoppler-qt6-3t64 - 24.02.0-1ubuntu9.1 libpoppler-qt6-dev - 24.02.0-1ubuntu9.1 poppler-utils - 24.02.0-1ubuntu9.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-07-24" />
+					<cve href="https://ubuntu.com/security/CVE-2024-6239" priority="medium" public="20240621" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="6915-1">CVE-2024-6239</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1385913168733" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -5742,6 +5783,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1385767366388" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1503950919279" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1540660310249" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1385913168733" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1436970067321" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1868717365107" />
 		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1390653055554" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
@@ -5999,6 +6044,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1876641010294" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1906937208346" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1606301568915" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1585767789162" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1911370138644" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1968593345436" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
@@ -6354,6 +6403,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1408042755467" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1254458643378" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1436970067321" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1689088980710" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1458979241257" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1227782443355" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -6383,6 +6435,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1605003139038" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1438196072045" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1606301568915" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1581700575175" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1617312985509" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1276065560639" var_check="at least one" />
@@ -6730,6 +6785,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1583943047092" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.0.1-7.1ubuntu5.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1585767789162" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.1.2+24.04</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1589367294146" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.0-6ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -6813,6 +6871,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1846530272253" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.59.0-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1868717365107" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:24.02.0-1ubuntu9.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1870830936944" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.12-1ubuntu1</linux:evr>
@@ -7387,6 +7448,22 @@
 			<value>ure</value>
 			<value>ure-java</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1689088980710" version="1" datatype="string" comment="Long Term Release">
+			<value>gir1.2-poppler-0.18</value>
+			<value>libpoppler134</value>
+			<value>libpoppler-cpp0t64</value>
+			<value>libpoppler-cpp-dev</value>
+			<value>libpoppler-dev</value>
+			<value>libpoppler-glib8t64</value>
+			<value>libpoppler-glib-dev</value>
+			<value>libpoppler-glib-doc</value>
+			<value>libpoppler-private-dev</value>
+			<value>libpoppler-qt5-1t64</value>
+			<value>libpoppler-qt5-dev</value>
+			<value>libpoppler-qt6-3t64</value>
+			<value>libpoppler-qt6-dev</value>
+			<value>poppler-utils</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1391969025043" version="1" datatype="string" comment="Long Term Release">
 			<value>gir1.2-vte-2.91</value>
 			<value>gir1.2-vte-3.91</value>
@@ -7831,6 +7908,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1440135800386" version="1" datatype="string" comment="Long Term Release">
 			<value>openvpn</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1581700575175" version="1" datatype="string" comment="Long Term Release">
+			<value>provd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1723251553084" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-bson</value>
