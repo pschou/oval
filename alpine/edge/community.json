@@ -1678,6 +1678,17 @@
 			}
 		},
 		{"pkg": {"name": "flux","secfixes": {"0.36.0-r0": ["CVE-2022-39272"]}}},
+		{
+			"pkg": {
+				"name": "forgejo",
+				"secfixes": {
+					"1.21.10.0-r0": ["CVE-2023-45288"],
+					"1.21.3.0-r0": ["CVE-2023-48795"],
+					"7.0.3-r0": ["CVE-2024-24788"],
+					"7.0.4-r0": ["CVE-2024-24789"]
+				}
+			}
+		},
 		{"pkg": {"name": "freeimage","secfixes": {"3.18.0-r2": ["CVE-2019-12211","CVE-2019-12213"]}}},
 		{
 			"pkg": {
@@ -2794,6 +2805,7 @@
 		{"pkg": {"name": "libvterm","secfixes": {"0.1.4-r0": ["CVE-2018-20786"]}}},
 		{"pkg": {"name": "libxfont2","secfixes": {"2.0.3-r0": ["CVE-2017-16611"]}}},
 		{"pkg": {"name": "libzip","secfixes": {"1.3.0-r0": ["CVE-2017-14107"]}}},
+		{"pkg": {"name": "lidarr","secfixes": {"2.3.3.4204-r0": ["CVE-2024-32655"]}}},
 		{"pkg": {"name": "lighthouse","secfixes": {"2.2.0-r0": ["CVE-2022-0778"]}}},
 		{
 			"pkg": {"name": "live-media","secfixes": {"2022.02.07-r0": ["CVE-2021-38380","CVE-2021-38381","CVE-2021-38382","CVE-2021-38383"]}}
@@ -4131,7 +4143,9 @@
 				}
 			}
 		},
-		{"pkg": {"name": "qt6-qtbase","secfixes": {"6.5.0-r5": ["CVE-2023-32762","CVE-2023-32763"]}}},
+		{
+			"pkg": {"name": "qt6-qtbase","secfixes": {"6.5.0-r5": ["CVE-2023-32762","CVE-2023-32763"],"6.7.2-r1": ["CVE-2024-39936"]}}
+		},
 		{"pkg": {"name": "qt6-qtsvg","secfixes": {"6.5.0-r1": ["CVE-2023-32573"]}}},
 		{
 			"pkg": {
@@ -4410,6 +4424,7 @@
 		{"pkg": {"name": "skopeo","secfixes": {"1.15.1-r0": ["CVE-2024-3727"],"1.5.2-r0": ["CVE-2021-41190"]}}},
 		{"pkg": {"name": "sleuthkit","secfixes": {"4.8.0-r1": ["CVE-2020-10232","CVE-2020-10233"]}}},
 		{"pkg": {"name": "slock","secfixes": {"1.3-r3": ["CVE-2016-6866"]}}},
+		{"pkg": {"name": "sonarr","secfixes": {"4.0.5.1710-r0": ["CVE-2024-32655"]}}},
 		{"pkg": {"name": "soundtouch","secfixes": {"2.1.2-r0": ["CVE-2018-17096","CVE-2018-17097","CVE-2018-17098"]}}},
 		{
 			"pkg": {
