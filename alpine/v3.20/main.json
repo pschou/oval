@@ -14,7 +14,12 @@
 	"urlprefix": "https://dl-cdn.alpinelinux.org/alpine",
 	"distroversion": "v3.20",
 	"packages": [
-		{"pkg": {"name": "aom","secfixes": {"3.1.1-r0": ["CVE-2021-30473","CVE-2021-30474","CVE-2021-30475"]}}},
+		{
+			"pkg": {
+				"name": "aom",
+				"secfixes": {"3.1.1-r0": ["CVE-2021-30473","CVE-2021-30474","CVE-2021-30475"],"3.9.1-r0": ["CVE-2024-5171"]}
+			}
+		},
 		{
 			"pkg": {
 				"name": "apache2",
