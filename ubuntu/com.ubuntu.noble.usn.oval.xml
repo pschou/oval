@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-08-06T05:33:23</oval:timestamp>
+		<oval:timestamp>2024-08-07T05:33:39</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -6395,6 +6395,53 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69451000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6945-1 -- wpa_supplicant and hostapd vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6945-1" ref_url="https://ubuntu.com/security/notices/USN-6945-1" />
+				<reference source="CVE" ref_id="CVE-2024-5290" ref_url="https://ubuntu.com/security/CVE-2024-5290" />
+				<description>Rory McNamara discovered that wpa_supplicant could be made to load  arbitrary shared objects by unprivileged users that have access to the control interface. An attacker could use this to escalate privileges to root.  Update Instructions:  Run `sudo pro fix USN-6945-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  eapoltest - 2:2.10-21ubuntu0.1 hostapd - 2:2.10-21ubuntu0.1 libwpa-client-dev - 2:2.10-21ubuntu0.1 wpagui - 2:2.10-21ubuntu0.1 wpasupplicant - 2:2.10-21ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-08-06" />
+					<cve href="https://ubuntu.com/security/CVE-2024-5290" priority="medium" public="20240806" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H" cvss_severity="high" usns="6945-1">CVE-2024-5290</cve>
+					<bug>https://launchpad.net/bugs/2067613</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1808608475756" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69461000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6946-1 -- Django vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6946-1" ref_url="https://ubuntu.com/security/notices/USN-6946-1" />
+				<reference source="CVE" ref_id="CVE-2024-41989" ref_url="https://ubuntu.com/security/CVE-2024-41989" />
+				<reference source="CVE" ref_id="CVE-2024-41990" ref_url="https://ubuntu.com/security/CVE-2024-41990" />
+				<reference source="CVE" ref_id="CVE-2024-41991" ref_url="https://ubuntu.com/security/CVE-2024-41991" />
+				<reference source="CVE" ref_id="CVE-2024-42005" ref_url="https://ubuntu.com/security/CVE-2024-42005" />
+				<description>It was discovered that Django incorrectly handled certain strings in floatformat function. An attacker could possibly use this issue to cause a memory exhaustion. (CVE-2024-41989)  It was discovered that Django incorrectly handled very large inputs. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-41990)  It was discovered that Django in AdminURLFieldWidget incorrectly handled certain inputs with a very large number of Unicode characters. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-41991)  It was discovered that Django incorrectly handled certain JSON objects. An attacker could possibly use this issue to cause a potential SQL injection. This issue only affected Ubuntu 22.04 LTS, and Ubuntu 24.04 LTS. (CVE-2024-42005)  Update Instructions:  Run `sudo pro fix USN-6946-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:4.2.11-1ubuntu1.2 python-django-doc - 3:4.2.11-1ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-08-06" />
+					<cve href="https://ubuntu.com/security/CVE-2024-41989" priority="medium" public="20240806" usns="6946-1">CVE-2024-41989</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41990" priority="medium" public="20240806" usns="6946-1">CVE-2024-41990</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41991" priority="medium" public="20240806" usns="6946-1">CVE-2024-41991</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-42005" priority="medium" public="20240806" usns="6946-1">CVE-2024-42005</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1219801847038" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -6476,6 +6523,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1214873757532" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1878396579983" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1936534420306" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1219801847038" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1443830405508" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1143271610845" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1220549072129" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1624746985882" />
@@ -6792,6 +6843,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1788407803000" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1619130833294" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2068560675584" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1808608475756" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1633871845397" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1552255661124" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1808687764723" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1598557114577" />
@@ -7297,6 +7352,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1436970067321" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1689088980710" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1443830405508" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1619530361317" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1458979241257" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1227782443355" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -7344,6 +7402,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1624746985882" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2168315347961" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1633871845397" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1877844208037" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1639598201845" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1561862812854" var_check="at least one" />
@@ -7589,6 +7650,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1123322841839" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:24.0.0-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1143271610845" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.11-1ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1160867364734" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.5-0ubuntu1~24.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -7690,6 +7754,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1550840755678" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.9-1ubuntu4.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1552255661124" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:2.10-21ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1553346576375" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.7-0ubuntu1~24.04.1</linux:evr>
@@ -8038,6 +8105,13 @@
 			<value>dotnet-sdk-dbg-8.0</value>
 			<value>dotnet-templates-8.0</value>
 			<value>netstandard-targeting-pack-2.1-8.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1877844208037" version="1" datatype="string" comment="Long Term Release">
+			<value>eapoltest</value>
+			<value>hostapd</value>
+			<value>libwpa-client-dev</value>
+			<value>wpagui</value>
+			<value>wpasupplicant</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1800758153406" version="1" datatype="string" comment="Long Term Release">
 			<value>exim4</value>
