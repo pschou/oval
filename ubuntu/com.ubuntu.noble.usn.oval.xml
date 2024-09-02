@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-08-29T05:25:17</oval:timestamp>
+		<oval:timestamp>2024-09-02T05:26:14</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9161,6 +9161,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69821000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6982-1 -- Dovecot vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6982-1" ref_url="https://ubuntu.com/security/notices/USN-6982-1" />
+				<reference source="CVE" ref_id="CVE-2024-23184" ref_url="https://ubuntu.com/security/CVE-2024-23184" />
+				<reference source="CVE" ref_id="CVE-2024-23185" ref_url="https://ubuntu.com/security/CVE-2024-23185" />
+				<description>It was discovered that Dovecot did not not properly have restrictions on ithe size of address headers. A remote attacker could possibly use this issue to cause denial of service. (CVE-2024-23184, CVE-2024-23185)  Update Instructions:  Run `sudo pro fix USN-6982-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  dovecot-auth-lua - 1:2.3.21+dfsg1-2ubuntu6 dovecot-core - 1:2.3.21+dfsg1-2ubuntu6 dovecot-dev - 1:2.3.21+dfsg1-2ubuntu6 dovecot-gssapi - 1:2.3.21+dfsg1-2ubuntu6 dovecot-imapd - 1:2.3.21+dfsg1-2ubuntu6 dovecot-ldap - 1:2.3.21+dfsg1-2ubuntu6 dovecot-lmtpd - 1:2.3.21+dfsg1-2ubuntu6 dovecot-managesieved - 1:2.3.21+dfsg1-2ubuntu6 dovecot-mysql - 1:2.3.21+dfsg1-2ubuntu6 dovecot-pgsql - 1:2.3.21+dfsg1-2ubuntu6 dovecot-pop3d - 1:2.3.21+dfsg1-2ubuntu6 dovecot-sieve - 1:2.3.21+dfsg1-2ubuntu6 dovecot-solr - 1:2.3.21+dfsg1-2ubuntu6 dovecot-sqlite - 1:2.3.21+dfsg1-2ubuntu6 dovecot-submissiond - 1:2.3.21+dfsg1-2ubuntu6</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-02" />
+					<cve href="https://ubuntu.com/security/CVE-2024-23184" priority="medium" public="20240824">CVE-2024-23184</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23185" priority="medium" public="20240824">CVE-2024-23185</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1387375062768" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -9386,6 +9408,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1385913168733" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1436970067321" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1868717365107" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1387375062768" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1680952748659" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1187456041619" />
 		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1390653055554" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
@@ -10398,6 +10424,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1665006460827" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1107105810732" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1680952748659" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1224639306362" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1690603741833" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2121799886966" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -10656,6 +10685,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1184660454998" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.0.0-2ubuntu8.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1187456041619" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:2.3.21+dfsg1-2ubuntu6</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1188837287692" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12.3-1ubuntu0.1</linux:evr>
@@ -11165,6 +11197,23 @@
 			<value>dotnet-sdk-dbg-8.0</value>
 			<value>dotnet-templates-8.0</value>
 			<value>netstandard-targeting-pack-2.1-8.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1224639306362" version="1" datatype="string" comment="Long Term Release">
+			<value>dovecot-auth-lua</value>
+			<value>dovecot-core</value>
+			<value>dovecot-dev</value>
+			<value>dovecot-gssapi</value>
+			<value>dovecot-imapd</value>
+			<value>dovecot-ldap</value>
+			<value>dovecot-lmtpd</value>
+			<value>dovecot-managesieved</value>
+			<value>dovecot-mysql</value>
+			<value>dovecot-pgsql</value>
+			<value>dovecot-pop3d</value>
+			<value>dovecot-sieve</value>
+			<value>dovecot-solr</value>
+			<value>dovecot-sqlite</value>
+			<value>dovecot-submissiond</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1877844208037" version="1" datatype="string" comment="Long Term Release">
 			<value>eapoltest</value>
