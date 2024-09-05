@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-09-04T05:26:19</oval:timestamp>
+		<oval:timestamp>2024-09-05T05:25:29</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9315,6 +9315,92 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69881000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6988-1 -- Twisted vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6988-1" ref_url="https://ubuntu.com/security/notices/USN-6988-1" />
+				<reference source="CVE" ref_id="CVE-2024-41671" ref_url="https://ubuntu.com/security/CVE-2024-41671" />
+				<reference source="CVE" ref_id="CVE-2024-41810" ref_url="https://ubuntu.com/security/CVE-2024-41810" />
+				<description>It was discovered that Twisted incorrectly handled response order when processing multiple HTTP requests. A remote attacker could possibly use this issue to delay and manipulate responses.  This issue only affected Ubuntu 24.04 LTS. (CVE-2024-41671)  It was discovered that Twisted did not properly sanitize certain input. An attacker could use this vulnerability to possibly execute an HTML  injection leading to a cross-site scripting (XSS) attack.  (CVE-2024-41810)  Update Instructions:  Run `sudo pro fix USN-6988-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-twisted - 24.3.0-1ubuntu0.1 twisted-doc - 24.3.0-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-04" />
+					<cve href="https://ubuntu.com/security/CVE-2024-41671" priority="medium" public="20240729" usns="6988-1">CVE-2024-41671</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41810" priority="medium" public="20240729" usns="6988-1">CVE-2024-41810</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1561092253764" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69891000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6989-1 -- OpenStack vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6989-1" ref_url="https://ubuntu.com/security/notices/USN-6989-1" />
+				<reference source="CVE" ref_id="CVE-2024-44082" ref_url="https://ubuntu.com/security/CVE-2024-44082" />
+				<description>Dan Smith, Julia Kreger and Jay Faulkner discovered that in image processing for Ironic, a specially crafted image could be used by an authenticated user to exploit undesired behaviors in qemu-img, including possible unauthorized access to potentially sensitive data.  Update Instructions:  Run `sudo pro fix USN-6989-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ironic-api - 1:24.1.1-0ubuntu1.2 ironic-common - 1:24.1.1-0ubuntu1.2 ironic-conductor - 1:24.1.1-0ubuntu1.2 python3-ironic - 1:24.1.1-0ubuntu1.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-04" />
+					<cve href="https://ubuntu.com/security/CVE-2024-44082" priority="medium" public="20240904" usns="6989-1">CVE-2024-44082</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1640289070026" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69901000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6990-1 -- znc vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6990-1" ref_url="https://ubuntu.com/security/notices/USN-6990-1" />
+				<reference source="CVE" ref_id="CVE-2024-39844" ref_url="https://ubuntu.com/security/CVE-2024-39844" />
+				<description>Johannes Kuhn (DasBrain) discovered that znc incorrectly handled user input under certain operations. An attacker could possibly use this issue to execute arbitrary code on a user's system if the user was tricked into joining a malicious server.  Update Instructions:  Run `sudo pro fix USN-6990-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  znc-backlog - 0.20180824+1.9.0-2ubuntu0.1~esm2 Available with Ubuntu Pro: https://ubuntu.com/pro  znc-push - 1.0.0+git20190521.78d0385+1.9.0-2ubuntu0.1~esm2 Available with Ubuntu Pro: https://ubuntu.com/pro  znc - 1.9.0-2ubuntu0.1~esm2 znc-dev - 1.9.0-2ubuntu0.1~esm2 znc-perl - 1.9.0-2ubuntu0.1~esm2 znc-python - 1.9.0-2ubuntu0.1~esm2 znc-tcl - 1.9.0-2ubuntu0.1~esm2 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-04" />
+					<cve href="https://ubuntu.com/security/CVE-2024-39844" priority="medium" public="20240703">CVE-2024-39844</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1829537670992" />
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1227692931243" />
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1751188768929" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69931000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6993-1 -- Vim vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6993-1" ref_url="https://ubuntu.com/security/notices/USN-6993-1" />
+				<reference source="CVE" ref_id="CVE-2024-41957" ref_url="https://ubuntu.com/security/CVE-2024-41957" />
+				<reference source="CVE" ref_id="CVE-2024-43374" ref_url="https://ubuntu.com/security/CVE-2024-43374" />
+				<description>It was discovered that Vim incorrectly handled memory when closing a window, leading to a double-free vulnerability. If a user was tricked into opening a specially crafted file, an attacker could crash the  application, leading to a denial of service, or possibly achieve code  execution with user privileges. (CVE-2024-41957)  It was discovered that Vim incorrectly handled memory when adding a new file to an argument list, leading to a use-after-free. If a user was  tricked into opening a specially crafted file, an attacker could crash the application, leading to a denial of service. (CVE-2024-43374)  Update Instructions:  Run `sudo pro fix USN-6993-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  vim - 2:9.1.0016-1ubuntu7.2 vim-athena - 2:9.1.0016-1ubuntu7.2 vim-common - 2:9.1.0016-1ubuntu7.2 vim-doc - 2:9.1.0016-1ubuntu7.2 vim-gtk3 - 2:9.1.0016-1ubuntu7.2 vim-gui-common - 2:9.1.0016-1ubuntu7.2 vim-motif - 2:9.1.0016-1ubuntu7.2 vim-nox - 2:9.1.0016-1ubuntu7.2 vim-runtime - 2:9.1.0016-1ubuntu7.2 vim-tiny - 2:9.1.0016-1ubuntu7.2 xxd - 2:9.1.0016-1ubuntu7.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-41957" priority="medium" public="20240801" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L" cvss_severity="medium">CVE-2024-41957</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43374" priority="medium" public="20240816">CVE-2024-43374</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:2047526360492" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -9429,6 +9515,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:2135323317202" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1227692931243" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1748559875148" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1273049323144" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1229550579572" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1424281679439" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
@@ -9673,6 +9763,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:2166127823088" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1561092253764" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1549954954604" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1324566359409" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1564459053962" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2157372748460" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1970214291420" />
@@ -9741,6 +9835,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1263339201104" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1519911943110" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1640289070026" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1709175193845" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2095501887583" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1651251602298" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2078510149497" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1738096459551" />
@@ -9804,6 +9902,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1726606272782" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1180036605121" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1300887511681" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1751188768929" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2104201714611" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1205272784918" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1752016881356" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1503786973617" />
@@ -9877,6 +9979,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1267031669663" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1871533023975" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1829537670992" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1396605008793" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1324575901132" />
+		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1838839642827" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1165531700093" />
@@ -10076,6 +10182,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2047414420778" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1341493878041" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1633649572453" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2047526360492" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1719031527719" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2107786205195" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2056372234456" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1480383500543" />
@@ -10367,17 +10477,26 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1277704063614" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1798557221902" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1396605008793" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2149032195744" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1547419287839" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1798557221902" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1607199928435" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1507280049601" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1748559875148" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1944136677485" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1846345725860" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1507280049601" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1867158514721" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1831698995567" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2104201714611" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1156159980495" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1100345316831" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1800758153406" var_check="at least one" />
@@ -10523,6 +10642,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1523575104483" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1133112837956" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1549954954604" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1361734570377" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1562256108961" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1567976091656" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -10591,6 +10713,12 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1697214996836" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1872078967502" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1709175193845" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1145819751080" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1719031527719" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1314793989029" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1721514888127" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1279322219252" var_check="at least one" />
@@ -10840,11 +10968,20 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1192787090760" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.2.5.1+dfsg1-0.8ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1205272784918" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.0-2ubuntu0.1~esm2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1273049323144" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.0+git20190521.78d0385+1.9.0-2ubuntu0.1~esm2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1291398638434" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">7:6.1.1-3ubuntu5+esm2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1297675218039" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:7.2.5.1+dfsg1-0.8ubuntu0.1~esm2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1324575901132" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.20180824+1.9.0-2ubuntu0.1~esm2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2033515904587" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.7.17-1ubuntu0.1~esm2</linux:evr>
@@ -10920,6 +11057,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1321899282955" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.11-1ubuntu1.3</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1324566359409" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:24.3.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1338143576124" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.24.33-4ubuntu1.1</linux:evr>
@@ -11194,11 +11334,17 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2090588765555" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:1.8.7-1ubuntu0.1.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2095501887583" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:24.1.1-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2096455166910" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.13-4ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2106220701270" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:0.9+LibO24.2.5-0ubuntu0.24.04.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2107786205195" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:9.1.0016-1ubuntu7.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2118225453924" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.6p1-3ubuntu13.4</linux:evr>
@@ -11920,6 +12066,12 @@
 		<constant_variable id="oval:com.ubuntu.noble:var:2077377590495" version="1" datatype="string" comment="Long Term Release">
 			<value>intel-microcode</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1145819751080" version="1" datatype="string" comment="Long Term Release">
+			<value>ironic-api</value>
+			<value>ironic-common</value>
+			<value>ironic-conductor</value>
+			<value>python3-ironic</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1567976091656" version="1" datatype="string" comment="Long Term Release">
 			<value>klibc-utils</value>
 			<value>libklibc</value>
@@ -12389,6 +12541,10 @@
 			<value>python-sqlparse-doc</value>
 			<value>sqlformat</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1361734570377" version="1" datatype="string" comment="Long Term Release">
+			<value>python3-twisted</value>
+			<value>twisted-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1886461186485" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-webob</value>
 			<value>python-webob-doc</value>
@@ -12435,8 +12591,34 @@
 			<value>squid-purge</value>
 			<value>squidclient</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1314793989029" version="1" datatype="string" comment="Long Term Release">
+			<value>vim</value>
+			<value>vim-athena</value>
+			<value>vim-common</value>
+			<value>vim-doc</value>
+			<value>vim-gtk3</value>
+			<value>vim-gui-common</value>
+			<value>vim-motif</value>
+			<value>vim-nox</value>
+			<value>vim-runtime</value>
+			<value>vim-tiny</value>
+			<value>xxd</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1928272306289" version="1" datatype="string" comment="Long Term Release">
 			<value>wget</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1156159980495" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>znc</value>
+			<value>znc-dev</value>
+			<value>znc-perl</value>
+			<value>znc-python</value>
+			<value>znc-tcl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:2149032195744" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>znc-backlog</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1944136677485" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>znc-push</value>
 		</constant_variable>
 	</variables>
 </oval_definitions>
