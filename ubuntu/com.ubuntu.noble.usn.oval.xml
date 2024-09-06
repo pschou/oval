@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-09-05T05:25:29</oval:timestamp>
+		<oval:timestamp>2024-09-06T05:25:16</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9367,7 +9367,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-04" />
-					<cve href="https://ubuntu.com/security/CVE-2024-39844" priority="medium" public="20240703">CVE-2024-39844</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-39844" priority="medium" public="20240703" usns="6990-1">CVE-2024-39844</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -9376,6 +9376,26 @@
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1829537670992" />
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1227692931243" />
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1751188768929" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:69911000000" version="1" class="patch">
+			<metadata>
+				<title>USN-6991-1 -- AIOHTTP vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-6991-1" ref_url="https://ubuntu.com/security/notices/USN-6991-1" />
+				<reference source="CVE" ref_id="CVE-2024-23334" ref_url="https://ubuntu.com/security/CVE-2024-23334" />
+				<description>It was discovered that AIOHTTP did not properly restrict file access when the 'follow_symlinks' option was set to True. A remote attacker could  possibly use this issue to access unauthorized files on the system.  Update Instructions:  Run `sudo pro fix USN-6991-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-aiohttp - 3.9.1-1ubuntu0.1 python-aiohttp-doc - 3.9.1-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-23334" priority="medium" public="20240129" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="high" usns="6991-1">CVE-2024-23334</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1270260802773" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -9390,8 +9410,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-05" />
-					<cve href="https://ubuntu.com/security/CVE-2024-41957" priority="medium" public="20240801" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L" cvss_severity="medium">CVE-2024-41957</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-43374" priority="medium" public="20240816">CVE-2024-43374</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41957" priority="medium" public="20240801" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="6993-1">CVE-2024-41957</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43374" priority="medium" public="20240816" usns="6993-1">CVE-2024-43374</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -9559,6 +9579,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2194025112920" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1880856932537" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1270260802773" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1735363523563" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1219775610646" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1301271844679" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1526767236971" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:2131245321420" />
@@ -10723,6 +10747,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1721514888127" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1279322219252" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1735363523563" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2102272755329" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1752384631790" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1511303844882" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -11027,6 +11054,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1211519587519" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u412-ga-1~24.04.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1219775610646" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.9.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1222125717088" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0-2ubuntu1.2</linux:evr>
@@ -12503,6 +12533,10 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1581700575175" version="1" datatype="string" comment="Long Term Release">
 			<value>provd</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:2102272755329" version="1" datatype="string" comment="Long Term Release">
+			<value>python3-aiohttp</value>
+			<value>python-aiohttp-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1723251553084" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-bson</value>
