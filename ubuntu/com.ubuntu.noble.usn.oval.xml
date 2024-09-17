@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-09-16T05:26:44</oval:timestamp>
+		<oval:timestamp>2024-09-17T05:26:10</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9222,8 +9222,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-02" />
-					<cve href="https://ubuntu.com/security/CVE-2024-23184" priority="medium" public="20240824" usns="6982-1">CVE-2024-23184</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-23185" priority="medium" public="20240824" usns="6982-1">CVE-2024-23185</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23184" priority="medium" public="20240824" usns="6982-1,7013-1">CVE-2024-23184</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23185" priority="medium" public="20240824" usns="6982-1,7013-1">CVE-2024-23185</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -10944,6 +10944,96 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70111000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7011-1 -- ClamAV vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7011-1" ref_url="https://ubuntu.com/security/notices/USN-7011-1" />
+				<reference source="CVE" ref_id="CVE-2024-20505" ref_url="https://ubuntu.com/security/CVE-2024-20505" />
+				<reference source="CVE" ref_id="CVE-2024-20506" ref_url="https://ubuntu.com/security/CVE-2024-20506" />
+				<description>It was discovered that ClamAV incorrectly handled certain PDF files. A remote attacker could possibly use this issue to cause ClamAV to crash, resulting in a denial of service. (CVE-2024-20505)  It was discovered that ClamAV incorrectly handled logfile privileges. A local attacker could use this issue to cause ClamAV to overwrite arbitrary files, possibly leading to privilege escalation. (CVE-2024-20506)  Update Instructions:  Run `sudo pro fix USN-7011-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  clamav - 1.0.7+dfsg-0ubuntu0.24.04.1 clamav-base - 1.0.7+dfsg-0ubuntu0.24.04.1 clamav-daemon - 1.0.7+dfsg-0ubuntu0.24.04.1 clamav-docs - 1.0.7+dfsg-0ubuntu0.24.04.1 clamav-freshclam - 1.0.7+dfsg-0ubuntu0.24.04.1 clamav-milter - 1.0.7+dfsg-0ubuntu0.24.04.1 clamav-testfiles - 1.0.7+dfsg-0ubuntu0.24.04.1 clamdscan - 1.0.7+dfsg-0ubuntu0.24.04.1 libclamav11t64 - 1.0.7+dfsg-0ubuntu0.24.04.1 libclamav-dev - 1.0.7+dfsg-0ubuntu0.24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-16" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20505" priority="medium" public="20240904" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7011-1">CVE-2024-20505</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20506" priority="medium" public="20240904" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H" cvss_severity="medium" usns="7011-1">CVE-2024-20506</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1256669475773" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70121000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7012-1 -- curl vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7012-1" ref_url="https://ubuntu.com/security/notices/USN-7012-1" />
+				<reference source="CVE" ref_id="CVE-2024-8096" ref_url="https://ubuntu.com/security/CVE-2024-8096" />
+				<description>Hiroki Kurosawa discovered that curl incorrectly handled certain OCSP responses. This could result in bad certificates not being checked properly, contrary to expectations.  Update Instructions:  Run `sudo pro fix USN-7012-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 8.5.0-2ubuntu10.4 libcurl3t64-gnutls - 8.5.0-2ubuntu10.4 libcurl4-doc - 8.5.0-2ubuntu10.4 libcurl4-gnutls-dev - 8.5.0-2ubuntu10.4 libcurl4-openssl-dev - 8.5.0-2ubuntu10.4 libcurl4t64 - 8.5.0-2ubuntu10.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-16" />
+					<cve href="https://ubuntu.com/security/CVE-2024-8096" priority="medium" public="20240911" usns="7012-1">CVE-2024-8096</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1288272307913" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70141000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7014-1 -- nginx vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7014-1" ref_url="https://ubuntu.com/security/notices/USN-7014-1" />
+				<reference source="CVE" ref_id="CVE-2024-7347" ref_url="https://ubuntu.com/security/CVE-2024-7347" />
+				<description>It was discovered that the nginx ngx_http_mp4 module incorrectly handled certain malformed mp4 files. In environments where the mp4 directive is in use, a remote attacker could possibly use this issue to cause nginx to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-7014-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libnginx-mod-http-geoip - 1.24.0-2ubuntu7.1 libnginx-mod-http-image-filter - 1.24.0-2ubuntu7.1 libnginx-mod-http-perl - 1.24.0-2ubuntu7.1 libnginx-mod-http-xslt-filter - 1.24.0-2ubuntu7.1 libnginx-mod-mail - 1.24.0-2ubuntu7.1 libnginx-mod-stream - 1.24.0-2ubuntu7.1 libnginx-mod-stream-geoip - 1.24.0-2ubuntu7.1 nginx - 1.24.0-2ubuntu7.1 nginx-common - 1.24.0-2ubuntu7.1 nginx-core - 1.24.0-2ubuntu7.1 nginx-dev - 1.24.0-2ubuntu7.1 nginx-doc - 1.24.0-2ubuntu7.1 nginx-extras - 1.24.0-2ubuntu7.1 nginx-full - 1.24.0-2ubuntu7.1 nginx-light - 1.24.0-2ubuntu7.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-16" />
+					<cve href="https://ubuntu.com/security/CVE-2024-7347" priority="medium" public="20240814" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7014-1">CVE-2024-7347</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1144890559883" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70151000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7015-1 -- Python vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7015-1" ref_url="https://ubuntu.com/security/notices/USN-7015-1" />
+				<reference source="CVE" ref_id="CVE-2023-27043" ref_url="https://ubuntu.com/security/CVE-2023-27043" />
+				<reference source="CVE" ref_id="CVE-2024-6232" ref_url="https://ubuntu.com/security/CVE-2024-6232" />
+				<reference source="CVE" ref_id="CVE-2024-6923" ref_url="https://ubuntu.com/security/CVE-2024-6923" />
+				<reference source="CVE" ref_id="CVE-2024-7592" ref_url="https://ubuntu.com/security/CVE-2024-7592" />
+				<reference source="CVE" ref_id="CVE-2024-8088" ref_url="https://ubuntu.com/security/CVE-2024-8088" />
+				<description>It was discovered that the Python email module incorrectly parsed email addresses that contain special characters. A remote attacker could possibly use this issue to bypass certain protection mechanisms. (CVE-2023-27043)  It was discovered that Python allowed excessive backtracking while parsing certain tarfile headers. A remote attacker could possibly use this issue to cause Python to consume resources, leading to a denial of service. (CVE-2024-6232)  It was discovered that the Python email module incorrectly quoted newlines for email headers. A remote attacker could possibly use this issue to perform header injection. (CVE-2024-6923)  It was discovered that the Python http.cookies module incorrectly handled parsing cookies that contained backslashes for quoted characters. A remote attacker could possibly use this issue to cause Python to consume resources, leading to a denial of service. (CVE-2024-7592)  It was discovered that the Python zipfile module incorrectly handled certain malformed zip files. A remote attacker could possibly use this issue to cause Python to stop responding, resulting in a denial of service. (CVE-2024-8088)  Update Instructions:  Run `sudo pro fix USN-7015-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  idle-python3.12 - 3.12.3-1ubuntu0.2 libpython3.12-dev - 3.12.3-1ubuntu0.2 libpython3.12-minimal - 3.12.3-1ubuntu0.2 libpython3.12-stdlib - 3.12.3-1ubuntu0.2 libpython3.12-testsuite - 3.12.3-1ubuntu0.2 libpython3.12t64 - 3.12.3-1ubuntu0.2 python3.12 - 3.12.3-1ubuntu0.2 python3.12-dev - 3.12.3-1ubuntu0.2 python3.12-doc - 3.12.3-1ubuntu0.2 python3.12-examples - 3.12.3-1ubuntu0.2 python3.12-full - 3.12.3-1ubuntu0.2 python3.12-minimal - 3.12.3-1ubuntu0.2 python3.12-nopie - 3.12.3-1ubuntu0.2 python3.12-venv - 3.12.3-1ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-16" />
+					<cve href="https://ubuntu.com/security/CVE-2023-27043" priority="medium" public="20230419" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="medium" usns="7015-1">CVE-2023-27043</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-6232" priority="medium" public="20240903" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7015-1">CVE-2024-6232</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-6923" priority="medium" public="20240801" usns="7015-1">CVE-2024-6923</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-7592" priority="low" public="20240819" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7015-1">CVE-2024-7592</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-8088" priority="medium" public="20240822" usns="7015-1">CVE-2024-8088</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1968094439919" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -10977,6 +11067,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1140765002129" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1318576013755" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1900836281814" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1144890559883" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2168296732829" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2069635659529" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1146973957528" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1118008377338" />
@@ -11098,6 +11192,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1127884905257" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2134316809868" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1256669475773" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1706269345037" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1498334571688" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1259161334574" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1801661439855" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1403405485454" />
@@ -11117,6 +11215,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1270260802773" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1735363523563" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1219775610646" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1288272307913" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1606024058513" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1196101707356" />
 		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1289355829435" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1518931233932" />
@@ -11685,6 +11787,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1965530906108" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1153941346497" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1876544124620" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1968094439919" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1516053665024" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1955976093461" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1969475696291" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1932137612700" />
@@ -12275,6 +12381,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1508394685801" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2049077388365" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1516053665024" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2003737424747" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1522460169487" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1555856187541" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -12307,6 +12416,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1605003139038" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1438196072045" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1606024058513" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1397969216726" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1606301568915" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1581700575175" var_check="at least one" />
@@ -12355,6 +12467,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1697214996836" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1872078967502" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1706269345037" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1594109676550" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1709175193845" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1145819751080" var_check="at least one" />
@@ -12527,6 +12642,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2162417731320" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1657557697829" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2168296732829" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1508124000984" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2173237919323" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2170293769361" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -12673,6 +12791,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1189860168848" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:590-2ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1196101707356" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.5.0-2ubuntu10.4</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1203530214405" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:29.0.1-0ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
@@ -12759,6 +12880,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1477493111052" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u422-b05-1~24.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1498334571688" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.7+dfsg-0ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1519911943110" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:5.27.11-0ubuntu4.1</linux:evr>
@@ -12949,6 +13073,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1948644338190" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.2.7-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1955976093461" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12.3-1ubuntu0.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1966273488874" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.2-4ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -12984,6 +13111,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2069292845144" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.13-0ubuntu3.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2069635659529" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.24.0-2ubuntu7.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2075791560588" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.6p1-3ubuntu13.3</linux:evr>
@@ -13178,6 +13308,18 @@
 			<value>cinder-scheduler</value>
 			<value>cinder-volume</value>
 			<value>python3-cinder</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1594109676550" version="1" datatype="string" comment="Long Term Release">
+			<value>clamav</value>
+			<value>clamav-base</value>
+			<value>clamav-daemon</value>
+			<value>clamav-docs</value>
+			<value>clamav-freshclam</value>
+			<value>clamav-milter</value>
+			<value>clamav-testfiles</value>
+			<value>clamdscan</value>
+			<value>libclamav11t64</value>
+			<value>libclamav-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1595796075792" version="1" datatype="string" comment="Long Term Release">
 			<value>cups</value>
@@ -13935,6 +14077,23 @@
 			<value>nghttp2-client</value>
 			<value>nghttp2-proxy</value>
 			<value>nghttp2-server</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1508124000984" version="1" datatype="string" comment="Long Term Release">
+			<value>libnginx-mod-http-geoip</value>
+			<value>libnginx-mod-http-image-filter</value>
+			<value>libnginx-mod-http-perl</value>
+			<value>libnginx-mod-http-xslt-filter</value>
+			<value>libnginx-mod-mail</value>
+			<value>libnginx-mod-stream</value>
+			<value>libnginx-mod-stream-geoip</value>
+			<value>nginx</value>
+			<value>nginx-common</value>
+			<value>nginx-core</value>
+			<value>nginx-dev</value>
+			<value>nginx-doc</value>
+			<value>nginx-extras</value>
+			<value>nginx-full</value>
+			<value>nginx-light</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1558453410519" version="1" datatype="string" comment="Long Term Release">
 			<value>libnss-libvirt</value>
