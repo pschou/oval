@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-09-17T05:26:10</oval:timestamp>
+		<oval:timestamp>2024-09-18T05:26:26</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9982,19 +9982,41 @@
 				<reference source="CVE" ref_id="CVE-2024-45490" ref_url="https://ubuntu.com/security/CVE-2024-45490" />
 				<reference source="CVE" ref_id="CVE-2024-45491" ref_url="https://ubuntu.com/security/CVE-2024-45491" />
 				<reference source="CVE" ref_id="CVE-2024-45492" ref_url="https://ubuntu.com/security/CVE-2024-45492" />
-				<description>Shang-Hung Wan discovered that Expat did not properly handle certain function calls when a negative input length was provided. An attacker could use this issue to cause a denial of service or possibly execute arbitrary code. (CVE-2024-45490)  Shang-Hung Wan discovered that Expat did properly handle the potential for an integer overflow on 32-bit platforms. An attacker could use this issue to cause a denial of service or possibly execute arbitrary code. (CVE-2024-45491, CVE-2024-45492)  Update Instructions:  Run `sudo pro fix USN-7000-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  expat - 2.6.1-2ubuntu0.1 libexpat1 - 2.6.1-2ubuntu0.1 libexpat1-dev - 2.6.1-2ubuntu0.1</description>
+				<description>Shang-Hung Wan discovered that Expat did not properly handle certain function calls when a negative input length was provided. An attacker could use this issue to cause a denial of service or possibly execute arbitrary code. (CVE-2024-45490)  Shang-Hung Wan discovered that Expat did not properly handle the potential for an integer overflow on 32-bit platforms. An attacker could use this issue to cause a denial of service or possibly execute arbitrary code. (CVE-2024-45491, CVE-2024-45492)  Update Instructions:  Run `sudo pro fix USN-7000-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  expat - 2.6.1-2ubuntu0.1 libexpat1 - 2.6.1-2ubuntu0.1 libexpat1-dev - 2.6.1-2ubuntu0.1</description>
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-12" />
-					<cve href="https://ubuntu.com/security/CVE-2024-45490" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7001-1">CVE-2024-45490</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-45491" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7001-1">CVE-2024-45491</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-45492" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1">CVE-2024-45492</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-45490" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7001-1,7001-2,7000-2">CVE-2024-45490</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-45491" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7001-1,7001-2,7000-2">CVE-2024-45491</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-45492" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7000-2">CVE-2024-45492</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1253981335500" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70012000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7001-2 -- xmltok library vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7001-2" ref_url="https://ubuntu.com/security/notices/USN-7001-2" />
+				<reference source="CVE" ref_id="CVE-2024-45490" ref_url="https://ubuntu.com/security/CVE-2024-45490" />
+				<reference source="CVE" ref_id="CVE-2024-45491" ref_url="https://ubuntu.com/security/CVE-2024-45491" />
+				<description>USN-7001-1 fixed vulnerabilities in xmltol library. This update provides the corresponding updates for Ubuntu 24.04 LTS.  Original advisory details:   Shang-Hung Wan discovered that Expat, contained within the xmltok library,  did not properly handle certain function calls when a negative input  length was provided. An attacker could use this issue to cause a denial of  service or possibly execute arbitrary code. (CVE-2024-45490)    Shang-Hung Wan discovered that Expat, contained within the xmltok library,  did not properly handle the potential for an integer overflow on 32-bit  platforms. An attacker could use this issue to cause a denial of service  or possibly execute arbitrary code. (CVE-2024-45491)  Update Instructions:  Run `sudo pro fix USN-7001-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libxmltok1-dev - 1.2-4.1ubuntu2.24.0.4.1+esm1 libxmltok1t64 - 1.2-4.1ubuntu2.24.0.4.1+esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-17" />
+					<cve href="https://ubuntu.com/security/CVE-2024-45490" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7001-1,7001-2,7000-2">CVE-2024-45490</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-45491" priority="medium" public="20240830" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7000-1,7001-1,7001-2,7000-2">CVE-2024-45491</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1285779502409" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -10944,6 +10966,42 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70101000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7010-1 -- DCMTK vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7010-1" ref_url="https://ubuntu.com/security/notices/USN-7010-1" />
+				<reference source="CVE" ref_id="CVE-2021-41687" ref_url="https://ubuntu.com/security/CVE-2021-41687" />
+				<reference source="CVE" ref_id="CVE-2021-41688" ref_url="https://ubuntu.com/security/CVE-2021-41688" />
+				<reference source="CVE" ref_id="CVE-2021-41689" ref_url="https://ubuntu.com/security/CVE-2021-41689" />
+				<reference source="CVE" ref_id="CVE-2021-41690" ref_url="https://ubuntu.com/security/CVE-2021-41690" />
+				<reference source="CVE" ref_id="CVE-2022-2121" ref_url="https://ubuntu.com/security/CVE-2022-2121" />
+				<reference source="CVE" ref_id="CVE-2022-43272" ref_url="https://ubuntu.com/security/CVE-2022-43272" />
+				<reference source="CVE" ref_id="CVE-2024-28130" ref_url="https://ubuntu.com/security/CVE-2024-28130" />
+				<reference source="CVE" ref_id="CVE-2024-34508" ref_url="https://ubuntu.com/security/CVE-2024-34508" />
+				<reference source="CVE" ref_id="CVE-2024-34509" ref_url="https://ubuntu.com/security/CVE-2024-34509" />
+				<description>Jinsheng Ba discovered that DCMTK incorrectly handled certain requests. If a user or an automated system were tricked into opening a certain specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2021-41687, CVE-2021-41688, CVE-2021-41689, CVE-2021-41690)  Sharon Brizinov and Noam Moshe discovered that DCMTK incorrectly handled pointers. If a user or an automated system were tricked into opening a certain specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2022-2121)  It was discovered that DCMTK incorrectly handled certain inputs. If a user or an automated system were tricked into opening a certain specially crafted input file, a remote attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 20.04 LTS. (CVE-2022-43272)  It was discovered that DCMTK incorrectly handled certain inputs. If a user or an automated system were tricked into opening a certain specially crafted input file, a remote attacker could possibly use this issue to execute arbitrary code. This issue was only addressed in Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2024-28130)  It was discovered that DCMTK incorrectly handled memory when processing an invalid incoming DIMSE message. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-34508, CVE-2024-34509)  Update Instructions:  Run `sudo pro fix USN-7010-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  dcmtk - 3.6.7-9.1ubuntu0.1~esm1 dcmtk-doc - 3.6.7-9.1ubuntu0.1~esm1 libdcmtk17t64 - 3.6.7-9.1ubuntu0.1~esm1 libdcmtk-dev - 3.6.7-9.1ubuntu0.1~esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-17" />
+					<cve href="https://ubuntu.com/security/CVE-2021-41687" priority="low" public="20220628" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="5882-1,7010-1">CVE-2021-41687</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-41688" priority="low" public="20220628" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="5882-1,7010-1">CVE-2021-41688</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-41689" priority="medium" public="20220628" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="5882-1,7010-1">CVE-2021-41689</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-41690" priority="low" public="20220628" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="5882-1,7010-1">CVE-2021-41690</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-2121" priority="low" public="20220624" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="5882-1,7010-1">CVE-2022-2121</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-43272" priority="low" public="20221202" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="5882-1,7010-1">CVE-2022-43272</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-28130" priority="medium" public="20240423" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7010-1">CVE-2024-28130</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-34508" priority="medium" public="20240505" usns="7010-1">CVE-2024-34508</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-34509" priority="medium" public="20240505" usns="7010-1">CVE-2024-34509</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1792472630168" />
+				</criteria>
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.noble:def:70111000000" version="1" class="patch">
 			<metadata>
 				<title>USN-7011-1 -- ClamAV vulnerabilities</title>
@@ -10955,8 +11013,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-16" />
-					<cve href="https://ubuntu.com/security/CVE-2024-20505" priority="medium" public="20240904" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7011-1">CVE-2024-20505</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-20506" priority="medium" public="20240904" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H" cvss_severity="medium" usns="7011-1">CVE-2024-20506</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20505" priority="medium" public="20240904" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7011-1,7011-2">CVE-2024-20505</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20506" priority="medium" public="20240904" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H" cvss_severity="medium" usns="7011-1,7011-2">CVE-2024-20506</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -11031,6 +11089,26 @@
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1968094439919" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70161000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7016-1 -- FRR vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7016-1" ref_url="https://ubuntu.com/security/notices/USN-7016-1" />
+				<reference source="CVE" ref_id="CVE-2024-44070" ref_url="https://ubuntu.com/security/CVE-2024-44070" />
+				<description>Iggy Frankovic discovered that FRR incorrectly handled certain BGP messages. A remote attacker could possibly use this issue to cause FRR to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-7016-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  frr - 8.4.4-1.1ubuntu6.2 frr-doc - 8.4.4-1.1ubuntu6.2 frr-pythontools - 8.4.4-1.1ubuntu6.2 frr-rpki-rtrlib - 8.4.4-1.1ubuntu6.2 frr-snmp - 8.4.4-1.1ubuntu6.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-17" />
+					<cve href="https://ubuntu.com/security/CVE-2024-44070" priority="medium" public="20240819" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7016-1,7017-1">CVE-2024-44070</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1852314064327" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -11215,6 +11293,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1270260802773" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1735363523563" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1219775610646" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1285779502409" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2168778210716" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1233071384499" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1288272307913" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1606024058513" />
@@ -11636,6 +11718,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1619130833294" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2068560675584" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1792472630168" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1250811544896" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1462576483797" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1793797101213" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2190603799053" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:2128279697237" />
@@ -11683,6 +11769,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1839938441491" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1763046791767" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1553346576375" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1852314064327" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1611541287007" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1891194883170" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1856719980035" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1100345316831" />
@@ -12210,6 +12300,9 @@
 		<ind:variable_object id="oval:com.ubuntu.noble:obj:2194025112920" version="1">
 			<ind:var_ref>oval:com.ubuntu.noble:var:1237391847079</ind:var_ref>
 		</ind:variable_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1250811544896" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1749974409716" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1277704063614" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1798557221902" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -12233,6 +12326,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2104201714611" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1156159980495" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2168778210716" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2187571970822" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1100345316831" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1800758153406" var_check="at least one" />
@@ -12422,6 +12518,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1606301568915" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1581700575175" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1611541287007" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1808434729718" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1617312985509" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1276065560639" var_check="at least one" />
@@ -12737,6 +12836,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1205272784918" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.9.0-2ubuntu0.1~esm2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1233071384499" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.2-4.1ubuntu2.24.0.4.1+esm1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1273049323144" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.0+git20190521.78d0385+1.9.0-2ubuntu0.1~esm2</linux:evr>
 		</linux:dpkginfo_state>
@@ -12748,6 +12850,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1324575901132" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.20180824+1.9.0-2ubuntu0.1~esm2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1462576483797" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.7-9.1ubuntu0.1~esm1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2033515904587" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.7.17-1ubuntu0.1~esm2</linux:evr>
@@ -13049,6 +13154,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1876544124620" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.3.12-1ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1891194883170" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.4.4-1.1ubuntu6.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1894269319058" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.11.0-1ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -13343,6 +13451,12 @@
 			<value>libcurl4-gnutls-dev</value>
 			<value>libcurl4-openssl-dev</value>
 			<value>libcurl4t64</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1749974409716" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>dcmtk</value>
+			<value>dcmtk-doc</value>
+			<value>libdcmtk17t64</value>
+			<value>libdcmtk-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1862557963105" version="1" datatype="string" comment="Long Term Release">
 			<value>dotnet8</value>
@@ -14215,6 +14329,10 @@
 			<value>libvpx-dev</value>
 			<value>libvpx-doc</value>
 			<value>vpx-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:2187571970822" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>libxmltok1-dev</value>
+			<value>libxmltok1t64</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1657376340880" version="1" datatype="string" comment="Long Term Release">
 			<value>lkp_Ubuntu_6_8_0[_|\d]+_aws_(\d+)</value>
