@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-09-24T05:29:10</oval:timestamp>
+		<oval:timestamp>2024-09-25T05:29:28</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11704,6 +11704,68 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70311000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7031-1 -- Puma vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7031-1" ref_url="https://ubuntu.com/security/notices/USN-7031-1" />
+				<reference source="CVE" ref_id="CVE-2024-45614" ref_url="https://ubuntu.com/security/CVE-2024-45614" />
+				<description>It was discovered that Puma incorrectly handled parsing certain headers. A remote attacker could possibly use this issue to overwrite header values set by intermediate proxies by providing duplicate headers containing underscore characters.  Update Instructions:  Run `sudo pro fix USN-7031-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  puma - 6.4.2-4ubuntu4.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-24" />
+					<cve href="https://ubuntu.com/security/CVE-2024-45614" priority="medium" public="20240920" usns="7031-1,7031-2">CVE-2024-45614</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1884234158050" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70321000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7032-1 -- Tomcat vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7032-1" ref_url="https://ubuntu.com/security/notices/USN-7032-1" />
+				<reference source="CVE" ref_id="CVE-2023-46589" ref_url="https://ubuntu.com/security/CVE-2023-46589" />
+				<description>It was discovered that Tomcat incorrectly handled HTTP trailer headers. A remote attacker could possibly use this issue to perform HTTP request smuggling.  Update Instructions:  Run `sudo pro fix USN-7032-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libtomcat9-java - 9.0.70-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-24" />
+					<cve href="https://ubuntu.com/security/CVE-2023-46589" priority="medium" public="20231128" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="high">CVE-2023-46589</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1120059956694" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70331000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7033-1 -- Intel Microcode vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7033-1" ref_url="https://ubuntu.com/security/notices/USN-7033-1" />
+				<reference source="CVE" ref_id="CVE-2024-23984" ref_url="https://ubuntu.com/security/CVE-2024-23984" />
+				<reference source="CVE" ref_id="CVE-2024-24968" ref_url="https://ubuntu.com/security/CVE-2024-24968" />
+				<description>It was discovered that some Intel(R) Processors did not properly restrict access to the Running Average Power Limit (RAPL) interface. This may allow a local privileged attacker to obtain sensitive information. (CVE-2024-23984)  It was discovered that some Intel(R) Processors did not properly implement finite state machines (FSMs) in hardware logic. This may allow a local privileged attacker to cause a denial of service (system crash). (CVE-2024-24968)  Update Instructions:  Run `sudo pro fix USN-7033-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  intel-microcode - 3.20240910.0ubuntu0.24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-25" />
+					<cve href="https://ubuntu.com/security/CVE-2024-23984" priority="medium" public="20240916" usns="7033-1">CVE-2024-23984</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-24968" priority="medium" public="20240916" usns="7033-1">CVE-2024-24968</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1739872458850" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -11718,6 +11780,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2070177409637" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:2038155430763" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1120059956694" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1847636699228" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1497992155059" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1124612202222" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1544169350230" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1221726446732" />
@@ -12298,6 +12364,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1762023397006" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1271834581872" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1739872458850" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1738276644892" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1484033591652" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1748173129713" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1720578306899" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:2128279697237" />
@@ -12438,6 +12508,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2039018410769" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1117997834900" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1884234158050" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2170976705347" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2051793003530" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1886982119554" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1310733429115" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1123322841839" />
@@ -13251,6 +13325,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1735363523563" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2102272755329" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1738276644892" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2077377590495" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1752384631790" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1511303844882" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -13298,6 +13375,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1837200126865" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1862557963105" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1847636699228" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1533566674736" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1855560580775" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2125070792377" var_check="at least one" />
@@ -13412,6 +13492,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2168296732829" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1508124000984" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2170976705347" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1617915844094" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2173237919323" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2170293769361" var_check="at least one" />
@@ -13658,6 +13741,12 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1477493111052" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u422-b05-1~24.04</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1484033591652" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20240910.0ubuntu0.24.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1497992155059" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.70-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1498334571688" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.7+dfsg-0ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -13882,6 +13971,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2043346884782" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.24.41-4ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2051793003530" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.4.2-4ubuntu4.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2052121290987" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.3.6-0ubuntu0.24.04.1</linux:evr>
@@ -14965,6 +15057,9 @@
 			<value>libtiff-tools</value>
 			<value>libtiffxx6</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1533566674736" version="1" datatype="string" comment="Long Term Release">
+			<value>libtomcat9-java</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1989626749944" version="1" datatype="string" comment="Long Term Release">
 			<value>libtss2-dev</value>
 			<value>libtss2-doc</value>
@@ -15145,6 +15240,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1581700575175" version="1" datatype="string" comment="Long Term Release">
 			<value>provd</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1617915844094" version="1" datatype="string" comment="Long Term Release">
+			<value>puma</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:2102272755329" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-aiohttp</value>
