@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-09-28T05:28:38</oval:timestamp>
+		<oval:timestamp>2024-10-01T05:29:23</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11747,7 +11747,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-24" />
-					<cve href="https://ubuntu.com/security/CVE-2024-45614" priority="medium" public="20240920" usns="7031-1,7031-2">CVE-2024-45614</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-45614" priority="medium" public="20240920" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="7031-1,7031-2">CVE-2024-45614</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -11916,6 +11916,28 @@
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1521932185049" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70461000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7046-1 -- Flatpak and Bubblewrap vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7046-1" ref_url="https://ubuntu.com/security/notices/USN-7046-1" />
+				<reference source="CVE" ref_id="CVE-2024-42472" ref_url="https://ubuntu.com/security/CVE-2024-42472" />
+				<description>It was discovered that Flatpak incorrectly handled certain persisted directories. An attacker could possibly use this issue to read and write files in locations it would not normally have access to. A patch was also needed to Bubblewrap in order to avoid race conditions caused by this fix.  Update Instructions:  Run `sudo pro fix USN-7046-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  bubblewrap - 0.9.0-1ubuntu0.1 flatpak - 1.14.6-1ubuntu0.1 flatpak-tests - 1.14.6-1ubuntu0.1 gir1.2-flatpak-1.0 - 1.14.6-1ubuntu0.1 libflatpak0 - 1.14.6-1ubuntu0.1 libflatpak-dev - 1.14.6-1ubuntu0.1 libflatpak-doc - 1.14.6-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-09-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-42472" priority="medium" public="20240815">CVE-2024-42472</cve>
+					<bug>https://launchpad.net/bugs/2077087</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1489413109331" />
+					<criterion test_ref="oval:com.ubuntu.noble:tst:2143442635906" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -12297,6 +12319,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1538271170378" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1489413109331" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1903345427006" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1654462884196" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1490947705265" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1772757816744" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2052121290987" />
@@ -12925,6 +12951,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1106891955752" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1761613009063" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2143442635906" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1346278802930" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2097131771108" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2144581358960" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2122529800947" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1987598003522" />
@@ -13359,6 +13389,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1345259427067" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1716706744764" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1346278802930" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1977228130807" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1369893025454" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1595796075792" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -13598,6 +13631,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1898983316176" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1802419633193" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1903345427006" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2063623289882" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1907041842557" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1455181583265" var_check="at least one" />
@@ -14027,6 +14063,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1633649572453" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.5.1+git230720-4ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1654462884196" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9.0-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1658206570621" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.7-1.2ubuntu7.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -14225,6 +14264,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2096455166910" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.13-4ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2097131771108" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.6-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2106220701270" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:0.9+LibO24.2.5-0ubuntu0.24.04.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -14388,6 +14430,9 @@
 			<value>bind9utils</value>
 			<value>dnsutils</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:2063623289882" version="1" datatype="string" comment="Long Term Release">
+			<value>bubblewrap</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1597435083078" version="1" datatype="string" comment="Long Term Release">
 			<value>busybox</value>
 			<value>busybox-initramfs</value>
@@ -14535,6 +14580,14 @@
 			<value>libswresample-dev</value>
 			<value>libswscale7</value>
 			<value>libswscale-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1977228130807" version="1" datatype="string" comment="Long Term Release">
+			<value>flatpak</value>
+			<value>flatpak-tests</value>
+			<value>gir1.2-flatpak-1.0</value>
+			<value>libflatpak0</value>
+			<value>libflatpak-dev</value>
+			<value>libflatpak-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1788653849670" version="1" datatype="string" comment="Long Term Release">
 			<value>fonts-opensymbol</value>
