@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-02T05:28:44</oval:timestamp>
+		<oval:timestamp>2024-10-03T05:30:28</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11985,6 +11985,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70511000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7051-1 -- AsyncSSH vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7051-1" ref_url="https://ubuntu.com/security/notices/USN-7051-1" />
+				<reference source="CVE" ref_id="CVE-2023-48795" ref_url="https://ubuntu.com/security/CVE-2023-48795" />
+				<description>Fabian Bäumer, Marcus Brinkmann, Jörg Schwenk discovered that the SSH protocol was vulnerable to a prefix truncation attack. If a remote attacker was able to intercept SSH communications, extension negotiation messages could be truncated, possibly leading to certain algorithms and features being downgraded. This issue is known as the Terrapin attack. This update adds protocol extensions to mitigate this issue.  Update Instructions:  Run `sudo pro fix USN-7051-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-asyncssh - 2.10.1-2ubuntu0.1 python-asyncssh-doc - 2.10.1-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-02" />
+					<cve href="https://ubuntu.com/security/CVE-2023-48795" priority="medium" public="20231218" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6560-1,6561-1,6560-2,6585-1,6589-1,6598-1,6738-1,7051-1">CVE-2023-48795</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1818475221612" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -12695,6 +12715,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:2027708641353" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1818475221612" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1124671868789" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1805435954317" />
+		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1819673525503" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1299656445966" />
@@ -13347,6 +13371,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1118008377338" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1558453410519" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1124671868789" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2175604951136" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1127884905257" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1933933810415" var_check="at least one" />
@@ -14198,6 +14225,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1802448722840" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.58-1ubuntu8.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1805435954317" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.10.1-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1808213893226" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.7-1.2ubuntu7.2</linux:evr>
@@ -15616,6 +15646,10 @@
 		<constant_variable id="oval:com.ubuntu.noble:var:2102272755329" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-aiohttp</value>
 			<value>python-aiohttp-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:2175604951136" version="1" datatype="string" comment="Long Term Release">
+			<value>python3-asyncssh</value>
+			<value>python-asyncssh-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1723251553084" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-bson</value>
