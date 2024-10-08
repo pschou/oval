@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-04T05:30:53</oval:timestamp>
+		<oval:timestamp>2024-10-08T05:30:53</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11849,7 +11849,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-26" />
-					<cve href="https://ubuntu.com/security/CVE-2024-47175" priority="medium" public="20241006" usns="7041-1,7045-1,7041-2">CVE-2024-47175</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47175" priority="medium" public="20241006" usns="7041-1,7045-1,7041-2,7041-3">CVE-2024-47175</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -11869,7 +11869,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-26" />
-					<cve href="https://ubuntu.com/security/CVE-2024-47176" priority="medium" public="20241006" usns="7042-1,7043-1,7043-2">CVE-2024-47176</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47176" priority="medium" public="20241006" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7042-1,7043-1,7043-2,7043-3">CVE-2024-47176</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -11909,7 +11909,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-26" />
-					<cve href="https://ubuntu.com/security/CVE-2024-47175" priority="medium" public="20241006" usns="7041-1,7045-1,7041-2">CVE-2024-47175</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47175" priority="medium" public="20241006" usns="7041-1,7045-1,7041-2,7041-3">CVE-2024-47175</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -11951,7 +11951,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-10-01" />
-					<cve href="https://ubuntu.com/security/CVE-2024-43802" priority="medium" public="20240826">CVE-2024-43802</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43802" priority="medium" public="20240826" usns="7048-1">CVE-2024-43802</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -12042,6 +12042,26 @@
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1947997809672" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70571000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7057-1 -- WEBrick vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7057-1" ref_url="https://ubuntu.com/security/notices/USN-7057-1" />
+				<reference source="CVE" ref_id="CVE-2024-47220" ref_url="https://ubuntu.com/security/CVE-2024-47220" />
+				<description>It was discovered that WEBrick incorrectly handled having both a Content- Length header and a Transfer-Encoding header. A remote attacker could possibly use this issue to perform a HTTP request smuggling attack.  Update Instructions:  Run `sudo pro fix USN-7057-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ruby-webrick - 1.8.1-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-07" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47220" priority="medium" public="20240922" usns="7057-1">CVE-2024-47220</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1321332412426" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -12275,6 +12295,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1254089187319" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1996548481446" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1321332412426" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1727150035223" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1308321253655" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1328368428247" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2029462032141" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2193079804544" />
@@ -13687,6 +13711,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1721514888127" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1279322219252" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1727150035223" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1241129487048" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1735363523563" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2102272755329" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -14075,6 +14102,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1300887511681" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.58-1ubuntu8.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1308321253655" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.8.1-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1308842854486" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:6.0-28ubuntu4.1</linux:evr>
@@ -15814,6 +15844,9 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1506201124594" version="1" datatype="string" comment="Long Term Release">
 			<value>ruby-rack</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1241129487048" version="1" datatype="string" comment="Long Term Release">
+			<value>ruby-webrick</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1859700424140" version="1" datatype="string" comment="Long Term Release">
 			<value>squid</value>
