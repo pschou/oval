@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-08T05:30:53</oval:timestamp>
+		<oval:timestamp>2024-10-09T05:32:02</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11515,7 +11515,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-16" />
-					<cve href="https://ubuntu.com/security/CVE-2024-7347" priority="medium" public="20240814" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7014-1">CVE-2024-7347</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-7347" priority="medium" public="20240814" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7014-1,7014-2">CVE-2024-7347</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -12055,13 +12055,41 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-10-07" />
-					<cve href="https://ubuntu.com/security/CVE-2024-47220" priority="medium" public="20240922" usns="7057-1">CVE-2024-47220</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47220" priority="medium" public="20240922" usns="7057-1,7057-2">CVE-2024-47220</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1321332412426" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70581000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7058-1 -- .NET vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7058-1" ref_url="https://ubuntu.com/security/notices/USN-7058-1" />
+				<reference source="CVE" ref_id="CVE-2024-38229" ref_url="https://ubuntu.com/security/CVE-2024-38229" />
+				<reference source="CVE" ref_id="CVE-2024-43483" ref_url="https://ubuntu.com/security/CVE-2024-43483" />
+				<reference source="CVE" ref_id="CVE-2024-43484" ref_url="https://ubuntu.com/security/CVE-2024-43484" />
+				<reference source="CVE" ref_id="CVE-2024-43485" ref_url="https://ubuntu.com/security/CVE-2024-43485" />
+				<description>Brennan Conroy discovered that the .NET Kestrel web server did not properly handle closing HTTP/3 streams under certain circumstances. An attacker could possibly use this issue to achieve remote code execution. This vulnerability only impacted .NET8. (CVE-2024-38229)  It was discovered that .NET components designed to process malicious input were susceptible to hash flooding attacks. An attacker could possibly use this issue to cause a denial of service, resulting in a crash. (CVE-2024-43483)  It was discovered that the .NET System.IO.Packaging namespace did not properly process SortedList data structures. An attacker could possibly use this issue to cause a denial of service, resulting in a crash. (CVE-2024-43484)  It was discovered that .NET did not properly handle the deserialization of of certain JSON properties. An attacker could possibly use this issue to cause a denial of service, resulting in a crash. (CVE-2024-43485)  Update Instructions:  Run `sudo pro fix USN-7058-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-8.0 - 8.0.10-0ubuntu1~24.04.1 aspnetcore-runtime-dbg-8.0 - 8.0.10-0ubuntu1~24.04.1 aspnetcore-targeting-pack-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet8 - 8.0.110-8.0.10-0ubuntu1~24.04.1 dotnet-apphost-pack-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet-host-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet-hostfxr-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet-runtime-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet-runtime-dbg-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet-sdk-8.0 - 8.0.110-0ubuntu1~24.04.1 dotnet-sdk-8.0-source-built-artifacts - 8.0.110-0ubuntu1~24.04.1 dotnet-sdk-dbg-8.0 - 8.0.110-0ubuntu1~24.04.1 dotnet-targeting-pack-8.0 - 8.0.10-0ubuntu1~24.04.1 dotnet-templates-8.0 - 8.0.110-0ubuntu1~24.04.1 netstandard-targeting-pack-2.1-8.0 - 8.0.110-0ubuntu1~24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-08" />
+					<cve href="https://ubuntu.com/security/CVE-2024-38229" priority="medium" public="20241008" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high">CVE-2024-38229</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43483" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2024-43483</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43484" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2024-43484</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43485" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2024-43485</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1117306746364" />
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1934172525214" />
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1247790002328" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -12079,6 +12107,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2070177409637" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:2038155430763" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1117306746364" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1132627571888" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1211339259452" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1120059956694" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1847636699228" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1497992155059" />
@@ -12238,6 +12270,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1246816105834" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2048171446862" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1428921310807" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1247790002328" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1967762955044" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1859664786823" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1253981335500" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1127884905257" />
@@ -12903,6 +12939,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1337031954289" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1615851378243" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1934172525214" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2100858486742" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1630018815376" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1936495102823" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1937146086105" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1814273199021" />
@@ -13453,6 +13493,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1132338652752" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1862557963105" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1132627571888" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1969404193358" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1137651034187" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1455181583265" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -13822,6 +13865,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1952481753959" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1728985958072" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1967762955044" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1862557963105" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1977966164183" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1397969216726" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -13866,6 +13912,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2078510149497" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2163842722565" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2100858486742" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2189228589825" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2109897757647" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1595796075792" var_check="at least one" />
@@ -14070,6 +14119,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1209654445270" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.0-0ubuntu7.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1211339259452" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.10-0ubuntu1~24.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1211519587519" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u412-ga-1~24.04.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -14238,6 +14290,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1617266519789" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.8-1fakesync1ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1630018815376" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.110-0ubuntu1~24.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1633649572453" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.5.1+git230720-4ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -14345,6 +14400,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1857917977650" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.13-0ubuntu3.4</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1859664786823" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.110-8.0.10-0ubuntu1~24.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1868717365107" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:24.02.0-1ubuntu9.1</linux:evr>
