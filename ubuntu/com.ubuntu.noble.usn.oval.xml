@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-09T05:32:02</oval:timestamp>
+		<oval:timestamp>2024-10-10T05:30:36</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -11879,6 +11879,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70422000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7042-2 -- cups-browsed vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7042-2" ref_url="https://ubuntu.com/security/notices/USN-7042-2" />
+				<reference source="CVE" ref_id="CVE-2024-47176" ref_url="https://ubuntu.com/security/CVE-2024-47176" />
+				<description>USN-7042-1 fixed a vulnerability in cups-browsed. This update improves the fix by removing support for the legacy CUPS printer discovery protocol entirely.  Original advisory details:   Simone Margaritelli discovered that cups-browsed could be used to create  arbitrary printers from outside the local network. In combination with  issues in other printing components, a remote attacker could possibly use  this issue to connect to a system, created manipulated PPD files, and  execute arbitrary code when a printer is used. This update disables  support for the legacy CUPS printer discovery protocol.  Update Instructions:  Run `sudo pro fix USN-7042-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cups-browsed - 2.0.0-0ubuntu10.2 cups-browsed-tests - 2.0.0-0ubuntu10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-09" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47176" priority="medium" public="20241006" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7042-1,7043-1,7043-2,7043-3">CVE-2024-47176</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1608754292160" />
+				</criteria>
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.noble:def:70441000000" version="1" class="patch">
 			<metadata>
 				<title>USN-7044-1 -- libcupsfilters vulnerability</title>
@@ -12078,10 +12098,10 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-10-08" />
-					<cve href="https://ubuntu.com/security/CVE-2024-38229" priority="medium" public="20241008" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high">CVE-2024-38229</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-43483" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2024-43483</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-43484" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2024-43484</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-43485" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high">CVE-2024-43485</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-38229" priority="medium" public="20241008" cvss_score="8.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7058-1">CVE-2024-38229</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43483" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7058-1">CVE-2024-43483</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43484" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7058-1">CVE-2024-43484</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43485" priority="medium" public="20241008" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7058-1">CVE-2024-43485</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -12090,6 +12110,26 @@
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1117306746364" />
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1934172525214" />
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1247790002328" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70591000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7059-1 -- OATH Toolkit vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7059-1" ref_url="https://ubuntu.com/security/notices/USN-7059-1" />
+				<reference source="CVE" ref_id="CVE-2024-47191" ref_url="https://ubuntu.com/security/CVE-2024-47191" />
+				<description>Fabian Vogt discovered that OATH Toolkit incorrectly handled file permissions. A remote attacker could possibly use this issue to overwrite root owned files, leading to a privilege escalation attack. (CVE-2024-47191)  Update Instructions:  Run `sudo pro fix USN-7059-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  liboath0t64 - 2.6.11-2.1ubuntu0.1 liboath-dev - 2.6.11-2.1ubuntu0.1 libpam-oath - 2.6.11-2.1ubuntu0.1 libpskc0t64 - 2.6.11-2.1ubuntu0.1 libpskc-dev - 2.6.11-2.1ubuntu0.1 oathtool - 2.6.11-2.1ubuntu0.1 pskctool - 2.6.11-2.1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-09" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47191" priority="medium" public="20241004" usns="7059-1">CVE-2024-47191</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:2179782097714" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -12635,6 +12675,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1750092445794" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1884156066035" />
 		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1608754292160" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1576130534053" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1846396371681" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1615774570606" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1405575573826" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1117997834900" />
@@ -13171,6 +13215,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1639785420442" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2179782097714" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2116732356226" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1980592230699" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2182700838546" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1142218268099" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1894269319058" />
@@ -13664,6 +13712,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1563724627036" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1278234424203" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1576130534053" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2024182642674" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1583230404185" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2077377590495" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -13921,6 +13972,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2111365505296" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2069257244366" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2116732356226" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1780610121325" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2122529800947" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1655375767248" var_check="at least one" />
@@ -14395,6 +14449,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1834786873929" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.5.1+dfsg1-0ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1846396371681" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.0-0ubuntu10.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1846530272253" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.59.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -14457,6 +14514,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1979593361051" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:28.0.1-0ubuntu1.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1980592230699" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.11-2.1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1982750341260" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:2.23-1ubuntu0.1</linux:evr>
@@ -15562,6 +15622,15 @@
 			<value>libvirt-login-shell</value>
 			<value>libvirt-sanlock</value>
 			<value>libvirt-wireshark</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1780610121325" version="1" datatype="string" comment="Long Term Release">
+			<value>liboath0t64</value>
+			<value>liboath-dev</value>
+			<value>libpam-oath</value>
+			<value>libpskc0t64</value>
+			<value>libpskc-dev</value>
+			<value>oathtool</value>
+			<value>pskctool</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1549395455793" version="1" datatype="string" comment="Long Term Release">
 			<value>libodbc2</value>
