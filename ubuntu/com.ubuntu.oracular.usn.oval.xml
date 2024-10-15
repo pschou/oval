@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<generator>
+		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
+		<oval:product_version>1</oval:product_version>
+		<oval:schema_version>5.11.1</oval:schema_version>
+		<oval:timestamp>2024-10-15T05:31:22</oval:timestamp>
+		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
+	</generator>
+	<definitions>
+		<definition class="inventory" id="oval:com.ubuntu.oracular:def:100" version="1">
+			<metadata>
+				<title>Check that Ubuntu 24.10 (oracular) is installed.</title>
+				<description />
+			</metadata>
+			<criteria>
+				<criterion test_ref="oval:com.ubuntu.oracular:tst:1606098102597" />
+				<criterion test_ref="oval:com.ubuntu.oracular:tst:1193025277208" />
+			</criteria>
+		</definition>
+	</definitions>
+	<tests>
+		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1984794673141" />
+		</ind:textfilecontent54_test>
+		<ind:family_test id="oval:com.ubuntu.oracular:tst:1606098102597" check="at least one" check_existence="at_least_one_exists" version="1">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
+		</ind:family_test>
+	</tests>
+	<objects>
+		<ind:family_object id="oval:com.ubuntu.oracular:obj:1742435039334" version="1" comment="The singleton family object." />
+		<ind:textfilecontent54_object id="oval:com.ubuntu.oracular:obj:1690319274976" version="1">
+			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
+			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
+	</objects>
+	<states>
+		<ind:family_state id="oval:com.ubuntu.oracular:ste:1721483903174" version="1" comment="The singleton family object.">
+			<ind:family>unix</ind:family>
+		</ind:family_state>
+		<ind:textfilecontent54_state id="oval:com.ubuntu.oracular:ste:1984794673141" version="1" comment="Ubuntu 24.10">
+			<ind:subexpression datatype="string" operation="equals">oracular</ind:subexpression>
+		</ind:textfilecontent54_state>
+	</states>
+	<variables />
+</oval_definitions>
