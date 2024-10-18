@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-15T05:31:22</oval:timestamp>
+		<oval:timestamp>2024-10-18T05:31:51</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -18,6 +18,26 @@
 				<criterion test_ref="oval:com.ubuntu.oracular:tst:1193025277208" />
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70592000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7059-2 -- OATH Toolkit vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7059-2" ref_url="https://ubuntu.com/security/notices/USN-7059-2" />
+				<reference source="CVE" ref_id="CVE-2024-47191" ref_url="https://ubuntu.com/security/CVE-2024-47191" />
+				<description>USN-7059-1 fixed a vulnerability in OATH Toolkit library. This update provides the corresponding update for Ubuntu 24.10.  Original advisory details:   Fabian Vogt discovered that OATH Toolkit incorrectly handled file  permissions. A remote attacker could possibly use this issue to  overwrite root owned files, leading to a privilege escalation attack.  (CVE-2024-47191)  Update Instructions:  Run `sudo pro fix USN-7059-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  liboath0t64 - 2.6.11-3ubuntu1 liboath-dev - 2.6.11-3ubuntu1 libpam-oath - 2.6.11-3ubuntu1 libpskc0t64 - 2.6.11-3ubuntu1 libpskc-dev - 2.6.11-3ubuntu1 oathtool - 2.6.11-3ubuntu1 pskctool - 2.6.11-3ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-17" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47191" priority="medium" public="20241004" usns="7059-1,7059-2">CVE-2024-47191</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1879474637840" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
@@ -28,8 +48,15 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
 		</ind:family_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1879474637840" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2062506497640" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1537439542838" />
+		</linux:dpkginfo_test>
 	</tests>
 	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2062506497640" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1780610121325" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<ind:family_object id="oval:com.ubuntu.oracular:obj:1742435039334" version="1" comment="The singleton family object." />
 		<ind:textfilecontent54_object id="oval:com.ubuntu.oracular:obj:1690319274976" version="1">
 			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
@@ -38,6 +65,9 @@
 		</ind:textfilecontent54_object>
 	</objects>
 	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1537439542838" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.11-3ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
 		<ind:family_state id="oval:com.ubuntu.oracular:ste:1721483903174" version="1" comment="The singleton family object.">
 			<ind:family>unix</ind:family>
 		</ind:family_state>
@@ -45,5 +75,15 @@
 			<ind:subexpression datatype="string" operation="equals">oracular</ind:subexpression>
 		</ind:textfilecontent54_state>
 	</states>
-	<variables />
+	<variables>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1780610121325" version="1" datatype="string" comment="Interim Release">
+			<value>liboath0t64</value>
+			<value>liboath-dev</value>
+			<value>libpam-oath</value>
+			<value>libpskc0t64</value>
+			<value>libpskc-dev</value>
+			<value>oathtool</value>
+			<value>pskctool</value>
+		</constant_variable>
+	</variables>
 </oval_definitions>
