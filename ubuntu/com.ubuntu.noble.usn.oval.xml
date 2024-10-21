@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-19T05:32:37</oval:timestamp>
+		<oval:timestamp>2024-10-21T05:31:17</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -12295,6 +12295,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70771000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7077-1 -- AMD Microcode vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7077-1" ref_url="https://ubuntu.com/security/notices/USN-7077-1" />
+				<reference source="CVE" ref_id="CVE-2023-31315" ref_url="https://ubuntu.com/security/CVE-2023-31315" />
+				<description>Enrique Nissim and Krzysztof Okupski discovered that some AMD processors did not properly restrict access to the System Management Mode (SMM) configuration when the SMM Lock was enabled. A privileged local attacker could possibly use this issue to further escalate their privileges and execute arbitrary code within the processor's firmware layer.  Update Instructions:  Run `sudo pro fix USN-7077-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  amd64-microcode - 3.20231019.1ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-21" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31315" priority="medium" public="20240812" usns="7077-1">CVE-2023-31315</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1723030525512" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -12952,6 +12972,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1722380210597" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2021256626479" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2090588765555" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1723030525512" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1753806496634" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2165780389266" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1723225586457" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1867158514721" />
@@ -14067,6 +14091,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1753739396871" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1619530361317" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1753806496634" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1101917783597" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1762023397006" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1131315650865" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -14858,6 +14885,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2159012789126" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:102.12+LibO24.2.5-0ubuntu0.24.04.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2165780389266" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20231019.1ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2185216037481" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.2-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -14958,6 +14988,9 @@
 		<constant_variable id="oval:com.ubuntu.noble:var:1202613281069" version="1" datatype="string" comment="Long Term Release">
 			<value>amavisd-new</value>
 			<value>amavisd-new-postfix</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1101917783597" version="1" datatype="string" comment="Long Term Release">
+			<value>amd64-microcode</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1728985958072" version="1" datatype="string" comment="Long Term Release">
 			<value>anope</value>
