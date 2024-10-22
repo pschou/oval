@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-21T05:31:17</oval:timestamp>
+		<oval:timestamp>2024-10-22T05:47:37</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -16,6 +16,26 @@
 			<criteria>
 				<criterion test_ref="oval:com.ubuntu.oracular:tst:1606098102597" />
 				<criterion test_ref="oval:com.ubuntu.oracular:tst:1193025277208" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70423000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7042-3 -- cups-browsed vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7042-3" ref_url="https://ubuntu.com/security/notices/USN-7042-3" />
+				<reference source="CVE" ref_id="CVE-2024-47176" ref_url="https://ubuntu.com/security/CVE-2024-47176" />
+				<description>USN-7042-2 released an improved fix for cups-browsed. This update provides the corresponding update for Ubuntu 24.10.  Original advisory details:   Simone Margaritelli discovered that cups-browsed could be used to create  arbitrary printers from outside the local network. In combination with  issues in other printing components, a remote attacker could possibly use  this issue to connect to a system, created manipulated PPD files, and  execute arbitrary code when a printer is used. This update disables  support for the legacy CUPS printer discovery protocol.  Update Instructions:  Run `sudo pro fix USN-7042-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cups-browsed - 2.0.1-0ubuntu2.1 cups-browsed-tests - 2.0.1-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-21" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47176" priority="medium" public="20241006" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7042-1,7043-1,7043-2,7043-3">CVE-2024-47176</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1393963260322" />
+				</criteria>
 			</criteria>
 		</definition>
 		<definition id="oval:com.ubuntu.oracular:def:70592000000" version="1" class="patch">
@@ -35,6 +55,28 @@
 				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.oracular:tst:1879474637840" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70622000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7062-2 -- libgsf vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7062-2" ref_url="https://ubuntu.com/security/notices/USN-7062-2" />
+				<reference source="CVE" ref_id="CVE-2024-36474" ref_url="https://ubuntu.com/security/CVE-2024-36474" />
+				<reference source="CVE" ref_id="CVE-2024-42415" ref_url="https://ubuntu.com/security/CVE-2024-42415" />
+				<description>USN-7062-1 fixed vulnerabilities in libgsf. This update provides the corresponding updates for Ubuntu 24.10.  Original advisory details:   It was discovered that libgsf incorrectly handled certain Compound  Document Binary files. If a user or automated system were tricked into  opening a specially crafted file, a remote attacker could possibly use  this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7062-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-gsf-1 - 1.14.52-1ubuntu0.1 libgsf-1-114 - 1.14.52-1ubuntu0.1 libgsf-1-common - 1.14.52-1ubuntu0.1 libgsf-1-dev - 1.14.52-1ubuntu0.1 libgsf-bin - 1.14.52-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-21" />
+					<cve href="https://ubuntu.com/security/CVE-2024-36474" priority="medium" public="20241003" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7062-1,7062-2">CVE-2024-36474</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-42415" priority="medium" public="20241003" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7062-1,7062-2">CVE-2024-42415</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2122889279679" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -64,6 +106,10 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1984794673141" />
 		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1393963260322" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2183065197301" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1614497701678" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1501130099198" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1444032144088" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1782831624367" />
@@ -76,13 +122,23 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2062506497640" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1537439542838" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2122889279679" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1484077753513" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2009833434398" />
+		</linux:dpkginfo_test>
 	</tests>
 	<objects>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1444032144088" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1101917783597" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1484077753513" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700730225001" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2062506497640" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1780610121325" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2183065197301" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2024182642674" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<ind:family_object id="oval:com.ubuntu.oracular:obj:1742435039334" version="1" comment="The singleton family object." />
 		<ind:textfilecontent54_object id="oval:com.ubuntu.oracular:obj:1690319274976" version="1">
@@ -95,8 +151,14 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1537439542838" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.11-3ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1614497701678" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.1-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1782831624367" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20240116.2+nmu1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2009833434398" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.52-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<ind:family_state id="oval:com.ubuntu.oracular:ste:1721483903174" version="1" comment="The singleton family object.">
 			<ind:family>unix</ind:family>
@@ -108,6 +170,17 @@
 	<variables>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1101917783597" version="1" datatype="string" comment="Interim Release">
 			<value>amd64-microcode</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2024182642674" version="1" datatype="string" comment="Interim Release">
+			<value>cups-browsed</value>
+			<value>cups-browsed-tests</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1700730225001" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-gsf-1</value>
+			<value>libgsf-1-114</value>
+			<value>libgsf-1-common</value>
+			<value>libgsf-1-dev</value>
+			<value>libgsf-bin</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1780610121325" version="1" datatype="string" comment="Interim Release">
 			<value>liboath0t64</value>
