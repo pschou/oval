@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-22T05:47:37</oval:timestamp>
+		<oval:timestamp>2024-10-23T05:33:28</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -12315,6 +12315,48 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70791000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7079-1 -- WebKitGTK vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7079-1" ref_url="https://ubuntu.com/security/notices/USN-7079-1" />
+				<reference source="CVE" ref_id="CVE-2024-40866" ref_url="https://ubuntu.com/security/CVE-2024-40866" />
+				<reference source="CVE" ref_id="CVE-2024-44187" ref_url="https://ubuntu.com/security/CVE-2024-44187" />
+				<description>Several security issues were discovered in the WebKitGTK Web and JavaScript engines. If a user were tricked into viewing a malicious website, a remote attacker could exploit a variety of issues related to web browser security, including cross-site scripting attacks, denial of service attacks, and arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-7079-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-javascriptcoregtk-4.1 - 2.46.1-0ubuntu0.24.04.1 gir1.2-javascriptcoregtk-6.0 - 2.46.1-0ubuntu0.24.04.1 gir1.2-webkit2-4.1 - 2.46.1-0ubuntu0.24.04.1 gir1.2-webkit-6.0 - 2.46.1-0ubuntu0.24.04.1 libjavascriptcoregtk-4.0-bin - 2.46.1-0ubuntu0.24.04.1 libjavascriptcoregtk-4.1-0 - 2.46.1-0ubuntu0.24.04.1 libjavascriptcoregtk-4.1-dev - 2.46.1-0ubuntu0.24.04.1 libjavascriptcoregtk-6.0-1 - 2.46.1-0ubuntu0.24.04.1 libjavascriptcoregtk-6.0-dev - 2.46.1-0ubuntu0.24.04.1 libjavascriptcoregtk-bin - 2.46.1-0ubuntu0.24.04.1 libwebkit2gtk-4.0-doc - 2.46.1-0ubuntu0.24.04.1 libwebkit2gtk-4.1-0 - 2.46.1-0ubuntu0.24.04.1 libwebkit2gtk-4.1-dev - 2.46.1-0ubuntu0.24.04.1 libwebkitgtk-6.0-4 - 2.46.1-0ubuntu0.24.04.1 libwebkitgtk-6.0-dev - 2.46.1-0ubuntu0.24.04.1 libwebkitgtk-doc - 2.46.1-0ubuntu0.24.04.1 webkit2gtk-driver - 2.46.1-0ubuntu0.24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-22" />
+					<cve href="https://ubuntu.com/security/CVE-2024-40866" priority="medium" public="20240917" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="7079-1">CVE-2024-40866</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-44187" priority="medium" public="20240917" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="7079-1">CVE-2024-44187</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1577007866874" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70801000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7080-1 -- Unbound vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7080-1" ref_url="https://ubuntu.com/security/notices/USN-7080-1" />
+				<reference source="CVE" ref_id="CVE-2024-8508" ref_url="https://ubuntu.com/security/CVE-2024-8508" />
+				<description>Toshifumi Sakaguchi discovered that Unbound incorrectly handled name  compression for large RRsets, which could lead to excessive CPU usage.  An attacker could potentially use this issue to cause a denial of service by sending specially crafted DNS responses.  Update Instructions:  Run `sudo pro fix USN-7080-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libunbound8 - 1.19.2-1ubuntu3.3 libunbound-dev - 1.19.2-1ubuntu3.3 python3-unbound - 1.19.2-1ubuntu3.3 unbound - 1.19.2-1ubuntu3.3 unbound-anchor - 1.19.2-1ubuntu3.3 unbound-host - 1.19.2-1ubuntu3.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-22" />
+					<cve href="https://ubuntu.com/security/CVE-2024-8508" priority="medium" public="20241003">CVE-2024-8508</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1465766795510" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -12717,6 +12759,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1753739396871" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1321899282955" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1465766795510" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1626388109361" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2193810473291" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1482184372125" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1690603741833" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2185216037481" />
@@ -12840,6 +12886,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1575262998864" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1146516758393" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1711458996382" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1577007866874" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1747901923945" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1853245240344" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1578995473342" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2137531080376" />
@@ -14025,6 +14075,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1624746985882" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2168315347961" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1626388109361" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2186613923260" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1632459424726" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1421546639154" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -14084,6 +14137,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1738276644892" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2077377590495" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1747901923945" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1131315650865" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1752384631790" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1511303844882" var_check="at least one" />
@@ -14741,6 +14797,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1846530272253" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.59.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1853245240344" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.46.1-0ubuntu0.24.04.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1857917977650" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.13-0ubuntu3.4</linux:evr>
 		</linux:dpkginfo_state>
@@ -14899,6 +14958,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2193079804544" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.11-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2193810473291" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.19.2-1ubuntu3.3</linux:evr>
 		</linux:dpkginfo_state>
 		<ind:family_state id="oval:com.ubuntu.noble:ste:1721483903174" version="1" comment="The singleton family object.">
 			<ind:family>unix</ind:family>
