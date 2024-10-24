@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-23T05:33:28</oval:timestamp>
+		<oval:timestamp>2024-10-24T05:39:51</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -12347,13 +12347,59 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-10-22" />
-					<cve href="https://ubuntu.com/security/CVE-2024-8508" priority="medium" public="20241003">CVE-2024-8508</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-8508" priority="medium" public="20241003" usns="7080-1">CVE-2024-8508</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1465766795510" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70811000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7081-1 -- Go vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7081-1" ref_url="https://ubuntu.com/security/notices/USN-7081-1" />
+				<reference source="CVE" ref_id="CVE-2024-24791" ref_url="https://ubuntu.com/security/CVE-2024-24791" />
+				<reference source="CVE" ref_id="CVE-2024-34155" ref_url="https://ubuntu.com/security/CVE-2024-34155" />
+				<reference source="CVE" ref_id="CVE-2024-34156" ref_url="https://ubuntu.com/security/CVE-2024-34156" />
+				<reference source="CVE" ref_id="CVE-2024-34158" ref_url="https://ubuntu.com/security/CVE-2024-34158" />
+				<description>It was discovered that the Go net/http module did not properly handle  responses to requests with an "Expect: 100-continue" header under certain circumstances. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-24791)  It was discovered that the Go parser module did not properly handle deeply nested literal values. An attacker could possibly use this issue to cause a panic resulting in a denial of service. (CVE-2024-34155)  It was discovered that the Go encoding/gob module did not properly handle message decoding under certain circumstances. An attacker could possibly use this issue to cause a panic resulting in a denial of service. (CVE-2024-34156)  It was discovered that the Go build module did not properly handle certain build tag lines with deeply nested expressions. An attacker could possibly use this issue to cause a panic resulting in a denial of service. (CVE-2024-34158)  Update Instructions:  Run `sudo pro fix USN-7081-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  golang-1.22 - 1.22.2-2ubuntu0.3 golang-1.22-doc - 1.22.2-2ubuntu0.3 golang-1.22-go - 1.22.2-2ubuntu0.3 golang-1.22-src - 1.22.2-2ubuntu0.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-23" />
+					<cve href="https://ubuntu.com/security/CVE-2024-24791" priority="medium" public="20240702" usns="7081-1">CVE-2024-24791</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-34155" priority="medium" public="20240906" usns="7081-1">CVE-2024-34155</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-34156" priority="medium" public="20240906" usns="7081-1">CVE-2024-34156</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-34158" priority="medium" public="20240906" usns="7081-1">CVE-2024-34158</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1343400527758" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70821000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7082-1 -- libheif vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7082-1" ref_url="https://ubuntu.com/security/notices/USN-7082-1" />
+				<reference source="CVE" ref_id="CVE-2024-41311" ref_url="https://ubuntu.com/security/CVE-2024-41311" />
+				<description>Gerrard Tai discovered that libheif did not properly validate certain images, leading to out-of-bounds read and write vulnerability. If a user or automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to cause a denial of service or to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7082-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  heif-gdk-pixbuf - 1.17.6-1ubuntu4.1 heif-thumbnailer - 1.17.6-1ubuntu4.1 libheif1 - 1.17.6-1ubuntu4.1 libheif-dev - 1.17.6-1ubuntu4.1 libheif-examples - 1.17.6-1ubuntu4.1 libheif-plugin-aomdec - 1.17.6-1ubuntu4.1 libheif-plugin-aomenc - 1.17.6-1ubuntu4.1 libheif-plugin-dav1d - 1.17.6-1ubuntu4.1 libheif-plugin-ffmpegdec - 1.17.6-1ubuntu4.1 libheif-plugin-j2kdec - 1.17.6-1ubuntu4.1 libheif-plugin-j2kenc - 1.17.6-1ubuntu4.1 libheif-plugin-jpegdec - 1.17.6-1ubuntu4.1 libheif-plugin-jpegenc - 1.17.6-1ubuntu4.1 libheif-plugin-libde265 - 1.17.6-1ubuntu4.1 libheif-plugin-rav1e - 1.17.6-1ubuntu4.1 libheif-plugin-svtenc - 1.17.6-1ubuntu4.1 libheif-plugin-x265 - 1.17.6-1ubuntu4.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-23" />
+					<cve href="https://ubuntu.com/security/CVE-2024-41311" priority="medium" public="20241015" usns="7082-1">CVE-2024-41311</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1880306886499" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -12614,6 +12660,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1343373275585" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1640203167151" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1475443330982" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1343400527758" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1875844601661" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1648784495255" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1347716927444" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1643311987319" />
@@ -13202,6 +13252,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1871260887167" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1495961030582" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1338143576124" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1880306886499" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1693358478899" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1745490052634" />
 		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1882474983828" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2039018410769" />
@@ -14114,6 +14168,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1690603741833" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2121799886966" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1693358478899" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1595244941888" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1697214996836" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1872078967502" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -14203,6 +14260,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1875033860635" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1303463740515" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1875844601661" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2121799886966" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1876187498859" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1377932839422" var_check="at least one" />
@@ -14689,6 +14749,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1633649572453" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:4.5.1+git230720-4ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1648784495255" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.22.2-2ubuntu0.3</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1654462884196" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:0.9.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -14733,6 +14796,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1738096459551" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:21.0.4+7-1ubuntu2~24.04</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1745490052634" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.17.6-1ubuntu4.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1747663346341" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0-2ubuntu1.1</linux:evr>
@@ -15730,6 +15796,25 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1455890860827" version="1" datatype="string" comment="Long Term Release">
 			<value>gross</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1595244941888" version="1" datatype="string" comment="Long Term Release">
+			<value>heif-gdk-pixbuf</value>
+			<value>heif-thumbnailer</value>
+			<value>libheif1</value>
+			<value>libheif-dev</value>
+			<value>libheif-examples</value>
+			<value>libheif-plugin-aomdec</value>
+			<value>libheif-plugin-aomenc</value>
+			<value>libheif-plugin-dav1d</value>
+			<value>libheif-plugin-ffmpegdec</value>
+			<value>libheif-plugin-j2kdec</value>
+			<value>libheif-plugin-j2kenc</value>
+			<value>libheif-plugin-jpegdec</value>
+			<value>libheif-plugin-jpegenc</value>
+			<value>libheif-plugin-libde265</value>
+			<value>libheif-plugin-rav1e</value>
+			<value>libheif-plugin-svtenc</value>
+			<value>libheif-plugin-x265</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:2003737424747" version="1" datatype="string" comment="Long Term Release">
 			<value>idle-python3.12</value>
