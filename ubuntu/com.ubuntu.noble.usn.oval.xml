@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-30T05:31:27</oval:timestamp>
+		<oval:timestamp>2024-10-31T05:31:13</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -12413,13 +12413,54 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Low</severity>
 					<issued date="2024-10-29" />
-					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1">CVE-2024-37891</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1,7084-2">CVE-2024-37891</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1188225607176" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70842000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7084-2 -- pip vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7084-2" ref_url="https://ubuntu.com/security/notices/USN-7084-2" />
+				<reference source="CVE" ref_id="CVE-2024-37891" ref_url="https://ubuntu.com/security/CVE-2024-37891" />
+				<description>USN-7084-1 fixed vulnerability in urllib3. This update provides the corresponding update for the urllib3 module bundled into pip.  Original advisory details:   It was discovered that urllib3 didn't strip HTTP Proxy-Authorization  header on cross-origin redirects. A remote attacker could possibly use  this issue to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7084-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-pip - 24.0+dfsg-1ubuntu1.1 python3-pip-whl - 24.0+dfsg-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1,7084-2">CVE-2024-37891</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1699709899945" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70851000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7085-1 -- X.Org X Server vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7085-1" ref_url="https://ubuntu.com/security/notices/USN-7085-1" />
+				<reference source="CVE" ref_id="CVE-2024-9632" ref_url="https://ubuntu.com/security/CVE-2024-9632" />
+				<description>Jan-Niklas Sohn discovered that the X.Org X Server incorrectly handled certain memory operations in the X Keyboard Extension. An attacker could use this issue to cause the X Server to crash, leading to a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7085-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  xnest - 2:21.1.12-1ubuntu1.1 xorg-server-source - 2:21.1.12-1ubuntu1.1 xserver-common - 2:21.1.12-1ubuntu1.1 xserver-xephyr - 2:21.1.12-1ubuntu1.1 xserver-xorg-core - 2:21.1.12-1ubuntu1.1 xserver-xorg-dev - 2:21.1.12-1ubuntu1.1 xserver-xorg-legacy - 2:21.1.12-1ubuntu1.1 xvfb - 2:21.1.12-1ubuntu1.1 xwayland - 2:23.2.6-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-9632" priority="medium" public="20241029" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7085-1,7085-2">CVE-2024-9632</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1763147625884" />
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1256155200653" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -12616,6 +12657,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1253981335500" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1127884905257" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2134316809868" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1256155200653" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1266149212923" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1329327158594" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1256669475773" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1706269345037" />
@@ -13081,6 +13126,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1137888917763" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1699709899945" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1842447798259" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1824949228848" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1710310861282" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2033036658488" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1272993676734" />
@@ -13148,6 +13197,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1760783543555" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1651296182745" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1400625541996" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1763147625884" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1439762778460" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1315382052367" />
 		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1763168308657" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1708808461636" />
@@ -13979,6 +14032,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1263339201104" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2177232975614" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1266149212923" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1530897597609" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1273882433730" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1455890860827" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -14059,6 +14115,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1438206554742" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1597435083078" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1439762778460" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1435177305563" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1443830405508" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1619530361317" var_check="at least one" />
@@ -14275,6 +14334,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1837200126865" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1862557963105" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1842447798259" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1911820033154" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1847636699228" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1533566674736" var_check="at least one" />
@@ -14641,11 +14703,17 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1312471419192" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:102.12+LibO24.2.3-0ubuntu0.24.04.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1315382052367" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.12-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1321899282955" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.11-1ubuntu1.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1324566359409" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:24.3.0-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1329327158594" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:23.2.6-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1338143576124" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.24.33-4ubuntu1.1</linux:evr>
@@ -14880,6 +14948,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1824077122326" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.24.2-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1824949228848" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:24.0+dfsg-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1830761262938" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.1-3ubuntu0.1</linux:evr>
@@ -16407,6 +16478,10 @@
 			<value>python3-pil.imagetk</value>
 			<value>python-pil-doc</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1911820033154" version="1" datatype="string" comment="Long Term Release">
+			<value>python3-pip</value>
+			<value>python3-pip-whl</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1566484445878" version="1" datatype="string" comment="Long Term Release">
 			<value>python3-pkg-resources</value>
 			<value>python3-setuptools</value>
@@ -16499,6 +16574,19 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1928272306289" version="1" datatype="string" comment="Long Term Release">
 			<value>wget</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1435177305563" version="1" datatype="string" comment="Long Term Release">
+			<value>xnest</value>
+			<value>xorg-server-source</value>
+			<value>xserver-common</value>
+			<value>xserver-xephyr</value>
+			<value>xserver-xorg-core</value>
+			<value>xserver-xorg-dev</value>
+			<value>xserver-xorg-legacy</value>
+			<value>xvfb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1530897597609" version="1" datatype="string" comment="Long Term Release">
+			<value>xwayland</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1156159980495" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<value>znc</value>

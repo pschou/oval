@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-30T05:31:27</oval:timestamp>
+		<oval:timestamp>2024-10-31T05:31:12</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -130,13 +130,54 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Low</severity>
 					<issued date="2024-10-29" />
-					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1">CVE-2024-37891</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1,7084-2">CVE-2024-37891</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.oracular:tst:1818825723084" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70842000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7084-2 -- pip vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7084-2" ref_url="https://ubuntu.com/security/notices/USN-7084-2" />
+				<reference source="CVE" ref_id="CVE-2024-37891" ref_url="https://ubuntu.com/security/CVE-2024-37891" />
+				<description>USN-7084-1 fixed vulnerability in urllib3. This update provides the corresponding update for the urllib3 module bundled into pip.  Original advisory details:   It was discovered that urllib3 didn't strip HTTP Proxy-Authorization  header on cross-origin redirects. A remote attacker could possibly use  this issue to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7084-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-pip - 24.2+dfsg-1ubuntu0.1 python3-pip-whl - 24.2+dfsg-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1,7084-2">CVE-2024-37891</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2100121774825" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70851000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7085-1 -- X.Org X Server vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7085-1" ref_url="https://ubuntu.com/security/notices/USN-7085-1" />
+				<reference source="CVE" ref_id="CVE-2024-9632" ref_url="https://ubuntu.com/security/CVE-2024-9632" />
+				<description>Jan-Niklas Sohn discovered that the X.Org X Server incorrectly handled certain memory operations in the X Keyboard Extension. An attacker could use this issue to cause the X Server to crash, leading to a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7085-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  xnest - 2:21.1.13-2ubuntu1.1 xorg-server-source - 2:21.1.13-2ubuntu1.1 xserver-common - 2:21.1.13-2ubuntu1.1 xserver-xephyr - 2:21.1.13-2ubuntu1.1 xserver-xorg-core - 2:21.1.13-2ubuntu1.1 xserver-xorg-dev - 2:21.1.13-2ubuntu1.1 xserver-xorg-legacy - 2:21.1.13-2ubuntu1.1 xvfb - 2:21.1.13-2ubuntu1.1 xwayland - 2:24.1.2-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-9632" priority="medium" public="20241029" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7085-1,7085-2">CVE-2024-9632</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1928850443932" />
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1396537775394" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -149,6 +190,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1393963260322" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2183065197301" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1614497701678" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1396537775394" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1543983516010" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1239391002389" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1501130099198" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1444032144088" />
@@ -170,6 +215,14 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2062506497640" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1537439542838" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1928850443932" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1499646700292" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1265768751207" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2100121774825" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1727813016491" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1919332576188" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2122889279679" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1484077753513" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2009833434398" />
@@ -188,6 +241,15 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1484077753513" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700730225001" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1499646700292" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1435177305563" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1543983516010" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1530897597609" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1727813016491" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1911820033154" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2062506497640" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1780610121325" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -202,6 +264,12 @@
 		</ind:textfilecontent54_object>
 	</objects>
 	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1239391002389" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:24.1.2-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1265768751207" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.13-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1537439542838" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.11-3ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
@@ -213,6 +281,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1906086554012" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.7-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1919332576188" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:24.2+dfsg-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2009833434398" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.52-1ubuntu0.1</linux:evr>
@@ -259,8 +330,25 @@
 			<value>unbound-anchor</value>
 			<value>unbound-host</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1911820033154" version="1" datatype="string" comment="Interim Release">
+			<value>python3-pip</value>
+			<value>python3-pip-whl</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1536593724186" version="1" datatype="string" comment="Interim Release">
 			<value>python3-urllib3</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1435177305563" version="1" datatype="string" comment="Interim Release">
+			<value>xnest</value>
+			<value>xorg-server-source</value>
+			<value>xserver-common</value>
+			<value>xserver-xephyr</value>
+			<value>xserver-xorg-core</value>
+			<value>xserver-xorg-dev</value>
+			<value>xserver-xorg-legacy</value>
+			<value>xvfb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1530897597609" version="1" datatype="string" comment="Interim Release">
+			<value>xwayland</value>
 		</constant_variable>
 	</variables>
 </oval_definitions>
