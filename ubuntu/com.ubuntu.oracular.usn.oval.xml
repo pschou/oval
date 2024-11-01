@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-10-31T05:31:12</oval:timestamp>
+		<oval:timestamp>2024-11-01T05:32:06</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -181,6 +181,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70871000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7087-1 -- libarchive vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7087-1" ref_url="https://ubuntu.com/security/notices/USN-7087-1" />
+				<reference source="CVE" ref_id="CVE-2024-20696" ref_url="https://ubuntu.com/security/CVE-2024-20696" />
+				<description>It was discovered that libarchive incorrectly handled certain RAR archive files. If a user or automated system were tricked into processing a specially crafted RAR archive, an attacker could use this issue to cause libarchive to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7087-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libarchive13t64 - 3.7.4-1ubuntu0.1 libarchive-dev - 3.7.4-1ubuntu0.1 libarchive-tools - 3.7.4-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-31" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20696" priority="medium" public="20240109" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7087-1">CVE-2024-20696</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1758660505574" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
@@ -207,6 +227,10 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
 		</ind:family_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1758660505574" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1495163796215" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2072676154317" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1818825723084" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1304535592397" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1906086554012" />
@@ -240,6 +264,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1484077753513" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700730225001" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1495163796215" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1238819058786" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1499646700292" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1435177305563" var_check="at least one" />
@@ -288,6 +315,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2009833434398" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.52-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2072676154317" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.7.4-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2113616899922" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.0-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -312,6 +342,11 @@
 			<value>libgsf-1-common</value>
 			<value>libgsf-1-dev</value>
 			<value>libgsf-bin</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1238819058786" version="1" datatype="string" comment="Interim Release">
+			<value>libarchive13t64</value>
+			<value>libarchive-dev</value>
+			<value>libarchive-tools</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1780610121325" version="1" datatype="string" comment="Interim Release">
 			<value>liboath0t64</value>
