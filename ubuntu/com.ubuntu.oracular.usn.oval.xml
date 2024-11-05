@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-01T05:32:06</oval:timestamp>
+		<oval:timestamp>2024-11-05T03:32:42</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -120,6 +120,30 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70831000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7083-1 -- OpenJPEG vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7083-1" ref_url="https://ubuntu.com/security/notices/USN-7083-1" />
+				<reference source="CVE" ref_id="CVE-2021-29338" ref_url="https://ubuntu.com/security/CVE-2021-29338" />
+				<reference source="CVE" ref_id="CVE-2021-3575" ref_url="https://ubuntu.com/security/CVE-2021-3575" />
+				<reference source="CVE" ref_id="CVE-2022-1122" ref_url="https://ubuntu.com/security/CVE-2022-1122" />
+				<description>It was discovered that OpenJPEG incorrectly handled certain memory operations when using the command line "-ImgDir" in a directory with a large number of files, leading to an integer overflow vulnerability. An attacker could potentially use this issue to cause a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2021-29338)  It was discovered that OpenJPEG incorrectly handled decompressing certain .j2k files in sycc420_to_rgb, leading to a heap-based buffer overflow vulnerability. If a user or automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to execute arbitrary code. (CVE-2021-3575)  It was discovered that OpenJPEG incorrectly handled certain memory operations in the opj2_decompress program. An attacker could potentially use this issue to cause a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2022-1122)  Update Instructions:  Run `sudo pro fix USN-7083-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libopenjp2-7 - 2.5.0-2ubuntu1.1 libopenjp2-7-dev - 2.5.0-2ubuntu1.1 libopenjp2-tools - 2.5.0-2ubuntu1.1 libopenjpip7 - 2.5.0-2ubuntu1.1 libopenjpip-dec-server - 2.5.0-2ubuntu1.1 libopenjpip-server - 2.5.0-2ubuntu1.1 libopenjpip-viewer - 2.5.0-2ubuntu1.1 openjpeg-doc - 2.5.0-2ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2021-29338" priority="low" public="20210414" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7083-1">CVE-2021-29338</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3575" priority="low" public="20220304" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7083-1">CVE-2021-3575</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-1122" priority="low" public="20220329" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7083-1">CVE-2022-1122</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1738465883062" />
+				</criteria>
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.oracular:def:70841000000" version="1" class="patch">
 			<metadata>
 				<title>USN-7084-1 -- urllib3 vulnerability</title>
@@ -227,6 +251,10 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
 		</ind:family_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1738465883062" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1314272483896" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2077248722478" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1758660505574" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1495163796215" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2072676154317" />
@@ -255,6 +283,9 @@
 	<objects>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1304535592397" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1536593724186" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1314272483896" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2027239507760" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1444032144088" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1101917783597" var_check="at least one" />
@@ -318,6 +349,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2072676154317" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.7.4-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2077248722478" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.5.0-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2113616899922" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.0-1ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -356,6 +390,16 @@
 			<value>libpskc-dev</value>
 			<value>oathtool</value>
 			<value>pskctool</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2027239507760" version="1" datatype="string" comment="Interim Release">
+			<value>libopenjp2-7</value>
+			<value>libopenjp2-7-dev</value>
+			<value>libopenjp2-tools</value>
+			<value>libopenjpip7</value>
+			<value>libopenjpip-dec-server</value>
+			<value>libopenjpip-server</value>
+			<value>libopenjpip-viewer</value>
+			<value>openjpeg-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:2186613923260" version="1" datatype="string" comment="Interim Release">
 			<value>libunbound8</value>
