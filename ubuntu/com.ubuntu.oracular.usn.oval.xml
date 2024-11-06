@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-05T03:32:42</oval:timestamp>
+		<oval:timestamp>2024-11-06T07:32:38</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -225,12 +225,84 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70911000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7091-1 -- Ruby vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7091-1" ref_url="https://ubuntu.com/security/notices/USN-7091-1" />
+				<reference source="CVE" ref_id="CVE-2024-35176" ref_url="https://ubuntu.com/security/CVE-2024-35176" />
+				<reference source="CVE" ref_id="CVE-2024-39908" ref_url="https://ubuntu.com/security/CVE-2024-39908" />
+				<reference source="CVE" ref_id="CVE-2024-41123" ref_url="https://ubuntu.com/security/CVE-2024-41123" />
+				<reference source="CVE" ref_id="CVE-2024-41946" ref_url="https://ubuntu.com/security/CVE-2024-41946" />
+				<reference source="CVE" ref_id="CVE-2024-49761" ref_url="https://ubuntu.com/security/CVE-2024-49761" />
+				<description>It was discovered that Ruby incorrectly handled parsing of an XML document that has specific XML characters in an attribute value using REXML gem. An attacker could use this issue to cause Ruby to crash, resulting in a denial of service. This issue only affected in Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2024-35176, CVE-2024-39908, CVE-2024-41123)  It was discovered that Ruby incorrectly handled parsing of an XML document that has many entity expansions with SAX2 or pull parser API. An attacker could use this issue to cause Ruby to crash, resulting in a denial of service. (CVE-2024-41946)  It was discovered that Ruby incorrectly handled parsing of an XML document that has many digits in a hex numeric character reference. An attacker could use this issue to cause Ruby to crash, resulting in a denial of service. (CVE-2024-49761)  Update Instructions:  Run `sudo pro fix USN-7091-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libruby3.3 - 3.3.4-2ubuntu5.1 ruby3.3 - 3.3.4-2ubuntu5.1 ruby3.3-dev - 3.3.4-2ubuntu5.1 ruby3.3-doc - 3.3.4-2ubuntu5.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-35176" priority="medium" public="20240516" usns="7091-1">CVE-2024-35176</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-39908" priority="medium" public="20240716" usns="7091-1">CVE-2024-39908</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41123" priority="medium" public="20240801" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7091-1">CVE-2024-41123</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41946" priority="medium" public="20240801" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7091-1">CVE-2024-41946</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-49761" priority="medium" public="20241028" usns="7091-1">CVE-2024-49761</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1407815801099" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70921000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7092-1 -- mpg123 vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7092-1" ref_url="https://ubuntu.com/security/notices/USN-7092-1" />
+				<reference source="CVE" ref_id="CVE-2024-10573" ref_url="https://ubuntu.com/security/CVE-2024-10573" />
+				<description>It was discovered that mpg123 incorrectly handled certain mp3 files. If a user or automated system were tricked into opening a specially crafted mp3 file, a remote attacker could use this issue to cause mpg123 to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7092-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libmpg123-0t64 - 1.32.7-1ubuntu0.1 libmpg123-dev - 1.32.7-1ubuntu0.1 libout123-0t64 - 1.32.7-1ubuntu0.1 libsyn123-0t64 - 1.32.7-1ubuntu0.1 mpg123 - 1.32.7-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1">CVE-2024-10573</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2093908757345" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70931000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7093-1 -- Werkzeug vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7093-1" ref_url="https://ubuntu.com/security/notices/USN-7093-1" />
+				<reference source="CVE" ref_id="CVE-2024-49767" ref_url="https://ubuntu.com/security/CVE-2024-49767" />
+				<description>It was discovered that Werkzeug incorrectly handled multiple form submission requests. A remote attacker could possibly use this issue to cause Werkzeug to consume resources, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-7093-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-werkzeug - 3.0.3-1ubuntu0.1 python-werkzeug-doc - 3.0.3-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-49767" priority="medium" public="20241025" usns="7093-1">CVE-2024-49767</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1253338541195" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1984794673141" />
 		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1253338541195" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2102917718391" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1258795380471" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1393963260322" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2183065197301" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1614497701678" />
@@ -238,6 +310,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1396537775394" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1543983516010" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1239391002389" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1407815801099" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1228901724074" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1662738450838" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1501130099198" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1444032144088" />
@@ -271,6 +347,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1499646700292" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1265768751207" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2093908757345" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1491073733391" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1715672444743" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2100121774825" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1727813016491" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1919332576188" />
@@ -281,6 +361,9 @@
 		</linux:dpkginfo_test>
 	</tests>
 	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1228901724074" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1825563389771" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1304535592397" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1536593724186" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -295,6 +378,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1484077753513" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700730225001" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1491073733391" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700530688872" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1495163796215" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1238819058786" var_check="at least one" />
@@ -311,6 +397,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2062506497640" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1780610121325" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2102917718391" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2168315347961" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2183065197301" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2024182642674" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -325,6 +414,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1239391002389" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:24.1.2-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1258795380471" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.3-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1265768751207" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.13-2ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -333,6 +425,12 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1614497701678" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.1-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1662738450838" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.4-2ubuntu5.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1715672444743" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.32.7-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1782831624367" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20240116.2+nmu1ubuntu1.1</linux:evr>
@@ -382,6 +480,13 @@
 			<value>libarchive-dev</value>
 			<value>libarchive-tools</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1700530688872" version="1" datatype="string" comment="Interim Release">
+			<value>libmpg123-0t64</value>
+			<value>libmpg123-dev</value>
+			<value>libout123-0t64</value>
+			<value>libsyn123-0t64</value>
+			<value>mpg123</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1780610121325" version="1" datatype="string" comment="Interim Release">
 			<value>liboath0t64</value>
 			<value>liboath-dev</value>
@@ -401,6 +506,12 @@
 			<value>libopenjpip-viewer</value>
 			<value>openjpeg-doc</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1825563389771" version="1" datatype="string" comment="Interim Release">
+			<value>libruby3.3</value>
+			<value>ruby3.3</value>
+			<value>ruby3.3-dev</value>
+			<value>ruby3.3-doc</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:2186613923260" version="1" datatype="string" comment="Interim Release">
 			<value>libunbound8</value>
 			<value>libunbound-dev</value>
@@ -415,6 +526,10 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1536593724186" version="1" datatype="string" comment="Interim Release">
 			<value>python3-urllib3</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2168315347961" version="1" datatype="string" comment="Interim Release">
+			<value>python3-werkzeug</value>
+			<value>python-werkzeug-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1435177305563" version="1" datatype="string" comment="Interim Release">
 			<value>xnest</value>

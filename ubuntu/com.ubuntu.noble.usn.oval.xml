@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-05T07:41:42</oval:timestamp>
+		<oval:timestamp>2024-11-06T07:32:37</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -13378,6 +13378,46 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70921000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7092-1 -- mpg123 vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7092-1" ref_url="https://ubuntu.com/security/notices/USN-7092-1" />
+				<reference source="CVE" ref_id="CVE-2024-10573" ref_url="https://ubuntu.com/security/CVE-2024-10573" />
+				<description>It was discovered that mpg123 incorrectly handled certain mp3 files. If a user or automated system were tricked into opening a specially crafted mp3 file, a remote attacker could use this issue to cause mpg123 to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7092-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libmpg123-0t64 - 1.32.5-1ubuntu1.1 libmpg123-dev - 1.32.5-1ubuntu1.1 libout123-0t64 - 1.32.5-1ubuntu1.1 libsyn123-0t64 - 1.32.5-1ubuntu1.1 mpg123 - 1.32.5-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1">CVE-2024-10573</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1612525689164" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:70931000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7093-1 -- Werkzeug vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7093-1" ref_url="https://ubuntu.com/security/notices/USN-7093-1" />
+				<reference source="CVE" ref_id="CVE-2024-49767" ref_url="https://ubuntu.com/security/CVE-2024-49767" />
+				<description>It was discovered that Werkzeug incorrectly handled multiple form submission requests. A remote attacker could possibly use this issue to cause Werkzeug to consume resources, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-7093-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-werkzeug - 3.0.1-3ubuntu0.2 python-werkzeug-doc - 3.0.1-3ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-49767" priority="medium" public="20241025" usns="7093-1">CVE-2024-49767</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1746017677579" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -13972,6 +14012,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1576130534053" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1846396371681" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1612525689164" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1249351164892" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1122575971008" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1615774570606" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1405575573826" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1117997834900" />
@@ -14103,6 +14147,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1739872458850" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1738276644892" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1484033591652" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1746017677579" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1741225344389" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2130237941666" />
 		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1748173129713" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1720578306899" />
@@ -15005,6 +15053,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1241505150247" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1276065560639" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1249351164892" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1700530688872" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1263339201104" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2177232975614" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -15256,6 +15307,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1738276644892" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2077377590495" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1741225344389" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2168315347961" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1747901923945" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1131315650865" var_check="at least one" />
@@ -15603,6 +15657,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1107065448452" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.2.5+dfsg-3~ubuntu24.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1122575971008" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.32.5-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1123322841839" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:24.0.0-0ubuntu1.2</linux:evr>
@@ -16098,6 +16155,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2125825271484" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:0.9+LibO24.2.3-0ubuntu0.24.04.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2130237941666" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.1-3ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2134316809868" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.1-2ubuntu0.1</linux:evr>
@@ -17106,6 +17166,13 @@
 			<value>sssd-passkey</value>
 			<value>sssd-proxy</value>
 			<value>sssd-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1700530688872" version="1" datatype="string" comment="Long Term Release">
+			<value>libmpg123-0t64</value>
+			<value>libmpg123-dev</value>
+			<value>libout123-0t64</value>
+			<value>libsyn123-0t64</value>
+			<value>mpg123</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:2125070792377" version="1" datatype="string" comment="Long Term Release">
 			<value>libmysqlclient21</value>
