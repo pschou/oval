@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<generator>
+		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
+		<oval:product_version>1</oval:product_version>
+		<oval:schema_version>5.11.1</oval:schema_version>
+		<oval:timestamp>2024-11-13T05:35:34</oval:timestamp>
+		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
+	</generator>
+	<definitions>
+		<definition class="inventory" id="oval:com.ubuntu.oracular:def:100" version="1">
+			<metadata>
+				<title>Check that Ubuntu 24.10 (oracular) is installed.</title>
+				<description />
+			</metadata>
+			<criteria>
+				<criterion test_ref="oval:com.ubuntu.oracular:tst:1606098102597" />
+				<criterion test_ref="oval:com.ubuntu.oracular:tst:1193025277208" />
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70423000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7042-3 -- cups-browsed vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7042-3" ref_url="https://ubuntu.com/security/notices/USN-7042-3" />
+				<reference source="CVE" ref_id="CVE-2024-47176" ref_url="https://ubuntu.com/security/CVE-2024-47176" />
+				<description>USN-7042-2 released an improved fix for cups-browsed. This update provides the corresponding update for Ubuntu 24.10.  Original advisory details:   Simone Margaritelli discovered that cups-browsed could be used to create  arbitrary printers from outside the local network. In combination with  issues in other printing components, a remote attacker could possibly use  this issue to connect to a system, created manipulated PPD files, and  execute arbitrary code when a printer is used. This update disables  support for the legacy CUPS printer discovery protocol.  Update Instructions:  Run `sudo pro fix USN-7042-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  cups-browsed - 2.0.1-0ubuntu2.1 cups-browsed-tests - 2.0.1-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-21" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47176" priority="medium" public="20241006" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7042-1,7043-1,7043-2,7043-3">CVE-2024-47176</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1393963260322" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70592000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7059-2 -- OATH Toolkit vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7059-2" ref_url="https://ubuntu.com/security/notices/USN-7059-2" />
+				<reference source="CVE" ref_id="CVE-2024-47191" ref_url="https://ubuntu.com/security/CVE-2024-47191" />
+				<description>USN-7059-1 fixed a vulnerability in OATH Toolkit library. This update provides the corresponding update for Ubuntu 24.10.  Original advisory details:   Fabian Vogt discovered that OATH Toolkit incorrectly handled file  permissions. A remote attacker could possibly use this issue to  overwrite root owned files, leading to a privilege escalation attack.  (CVE-2024-47191)  Update Instructions:  Run `sudo pro fix USN-7059-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  liboath0t64 - 2.6.11-3ubuntu1 liboath-dev - 2.6.11-3ubuntu1 libpam-oath - 2.6.11-3ubuntu1 libpskc0t64 - 2.6.11-3ubuntu1 libpskc-dev - 2.6.11-3ubuntu1 oathtool - 2.6.11-3ubuntu1 pskctool - 2.6.11-3ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-17" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47191" priority="medium" public="20241004" usns="7059-1,7059-2">CVE-2024-47191</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1879474637840" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70622000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7062-2 -- libgsf vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7062-2" ref_url="https://ubuntu.com/security/notices/USN-7062-2" />
+				<reference source="CVE" ref_id="CVE-2024-36474" ref_url="https://ubuntu.com/security/CVE-2024-36474" />
+				<reference source="CVE" ref_id="CVE-2024-42415" ref_url="https://ubuntu.com/security/CVE-2024-42415" />
+				<description>USN-7062-1 fixed vulnerabilities in libgsf. This update provides the corresponding updates for Ubuntu 24.10.  Original advisory details:   It was discovered that libgsf incorrectly handled certain Compound  Document Binary files. If a user or automated system were tricked into  opening a specially crafted file, a remote attacker could possibly use  this issue to execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7062-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-gsf-1 - 1.14.52-1ubuntu0.1 libgsf-1-114 - 1.14.52-1ubuntu0.1 libgsf-1-common - 1.14.52-1ubuntu0.1 libgsf-1-dev - 1.14.52-1ubuntu0.1 libgsf-bin - 1.14.52-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-21" />
+					<cve href="https://ubuntu.com/security/CVE-2024-36474" priority="medium" public="20241003" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7062-1,7062-2">CVE-2024-36474</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-42415" priority="medium" public="20241003" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7062-1,7062-2">CVE-2024-42415</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2122889279679" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70771000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7077-1 -- AMD Microcode vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7077-1" ref_url="https://ubuntu.com/security/notices/USN-7077-1" />
+				<reference source="CVE" ref_id="CVE-2023-31315" ref_url="https://ubuntu.com/security/CVE-2023-31315" />
+				<description>Enrique Nissim and Krzysztof Okupski discovered that some AMD processors did not properly restrict access to the System Management Mode (SMM) configuration when the SMM Lock was enabled. A privileged local attacker could possibly use this issue to further escalate their privileges and execute arbitrary code within the processor's firmware layer.  Update Instructions:  Run `sudo pro fix USN-7077-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  amd64-microcode - 3.20240116.2+nmu1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-21" />
+					<cve href="https://ubuntu.com/security/CVE-2023-31315" priority="medium" public="20240812" usns="7077-1">CVE-2023-31315</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1501130099198" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70801000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7080-1 -- Unbound vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7080-1" ref_url="https://ubuntu.com/security/notices/USN-7080-1" />
+				<reference source="CVE" ref_id="CVE-2024-8508" ref_url="https://ubuntu.com/security/CVE-2024-8508" />
+				<description>Toshifumi Sakaguchi discovered that Unbound incorrectly handled name  compression for large RRsets, which could lead to excessive CPU usage.  An attacker could potentially use this issue to cause a denial of service by sending specially crafted DNS responses.  Update Instructions:  Run `sudo pro fix USN-7080-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libunbound8 - 1.20.0-1ubuntu2.1 libunbound-dev - 1.20.0-1ubuntu2.1 python3-unbound - 1.20.0-1ubuntu2.1 unbound - 1.20.0-1ubuntu2.1 unbound-anchor - 1.20.0-1ubuntu2.1 unbound-host - 1.20.0-1ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-22" />
+					<cve href="https://ubuntu.com/security/CVE-2024-8508" priority="medium" public="20241003" usns="7080-1">CVE-2024-8508</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1518085070637" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70831000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7083-1 -- OpenJPEG vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7083-1" ref_url="https://ubuntu.com/security/notices/USN-7083-1" />
+				<reference source="CVE" ref_id="CVE-2021-29338" ref_url="https://ubuntu.com/security/CVE-2021-29338" />
+				<reference source="CVE" ref_id="CVE-2021-3575" ref_url="https://ubuntu.com/security/CVE-2021-3575" />
+				<reference source="CVE" ref_id="CVE-2022-1122" ref_url="https://ubuntu.com/security/CVE-2022-1122" />
+				<description>It was discovered that OpenJPEG incorrectly handled certain memory operations when using the command line "-ImgDir" in a directory with a large number of files, leading to an integer overflow vulnerability. An attacker could potentially use this issue to cause a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2021-29338)  It was discovered that OpenJPEG incorrectly handled decompressing certain .j2k files in sycc420_to_rgb, leading to a heap-based buffer overflow vulnerability. If a user or automated system were tricked into opening a specially crafted file, an attacker could possibly use this issue to execute arbitrary code. (CVE-2021-3575)  It was discovered that OpenJPEG incorrectly handled certain memory operations in the opj2_decompress program. An attacker could potentially use this issue to cause a denial of service. This issue only affected Ubuntu 16.04 LTS, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2022-1122)  Update Instructions:  Run `sudo pro fix USN-7083-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libopenjp2-7 - 2.5.0-2ubuntu1.1 libopenjp2-7-dev - 2.5.0-2ubuntu1.1 libopenjp2-tools - 2.5.0-2ubuntu1.1 libopenjpip7 - 2.5.0-2ubuntu1.1 libopenjpip-dec-server - 2.5.0-2ubuntu1.1 libopenjpip-server - 2.5.0-2ubuntu1.1 libopenjpip-viewer - 2.5.0-2ubuntu1.1 openjpeg-doc - 2.5.0-2ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2021-29338" priority="low" public="20210414" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7083-1">CVE-2021-29338</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3575" priority="low" public="20220304" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7083-1">CVE-2021-3575</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-1122" priority="low" public="20220329" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7083-1">CVE-2022-1122</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1738465883062" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70841000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7084-1 -- urllib3 vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7084-1" ref_url="https://ubuntu.com/security/notices/USN-7084-1" />
+				<reference source="CVE" ref_id="CVE-2024-37891" ref_url="https://ubuntu.com/security/CVE-2024-37891" />
+				<description>It was discovered that urllib3 didn't strip HTTP Proxy-Authorization header on cross-origin redirects. A remote attacker could possibly use this issue to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7084-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-urllib3 - 2.0.7-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-10-29" />
+					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1,7084-2">CVE-2024-37891</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1818825723084" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70842000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7084-2 -- pip vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7084-2" ref_url="https://ubuntu.com/security/notices/USN-7084-2" />
+				<reference source="CVE" ref_id="CVE-2024-37891" ref_url="https://ubuntu.com/security/CVE-2024-37891" />
+				<description>USN-7084-1 fixed vulnerability in urllib3. This update provides the corresponding update for the urllib3 module bundled into pip.  Original advisory details:   It was discovered that urllib3 didn't strip HTTP Proxy-Authorization  header on cross-origin redirects. A remote attacker could possibly use  this issue to obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7084-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-pip - 24.2+dfsg-1ubuntu0.1 python3-pip-whl - 24.2+dfsg-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-37891" priority="low" public="20240617" usns="7084-1,7084-2">CVE-2024-37891</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2100121774825" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70851000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7085-1 -- X.Org X Server vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7085-1" ref_url="https://ubuntu.com/security/notices/USN-7085-1" />
+				<reference source="CVE" ref_id="CVE-2024-9632" ref_url="https://ubuntu.com/security/CVE-2024-9632" />
+				<description>Jan-Niklas Sohn discovered that the X.Org X Server incorrectly handled certain memory operations in the X Keyboard Extension. An attacker could use this issue to cause the X Server to crash, leading to a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7085-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  xnest - 2:21.1.13-2ubuntu1.1 xorg-server-source - 2:21.1.13-2ubuntu1.1 xserver-common - 2:21.1.13-2ubuntu1.1 xserver-xephyr - 2:21.1.13-2ubuntu1.1 xserver-xorg-core - 2:21.1.13-2ubuntu1.1 xserver-xorg-dev - 2:21.1.13-2ubuntu1.1 xserver-xorg-legacy - 2:21.1.13-2ubuntu1.1 xvfb - 2:21.1.13-2ubuntu1.1 xwayland - 2:24.1.2-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-30" />
+					<cve href="https://ubuntu.com/security/CVE-2024-9632" priority="medium" public="20241029" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7085-1,7085-2">CVE-2024-9632</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1928850443932" />
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1396537775394" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70871000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7087-1 -- libarchive vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7087-1" ref_url="https://ubuntu.com/security/notices/USN-7087-1" />
+				<reference source="CVE" ref_id="CVE-2024-20696" ref_url="https://ubuntu.com/security/CVE-2024-20696" />
+				<description>It was discovered that libarchive incorrectly handled certain RAR archive files. If a user or automated system were tricked into processing a specially crafted RAR archive, an attacker could use this issue to cause libarchive to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7087-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libarchive13t64 - 3.7.4-1ubuntu0.1 libarchive-dev - 3.7.4-1ubuntu0.1 libarchive-tools - 3.7.4-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-10-31" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20696" priority="medium" public="20240109" cvss_score="7.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7087-1">CVE-2024-20696</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1758660505574" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70911000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7091-1 -- Ruby vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7091-1" ref_url="https://ubuntu.com/security/notices/USN-7091-1" />
+				<reference source="CVE" ref_id="CVE-2024-35176" ref_url="https://ubuntu.com/security/CVE-2024-35176" />
+				<reference source="CVE" ref_id="CVE-2024-39908" ref_url="https://ubuntu.com/security/CVE-2024-39908" />
+				<reference source="CVE" ref_id="CVE-2024-41123" ref_url="https://ubuntu.com/security/CVE-2024-41123" />
+				<reference source="CVE" ref_id="CVE-2024-41946" ref_url="https://ubuntu.com/security/CVE-2024-41946" />
+				<reference source="CVE" ref_id="CVE-2024-49761" ref_url="https://ubuntu.com/security/CVE-2024-49761" />
+				<description>It was discovered that Ruby incorrectly handled parsing of an XML document that has specific XML characters in an attribute value using REXML gem. An attacker could use this issue to cause Ruby to crash, resulting in a denial of service. This issue only affected in Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2024-35176, CVE-2024-39908, CVE-2024-41123)  It was discovered that Ruby incorrectly handled parsing of an XML document that has many entity expansions with SAX2 or pull parser API. An attacker could use this issue to cause Ruby to crash, resulting in a denial of service. (CVE-2024-41946)  It was discovered that Ruby incorrectly handled parsing of an XML document that has many digits in a hex numeric character reference. An attacker could use this issue to cause Ruby to crash, resulting in a denial of service. (CVE-2024-49761)  Update Instructions:  Run `sudo pro fix USN-7091-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libruby3.3 - 3.3.4-2ubuntu5.1 ruby3.3 - 3.3.4-2ubuntu5.1 ruby3.3-dev - 3.3.4-2ubuntu5.1 ruby3.3-doc - 3.3.4-2ubuntu5.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-35176" priority="medium" public="20240516" usns="7091-1">CVE-2024-35176</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-39908" priority="medium" public="20240716" usns="7091-1">CVE-2024-39908</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41123" priority="medium" public="20240801" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7091-1">CVE-2024-41123</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41946" priority="medium" public="20240801" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7091-1">CVE-2024-41946</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-49761" priority="medium" public="20241028" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7091-1">CVE-2024-49761</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1407815801099" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70921000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7092-1 -- mpg123 vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7092-1" ref_url="https://ubuntu.com/security/notices/USN-7092-1" />
+				<reference source="CVE" ref_id="CVE-2024-10573" ref_url="https://ubuntu.com/security/CVE-2024-10573" />
+				<description>It was discovered that mpg123 incorrectly handled certain mp3 files. If a user or automated system were tricked into opening a specially crafted mp3 file, a remote attacker could use this issue to cause mpg123 to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7092-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libmpg123-0t64 - 1.32.7-1ubuntu0.1 libmpg123-dev - 1.32.7-1ubuntu0.1 libout123-0t64 - 1.32.7-1ubuntu0.1 libsyn123-0t64 - 1.32.7-1ubuntu0.1 mpg123 - 1.32.7-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1">CVE-2024-10573</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2093908757345" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70931000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7093-1 -- Werkzeug vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7093-1" ref_url="https://ubuntu.com/security/notices/USN-7093-1" />
+				<reference source="CVE" ref_id="CVE-2024-49767" ref_url="https://ubuntu.com/security/CVE-2024-49767" />
+				<description>It was discovered that Werkzeug incorrectly handled multiple form submission requests. A remote attacker could possibly use this issue to cause Werkzeug to consume resources, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-7093-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-werkzeug - 3.0.3-1ubuntu0.1 python-werkzeug-doc - 3.0.3-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-05" />
+					<cve href="https://ubuntu.com/security/CVE-2024-49767" priority="medium" public="20241025" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7093-1">CVE-2024-49767</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1253338541195" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70941000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7094-1 -- QEMU vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7094-1" ref_url="https://ubuntu.com/security/notices/USN-7094-1" />
+				<reference source="CVE" ref_id="CVE-2019-20382" ref_url="https://ubuntu.com/security/CVE-2019-20382" />
+				<reference source="CVE" ref_id="CVE-2020-13765" ref_url="https://ubuntu.com/security/CVE-2020-13765" />
+				<reference source="CVE" ref_id="CVE-2020-1983" ref_url="https://ubuntu.com/security/CVE-2020-1983" />
+				<reference source="CVE" ref_id="CVE-2020-7039" ref_url="https://ubuntu.com/security/CVE-2020-7039" />
+				<reference source="CVE" ref_id="CVE-2020-8608" ref_url="https://ubuntu.com/security/CVE-2020-8608" />
+				<reference source="CVE" ref_id="CVE-2021-3592" ref_url="https://ubuntu.com/security/CVE-2021-3592" />
+				<reference source="CVE" ref_id="CVE-2021-3594" ref_url="https://ubuntu.com/security/CVE-2021-3594" />
+				<reference source="CVE" ref_id="CVE-2023-3019" ref_url="https://ubuntu.com/security/CVE-2023-3019" />
+				<reference source="CVE" ref_id="CVE-2024-4693" ref_url="https://ubuntu.com/security/CVE-2024-4693" />
+				<reference source="CVE" ref_id="CVE-2024-7730" ref_url="https://ubuntu.com/security/CVE-2024-7730" />
+				<description>It was discovered that QEMU incorrectly handled memory during certain VNC operations. A remote attacker could possibly use this issue to cause QEMU to consume resources, resulting in a denial of service. This issue only affected Ubuntu 14.04 LTS. (CVE-2019-20382)  It was discovered that QEMU incorrectly handled certain memory copy operations when loading ROM contents. If a user were tricked into running an untrusted kernel image, a remote attacker could possibly use this issue to run arbitrary code. This issue only affected Ubuntu 14.04 LTS. (CVE-2020-13765)  Aviv Sasson discovered that QEMU incorrectly handled Slirp networking. A remote attacker could use this issue to cause QEMU to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 14.04 LTS. (CVE-2020-1983)  It was discovered that the SLiRP networking implementation of the QEMU emulator did not properly manage memory under certain circumstances. An attacker could use this to cause a heap-based buffer overflow or other out- of-bounds access, which can lead to a denial of service (application crash) or potential execute arbitrary code. This issue only affected Ubuntu 14.04 LTS. (CVE-2020-7039)  It was discovered that the SLiRP networking implementation of the QEMU emulator misuses snprintf return values. An attacker could use this to cause a denial of service (application crash) or potentially execute arbitrary code. This issue only affected Ubuntu 14.04 LTS. (CVE-2020-8608)  It was discovered that QEMU SLiRP networking incorrectly handled certain udp packets. An attacker inside a guest could possibly use this issue to leak sensitive information from the host. This issue only affected Ubuntu 14.04 LTS and Ubuntu 16.04 LTS. (CVE-2021-3592, CVE-2021-3594)  It was discovered that QEMU had a DMA reentrancy issue, leading to a use-after-free vulnerability. An attacker could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS and Ubuntu 22.04 LTS. (CVE-2023-3019)  It was discovered that QEMU had a flaw in Virtio PCI Bindings, leading to a triggerable crash via vhost_net_stop. An attacker inside a guest could possibly use this issue to cause a denial of service. This issue only affected Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2024-4693)  It was discovered that QEMU incorrectly handled memory in virtio-sound, leading to a heap-based buffer overflow. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue only affected Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2024-7730)  Update Instructions:  Run `sudo pro fix USN-7094-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  qemu-block-extra - 1:9.0.2+ds-4ubuntu5.1 qemu-block-supplemental - 1:9.0.2+ds-4ubuntu5.1 qemu-guest-agent - 1:9.0.2+ds-4ubuntu5.1 qemu-system - 1:9.0.2+ds-4ubuntu5.1 qemu-system-arm - 1:9.0.2+ds-4ubuntu5.1 qemu-system-common - 1:9.0.2+ds-4ubuntu5.1 qemu-system-data - 1:9.0.2+ds-4ubuntu5.1 qemu-system-gui - 1:9.0.2+ds-4ubuntu5.1 qemu-system-mips - 1:9.0.2+ds-4ubuntu5.1 qemu-system-misc - 1:9.0.2+ds-4ubuntu5.1 qemu-system-modules-opengl - 1:9.0.2+ds-4ubuntu5.1 qemu-system-modules-spice - 1:9.0.2+ds-4ubuntu5.1 qemu-system-ppc - 1:9.0.2+ds-4ubuntu5.1 qemu-system-s390x - 1:9.0.2+ds-4ubuntu5.1 qemu-system-sparc - 1:9.0.2+ds-4ubuntu5.1 qemu-system-x86 - 1:9.0.2+ds-4ubuntu5.1 qemu-system-x86-xen - 1:9.0.2+ds-4ubuntu5.1 qemu-system-xen - 1:9.0.2+ds-4ubuntu5.1 qemu-user - 1:9.0.2+ds-4ubuntu5.1 qemu-user-binfmt - 1:9.0.2+ds-4ubuntu5.1 qemu-user-static - 1:9.0.2+ds-4ubuntu5.1 qemu-utils - 1:9.0.2+ds-4ubuntu5.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-08" />
+					<cve href="https://ubuntu.com/security/CVE-2019-20382" priority="low" public="20200305" cvss_score="3.5" cvss_vector="CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="4372-1,7094-1">CVE-2019-20382</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-13765" priority="medium" public="20200604" cvss_score="5.6" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="4467-1,7094-1">CVE-2020-13765</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-1983" priority="medium" public="20200422" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="4372-1,7094-1">CVE-2020-1983</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-7039" priority="medium" public="20200116" cvss_score="5.6" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="4283-1,4632-1,7094-1">CVE-2020-7039</cve>
+					<cve href="https://ubuntu.com/security/CVE-2020-8608" priority="medium" public="20200206" cvss_score="5.6" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="4283-1,4632-1,7094-1">CVE-2020-8608</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3592" priority="low" public="20210615" cvss_score="3.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N" cvss_severity="low" usns="5009-1,5010-1,5009-2,7094-1">CVE-2021-3592</cve>
+					<cve href="https://ubuntu.com/security/CVE-2021-3594" priority="low" public="20210615" cvss_score="3.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N" cvss_severity="low" usns="5009-1,5010-1,5009-2,7094-1">CVE-2021-3594</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-3019" priority="low" public="20230724" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H" cvss_severity="medium" usns="7094-1">CVE-2023-3019</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-4693" priority="medium" public="20240514" usns="7094-1">CVE-2024-4693</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-7730" priority="medium" public="20240815" usns="7094-1">CVE-2024-7730</cve>
+					<bug>https://bugs.launchpad.net/ubuntu/+source/qemu/+bug/2084210</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1864336044569" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70961000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7096-1 -- OpenJDK 8 vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7096-1" ref_url="https://ubuntu.com/security/notices/USN-7096-1" />
+				<reference source="CVE" ref_id="CVE-2024-20918" ref_url="https://ubuntu.com/security/CVE-2024-20918" />
+				<reference source="CVE" ref_id="CVE-2024-20919" ref_url="https://ubuntu.com/security/CVE-2024-20919" />
+				<reference source="CVE" ref_id="CVE-2024-20921" ref_url="https://ubuntu.com/security/CVE-2024-20921" />
+				<reference source="CVE" ref_id="CVE-2024-20926" ref_url="https://ubuntu.com/security/CVE-2024-20926" />
+				<reference source="CVE" ref_id="CVE-2024-20945" ref_url="https://ubuntu.com/security/CVE-2024-20945" />
+				<reference source="CVE" ref_id="CVE-2024-20952" ref_url="https://ubuntu.com/security/CVE-2024-20952" />
+				<reference source="CVE" ref_id="CVE-2024-21011" ref_url="https://ubuntu.com/security/CVE-2024-21011" />
+				<reference source="CVE" ref_id="CVE-2024-21068" ref_url="https://ubuntu.com/security/CVE-2024-21068" />
+				<reference source="CVE" ref_id="CVE-2024-21085" ref_url="https://ubuntu.com/security/CVE-2024-21085" />
+				<reference source="CVE" ref_id="CVE-2024-21094" ref_url="https://ubuntu.com/security/CVE-2024-21094" />
+				<reference source="CVE" ref_id="CVE-2024-21131" ref_url="https://ubuntu.com/security/CVE-2024-21131" />
+				<reference source="CVE" ref_id="CVE-2024-21138" ref_url="https://ubuntu.com/security/CVE-2024-21138" />
+				<reference source="CVE" ref_id="CVE-2024-21140" ref_url="https://ubuntu.com/security/CVE-2024-21140" />
+				<reference source="CVE" ref_id="CVE-2024-21144" ref_url="https://ubuntu.com/security/CVE-2024-21144" />
+				<reference source="CVE" ref_id="CVE-2024-21145" ref_url="https://ubuntu.com/security/CVE-2024-21145" />
+				<reference source="CVE" ref_id="CVE-2024-21147" ref_url="https://ubuntu.com/security/CVE-2024-21147" />
+				<reference source="CVE" ref_id="CVE-2024-21208" ref_url="https://ubuntu.com/security/CVE-2024-21208" />
+				<reference source="CVE" ref_id="CVE-2024-21210" ref_url="https://ubuntu.com/security/CVE-2024-21210" />
+				<reference source="CVE" ref_id="CVE-2024-21217" ref_url="https://ubuntu.com/security/CVE-2024-21217" />
+				<reference source="CVE" ref_id="CVE-2024-21235" ref_url="https://ubuntu.com/security/CVE-2024-21235" />
+				<description>Andy Boothe discovered that the Networking component of OpenJDK 8 did not properly handle access under certain circumstances. An unauthenticated  attacker could possibly use this issue to cause a denial of service.  (CVE-2024-21208)  It was discovered that the Hotspot component of OpenJDK 8 did not properly handle vectorization under certain circumstances. An unauthenticated  attacker could possibly use this issue to access unauthorized resources  and expose sensitive information. (CVE-2024-21210, CVE-2024-21235)  It was discovered that the Serialization component of OpenJDK 8 did not  properly handle deserialization under certain circumstances. An  unauthenticated attacker could possibly use this issue to cause a denial of service. (CVE-2024-21217)  It was discovered that the Hotspot component of OpenJDK 8 was not properly bounding certain UTF-8 strings, which could lead to a buffer overflow. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21131)  It was discovered that the Hotspot component of OpenJDK 8 could be made to run into an infinite loop. If an automated system were tricked into processing excessively large symbols, an attacker could possibly use this issue to cause a denial of service. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21138)  It was discovered that the Hotspot component of OpenJDK 8 did not properly perform range check elimination. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 16.04 LTS.  (CVE-2024-21140)  Yakov Shafranovich discovered that the Concurrency component of OpenJDK 8 incorrectly performed header validation in the Pack200 archive format. An attacker could possibly use this issue to cause a denial of service. This  issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21144)  Sergey Bylokhov discovered that OpenJDK 8 did not properly manage memory when handling 2D images. An attacker could possibly use this issue to obtain sensitive information. This issue was only addressed in Ubuntu  16.04 LTS. (CVE-2024-21145)  It was discovered that the Hotspot component of OpenJDK 8 incorrectly handled memory when performing range check elimination under certain circumstances. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 16.04 LTS.  (CVE-2024-21147)  It was discovered that the Hotspot component of OpenJDK 8 incorrectly handled certain exceptions with specially crafted long messages. An attacker could possibly use this issue to cause a denial of service. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21011)  Vladimir Kondratyev discovered that the Hotspot component of OpenJDK 8 incorrectly handled address offset calculations in the C1 compiler. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21068)  Yakov Shafranovich discovered that OpenJDK 8 did not properly manage memory in the Pack200 archive format. An attacker could possibly use this issue to cause a denial of service. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21085)  It was discovered that the Hotspot component of OpenJDK 8 incorrectly handled array accesses in the C2 compiler. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-21094)  Yi Yang discovered that the Hotspot component of OpenJDK 8 incorrectly handled array accesses in the C1 compiler. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-20918)  It was discovered that the Hotspot component of OpenJDK 8 did not properly verify bytecode in certain situations. An attacker could possibly use this issue to bypass Java sandbox restrictions. This  issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-20919)  It was discovered that the Hotspot component of OpenJDK 8 had an optimization flaw when generating range check loop predicates. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only  addressed in Ubuntu 16.04 LTS. (CVE-2024-20921)  Valentin Eudeline discovered that OpenJDK 8 incorrectly handled certain options in the Nashorn JavaScript subcomponent. An attacker could possibly use this issue to execute arbitrary code. This issue was only  addressed in Ubuntu 16.04 LTS. (CVE-2024-20926)  It was discovered that OpenJDK 8 could produce debug logs that contained private keys used for digital signatures. An attacker could possibly use this issue to obtain sensitive information. This issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-20945)  Hubert Kario discovered that the TLS implementation in OpenJDK 8 had a timing side-channel and incorrectly handled RSA padding. A remote attacker could possibly use this issue to recover sensitive information. This  issue was only addressed in Ubuntu 16.04 LTS. (CVE-2024-20952)  Update Instructions:  Run `sudo pro fix USN-7096-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-8-demo - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-doc - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-jdk - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-jdk-headless - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-jre - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-jre-headless - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-jre-zero - 8u432-ga~us1-0ubuntu2~24.10 openjdk-8-source - 8u432-ga~us1-0ubuntu2~24.10</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-11" />
+					<cve href="https://ubuntu.com/security/CVE-2024-20918" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1,6696-1,7096-1">CVE-2024-20918</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20919" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1,6696-1,7096-1">CVE-2024-20919</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20921" priority="medium" public="20240217" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1,6696-1,7096-1">CVE-2024-20921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20926" priority="medium" public="20240116" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6696-1,7096-1">CVE-2024-20926</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20945" priority="medium" public="20240217" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N" cvss_severity="medium" usns="6660-1,6661-1,6662-1,6696-1,7096-1">CVE-2024-20945</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-20952" priority="medium" public="20240116" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6660-1,6661-1,6662-1,6696-1,7096-1">CVE-2024-20952</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21011" priority="medium" public="20240416" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="6810-1,6811-1,6812-1,6813-1,7096-1">CVE-2024-21011</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21068" priority="medium" public="20240416" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="6810-1,6811-1,6812-1,6813-1,7096-1">CVE-2024-21068</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21085" priority="medium" public="20240416" usns="6810-1,6811-1,7096-1">CVE-2024-21085</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21094" priority="medium" public="20240416" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="6810-1,6811-1,6812-1,6813-1,7096-1">CVE-2024-21094</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21131" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21131</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21138" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21140" priority="medium" public="20240731" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21140</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21144" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="6929-1,6930-1,7096-1,7097-1">CVE-2024-21144</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21145" priority="medium" public="20240731" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21145</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21147" priority="medium" public="20240731" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21147</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21208" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21208</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21210" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21210</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21217" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21217</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21235" priority="medium" public="20241015" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21235</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2122633562438" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70971000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7097-1 -- OpenJDK 11 vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7097-1" ref_url="https://ubuntu.com/security/notices/USN-7097-1" />
+				<reference source="CVE" ref_id="CVE-2024-21131" ref_url="https://ubuntu.com/security/CVE-2024-21131" />
+				<reference source="CVE" ref_id="CVE-2024-21138" ref_url="https://ubuntu.com/security/CVE-2024-21138" />
+				<reference source="CVE" ref_id="CVE-2024-21140" ref_url="https://ubuntu.com/security/CVE-2024-21140" />
+				<reference source="CVE" ref_id="CVE-2024-21144" ref_url="https://ubuntu.com/security/CVE-2024-21144" />
+				<reference source="CVE" ref_id="CVE-2024-21145" ref_url="https://ubuntu.com/security/CVE-2024-21145" />
+				<reference source="CVE" ref_id="CVE-2024-21147" ref_url="https://ubuntu.com/security/CVE-2024-21147" />
+				<reference source="CVE" ref_id="CVE-2024-21208" ref_url="https://ubuntu.com/security/CVE-2024-21208" />
+				<reference source="CVE" ref_id="CVE-2024-21210" ref_url="https://ubuntu.com/security/CVE-2024-21210" />
+				<reference source="CVE" ref_id="CVE-2024-21217" ref_url="https://ubuntu.com/security/CVE-2024-21217" />
+				<reference source="CVE" ref_id="CVE-2024-21235" ref_url="https://ubuntu.com/security/CVE-2024-21235" />
+				<description>Andy Boothe discovered that the Networking component of OpenJDK 11 did not properly handle access under certain circumstances. An unauthenticated  attacker could possibly use this issue to cause a denial of service. (CVE-2024-21208)  It was discovered that the Hotspot component of OpenJDK 11 did not properly handle vectorization under certain circumstances. An unauthenticated attacker could possibly use this issue to access unauthorized resources and expose sensitive information. (CVE-2024-21210, CVE-2024-21235)  It was discovered that the Serialization component of OpenJDK 11 did not properly handle deserialization under certain circumstances. An unauthenticated attacker could possibly use this issue to cause a denial of service. (CVE-2024-21217)  It was discovered that the Hotspot component of OpenJDK 11 was not properly bounding certain UTF-8 strings, which could lead to a buffer overflow. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21131)  It was discovered that the Hotspot component of OpenJDK 11 could be made to run into an infinite loop. If an automated system were tricked into processing excessively large symbols, an attacker could possibly use this issue to cause a denial of service. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21138)  It was discovered that the Hotspot component of OpenJDK 11 did not properly perform range check elimination. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21140)  Yakov Shafranovich discovered that the Concurrency component of OpenJDK 11 incorrectly performed header validation in the Pack200 archive format. An attacker could possibly use this issue to cause a denial of service. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21144)  Sergey Bylokhov discovered that OpenJDK 11 did not properly manage memory when handling 2D images. An attacker could possibly use this issue to obtain sensitive information. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21145)  It was discovered that the Hotspot component of OpenJDK 11 incorrectly handled memory when performing range check elimination under certain circumstances. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21147)  Update Instructions:  Run `sudo pro fix USN-7097-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-11-demo - 11.0.25+9-1ubuntu1~24.10 openjdk-11-doc - 11.0.25+9-1ubuntu1~24.10 openjdk-11-jdk - 11.0.25+9-1ubuntu1~24.10 openjdk-11-jdk-headless - 11.0.25+9-1ubuntu1~24.10 openjdk-11-jre - 11.0.25+9-1ubuntu1~24.10 openjdk-11-jre-headless - 11.0.25+9-1ubuntu1~24.10 openjdk-11-jre-zero - 11.0.25+9-1ubuntu1~24.10 openjdk-11-source - 11.0.25+9-1ubuntu1~24.10</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-11" />
+					<cve href="https://ubuntu.com/security/CVE-2024-21131" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21131</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21138" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21140" priority="medium" public="20240731" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21140</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21144" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="6929-1,6930-1,7096-1,7097-1">CVE-2024-21144</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21145" priority="medium" public="20240731" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21145</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21147" priority="medium" public="20240731" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21147</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21208" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21208</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21210" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21210</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21217" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21217</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21235" priority="medium" public="20241015" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21235</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2160441755708" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70981000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7098-1 -- OpenJDK 17 vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7098-1" ref_url="https://ubuntu.com/security/notices/USN-7098-1" />
+				<reference source="CVE" ref_id="CVE-2024-21131" ref_url="https://ubuntu.com/security/CVE-2024-21131" />
+				<reference source="CVE" ref_id="CVE-2024-21138" ref_url="https://ubuntu.com/security/CVE-2024-21138" />
+				<reference source="CVE" ref_id="CVE-2024-21140" ref_url="https://ubuntu.com/security/CVE-2024-21140" />
+				<reference source="CVE" ref_id="CVE-2024-21145" ref_url="https://ubuntu.com/security/CVE-2024-21145" />
+				<reference source="CVE" ref_id="CVE-2024-21147" ref_url="https://ubuntu.com/security/CVE-2024-21147" />
+				<reference source="CVE" ref_id="CVE-2024-21208" ref_url="https://ubuntu.com/security/CVE-2024-21208" />
+				<reference source="CVE" ref_id="CVE-2024-21210" ref_url="https://ubuntu.com/security/CVE-2024-21210" />
+				<reference source="CVE" ref_id="CVE-2024-21217" ref_url="https://ubuntu.com/security/CVE-2024-21217" />
+				<reference source="CVE" ref_id="CVE-2024-21235" ref_url="https://ubuntu.com/security/CVE-2024-21235" />
+				<description>Andy Boothe discovered that the Networking component of OpenJDK 17 did not properly handle access under certain circumstances. An unauthenticated attacker could possibly use this issue to cause a denial of service. (CVE-2024-21208)  It was discovered that the Hotspot component of OpenJDK 17 did not properly handle vectorization under certain circumstances. An unauthenticated attacker could possibly use this issue to access unauthorized resources and expose sensitive information. (CVE-2024-21210, CVE-2024-21235)  It was discovered that the Serialization component of OpenJDK 17 did not properly handle deserialization under certain circumstances. An  unauthenticated attacker could possibly use this issue to cause a denial  of service. (CVE-2024-21217)  It was discovered that the Hotspot component of OpenJDK 17 was not properly bounding certain UTF-8 strings, which could lead to a buffer overflow. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21131)  It was discovered that the Hotspot component of OpenJDK 17 could be made to run into an infinite loop. If an automated system were tricked into processing excessively large symbols, an attacker could possibly use this issue to cause a denial of service. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21138)  It was discovered that the Hotspot component of OpenJDK 17 did not properly perform range check elimination. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21140)  Sergey Bylokhov discovered that OpenJDK 17 did not properly manage memory when handling 2D images. An attacker could possibly use this issue to obtain sensitive information. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21145)  It was discovered that the Hotspot component of OpenJDK 17 incorrectly handled memory when performing range check elimination under certain circumstances. An attacker could possibly use this issue to cause a denial of service, execute arbitrary code or bypass Java sandbox restrictions. This issue was only addressed in Ubuntu 18.04 LTS. (CVE-2024-21147)  Update Instructions:  Run `sudo pro fix USN-7098-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-17-demo - 17.0.13+11-2ubuntu1~24.10 openjdk-17-doc - 17.0.13+11-2ubuntu1~24.10 openjdk-17-jdk - 17.0.13+11-2ubuntu1~24.10 openjdk-17-jdk-headless - 17.0.13+11-2ubuntu1~24.10 openjdk-17-jre - 17.0.13+11-2ubuntu1~24.10 openjdk-17-jre-headless - 17.0.13+11-2ubuntu1~24.10 openjdk-17-jre-zero - 17.0.13+11-2ubuntu1~24.10 openjdk-17-source - 17.0.13+11-2ubuntu1~24.10</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-11" />
+					<cve href="https://ubuntu.com/security/CVE-2024-21131" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21131</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21138" priority="medium" public="20240731" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21138</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21140" priority="medium" public="20240731" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21140</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21145" priority="medium" public="20240731" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21145</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21147" priority="medium" public="20240731" cvss_score="7.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="high" usns="6929-1,6930-1,6931-1,6932-1,7096-1,7097-1,7098-1">CVE-2024-21147</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21208" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21208</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21210" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21210</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21217" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21217</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21235" priority="medium" public="20241015" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21235</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1129209777576" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:70991000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7099-1 -- OpenJDK 21 vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7099-1" ref_url="https://ubuntu.com/security/notices/USN-7099-1" />
+				<reference source="CVE" ref_id="CVE-2024-21208" ref_url="https://ubuntu.com/security/CVE-2024-21208" />
+				<reference source="CVE" ref_id="CVE-2024-21210" ref_url="https://ubuntu.com/security/CVE-2024-21210" />
+				<reference source="CVE" ref_id="CVE-2024-21217" ref_url="https://ubuntu.com/security/CVE-2024-21217" />
+				<reference source="CVE" ref_id="CVE-2024-21235" ref_url="https://ubuntu.com/security/CVE-2024-21235" />
+				<description>Andy Boothe discovered that the Networking component of OpenJDK 21 did not properly handle access under certain circumstances. An unauthenticated attacker could possibly use this issue to cause a denial of service. (CVE-2024-21208)  It was discovered that the Hotspot component of OpenJDK 21 did not properly handle vectorization under certain circumstances. An unauthenticated attacker could possibly use this issue to access unauthorized resources and expose sensitive information. (CVE-2024-21210, CVE-2024-21235)  It was discovered that the Serialization component of OpenJDK 21 did not properly handle deserialization under certain circumstances. An  unauthenticated attacker could possibly use this issue to cause a denial of service. (CVE-2024-21217)  Update Instructions:  Run `sudo pro fix USN-7099-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  openjdk-21-demo - 21.0.5+11-1ubuntu1~24.10 openjdk-21-doc - 21.0.5+11-1ubuntu1~24.10 openjdk-21-jdk - 21.0.5+11-1ubuntu1~24.10 openjdk-21-jdk-headless - 21.0.5+11-1ubuntu1~24.10 openjdk-21-jre - 21.0.5+11-1ubuntu1~24.10 openjdk-21-jre-headless - 21.0.5+11-1ubuntu1~24.10 openjdk-21-jre-zero - 21.0.5+11-1ubuntu1~24.10 openjdk-21-source - 21.0.5+11-1ubuntu1~24.10 openjdk-21-testsupport - 21.0.5+11-1ubuntu1~24.10</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-10" />
+					<cve href="https://ubuntu.com/security/CVE-2024-21208" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21208</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21210" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21210</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21217" priority="low" public="20241015" cvss_score="3.7" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21217</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21235" priority="medium" public="20241015" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7096-1,7097-1,7099-1,7098-1">CVE-2024-21235</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1933574291820" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71021000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7102-1 -- MySQL vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7102-1" ref_url="https://ubuntu.com/security/notices/USN-7102-1" />
+				<reference source="CVE" ref_id="CVE-2024-21193" ref_url="https://ubuntu.com/security/CVE-2024-21193" />
+				<reference source="CVE" ref_id="CVE-2024-21194" ref_url="https://ubuntu.com/security/CVE-2024-21194" />
+				<reference source="CVE" ref_id="CVE-2024-21196" ref_url="https://ubuntu.com/security/CVE-2024-21196" />
+				<reference source="CVE" ref_id="CVE-2024-21197" ref_url="https://ubuntu.com/security/CVE-2024-21197" />
+				<reference source="CVE" ref_id="CVE-2024-21198" ref_url="https://ubuntu.com/security/CVE-2024-21198" />
+				<reference source="CVE" ref_id="CVE-2024-21199" ref_url="https://ubuntu.com/security/CVE-2024-21199" />
+				<reference source="CVE" ref_id="CVE-2024-21201" ref_url="https://ubuntu.com/security/CVE-2024-21201" />
+				<reference source="CVE" ref_id="CVE-2024-21212" ref_url="https://ubuntu.com/security/CVE-2024-21212" />
+				<reference source="CVE" ref_id="CVE-2024-21213" ref_url="https://ubuntu.com/security/CVE-2024-21213" />
+				<reference source="CVE" ref_id="CVE-2024-21219" ref_url="https://ubuntu.com/security/CVE-2024-21219" />
+				<reference source="CVE" ref_id="CVE-2024-21230" ref_url="https://ubuntu.com/security/CVE-2024-21230" />
+				<reference source="CVE" ref_id="CVE-2024-21231" ref_url="https://ubuntu.com/security/CVE-2024-21231" />
+				<reference source="CVE" ref_id="CVE-2024-21236" ref_url="https://ubuntu.com/security/CVE-2024-21236" />
+				<reference source="CVE" ref_id="CVE-2024-21237" ref_url="https://ubuntu.com/security/CVE-2024-21237" />
+				<reference source="CVE" ref_id="CVE-2024-21239" ref_url="https://ubuntu.com/security/CVE-2024-21239" />
+				<reference source="CVE" ref_id="CVE-2024-21241" ref_url="https://ubuntu.com/security/CVE-2024-21241" />
+				<description>Multiple security issues were discovered in MySQL and this update includes new upstream MySQL versions to fix these issues.  MySQL has been updated to 8.0.40 in Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 24.04 LTS, and Ubuntu 24.10.  In addition to security fixes, the updated packages contain bug fixes, new features, and possibly incompatible changes.  Please see the following for more information:  https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-40.html https://www.oracle.com/security-alerts/cpuoct2024.html  Update Instructions:  Run `sudo pro fix USN-7102-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libmysqlclient21 - 8.0.40-0ubuntu0.24.10.1 libmysqlclient-dev - 8.0.40-0ubuntu0.24.10.1 mysql-client - 8.0.40-0ubuntu0.24.10.1 mysql-client-8.0 - 8.0.40-0ubuntu0.24.10.1 mysql-client-core-8.0 - 8.0.40-0ubuntu0.24.10.1 mysql-router - 8.0.40-0ubuntu0.24.10.1 mysql-server - 8.0.40-0ubuntu0.24.10.1 mysql-server-8.0 - 8.0.40-0ubuntu0.24.10.1 mysql-server-core-8.0 - 8.0.40-0ubuntu0.24.10.1 mysql-source-8.0 - 8.0.40-0ubuntu0.24.10.1 mysql-testsuite - 8.0.40-0ubuntu0.24.10.1 mysql-testsuite-8.0 - 8.0.40-0ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-12" />
+					<cve href="https://ubuntu.com/security/CVE-2024-21193" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21193</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21194" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21194</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21196" priority="medium" public="20241015" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21196</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21197" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21197</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21198" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21198</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21199" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21199</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21201" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21201</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21212" priority="medium" public="20241015" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21212</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21213" priority="medium" public="20241015" cvss_score="4.2" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21213</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21219" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21219</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21230" priority="medium" public="20241015" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21230</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21231" priority="low" public="20241015" cvss_score="3.1" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7102-1">CVE-2024-21231</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21236" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21236</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21237" priority="medium" public="20241015" cvss_score="2.2" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L" cvss_severity="low" usns="7102-1">CVE-2024-21237</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21239" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21239</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21241" priority="medium" public="20241015" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7102-1">CVE-2024-21241</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1113639666836" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71031000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7103-1 -- Ghostscript vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7103-1" ref_url="https://ubuntu.com/security/notices/USN-7103-1" />
+				<reference source="CVE" ref_id="CVE-2024-46951" ref_url="https://ubuntu.com/security/CVE-2024-46951" />
+				<reference source="CVE" ref_id="CVE-2024-46952" ref_url="https://ubuntu.com/security/CVE-2024-46952" />
+				<reference source="CVE" ref_id="CVE-2024-46953" ref_url="https://ubuntu.com/security/CVE-2024-46953" />
+				<reference source="CVE" ref_id="CVE-2024-46954" ref_url="https://ubuntu.com/security/CVE-2024-46954" />
+				<reference source="CVE" ref_id="CVE-2024-46955" ref_url="https://ubuntu.com/security/CVE-2024-46955" />
+				<reference source="CVE" ref_id="CVE-2024-46956" ref_url="https://ubuntu.com/security/CVE-2024-46956" />
+				<description>It was discovered that Ghostscript incorrectly handled parsing certain PS files. An attacker could use this issue to cause Ghostscript to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2024-46951, CVE-2024-46953, CVE-2024-46955, CVE-2024-46956)  It was discovered that Ghostscript incorrectly handled parsing certain PDF files. An attacker could use this issue to cause Ghostscript to crash, resulting in a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 22.04 LTS, Ubuntu 24.04 LTS, and Ubuntu 24.10. (CVE-2024-46952)  It was discovered that Ghostscript incorrectly handled parsing certain PS files. An attacker could use this issue to cause Ghostscript to crash, resulting in a denial of service, or possibly bypass file path validation. This issue only affected Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2024-46954)  Update Instructions:  Run `sudo pro fix USN-7103-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ghostscript - 10.03.1~dfsg1-0ubuntu2.1 ghostscript-doc - 10.03.1~dfsg1-0ubuntu2.1 libgs10 - 10.03.1~dfsg1-0ubuntu2.1 libgs10-common - 10.03.1~dfsg1-0ubuntu2.1 libgs-common - 10.03.1~dfsg1-0ubuntu2.1 libgs-dev - 10.03.1~dfsg1-0ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-12" />
+					<cve href="https://ubuntu.com/security/CVE-2024-46951" priority="medium" public="20241030" usns="7103-1">CVE-2024-46951</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46952" priority="medium" public="20241030" usns="7103-1">CVE-2024-46952</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46953" priority="medium" public="20241030" usns="7103-1">CVE-2024-46953</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46954" priority="medium" public="20241030" usns="7103-1">CVE-2024-46954</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46955" priority="medium" public="20241030" usns="7103-1">CVE-2024-46955</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46956" priority="medium" public="20241030" usns="7103-1">CVE-2024-46956</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2081935265938" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71051000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7105-1 -- .NET vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7105-1" ref_url="https://ubuntu.com/security/notices/USN-7105-1" />
+				<reference source="CVE" ref_id="CVE-2024-43498" ref_url="https://ubuntu.com/security/CVE-2024-43498" />
+				<reference source="CVE" ref_id="CVE-2024-43499" ref_url="https://ubuntu.com/security/CVE-2024-43499" />
+				<description>It was discovered that the NrbfDecoder component in .NET did not properly handle an instance of a type confusion vulnerability. An authenticated attacker could possibly use this issue to gain the privileges of another user and execute arbitrary code. (CVE-2024-43498)  It was discovered that the NrbfDecoder component in .NET did not properly perform input validation. An unauthenticated remote attacker could possibly use this issue to cause a denial of service. (CVE-2024-43499)  Update Instructions:  Run `sudo pro fix USN-7105-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  aspnetcore-runtime-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 aspnetcore-runtime-dbg-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 aspnetcore-targeting-pack-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet9 - 9.0.100-9.0.0-0ubuntu1~24.10.1 dotnet-apphost-pack-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet-host-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet-hostfxr-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet-runtime-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet-runtime-dbg-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet-sdk-9.0 - 9.0.100-rtm-0ubuntu1~24.10.1 dotnet-sdk-9.0-source-built-artifacts - 9.0.100-rtm-0ubuntu1~24.10.1 dotnet-sdk-aot-9.0 - 9.0.100-rtm-0ubuntu1~24.10.1 dotnet-sdk-dbg-9.0 - 9.0.100-rtm-0ubuntu1~24.10.1 dotnet-targeting-pack-9.0 - 9.0.0-rtm-0ubuntu1~24.10.1 dotnet-templates-9.0 - 9.0.100-rtm-0ubuntu1~24.10.1 netstandard-targeting-pack-2.1-9.0 - 9.0.100-rtm-0ubuntu1~24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-12" />
+					<cve href="https://ubuntu.com/security/CVE-2024-43498" priority="medium" public="20241112" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7105-1">CVE-2024-43498</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43499" priority="medium" public="20241112" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7105-1">CVE-2024-43499</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1123334673602" />
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1446488004299" />
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1235089017464" />
+				</criteria>
+			</criteria>
+		</definition>
+	</definitions>
+	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1446478806091" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1542822900552" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1123334673602" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1666108973733" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1152027366007" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1129209777576" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1575935891527" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2167457118821" />
+		</linux:dpkginfo_test>
+		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1984794673141" />
+		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1235089017464" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1473552651515" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1110199747313" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1253338541195" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2102917718391" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1258795380471" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1393963260322" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2183065197301" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1614497701678" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1396537775394" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1543983516010" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1239391002389" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1407815801099" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1228901724074" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1662738450838" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1446488004299" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2016309079574" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1797360483060" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1501130099198" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1444032144088" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1782831624367" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1518085070637" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1459732504919" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2113616899922" />
+		</linux:dpkginfo_test>
+		<ind:family_test id="oval:com.ubuntu.oracular:tst:1606098102597" check="at least one" check_existence="at_least_one_exists" version="1">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
+		</ind:family_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1738465883062" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1314272483896" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2077248722478" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1758660505574" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1495163796215" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2072676154317" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1818825723084" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1304535592397" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1906086554012" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1864336044569" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2076927231498" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2033656117200" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1879474637840" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2062506497640" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1537439542838" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1928850443932" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1499646700292" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1265768751207" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1933574291820" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1991515047095" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1893388248213" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2081935265938" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1828451335350" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1358810532774" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2093908757345" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1491073733391" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1715672444743" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2100121774825" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1727813016491" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1919332576188" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2122633562438" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1517275733813" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2146213046869" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2122889279679" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1484077753513" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2009833434398" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2160441755708" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1678198146671" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2135422596629" />
+		</linux:dpkginfo_test>
+	</tests>
+	<objects>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1228901724074" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1825563389771" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1304535592397" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1536593724186" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1314272483896" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2027239507760" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1444032144088" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1101917783597" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1446478806091" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2125070792377" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1459732504919" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2186613923260" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1473552651515" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2150408595165" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1484077753513" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700730225001" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1491073733391" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1700530688872" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1495163796215" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1238819058786" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1499646700292" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1435177305563" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1517275733813" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1276065560639" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1543983516010" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1530897597609" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1575935891527" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1802419633193" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1666108973733" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1942831793010" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1678198146671" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1472414532281" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1727813016491" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1911820033154" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1828451335350" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2170293769361" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1991515047095" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2163842722565" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2016309079574" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1352635756063" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2062506497640" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1780610121325" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2076927231498" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1543458437524" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2102917718391" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2168315347961" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2183065197301" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2024182642674" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<ind:family_object id="oval:com.ubuntu.oracular:obj:1742435039334" version="1" comment="The singleton family object." />
+		<ind:textfilecontent54_object id="oval:com.ubuntu.oracular:obj:1690319274976" version="1">
+			<ind:filepath datatype="string">/etc/lsb-release</ind:filepath>
+			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
+	</objects>
+	<states>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1110199747313" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.100-rtm-0ubuntu1~24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1152027366007" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.0-rtm-0ubuntu1~24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1239391002389" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:24.1.2-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1258795380471" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.3-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1265768751207" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.13-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1358810532774" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:10.03.1~dfsg1-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1537439542838" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.11-3ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1542822900552" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.40-0ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1614497701678" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.1-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1662738450838" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.4-2ubuntu5.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1715672444743" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.32.7-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1782831624367" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20240116.2+nmu1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1797360483060" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.100-9.0.0-0ubuntu1~24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1893388248213" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:21.0.5+11-1ubuntu1~24.10</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1906086554012" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.7-2ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1919332576188" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:24.2+dfsg-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2009833434398" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.52-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2033656117200" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">1:9.0.2+ds-4ubuntu5.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2072676154317" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.7.4-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2077248722478" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.5.0-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2113616899922" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.20.0-1ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2135422596629" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.25+9-1ubuntu1~24.10</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2146213046869" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8u432-ga~us1-0ubuntu2~24.10</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2167457118821" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.13+11-2ubuntu1~24.10</linux:evr>
+		</linux:dpkginfo_state>
+		<ind:family_state id="oval:com.ubuntu.oracular:ste:1721483903174" version="1" comment="The singleton family object.">
+			<ind:family>unix</ind:family>
+		</ind:family_state>
+		<ind:textfilecontent54_state id="oval:com.ubuntu.oracular:ste:1984794673141" version="1" comment="Ubuntu 24.10">
+			<ind:subexpression datatype="string" operation="equals">oracular</ind:subexpression>
+		</ind:textfilecontent54_state>
+	</states>
+	<variables>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1101917783597" version="1" datatype="string" comment="Interim Release">
+			<value>amd64-microcode</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1942831793010" version="1" datatype="string" comment="Interim Release">
+			<value>aspnetcore-runtime-9.0</value>
+			<value>aspnetcore-runtime-dbg-9.0</value>
+			<value>aspnetcore-targeting-pack-9.0</value>
+			<value>dotnet-apphost-pack-9.0</value>
+			<value>dotnet-host-9.0</value>
+			<value>dotnet-hostfxr-9.0</value>
+			<value>dotnet-runtime-9.0</value>
+			<value>dotnet-runtime-dbg-9.0</value>
+			<value>dotnet-targeting-pack-9.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2024182642674" version="1" datatype="string" comment="Interim Release">
+			<value>cups-browsed</value>
+			<value>cups-browsed-tests</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1352635756063" version="1" datatype="string" comment="Interim Release">
+			<value>dotnet9</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2150408595165" version="1" datatype="string" comment="Interim Release">
+			<value>dotnet-sdk-9.0</value>
+			<value>dotnet-sdk-9.0-source-built-artifacts</value>
+			<value>dotnet-sdk-aot-9.0</value>
+			<value>dotnet-sdk-dbg-9.0</value>
+			<value>dotnet-templates-9.0</value>
+			<value>netstandard-targeting-pack-2.1-9.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2170293769361" version="1" datatype="string" comment="Interim Release">
+			<value>ghostscript</value>
+			<value>ghostscript-doc</value>
+			<value>libgs10</value>
+			<value>libgs10-common</value>
+			<value>libgs-common</value>
+			<value>libgs-dev</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1700730225001" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-gsf-1</value>
+			<value>libgsf-1-114</value>
+			<value>libgsf-1-common</value>
+			<value>libgsf-1-dev</value>
+			<value>libgsf-bin</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1238819058786" version="1" datatype="string" comment="Interim Release">
+			<value>libarchive13t64</value>
+			<value>libarchive-dev</value>
+			<value>libarchive-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1700530688872" version="1" datatype="string" comment="Interim Release">
+			<value>libmpg123-0t64</value>
+			<value>libmpg123-dev</value>
+			<value>libout123-0t64</value>
+			<value>libsyn123-0t64</value>
+			<value>mpg123</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2125070792377" version="1" datatype="string" comment="Interim Release">
+			<value>libmysqlclient21</value>
+			<value>libmysqlclient-dev</value>
+			<value>mysql-client</value>
+			<value>mysql-client-8.0</value>
+			<value>mysql-client-core-8.0</value>
+			<value>mysql-router</value>
+			<value>mysql-server</value>
+			<value>mysql-server-8.0</value>
+			<value>mysql-server-core-8.0</value>
+			<value>mysql-source-8.0</value>
+			<value>mysql-testsuite</value>
+			<value>mysql-testsuite-8.0</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1780610121325" version="1" datatype="string" comment="Interim Release">
+			<value>liboath0t64</value>
+			<value>liboath-dev</value>
+			<value>libpam-oath</value>
+			<value>libpskc0t64</value>
+			<value>libpskc-dev</value>
+			<value>oathtool</value>
+			<value>pskctool</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2027239507760" version="1" datatype="string" comment="Interim Release">
+			<value>libopenjp2-7</value>
+			<value>libopenjp2-7-dev</value>
+			<value>libopenjp2-tools</value>
+			<value>libopenjpip7</value>
+			<value>libopenjpip-dec-server</value>
+			<value>libopenjpip-server</value>
+			<value>libopenjpip-viewer</value>
+			<value>openjpeg-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1825563389771" version="1" datatype="string" comment="Interim Release">
+			<value>libruby3.3</value>
+			<value>ruby3.3</value>
+			<value>ruby3.3-dev</value>
+			<value>ruby3.3-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2186613923260" version="1" datatype="string" comment="Interim Release">
+			<value>libunbound8</value>
+			<value>libunbound-dev</value>
+			<value>python3-unbound</value>
+			<value>unbound</value>
+			<value>unbound-anchor</value>
+			<value>unbound-host</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1276065560639" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-8-demo</value>
+			<value>openjdk-8-doc</value>
+			<value>openjdk-8-jdk</value>
+			<value>openjdk-8-jdk-headless</value>
+			<value>openjdk-8-jre</value>
+			<value>openjdk-8-jre-headless</value>
+			<value>openjdk-8-jre-zero</value>
+			<value>openjdk-8-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1472414532281" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-11-demo</value>
+			<value>openjdk-11-doc</value>
+			<value>openjdk-11-jdk</value>
+			<value>openjdk-11-jdk-headless</value>
+			<value>openjdk-11-jre</value>
+			<value>openjdk-11-jre-headless</value>
+			<value>openjdk-11-jre-zero</value>
+			<value>openjdk-11-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1802419633193" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-17-demo</value>
+			<value>openjdk-17-doc</value>
+			<value>openjdk-17-jdk</value>
+			<value>openjdk-17-jdk-headless</value>
+			<value>openjdk-17-jre</value>
+			<value>openjdk-17-jre-headless</value>
+			<value>openjdk-17-jre-zero</value>
+			<value>openjdk-17-source</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2163842722565" version="1" datatype="string" comment="Interim Release">
+			<value>openjdk-21-demo</value>
+			<value>openjdk-21-doc</value>
+			<value>openjdk-21-jdk</value>
+			<value>openjdk-21-jdk-headless</value>
+			<value>openjdk-21-jre</value>
+			<value>openjdk-21-jre-headless</value>
+			<value>openjdk-21-jre-zero</value>
+			<value>openjdk-21-source</value>
+			<value>openjdk-21-testsupport</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1911820033154" version="1" datatype="string" comment="Interim Release">
+			<value>python3-pip</value>
+			<value>python3-pip-whl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1536593724186" version="1" datatype="string" comment="Interim Release">
+			<value>python3-urllib3</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2168315347961" version="1" datatype="string" comment="Interim Release">
+			<value>python3-werkzeug</value>
+			<value>python-werkzeug-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1543458437524" version="1" datatype="string" comment="Interim Release">
+			<value>qemu-block-extra</value>
+			<value>qemu-block-supplemental</value>
+			<value>qemu-guest-agent</value>
+			<value>qemu-system</value>
+			<value>qemu-system-arm</value>
+			<value>qemu-system-common</value>
+			<value>qemu-system-data</value>
+			<value>qemu-system-gui</value>
+			<value>qemu-system-mips</value>
+			<value>qemu-system-misc</value>
+			<value>qemu-system-modules-opengl</value>
+			<value>qemu-system-modules-spice</value>
+			<value>qemu-system-ppc</value>
+			<value>qemu-system-s390x</value>
+			<value>qemu-system-sparc</value>
+			<value>qemu-system-x86</value>
+			<value>qemu-system-x86-xen</value>
+			<value>qemu-system-xen</value>
+			<value>qemu-user</value>
+			<value>qemu-user-binfmt</value>
+			<value>qemu-user-static</value>
+			<value>qemu-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1435177305563" version="1" datatype="string" comment="Interim Release">
+			<value>xnest</value>
+			<value>xorg-server-source</value>
+			<value>xserver-common</value>
+			<value>xserver-xephyr</value>
+			<value>xserver-xorg-core</value>
+			<value>xserver-xorg-dev</value>
+			<value>xserver-xorg-legacy</value>
+			<value>xvfb</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1530897597609" version="1" datatype="string" comment="Interim Release">
+			<value>xwayland</value>
+		</constant_variable>
+	</variables>
+</oval_definitions>
