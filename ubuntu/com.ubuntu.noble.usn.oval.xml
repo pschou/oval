@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-18T07:32:50</oval:timestamp>
+		<oval:timestamp>2024-11-19T05:38:58</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15846,6 +15846,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7104-1 -- curl vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7104-1" ref_url="https://ubuntu.com/security/notices/USN-7104-1" />
+				<reference source="CVE" ref_id="CVE-2024-9681" ref_url="https://ubuntu.com/security/CVE-2024-9681" />
+				<description>It was discovered that curl could overwrite the HSTS expiry of the parent domain with the subdomain's HSTS entry. This could lead to curl switching back to insecure HTTP earlier than otherwise intended, resulting in information exposure.  Update Instructions:  Run `sudo pro fix USN-7104-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 8.5.0-2ubuntu10.5 libcurl3t64-gnutls - 8.5.0-2ubuntu10.5 libcurl4-doc - 8.5.0-2ubuntu10.5 libcurl4-gnutls-dev - 8.5.0-2ubuntu10.5 libcurl4-openssl-dev - 8.5.0-2ubuntu10.5 libcurl4t64 - 8.5.0-2ubuntu10.5</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-11-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-9681" priority="low" public="20241106" usns="7104-1">CVE-2024-9681</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1193832240785" />
+				</criteria>
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.noble:def:71081000000" version="1" class="patch">
 			<metadata>
 				<title>USN-7108-1 -- AsyncSSH vulnerabilities</title>
@@ -15853,10 +15873,10 @@
 				<reference source="USN" ref_id="USN-7108-1" ref_url="https://ubuntu.com/security/notices/USN-7108-1" />
 				<reference source="CVE" ref_id="CVE-2023-46445" ref_url="https://ubuntu.com/security/CVE-2023-46445" />
 				<reference source="CVE" ref_id="CVE-2023-46446" ref_url="https://ubuntu.com/security/CVE-2023-46446" />
-				<description>Fabian Bäumer, Marcus Brinkmann, and Jörg Schwenk discovered that the SSH protocol was vulnerable to a rogue extension negotiation attack. If a remote attacker was able to intercept SSH communications, extension info message could be replaced, possibly leading to certain algorithms and features being downgraded.  Update Instructions:  Run `sudo pro fix USN-7108-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-asyncssh - 2.10.1-2ubuntu0.1+esm1 python-asyncssh-doc - 2.10.1-2ubuntu0.1+esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<description>Fabian Bäumer, Marcus Brinkmann, and Jörg Schwenk discovered that AsyncSSH did not properly handle the extension info message. An attacker able to intercept communications could possibly use this issue to downgrade the algorithm used for client authentication. (CVE-2023-46445)  Fabian Bäumer, Marcus Brinkmann, and Jörg Schwenk discovered that AsyncSSH did not properly handle the user authentication request message. An attacker could possibly use this issue to control the remote end of an SSH client session via packet injection/removal and shell emulation. (CVE-2023-46446)  Update Instructions:  Run `sudo pro fix USN-7108-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-asyncssh - 2.10.1-2ubuntu0.1+esm1 python-asyncssh-doc - 2.10.1-2ubuntu0.1+esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
-					<issued date="2024-11-14" />
+					<issued date="2024-11-18" />
 					<cve href="https://ubuntu.com/security/CVE-2023-46445" priority="medium" public="20231114" cvss_score="5.9" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium">CVE-2023-46445</cve>
 					<cve href="https://ubuntu.com/security/CVE-2023-46446" priority="medium" public="20231114" cvss_score="6.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N" cvss_severity="medium">CVE-2023-46446</cve>
 				</advisory>
@@ -15865,6 +15885,48 @@
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1893339868960" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71131000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7113-1 -- WebKitGTK vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7113-1" ref_url="https://ubuntu.com/security/notices/USN-7113-1" />
+				<reference source="CVE" ref_id="CVE-2024-44244" ref_url="https://ubuntu.com/security/CVE-2024-44244" />
+				<reference source="CVE" ref_id="CVE-2024-44296" ref_url="https://ubuntu.com/security/CVE-2024-44296" />
+				<description>Several security issues were discovered in the WebKitGTK Web and JavaScript engines. If a user were tricked into viewing a malicious website, a remote attacker could exploit a variety of issues related to web browser security, including cross-site scripting attacks, denial of service attacks, and arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-7113-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-javascriptcoregtk-4.1 - 2.46.3-0ubuntu0.24.04.1 gir1.2-javascriptcoregtk-6.0 - 2.46.3-0ubuntu0.24.04.1 gir1.2-webkit2-4.1 - 2.46.3-0ubuntu0.24.04.1 gir1.2-webkit-6.0 - 2.46.3-0ubuntu0.24.04.1 libjavascriptcoregtk-4.0-bin - 2.46.3-0ubuntu0.24.04.1 libjavascriptcoregtk-4.1-0 - 2.46.3-0ubuntu0.24.04.1 libjavascriptcoregtk-4.1-dev - 2.46.3-0ubuntu0.24.04.1 libjavascriptcoregtk-6.0-1 - 2.46.3-0ubuntu0.24.04.1 libjavascriptcoregtk-6.0-dev - 2.46.3-0ubuntu0.24.04.1 libjavascriptcoregtk-bin - 2.46.3-0ubuntu0.24.04.1 libwebkit2gtk-4.0-doc - 2.46.3-0ubuntu0.24.04.1 libwebkit2gtk-4.1-0 - 2.46.3-0ubuntu0.24.04.1 libwebkit2gtk-4.1-dev - 2.46.3-0ubuntu0.24.04.1 libwebkitgtk-6.0-4 - 2.46.3-0ubuntu0.24.04.1 libwebkitgtk-6.0-dev - 2.46.3-0ubuntu0.24.04.1 libwebkitgtk-doc - 2.46.3-0ubuntu0.24.04.1 webkit2gtk-driver - 2.46.3-0ubuntu0.24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-44244" priority="medium" public="20241028" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="7113-1">CVE-2024-44244</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-44296" priority="medium" public="20241028" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7113-1">CVE-2024-44296</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1381165933742" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71141000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7114-1 -- GLib vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7114-1" ref_url="https://ubuntu.com/security/notices/USN-7114-1" />
+				<reference source="CVE" ref_id="CVE-2024-52533" ref_url="https://ubuntu.com/security/CVE-2024-52533" />
+				<description>It was discovered that Glib incorrectly handled certain trailing characters. An attacker could possibly use this issue to cause a crash or other undefined behavior.  Update Instructions:  Run `sudo pro fix USN-7114-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-girepository-3.0 - 2.80.0-6ubuntu3.2 gir1.2-girepository-3.0-dev - 2.80.0-6ubuntu3.2 gir1.2-glib-2.0 - 2.80.0-6ubuntu3.2 gir1.2-glib-2.0-dev - 2.80.0-6ubuntu3.2 libgirepository-2.0-0 - 2.80.0-6ubuntu3.2 libgirepository-2.0-dev - 2.80.0-6ubuntu3.2 libglib2.0-0t64 - 2.80.0-6ubuntu3.2 libglib2.0-bin - 2.80.0-6ubuntu3.2 libglib2.0-data - 2.80.0-6ubuntu3.2 libglib2.0-dev - 2.80.0-6ubuntu3.2 libglib2.0-dev-bin - 2.80.0-6ubuntu3.2 libglib2.0-doc - 2.80.0-6ubuntu3.2 libglib2.0-tests - 2.80.0-6ubuntu3.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-52533" priority="medium" public="20241111" usns="7114-1">CVE-2024-52533</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:2173151982041" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -15993,6 +16055,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1188225607176" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1680534005396" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1782947220800" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1193832240785" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1916095763151" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1134214629052" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1194285091513" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:2057718318347" />
@@ -16201,6 +16267,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1380406227584" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1813937564780" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1972267267666" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1381165933742" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1680895051196" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1709111172009" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1382085740457" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1408042755467" />
@@ -17154,6 +17224,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2139965391962" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1436717254486" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2173151982041" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1822251010761" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1200406517048" />
+		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:2177086071564" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1639785420442" />
@@ -17842,6 +17916,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1680534005396" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1536593724186" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1680895051196" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1131315650865" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1680952748659" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1224639306362" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17929,6 +18006,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1818498751718" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1802419633193" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1822251010761" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1657557697829" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1833335697863" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1199692008680" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -17982,6 +18062,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1910745162031" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1732387132985" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1916095763151" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1397969216726" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1932137612700" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1409143312209" var_check="at least one" />
@@ -18254,6 +18337,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1133864337225" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.5.0-2ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1134214629052" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.5.0-2ubuntu10.5</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1143271610845" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.11-1ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -18295,6 +18381,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1196101707356" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.5.0-2ubuntu10.4</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1200406517048" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.80.0-6ubuntu3.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1203530214405" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">3:29.0.1-0ubuntu1.3</linux:evr>
@@ -18526,6 +18615,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1696156702307" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:2.0.0-0ubuntu4.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1709111172009" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.46.3-0ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1709779787988" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.13+11-2ubuntu1~24.04</linux:evr>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-18T07:32:51</oval:timestamp>
+		<oval:timestamp>2024-11-19T03:35:20</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -570,6 +570,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71041000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7104-1 -- curl vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7104-1" ref_url="https://ubuntu.com/security/notices/USN-7104-1" />
+				<reference source="CVE" ref_id="CVE-2024-9681" ref_url="https://ubuntu.com/security/CVE-2024-9681" />
+				<description>It was discovered that curl could overwrite the HSTS expiry of the parent domain with the subdomain's HSTS entry. This could lead to curl switching back to insecure HTTP earlier than otherwise intended, resulting in information exposure.  Update Instructions:  Run `sudo pro fix USN-7104-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 8.9.1-2ubuntu2.1 libcurl3t64-gnutls - 8.9.1-2ubuntu2.1 libcurl4-doc - 8.9.1-2ubuntu2.1 libcurl4-gnutls-dev - 8.9.1-2ubuntu2.1 libcurl4-openssl-dev - 8.9.1-2ubuntu2.1 libcurl4t64 - 8.9.1-2ubuntu2.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-11-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-9681" priority="low" public="20241106" usns="7104-1">CVE-2024-9681</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1988091163862" />
+				</criteria>
+			</criteria>
+		</definition>
 		<definition id="oval:com.ubuntu.oracular:def:71051000000" version="1" class="patch">
 			<metadata>
 				<title>USN-7105-1 -- .NET vulnerabilities</title>
@@ -594,6 +614,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71131000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7113-1 -- WebKitGTK vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7113-1" ref_url="https://ubuntu.com/security/notices/USN-7113-1" />
+				<reference source="CVE" ref_id="CVE-2024-44244" ref_url="https://ubuntu.com/security/CVE-2024-44244" />
+				<reference source="CVE" ref_id="CVE-2024-44296" ref_url="https://ubuntu.com/security/CVE-2024-44296" />
+				<description>Several security issues were discovered in the WebKitGTK Web and JavaScript engines. If a user were tricked into viewing a malicious website, a remote attacker could exploit a variety of issues related to web browser security, including cross-site scripting attacks, denial of service attacks, and arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-7113-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-javascriptcoregtk-4.1 - 2.46.3-0ubuntu0.24.10.1 gir1.2-javascriptcoregtk-6.0 - 2.46.3-0ubuntu0.24.10.1 gir1.2-webkit2-4.1 - 2.46.3-0ubuntu0.24.10.1 gir1.2-webkit-6.0 - 2.46.3-0ubuntu0.24.10.1 libjavascriptcoregtk-4.0-bin - 2.46.3-0ubuntu0.24.10.1 libjavascriptcoregtk-4.1-0 - 2.46.3-0ubuntu0.24.10.1 libjavascriptcoregtk-4.1-dev - 2.46.3-0ubuntu0.24.10.1 libjavascriptcoregtk-6.0-1 - 2.46.3-0ubuntu0.24.10.1 libjavascriptcoregtk-6.0-dev - 2.46.3-0ubuntu0.24.10.1 libjavascriptcoregtk-bin - 2.46.3-0ubuntu0.24.10.1 libwebkit2gtk-4.0-doc - 2.46.3-0ubuntu0.24.10.1 libwebkit2gtk-4.1-0 - 2.46.3-0ubuntu0.24.10.1 libwebkit2gtk-4.1-dev - 2.46.3-0ubuntu0.24.10.1 libwebkitgtk-6.0-4 - 2.46.3-0ubuntu0.24.10.1 libwebkitgtk-6.0-dev - 2.46.3-0ubuntu0.24.10.1 libwebkitgtk-doc - 2.46.3-0ubuntu0.24.10.1 webkit2gtk-driver - 2.46.3-0ubuntu0.24.10.1 webkitgtk-webdriver - 2.46.3-0ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-44244" priority="medium" public="20241028" cvss_score="4.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="7113-1">CVE-2024-44244</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-44296" priority="medium" public="20241028" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7113-1">CVE-2024-44296</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1138537531360" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -607,6 +649,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1129209777576" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1575935891527" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2167457118821" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1138537531360" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1951724427283" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1764340094484" />
 		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
@@ -676,6 +722,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1991515047095" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1893388248213" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1988091163862" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1426320839484" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1654879355988" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2081935265938" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1828451335350" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1358810532774" />
@@ -710,6 +760,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1314272483896" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2027239507760" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1426320839484" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1397969216726" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1444032144088" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1101917783597" var_check="at least one" />
@@ -755,6 +808,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1828451335350" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2170293769361" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1951724427283" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1400789999222" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1991515047095" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2163842722565" var_check="at least one" />
@@ -809,11 +865,17 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1614497701678" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.1-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1654879355988" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.9.1-2ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1662738450838" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.3.4-2ubuntu5.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1715672444743" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.32.7-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1764340094484" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.46.3-0ubuntu0.24.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1782831624367" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20240116.2+nmu1ubuntu1.1</linux:evr>
@@ -880,6 +942,14 @@
 			<value>cups-browsed</value>
 			<value>cups-browsed-tests</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1397969216726" version="1" datatype="string" comment="Interim Release">
+			<value>curl</value>
+			<value>libcurl3t64-gnutls</value>
+			<value>libcurl4-doc</value>
+			<value>libcurl4-gnutls-dev</value>
+			<value>libcurl4-openssl-dev</value>
+			<value>libcurl4t64</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1352635756063" version="1" datatype="string" comment="Interim Release">
 			<value>dotnet9</value>
 		</constant_variable>
@@ -905,6 +975,26 @@
 			<value>libgsf-1-common</value>
 			<value>libgsf-1-dev</value>
 			<value>libgsf-bin</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1400789999222" version="1" datatype="string" comment="Interim Release">
+			<value>gir1.2-javascriptcoregtk-4.1</value>
+			<value>gir1.2-javascriptcoregtk-6.0</value>
+			<value>gir1.2-webkit2-4.1</value>
+			<value>gir1.2-webkit-6.0</value>
+			<value>libjavascriptcoregtk-4.0-bin</value>
+			<value>libjavascriptcoregtk-4.1-0</value>
+			<value>libjavascriptcoregtk-4.1-dev</value>
+			<value>libjavascriptcoregtk-6.0-1</value>
+			<value>libjavascriptcoregtk-6.0-dev</value>
+			<value>libjavascriptcoregtk-bin</value>
+			<value>libwebkit2gtk-4.0-doc</value>
+			<value>libwebkit2gtk-4.1-0</value>
+			<value>libwebkit2gtk-4.1-dev</value>
+			<value>libwebkitgtk-6.0-4</value>
+			<value>libwebkitgtk-6.0-dev</value>
+			<value>libwebkitgtk-doc</value>
+			<value>webkit2gtk-driver</value>
+			<value>webkitgtk-webdriver</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1238819058786" version="1" datatype="string" comment="Interim Release">
 			<value>libarchive13t64</value>
