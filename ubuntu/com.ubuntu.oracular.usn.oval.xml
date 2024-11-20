@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-19T03:35:20</oval:timestamp>
+		<oval:timestamp>2024-11-20T05:36:24</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -636,6 +636,77 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71151000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7115-1 -- Waitress vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7115-1" ref_url="https://ubuntu.com/security/notices/USN-7115-1" />
+				<reference source="CVE" ref_id="CVE-2024-49768" ref_url="https://ubuntu.com/security/CVE-2024-49768" />
+				<reference source="CVE" ref_id="CVE-2024-49769" ref_url="https://ubuntu.com/security/CVE-2024-49769" />
+				<description>It was discovered that Waitress could process follow up requests when receiving a specially crafted message. An attacker could use this issue to have the server process inconsistent client requests. This issue only affected Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2024-49768)  Dylan Jay discovered that Waitress could be lead to write to an unexisting socket after closing the remote connection. An attacker could use this issue to increase resource utilization leading to a denial of service. (CVE-2024-49769)  Update Instructions:  Run `sudo pro fix USN-7115-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-waitress - 3.0.0-1ubuntu0.1 python-waitress-doc - 3.0.0-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-19" />
+					<cve href="https://ubuntu.com/security/CVE-2024-49768" priority="medium" public="20241029" cvss_score="4.8" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N" cvss_severity="medium" usns="7115-1">CVE-2024-49768</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-49769" priority="medium" public="20241029" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7115-1">CVE-2024-49769</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1161339928181" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71161000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7116-1 -- Python vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7116-1" ref_url="https://ubuntu.com/security/notices/USN-7116-1" />
+				<reference source="CVE" ref_id="CVE-2024-9287" ref_url="https://ubuntu.com/security/CVE-2024-9287" />
+				<description>It was discovered that Python incorrectly handled quoting path names when using the venv module. A local attacker able to control virtual environments could possibly use this issue to execute arbitrary code when the virtual environment is activated.  Update Instructions:  Run `sudo pro fix USN-7116-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  idle-python3.12 - 3.12.7-1ubuntu1 libpython3.12-dev - 3.12.7-1ubuntu1 libpython3.12-minimal - 3.12.7-1ubuntu1 libpython3.12-stdlib - 3.12.7-1ubuntu1 libpython3.12-testsuite - 3.12.7-1ubuntu1 libpython3.12t64 - 3.12.7-1ubuntu1 python3.12 - 3.12.7-1ubuntu1 python3.12-dev - 3.12.7-1ubuntu1 python3.12-doc - 3.12.7-1ubuntu1 python3.12-examples - 3.12.7-1ubuntu1 python3.12-full - 3.12.7-1ubuntu1 python3.12-gdbm - 3.12.7-1ubuntu1 python3.12-minimal - 3.12.7-1ubuntu1 python3.12-nopie - 3.12.7-1ubuntu1 python3.12-tk - 3.12.7-1ubuntu1 python3.12-venv - 3.12.7-1ubuntu1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-19" />
+					<cve href="https://ubuntu.com/security/CVE-2024-9287" priority="medium" public="20241022" usns="7116-1">CVE-2024-9287</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1487155580703" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71171000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7117-1 -- needrestart and Module::ScanDeps vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7117-1" ref_url="https://ubuntu.com/security/notices/USN-7117-1" />
+				<reference source="CVE" ref_id="CVE-2024-10224" ref_url="https://ubuntu.com/security/CVE-2024-10224" />
+				<reference source="CVE" ref_id="CVE-2024-11003" ref_url="https://ubuntu.com/security/CVE-2024-11003" />
+				<reference source="CVE" ref_id="CVE-2024-48990" ref_url="https://ubuntu.com/security/CVE-2024-48990" />
+				<reference source="CVE" ref_id="CVE-2024-48991" ref_url="https://ubuntu.com/security/CVE-2024-48991" />
+				<reference source="CVE" ref_id="CVE-2024-48992" ref_url="https://ubuntu.com/security/CVE-2024-48992" />
+				<description>Qualys discovered that needrestart passed unsanitized data to a library  (libmodule-scandeps-perl) which expects safe input. A local attacker could possibly use this issue to execute arbitrary code as root. (CVE-2024-11003)  Qualys discovered that the library libmodule-scandeps-perl incorrectly  parsed perl code. This could allow a local attacker to execute arbitrary shell commands. (CVE-2024-10224)  Qualys discovered that needrestart incorrectly used the PYTHONPATH  environment variable to spawn a new Python interpreter. A local attacker  could possibly use this issue to execute arbitrary code as root.  (CVE-2024-48990)  Qualys discovered that needrestart incorrectly checked the path to the Python interpreter. A local attacker could possibly use this issue to win a race condition and execute arbitrary code as root. (CVE-2024-48991)  Qualys discovered that needrestart incorrectly used the RUBYLIB environment variable to spawn a new Ruby interpreter. A local attacker could possibly use this issue to execute arbitrary code as root. (CVE-2024-48992)  Update Instructions:  Run `sudo pro fix USN-7117-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libmodule-scandeps-perl - 1.35-1ubuntu0.24.10.1 needrestart - 3.6-8ubuntu4.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-11-19" />
+					<cve href="https://ubuntu.com/security/CVE-2024-10224" priority="medium" public="20241119" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="7117-1">CVE-2024-10224</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-11003" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-11003</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-48990" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-48990</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-48991" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-48991</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-48992" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-48992</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1970968360281" />
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2071757712293" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -653,6 +724,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1138537531360" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1951724427283" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1764340094484" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1161339928181" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1279154542518" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1349778455410" />
 		</linux:dpkginfo_test>
 		<ind:textfilecontent54_test check="at least one" check_existence="at_least_one_exists" id="oval:com.ubuntu.oracular:tst:1193025277208" version="1">
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
@@ -681,6 +756,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1446488004299" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2016309079574" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1797360483060" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1487155580703" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1356005524267" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1173729684044" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1501130099198" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1444032144088" />
@@ -722,9 +801,17 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1991515047095" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1893388248213" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1970968360281" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1595088412523" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1817607119685" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1988091163862" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1426320839484" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1654879355988" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2071757712293" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1581244429274" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1839241323671" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2081935265938" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1828451335350" />
@@ -755,11 +842,17 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1228901724074" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1825563389771" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1279154542518" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1962302482807" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1304535592397" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1536593724186" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1314272483896" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2027239507760" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1356005524267" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1194983262525" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1426320839484" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1397969216726" var_check="at least one" />
@@ -796,6 +889,12 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1575935891527" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1802419633193" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1581244429274" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2147266800473" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1595088412523" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1976769757796" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1666108973733" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1942831793010" var_check="at least one" />
@@ -844,6 +943,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1152027366007" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.0-rtm-0ubuntu1~24.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1173729684044" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12.7-1ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1239391002389" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:24.1.2-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -852,6 +954,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1265768751207" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:21.1.13-2ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1349778455410" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.0-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1358810532774" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.03.1~dfsg1-0ubuntu2.1</linux:evr>
@@ -882,6 +987,12 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1797360483060" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.100-9.0.0-0ubuntu1~24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1817607119685" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.35-1ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1839241323671" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6-8ubuntu4.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1893388248213" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:21.0.5+11-1ubuntu1~24.10</linux:evr>
@@ -996,10 +1107,31 @@
 			<value>webkit2gtk-driver</value>
 			<value>webkitgtk-webdriver</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1194983262525" version="1" datatype="string" comment="Interim Release">
+			<value>idle-python3.12</value>
+			<value>libpython3.12-dev</value>
+			<value>libpython3.12-minimal</value>
+			<value>libpython3.12-stdlib</value>
+			<value>libpython3.12-testsuite</value>
+			<value>libpython3.12t64</value>
+			<value>python3.12</value>
+			<value>python3.12-dev</value>
+			<value>python3.12-doc</value>
+			<value>python3.12-examples</value>
+			<value>python3.12-full</value>
+			<value>python3.12-gdbm</value>
+			<value>python3.12-minimal</value>
+			<value>python3.12-nopie</value>
+			<value>python3.12-tk</value>
+			<value>python3.12-venv</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1238819058786" version="1" datatype="string" comment="Interim Release">
 			<value>libarchive13t64</value>
 			<value>libarchive-dev</value>
 			<value>libarchive-tools</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1976769757796" version="1" datatype="string" comment="Interim Release">
+			<value>libmodule-scandeps-perl</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1700530688872" version="1" datatype="string" comment="Interim Release">
 			<value>libmpg123-0t64</value>
@@ -1055,6 +1187,9 @@
 			<value>unbound-anchor</value>
 			<value>unbound-host</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2147266800473" version="1" datatype="string" comment="Interim Release">
+			<value>needrestart</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1276065560639" version="1" datatype="string" comment="Interim Release">
 			<value>openjdk-8-demo</value>
 			<value>openjdk-8-doc</value>
@@ -1102,6 +1237,10 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1536593724186" version="1" datatype="string" comment="Interim Release">
 			<value>python3-urllib3</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1962302482807" version="1" datatype="string" comment="Interim Release">
+			<value>python3-waitress</value>
+			<value>python-waitress-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:2168315347961" version="1" datatype="string" comment="Interim Release">
 			<value>python3-werkzeug</value>
