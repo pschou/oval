@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-21T19:37:12</oval:timestamp>
+		<oval:timestamp>2024-11-23T07:32:32</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -16425,8 +16425,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-11-19" />
-					<cve href="https://ubuntu.com/security/CVE-2024-43882" priority="high" public="20240821" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1">CVE-2024-43882</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-46800" priority="medium" public="20240918" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1">CVE-2024-46800</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43882" priority="high" public="20240821" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3">CVE-2024-43882</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46800" priority="medium" public="20240918" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3">CVE-2024-46800</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -16482,8 +16482,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-11-20" />
-					<cve href="https://ubuntu.com/security/CVE-2024-43882" priority="high" public="20240821" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1">CVE-2024-43882</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-46800" priority="medium" public="20240918" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1">CVE-2024-46800</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43882" priority="high" public="20240821" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3">CVE-2024-43882</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46800" priority="medium" public="20240918" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3">CVE-2024-46800</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -16492,6 +16492,31 @@
 					<criteria operator="AND">
 						<criterion test_ref="oval:com.ubuntu.noble:tst:2177086071564" />
 						<criterion test_ref="oval:com.ubuntu.noble:tst:1111362242403" />
+					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71203000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7120-3 -- Linux kernel (Low Latency) vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7120-3" ref_url="https://ubuntu.com/security/notices/USN-7120-3" />
+				<reference source="CVE" ref_id="CVE-2024-43882" ref_url="https://ubuntu.com/security/CVE-2024-43882" />
+				<reference source="CVE" ref_id="CVE-2024-46800" ref_url="https://ubuntu.com/security/CVE-2024-46800" />
+				<description>Several security issues were discovered in the Linux kernel. An attacker could possibly use these to compromise the system. This update corrects flaws in the following subsystems:   - File systems infrastructure;   - Network traffic control; (CVE-2024-46800, CVE-2024-43882)  Update Instructions:  Run `sudo pro fix USN-7120-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-buildinfo-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-buildinfo-6.8.0-49-lowlatency-64k - 6.8.0-49.49.1 linux-cloud-tools-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-cloud-tools-lowlatency - 6.8.0-49.49.1 linux-cloud-tools-lowlatency-hwe-20.04 - 6.8.0-49.49.1 linux-cloud-tools-lowlatency-hwe-20.04-edge - 6.8.0-49.49.1 linux-cloud-tools-lowlatency-hwe-24.04 - 6.8.0-49.49.1 linux-cloud-tools-lowlatency-hwe-24.04-edge - 6.8.0-49.49.1 linux-headers-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-headers-6.8.0-49-lowlatency-64k - 6.8.0-49.49.1 linux-headers-lowlatency - 6.8.0-49.49.1 linux-headers-lowlatency-64k - 6.8.0-49.49.1 linux-headers-lowlatency-64k-hwe-20.04 - 6.8.0-49.49.1 linux-headers-lowlatency-64k-hwe-20.04-edge - 6.8.0-49.49.1 linux-headers-lowlatency-64k-hwe-24.04 - 6.8.0-49.49.1 linux-headers-lowlatency-64k-hwe-24.04-edge - 6.8.0-49.49.1 linux-headers-lowlatency-hwe-20.04 - 6.8.0-49.49.1 linux-headers-lowlatency-hwe-20.04-edge - 6.8.0-49.49.1 linux-headers-lowlatency-hwe-24.04 - 6.8.0-49.49.1 linux-headers-lowlatency-hwe-24.04-edge - 6.8.0-49.49.1 linux-image-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-image-6.8.0-49-lowlatency-64k - 6.8.0-49.49.1 linux-image-lowlatency - 6.8.0-49.49.1 linux-image-lowlatency-64k - 6.8.0-49.49.1 linux-image-lowlatency-64k-hwe-20.04 - 6.8.0-49.49.1 linux-image-lowlatency-64k-hwe-20.04-edge - 6.8.0-49.49.1 linux-image-lowlatency-64k-hwe-24.04 - 6.8.0-49.49.1 linux-image-lowlatency-64k-hwe-24.04-edge - 6.8.0-49.49.1 linux-image-lowlatency-hwe-20.04 - 6.8.0-49.49.1 linux-image-lowlatency-hwe-20.04-edge - 6.8.0-49.49.1 linux-image-lowlatency-hwe-24.04 - 6.8.0-49.49.1 linux-image-lowlatency-hwe-24.04-edge - 6.8.0-49.49.1 linux-image-unsigned-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-image-unsigned-6.8.0-49-lowlatency-64k - 6.8.0-49.49.1 linux-lowlatency - 6.8.0-49.49.1 linux-lowlatency-64k - 6.8.0-49.49.1 linux-lowlatency-64k-hwe-20.04 - 6.8.0-49.49.1 linux-lowlatency-64k-hwe-20.04-edge - 6.8.0-49.49.1 linux-lowlatency-64k-hwe-24.04 - 6.8.0-49.49.1 linux-lowlatency-64k-hwe-24.04-edge - 6.8.0-49.49.1 linux-lowlatency-cloud-tools-6.8.0-49 - 6.8.0-49.49.1 linux-lowlatency-headers-6.8.0-49 - 6.8.0-49.49.1 linux-lowlatency-hwe-20.04 - 6.8.0-49.49.1 linux-lowlatency-hwe-20.04-edge - 6.8.0-49.49.1 linux-lowlatency-hwe-24.04 - 6.8.0-49.49.1 linux-lowlatency-hwe-24.04-edge - 6.8.0-49.49.1 linux-lowlatency-lib-rust-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-lowlatency-tools-6.8.0-49 - 6.8.0-49.49.1 linux-modules-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-modules-6.8.0-49-lowlatency-64k - 6.8.0-49.49.1 linux-modules-iwlwifi-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-modules-iwlwifi-lowlatency - 6.8.0-49.49.1 linux-modules-iwlwifi-lowlatency-hwe-24.04 - 6.8.0-49.49.1 linux-modules-iwlwifi-lowlatency-hwe-24.04-edge - 6.8.0-49.49.1 linux-tools-6.8.0-49-lowlatency - 6.8.0-49.49.1 linux-tools-6.8.0-49-lowlatency-64k - 6.8.0-49.49.1 linux-tools-lowlatency - 6.8.0-49.49.1 linux-tools-lowlatency-64k - 6.8.0-49.49.1 linux-tools-lowlatency-64k-hwe-20.04 - 6.8.0-49.49.1 linux-tools-lowlatency-64k-hwe-20.04-edge - 6.8.0-49.49.1 linux-tools-lowlatency-64k-hwe-24.04 - 6.8.0-49.49.1 linux-tools-lowlatency-64k-hwe-24.04-edge - 6.8.0-49.49.1 linux-tools-lowlatency-hwe-20.04 - 6.8.0-49.49.1 linux-tools-lowlatency-hwe-20.04-edge - 6.8.0-49.49.1 linux-tools-lowlatency-hwe-24.04 - 6.8.0-49.49.1 linux-tools-lowlatency-hwe-24.04-edge - 6.8.0-49.49.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-11-21" />
+					<cve href="https://ubuntu.com/security/CVE-2024-43882" priority="high" public="20240821" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3">CVE-2024-43882</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46800" priority="medium" public="20240918" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3">CVE-2024-46800</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.noble:tst:1417607841301" />
+						<criterion test_ref="oval:com.ubuntu.noble:tst:1688832355253" />
 					</criteria>
 				</criteria>
 			</criteria>
@@ -17242,6 +17267,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1767194828720" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1857917977650" />
 		</linux:dpkginfo_test>
+		<ind:variable_test id="oval:com.ubuntu.noble:tst:1688832355253" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1543009320557" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1577986091978" />
+		</ind:variable_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1692274765390" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1137888917763" />
@@ -18037,6 +18066,9 @@
 			<ind:var_ref>oval:com.ubuntu.noble:var:1237391847079</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.noble:obj:1538271170378" version="1">
+			<ind:var_ref>oval:com.ubuntu.noble:var:1237391847079</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.noble:obj:1543009320557" version="1">
 			<ind:var_ref>oval:com.ubuntu.noble:var:1237391847079</ind:var_ref>
 		</ind:variable_object>
 		<ind:variable_object id="oval:com.ubuntu.noble:obj:1544169350230" version="1">
