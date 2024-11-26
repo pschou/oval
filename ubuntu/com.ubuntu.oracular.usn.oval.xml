@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-25T07:33:00</oval:timestamp>
+		<oval:timestamp>2024-11-26T07:34:00</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -733,6 +733,26 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71251000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7125-1 -- RapidJSON vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7125-1" ref_url="https://ubuntu.com/security/notices/USN-7125-1" />
+				<reference source="CVE" ref_id="CVE-2024-38517" ref_url="https://ubuntu.com/security/CVE-2024-38517" />
+				<description>It was discovered that RapidJSON incorrectly parsed numbers written in scientific notation, leading to an integer underflow. An attacker could possibly use this issue to cause a denial of service, or execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7125-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  rapidjson-dev - 1.1.0+dfsg2-7.3ubuntu0.1 rapidjson-doc - 1.1.0+dfsg2-7.3ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-25" />
+					<cve href="https://ubuntu.com/security/CVE-2024-38517" priority="medium" public="20240709" usns="7125-1">CVE-2024-38517</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1775924590805" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -810,6 +830,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1758660505574" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1495163796215" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2072676154317" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1775924590805" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2008729158035" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1178718392914" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1818825723084" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1304535592397" />
@@ -947,6 +971,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1991515047095" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2163842722565" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2008729158035" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1507574518633" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:2016309079574" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1352635756063" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -978,6 +1005,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1173729684044" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12.7-1ubuntu1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1178718392914" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.0+dfsg2-7.3ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1239391002389" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:24.1.2-1ubuntu0.1</linux:evr>
@@ -1316,6 +1346,10 @@
 			<value>qemu-user-binfmt</value>
 			<value>qemu-user-static</value>
 			<value>qemu-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1507574518633" version="1" datatype="string" comment="Interim Release">
+			<value>rapidjson-dev</value>
+			<value>rapidjson-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1435177305563" version="1" datatype="string" comment="Interim Release">
 			<value>xnest</value>
