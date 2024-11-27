@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-26T07:34:00</oval:timestamp>
+		<oval:timestamp>2024-11-27T07:35:16</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -9375,11 +9375,11 @@
 				<reference source="USN" ref_id="USN-6988-1" ref_url="https://ubuntu.com/security/notices/USN-6988-1" />
 				<reference source="CVE" ref_id="CVE-2024-41671" ref_url="https://ubuntu.com/security/CVE-2024-41671" />
 				<reference source="CVE" ref_id="CVE-2024-41810" ref_url="https://ubuntu.com/security/CVE-2024-41810" />
-				<description>It was discovered that Twisted incorrectly handled response order when processing multiple HTTP requests. A remote attacker could possibly use this issue to delay and manipulate responses.  This issue only affected Ubuntu 24.04 LTS. (CVE-2024-41671)  It was discovered that Twisted did not properly sanitize certain input. An attacker could use this vulnerability to possibly execute an HTML  injection leading to a cross-site scripting (XSS) attack.  (CVE-2024-41810)  Update Instructions:  Run `sudo pro fix USN-6988-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-twisted - 24.3.0-1ubuntu0.1 twisted-doc - 24.3.0-1ubuntu0.1</description>
+				<description>Ben Kallus discovered that Twisted incorrectly handled response order when processing multiple HTTP requests. A remote attacker could possibly use this issue to delay and manipulate responses.  This issue only affected Ubuntu 24.04 LTS. (CVE-2024-41671)  It was discovered that Twisted did not properly sanitize certain input. An attacker could use this vulnerability to possibly execute an HTML  injection leading to a cross-site scripting (XSS) attack.  (CVE-2024-41810)  Update Instructions:  Run `sudo pro fix USN-6988-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-twisted - 24.3.0-1ubuntu0.1 twisted-doc - 24.3.0-1ubuntu0.1</description>
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-09-04" />
-					<cve href="https://ubuntu.com/security/CVE-2024-41671" priority="medium" public="20240729" usns="6988-1">CVE-2024-41671</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41671" priority="medium" public="20240729" usns="6988-1,6988-2">CVE-2024-41671</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-41810" priority="medium" public="20240729" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="6988-1">CVE-2024-41810</cve>
 				</advisory>
 			</metadata>
@@ -16402,7 +16402,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2024-10224" priority="medium" public="20241119" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L" cvss_severity="medium" usns="7117-1">CVE-2024-10224</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-11003" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-11003</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-48990" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-48990</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-48991" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-48991</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-48991" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1,7117-2">CVE-2024-48991</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-48992" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7117-1">CVE-2024-48992</cve>
 				</advisory>
 			</metadata>
@@ -16411,6 +16411,25 @@
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1298404004142" />
 					<criterion test_ref="oval:com.ubuntu.noble:tst:2120446514865" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71172000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7117-2 -- needrestart regression</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7117-2" ref_url="https://ubuntu.com/security/notices/USN-7117-2" />
+				<description>USN-7117-1 fixed vulnerabilities in needrestart. The update introduced a regression in needrestart. This update fixes the problem.  We apologize for the inconvenience.  Original advisory details:   Qualys discovered that needrestart passed unsanitized data to a library   (libmodule-scandeps-perl) which expects safe input. A local attacker could  possibly use this issue to execute arbitrary code as root.  (CVE-2024-11003)    Qualys discovered that the library libmodule-scandeps-perl incorrectly   parsed perl code. This could allow a local attacker to execute arbitrary  shell commands. (CVE-2024-10224)    Qualys discovered that needrestart incorrectly used the PYTHONPATH   environment variable to spawn a new Python interpreter. A local attacker   could possibly use this issue to execute arbitrary code as root.   (CVE-2024-48990)    Qualys discovered that needrestart incorrectly checked the path to the  Python interpreter. A local attacker could possibly use this issue to win  a race condition and execute arbitrary code as root. (CVE-2024-48991)    Qualys discovered that needrestart incorrectly used the RUBYLIB  environment variable to spawn a new Ruby interpreter. A local attacker  could possibly use this issue to execute arbitrary code as root.  (CVE-2024-48992)  Update Instructions:  Run `sudo pro fix USN-7117-2` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  needrestart - 3.6-7ubuntu4.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2024-11-26" />
+					<bug>https://launchpad.net/bugs/2089193</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1700183076626" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -16538,6 +16557,74 @@
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1598028546562" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71261000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7126-1 -- libsoup vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7126-1" ref_url="https://ubuntu.com/security/notices/USN-7126-1" />
+				<reference source="CVE" ref_id="CVE-2024-52530" ref_url="https://ubuntu.com/security/CVE-2024-52530" />
+				<reference source="CVE" ref_id="CVE-2024-52531" ref_url="https://ubuntu.com/security/CVE-2024-52531" />
+				<reference source="CVE" ref_id="CVE-2024-52532" ref_url="https://ubuntu.com/security/CVE-2024-52532" />
+				<description>It was discovered that libsoup ignored certain characters at the end of header names. A remote attacker could possibly use this issue to perform a HTTP request smuggling attack. (CVE-2024-52530)  It was discovered that libsoup did not correctly handle memory while performing UTF-8 conversions. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2024-52531)  It was discovered that libsoup could enter an infinite loop when reading certain websocket data. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-52532)  Update Instructions:  Run `sudo pro fix USN-7126-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-soup-2.4 - 2.74.3-6ubuntu1.1 libsoup2.4-common - 2.74.3-6ubuntu1.1 libsoup2.4-dev - 2.74.3-6ubuntu1.1 libsoup2.4-doc - 2.74.3-6ubuntu1.1 libsoup2.4-tests - 2.74.3-6ubuntu1.1 libsoup-2.4-1 - 2.74.3-6ubuntu1.1 libsoup-gnome2.4-dev - 2.74.3-6ubuntu1.1 libsoup-gnome-2.4-1 - 2.74.3-6ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-52530" priority="medium" public="20241111" usns="7127-1,7126-1">CVE-2024-52530</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52531" priority="medium" public="20241111" usns="7127-1,7126-1">CVE-2024-52531</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52532" priority="medium" public="20241111" usns="7127-1,7126-1">CVE-2024-52532</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1392161659084" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71271000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7127-1 -- libsoup3 vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7127-1" ref_url="https://ubuntu.com/security/notices/USN-7127-1" />
+				<reference source="CVE" ref_id="CVE-2024-52530" ref_url="https://ubuntu.com/security/CVE-2024-52530" />
+				<reference source="CVE" ref_id="CVE-2024-52531" ref_url="https://ubuntu.com/security/CVE-2024-52531" />
+				<reference source="CVE" ref_id="CVE-2024-52532" ref_url="https://ubuntu.com/security/CVE-2024-52532" />
+				<description>It was discovered that libsoup ignored certain characters at the end of header names. A remote attacker could possibly use this issue to perform a HTTP request smuggling attack. This issue only affected Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2024-52530)  It was discovered that libsoup did not correctly handle memory while performing UTF-8 conversions. An attacker could possibly use this issue to cause a denial of service or execute arbitrary code. (CVE-2024-52531)  It was discovered that libsoup could enter an infinite loop when reading certain websocket data. An attacker could possibly use this issue to cause a denial of service. (CVE-2024-52532)  Update Instructions:  Run `sudo pro fix USN-7127-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-soup-3.0 - 3.4.4-5ubuntu0.1 libsoup-3.0-0 - 3.4.4-5ubuntu0.1 libsoup-3.0-common - 3.4.4-5ubuntu0.1 libsoup-3.0-dev - 3.4.4-5ubuntu0.1 libsoup-3.0-doc - 3.4.4-5ubuntu0.1 libsoup-3.0-tests - 3.4.4-5ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-52530" priority="medium" public="20241111" usns="7127-1,7126-1">CVE-2024-52530</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52531" priority="medium" public="20241111" usns="7127-1,7126-1">CVE-2024-52531</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52532" priority="medium" public="20241111" usns="7127-1,7126-1">CVE-2024-52532</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1691593986300" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71301000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7130-1 -- GitHub CLI vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7130-1" ref_url="https://ubuntu.com/security/notices/USN-7130-1" />
+				<reference source="CVE" ref_id="CVE-2024-52308" ref_url="https://ubuntu.com/security/CVE-2024-52308" />
+				<description>It was discovered that GitHub CLI incorrectly handled username validation. An attacker could possibly use this issue to perform  remote code execution if the user connected to a malicious server. (CVE-2024-52308)  Update Instructions:  Run `sudo pro fix USN-7130-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gh - 2.45.0-1ubuntu0.2+esm1 Available with Ubuntu Pro: https://ubuntu.com/pro</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-11-26" />
+					<cve href="https://ubuntu.com/security/CVE-2024-52308" priority="high" public="20241114" cvss_score="9.6" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H" cvss_severity="critical">CVE-2024-52308</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1579902152118" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -16939,6 +17026,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1598833021618" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1802448722840" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1392161659084" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2176317959110" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1464687232042" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1393540164405" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1194240447156" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2075791560588" />
@@ -17167,6 +17258,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1307422254461" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1209654445270" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1579902152118" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2141720216595" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1284633055274" />
+		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1582988025633" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1487394131369" />
@@ -17295,6 +17390,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1543009320557" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1577986091978" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1691593986300" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1502626294476" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1717216756585" />
+		</linux:dpkginfo_test>
 		<unix:uname_test check="at least one" id="oval:com.ubuntu.noble:tst:1692274765390" version="1">
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1137888917763" />
@@ -17302,6 +17401,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1699709899945" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1842447798259" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1824949228848" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1700183076626" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1562290490421" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1377671936022" />
 		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1702124779940" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:2166158151641" />
@@ -18338,6 +18441,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2104201714611" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1156159980495" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2141720216595" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1822754112149" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2168778210716" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2187571970822" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18527,6 +18633,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1498765650914" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1746033152398" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1502626294476" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1677249067334" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1503786973617" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2189228589825" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -18556,6 +18665,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1562256108961" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1567976091656" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1562290490421" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:2147266800473" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1563724627036" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1278234424203" var_check="at least one" />
@@ -18917,6 +19029,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2173237919323" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2170293769361" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2176317959110" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1269178639139" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2184524949207" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1472414532281" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19034,6 +19149,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1273049323144" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.0.0+git20190521.78d0385+1.9.0-2ubuntu0.1~esm2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1284633055274" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.45.0-1ubuntu0.2+esm1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1291398638434" version="1" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
 			<linux:evr datatype="debian_evr_string" operation="less than">7:6.1.1-3ubuntu5+esm2</linux:evr>
@@ -19203,6 +19321,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1376469391075" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.108-0ubuntu1~24.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1377671936022" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6-7ubuntu4.4</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1392605178429" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u432-ga~us1-0ubuntu2~24.04</linux:evr>
 		</linux:dpkginfo_state>
@@ -19235,6 +19356,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1457844839874" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.21.4-1ubuntu4.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1464687232042" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.74.3-6ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1475443330982" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.107-0ubuntu1~24.04.1</linux:evr>
@@ -19376,6 +19500,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1715522785314" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.105-8.0.5-0ubuntu1~24.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1717216756585" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.4.4-5ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1724678989880" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.4.58-1ubuntu8.3</linux:evr>
@@ -20004,6 +20131,9 @@
 			<value>libgdk-pixbuf-2.0-0</value>
 			<value>libgdk-pixbuf-2.0-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1822754112149" version="1" datatype="string" comment="Available with Ubuntu Pro: https://ubuntu.com/pro">
+			<value>gh</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:2170293769361" version="1" datatype="string" comment="Long Term Release">
 			<value>ghostscript</value>
 			<value>ghostscript-doc</value>
@@ -20320,6 +20450,24 @@
 			<value>libpoppler-qt6-3t64</value>
 			<value>libpoppler-qt6-dev</value>
 			<value>poppler-utils</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1269178639139" version="1" datatype="string" comment="Long Term Release">
+			<value>gir1.2-soup-2.4</value>
+			<value>libsoup2.4-common</value>
+			<value>libsoup2.4-dev</value>
+			<value>libsoup2.4-doc</value>
+			<value>libsoup2.4-tests</value>
+			<value>libsoup-2.4-1</value>
+			<value>libsoup-gnome2.4-dev</value>
+			<value>libsoup-gnome-2.4-1</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1677249067334" version="1" datatype="string" comment="Long Term Release">
+			<value>gir1.2-soup-3.0</value>
+			<value>libsoup-3.0-0</value>
+			<value>libsoup-3.0-common</value>
+			<value>libsoup-3.0-dev</value>
+			<value>libsoup-3.0-doc</value>
+			<value>libsoup-3.0-tests</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1391969025043" version="1" datatype="string" comment="Long Term Release">
 			<value>gir1.2-vte-2.91</value>
