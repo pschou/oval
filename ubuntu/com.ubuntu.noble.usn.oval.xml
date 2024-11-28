@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-27T07:35:16</oval:timestamp>
+		<oval:timestamp>2024-11-28T07:38:56</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -15533,7 +15533,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-11-05" />
-					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1">CVE-2024-10573</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1,7092-2">CVE-2024-10573</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -16269,7 +16269,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Low</severity>
 					<issued date="2024-11-18" />
-					<cve href="https://ubuntu.com/security/CVE-2024-9681" priority="low" public="20241106" usns="7104-1">CVE-2024-9681</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-9681" priority="low" public="20241106" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:L" cvss_severity="medium" usns="7104-1">CVE-2024-9681</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -16618,13 +16618,33 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-11-26" />
-					<cve href="https://ubuntu.com/security/CVE-2024-52308" priority="high" public="20241114" cvss_score="9.6" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H" cvss_severity="critical">CVE-2024-52308</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52308" priority="high" public="20241114" cvss_score="9.6" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H" cvss_severity="critical" usns="7130-1">CVE-2024-52308</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1579902152118" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71311000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7131-1 -- Vim vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7131-1" ref_url="https://ubuntu.com/security/notices/USN-7131-1" />
+				<reference source="CVE" ref_id="CVE-2024-47814" ref_url="https://ubuntu.com/security/CVE-2024-47814" />
+				<description>It was discovered that Vim incorrectly handled memory when closing a buffer, leading to use-after-free. If a user was tricked into opening a specially crafted file, an attacker could crash the application, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-7131-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  vim - 2:9.1.0016-1ubuntu7.5 vim-athena - 2:9.1.0016-1ubuntu7.5 vim-common - 2:9.1.0016-1ubuntu7.5 vim-doc - 2:9.1.0016-1ubuntu7.5 vim-gtk3 - 2:9.1.0016-1ubuntu7.5 vim-gui-common - 2:9.1.0016-1ubuntu7.5 vim-motif - 2:9.1.0016-1ubuntu7.5 vim-nox - 2:9.1.0016-1ubuntu7.5 vim-runtime - 2:9.1.0016-1ubuntu7.5 vim-tiny - 2:9.1.0016-1ubuntu7.5 xxd - 2:9.1.0016-1ubuntu7.5</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47814" priority="low" public="20241007" usns="7131-1">CVE-2024-47814</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1266712311350" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -16878,6 +16898,10 @@
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1900733857648" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1299854436195" />
 		</ind:variable_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1266712311350" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1175347444273" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1782771392895" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1267872484967" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1230304866447" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1922655483078" />
@@ -18483,6 +18507,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1153941346497" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1549395455793" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1175347444273" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1314793989029" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1178300926624" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1440135800386" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19539,6 +19566,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1775666134371" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.11ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1782771392895" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:9.1.0016-1ubuntu7.5</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1782947220800" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.7-1ubuntu0.1</linux:evr>

@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-27T07:35:16</oval:timestamp>
+		<oval:timestamp>2024-11-28T05:36:39</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -263,7 +263,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-11-05" />
-					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1">CVE-2024-10573</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-10573" priority="medium" public="20241030" cvss_score="6.7" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="medium" usns="7092-1,7092-2">CVE-2024-10573</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -580,7 +580,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Low</severity>
 					<issued date="2024-11-18" />
-					<cve href="https://ubuntu.com/security/CVE-2024-9681" priority="low" public="20241106" usns="7104-1">CVE-2024-9681</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-9681" priority="low" public="20241106" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:L" cvss_severity="medium" usns="7104-1">CVE-2024-9681</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -830,13 +830,33 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-11-26" />
-					<cve href="https://ubuntu.com/security/CVE-2024-52308" priority="high" public="20241114" cvss_score="9.6" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H" cvss_severity="critical">CVE-2024-52308</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52308" priority="high" public="20241114" cvss_score="9.6" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H" cvss_severity="critical" usns="7130-1">CVE-2024-52308</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.oracular:tst:1752759419332" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71311000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7131-1 -- Vim vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7131-1" ref_url="https://ubuntu.com/security/notices/USN-7131-1" />
+				<reference source="CVE" ref_id="CVE-2024-47814" ref_url="https://ubuntu.com/security/CVE-2024-47814" />
+				<description>It was discovered that Vim incorrectly handled memory when closing a buffer, leading to use-after-free. If a user was tricked into opening a specially crafted file, an attacker could crash the application, leading to a denial of service.  Update Instructions:  Run `sudo pro fix USN-7131-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  vim - 2:9.1.0496-1ubuntu6.2 vim-athena - 2:9.1.0496-1ubuntu6.2 vim-common - 2:9.1.0496-1ubuntu6.2 vim-doc - 2:9.1.0496-1ubuntu6.2 vim-gtk3 - 2:9.1.0496-1ubuntu6.2 vim-gui-common - 2:9.1.0496-1ubuntu6.2 vim-motif - 2:9.1.0496-1ubuntu6.2 vim-nox - 2:9.1.0496-1ubuntu6.2 vim-runtime - 2:9.1.0496-1ubuntu6.2 vim-tiny - 2:9.1.0496-1ubuntu6.2 xxd - 2:9.1.0496-1ubuntu6.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-11-27" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47814" priority="low" public="20241007" usns="7131-1">CVE-2024-47814</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1282103727557" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -873,6 +893,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1253338541195" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2102917718391" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1258795380471" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1282103727557" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1263600352979" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1805468333124" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1375272685312" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1945195370880" />
@@ -998,6 +1022,9 @@
 	<objects>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1228901724074" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1825563389771" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1263600352979" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1314793989029" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1279154542518" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1962302482807" var_check="at least one" />
@@ -1174,6 +1201,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1797360483060" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.100-9.0.0-0ubuntu1~24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1805468333124" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">2:9.1.0496-1ubuntu6.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1817607119685" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.35-1ubuntu0.24.10.1</linux:evr>
@@ -1498,6 +1528,19 @@
 		<constant_variable id="oval:com.ubuntu.oracular:var:1507574518633" version="1" datatype="string" comment="Interim Release">
 			<value>rapidjson-dev</value>
 			<value>rapidjson-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1314793989029" version="1" datatype="string" comment="Interim Release">
+			<value>vim</value>
+			<value>vim-athena</value>
+			<value>vim-common</value>
+			<value>vim-doc</value>
+			<value>vim-gtk3</value>
+			<value>vim-gui-common</value>
+			<value>vim-motif</value>
+			<value>vim-nox</value>
+			<value>vim-runtime</value>
+			<value>vim-tiny</value>
+			<value>xxd</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1435177305563" version="1" datatype="string" comment="Interim Release">
 			<value>xnest</value>
