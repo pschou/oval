@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-11-28T07:38:56</oval:timestamp>
+		<oval:timestamp>2024-12-03T07:36:42</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -16648,6 +16648,52 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71321000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7132-1 -- PostgreSQL vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7132-1" ref_url="https://ubuntu.com/security/notices/USN-7132-1" />
+				<reference source="CVE" ref_id="CVE-2024-10976" ref_url="https://ubuntu.com/security/CVE-2024-10976" />
+				<reference source="CVE" ref_id="CVE-2024-10977" ref_url="https://ubuntu.com/security/CVE-2024-10977" />
+				<reference source="CVE" ref_id="CVE-2024-10978" ref_url="https://ubuntu.com/security/CVE-2024-10978" />
+				<reference source="CVE" ref_id="CVE-2024-10979" ref_url="https://ubuntu.com/security/CVE-2024-10979" />
+				<description>It was discovered that PostgreSQL incorrectly tracked tables with row security. A remote attacker could possibly use this issue to perform forbidden reads and modifications. (CVE-2024-10976)  Jacob Champion discovered that PostgreSQL clients used untrusted server error messages. An attacker that is able to intercept network communications could possibly use this issue to inject error messages that could be interpreted as valid query results. (CVE-2024-10977)  Tom Lane discovered that PostgreSQL incorrectly handled certain privilege assignments. A remote attacker could possibly use this issue to view or change different rows from those intended. (CVE-2024-10978)  Coby Abrams discovered that PostgreSQL incorrectly handled environment variables. A remote attacker could possibly use this issue to execute arbitrary code. (CVE-2024-10979)  Update Instructions:  Run `sudo pro fix USN-7132-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libecpg6 - 16.6-0ubuntu0.24.04.1 libecpg-compat3 - 16.6-0ubuntu0.24.04.1 libecpg-dev - 16.6-0ubuntu0.24.04.1 libpgtypes3 - 16.6-0ubuntu0.24.04.1 libpq5 - 16.6-0ubuntu0.24.04.1 libpq-dev - 16.6-0ubuntu0.24.04.1 postgresql-16 - 16.6-0ubuntu0.24.04.1 postgresql-client-16 - 16.6-0ubuntu0.24.04.1 postgresql-doc-16 - 16.6-0ubuntu0.24.04.1 postgresql-plperl-16 - 16.6-0ubuntu0.24.04.1 postgresql-plpython3-16 - 16.6-0ubuntu0.24.04.1 postgresql-pltcl-16 - 16.6-0ubuntu0.24.04.1 postgresql-server-dev-16 - 16.6-0ubuntu0.24.04.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-02" />
+					<cve href="https://ubuntu.com/security/CVE-2024-10976" priority="medium" public="20241114" usns="7132-1">CVE-2024-10976</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-10977" priority="medium" public="20241114" usns="7132-1">CVE-2024-10977</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-10978" priority="medium" public="20241114" usns="7132-1">CVE-2024-10978</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-10979" priority="medium" public="20241114" usns="7132-1">CVE-2024-10979</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1604999866312" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71331000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7133-1 -- HAProxy vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7133-1" ref_url="https://ubuntu.com/security/notices/USN-7133-1" />
+				<reference source="CVE" ref_id="CVE-2024-53008" ref_url="https://ubuntu.com/security/CVE-2024-53008" />
+				<description>Yuki Mogi discovered that HAProxy incorrectly handled the interpretation of certain HTTP requests. A remote attacker could possibly use this issue to perform a request smuggling attack and obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7133-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  haproxy - 2.8.5-1ubuntu3.2 haproxy-doc - 2.8.5-1ubuntu3.2 vim-haproxy - 2.8.5-1ubuntu3.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-03" />
+					<cve href="https://ubuntu.com/security/CVE-2024-53008" priority="medium" public="20241128" usns="7133-1">CVE-2024-53008</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1173230376189" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -16766,6 +16812,10 @@
 			<unix:object object_ref="oval:com.ubuntu.noble:obj:1742435039334" />
 			<unix:state state_ref="oval:com.ubuntu.noble:ste:1630549805772" />
 		</unix:uname_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1173230376189" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2148601165154" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1799992455770" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1174203274006" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1868172118309" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2118225453924" />
@@ -17317,6 +17367,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1601211442963" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1650268236258" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1775666134371" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1604999866312" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1476785935950" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2106092566207" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1607981506182" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1335717303170" />
@@ -18651,6 +18705,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1465653492798" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1976769757796" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1476785935950" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1471259271412" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1480383500543" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1788653849670" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19031,6 +19088,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2142166848331" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1416550753766" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2148601165154" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1559342909790" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2154526819754" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1969404193358" var_check="at least one" />
@@ -19582,6 +19642,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1797522928863" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.02.1~dfsg1-0ubuntu7.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1799992455770" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.8.5-1ubuntu3.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1800930237413" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.40-0ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -19749,6 +19812,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2097131771108" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.6-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2106092566207" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:16.6-0ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2106220701270" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">4:0.9+LibO24.2.5-0ubuntu0.24.04.2</linux:evr>
@@ -20599,6 +20665,11 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1455890860827" version="1" datatype="string" comment="Long Term Release">
 			<value>gross</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1559342909790" version="1" datatype="string" comment="Long Term Release">
+			<value>haproxy</value>
+			<value>haproxy-doc</value>
+			<value>vim-haproxy</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1595244941888" version="1" datatype="string" comment="Long Term Release">
 			<value>heif-gdk-pixbuf</value>
