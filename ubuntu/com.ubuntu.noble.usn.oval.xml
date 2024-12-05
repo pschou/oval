@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-03T07:36:42</oval:timestamp>
+		<oval:timestamp>2024-12-05T07:35:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -16694,6 +16694,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7136-1 -- Django vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7136-1" ref_url="https://ubuntu.com/security/notices/USN-7136-1" />
+				<reference source="CVE" ref_id="CVE-2024-53907" ref_url="https://ubuntu.com/security/CVE-2024-53907" />
+				<reference source="CVE" ref_id="CVE-2024-53908" ref_url="https://ubuntu.com/security/CVE-2024-53908" />
+				<description>jiangniao discovered that Django incorrectly handled the API to strip tags. A remote attacker could possibly use this issue to cause Django to consume resources, leading to a denial of service. (CVE-2024-53907)  Seokchan Yoon discovered that Django incorrectly handled HasKey lookups when using Oracle. A remote attacker could possibly use this issue to inject arbitrary SQL code. This issue only affected Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2024-53908)  Update Instructions:  Run `sudo pro fix USN-7136-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:4.2.11-1ubuntu1.4 python-django-doc - 3:4.2.11-1ubuntu1.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-04" />
+					<cve href="https://ubuntu.com/security/CVE-2024-53907" priority="medium" public="20241204" usns="7136-1,7136-2">CVE-2024-53907</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-53908" priority="medium" public="20241204" usns="7136-1">CVE-2024-53908</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1518429024056" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1106986543419" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -17247,6 +17269,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1515925834912" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1883654297743" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1759808933393" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1518429024056" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1700797739951" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:2108258003707" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1518725655691" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1665006460827" />
@@ -18861,6 +18887,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1697214996836" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1872078967502" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1700797739951" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1619530361317" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1706269345037" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1594109676550" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -19821,6 +19850,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2107786205195" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:9.1.0016-1ubuntu7.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2108258003707" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.11-1ubuntu1.4</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:2118225453924" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.6p1-3ubuntu13.4</linux:evr>

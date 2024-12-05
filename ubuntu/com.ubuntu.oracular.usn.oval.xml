@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-03T07:36:42</oval:timestamp>
+		<oval:timestamp>2024-12-05T07:35:01</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -886,6 +886,28 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71361000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7136-1 -- Django vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7136-1" ref_url="https://ubuntu.com/security/notices/USN-7136-1" />
+				<reference source="CVE" ref_id="CVE-2024-53907" ref_url="https://ubuntu.com/security/CVE-2024-53907" />
+				<reference source="CVE" ref_id="CVE-2024-53908" ref_url="https://ubuntu.com/security/CVE-2024-53908" />
+				<description>jiangniao discovered that Django incorrectly handled the API to strip tags. A remote attacker could possibly use this issue to cause Django to consume resources, leading to a denial of service. (CVE-2024-53907)  Seokchan Yoon discovered that Django incorrectly handled HasKey lookups when using Oracle. A remote attacker could possibly use this issue to inject arbitrary SQL code. This issue only affected Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2024-53908)  Update Instructions:  Run `sudo pro fix USN-7136-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-django - 3:4.2.15-1ubuntu1.1 python-django-doc - 3:4.2.15-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-04" />
+					<cve href="https://ubuntu.com/security/CVE-2024-53907" priority="medium" public="20241204" usns="7136-1,7136-2">CVE-2024-53907</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-53908" priority="medium" public="20241204" usns="7136-1">CVE-2024-53908</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1816548638249" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -983,6 +1005,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1775924590805" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2008729158035" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1178718392914" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1816548638249" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1728757066647" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2163339901424" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1818825723084" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1304535592397" />
@@ -1124,6 +1150,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1727813016491" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1911820033154" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1728757066647" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1619530361317" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1828451335350" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2170293769361" var_check="at least one" />
@@ -1282,6 +1311,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2146213046869" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u432-ga~us1-0ubuntu2~24.10</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2163339901424" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">3:4.2.15-1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2167457118821" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:17.0.13+11-2ubuntu1~24.10</linux:evr>
@@ -1536,6 +1568,10 @@
 			<value>openjdk-23-jre-zero</value>
 			<value>openjdk-23-source</value>
 			<value>openjdk-23-testsupport</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1619530361317" version="1" datatype="string" comment="Interim Release">
+			<value>python3-django</value>
+			<value>python-django-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1911820033154" version="1" datatype="string" comment="Interim Release">
 			<value>python3-pip</value>
