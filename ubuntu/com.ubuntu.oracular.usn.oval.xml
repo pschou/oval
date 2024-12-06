@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-05T07:35:01</oval:timestamp>
+		<oval:timestamp>2024-12-06T05:36:37</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -555,12 +555,12 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-11-12" />
-					<cve href="https://ubuntu.com/security/CVE-2024-46951" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1">CVE-2024-46951</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46951" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1,7138-1">CVE-2024-46951</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-46952" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1">CVE-2024-46952</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-46953" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1">CVE-2024-46953</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46953" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1,7138-1">CVE-2024-46953</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-46954" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1">CVE-2024-46954</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-46955" priority="medium" public="20241030" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7103-1">CVE-2024-46955</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-46956" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1">CVE-2024-46956</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46955" priority="medium" public="20241030" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7103-1,7138-1">CVE-2024-46955</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-46956" priority="medium" public="20241030" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7103-1,7138-1">CVE-2024-46956</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -723,6 +723,25 @@
 				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.oracular:tst:1506888216764" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71173000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7117-3 -- needrestart regression</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7117-3" ref_url="https://ubuntu.com/security/notices/USN-7117-3" />
+				<description>USN-7117-1 fixed vulnerabilities in needrestart. The update introduced a regression in needrestart. This update fixes the problem for LXC containers.  We apologize for the inconvenience.  Original advisory details:   Qualys discovered that needrestart passed unsanitized data to a library   (libmodule-scandeps-perl) which expects safe input. A local attacker could  possibly use this issue to execute arbitrary code as root.  (CVE-2024-11003)    Qualys discovered that the library libmodule-scandeps-perl incorrectly   parsed perl code. This could allow a local attacker to execute arbitrary  shell commands. (CVE-2024-10224)    Qualys discovered that needrestart incorrectly used the PYTHONPATH   environment variable to spawn a new Python interpreter. A local attacker   could possibly use this issue to execute arbitrary code as root.   (CVE-2024-48990)    Qualys discovered that needrestart incorrectly checked the path to the  Python interpreter. A local attacker could possibly use this issue to win  a race condition and execute arbitrary code as root. (CVE-2024-48991)    Qualys discovered that needrestart incorrectly used the RUBYLIB  environment variable to spawn a new Ruby interpreter. A local attacker  could possibly use this issue to execute arbitrary code as root.  (CVE-2024-48992)  Update Instructions:  Run `sudo pro fix USN-7117-3` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  needrestart - 3.6-8ubuntu4.4</description>
+				<advisory from="security@ubuntu.com">
+					<severity>None</severity>
+					<issued date="2024-12-05" />
+					<bug>https://launchpad.net/bugs/2091096</bug>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1575066560311" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -986,6 +1005,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1459732504919" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2113616899922" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1575066560311" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1544627762963" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1630551183604" />
+		</linux:dpkginfo_test>
 		<ind:family_test id="oval:com.ubuntu.oracular:tst:1606098102597" check="at least one" check_existence="at_least_one_exists" version="1">
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
@@ -1130,6 +1153,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1543983516010" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1530897597609" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1544627762963" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2147266800473" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1575935891527" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1802419633193" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1248,6 +1274,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1625233115335" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:16.6-0ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1630551183604" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6-8ubuntu4.4</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1654879355988" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.9.1-2ubuntu2.1</linux:evr>
