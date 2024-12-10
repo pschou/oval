@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-06T05:36:37</oval:timestamp>
+		<oval:timestamp>2024-12-10T07:35:59</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -927,6 +927,52 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71411000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7141-1 -- oFono vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7141-1" ref_url="https://ubuntu.com/security/notices/USN-7141-1" />
+				<reference source="CVE" ref_id="CVE-2023-2794" ref_url="https://ubuntu.com/security/CVE-2023-2794" />
+				<reference source="CVE" ref_id="CVE-2023-4233" ref_url="https://ubuntu.com/security/CVE-2023-4233" />
+				<reference source="CVE" ref_id="CVE-2023-4234" ref_url="https://ubuntu.com/security/CVE-2023-4234" />
+				<description>It was discovered that oFono incorrectly handled decoding SMS messages leading to a stack overflow. A remote attacker could potentially use this issue to cause a denial of service. (CVE-2023-2794, CVE-2023-4233, CVE-2023-4234)  Update Instructions:  Run `sudo pro fix USN-7141-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ofono - 1.31-3ubuntu3.24.10.1 ofono-dev - 1.31-3ubuntu3.24.10.1 ofono-scripts - 1.31-3ubuntu3.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-09" />
+					<cve href="https://ubuntu.com/security/CVE-2023-2794" priority="medium" public="20240410" usns="7141-1">CVE-2023-2794</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4233" priority="medium" public="20240417" usns="7141-1">CVE-2023-4233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4234" priority="medium" public="20240417" usns="7141-1">CVE-2023-4234</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1514222488273" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71421000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7142-1 -- WebKitGTK vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7142-1" ref_url="https://ubuntu.com/security/notices/USN-7142-1" />
+				<reference source="CVE" ref_id="CVE-2024-44308" ref_url="https://ubuntu.com/security/CVE-2024-44308" />
+				<reference source="CVE" ref_id="CVE-2024-44309" ref_url="https://ubuntu.com/security/CVE-2024-44309" />
+				<description>Several security issues were discovered in the WebKitGTK Web and JavaScript engines. If a user were tricked into viewing a malicious website, a remote attacker could exploit a variety of issues related to web browser security, including cross-site scripting attacks, denial of service attacks, and arbitrary code execution.  Update Instructions:  Run `sudo pro fix USN-7142-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-javascriptcoregtk-4.1 - 2.46.4-0ubuntu0.24.10.1 gir1.2-javascriptcoregtk-6.0 - 2.46.4-0ubuntu0.24.10.1 gir1.2-webkit2-4.1 - 2.46.4-0ubuntu0.24.10.1 gir1.2-webkit-6.0 - 2.46.4-0ubuntu0.24.10.1 libjavascriptcoregtk-4.0-bin - 2.46.4-0ubuntu0.24.10.1 libjavascriptcoregtk-4.1-0 - 2.46.4-0ubuntu0.24.10.1 libjavascriptcoregtk-4.1-dev - 2.46.4-0ubuntu0.24.10.1 libjavascriptcoregtk-6.0-1 - 2.46.4-0ubuntu0.24.10.1 libjavascriptcoregtk-6.0-dev - 2.46.4-0ubuntu0.24.10.1 libjavascriptcoregtk-bin - 2.46.4-0ubuntu0.24.10.1 libwebkit2gtk-4.0-doc - 2.46.4-0ubuntu0.24.10.1 libwebkit2gtk-4.1-0 - 2.46.4-0ubuntu0.24.10.1 libwebkit2gtk-4.1-dev - 2.46.4-0ubuntu0.24.10.1 libwebkitgtk-6.0-4 - 2.46.4-0ubuntu0.24.10.1 libwebkitgtk-6.0-dev - 2.46.4-0ubuntu0.24.10.1 libwebkitgtk-doc - 2.46.4-0ubuntu0.24.10.1 webkit2gtk-driver - 2.46.4-0ubuntu0.24.10.1 webkitgtk-webdriver - 2.46.4-0ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-12-09" />
+					<cve href="https://ubuntu.com/security/CVE-2024-44308" priority="high" public="20241120" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7142-1">CVE-2024-44308</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-44309" priority="high" public="20241120" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="7142-1">CVE-2024-44309</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1454736376876" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -985,6 +1031,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2016309079574" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1797360483060" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1454736376876" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1665163936373" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1253769633941" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1471349977339" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1323074169473" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1235142909222" />
@@ -1000,6 +1050,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1506888216764" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2157336834426" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1309327466521" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1514222488273" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1852615640355" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2017030739974" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1518085070637" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1459732504919" />
@@ -1168,6 +1222,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1627804469324" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1677249067334" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1665163936373" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1400789999222" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1666108973733" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1942831793010" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1182,6 +1239,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1828451335350" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2170293769361" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1852615640355" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1921760126577" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1945195370880" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1409432597870" var_check="at least one" />
@@ -1244,6 +1304,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1239391002389" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">2:24.1.2-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1253769633941" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.46.4-0ubuntu0.24.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1258795380471" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.0.3-1ubuntu0.1</linux:evr>
@@ -1322,6 +1385,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2009833434398" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.14.52-1ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2017030739974" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.31-3ubuntu3.24.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2033656117200" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:9.0.2+ds-4ubuntu5.1</linux:evr>
@@ -1545,6 +1611,11 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:2147266800473" version="1" datatype="string" comment="Interim Release">
 			<value>needrestart</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1921760126577" version="1" datatype="string" comment="Interim Release">
+			<value>ofono</value>
+			<value>ofono-dev</value>
+			<value>ofono-scripts</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1276065560639" version="1" datatype="string" comment="Interim Release">
 			<value>openjdk-8-demo</value>
