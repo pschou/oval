@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-10T07:35:59</oval:timestamp>
+		<oval:timestamp>2024-12-11T07:33:39</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -973,6 +973,80 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71451000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7145-1 -- Expat vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7145-1" ref_url="https://ubuntu.com/security/notices/USN-7145-1" />
+				<reference source="CVE" ref_id="CVE-2024-50602" ref_url="https://ubuntu.com/security/CVE-2024-50602" />
+				<description>It was discovered that Expat did not properly handle its internal state when attempting to resume an unstarted parser. An attacker could use this issue to cause a denial of service (application crash).  Update Instructions:  Run `sudo pro fix USN-7145-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  expat - 2.6.2-2ubuntu0.1 libexpat1 - 2.6.2-2ubuntu0.1 libexpat1-dev - 2.6.2-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-10" />
+					<cve href="https://ubuntu.com/security/CVE-2024-50602" priority="medium" public="20241027">CVE-2024-50602</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1216211493560" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71471000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7147-1 -- Apache Shiro vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7147-1" ref_url="https://ubuntu.com/security/notices/USN-7147-1" />
+				<reference source="CVE" ref_id="CVE-2016-6802" ref_url="https://ubuntu.com/security/CVE-2016-6802" />
+				<reference source="CVE" ref_id="CVE-2023-34478" ref_url="https://ubuntu.com/security/CVE-2023-34478" />
+				<reference source="CVE" ref_id="CVE-2023-46749" ref_url="https://ubuntu.com/security/CVE-2023-46749" />
+				<reference source="CVE" ref_id="CVE-2023-46750" ref_url="https://ubuntu.com/security/CVE-2023-46750" />
+				<description>It was discovered that Apache Shiro incorrectly handled path traversal when used with other web frameworks or path rewriting. An attacker could possibly use this issue to obtain sensitive information or administrative privileges. This update provides the corresponding fix for Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2023-34478, CVE-2023-46749)  It was discovered that Apache Shiro incorrectly handled web redirects when used together with the form authentication method. An attacker could possibly use this issue to perform phishing attacks. This update provides the corresponding fix for Ubuntu 24.04 LTS and Ubuntu 24.10. (CVE-2023-46750)  It was discovered that Apache Shiro incorrectly handled requests through servlet filtering. An attacker could possibly use this issue to obtain administrative privileges. This update provides the corresponding fix for Ubuntu 16.04 LTS. (CVE-2016-6802)  Update Instructions:  Run `sudo pro fix USN-7147-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libshiro-java - 1.3.2-5ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-10" />
+					<cve href="https://ubuntu.com/security/CVE-2016-6802" priority="medium" public="20160920" cvss_score="7.5" cvss_vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N" cvss_severity="high" usns="7147-1">CVE-2016-6802</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-34478" priority="medium" public="20230724" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7147-1">CVE-2023-34478</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46749" priority="medium" public="20240115" cvss_score="6.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N" cvss_severity="medium" usns="7147-1">CVE-2023-46749</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-46750" priority="medium" public="20231214" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="7147-1">CVE-2023-46750</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1558849785830" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71491000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7149-1 -- Intel Microcode vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7149-1" ref_url="https://ubuntu.com/security/notices/USN-7149-1" />
+				<reference source="CVE" ref_id="CVE-2024-21820" ref_url="https://ubuntu.com/security/CVE-2024-21820" />
+				<reference source="CVE" ref_id="CVE-2024-21853" ref_url="https://ubuntu.com/security/CVE-2024-21853" />
+				<reference source="CVE" ref_id="CVE-2024-23918" ref_url="https://ubuntu.com/security/CVE-2024-23918" />
+				<reference source="CVE" ref_id="CVE-2024-23984" ref_url="https://ubuntu.com/security/CVE-2024-23984" />
+				<reference source="CVE" ref_id="CVE-2024-24968" ref_url="https://ubuntu.com/security/CVE-2024-24968" />
+				<description>Avraham Shalev and Nagaraju N Kodalapura discovered that some Intel(R) Xeon(R) processors did not properly restrict access to the memory controller when using Intel(R) SGX. This may allow a local privileged attacker to further escalate their privileges. (CVE-2024-21820, CVE-2024-23918)  It was discovered that some 4th and 5th Generation Intel(R) Xeon(R) Processors did not properly implement finite state machines (FSMs) in hardware logic. THis may allow a local privileged attacker to cause a denial of service (system crash). (CVE-2024-21853)  It was discovered that some Intel(R) Processors did not properly restrict access to the Running Average Power Limit (RAPL) interface. This may allow a local privileged attacker to obtain sensitive information. (CVE-2024-23984)  It was discovered that some Intel(R) Processors did not properly implement finite state machines (FSMs) in hardware logic. This may allow a local privileged attacker to cause a denial of service (system crash). (CVE-2024-24968)  Update Instructions:  Run `sudo pro fix USN-7149-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  intel-microcode - 3.20241112.0ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-11" />
+					<cve href="https://ubuntu.com/security/CVE-2024-21820" priority="medium" public="20241113" usns="7149-1">CVE-2024-21820</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21853" priority="medium" public="20241113" usns="7149-1">CVE-2024-21853</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23918" priority="medium" public="20241113" usns="7149-1">CVE-2024-23918</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-23984" priority="medium" public="20240916" usns="7033-1">CVE-2024-23984</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-24968" priority="medium" public="20240916" usns="7033-1">CVE-2024-24968</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1913292240429" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -999,6 +1073,10 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1984794673141" />
 		</ind:textfilecontent54_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1216211493560" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1710076070482" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1881991148405" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1235089017464" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1473552651515" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1110199747313" />
@@ -1059,6 +1137,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1459732504919" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2113616899922" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1558849785830" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1332061985205" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1170962441736" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1575066560311" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1544627762963" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1630551183604" />
@@ -1102,6 +1184,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1879474637840" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2062506497640" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1537439542838" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1913292240429" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1803741519868" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1431773791445" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1928850443932" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1499646700292" />
@@ -1171,6 +1257,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1323074169473" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1269178639139" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1332061985205" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1249582454813" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1356005524267" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1194983262525" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1231,11 +1320,17 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1678198146671" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1472414532281" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1710076070482" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1933933810415" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1727813016491" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1911820033154" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1728757066647" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1619530361317" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1803741519868" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:2077377590495" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1828451335350" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2170293769361" var_check="at least one" />
@@ -1293,6 +1388,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1152027366007" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.0-rtm-0ubuntu1~24.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1170962441736" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.3.2-5ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1173729684044" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.12.7-1ubuntu1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1322,6 +1420,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1358810532774" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:10.03.1~dfsg1-0ubuntu2.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1431773791445" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20241112.0ubuntu0.24.10.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1537439542838" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.11-3ubuntu1</linux:evr>
@@ -1367,6 +1468,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1839241323671" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6-8ubuntu4.2</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1881991148405" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:2.6.2-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1893388248213" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:21.0.5+11-1ubuntu1~24.10</linux:evr>
@@ -1458,6 +1562,11 @@
 			<value>dotnet-templates-9.0</value>
 			<value>netstandard-targeting-pack-2.1-9.0</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1933933810415" version="1" datatype="string" comment="Interim Release">
+			<value>expat</value>
+			<value>libexpat1</value>
+			<value>libexpat1-dev</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1822754112149" version="1" datatype="string" comment="Interim Release">
 			<value>gh</value>
 		</constant_variable>
@@ -1532,6 +1641,9 @@
 			<value>python3.12-tk</value>
 			<value>python3.12-venv</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:2077377590495" version="1" datatype="string" comment="Interim Release">
+			<value>intel-microcode</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1238819058786" version="1" datatype="string" comment="Interim Release">
 			<value>libarchive13t64</value>
 			<value>libarchive-dev</value>
@@ -1600,6 +1712,9 @@
 			<value>ruby3.3</value>
 			<value>ruby3.3-dev</value>
 			<value>ruby3.3-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1249582454813" version="1" datatype="string" comment="Interim Release">
+			<value>libshiro-java</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:2186613923260" version="1" datatype="string" comment="Interim Release">
 			<value>libunbound8</value>
