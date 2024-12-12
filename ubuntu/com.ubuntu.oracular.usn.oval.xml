@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-11T07:33:39</oval:timestamp>
+		<oval:timestamp>2024-12-12T07:34:07</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1047,6 +1047,50 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71501000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7150-1 -- Tornado vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7150-1" ref_url="https://ubuntu.com/security/notices/USN-7150-1" />
+				<reference source="CVE" ref_id="CVE-2023-28370" ref_url="https://ubuntu.com/security/CVE-2023-28370" />
+				<reference source="CVE" ref_id="CVE-2024-52804" ref_url="https://ubuntu.com/security/CVE-2024-52804" />
+				<description>It was discovered that Tornado incorrectly handled a certain redirect. A remote attacker could possibly use this issue to redirect a user to an arbitrary web site and conduct a phishing attack by having the user access a specially crafted URL. This issue was only addressed in Ubuntu 22.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 18.04 LTS. Ubuntu 16.04 LTS was previously addressed in USN-6159-1. (CVE-2023-28370)  It was discovered that Tornado inefficiently handled requests when parsing cookies. An attacker could possibly use this issue to increase resource utilization leading to a denial of service. (CVE-2024-52804)  Update Instructions:  Run `sudo pro fix USN-7150-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  python3-tornado - 6.4.1-2ubuntu0.1 python-tornado-doc - 6.4.1-2ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-28370" priority="medium" public="20230525" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="6159-1,7150-1">CVE-2023-28370</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-52804" priority="medium" public="20241122" usns="7150-1">CVE-2024-52804</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2156912817606" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71511000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7151-1 -- oFono vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7151-1" ref_url="https://ubuntu.com/security/notices/USN-7151-1" />
+				<reference source="CVE" ref_id="CVE-2023-4232" ref_url="https://ubuntu.com/security/CVE-2023-4232" />
+				<reference source="CVE" ref_id="CVE-2023-4235" ref_url="https://ubuntu.com/security/CVE-2023-4235" />
+				<description>It was discovered that oFono incorrectly handled decoding SMS messages leading to a stack overflow. A remote attacker could potentially use this issue to cause a denial of service. (CVE-2023-4232, CVE-2023-4235)  Update Instructions:  Run `sudo pro fix USN-7151-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  ofono - 1.31-3ubuntu3.24.10.2 ofono-dev - 1.31-3ubuntu3.24.10.2 ofono-scripts - 1.31-3ubuntu3.24.10.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-11" />
+					<cve href="https://ubuntu.com/security/CVE-2023-4232" priority="medium" public="20240417" usns="7151-1">CVE-2023-4232</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-4235" priority="medium" public="20240417" usns="7151-1">CVE-2023-4235</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1685096626996" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -1149,6 +1193,10 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1721483903174" />
 		</ind:family_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1685096626996" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1820011479778" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1586567555769" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1738465883062" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1314272483896" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2077248722478" />
@@ -1229,6 +1277,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1484077753513" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2009833434398" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2156912817606" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1319089182132" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1824727285277" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2160441755708" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1678198146671" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2135422596629" />
@@ -1253,6 +1305,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1314272483896" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2027239507760" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1319089182132" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1688322743045" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1323074169473" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1269178639139" var_check="at least one" />
@@ -1331,6 +1386,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1803741519868" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2077377590495" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1820011479778" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1921760126577" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1828451335350" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2170293769361" var_check="at least one" />
@@ -1433,6 +1491,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1577327855586" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6.0-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1586567555769" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.31-3ubuntu3.24.10.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1614497701678" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.0.1-0ubuntu2.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1465,6 +1526,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1817607119685" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.35-1ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1824727285277" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:6.4.1-2ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1839241323671" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6-8ubuntu4.2</linux:evr>
@@ -1791,6 +1855,10 @@
 		<constant_variable id="oval:com.ubuntu.oracular:var:1911820033154" version="1" datatype="string" comment="Interim Release">
 			<value>python3-pip</value>
 			<value>python3-pip-whl</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1688322743045" version="1" datatype="string" comment="Interim Release">
+			<value>python3-tornado</value>
+			<value>python-tornado-doc</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1536593724186" version="1" datatype="string" comment="Interim Release">
 			<value>python3-urllib3</value>
