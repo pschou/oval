@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-12T07:34:07</oval:timestamp>
+		<oval:timestamp>2024-12-13T05:36:55</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1091,8 +1091,64 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71571000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7157-1 -- PHP vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7157-1" ref_url="https://ubuntu.com/security/notices/USN-7157-1" />
+				<reference source="CVE" ref_id="CVE-2024-11233" ref_url="https://ubuntu.com/security/CVE-2024-11233" />
+				<reference source="CVE" ref_id="CVE-2024-11234" ref_url="https://ubuntu.com/security/CVE-2024-11234" />
+				<reference source="CVE" ref_id="CVE-2024-11236" ref_url="https://ubuntu.com/security/CVE-2024-11236" />
+				<reference source="CVE" ref_id="CVE-2024-8929" ref_url="https://ubuntu.com/security/CVE-2024-8929" />
+				<reference source="CVE" ref_id="CVE-2024-8932" ref_url="https://ubuntu.com/security/CVE-2024-8932" />
+				<description>It was discovered that PHP incorrectly handled certain inputs when processed with convert.quoted-printable decode filters. An attacker could possibly use this issue to expose sensitive information or cause a crash. (CVE-2024-11233)  It was discovered that PHP incorrectly handled certain HTTP requests. An attacker could possibly use this issue to performing arbitrary HTTP requests originating from the server, thus potentially gaining access to resources not normally available to the external user. (CVE-2024-11234)  It was discovered that PHP incorrectly handled certain inputs. An attacker could possibly use this issue to cause a crash or execute arbitrary code. (CVE-2024-11236, CVE-2024-8932)  It was discovered that PHP incorrectly handled certain MySQL requests. An attacker could possibly use this issue to cause the client to disclose the content of its heap containing data from other SQL requests and possible other data belonging to different users of the same server. (CVE-2024-8929)  Update Instructions:  Run `sudo pro fix USN-7157-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libapache2-mod-php8.3 - 8.3.11-0ubuntu0.24.10.3 libphp8.3-embed - 8.3.11-0ubuntu0.24.10.3 php8.3 - 8.3.11-0ubuntu0.24.10.3 php8.3-bcmath - 8.3.11-0ubuntu0.24.10.3 php8.3-bz2 - 8.3.11-0ubuntu0.24.10.3 php8.3-cgi - 8.3.11-0ubuntu0.24.10.3 php8.3-cli - 8.3.11-0ubuntu0.24.10.3 php8.3-common - 8.3.11-0ubuntu0.24.10.3 php8.3-curl - 8.3.11-0ubuntu0.24.10.3 php8.3-dba - 8.3.11-0ubuntu0.24.10.3 php8.3-dev - 8.3.11-0ubuntu0.24.10.3 php8.3-enchant - 8.3.11-0ubuntu0.24.10.3 php8.3-fpm - 8.3.11-0ubuntu0.24.10.3 php8.3-gd - 8.3.11-0ubuntu0.24.10.3 php8.3-gmp - 8.3.11-0ubuntu0.24.10.3 php8.3-imap - 8.3.11-0ubuntu0.24.10.3 php8.3-interbase - 8.3.11-0ubuntu0.24.10.3 php8.3-intl - 8.3.11-0ubuntu0.24.10.3 php8.3-ldap - 8.3.11-0ubuntu0.24.10.3 php8.3-mbstring - 8.3.11-0ubuntu0.24.10.3 php8.3-mysql - 8.3.11-0ubuntu0.24.10.3 php8.3-odbc - 8.3.11-0ubuntu0.24.10.3 php8.3-opcache - 8.3.11-0ubuntu0.24.10.3 php8.3-pgsql - 8.3.11-0ubuntu0.24.10.3 php8.3-phpdbg - 8.3.11-0ubuntu0.24.10.3 php8.3-pspell - 8.3.11-0ubuntu0.24.10.3 php8.3-readline - 8.3.11-0ubuntu0.24.10.3 php8.3-snmp - 8.3.11-0ubuntu0.24.10.3 php8.3-soap - 8.3.11-0ubuntu0.24.10.3 php8.3-sqlite3 - 8.3.11-0ubuntu0.24.10.3 php8.3-sybase - 8.3.11-0ubuntu0.24.10.3 php8.3-tidy - 8.3.11-0ubuntu0.24.10.3 php8.3-xml - 8.3.11-0ubuntu0.24.10.3 php8.3-xsl - 8.3.11-0ubuntu0.24.10.3 php8.3-zip - 8.3.11-0ubuntu0.24.10.3</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-12" />
+					<cve href="https://ubuntu.com/security/CVE-2024-11233" priority="medium" public="20241124" cvss_score="8.2" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H" cvss_severity="high">CVE-2024-11233</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-11234" priority="medium" public="20241124" cvss_score="7.2" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N" cvss_severity="high">CVE-2024-11234</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-11236" priority="medium" public="20241124" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7153-1">CVE-2024-11236</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-8929" priority="medium" public="20241122">CVE-2024-8929</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-8932" priority="medium" public="20241122">CVE-2024-8932</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1431742366251" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71581000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7158-1 -- Smarty vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7158-1" ref_url="https://ubuntu.com/security/notices/USN-7158-1" />
+				<reference source="CVE" ref_id="CVE-2018-25047" ref_url="https://ubuntu.com/security/CVE-2018-25047" />
+				<reference source="CVE" ref_id="CVE-2023-28447" ref_url="https://ubuntu.com/security/CVE-2023-28447" />
+				<reference source="CVE" ref_id="CVE-2024-35226" ref_url="https://ubuntu.com/security/CVE-2024-35226" />
+				<description>It was discovered that Smarty incorrectly handled query parameters in requests. An attacker could possibly use this issue to inject arbitrary Javascript code, resulting in denial of service or potential execution of arbitrary code. This issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2018-25047, CVE-2023-28447)  It was discovered that Smarty did not properly sanitize user input when generating templates. An attacker could, through PHP injection, possibly use this issue to execute arbitrary code. (CVE-2024-35226)  Update Instructions:  Run `sudo pro fix USN-7158-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  smarty3 - 3.1.48-1ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-12-12" />
+					<cve href="https://ubuntu.com/security/CVE-2018-25047" priority="medium" public="20220915" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="7158-1">CVE-2018-25047</cve>
+					<cve href="https://ubuntu.com/security/CVE-2023-28447" priority="high" public="20230328" cvss_score="6.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="6550-1,7158-1">CVE-2023-28447</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-35226" priority="medium" public="20240528" usns="7158-1">CVE-2024-35226</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1112292145539" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1112292145539" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1629338374733" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1168201848366" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1113639666836" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1446478806091" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1542822900552" />
@@ -1148,6 +1204,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1407815801099" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1228901724074" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1662738450838" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1431742366251" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1472038740901" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1224117814797" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1446488004299" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2016309079574" />
@@ -1330,6 +1390,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1459732504919" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2186613923260" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1472038740901" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1421546639154" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1473552651515" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:2150408595165" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1365,6 +1428,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1627804469324" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1677249067334" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1629338374733" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1354827845185" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1665163936373" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1400789999222" var_check="at least one" />
@@ -1446,6 +1512,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1152027366007" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.0-rtm-0ubuntu1~24.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1168201848366" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:3.1.48-1ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1170962441736" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.3.2-5ubuntu0.24.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1454,6 +1523,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1178718392914" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.0+dfsg2-7.3ubuntu0.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1224117814797" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.3.11-0ubuntu0.24.10.3</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1235142909222" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.74.3-7ubuntu0.1</linux:evr>
@@ -1708,6 +1780,43 @@
 		<constant_variable id="oval:com.ubuntu.oracular:var:2077377590495" version="1" datatype="string" comment="Interim Release">
 			<value>intel-microcode</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1421546639154" version="1" datatype="string" comment="Interim Release">
+			<value>libapache2-mod-php8.3</value>
+			<value>libphp8.3-embed</value>
+			<value>php8.3</value>
+			<value>php8.3-bcmath</value>
+			<value>php8.3-bz2</value>
+			<value>php8.3-cgi</value>
+			<value>php8.3-cli</value>
+			<value>php8.3-common</value>
+			<value>php8.3-curl</value>
+			<value>php8.3-dba</value>
+			<value>php8.3-dev</value>
+			<value>php8.3-enchant</value>
+			<value>php8.3-fpm</value>
+			<value>php8.3-gd</value>
+			<value>php8.3-gmp</value>
+			<value>php8.3-imap</value>
+			<value>php8.3-interbase</value>
+			<value>php8.3-intl</value>
+			<value>php8.3-ldap</value>
+			<value>php8.3-mbstring</value>
+			<value>php8.3-mysql</value>
+			<value>php8.3-odbc</value>
+			<value>php8.3-opcache</value>
+			<value>php8.3-pgsql</value>
+			<value>php8.3-phpdbg</value>
+			<value>php8.3-pspell</value>
+			<value>php8.3-readline</value>
+			<value>php8.3-snmp</value>
+			<value>php8.3-soap</value>
+			<value>php8.3-sqlite3</value>
+			<value>php8.3-sybase</value>
+			<value>php8.3-tidy</value>
+			<value>php8.3-xml</value>
+			<value>php8.3-xsl</value>
+			<value>php8.3-zip</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1238819058786" version="1" datatype="string" comment="Interim Release">
 			<value>libarchive13t64</value>
 			<value>libarchive-dev</value>
@@ -1898,6 +2007,9 @@
 		<constant_variable id="oval:com.ubuntu.oracular:var:1507574518633" version="1" datatype="string" comment="Interim Release">
 			<value>rapidjson-dev</value>
 			<value>rapidjson-doc</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1354827845185" version="1" datatype="string" comment="Interim Release">
+			<value>smarty3</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1314793989029" version="1" datatype="string" comment="Interim Release">
 			<value>vim</value>
