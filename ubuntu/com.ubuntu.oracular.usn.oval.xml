@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-14T07:35:05</oval:timestamp>
+		<oval:timestamp>2024-12-17T07:38:36</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1143,6 +1143,48 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71611000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7161-1 -- Docker vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7161-1" ref_url="https://ubuntu.com/security/notices/USN-7161-1" />
+				<reference source="CVE" ref_id="CVE-2024-29018" ref_url="https://ubuntu.com/security/CVE-2024-29018" />
+				<reference source="CVE" ref_id="CVE-2024-41110" ref_url="https://ubuntu.com/security/CVE-2024-41110" />
+				<description>Yair Zak discovered that Docker could unexpectedly forward DNS requests  from internal networks in an unexpected manner. An attacker could possibly use this issue to exfiltrate data by encoding information in DNS queries  to controlled nameservers. This issue was only addressed in  Ubuntu 24.04 LTS. (CVE-2024-29018)  Cory Snider discovered that Docker did not properly handle authorization  plugin request processing. An attacker could possibly use this issue to  bypass authorization controls by forwarding API requests without their  full body, leading to unauthorized actions. (CVE-2024-41110)  Update Instructions:  Run `sudo pro fix USN-7161-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  docker-doc - 26.1.3-0ubuntu1.1 docker.io - 26.1.3-0ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-12-16" />
+					<cve href="https://ubuntu.com/security/CVE-2024-29018" priority="medium" public="20240320">CVE-2024-29018</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41110" priority="high" public="20240724">CVE-2024-41110</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1421050778369" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71621000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7162-1 -- curl vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7162-1" ref_url="https://ubuntu.com/security/notices/USN-7162-1" />
+				<reference source="CVE" ref_id="CVE-2024-11053" ref_url="https://ubuntu.com/security/CVE-2024-11053" />
+				<description>Harry Sintonen discovered that curl incorrectly handled credentials from .netrc files when following HTTP redirects. In certain configurations, the password for the first host could be leaked to the followed-to host, contrary to expectations.  Update Instructions:  Run `sudo pro fix USN-7162-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  curl - 8.9.1-2ubuntu2.2 libcurl3t64-gnutls - 8.9.1-2ubuntu2.2 libcurl4-doc - 8.9.1-2ubuntu2.2 libcurl4-gnutls-dev - 8.9.1-2ubuntu2.2 libcurl4-openssl-dev - 8.9.1-2ubuntu2.2 libcurl4t64 - 8.9.1-2ubuntu2.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Low</severity>
+					<issued date="2024-12-16" />
+					<cve href="https://ubuntu.com/security/CVE-2024-11053" priority="low" public="20241211" usns="7162-1">CVE-2024-11053</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:2126160718577" />
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1112292145539" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -1204,6 +1246,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1407815801099" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1228901724074" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1662738450838" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1421050778369" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1356253987766" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1187409752959" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1446488004299" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2016309079574" />
@@ -1337,6 +1383,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1484077753513" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2009833434398" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2126160718577" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1423237389772" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2138896748062" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:2156912817606" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1319089182132" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1824727285277" />
@@ -1377,6 +1427,12 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1356005524267" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1194983262525" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1356253987766" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1696967136187" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1423237389772" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1397969216726" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1426320839484" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1397969216726" var_check="at least one" />
@@ -1524,6 +1580,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1178718392914" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:1.1.0+dfsg2-7.3ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1187409752959" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:26.1.3-0ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1235142909222" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.74.3-7ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1644,6 +1703,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2135422596629" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:11.0.25+9-1ubuntu1~24.10</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2138896748062" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:8.9.1-2ubuntu2.2</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:2146213046869" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u432-ga~us1-0ubuntu2~24.10</linux:evr>
 		</linux:dpkginfo_state>
@@ -1686,6 +1748,10 @@
 			<value>libcurl4-gnutls-dev</value>
 			<value>libcurl4-openssl-dev</value>
 			<value>libcurl4t64</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1696967136187" version="1" datatype="string" comment="Interim Release">
+			<value>docker-doc</value>
+			<value>docker.io</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1352635756063" version="1" datatype="string" comment="Interim Release">
 			<value>dotnet9</value>
