@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-17T07:38:36</oval:timestamp>
+		<oval:timestamp>2024-12-18T05:40:20</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -1185,6 +1185,61 @@
 				</criteria>
 			</criteria>
 		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71651000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7165-1 -- Spring Framework vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7165-1" ref_url="https://ubuntu.com/security/notices/USN-7165-1" />
+				<reference source="CVE" ref_id="CVE-2022-22965" ref_url="https://ubuntu.com/security/CVE-2022-22965" />
+				<description>It was discovered that the Spring Framework incorrectly handled web requests via data binding. An attacker could possibly use this issue to achieve remote code execution and obtain sensitive information.  Update Instructions:  Run `sudo pro fix USN-7165-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  libspring-aop-java - 4.3.30-2ubuntu0.24.10.1 libspring-beans-java - 4.3.30-2ubuntu0.24.10.1 libspring-context-java - 4.3.30-2ubuntu0.24.10.1 libspring-context-support-java - 4.3.30-2ubuntu0.24.10.1 libspring-core-java - 4.3.30-2ubuntu0.24.10.1 libspring-expression-java - 4.3.30-2ubuntu0.24.10.1 libspring-instrument-java - 4.3.30-2ubuntu0.24.10.1 libspring-jdbc-java - 4.3.30-2ubuntu0.24.10.1 libspring-jms-java - 4.3.30-2ubuntu0.24.10.1 libspring-messaging-java - 4.3.30-2ubuntu0.24.10.1 libspring-orm-java - 4.3.30-2ubuntu0.24.10.1 libspring-oxm-java - 4.3.30-2ubuntu0.24.10.1 libspring-test-java - 4.3.30-2ubuntu0.24.10.1 libspring-transaction-java - 4.3.30-2ubuntu0.24.10.1 libspring-web-java - 4.3.30-2ubuntu0.24.10.1 libspring-web-portlet-java - 4.3.30-2ubuntu0.24.10.1 libspring-web-servlet-java - 4.3.30-2ubuntu0.24.10.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-12-17" />
+					<cve href="https://ubuntu.com/security/CVE-2022-22965" priority="high" public="20220401" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical">CVE-2022-22965</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.oracular:tst:1506891613954" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.oracular:def:71691000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7169-1 -- Linux kernel vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7169-1" ref_url="https://ubuntu.com/security/notices/USN-7169-1" />
+				<reference source="CVE" ref_id="CVE-2024-49967" ref_url="https://ubuntu.com/security/CVE-2024-49967" />
+				<reference source="CVE" ref_id="CVE-2024-50264" ref_url="https://ubuntu.com/security/CVE-2024-50264" />
+				<reference source="CVE" ref_id="CVE-2024-53057" ref_url="https://ubuntu.com/security/CVE-2024-53057" />
+				<description>Several security issues were discovered in the Linux kernel. An attacker could possibly use these to compromise the system. This update corrects flaws in the following subsystems:   - Ext4 file system;   - Network traffic control;   - VMware vSockets driver; (CVE-2024-49967, CVE-2024-53057, CVE-2024-50264)  Update Instructions:  Run `sudo pro fix USN-7169-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  linux-bpf-dev - 6.11.0-13.14 linux-buildinfo-6.11.0-13-generic - 6.11.0-13.14 linux-buildinfo-6.11.0-13-generic-64k - 6.11.0-13.14 linux-buildinfo-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-buildinfo-6.11.0-1007-lowlatency-64k - 6.11.0-1007.7 linux-buildinfo-6.11.0-1009-oracle - 6.11.0-1009.9 linux-buildinfo-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-cloud-tools-6.11.0-13 - 6.11.0-13.14 linux-cloud-tools-6.11.0-13-generic - 6.11.0-13.14 linux-cloud-tools-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-cloud-tools-common - 6.11.0-13.14 linux-cloud-tools-generic - 6.11.0-13.14 linux-cloud-tools-generic-hwe-24.04 - 6.11.0-13.14 linux-cloud-tools-generic-hwe-24.04-edge - 6.11.0-13.14 linux-cloud-tools-lowlatency - 6.11.0-1007.7 linux-cloud-tools-virtual - 6.11.0-13.14 linux-cloud-tools-virtual-hwe-24.04 - 6.11.0-13.14 linux-cloud-tools-virtual-hwe-24.04-edge - 6.11.0-13.14 linux-crashdump - 6.11.0-13.14 linux-doc - 6.11.0-13.14 linux-generic - 6.11.0-13.14 linux-generic-64k - 6.11.0-13.14 linux-generic-64k-hwe-24.04 - 6.11.0-13.14 linux-generic-64k-hwe-24.04-edge - 6.11.0-13.14 linux-generic-hwe-24.04 - 6.11.0-13.14 linux-generic-hwe-24.04-edge - 6.11.0-13.14 linux-headers-6.11.0-13 - 6.11.0-13.14 linux-headers-6.11.0-13-generic - 6.11.0-13.14 linux-headers-6.11.0-13-generic-64k - 6.11.0-13.14 linux-headers-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-headers-6.11.0-1007-lowlatency-64k - 6.11.0-1007.7 linux-headers-6.11.0-1009-oracle - 6.11.0-1009.9 linux-headers-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-headers-generic - 6.11.0-13.14 linux-headers-generic-64k - 6.11.0-13.14 linux-headers-generic-64k-hwe-24.04 - 6.11.0-13.14 linux-headers-generic-64k-hwe-24.04-edge - 6.11.0-13.14 linux-headers-generic-hwe-24.04 - 6.11.0-13.14 linux-headers-generic-hwe-24.04-edge - 6.11.0-13.14 linux-headers-lowlatency - 6.11.0-1007.7 linux-headers-lowlatency-64k - 6.11.0-1007.7 linux-headers-oem-24.04 - 6.11.0-13.14 linux-headers-oem-24.04a - 6.11.0-13.14 linux-headers-oracle - 6.11.0-1009.9 linux-headers-oracle-64k - 6.11.0-1009.9 linux-headers-virtual - 6.11.0-13.14 linux-headers-virtual-hwe-24.04 - 6.11.0-13.14 linux-headers-virtual-hwe-24.04-edge - 6.11.0-13.14 linux-image-6.11.0-13-generic - 6.11.0-13.14 linux-image-6.11.0-13-generic-64k - 6.11.0-13.14 linux-image-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-image-6.11.0-1007-lowlatency-64k - 6.11.0-1007.7 linux-image-6.11.0-1009-oracle - 6.11.0-1009.9 linux-image-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-image-extra-virtual - 6.11.0-13.14 linux-image-extra-virtual-hwe-24.04 - 6.11.0-13.14 linux-image-extra-virtual-hwe-24.04-edge - 6.11.0-13.14 linux-image-generic - 6.11.0-13.14 linux-image-generic-64k - 6.11.0-13.14 linux-image-generic-64k-hwe-24.04 - 6.11.0-13.14 linux-image-generic-64k-hwe-24.04-edge - 6.11.0-13.14 linux-image-generic-hwe-24.04 - 6.11.0-13.14 linux-image-generic-hwe-24.04-edge - 6.11.0-13.14 linux-image-lowlatency - 6.11.0-1007.7 linux-image-lowlatency-64k - 6.11.0-1007.7 linux-image-oem-24.04 - 6.11.0-13.14 linux-image-oem-24.04a - 6.11.0-13.14 linux-image-oracle - 6.11.0-1009.9 linux-image-oracle-64k - 6.11.0-1009.9 linux-image-uc-6.11.0-13-generic - 6.11.0-13.14 linux-image-uc-6.11.0-13-generic-64k - 6.11.0-13.14 linux-image-uc-generic - 6.11.0-13.14 linux-image-uc-generic-hwe-24.04 - 6.11.0-13.14 linux-image-uc-generic-hwe-24.04-edge - 6.11.0-13.14 linux-image-uc-oem-24.04 - 6.11.0-13.14 linux-image-uc-oem-24.04a - 6.11.0-13.14 linux-image-unsigned-6.11.0-13-generic - 6.11.0-13.14 linux-image-unsigned-6.11.0-13-generic-64k - 6.11.0-13.14 linux-image-unsigned-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-image-unsigned-6.11.0-1007-lowlatency-64k - 6.11.0-1007.7 linux-image-unsigned-6.11.0-1009-oracle - 6.11.0-1009.9 linux-image-unsigned-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-image-virtual - 6.11.0-13.14 linux-image-virtual-hwe-24.04 - 6.11.0-13.14 linux-image-virtual-hwe-24.04-edge - 6.11.0-13.14 linux-lib-rust-6.11.0-13-generic - 6.11.0-13.14 linux-libc-dev - 6.11.0-13.14 linux-lowlatency - 6.11.0-1007.7 linux-lowlatency-64k - 6.11.0-1007.7 linux-lowlatency-cloud-tools-6.11.0-1007 - 6.11.0-1007.7 linux-lowlatency-headers-6.11.0-1007 - 6.11.0-1007.7 linux-lowlatency-lib-rust-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-lowlatency-tools-6.11.0-1007 - 6.11.0-1007.7 linux-modules-6.11.0-13-generic - 6.11.0-13.14 linux-modules-6.11.0-13-generic-64k - 6.11.0-13.14 linux-modules-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-modules-6.11.0-1007-lowlatency-64k - 6.11.0-1007.7 linux-modules-6.11.0-1009-oracle - 6.11.0-1009.9 linux-modules-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-modules-extra-6.11.0-13-generic - 6.11.0-13.14 linux-modules-extra-6.11.0-1009-oracle - 6.11.0-1009.9 linux-modules-extra-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-modules-ipu6-6.11.0-13-generic - 6.11.0-13.14 linux-modules-ipu6-generic - 6.11.0-13.14 linux-modules-ipu6-generic-hwe-24.04 - 6.11.0-13.14 linux-modules-ipu6-generic-hwe-24.04-edge - 6.11.0-13.14 linux-modules-ipu6-oem-24.04 - 6.11.0-13.14 linux-modules-ipu6-oem-24.04a - 6.11.0-13.14 linux-modules-ipu7-6.11.0-13-generic - 6.11.0-13.14 linux-modules-ipu7-generic - 6.11.0-13.14 linux-modules-ipu7-generic-hwe-24.04 - 6.11.0-13.14 linux-modules-ipu7-generic-hwe-24.04-edge - 6.11.0-13.14 linux-modules-iwlwifi-6.11.0-13-generic - 6.11.0-13.14 linux-modules-iwlwifi-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-modules-iwlwifi-generic - 6.11.0-13.14 linux-modules-iwlwifi-generic-hwe-24.04 - 6.11.0-13.14 linux-modules-iwlwifi-generic-hwe-24.04-edge - 6.11.0-13.14 linux-modules-iwlwifi-lowlatency - 6.11.0-1007.7 linux-modules-iwlwifi-oem-24.04 - 6.11.0-13.14 linux-modules-iwlwifi-oem-24.04a - 6.11.0-13.14 linux-modules-usbio-6.11.0-13-generic - 6.11.0-13.14 linux-modules-usbio-generic - 6.11.0-13.14 linux-modules-usbio-generic-hwe-24.04 - 6.11.0-13.14 linux-modules-usbio-generic-hwe-24.04-edge - 6.11.0-13.14 linux-modules-usbio-oem-24.04 - 6.11.0-13.14 linux-modules-usbio-oem-24.04a - 6.11.0-13.14 linux-modules-vision-6.11.0-13-generic - 6.11.0-13.14 linux-modules-vision-generic - 6.11.0-13.14 linux-modules-vision-generic-hwe-24.04 - 6.11.0-13.14 linux-modules-vision-generic-hwe-24.04-edge - 6.11.0-13.14 linux-oem-24.04 - 6.11.0-13.14 linux-oem-24.04a - 6.11.0-13.14 linux-oracle - 6.11.0-1009.9 linux-oracle-64k - 6.11.0-1009.9 linux-oracle-headers-6.11.0-1009 - 6.11.0-1009.9 linux-oracle-tools-6.11.0-1009 - 6.11.0-1009.9 linux-source - 6.11.0-13.14 linux-source-6.11.0 - 6.11.0-13.14 linux-tools-6.11.0-13 - 6.11.0-13.14 linux-tools-6.11.0-13-generic - 6.11.0-13.14 linux-tools-6.11.0-13-generic-64k - 6.11.0-13.14 linux-tools-6.11.0-1007-lowlatency - 6.11.0-1007.7 linux-tools-6.11.0-1007-lowlatency-64k - 6.11.0-1007.7 linux-tools-6.11.0-1009-oracle - 6.11.0-1009.9 linux-tools-6.11.0-1009-oracle-64k - 6.11.0-1009.9 linux-tools-common - 6.11.0-13.14 linux-tools-generic - 6.11.0-13.14 linux-tools-generic-64k - 6.11.0-13.14 linux-tools-generic-64k-hwe-24.04 - 6.11.0-13.14 linux-tools-generic-64k-hwe-24.04-edge - 6.11.0-13.14 linux-tools-generic-hwe-24.04 - 6.11.0-13.14 linux-tools-generic-hwe-24.04-edge - 6.11.0-13.14 linux-tools-host - 6.11.0-13.14 linux-tools-lowlatency - 6.11.0-1007.7 linux-tools-lowlatency-64k - 6.11.0-1007.7 linux-tools-oem-24.04 - 6.11.0-13.14 linux-tools-oem-24.04a - 6.11.0-13.14 linux-tools-oracle - 6.11.0-1009.9 linux-tools-oracle-64k - 6.11.0-1009.9 linux-tools-virtual - 6.11.0-13.14 linux-tools-virtual-hwe-24.04 - 6.11.0-13.14 linux-tools-virtual-hwe-24.04-edge - 6.11.0-13.14 linux-virtual - 6.11.0-13.14 linux-virtual-hwe-24.04 - 6.11.0-13.14 linux-virtual-hwe-24.04-edge - 6.11.0-13.14</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-12-17" />
+					<cve href="https://ubuntu.com/security/CVE-2024-49967" priority="medium" public="20241021" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7166-1,7167-1,7169-1,7170-1,7173-1,7166-2">CVE-2024-49967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-50264" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7167-1,7169-1,7170-1,7173-1">CVE-2024-50264</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-53057" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7163-1,7167-1,7169-1,7170-1,7173-1">CVE-2024-53057</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.oracular:def:100" comment="Ubuntu 24.10 (oracular) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.oracular:tst:1730246840098" />
+						<criterion test_ref="oval:com.ubuntu.oracular:tst:1714757731049" />
+					</criteria>
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.oracular:tst:1897915446805" />
+						<criterion test_ref="oval:com.ubuntu.oracular:tst:1521967651157" />
+					</criteria>
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.oracular:tst:1205228557711" />
+						<criterion test_ref="oval:com.ubuntu.oracular:tst:1228071227995" />
+					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
 	</definitions>
 	<tests>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1112292145539" version="1" check_existence="at_least_one_exists" check="at least one">
@@ -1215,10 +1270,18 @@
 			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1690319274976" />
 			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1984794673141" />
 		</ind:textfilecontent54_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.oracular:tst:1205228557711" version="1">
+			<unix:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.oracular:ste:1542016166915" />
+		</unix:uname_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1216211493560" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1710076070482" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1881991148405" />
 		</linux:dpkginfo_test>
+		<ind:variable_test id="oval:com.ubuntu.oracular:tst:1228071227995" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1501930775922" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1159019755422" />
+		</ind:variable_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1235089017464" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1473552651515" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1110199747313" />
@@ -1275,6 +1338,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2157336834426" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1309327466521" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1506891613954" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1214904029728" />
+			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1772161187936" />
+		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1514222488273" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1852615640355" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2017030739974" />
@@ -1283,6 +1350,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1459732504919" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2113616899922" />
 		</linux:dpkginfo_test>
+		<ind:variable_test id="oval:com.ubuntu.oracular:tst:1521967651157" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1781894056421" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1303087742490" />
+		</ind:variable_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1558849785830" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1332061985205" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1170962441736" />
@@ -1299,10 +1370,18 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1820011479778" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1586567555769" />
 		</linux:dpkginfo_test>
+		<ind:variable_test id="oval:com.ubuntu.oracular:tst:1714757731049" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.oracular:obj:1684065001882" />
+			<ind:state state_ref="oval:com.ubuntu.oracular:ste:1723829466202" />
+		</ind:variable_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1719194015448" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1472038740901" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1705520090709" />
 		</linux:dpkginfo_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.oracular:tst:1730246840098" version="1">
+			<unix:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.oracular:ste:1738643708191" />
+		</unix:uname_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1738465883062" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1314272483896" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:2077248722478" />
@@ -1339,6 +1418,10 @@
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:2062506497640" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1537439542838" />
 		</linux:dpkginfo_test>
+		<unix:uname_test check="at least one" id="oval:com.ubuntu.oracular:tst:1897915446805" version="1">
+			<unix:object object_ref="oval:com.ubuntu.oracular:obj:1742435039334" />
+			<unix:state state_ref="oval:com.ubuntu.oracular:ste:1403825066968" />
+		</unix:uname_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.oracular:tst:1913292240429" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.oracular:obj:1803741519868" />
 			<linux:state state_ref="oval:com.ubuntu.oracular:ste:1431773791445" />
@@ -1401,6 +1484,18 @@
 		</linux:dpkginfo_test>
 	</tests>
 	<objects>
+		<ind:variable_object id="oval:com.ubuntu.oracular:obj:1501930775922" version="1">
+			<ind:var_ref>oval:com.ubuntu.oracular:var:1352629630308</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.oracular:obj:1684065001882" version="1">
+			<ind:var_ref>oval:com.ubuntu.oracular:var:1352629630308</ind:var_ref>
+		</ind:variable_object>
+		<ind:variable_object id="oval:com.ubuntu.oracular:obj:1781894056421" version="1">
+			<ind:var_ref>oval:com.ubuntu.oracular:var:1352629630308</ind:var_ref>
+		</ind:variable_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1214904029728" version="1" comment="Interim Release">
+			<linux:name var_ref="oval:com.ubuntu.oracular:var:1432406437539" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.oracular:obj:1228901724074" version="1" comment="Interim Release">
 			<linux:name var_ref="oval:com.ubuntu.oracular:var:1825563389771" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -1562,6 +1657,15 @@
 		</ind:textfilecontent54_object>
 	</objects>
 	<states>
+		<unix:uname_state id="oval:com.ubuntu.oracular:ste:1403825066968" version="1">
+			<unix:os_release operation="pattern match">6.11.0-\d+(-oracle|-oracle-64k)</unix:os_release>
+		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.oracular:ste:1542016166915" version="1">
+			<unix:os_release operation="pattern match">6.11.0-\d+(-generic|-generic-64k)</unix:os_release>
+		</unix:uname_state>
+		<unix:uname_state id="oval:com.ubuntu.oracular:ste:1738643708191" version="1">
+			<unix:os_release operation="pattern match">6.11.0-\d+(-lowlatency|-lowlatency-64k)</unix:os_release>
+		</unix:uname_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1110199747313" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:9.0.100-rtm-0ubuntu1~24.10.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1646,6 +1750,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1764340094484" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.46.3-0ubuntu0.24.10.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1772161187936" version="1" comment="Interim Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:4.3.30-2ubuntu0.24.10.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.oracular:ste:1782831624367" version="1" comment="Interim Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.20240116.2+nmu1ubuntu1.1</linux:evr>
 		</linux:dpkginfo_state>
@@ -1721,8 +1828,25 @@
 		<ind:textfilecontent54_state id="oval:com.ubuntu.oracular:ste:1984794673141" version="1" comment="Ubuntu 24.10">
 			<ind:subexpression datatype="string" operation="equals">oracular</ind:subexpression>
 		</ind:textfilecontent54_state>
+		<ind:variable_state id="oval:com.ubuntu.oracular:ste:1159019755422" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.11.0-13</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.oracular:ste:1723829466202" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.11.0-1007</ind:value>
+		</ind:variable_state>
+		<ind:variable_state id="oval:com.ubuntu.oracular:ste:1303087742490" version="1">
+			<ind:value datatype="debian_evr_string" operation="less than">0:6.11.0-1009</ind:value>
+		</ind:variable_state>
 	</states>
 	<variables>
+		<local_variable id="oval:com.ubuntu.oracular:var:1352629630308" datatype="debian_evr_string" version="1" comment="kernel version in evr format">
+			<concat>
+				<literal_component>0:</literal_component>
+				<regex_capture pattern="^([\d|\.]+-\d+)[-|\w]+$">
+					<object_component object_ref="oval:com.ubuntu.oracular:obj:1742435039334" item_field="os_release" />
+				</regex_capture>
+			</concat>
+		</local_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1101917783597" version="1" datatype="string" comment="Interim Release">
 			<value>amd64-microcode</value>
 		</constant_variable>
@@ -1954,6 +2078,25 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:1249582454813" version="1" datatype="string" comment="Interim Release">
 			<value>libshiro-java</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.oracular:var:1432406437539" version="1" datatype="string" comment="Interim Release">
+			<value>libspring-aop-java</value>
+			<value>libspring-beans-java</value>
+			<value>libspring-context-java</value>
+			<value>libspring-context-support-java</value>
+			<value>libspring-core-java</value>
+			<value>libspring-expression-java</value>
+			<value>libspring-instrument-java</value>
+			<value>libspring-jdbc-java</value>
+			<value>libspring-jms-java</value>
+			<value>libspring-messaging-java</value>
+			<value>libspring-orm-java</value>
+			<value>libspring-oxm-java</value>
+			<value>libspring-test-java</value>
+			<value>libspring-transaction-java</value>
+			<value>libspring-web-java</value>
+			<value>libspring-web-portlet-java</value>
+			<value>libspring-web-servlet-java</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.oracular:var:2186613923260" version="1" datatype="string" comment="Interim Release">
 			<value>libunbound8</value>
