@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-18T05:40:20</oval:timestamp>
+		<oval:timestamp>2024-12-19T07:43:05</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -19881,8 +19881,8 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-12-16" />
-					<cve href="https://ubuntu.com/security/CVE-2024-29018" priority="medium" public="20240320">CVE-2024-29018</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-41110" priority="high" public="20240724">CVE-2024-41110</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-29018" priority="medium" public="20240320" usns="7161-1">CVE-2024-29018</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-41110" priority="high" public="20240724" usns="7161-1">CVE-2024-41110</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -19922,7 +19922,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-12-17" />
-					<cve href="https://ubuntu.com/security/CVE-2022-22965" priority="high" public="20220401" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical">CVE-2022-22965</cve>
+					<cve href="https://ubuntu.com/security/CVE-2022-22965" priority="high" public="20220401" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7165-1">CVE-2022-22965</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -19944,9 +19944,9 @@
 				<advisory from="security@ubuntu.com">
 					<severity>High</severity>
 					<issued date="2024-12-17" />
-					<cve href="https://ubuntu.com/security/CVE-2024-49967" priority="medium" public="20241021" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7166-1,7167-1,7169-1,7170-1,7173-1,7166-2">CVE-2024-49967</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-50264" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7167-1,7169-1,7170-1,7173-1">CVE-2024-50264</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-53057" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7163-1,7167-1,7169-1,7170-1,7173-1">CVE-2024-53057</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-49967" priority="medium" public="20241021" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7166-1,7167-1,7169-1,7170-1,7173-1,7166-2,7169-2">CVE-2024-49967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-50264" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7167-1,7169-1,7170-1,7173-1,7169-2">CVE-2024-50264</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-53057" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7163-1,7167-1,7169-1,7170-1,7173-1,7169-2">CVE-2024-53057</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -20059,9 +20059,9 @@
 					<cve href="https://ubuntu.com/security/CVE-2024-49921" priority="medium" public="20241021" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7170-1">CVE-2024-49921</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-49922" priority="medium" public="20241021" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7170-1">CVE-2024-49922</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-49923" priority="medium" public="20241021" cvss_score="5.5" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="7170-1">CVE-2024-49923</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-49967" priority="medium" public="20241021" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7166-1,7167-1,7169-1,7170-1,7173-1,7166-2">CVE-2024-49967</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-50264" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7167-1,7169-1,7170-1,7173-1">CVE-2024-50264</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-53057" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7163-1,7167-1,7169-1,7170-1,7173-1">CVE-2024-53057</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-49967" priority="medium" public="20241021" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7166-1,7167-1,7169-1,7170-1,7173-1,7166-2,7169-2">CVE-2024-49967</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-50264" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7167-1,7169-1,7170-1,7173-1,7169-2">CVE-2024-50264</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-53057" priority="medium" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7163-1,7167-1,7169-1,7170-1,7173-1,7169-2">CVE-2024-53057</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -20071,6 +20071,120 @@
 						<criterion test_ref="oval:com.ubuntu.noble:tst:1481916491773" />
 						<criterion test_ref="oval:com.ubuntu.noble:tst:1177827234568" />
 					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71741000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7174-1 -- GStreamer vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7174-1" ref_url="https://ubuntu.com/security/notices/USN-7174-1" />
+				<reference source="CVE" ref_id="CVE-2024-47606" ref_url="https://ubuntu.com/security/CVE-2024-47606" />
+				<description>Antonio Morales discovered that GStreamer incorrectly handled allocating memory for certain buffers. An attacker could use this issue to cause GStreamer to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7174-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-gstreamer-1.0 - 1.24.2-1ubuntu0.1 gstreamer1.0-tools - 1.24.2-1ubuntu0.1 libgstreamer1.0-0 - 1.24.2-1ubuntu0.1 libgstreamer1.0-dev - 1.24.2-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47606" priority="medium" public="20241212" usns="7174-1,7176-1">CVE-2024-47606</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1574287808571" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71751000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7175-1 -- GStreamer Base Plugins vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7175-1" ref_url="https://ubuntu.com/security/notices/USN-7175-1" />
+				<reference source="CVE" ref_id="CVE-2024-47538" ref_url="https://ubuntu.com/security/CVE-2024-47538" />
+				<reference source="CVE" ref_id="CVE-2024-47541" ref_url="https://ubuntu.com/security/CVE-2024-47541" />
+				<reference source="CVE" ref_id="CVE-2024-47542" ref_url="https://ubuntu.com/security/CVE-2024-47542" />
+				<reference source="CVE" ref_id="CVE-2024-47600" ref_url="https://ubuntu.com/security/CVE-2024-47600" />
+				<reference source="CVE" ref_id="CVE-2024-47607" ref_url="https://ubuntu.com/security/CVE-2024-47607" />
+				<reference source="CVE" ref_id="CVE-2024-47615" ref_url="https://ubuntu.com/security/CVE-2024-47615" />
+				<reference source="CVE" ref_id="CVE-2024-47835" ref_url="https://ubuntu.com/security/CVE-2024-47835" />
+				<description>Antonio Morales discovered that GStreamer Base Plugins incorrectly handled certain malformed media files. An attacker could use these issues to cause GStreamer Base Plugins to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7175-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gir1.2-gst-plugins-base-1.0 - 1.24.2-1ubuntu0.2 gstreamer1.0-alsa - 1.24.2-1ubuntu0.2 gstreamer1.0-gl - 1.24.2-1ubuntu0.2 gstreamer1.0-plugins-base - 1.24.2-1ubuntu0.2 gstreamer1.0-plugins-base-apps - 1.24.2-1ubuntu0.2 gstreamer1.0-x - 1.24.2-1ubuntu0.2 libgstreamer-gl1.0-0 - 1.24.2-1ubuntu0.2 libgstreamer-plugins-base1.0-0 - 1.24.2-1ubuntu0.2 libgstreamer-plugins-base1.0-dev - 1.24.2-1ubuntu0.2</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47538" priority="medium" public="20241212" usns="7175-1">CVE-2024-47538</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47541" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7175-1">CVE-2024-47541</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47542" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7175-1">CVE-2024-47542</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47600" priority="medium" public="20241212" usns="7175-1">CVE-2024-47600</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47607" priority="medium" public="20241212" usns="7175-1">CVE-2024-47607</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47615" priority="medium" public="20241212" usns="7175-1">CVE-2024-47615</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47835" priority="medium" public="20241212" usns="7175-1">CVE-2024-47835</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:2121246400351" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71761000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7176-1 -- GStreamer Good Plugins vulnerabilities</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7176-1" ref_url="https://ubuntu.com/security/notices/USN-7176-1" />
+				<reference source="CVE" ref_id="CVE-2024-47537" ref_url="https://ubuntu.com/security/CVE-2024-47537" />
+				<reference source="CVE" ref_id="CVE-2024-47539" ref_url="https://ubuntu.com/security/CVE-2024-47539" />
+				<reference source="CVE" ref_id="CVE-2024-47540" ref_url="https://ubuntu.com/security/CVE-2024-47540" />
+				<reference source="CVE" ref_id="CVE-2024-47543" ref_url="https://ubuntu.com/security/CVE-2024-47543" />
+				<reference source="CVE" ref_id="CVE-2024-47544" ref_url="https://ubuntu.com/security/CVE-2024-47544" />
+				<reference source="CVE" ref_id="CVE-2024-47545" ref_url="https://ubuntu.com/security/CVE-2024-47545" />
+				<reference source="CVE" ref_id="CVE-2024-47546" ref_url="https://ubuntu.com/security/CVE-2024-47546" />
+				<reference source="CVE" ref_id="CVE-2024-47596" ref_url="https://ubuntu.com/security/CVE-2024-47596" />
+				<reference source="CVE" ref_id="CVE-2024-47597" ref_url="https://ubuntu.com/security/CVE-2024-47597" />
+				<reference source="CVE" ref_id="CVE-2024-47598" ref_url="https://ubuntu.com/security/CVE-2024-47598" />
+				<reference source="CVE" ref_id="CVE-2024-47599" ref_url="https://ubuntu.com/security/CVE-2024-47599" />
+				<reference source="CVE" ref_id="CVE-2024-47601" ref_url="https://ubuntu.com/security/CVE-2024-47601" />
+				<reference source="CVE" ref_id="CVE-2024-47602" ref_url="https://ubuntu.com/security/CVE-2024-47602" />
+				<reference source="CVE" ref_id="CVE-2024-47603" ref_url="https://ubuntu.com/security/CVE-2024-47603" />
+				<reference source="CVE" ref_id="CVE-2024-47606" ref_url="https://ubuntu.com/security/CVE-2024-47606" />
+				<reference source="CVE" ref_id="CVE-2024-47613" ref_url="https://ubuntu.com/security/CVE-2024-47613" />
+				<reference source="CVE" ref_id="CVE-2024-47774" ref_url="https://ubuntu.com/security/CVE-2024-47774" />
+				<reference source="CVE" ref_id="CVE-2024-47775" ref_url="https://ubuntu.com/security/CVE-2024-47775" />
+				<reference source="CVE" ref_id="CVE-2024-47776" ref_url="https://ubuntu.com/security/CVE-2024-47776" />
+				<reference source="CVE" ref_id="CVE-2024-47777" ref_url="https://ubuntu.com/security/CVE-2024-47777" />
+				<reference source="CVE" ref_id="CVE-2024-47778" ref_url="https://ubuntu.com/security/CVE-2024-47778" />
+				<reference source="CVE" ref_id="CVE-2024-47834" ref_url="https://ubuntu.com/security/CVE-2024-47834" />
+				<description>Antonio Morales discovered that GStreamer Good Plugins incorrectly handled certain malformed media files. An attacker could use these issues to cause GStreamer Good Plugins to crash, resulting in a denial of service, or possibly execute arbitrary code.  Update Instructions:  Run `sudo pro fix USN-7176-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  gstreamer1.0-gtk3 - 1.24.2-1ubuntu1.1 gstreamer1.0-plugins-good - 1.24.2-1ubuntu1.1 gstreamer1.0-pulseaudio - 1.24.2-1ubuntu1.1 gstreamer1.0-qt5 - 1.24.2-1ubuntu1.1 gstreamer1.0-qt6 - 1.24.2-1ubuntu1.1 libgstreamer-plugins-good1.0-0 - 1.24.2-1ubuntu1.1 libgstreamer-plugins-good1.0-dev - 1.24.2-1ubuntu1.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-18" />
+					<cve href="https://ubuntu.com/security/CVE-2024-47537" priority="medium" public="20241212" usns="7176-1">CVE-2024-47537</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47539" priority="medium" public="20241212" usns="7176-1">CVE-2024-47539</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47540" priority="medium" public="20241212" usns="7176-1">CVE-2024-47540</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47543" priority="medium" public="20241212" usns="7176-1">CVE-2024-47543</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47544" priority="medium" public="20241212" usns="7176-1">CVE-2024-47544</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47545" priority="medium" public="20241212" usns="7176-1">CVE-2024-47545</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47546" priority="medium" public="20241212" usns="7176-1">CVE-2024-47546</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47596" priority="medium" public="20241212" usns="7176-1">CVE-2024-47596</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47597" priority="medium" public="20241212" usns="7176-1">CVE-2024-47597</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47598" priority="medium" public="20241212" usns="7176-1">CVE-2024-47598</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47599" priority="medium" public="20241212" usns="7176-1">CVE-2024-47599</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47601" priority="medium" public="20241212" usns="7176-1">CVE-2024-47601</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47602" priority="medium" public="20241212" usns="7176-1">CVE-2024-47602</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47603" priority="medium" public="20241212" usns="7176-1">CVE-2024-47603</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47606" priority="medium" public="20241212" usns="7174-1,7176-1">CVE-2024-47606</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47613" priority="medium" public="20241212" usns="7176-1">CVE-2024-47613</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47774" priority="medium" public="20241212" usns="7176-1">CVE-2024-47774</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47775" priority="medium" public="20241212" usns="7176-1">CVE-2024-47775</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47776" priority="medium" public="20241212" usns="7176-1">CVE-2024-47776</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47777" priority="medium" public="20241212" usns="7176-1">CVE-2024-47777</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47778" priority="medium" public="20241212" usns="7176-1">CVE-2024-47778</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47834" priority="medium" public="20241212" usns="7176-1">CVE-2024-47834</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1255590212508" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -20335,6 +20449,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1253981335500" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1127884905257" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2134316809868" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1255590212508" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:2079698180116" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1232183436153" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1256155200653" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1266149212923" />
@@ -20783,6 +20901,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1574094329727" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1414165529743" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1586933680473" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1574287808571" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1958140511691" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1824077122326" />
 		</linux:dpkginfo_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1575262998864" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1146516758393" />
@@ -21564,6 +21686,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1603082260907" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:2196963134000" />
 		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:2121246400351" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1276457689174" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1385353597714" />
+		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:2122715085828" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1301026632275" />
 			<ind:state state_ref="oval:com.ubuntu.noble:ste:1687956368994" />
@@ -22235,6 +22361,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1274310487906" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2125070792377" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1276457689174" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1279322219252" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1293300045984" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2003737424747" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -22655,6 +22784,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1952481753959" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1728985958072" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1958140511691" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1787915429931" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1967762955044" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1862557963105" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -22705,6 +22837,9 @@
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2078510149497" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2163842722565" var_check="at least one" />
+		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2079698180116" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1930935433642" var_check="at least one" />
 		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:2100858486742" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:2189228589825" var_check="at least one" />
@@ -23025,6 +23160,9 @@
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1228170115456" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8.0.39-0ubuntu0.24.04.1</linux:evr>
 		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1232183436153" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.24.2-1ubuntu1.1</linux:evr>
+		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1238979395232" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">1:8.2.2+ds-0ubuntu1.2</linux:evr>
 		</linux:dpkginfo_state>
@@ -23081,6 +23219,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1377671936022" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:3.6-7ubuntu4.4</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1385353597714" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:1.24.2-1ubuntu0.2</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1392605178429" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:8u432-ga~us1-0ubuntu2~24.04</linux:evr>
@@ -23991,6 +24132,12 @@
 			<value>libgstreamer-plugins-base1.0-0</value>
 			<value>libgstreamer-plugins-base1.0-dev</value>
 		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1787915429931" version="1" datatype="string" comment="Long Term Release">
+			<value>gir1.2-gstreamer-1.0</value>
+			<value>gstreamer1.0-tools</value>
+			<value>libgstreamer1.0-0</value>
+			<value>libgstreamer1.0-dev</value>
+		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1801027388878" version="1" datatype="string" comment="Long Term Release">
 			<value>gir1.2-gtk-2.0</value>
 			<value>gtk2-engines-pixbuf</value>
@@ -24385,6 +24532,15 @@
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1455890860827" version="1" datatype="string" comment="Long Term Release">
 			<value>gross</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1930935433642" version="1" datatype="string" comment="Long Term Release">
+			<value>gstreamer1.0-gtk3</value>
+			<value>gstreamer1.0-plugins-good</value>
+			<value>gstreamer1.0-pulseaudio</value>
+			<value>gstreamer1.0-qt5</value>
+			<value>gstreamer1.0-qt6</value>
+			<value>libgstreamer-plugins-good1.0-0</value>
+			<value>libgstreamer-plugins-good1.0-dev</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1559342909790" version="1" datatype="string" comment="Long Term Release">
 			<value>haproxy</value>
