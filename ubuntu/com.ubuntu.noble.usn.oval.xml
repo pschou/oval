@@ -4,7 +4,7 @@
 		<oval:product_name>Canonical USN OVAL Generator</oval:product_name>
 		<oval:product_version>1</oval:product_version>
 		<oval:schema_version>5.11.1</oval:schema_version>
-		<oval:timestamp>2024-12-19T07:43:05</oval:timestamp>
+		<oval:timestamp>2024-12-20T07:42:46</oval:timestamp>
 		<terms_of_use>Copyright (C) 2024 Canonical LTD. All rights reserved. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License version 3 for more details. You should have received a copy of the GNU General Public License version 3 along with this program.  If not, see http://www.gnu.org/licenses/.</terms_of_use>
 	</generator>
 	<definitions>
@@ -132,6 +132,41 @@
 					<criteria operator="AND">
 						<criterion test_ref="oval:com.ubuntu.noble:tst:1758035288646" />
 						<criterion test_ref="oval:com.ubuntu.noble:tst:1702137126107" />
+					</criteria>
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:1081000000" version="1" class="patch">
+			<metadata>
+				<title>LSN-0108-1 -- Kernel Live Patch Security Notice</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="LSN-0108-1" ref_url="https://ubuntu.com/security/notices/LSN-0108-1" />
+				<reference source="CVE" ref_id="CVE-2024-26960" ref_url="https://ubuntu.com/security/CVE-2024-26960" />
+				<reference source="CVE" ref_id="CVE-2024-26800" ref_url="https://ubuntu.com/security/CVE-2024-26800" />
+				<reference source="CVE" ref_id="CVE-2024-27398" ref_url="https://ubuntu.com/security/CVE-2024-27398" />
+				<reference source="CVE" ref_id="CVE-2024-50264" ref_url="https://ubuntu.com/security/CVE-2024-50264" />
+				<reference source="CVE" ref_id="CVE-2024-26921" ref_url="https://ubuntu.com/security/CVE-2024-26921" />
+				<reference source="CVE" ref_id="CVE-2024-43882" ref_url="https://ubuntu.com/security/CVE-2024-43882" />
+				<reference source="CVE" ref_id="CVE-2024-38630" ref_url="https://ubuntu.com/security/CVE-2024-38630" />
+				<description>In the Linux kernel, the following vulnerability has been resolved: tls: fix use-after-free on failed backlog decryption When the decrypt request goes to the backlog and crypto_aead_decrypt returns -EBUSY, tls_do_decryption will wait until all async decryptions have completed. If one of them fails, tls_do_decryption will return -EBADMSG and tls_decrypt_sg jumps to the error path, releasing all the pages. But the pages have been passed to the async callback, and have already been released by tls_decrypt_done. The only true async case is when crypto_aead_decrypt returns -EINPROGRESS. With -EBUSY, we already waited so we can tell tls_sw_recvmsg that the data is available for immediate copy, but we need to notify tls_decrypt_sg (via the new -&gt;async_done flag) that the memory has already been released.)(CVE-2024-26800)  In the Linux kernel, the following vulnerability has been resolved: inet: inet_defrag: prevent sk release while still in use ip_local_out() and other functions can pass skb-&gt;sk as function argument. If the skb is a fragment and reassembly happens before such function call returns, the sk must not be released. This affects skb fragments reassembled via netfilter or similar modules, e.g. openvswitch or ct_act.c, when run as part of tx pipeline. Eric Dumazet made an initial analysis of this bug. Quoting Eric: Calling ip_defrag() in output path is also implying skb_orphan(), which is buggy because output path relies on sk not disappearing. A relevant old patch about the issue was : 8282f27449bf ('inet: frag: Always orphan skbs inside ip_defrag()') [.. net/ipv4/ip_output.c depends on skb-&gt;sk being set, and probably to an inet socket, not an arbitrary one. If we orphan the packet in ipvlan, then downstream things like FQ packet scheduler will not work properly. We need to change ip_defrag() to only use skb_orphan() when really needed, ie whenever frag_list is going to be used. Eric suggested to stash sk in fragment queue and made an initial patch. However there is a problem with this: If skb is refragmented again right after, ip_do_fragment() will copy head-&gt;sk to the new fragments, and sets up destructor to sock_wfree. IOW, we have no choice but to fix up sk_wmem accouting to reflect the fully reassembled skb, else wmem will underflow. This change moves the orphan down into the core, to last possible moment. As ip_defrag_offset is aliased with sk_buff-&gt;sk member, we must move the offset into the FRAG_CB, else skb-&gt;sk gets clobbered. This allows to delay the orphaning long enough to learn if the skb has to be queued or if the skb is completing the reasm queue. In the former case, things work as before, skb is orphaned. This is safe because skb gets queued/stolen and won't continue past reasm engine. In the latter case, we will steal the skb-&gt;sk reference, reattach it to the head skb, and fix up wmem accouting when inet_frag inflates truesize.)(CVE-2024-26921)  In the Linux kernel, the following vulnerability has been resolved: mm: swap: fix race between free_swap_and_cache() and swapoff() There was previously a theoretical window where swapoff() could run and teardown a swap_info_struct while a call to free_swap_and_cache() was running in another thread. This could cause, amongst other bad possibilities, swap_page_trans_huge_swapped() (called by free_swap_and_cache()) to access the freed memory for swap_map. This is a theoretical problem and I haven't been able to provoke it from a test case. But there has been agreement based on code review that this is possible (see link below). Fix it by using get_swap_device()/put_swap_device(), which will stall swapoff(). There was an extra check in _swap_info_get() to confirm that the swap entry was not free. This isn't present in get_swap_device() because it doesn't make sense in general due to the race between getting the reference and swapoff. So I've added an equivalent check directly in free_swap_and_cache(). Details of how to provoke one possible issue (thanks to David Hildenbrand for deriving this): --8&lt;----- __swap_entry_free() might be the last user and result in 'count == SWAP_HAS_CACHE'. swapoff-&gt;try_to_unuse() will stop as soon as soon as si-&gt;inuse_pages==0. So the question is: could someone reclaim the folio and turn si-&gt;inuse_pages==0, before we completed swap_page_trans_huge_swapped(). Imagine the following: 2 MiB folio in the swapcache. Only 2 subpages are still references by swap entries. Process 1 still references subpage 0 via swap entry. Process 2 still references subpage 1 via swap entry. Process 1 quits. Calls free_swap_and_cache(). -&gt; count == SWAP_HAS_CACHE [then, preempted in the hypervisor etc.] Process 2 quits. Calls free_swap_and_cache(). -&gt; count == SWAP_HAS_CACHE Process 2 goes ahead, passes swap_page_trans_huge_swapped(), and calls __try_to_reclaim_swap(). __try_to_reclaim_swap()-&gt;folio_free_swap()-&gt;delete_from_swap_cache()-&gt; put_swap_folio()-&gt;free_swap_slot()-&gt;swapcache_free_entries()-&gt; swap_entry_free()-&gt;swap_range_free()-&gt; ... WRITE_ONCE(si-&gt;inuse_pages, si-&gt;inuse_pages - nr_entries); What stops swapoff to succeed after process 2 reclaimed the swap cache but before process1 finished its call to swap_page_trans_huge_swapped()? --8&lt;-----)(CVE-2024-26960)  In the Linux kernel, the following vulnerability has been resolved: Bluetooth: Fix use-after-free bugs caused by sco_sock_timeout When the sco connection is established and then, the sco socket is releasing, timeout_work will be scheduled to judge whether the sco disconnection is timeout. The sock will be deallocated later, but it is dereferenced again in sco_sock_timeout. As a result, the use-after-free bugs will happen. The root cause is shown below: Cleanup Thread   Worker Thread sco_sock_release   sco_sock_close   __sco_sock_close   sco_sock_set_timer   schedule_delayed_work   sco_sock_kill   (wait a time) sock_put(sk) //FREE   sco_sock_timeout   sock_hold(sk) //USE The KASAN report triggered by POC is shown below: [ 95.890016 ================================================================== [ 95.890496] BUG: KASAN: slab-use-after-free in sco_sock_timeout+0x5e/0x1c0 [ 95.890755] Write of size 4 at addr ffff88800c388080 by task kworker/0:0/7 ... [ 95.890755] Workqueue: events sco_sock_timeout [ 95.890755] Call Trace: [ 95.890755] &lt;TASK&gt; [ 95.890755] dump_stack_lvl+0x45/0x110 [ 95.890755] print_address_description+0x78/0x390 [ 95.890755 print_report+0x11b/0x250 [ 95.890755] ? __virt_addr_valid+0xbe/0xf0 [ 95.890755] ? sco_sock_timeout+0x5e/0x1c0 [ 95.890755 kasan_report+0x139/0x170 [ 95.890755] ? update_load_avg+0xe5/0x9f0 [ 95.890755] ? sco_sock_timeout+0x5e/0x1c0 [ 95.890755 kasan_check_range+0x2c3/0x2e0 [ 95.890755] sco_sock_timeout+0x5e/0x1c0 [ 95.890755] process_one_work+0x561/0xc50 [ 95.890755 worker_thread+0xab2/0x13c0 [ 95.890755] ? pr_cont_work+0x490/0x490 [ 95.890755] kthread+0x279/0x300 [ 95.890755] ? pr_cont_work+0x490/0x490 [ 95.890755] ? kthread_blkcg+0xa0/0xa0 [ 95.890755] ret_from_fork+0x34/0x60 [ 95.890755] ? kthread_blkcg+0xa0/0xa0 [ 95.890755 ret_from_fork_asm+0x11/0x20 [ 95.890755] &lt;/TASK&gt; [ 95.890755] [ 95.890755 Allocated by task 506: [ 95.890755] kasan_save_track+0x3f/0x70 [ 95.890755 __kasan_kmalloc+0x86/0x90 [ 95.890755] __kmalloc+0x17f/0x360 [ 95.890755 sk_prot_alloc+0xe1/0x1a0 [ 95.890755] sk_alloc+0x31/0x4e0 [ 95.890755 bt_sock_alloc+0x2b/0x2a0 [ 95.890755] sco_sock_create+0xad/0x320 [ 95.890755] bt_sock_create+0x145/0x320 [ 95.890755 __sock_create+0x2e1/0x650 [ 95.890755] __sys_socket+0xd0/0x280 [ 95.890755 __x64_sys_socket+0x75/0x80 [ 95.890755] do_syscall_64+0xc4/0x1b0 [ 95.890755] entry_SYSCALL_64_after_hwframe+0x67/0x6f [ 95.890755] [ 95.890755] Freed by task 506: [ 95.890755] kasan_save_track+0x3f/0x70 [ 95.890755] kasan_save_free_info+0x40/0x50 [ 95.890755 poison_slab_object+0x118/0x180 [ 95.890755] __kasan_slab_free+0x12/0x30 [ 95.890755] kfree+0xb2/0x240 [ 95.890755] __sk_destruct+0x317/0x410 [ 95.890755] sco_sock_release+0x232/0x280 [ 95.890755] sock_close+0xb2/0x210 [ 95.890755] __fput+0x37f/0x770 [ 95.890755] task_work_run+0x1ae/0x210 [ 95.890755] get_signal+0xe17/0xf70 [ 95.890755 arch_do_signal_or_restart+0x3f/0x520 [ 95.890755 syscall_exit_to_user_mode+0x55/0x120 [ 95.890755] do_syscall_64+0xd1/0x1b0 [ 95.890755] entry_SYSCALL_64_after_hwframe+0x67/0x6f [ 95.890755] [ 95.890755] The buggy address belongs to the object at ffff88800c388000 [ 95.890755] which belongs to the cache kmalloc-1k of size 1024 [ 95.890755 The buggy address is located 128 bytes inside of [ 95.890755] freed 1024-byte region [ffff88800c388000, ffff88800c388400) [ 95.890755] [ 95.890755] The buggy address belongs to the physical page: [ 95.890755 page: refcount:1 mapcount:0 mapping:0000000000000000 index:0xffff88800c38a800 pfn:0xc388 [ 95.890755] head: order:3 entire_mapcount:0 nr_pages_mapped:0 pincount:0 [ 95.890755] ano ---truncated---)(CVE-2024-27398)  In the Linux kernel, the following vulnerability has been resolved: watchdog: cpu5wdt.c: Fix use-after-free bug caused by cpu5wdt_trigger When the cpu5wdt module is removing, the origin code uses del_timer() to de-activate the timer. If the timer handler is running, del_timer() could not stop it and will return directly. If the port region is released by release_region() and then the timer handler cpu5wdt_trigger() calls outb() to write into the region that is released, the use-after-free bug will happen. Change del_timer() to timer_shutdown_sync() in order that the timer handler could be finished before the port region is released.)(CVE-2024-38630)  In the Linux kernel, the following vulnerability has been resolved: exec: Fix ToCToU between perm check and set-uid/gid usage When opening a file for exec via do_filp_open(), permission checking is done against the file's metadata at that moment, and on success, a file pointer is passed back. Much later in the execve() code path, the file metadata (specifically mode, uid, and gid) is used to determine if/how to set the uid and gid. However, those values may have changed since the permissions check, meaning the execution may gain unintended privileges. For example, if a file could change permissions from executable and not set-id: ---------x 1 root root 16048 Aug 7 13:16 target to set-id and non- executable: ---S------ 1 root root 16048 Aug 7 13:16 target it is possible to gain root privileges when execution should have been disallowed. While this race condition is rare in real-world scenarios, it has been observed (and proven exploitable) when package managers are updating the setuid bits of installed programs. Such files start with being world-executable but then are adjusted to be group-exec with a set-uid bit. For example, 'chmod o-x,u+s target' makes 'target' executable only by uid 'root' and gid 'cdrom', while also becoming setuid-root: -rwxr-xr-x 1 root cdrom 16048 Aug 7 13:16 target becomes: -rwsr-xr-- 1 root cdrom 16048 Aug 7 13:16 target But racing the chmod means users without group 'cdrom' membership can get the permission to execute 'target' just before the chmod, and when the chmod finishes, the exec reaches brpm_fill_uid(), and performs the setuid to root, violating the expressed authorization of 'only cdrom group members can setuid to root'. Re-check that we still have execute permissions in case the metadata has changed. It would be better to keep a copy from the perm-check time, but until we can do that refactoring, the least-bad option is to do a full inode_permission() call (under inode lock). It is understood that this is safe against dead-locks, but hardly optimal.)(CVE-2024-43882)  In the Linux kernel, the following vulnerability has been resolved: vsock/virtio: Initialization of the dangling pointer occurring in vsk-&gt;trans During loopback communication, a dangling pointer can be created in vsk-&gt;trans, potentially leading to a Use-After-Free condition. This issue is resolved by initializing vsk-&gt;trans to NULL.)(CVE-2024-50264)  To check your kernel type and Livepatch version, enter this command:  canonical-livepatch status  lkp_Ubuntu_6_8_0[_|\d]+_aws_(\d+) - 108 lkp_Ubuntu_6_8_0[_|\d]+_azure_(\d+) - 108 lkp_Ubuntu_6_8_0[_|\d]+_gcp_(\d+) - 108 lkp_Ubuntu_6_8_0[_|\d]+_ibm_(\d+) - 108 lkp_Ubuntu_6_8_0[_|\d]+_linux_(\d+) - 108 Livepatch subscription required</description>
+				<advisory from="security@ubuntu.com">
+					<severity>High</severity>
+					<issued date="2024-12-19" />
+					<cve href="https://ubuntu.com/security/CVE-2024-26960" priority="high" public="20240501" usns="6816-1,6817-1,6817-2,6817-3,6878-1,6898-1,6898-2,6898-3,6898-4,6917-1,6919-1,6927-1,7019-1,7069-1,7073-1,7069-2,7073-2,7119-1">CVE-2024-26960</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-26800" priority="high" public="20240404" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7119-1,7123-1,7144-1">CVE-2024-26800</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-27398" priority="high" public="20240514" usns="6949-1,6950-1,6951-1,6952-1,6953-1,6955-1,6956-1,6957-1,6950-2,6950-3,6949-2,6952-2,6951-2,6951-3,6950-4,6951-4,6979-1,7019-1,7028-1,7028-2">CVE-2024-27398</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-50264" priority="high" public="20241119" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7167-1,7169-1,7170-1,7173-1,7169-2">CVE-2024-50264</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-26921" priority="high" public="20240418" usns="6893-1,6893-2,6893-3,6918-1,6973-1,6974-1,6973-2,6974-2,6973-3,6973-4,7006-1,7019-1">CVE-2024-26921</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-43882" priority="high" public="20240821" cvss_score="7.0" cvss_vector="CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="7088-1,7088-2,7088-3,7088-4,7100-1,7100-2,7088-5,7121-1,7120-1,7119-1,7120-2,7121-2,7123-1,7120-3,7121-3,7144-1,7148-1,7156-1">CVE-2024-43882</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-38630" priority="high" public="20240621" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6999-1,7004-1,7005-1,7008-1,7005-2,6999-2,7029-1,7069-1,7072-1,7073-1,7069-2,7073-2,7076-1,7072-2,7076-2,7110-1,7119-1">CVE-2024-38630</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criteria operator="AND">
+						<criterion test_ref="oval:com.ubuntu.noble:tst:1758035288646" />
+						<criterion test_ref="oval:com.ubuntu.noble:tst:1458034815141" />
 					</criteria>
 				</criteria>
 			</criteria>
@@ -852,7 +887,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-05-29" />
-					<cve href="https://ubuntu.com/security/CVE-2024-4453" priority="medium" public="20240523" usns="6798-1">CVE-2024-4453</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-4453" priority="medium" public="20240523" cvss_score="7.8" cvss_vector="CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6798-1">CVE-2024-4453</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -2991,7 +3026,7 @@
 					<cve href="https://ubuntu.com/security/CVE-2024-20998" priority="medium" public="20240416" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6823-1">CVE-2024-20998</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21000" priority="medium" public="20240416" cvss_score="3.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N" cvss_severity="low" usns="6823-1">CVE-2024-21000</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21008" priority="medium" public="20240416" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6823-1">CVE-2024-21008</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-21009" priority="medium" public="20240416" usns="6823-1">CVE-2024-21009</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-21009" priority="medium" public="20240416" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6823-1">CVE-2024-21009</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21013" priority="medium" public="20240416" cvss_score="4.4" cvss_vector="CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6823-1">CVE-2024-21013</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21047" priority="medium" public="20240416" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6823-1">CVE-2024-21047</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-21054" priority="medium" public="20240416" cvss_score="4.9" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H" cvss_severity="medium" usns="6823-1">CVE-2024-21054</cve>
@@ -9163,15 +9198,15 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-08-20" />
-					<cve href="https://ubuntu.com/security/CVE-2024-25641" priority="medium" public="20240514" usns="6969-1">CVE-2024-25641</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-29894" priority="medium" public="20240514" usns="6969-1">CVE-2024-29894</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-31443" priority="medium" public="20240514" usns="6969-1">CVE-2024-31443</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-31444" priority="medium" public="20240514" usns="6969-1">CVE-2024-31444</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-31445" priority="medium" public="20240514" usns="6969-1">CVE-2024-31445</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-31458" priority="medium" public="20240514" usns="6969-1">CVE-2024-31458</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-31459" priority="medium" public="20240514" usns="6969-1">CVE-2024-31459</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-31460" priority="medium" public="20240514" usns="6969-1">CVE-2024-31460</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-34340" priority="medium" public="20240514" usns="6969-1">CVE-2024-34340</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-25641" priority="medium" public="20240514" cvss_score="7.2" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6969-1">CVE-2024-25641</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-29894" priority="medium" public="20240514" cvss_score="4.7" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N" cvss_severity="medium" usns="6969-1">CVE-2024-29894</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-31443" priority="medium" public="20240514" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="6969-1">CVE-2024-31443</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-31444" priority="medium" public="20240514" cvss_score="5.4" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N" cvss_severity="medium" usns="6969-1">CVE-2024-31444</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-31445" priority="medium" public="20240514" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6969-1">CVE-2024-31445</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-31458" priority="medium" public="20240514" cvss_score="8.0" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6969-1">CVE-2024-31458</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-31459" priority="medium" public="20240514" cvss_score="7.2" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6969-1">CVE-2024-31459</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-31460" priority="medium" public="20240514" cvss_score="8.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" cvss_severity="high" usns="6969-1">CVE-2024-31460</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-34340" priority="medium" public="20240514" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N" cvss_severity="critical" usns="6969-1">CVE-2024-34340</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -12423,7 +12458,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-10-22" />
-					<cve href="https://ubuntu.com/security/CVE-2024-8508" priority="medium" public="20241003" usns="7080-1">CVE-2024-8508</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-8508" priority="medium" public="20241003" cvss_score="5.3" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L" cvss_severity="medium" usns="7080-1">CVE-2024-8508</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -20084,7 +20119,7 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-12-18" />
-					<cve href="https://ubuntu.com/security/CVE-2024-47606" priority="medium" public="20241212" usns="7174-1,7176-1">CVE-2024-47606</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47606" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7174-1,7176-1">CVE-2024-47606</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -20110,13 +20145,13 @@
 				<advisory from="security@ubuntu.com">
 					<severity>Medium</severity>
 					<issued date="2024-12-18" />
-					<cve href="https://ubuntu.com/security/CVE-2024-47538" priority="medium" public="20241212" usns="7175-1">CVE-2024-47538</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47538" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7175-1">CVE-2024-47538</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-47541" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7175-1">CVE-2024-47541</cve>
 					<cve href="https://ubuntu.com/security/CVE-2024-47542" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7175-1">CVE-2024-47542</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47600" priority="medium" public="20241212" usns="7175-1">CVE-2024-47600</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47607" priority="medium" public="20241212" usns="7175-1">CVE-2024-47607</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47615" priority="medium" public="20241212" usns="7175-1">CVE-2024-47615</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47835" priority="medium" public="20241212" usns="7175-1">CVE-2024-47835</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47600" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7175-1">CVE-2024-47600</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47607" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7175-1">CVE-2024-47607</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47615" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7175-1">CVE-2024-47615</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47835" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7175-1">CVE-2024-47835</cve>
 				</advisory>
 			</metadata>
 			<criteria>
@@ -20158,33 +20193,53 @@
 					<severity>Medium</severity>
 					<issued date="2024-12-18" />
 					<cve href="https://ubuntu.com/security/CVE-2024-47537" priority="medium" public="20241212" usns="7176-1">CVE-2024-47537</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47539" priority="medium" public="20241212" usns="7176-1">CVE-2024-47539</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47540" priority="medium" public="20241212" usns="7176-1">CVE-2024-47540</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47543" priority="medium" public="20241212" usns="7176-1">CVE-2024-47543</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47544" priority="medium" public="20241212" usns="7176-1">CVE-2024-47544</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47545" priority="medium" public="20241212" usns="7176-1">CVE-2024-47545</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47546" priority="medium" public="20241212" usns="7176-1">CVE-2024-47546</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47596" priority="medium" public="20241212" usns="7176-1">CVE-2024-47596</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47597" priority="medium" public="20241212" usns="7176-1">CVE-2024-47597</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47598" priority="medium" public="20241212" usns="7176-1">CVE-2024-47598</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47599" priority="medium" public="20241212" usns="7176-1">CVE-2024-47599</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47601" priority="medium" public="20241212" usns="7176-1">CVE-2024-47601</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47602" priority="medium" public="20241212" usns="7176-1">CVE-2024-47602</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47603" priority="medium" public="20241212" usns="7176-1">CVE-2024-47603</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47606" priority="medium" public="20241212" usns="7174-1,7176-1">CVE-2024-47606</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47613" priority="medium" public="20241212" usns="7176-1">CVE-2024-47613</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47774" priority="medium" public="20241212" usns="7176-1">CVE-2024-47774</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47775" priority="medium" public="20241212" usns="7176-1">CVE-2024-47775</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47776" priority="medium" public="20241212" usns="7176-1">CVE-2024-47776</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47777" priority="medium" public="20241212" usns="7176-1">CVE-2024-47777</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47778" priority="medium" public="20241212" usns="7176-1">CVE-2024-47778</cve>
-					<cve href="https://ubuntu.com/security/CVE-2024-47834" priority="medium" public="20241212" usns="7176-1">CVE-2024-47834</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47539" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47539</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47540" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47540</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47543" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47543</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47544" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47544</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47545" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47545</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47546" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47546</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47596" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47596</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47597" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47597</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47598" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47598</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47599" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47599</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47601" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47601</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47602" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47602</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47603" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47603</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47606" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7174-1,7176-1">CVE-2024-47606</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47613" priority="medium" public="20241212" cvss_score="9.8" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47613</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47774" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47774</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47775" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47775</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47776" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47776</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47777" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47777</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47778" priority="medium" public="20241212" cvss_score="7.5" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" cvss_severity="high" usns="7176-1">CVE-2024-47778</cve>
+					<cve href="https://ubuntu.com/security/CVE-2024-47834" priority="medium" public="20241212" cvss_score="9.1" cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H" cvss_severity="critical" usns="7176-1">CVE-2024-47834</cve>
 				</advisory>
 			</metadata>
 			<criteria>
 				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
 				<criteria operator="OR">
 					<criterion test_ref="oval:com.ubuntu.noble:tst:1255590212508" />
+				</criteria>
+			</criteria>
+		</definition>
+		<definition id="oval:com.ubuntu.noble:def:71781000000" version="1" class="patch">
+			<metadata>
+				<title>USN-7178-1 -- DPDK vulnerability</title>
+				<affected family="unix" />
+				<reference source="USN" ref_id="USN-7178-1" ref_url="https://ubuntu.com/security/notices/USN-7178-1" />
+				<reference source="CVE" ref_id="CVE-2024-11614" ref_url="https://ubuntu.com/security/CVE-2024-11614" />
+				<description>It was discovered that DPDK incorrectly handled the Vhost library checksum offload feature. An malicious guest could possibly use this issue to cause the hypervisor's vSwitch to crash, resulting in a denial of service.  Update Instructions:  Run `sudo pro fix USN-7178-1` to fix the vulnerability. The problem can be corrected by updating your system to the following package versions:  dpdk - 23.11-1ubuntu0.1 dpdk-dev - 23.11-1ubuntu0.1 dpdk-doc - 23.11-1ubuntu0.1 libdpdk-dev - 23.11-1ubuntu0.1 librte-acl24 - 23.11-1ubuntu0.1 librte-baseband-acc24 - 23.11-1ubuntu0.1 librte-baseband-fpga-5gnr-fec24 - 23.11-1ubuntu0.1 librte-baseband-fpga-lte-fec24 - 23.11-1ubuntu0.1 librte-baseband-la12xx24 - 23.11-1ubuntu0.1 librte-baseband-null24 - 23.11-1ubuntu0.1 librte-baseband-turbo-sw24 - 23.11-1ubuntu0.1 librte-bbdev24 - 23.11-1ubuntu0.1 librte-bitratestats24 - 23.11-1ubuntu0.1 librte-bpf24 - 23.11-1ubuntu0.1 librte-bus-auxiliary24 - 23.11-1ubuntu0.1 librte-bus-cdx24 - 23.11-1ubuntu0.1 librte-bus-dpaa24 - 23.11-1ubuntu0.1 librte-bus-fslmc24 - 23.11-1ubuntu0.1 librte-bus-ifpga24 - 23.11-1ubuntu0.1 librte-bus-pci24 - 23.11-1ubuntu0.1 librte-bus-platform24 - 23.11-1ubuntu0.1 librte-bus-vdev24 - 23.11-1ubuntu0.1 librte-bus-vmbus24 - 23.11-1ubuntu0.1 librte-cfgfile24 - 23.11-1ubuntu0.1 librte-cmdline24 - 23.11-1ubuntu0.1 librte-common-cnxk24 - 23.11-1ubuntu0.1 librte-common-cpt24 - 23.11-1ubuntu0.1 librte-common-dpaax24 - 23.11-1ubuntu0.1 librte-common-iavf24 - 23.11-1ubuntu0.1 librte-common-idpf24 - 23.11-1ubuntu0.1 librte-common-mlx5-24 - 23.11-1ubuntu0.1 librte-common-nfp24 - 23.11-1ubuntu0.1 librte-common-octeontx24 - 23.11-1ubuntu0.1 librte-common-qat24 - 23.11-1ubuntu0.1 librte-common-sfc-efx24 - 23.11-1ubuntu0.1 librte-compress-isal24 - 23.11-1ubuntu0.1 librte-compress-mlx5-24 - 23.11-1ubuntu0.1 librte-compress-octeontx24 - 23.11-1ubuntu0.1 librte-compress-zlib24 - 23.11-1ubuntu0.1 librte-compressdev24 - 23.11-1ubuntu0.1 librte-crypto-bcmfs24 - 23.11-1ubuntu0.1 librte-crypto-caam-jr24 - 23.11-1ubuntu0.1 librte-crypto-ccp24 - 23.11-1ubuntu0.1 librte-crypto-cnxk24 - 23.11-1ubuntu0.1 librte-crypto-dpaa2-sec24 - 23.11-1ubuntu0.1 librte-crypto-dpaa-sec24 - 23.11-1ubuntu0.1 librte-crypto-ipsec-mb24 - 23.11-1ubuntu0.1 librte-crypto-mlx5-24 - 23.11-1ubuntu0.1 librte-crypto-nitrox24 - 23.11-1ubuntu0.1 librte-crypto-null24 - 23.11-1ubuntu0.1 librte-crypto-octeontx24 - 23.11-1ubuntu0.1 librte-crypto-openssl24 - 23.11-1ubuntu0.1 librte-crypto-scheduler24 - 23.11-1ubuntu0.1 librte-crypto-virtio24 - 23.11-1ubuntu0.1 librte-cryptodev24 - 23.11-1ubuntu0.1 librte-dispatcher24 - 23.11-1ubuntu0.1 librte-distributor24 - 23.11-1ubuntu0.1 librte-dma-cnxk24 - 23.11-1ubuntu0.1 librte-dma-dpaa2-24 - 23.11-1ubuntu0.1 librte-dma-dpaa24 - 23.11-1ubuntu0.1 librte-dma-hisilicon24 - 23.11-1ubuntu0.1 librte-dma-idxd24 - 23.11-1ubuntu0.1 librte-dma-ioat24 - 23.11-1ubuntu0.1 librte-dma-skeleton24 - 23.11-1ubuntu0.1 librte-dmadev24 - 23.11-1ubuntu0.1 librte-eal24 - 23.11-1ubuntu0.1 librte-efd24 - 23.11-1ubuntu0.1 librte-ethdev24 - 23.11-1ubuntu0.1 librte-event-cnxk24 - 23.11-1ubuntu0.1 librte-event-dlb2-24 - 23.11-1ubuntu0.1 librte-event-dpaa2-24 - 23.11-1ubuntu0.1 librte-event-dpaa24 - 23.11-1ubuntu0.1 librte-event-dsw24 - 23.11-1ubuntu0.1 librte-event-octeontx24 - 23.11-1ubuntu0.1 librte-event-opdl24 - 23.11-1ubuntu0.1 librte-event-skeleton24 - 23.11-1ubuntu0.1 librte-event-sw24 - 23.11-1ubuntu0.1 librte-eventdev24 - 23.11-1ubuntu0.1 librte-fib24 - 23.11-1ubuntu0.1 librte-gpudev24 - 23.11-1ubuntu0.1 librte-graph24 - 23.11-1ubuntu0.1 librte-gro24 - 23.11-1ubuntu0.1 librte-gso24 - 23.11-1ubuntu0.1 librte-hash24 - 23.11-1ubuntu0.1 librte-ip-frag24 - 23.11-1ubuntu0.1 librte-ipsec24 - 23.11-1ubuntu0.1 librte-jobstats24 - 23.11-1ubuntu0.1 librte-kvargs24 - 23.11-1ubuntu0.1 librte-latencystats24 - 23.11-1ubuntu0.1 librte-log24 - 23.11-1ubuntu0.1 librte-lpm24 - 23.11-1ubuntu0.1 librte-mbuf24 - 23.11-1ubuntu0.1 librte-member24 - 23.11-1ubuntu0.1 librte-mempool24 - 23.11-1ubuntu0.1 librte-mempool-bucket24 - 23.11-1ubuntu0.1 librte-mempool-cnxk24 - 23.11-1ubuntu0.1 librte-mempool-dpaa2-24 - 23.11-1ubuntu0.1 librte-mempool-dpaa24 - 23.11-1ubuntu0.1 librte-mempool-octeontx24 - 23.11-1ubuntu0.1 librte-mempool-ring24 - 23.11-1ubuntu0.1 librte-mempool-stack24 - 23.11-1ubuntu0.1 librte-meta-all - 23.11-1ubuntu0.1 librte-meta-allpmds - 23.11-1ubuntu0.1 librte-meta-baseband - 23.11-1ubuntu0.1 librte-meta-bus - 23.11-1ubuntu0.1 librte-meta-common - 23.11-1ubuntu0.1 librte-meta-compress - 23.11-1ubuntu0.1 librte-meta-crypto - 23.11-1ubuntu0.1 librte-meta-dma - 23.11-1ubuntu0.1 librte-meta-event - 23.11-1ubuntu0.1 librte-meta-mempool - 23.11-1ubuntu0.1 librte-meta-net - 23.11-1ubuntu0.1 librte-meta-raw - 23.11-1ubuntu0.1 librte-meter24 - 23.11-1ubuntu0.1 librte-metrics24 - 23.11-1ubuntu0.1 librte-ml-cnxk24 - 23.11-1ubuntu0.1 librte-mldev24 - 23.11-1ubuntu0.1 librte-net24 - 23.11-1ubuntu0.1 librte-net-af-packet24 - 23.11-1ubuntu0.1 librte-net-af-xdp24 - 23.11-1ubuntu0.1 librte-net-ark24 - 23.11-1ubuntu0.1 librte-net-atlantic24 - 23.11-1ubuntu0.1 librte-net-avp24 - 23.11-1ubuntu0.1 librte-net-axgbe24 - 23.11-1ubuntu0.1 librte-net-bnx2x24 - 23.11-1ubuntu0.1 librte-net-bnxt24 - 23.11-1ubuntu0.1 librte-net-bond24 - 23.11-1ubuntu0.1 librte-net-cnxk24 - 23.11-1ubuntu0.1 librte-net-cpfl24 - 23.11-1ubuntu0.1 librte-net-cxgbe24 - 23.11-1ubuntu0.1 librte-net-dpaa2-24 - 23.11-1ubuntu0.1 librte-net-dpaa24 - 23.11-1ubuntu0.1 librte-net-e1000-24 - 23.11-1ubuntu0.1 librte-net-ena24 - 23.11-1ubuntu0.1 librte-net-enetc24 - 23.11-1ubuntu0.1 librte-net-enetfec24 - 23.11-1ubuntu0.1 librte-net-enic24 - 23.11-1ubuntu0.1 librte-net-failsafe24 - 23.11-1ubuntu0.1 librte-net-fm10k24 - 23.11-1ubuntu0.1 librte-net-gve24 - 23.11-1ubuntu0.1 librte-net-hinic24 - 23.11-1ubuntu0.1 librte-net-hns3-24 - 23.11-1ubuntu0.1 librte-net-i40e24 - 23.11-1ubuntu0.1 librte-net-iavf24 - 23.11-1ubuntu0.1 librte-net-ice24 - 23.11-1ubuntu0.1 librte-net-idpf24 - 23.11-1ubuntu0.1 librte-net-igc24 - 23.11-1ubuntu0.1 librte-net-ionic24 - 23.11-1ubuntu0.1 librte-net-ipn3ke24 - 23.11-1ubuntu0.1 librte-net-ixgbe24 - 23.11-1ubuntu0.1 librte-net-mana24 - 23.11-1ubuntu0.1 librte-net-memif24 - 23.11-1ubuntu0.1 librte-net-mlx4-24 - 23.11-1ubuntu0.1 librte-net-mlx5-24 - 23.11-1ubuntu0.1 librte-net-netvsc24 - 23.11-1ubuntu0.1 librte-net-nfp24 - 23.11-1ubuntu0.1 librte-net-ngbe24 - 23.11-1ubuntu0.1 librte-net-null24 - 23.11-1ubuntu0.1 librte-net-octeon-ep24 - 23.11-1ubuntu0.1 librte-net-octeontx24 - 23.11-1ubuntu0.1 librte-net-pcap24 - 23.11-1ubuntu0.1 librte-net-pfe24 - 23.11-1ubuntu0.1 librte-net-qede24 - 23.11-1ubuntu0.1 librte-net-ring24 - 23.11-1ubuntu0.1 librte-net-sfc24 - 23.11-1ubuntu0.1 librte-net-softnic24 - 23.11-1ubuntu0.1 librte-net-tap24 - 23.11-1ubuntu0.1 librte-net-thunderx24 - 23.11-1ubuntu0.1 librte-net-txgbe24 - 23.11-1ubuntu0.1 librte-net-vdev-netvsc24 - 23.11-1ubuntu0.1 librte-net-vhost24 - 23.11-1ubuntu0.1 librte-net-virtio24 - 23.11-1ubuntu0.1 librte-net-vmxnet3-24 - 23.11-1ubuntu0.1 librte-node24 - 23.11-1ubuntu0.1 librte-pcapng24 - 23.11-1ubuntu0.1 librte-pci24 - 23.11-1ubuntu0.1 librte-pdcp24 - 23.11-1ubuntu0.1 librte-pdump24 - 23.11-1ubuntu0.1 librte-pipeline24 - 23.11-1ubuntu0.1 librte-port24 - 23.11-1ubuntu0.1 librte-power24 - 23.11-1ubuntu0.1 librte-raw-cnxk-bphy24 - 23.11-1ubuntu0.1 librte-raw-cnxk-gpio24 - 23.11-1ubuntu0.1 librte-raw-dpaa2-cmdif24 - 23.11-1ubuntu0.1 librte-raw-ifpga24 - 23.11-1ubuntu0.1 librte-raw-ntb24 - 23.11-1ubuntu0.1 librte-raw-skeleton24 - 23.11-1ubuntu0.1 librte-rawdev24 - 23.11-1ubuntu0.1 librte-rcu24 - 23.11-1ubuntu0.1 librte-regex-cn9k24 - 23.11-1ubuntu0.1 librte-regex-mlx5-24 - 23.11-1ubuntu0.1 librte-regexdev24 - 23.11-1ubuntu0.1 librte-reorder24 - 23.11-1ubuntu0.1 librte-rib24 - 23.11-1ubuntu0.1 librte-ring24 - 23.11-1ubuntu0.1 librte-sched24 - 23.11-1ubuntu0.1 librte-security24 - 23.11-1ubuntu0.1 librte-stack24 - 23.11-1ubuntu0.1 librte-table24 - 23.11-1ubuntu0.1 librte-telemetry24 - 23.11-1ubuntu0.1 librte-timer24 - 23.11-1ubuntu0.1 librte-vdpa-ifc24 - 23.11-1ubuntu0.1 librte-vdpa-mlx5-24 - 23.11-1ubuntu0.1 librte-vdpa-nfp24 - 23.11-1ubuntu0.1 librte-vdpa-sfc24 - 23.11-1ubuntu0.1 librte-vhost24 - 23.11-1ubuntu0.1</description>
+				<advisory from="security@ubuntu.com">
+					<severity>Medium</severity>
+					<issued date="2024-12-19" />
+					<cve href="https://ubuntu.com/security/CVE-2024-11614" priority="medium" public="20241218" usns="7178-1">CVE-2024-11614</cve>
+				</advisory>
+			</metadata>
+			<criteria>
+				<extend_definition definition_ref="oval:com.ubuntu.noble:def:100" comment="Ubuntu 24.04 LTS (noble) is installed." applicability_check="true" />
+				<criteria operator="OR">
+					<criterion test_ref="oval:com.ubuntu.noble:tst:1169947474340" />
 				</criteria>
 			</criteria>
 		</definition>
@@ -20309,6 +20364,10 @@
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1167812420310" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1806932220010" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1693324005012" />
+		</linux:dpkginfo_test>
+		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1169947474340" version="1" check_existence="at_least_one_exists" check="at least one">
+			<linux:object object_ref="oval:com.ubuntu.noble:obj:1152550386332" />
+			<linux:state state_ref="oval:com.ubuntu.noble:ste:1267695124149" />
 		</linux:dpkginfo_test>
 		<ind:variable_test id="oval:com.ubuntu.noble:tst:1170321245572" version="1" check="all" check_existence="all_exist">
 			<ind:object object_ref="oval:com.ubuntu.noble:obj:1830641446496" />
@@ -20738,6 +20797,10 @@
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1178300926624" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1550840755678" />
 		</linux:dpkginfo_test>
+		<ind:textfilecontent54_test id="oval:com.ubuntu.noble:tst:1458034815141" version="1" check="all" check_existence="all_exist">
+			<ind:object object_ref="oval:com.ubuntu.noble:obj:1469218510034" />
+			<ind:state state_ref="oval:com.ubuntu.noble:ste:1455763290284" />
+		</ind:textfilecontent54_test>
 		<linux:dpkginfo_test id="oval:com.ubuntu.noble:tst:1461972975944" version="1" check_existence="at_least_one_exists" check="at least one">
 			<linux:object object_ref="oval:com.ubuntu.noble:obj:1753739396871" />
 			<linux:state state_ref="oval:com.ubuntu.noble:ste:1321899282955" />
@@ -22304,6 +22367,9 @@
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1146516758393" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1788653849670" var_check="at least one" />
 		</linux:dpkginfo_object>
+		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1152550386332" version="1" comment="Long Term Release">
+			<linux:name var_ref="oval:com.ubuntu.noble:var:1709506153390" var_check="at least one" />
+		</linux:dpkginfo_object>
 		<linux:dpkginfo_object id="oval:com.ubuntu.noble:obj:1153941346497" version="1" comment="Long Term Release">
 			<linux:name var_ref="oval:com.ubuntu.noble:var:1549395455793" var_check="at least one" />
 		</linux:dpkginfo_object>
@@ -22910,6 +22976,11 @@
 			<ind:pattern operation="pattern match">^[\s\S]*DISTRIB_CODENAME=([a-z]+)$</ind:pattern>
 			<ind:instance datatype="int">1</ind:instance>
 		</ind:textfilecontent54_object>
+		<ind:textfilecontent54_object id="oval:com.ubuntu.noble:obj:1469218510034" version="1" comment="Long Term Release">
+			<ind:filepath datatype="string">/proc/modules</ind:filepath>
+			<ind:pattern operation="pattern match" var_ref="oval:com.ubuntu.noble:var:2162571245147" var_check="at least one" />
+			<ind:instance datatype="int">1</ind:instance>
+		</ind:textfilecontent54_object>
 		<ind:textfilecontent54_object id="oval:com.ubuntu.noble:obj:1692123218693" version="1" comment="Long Term Release">
 			<ind:filepath datatype="string">/proc/modules</ind:filepath>
 			<ind:pattern operation="pattern match" var_ref="oval:com.ubuntu.noble:var:2162571245147" var_check="at least one" />
@@ -22953,6 +23024,9 @@
 		<unix:uname_state id="oval:com.ubuntu.noble:ste:1299656445966" version="1">
 			<unix:os_release operation="pattern match">6.8.0-\d+(-ibm)</unix:os_release>
 		</unix:uname_state>
+		<ind:textfilecontent54_state id="oval:com.ubuntu.noble:ste:1455763290284" version="1">
+			<ind:subexpression datatype="int" operation="less than">108</ind:subexpression>
+		</ind:textfilecontent54_state>
 		<unix:uname_state id="oval:com.ubuntu.noble:ste:1487394131369" version="1">
 			<unix:os_release operation="pattern match">6.8.0-\d+(-ibm|-oem|-oracle|-oracle-64k)</unix:os_release>
 		</unix:uname_state>
@@ -23168,6 +23242,9 @@
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1261137576815" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:16.3-0ubuntu0.24.04.1</linux:evr>
+		</linux:dpkginfo_state>
+		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1267695124149" version="1" comment="Long Term Release">
+			<linux:evr datatype="debian_evr_string" operation="less than">0:23.11-1ubuntu0.1</linux:evr>
 		</linux:dpkginfo_state>
 		<linux:dpkginfo_state id="oval:com.ubuntu.noble:ste:1271834581872" version="1" comment="Long Term Release">
 			<linux:evr datatype="debian_evr_string" operation="less than">0:2.44.3-0ubuntu0.24.04.1</linux:evr>
@@ -23966,6 +24043,214 @@
 			<value>dovecot-solr</value>
 			<value>dovecot-sqlite</value>
 			<value>dovecot-submissiond</value>
+		</constant_variable>
+		<constant_variable id="oval:com.ubuntu.noble:var:1709506153390" version="1" datatype="string" comment="Long Term Release">
+			<value>dpdk</value>
+			<value>dpdk-dev</value>
+			<value>dpdk-doc</value>
+			<value>libdpdk-dev</value>
+			<value>librte-acl24</value>
+			<value>librte-baseband-acc24</value>
+			<value>librte-baseband-fpga-5gnr-fec24</value>
+			<value>librte-baseband-fpga-lte-fec24</value>
+			<value>librte-baseband-la12xx24</value>
+			<value>librte-baseband-null24</value>
+			<value>librte-baseband-turbo-sw24</value>
+			<value>librte-bbdev24</value>
+			<value>librte-bitratestats24</value>
+			<value>librte-bpf24</value>
+			<value>librte-bus-auxiliary24</value>
+			<value>librte-bus-cdx24</value>
+			<value>librte-bus-dpaa24</value>
+			<value>librte-bus-fslmc24</value>
+			<value>librte-bus-ifpga24</value>
+			<value>librte-bus-pci24</value>
+			<value>librte-bus-platform24</value>
+			<value>librte-bus-vdev24</value>
+			<value>librte-bus-vmbus24</value>
+			<value>librte-cfgfile24</value>
+			<value>librte-cmdline24</value>
+			<value>librte-common-cnxk24</value>
+			<value>librte-common-cpt24</value>
+			<value>librte-common-dpaax24</value>
+			<value>librte-common-iavf24</value>
+			<value>librte-common-idpf24</value>
+			<value>librte-common-mlx5-24</value>
+			<value>librte-common-nfp24</value>
+			<value>librte-common-octeontx24</value>
+			<value>librte-common-qat24</value>
+			<value>librte-common-sfc-efx24</value>
+			<value>librte-compress-isal24</value>
+			<value>librte-compress-mlx5-24</value>
+			<value>librte-compress-octeontx24</value>
+			<value>librte-compress-zlib24</value>
+			<value>librte-compressdev24</value>
+			<value>librte-crypto-bcmfs24</value>
+			<value>librte-crypto-caam-jr24</value>
+			<value>librte-crypto-ccp24</value>
+			<value>librte-crypto-cnxk24</value>
+			<value>librte-crypto-dpaa2-sec24</value>
+			<value>librte-crypto-dpaa-sec24</value>
+			<value>librte-crypto-ipsec-mb24</value>
+			<value>librte-crypto-mlx5-24</value>
+			<value>librte-crypto-nitrox24</value>
+			<value>librte-crypto-null24</value>
+			<value>librte-crypto-octeontx24</value>
+			<value>librte-crypto-openssl24</value>
+			<value>librte-crypto-scheduler24</value>
+			<value>librte-crypto-virtio24</value>
+			<value>librte-cryptodev24</value>
+			<value>librte-dispatcher24</value>
+			<value>librte-distributor24</value>
+			<value>librte-dma-cnxk24</value>
+			<value>librte-dma-dpaa2-24</value>
+			<value>librte-dma-dpaa24</value>
+			<value>librte-dma-hisilicon24</value>
+			<value>librte-dma-idxd24</value>
+			<value>librte-dma-ioat24</value>
+			<value>librte-dma-skeleton24</value>
+			<value>librte-dmadev24</value>
+			<value>librte-eal24</value>
+			<value>librte-efd24</value>
+			<value>librte-ethdev24</value>
+			<value>librte-event-cnxk24</value>
+			<value>librte-event-dlb2-24</value>
+			<value>librte-event-dpaa2-24</value>
+			<value>librte-event-dpaa24</value>
+			<value>librte-event-dsw24</value>
+			<value>librte-event-octeontx24</value>
+			<value>librte-event-opdl24</value>
+			<value>librte-event-skeleton24</value>
+			<value>librte-event-sw24</value>
+			<value>librte-eventdev24</value>
+			<value>librte-fib24</value>
+			<value>librte-gpudev24</value>
+			<value>librte-graph24</value>
+			<value>librte-gro24</value>
+			<value>librte-gso24</value>
+			<value>librte-hash24</value>
+			<value>librte-ip-frag24</value>
+			<value>librte-ipsec24</value>
+			<value>librte-jobstats24</value>
+			<value>librte-kvargs24</value>
+			<value>librte-latencystats24</value>
+			<value>librte-log24</value>
+			<value>librte-lpm24</value>
+			<value>librte-mbuf24</value>
+			<value>librte-member24</value>
+			<value>librte-mempool24</value>
+			<value>librte-mempool-bucket24</value>
+			<value>librte-mempool-cnxk24</value>
+			<value>librte-mempool-dpaa2-24</value>
+			<value>librte-mempool-dpaa24</value>
+			<value>librte-mempool-octeontx24</value>
+			<value>librte-mempool-ring24</value>
+			<value>librte-mempool-stack24</value>
+			<value>librte-meta-all</value>
+			<value>librte-meta-allpmds</value>
+			<value>librte-meta-baseband</value>
+			<value>librte-meta-bus</value>
+			<value>librte-meta-common</value>
+			<value>librte-meta-compress</value>
+			<value>librte-meta-crypto</value>
+			<value>librte-meta-dma</value>
+			<value>librte-meta-event</value>
+			<value>librte-meta-mempool</value>
+			<value>librte-meta-net</value>
+			<value>librte-meta-raw</value>
+			<value>librte-meter24</value>
+			<value>librte-metrics24</value>
+			<value>librte-ml-cnxk24</value>
+			<value>librte-mldev24</value>
+			<value>librte-net24</value>
+			<value>librte-net-af-packet24</value>
+			<value>librte-net-af-xdp24</value>
+			<value>librte-net-ark24</value>
+			<value>librte-net-atlantic24</value>
+			<value>librte-net-avp24</value>
+			<value>librte-net-axgbe24</value>
+			<value>librte-net-bnx2x24</value>
+			<value>librte-net-bnxt24</value>
+			<value>librte-net-bond24</value>
+			<value>librte-net-cnxk24</value>
+			<value>librte-net-cpfl24</value>
+			<value>librte-net-cxgbe24</value>
+			<value>librte-net-dpaa2-24</value>
+			<value>librte-net-dpaa24</value>
+			<value>librte-net-e1000-24</value>
+			<value>librte-net-ena24</value>
+			<value>librte-net-enetc24</value>
+			<value>librte-net-enetfec24</value>
+			<value>librte-net-enic24</value>
+			<value>librte-net-failsafe24</value>
+			<value>librte-net-fm10k24</value>
+			<value>librte-net-gve24</value>
+			<value>librte-net-hinic24</value>
+			<value>librte-net-hns3-24</value>
+			<value>librte-net-i40e24</value>
+			<value>librte-net-iavf24</value>
+			<value>librte-net-ice24</value>
+			<value>librte-net-idpf24</value>
+			<value>librte-net-igc24</value>
+			<value>librte-net-ionic24</value>
+			<value>librte-net-ipn3ke24</value>
+			<value>librte-net-ixgbe24</value>
+			<value>librte-net-mana24</value>
+			<value>librte-net-memif24</value>
+			<value>librte-net-mlx4-24</value>
+			<value>librte-net-mlx5-24</value>
+			<value>librte-net-netvsc24</value>
+			<value>librte-net-nfp24</value>
+			<value>librte-net-ngbe24</value>
+			<value>librte-net-null24</value>
+			<value>librte-net-octeon-ep24</value>
+			<value>librte-net-octeontx24</value>
+			<value>librte-net-pcap24</value>
+			<value>librte-net-pfe24</value>
+			<value>librte-net-qede24</value>
+			<value>librte-net-ring24</value>
+			<value>librte-net-sfc24</value>
+			<value>librte-net-softnic24</value>
+			<value>librte-net-tap24</value>
+			<value>librte-net-thunderx24</value>
+			<value>librte-net-txgbe24</value>
+			<value>librte-net-vdev-netvsc24</value>
+			<value>librte-net-vhost24</value>
+			<value>librte-net-virtio24</value>
+			<value>librte-net-vmxnet3-24</value>
+			<value>librte-node24</value>
+			<value>librte-pcapng24</value>
+			<value>librte-pci24</value>
+			<value>librte-pdcp24</value>
+			<value>librte-pdump24</value>
+			<value>librte-pipeline24</value>
+			<value>librte-port24</value>
+			<value>librte-power24</value>
+			<value>librte-raw-cnxk-bphy24</value>
+			<value>librte-raw-cnxk-gpio24</value>
+			<value>librte-raw-dpaa2-cmdif24</value>
+			<value>librte-raw-ifpga24</value>
+			<value>librte-raw-ntb24</value>
+			<value>librte-raw-skeleton24</value>
+			<value>librte-rawdev24</value>
+			<value>librte-rcu24</value>
+			<value>librte-regex-cn9k24</value>
+			<value>librte-regex-mlx5-24</value>
+			<value>librte-regexdev24</value>
+			<value>librte-reorder24</value>
+			<value>librte-rib24</value>
+			<value>librte-ring24</value>
+			<value>librte-sched24</value>
+			<value>librte-security24</value>
+			<value>librte-stack24</value>
+			<value>librte-table24</value>
+			<value>librte-telemetry24</value>
+			<value>librte-timer24</value>
+			<value>librte-vdpa-ifc24</value>
+			<value>librte-vdpa-mlx5-24</value>
+			<value>librte-vdpa-nfp24</value>
+			<value>librte-vdpa-sfc24</value>
+			<value>librte-vhost24</value>
 		</constant_variable>
 		<constant_variable id="oval:com.ubuntu.noble:var:1877844208037" version="1" datatype="string" comment="Long Term Release">
 			<value>eapoltest</value>
